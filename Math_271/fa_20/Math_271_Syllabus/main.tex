@@ -1,0 +1,105 @@
+\documentclass[12pt]{amsbook}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\geometry{a4paper, top=25mm, right=25mm, bottom=25mm}
+%\geometry{landscape}                % Activate for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{relsize}             % Allows us to define \bigast
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+%\usepackage{pause}
+\usepackage{wasysym}            % Provides \checkmark
+\usepackage[firstpage]{draft watermark}             % Allows the watermark stuff
+\usepackage{wrapfig}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\newcommand{\DD}{\displaystyle}
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\SetWatermarkText{
+\begin{minipage}[c][8cm]{8cm}
+\begin{center}
+ 
+\end{center}
+\end{minipage}
+}
+\SetWatermarkScale{1.5}
+\SetWatermarkColor[gray]{0.75}
+
+
+
+
+\begin{center}
+   \textsc{\large Math 271, Fall 2020 Syllabus}
+\end{center}
+\vspace{.5cm}
+
+Everyone can learn mathematics at a high level.
+Mistakes are valuable.
+Questions are a normal part of the process of learning.
+Math is about creativity and making sense.
+Math is about connections and communication.
+Math class is about learning, not performing.
+Depth is more important than speed.
+
+\textbf{Course Title:} Math 271, Applied Mathematics for Chemists I
+
+\textbf{Instructor:} Colin Roberts, robertsp@rams.colostate.edu
+
+\textbf{Time/Location:} MTWF, 9:00-9:50 am, Online.  
+
+\textbf{Office Hours:} TBD.
+
+\textbf{Learning Assistant Help Hours:} TBD.
+
+\textbf{Textbooks:} These are \underline{\textbf{NOT}} required.  My notes will be sufficient!
+\begin{itemize}
+    \item \emph{The Chemistry Maths Book} - $2^{\text{nd}}$ Edition, Erich Steiner
+    \item \emph{Mathematics for Physical Chemistry: Opening Doors} - D. A. McQuarrie
+\end{itemize}
+Talk to me for options in obtaining both of these texts for the lowest prices if you do wish to purchase them. 
+
+\textbf{Content:} Over the next year we will cover the mathematics necessary for upper-level chemistry courses, particularly physical chemistry. The fall semester will be roughly split into three main parts:
+\begin{itemize}
+    \item \emph{Ordinary Differential Equations (ODEs)}. First and second order ODEs, applications, and complex variables.
+    \item \emph{Elements of Analysis}. Series, power and Taylor series, series solutions to ODEs, and $n^\textrm{th}$ order approximation.
+    \item \emph{Finite Dimensional Linear Algebra}. Vectors, matrices, eigen-problem, geometry of 3-space.
+\end{itemize}
+
+\textbf{Grading:} Letter grades will correspond to 10\% windows: 90-100\% is an A, 80-89\% is a B, etc. The following items will contribute to your final grade.
+\begin{itemize}
+\item Homework (40\%) - Homeworks will be given most weeks. Solutions will be graded on correctness and clarity of supporting work. For example, complete sentences are expected. Assignments will need to be scanned and submitted on Canvas as a PDF file.
+\item Quizzes (25\%) -  Roughly 5 Proctored quizzes we will be given.  These will typically be a few problems and are based on the recent homework assignments. We will take a whole class period to work on and submit a quiz, but each quiz will take approximately 30 minutes. Students will be able to earn up to 50\% of the points they missed on any given quiz by doing corrections.
+\item Oral Exams (25\%) - There will be three oral exams in this class. These exams will be given in a one-on-one virtual environment and run approximately 15 minutes.  Alongside me, each of you will discuss the content with me as well as work to solve problems. Problems will be given ahead of time and you may work with others to get solutions.  Solutions will be submitted individually and discussed during a set time. \emph{Please make sure that you will have a way to at least vocally communicate with me or we will need to consider an exception.}
+\item Project (10\%) - The last week of class will consist of working on a short project about a special topic.  We will investigate compartmental epidemic models (e.g., SIR) to understand the spread of COVID-19.  You will then research other models and seek to relate them back to chemistry. 
+\end{itemize}
+
+\textbf{Academic Integrity:} Don't cheat. Check out \texttt{http://tilt.colostate.edu/integrity} for more details. While many things in life operate on the ``better to ask forgiveness than permission" principle, this is not one of them. When in doubt, ask me ahead of time.
+
+Groupwork on homework, unless specified otherwise, is \emph{not} considered cheating in this class, and is very strongly \emph{encouraged}. However, you are expected to write up your solutions individually; word-for-word reproductions look fishy at best, so please make sure to write things in your own words.
+
+\textbf{SDC:} Have a Resources for Disabled Students (RDS) situation? No problem; just let me know as soon as possible.
+
+\textbf{Homework:} 
+\begin{itemize}
+    \item Homework must be scanned (or typed) as a single PDF file and submitted to Canvas under the proper assignment.
+    \item No late homework will be accepted.  Homework must be turned in prior to the specified time.
+\end{itemize}
+
+\textbf{Schedule Conflicts:} If you need to miss quizzes or exams for any scheduled reason, you must contact me ahead of time (two weeks) and we will make new arrangements. 
+
+\textbf{Other Expectations:} Treat your classmates and me with respect. Homework that is not written legibly will not be graded.
+
+\textbf{Leftovers:} Extra stuff that didn't fit any of the categories above:
+\begin{itemize}
+\item \textcolor{red}{As always, your health comes first.  If you are feeling sick, take care of yourself first.}
+\item As the instructor, I reserve the right to alter this syllabus at any time. I'll announce any such changes in class, in as timely a manner as possible. 
+\item If you have any issues at all, please do not hesitate to contact me. Pretty much every  problem can be resolved via communication.
+\item Technology is a double-edged sword in learning mathematics. You should attempt to use technology to enhance your understanding without using it as a crutch. Wolfram Alpha, Desmos, and Geogebra can all be very useful. 
+\item Related to the above, patience is your biggest ally. You will get stumped from time to time. Resist the urge to immediately ask for help or to right away Google the answer. Instead, try different things; see what you can do with the tools given. Draw a picture. Attempt to do the most obvious, most straight-forward thing possible, and work from there. The process of exploring questions and actively struggling with them will be the most helpful aspect of the class.
+\end{itemize}
+
+\end{document}  

@@ -1,0 +1,74 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Homework 1}\\
+   \textsc{Due January 31$^\textrm{st}$}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+	Plot the following complex functions as vector fields. Then explain the differences between them.
+	\begin{enumerate}[(a)]
+		\item $f(z) = z$;
+		\item $g(z)=iz$.
+	\end{enumerate}
+You can, for example, use the plotter here: \url{https://www.desmos.com/calculator/eijhparfmd} or find your own (Matlab for example can plot vector fields quite easily). Note that you will have to convert from the complex numbers to 2-dimensional real vectors (i.e., vectors in $\R^2$).  
+\end{problem}
+
+\begin{problem}
+	Let $\Psi(x)$ be a complex function with domain $[0,L]$.  Show that multiplication by a global phase $e^{i\theta}$ does not affect the norm of $\Psi(x)$ under the Hermitian (integral) inner product. In more generality, this shows that you cannot fully determine a quantum state -- there will always be an undetermined phase.
+\end{problem}
+
+\begin{problem}
+	Consider the real function $f(x)=1$ on the domain $[0,L]$.
+	\begin{enumerate}[(a)]
+		\item What is the norm of $f$, $\|f\|$?
+		\item Normalize $f(x)$.
+		\item Find a nonzero normalized polynomial of degree $\leq 1$ that is orthogonal to $f(x)$.
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}
+	A wavefunction $\Psi(x)$ for a particle in the 1-dimensional box $[0,L]$ could be written as a superposition of normalized states
+	\[
+	\psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right).
+	\]
+	That is,
+	\[
+	\Psi(x) = \sum_{n=1}^\infty a_n \psi_n(x),
+	\]
+	for some choice of the coefficients $a_n$.
+	\begin{enumerate}[(a)]
+		\item Let $a_n = \frac{\sqrt{6}}{n\pi}$. Show that $\Psi(x)$ is normalized. \emph{Hint: first, use orthogonality of the states $\psi_n(x)$ to your advantage. Then you will need to know what an infinite series evaluates to. Use a tool like WolframAlpha to evaluate this series.}
+		\item Note that we can approximate $\Psi(x)$ by taking a finite sum approximation up to some chosen $N$ by
+		\[
+			\Psi(x) \approx \sum_{n=1}^N a_n \psi_n(x).
+		\]
+		Plot the approximation of $\Psi(x)$ for $N=1,5,50,100$.  \emph{Hint: you can modify my Desmos examples.}
+		\end{enumerate}
+\end{problem}
+
+\begin{problem}
+	Suppose we have two vectors $\vecu,\vecv \in \R^3$.  We can compute the distance between the vectors
+	\[
+	d(\vecu,\vecv) = \|\vecu-\vecv\| = \sqrt{(\vecu-\vecv)\cdot(\vecu-\vecv)}.
+	\]
+	That is to say, we inherit not only a norm from an inner product, but a distance function from a norm!  Intuitively, we are finding the length (or norm) of the vector extending from the head of $\vecv$ to the head of $\vecu$.
+	\begin{enumerate}[(a)]
+		\item Show that
+		\[
+		d(\vecu,\vecv) = \sqrt{\|\vecu\|^2+\|\vecv\|^2-2\vecu\cdot \vecv}.
+		\]
+		\item Compute the distance between vectors $\vecu=\xhat + \zhat$ and $\vecv = \xhat - \yhat$.  
+		\item Extend this notion to compute the distance between the Legendre polynomials $f_1,f_2\colon [-1,1] \to \R$ where $f_1(x)=\sqrt{\frac{3}{2}}x$ and $f_2(x)=\sqrt{\frac{5}{8}}\left(1-3x^2\right)$. \emph{Hint: make sure you use the correct integral inner product for this domain!}
+	\end{enumerate}
+\end{problem}
+
+\end{document}

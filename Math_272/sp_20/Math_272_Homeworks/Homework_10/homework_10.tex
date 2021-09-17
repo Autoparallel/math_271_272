@@ -1,0 +1,96 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\newcommand{\vecfieldB}{\boldsymbol{\vec{B}}}
+\newcommand{\vecfieldE}{\boldsymbol{\vec{E}}}
+\newcommand{\vecfieldJ}{\boldsymbol{\vec{J}}}
+\newcommand{\grad}{\boldsymbol{\vec{\nabla}}}
+\newcommand{\veclaplace}{\boldsymbol{\vec{\Delta}}}
+\newcommand{\vecfieldV}{\boldsymbol{\vec{V}}}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Homework 10}\\
+   \textsc{Due April 27$^\textrm{th}$}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+Consider the 1-dimensional wave equation given by
+\[
+\left(-\frac{\partial^2}{\partial x^2} +\frac{1}{c^2} \frac{\partial^2}{\partial  t^2} \right) u(x,t) = 0.
+\]
+We'll consider two distinct scenarios. First, we'll take an infinitely long elastic rod and second we'll take a rod of finite length with Dirichlet boundary conditions.
+\begin{enumerate}[(a)]
+    \item For a rod of infinite length, consider the initial conditions
+    \[
+    u(x,0) = \begin{cases} x+1 & -1\leq x \leq 0 \\ 1-x & 0\leq x \leq 1 \\ 0 & \textrm{otherwise} \end{cases} \qquad \textrm{and} \qquad \frac{\partial}{\partial t} u(x,0) = 0.
+    \]
+    Find and plot the portion of the wave that moves to the right with $c=1$.
+    \item Let $u_R(x,t)$ be your solution from (a), show that this satisfies the right-moving wave equation
+    \[
+    \left(\frac{\partial}{\partial x} + \frac{1}{c} \frac{\partial}{\partial t} \right)u_R(x,t) = 0.
+    \]
+    \item Why is it that we can ignore the points where your function $u_R(x,t)$ is not differentiable even though we are considering this as a solution to a PDE?
+    \item For an elastic rod $\Omega$ of finite length, $\Omega = [0,1]$, assume that we take the Dirichlet conditions $u(0,t)=0=u(1,t)$.  With the initial conditions
+    \[
+    u(x,0) = \sin(\pi x) \qquad \textrm{and} \qquad \frac{\partial}{\partial t} u(x,0)=0,
+    \]
+    find the solution using d'Alembert's formula.
+    \item Let $w(x,t)$ be your solution for (d), show that it is indeed equal to
+    \[
+    w(x,t) = \sin(\pi x)\cos(\pi c t).
+    \]
+    \item With your result from (e), explain how we can decompose a standing wave into a linear combination of two waves; one moving towards the left and one moving towards the right and both reflecting off the boundary.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Previously we studied the time-independent Schr\"odinger equation. Now, we can take a look at the time-dependent version given by
+\[
+H \Psi(x,t) = i\hbar \frac{\partial}{\partial t} \Psi(x,t),
+\]
+where $H$ is the Hamiltonian operator.  Consider the situation for the free particle in the 1-dimensional box of length $L$ so that $V(x)=0$ and $\Psi(0,t)=0=\Psi(L,t)$.  
+\begin{enumerate}[(a)]
+    \item Take a separation of variables ansatz and find a set of solutions (one for every positive integer $n$) to the time-dependent equation.
+    \item Show that a super position of solutions is also a solution.
+    \item For a single state $\psi_n(x,t)$, show that 
+    \[
+    \int_0^L \left|\psi_n(x,t)\right|^2 dx,
+    \]
+    is independent of $t$. This shows that the states $\psi_n$ are \emph{stationary} since their total probability does not depend on time.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Maxwell's equations are given as
+\begin{align*}
+\grad \cdot \vecfieldB &= 0  & \grad \cdot \vecfieldE &= \frac{\rho}{\epsilon_0}\\
+\grad \times \vecfieldB -\mu_0 \epsilon_0\frac{\partial \vecfieldE}{\partial t}&=\mu_0 \vecfieldJ & \grad \times \vecfieldE + \frac{\partial \vecfieldB}{\partial t} &= \zerovec
+\end{align*}
+\begin{enumerate}[(a)]
+    \item Look up each of the terms in the equations above and describe them.
+    \item Describe what each equation is saying and why these are PDEs.
+    \item In the absence of all charges we will have $\vecfieldJ=\zerovec$ and $\rho=0$.  Using that and the following two facts
+    \[
+    \veclaplace \vecfieldV = \grad (\grad \cdot \vecfieldV) - \grad \times (\grad \times \vecfieldV) \qquad \textrm{and} \qquad \grad \times \frac{\partial \vecfieldV}{\partial t} = \frac{\partial}{\partial t} (\grad \times \vecfieldV),
+    \]
+    derive the vector wave equations for light
+    \[
+    \left( - \veclaplace + \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}\right) \vecfieldE = \zerovec
+    \]
+    and
+    \[
+    \left( - \veclaplace + \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}\right) \vecfieldB = \zerovec
+    \]
+    \item From the equations you derived, determine the wave speed of light in the vacuum, $c_0$.
+\end{enumerate}
+\end{problem}
+
+
+\end{document}

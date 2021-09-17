@@ -1,0 +1,279 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Homework 4, \emph{Solutions}}\\
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+Consider the following sequences,
+\[
+a_n = \frac{1}{2}, \frac{1}{4}, \frac{1}{8}, \dots, \frac{1}{2^n}, \dots,
+\]
+and
+\[
+b_n =  1, \frac{1}{2}, \frac{1}{6},\frac{1}{24}, \dots,\frac{1}{n!}, \dots.
+\]
+\begin{enumerate}[(a)]
+    \item For what values of $N$ do we need for $a_N<0.01$ and $b_N<0.01$? Note, these will be different values for $N$.
+    \item Compute $\displaystyle{\lim_{n\to \infty} a_n}$.
+    \item Compute $\displaystyle{\lim_{n\to \infty} b_n}$.
+    \item Which sequence converges more quickly to its limit? (\emph{Hint: consider a ratio of the terms of the sequences and take a limit. Part (a) should help you think about this.})
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item Consider first the sequence given by $a_n$.  Now, we want to find a value for $N$ so that
+    \[
+    a_N=\frac{1}{2^N}<0.01.
+    \]
+    We can play with this algebraically by
+    \begin{align*}
+        \frac{1}{2^N}&<0.01\\
+        100&< 2^N\\
+        \log_2(100)&< N\\
+        \approx 6.644&<N.
+    \end{align*}
+    Since $N$ is an integer, we round up to get $N=7.$
+    
+    For the sequence given by $b_n$ we do the same and we want to find
+    \begin{align*}
+        b_N =\frac{1}{N!}&<0.01\\
+        100&<N!
+    \end{align*}
+    which has no nice inverse function to use (like $\log_2$ for $2^x$), so we just need to try a few values.  We have
+    \[
+    1!=1 \quad 2! = 2 \quad 3! = 6 \quad 4! = 24 \quad 5! = 120,
+    \]
+    so $N=5$ works.
+    \item Since $a_n = f(n)=\frac{1}{2^n}$ we can consider
+    \[
+    \lim_{n\to \infty} f(n)= \lim_{x\to \infty} f(x) = \lim_{x\to \infty}\frac{1}{2^x} = 0,
+    \]
+    by our knowledge of limits from Calculus 1.
+    \item We can do this a few ways.  For one, we know that $n!$ grows unboundedly as $n$ gets larger and larger so $\lim_{n\to \infty} n! = +\infty$ and so $\lim_{n\to \infty} \frac{1}{n!} = 0$.  We could also prove this more rigorously by comparing $b_n$ to $a_n$.  Notice that for $K\geq 3$ we have $0<b_K<a_K$ and since $a_n\to 0$, we have $b_n\to 0$. One could also use the $\epsilon$ definition for convergence.
+    \item If we consider the limit of the ratio of the terms in the sequence as follows
+    \[
+    \lim_{n\to \infty} \left| \frac{a_n}{b_n}\right|
+    \]
+    then we can see which grows faster than the other.  Let's investigate further
+    \begin{align*}
+        \lim_{n\to \infty} \left| \frac{a_n}{b_n}\right| &= \lim_{n\to \infty} \left| \frac{\frac{1}{2^n}}{\frac{1}{n!}}\right|\\
+        &= \lim_{n\to \infty} \left| \frac{ n!}{2^n}\right|\\
+        &= \lim_{n\to \infty} \left| \frac{ n \cdot (n-1) \cdot (n-2)\cdots 2 \cdot 1}{2\cdot 2 \cdot 2 \cdots 2 \cdot 2}\right|.
+    \end{align*}
+    Here, notice that there are $n$ terms in the numerator, and $n$ in the denominator.  However, most of the terms in the numerator are larger than $2$ (and, for example, $4=2\cdot 2$).  So, the denominator is larger especially as $n$ gets larger and we find
+    \[
+    \lim_{n\to \infty} \left| \frac{a_n}{b_n}\right| = \infty
+    \]
+    which means that $b_n \to 0$ faster than $a_n \to 0$.
+\end{enumerate}
+\end{solution}
+\begin{remark}
+I have shown some work here that looks complicated and we haven't totally covered in class.  So, I don't expect your solutions to be as clean as mine! What I wanted you to do was just think about these ideas and try to gain intuition. Especially with part (d).
+\end{remark}
+
+\newpage
+\begin{problem}
+With the same $a_n$ from $1$, consider the series
+\[
+A = \sum_{n=1}^\infty a_n.
+\]
+\begin{enumerate}[(a)]
+    \item Write down the $N^\textrm{th}$ partial sum $A_N$ for this series.  
+    \item Does this sequence of partial sums converge? If so, to what?
+    \item Note that this is an \emph{geometric series} with $a=1$ and $r=\frac{1}{2}$. However, we start from $n=1$ instead of $n=0$. Show the value that this series converges to using the formula for a geometric series.
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item The $N^\textrm{th}$ partial sum is given by
+    \[
+    \sum_{n=1}^N a_n = \sum_{n=1}^N \frac{1}{2^n} = \frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\cdots + \frac{1}{2^N}.
+    \]
+    \item Let us take a look at the sequence of partial sums
+    \[
+    A_1 = \frac{1}{2} \quad A_2 = \frac{3}{4} \quad A_2 = \frac{7}{8} \quad A_3 = \frac{15}{16},
+    \]
+    which leads us to
+    \[
+    A_N = \frac{2^N -1}{2^N}.
+    \]
+    Thus we can take
+    \[
+    \lim_{N\to \infty }A_n =\lim_{N\to \infty} \frac{2^N-1}{2^N} = 1.
+    \]
+    So the series converges to 1.
+    \item There is a formula for a geometric series 
+    \[
+    \sum_{n=1}^\infty ar^n = \frac{ar}{1-r}.
+    \]
+    If we take $a=1$ and $r=\frac{1}{2}$ then
+    \[
+    \sum_{n=1}^\infty \frac{1}{2^n} = \frac{1\cdot \frac{1}{2}}{1-\frac{1}{2}}=\frac{1}.
+    \]
+    So our result is identical.
+\end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+With the same $b_n$ from $1$, consider the series
+\[
+B = \sum_{n=0}^\infty b_n.
+\]
+\begin{enumerate}[(a)]
+    \item Use the ratio test to show that this series converges.
+    \item Approximate the value the series converges to by considering larger and larger partial sums.
+    \item What number does this series converge to?
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item Consider the limit for the ratio test
+    \begin{align*}
+        \lim_{n\to \infty} \left| \frac{b_{n+1}}{b_n} \right|&= \lim_{n\to \infty} \left| \frac{\frac{1}{(n+1)!}}{\frac{1}{n!}}\right|\\
+        &= \lim_{n\to \infty} \left| \frac{n!}{(n+1)!}\right|\\
+        &= \lim_{n\to \infty} \left| \frac{1}{n+1}\right|\\
+        &=0.
+    \end{align*}
+    So by the ratio test, the series converges.
+    \item Using a tool like WolframAlpha, we can compute approximations to the series using partial sums. For example, we can take 
+    \begin{align*}
+        \sum_{n=0}^1 b_n &= 2\\
+        \sum_{n=0}^5 b_n &\approx 2.7166...\\
+        \sum_{n=0}^{50} b_n &\approx 2.718281828459
+    \end{align*}
+    That is, I put
+    \begin{verbatim}
+        sum[1/n!,{n,0,N}]
+    \end{verbatim}
+    into WolframAlpha (but of course replaced $N$ with the chosen $N$ values above).
+    \item Again, one could use WolframAlpha to find what this series converges to and we get that
+    \[
+    e=\sum_{n=0}^\infty \frac{1}{n!} \approx 2.718281828459.
+    \]
+\end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+Consider the two series
+\[
+\cos(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} \qquad \textrm{and} \qquad \sin(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!}.
+\]
+\begin{enumerate}[(a)]
+    \item Show that $\cos(-x)=\cos(x)$.
+    \item Show that $\sin(-x)=-\sin(x)$.
+    \item To take a derivative of a power series $f(x) = \displaystyle{\sum_{n=0}^\infty a_n x^n}$ we can do the following: 
+    \[
+    \frac{d}{dx}f(x) = \frac{d}{dx} \sum_{n=0}^\infty a_n x^n = \sum_{n=0}^\infty a_n \frac{d}{dx} x^n.
+    \]
+    Compute $\frac{d}{dx} \sin(x)$ and $\frac{d}{dx} \cos(x)$ and show that they are equal to what you already know. \emph{Warning: be careful with the powers of $x$ in the case with $\sin$ and $\cos$!}
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item We take
+    \begin{align*}
+        \cos(-x)=\sum_{n=0}^\infty \frac{(-1)^n (-x)^{2n}}{(2n)!} &= \sum_{n=0}^\infty \frac{(-1)^n \left((-x)^2\right)^n}{(2n)!}\\
+        &= \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}\\
+        &= \cos(x).
+    \end{align*}
+    Fundamentally, this is because all powers of $x$ in the terms in the series are even.  This is why we call $\cos$ an \emph{even} function!
+    \item Similarly, we take
+    \begin{align*}
+        \sin(-x)=\sum_{n=0}^\infty \frac{(-1)^n (-x)^{2n+1}}{(2n+1)!}&= \sum_{n=0}^\infty \frac{(-1)^n (-x)\cdot (-x)^{2n}}{(2n+1)!}\\
+        &= -\sum_{n=0}^\infty \frac{(-1)^n x\cdot x^{2n}}{(2n+1)!}\\
+        &= -\sum_{n=0}^\infty \frac{(-1) x^{2n+1}}{(2n+1)!}\\
+        &= -\sin(x).
+    \end{align*}
+    Again, this is happening due to the fact that all powers of $x$ in the terms for the series are odd. This is why we call $\sin$ an \emph{odd} function.
+    \item Consider first $\frac{d}{dx} \sin(x)$.  We take
+    \begin{align*}
+        \frac{d}{dx} \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!} &= \frac{d}{dx} \left( x-\frac{x^3}{3!}+\frac{x^5}{5!} - \cdots \right)\\
+        &= \frac{d}{dx} x -\frac{d}{dx} \frac{x^3}{3!} +\frac{d}{dx} \frac{x^5}{5!} - \cdots\\
+        &= 1 - \frac{x^2}{2!} +\frac{x^4}{4!} - \cdots.
+    \end{align*}
+    These are the first few terms of the $\cos(x)$ series.  Notice if we take
+    \[
+    \frac{d}{dx} \frac{(-1)^n x^{2n+1}}{(2n+1)!} = \frac{(-1) x^{2n}}{(2n)!}.
+    \]
+    So we have
+    \[
+    \frac{d}{dx} \sin(x) = \cos(x).
+    \]
+    
+    When we consider $\frac{d}{dx}$ of $\cos(x)$ we have to be a bit more careful.  Let's see what happens.  We take
+    \begin{align*}
+        \frac{d}{dx} \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} &= \frac{d}{dx} \left(1-\frac{x^2}{2!}+\frac{x^4}{4!} - \cdots \right)\\
+        &= \frac{d}{dx} 1 -\frac{d}{dx} \frac{x^2}{2!} +\frac{d}{dx} \frac{x^4}{4!} - \cdots\\
+        &= 0 - x +\frac{x^3}{3!} - \cdots
+    \end{align*}
+    which look like the first terms in the series for $-\sin(x)$. However, let's take a derivative of the term
+    \[
+    \frac{d}{dx} \frac{(-1)^n x^{2n}}{(2n)!} = \frac{(-1)^n x^{2n-1}}{(2n-1)!}.
+    \]
+    Now if we were to have this in our series we find
+    \[
+        \frac{d}{dx} \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} \not=  \sum_{n=0}^\infty \frac{(-1)^n x^{2n-1}}{(2n-1)!},
+    \]
+    since the first term on the right has an $x^{-1}$ in it! When we write out the terms of the series and differentiate them, we don't make this mistake.  We just have to be careful.  What we really should have is
+    \begin{align*}
+                \frac{d}{dx} \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} &=  \sum_{n=1}^\infty \frac{(-1)^n x^{2n-1}}{(2n-1)!}\\
+                &=\sum_{n=0}^\infty \frac{(-1)^{n+1} x^{2n+1}}{(2n+1)!}\\
+                &= -\sin(x).
+    \end{align*}
+    Notice above I \emph{reindexed} the series.  This is not something I'm going to worry too much about you doing.
+\end{enumerate}
+\end{solution}
+\begin{remark}
+Again, some of my work here is beyond what I was expecting. If you would have taken the derivatives of the first few terms and showed they are equal, you can extrapolate beyond that and assume it will work for the rest of the terms.  Just be careful with this!
+\end{remark}
+
+\newpage
+\begin{problem}
+Consider the \emph{$p$-series}:
+\[
+\sum_{n=1}^\infty \frac{1}{n^p}.
+\]
+\begin{enumerate}[(a)]
+    \item For $p=1$, show that the ratio test is inconclusive.
+    \item For $p=2$, show that the ratio test is again inconclusive.
+    \item Look up the sum of the series for $p=1$ and $p=2$.  Notice how the ratio test is not perfect!
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item Let us take $p=1$. Then we have
+    \begin{align*}
+        \sum_{n=1}^\infty \frac{1}{n}.
+    \end{align*}
+    This is known as the \emph{harmonic series}.  Now, the limit for the ratio test is
+    \begin{align*}
+        \lim_{n\to \infty} \left| \frac{\frac{1}{n+1}}{\frac{1}{n}}\right| &= \lim_{n\to \infty} \left| \frac{n}{n+1} \right|\\
+        &= 1.
+    \end{align*}
+    So the ratio test is inconclusive.
+    \item Similarly, for $p=2$, we have the limit for the ratio test
+    \begin{align*}
+                \lim_{n\to \infty} \left| \frac{\frac{1}{(n+1)^2}}{\frac{1}{n^2}}\right| &= \lim_{n\to \infty} \left| \frac{n^2}{n^2+2n+1} \right|\\
+                &= \lim_{n\to \infty} \left| \frac{n^2}{n^2}\right|\\
+                &=1.
+    \end{align*}
+    Note that here I used the fact that the leading power term dominates in the limit.  Thus, we again have the ratio test is inconclusive.
+    \item We have that the $p$-series for $p=1$ diverges and 
+    \[
+    \sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}.
+    \]
+\end{enumerate}
+\end{solution}
+
+\end{document}

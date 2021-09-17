@@ -1,0 +1,234 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \LARGE{\textsc{MATH 271, Mini Project}}\\
+   \large{\textsc{Due December 20$^\textrm{th}$}}
+\end{center}
+\vspace{.5cm}
+
+\section*{Assignment}
+\textcolor{red}{Notes for next semester: Note that we can use the states found from the POAR problem ($2\pi n$) to do the Fourier part. It actually makes things easier.  Also explain that the Fourier part uses a slightly different inner product which keeps the function having the same area under the curve (hence dividing by $L$)}.
+\section*{Due Date}
+The assignment must be turned in via Canvas by Friday December 20$^\textrm{th}$, 2019, by 11:59PM mountain time.
+\subsection*{Requirements}
+\begin{itemize}
+    \item You may work together, but you must submit your own individual work.
+    \item You are to type out your work to this assignment using a program like Microsoft Word or \LaTeX. If you use a program like Microsoft Word, use the equation editor for any mathematical symbols you use. 
+    \item Save your document as a PDF as only PDF files will be accepted. Make sure your formatting comes out correctly when you save as a PDF! Microsoft Word has a way of making this more challenging than it needs to be.
+    \item For full credit, explain your work along the way and use consistent notation.  Though problems may not ask for much, a short and complete explanation is expected (e.g., Problem 1 has a short answer, but please explain why you know your answer is correct).
+\end{itemize}
+
+
+\section{Introduction}
+
+Fourier series and Fourier transforms show up in a multitude of physical problems.  Both are also derived from physical equations as well.  One such place is in Schr\"odinger's equation for a particle confined to live on a specific geometry.  In class, we considered a particle in a 1-dimensional box, and we touched a bit on Legendre's equation which is related to particles confined to live on the surface of a sphere.  Very much related is the problem of a Particle On A Ring (POAR). 
+
+\begin{figure}[H]
+    \centering \qquad \qquad \qquad \qquad \qquad \qquad \qquad 
+    %\def\svgwidth{0.75\columnwidth} 
+  	\resizebox{.75\textwidth}{!}{\input{POAR.pdf_tex}}
+    \caption{A particle confined to a ring with angular position $x$.}
+\end{figure}
+
+The POAR problem underlies the solution to the Hydrogen atom as one should first understand the behavior of a particle that lives on a ring prior to a particle living in a sphere.  So take this as a stepping stone allowing us to move closer to something like Legendre's equation and ultimately determining the structure of the Hydrogen atom.
+
+Through this week long mini-project, we will find the solutions to the POAR and realize the states as basis functions for a Fourier series.  Much like a power series, a Fourier series gives us a way to represent functions but, instead of as infinite polynomials, we will write functions as infinite sums of sine and cosine functions.  That is, we previously wrote
+\[
+f(x) = \sum_{n=0}^\infty a_nx^n,
+\]
+but we will now wish to investigate further ways to represent functions such as
+\[
+f(x) = \sum_{n=-\infty}^\infty c_n e^{\frac{in\pi x}{L}} = \sum_{n=0}^\infty a_n \cos\left(\frac{n\pi x}{L}\right) + \sum_{n=1}^\infty b_n \sin\left(\frac{n\pi x}{L}\right).
+\]
+One may wonder where else the Fourier series and associated Fourier transform show up.  The Fourier series shows up when solving partial differential equations on spaces that have an underlying circular geometry.  The more general Fourier transform is used in optics, spectroscopy, and in quantum mechanics.  The difference between the two is purely due to the underlying geometry of the space of interest.  That is, in this case the underlying geometry is the circle, and hence see the Fourier series. If instead we considered the free particle on an infinite line, we would see the Fourier transform arise. The fundamental reason why is that a continuum of frequencies are allowed on the line wheras they are not on the circle. We will see the latter below.
+
+\section{Solving the POAR Problem}
+The POAR can be set up just as we did with the particle in the 1-dimensional box.  We consider the boundary value problem (or really, lack thereof of a boundary) that can be written as follows. We have the \boldblue{time independent Schr\"odinger equation} written as
+\begin{align*}
+    H\Psi(x) &= E \Psi(x)
+\end{align*}
+where $\Psi(x)$ is the \boldblue{wavefunction}, $E$ is the \boldblue{energy eigenvalue}, and $H$ is the \boldblue{Hamiltonian operator} given by
+\[
+H= \frac{-\hbar^2}{2m}\frac{d^2}{dx^2} + V(x).
+\]
+This equation describes the stationary states for a particle in a 1-dimensional space. Specifically, we would like the particle to be constricted to a ring with circumference $L$.
+\begin{problem}{}{1}
+If we want our particle to be free on the ring, what is the potential for this system?
+\end{problem}
+\noindent Once we know our potential, we are close to being able to solve the problem.  We need a bit of information that determines the boundary of our region. If we take a look at the ring, we notice that there is no boundary! So, how can we reconcile this?
+\begin{problem}{}{2}
+What are the ``boundary" conditions we place on $\Psi(x)$? \emph{Hint: think about what happens as we consider how the function changes as we move all the way around the ring.}
+\end{problem}
+
+Since we have determined the potential and the extra boundary conditions on $\Psi(x)$, we can write down the differential equation.
+
+\begin{problem}{}{3}
+State the full differential equation and include the boundary conditions.
+\end{problem}
+
+\noindent Ignoring the boundary conditions, we have seen this differential equation before! It is the same equation as we have for the particle in a box.  The difference now will come down to the boundary conditions.
+
+\begin{problem}{}{4}
+What is the order and type of this differential equation?
+\end{problem}
+
+\noindent Seeing as we have seen this type of differential equation, we should know how to solve it.  There are a few options here that we can use and you are free to choose whichever you prefer.
+
+\begin{problem}{}{5}
+Find the general solution to the differential equation.
+\end{problem}
+
+\noindent Now that you have a general solution to the differential equation, we can see if the boundary conditions affect the solution in anyway. Remember that $E$ is a variable as well! 
+
+\begin{problem}{}{6}
+Apply the boundary conditions to determine $E$. There should be an energy value for every integer $n\geq 0$.
+\end{problem}
+
+\noindent The solution here is extremely close to the solution we found for the free particle in a 1-dimensional box. However, they certainly are different. This should be expected as the geometry of a ring is vastly different than the geometry of a box! For example, on a ring you could continuously walk in a direction and eventually circle back to where you started. In a box, you're confined by walls.
+
+\begin{problem}{}{7}
+What are the differences in the solutions between the POAR and the free particle in a 1-dimensional box? 
+\end{problem}
+
+Now, what we have found are the \boldblue{states} of the system.  There are energy eigenvalues for integers $n\geq 0$ and there are also two \boldblue{orthogonal} states for each $n>0$ as well.  We can show this explicitly. Recall that the \boldblue{inner product} is given by
+\[
+\langle f(x),g(x)\rangle \coloneqq \int_0^L (f(x))^*g(x)dx,
+\]
+where the $~^*$ represents the complex conjugate (which is not necessary in the case for the POAR problem).
+
+\begin{problem}{}{8}
+For a fixed $n$, show that
+\[
+\int_0^L \sin\left(\frac{n\pi x}{L}\right) \cos \left(\frac{n\pi x}{L}\right) dx = 0,
+\]
+which shows that these $\sin$ and $\cos$ functions above are orthogonal.  
+\end{problem}
+This gives us that there are two orthogonal states per energy level! We can denote these states by $\psi_n^e$ for the even state (the $\cos$ function) and $\psi_n^o$ for the odd state (the $\sin$ function). The energy level corresponding to $n=0$ only has one state $\psi_0$ (which is a constant) and so we call this state \boldblue{degenerate}.
+
+We already know that 
+\[
+\int_0^L \sin\left(\frac{n\pi x}{L}\right)\sin\left(\frac{m\pi x}{L}\right)dx=0
+\]
+when $n\neq m$ from the free particle in the 1-dimensional box.  This shows that these functions are orthogonal as well.  The same is true for the $\cos$ functions as well. That is,
+\[
+\int_0^L \cos\left(\frac{n\pi x}{L}\right)\cos\left(\frac{m\pi x}{L}\right)dx=0
+\]
+
+The last item on the list is to \boldblue{normalize} each state. Remember that to normalize a state we require
+\[
+\int_0^L |C\psi_n|^2 dx = 1. 
+\]
+\begin{problem}{}{9}
+Determine the normalization constant $C$.  Note that this constant is the same for each state except for the state corresponding to $n=0$. Can you argue why this is the case?
+\end{problem}
+
+Now, remember a superposition of states of a quantum system also gives us a a solution to the differential equations. This is because the Hamiltonian $H$ is a linear operator (you will see more on this later in life).  Hence, we can write any wavefunction as a superposition of states by
+\[
+\Psi(x) = a_0\psi_0(x) + \sum_{n=1}^\infty a_n^e \psi_n^e(x) + \sum_{n=1}^\infty a_n^o \psi_n^o(x),
+\]
+where the $\psi$ are the normalized states of the system, and where we have that the constants $a_n$ satisfy
+\[
+1=|a_0|^2+\sum_{n=1}^\infty |a_n^e|^2 + \sum_{n=1}^\infty |a_n^o|^2.
+\]
+\begin{problem}{}{10}
+Show that the $\Psi(x)$ written as a superposition above is a normalized solution to the POAR problem.
+\end{problem}
+
+If we are handed a wavefunction $\Psi(x)$, we can also use the inner product to \boldblue{project} onto the states of the system.  For example, we can determine the coefficient $a_n^e$ by
+\[
+\langle \Psi(x),\psi_n^e\rangle = a_n^e.
+\]
+
+\begin{problem}{}{11}
+Use orthogonality to show that the above statement is true.
+\end{problem}
+
+This ability to project functions onto the $\sin$ and $\cos$ functions is what we will work with next. Specifically, what we have just developed is the \boldblue{Fourier series} representation of the function $\Psi(x)$.
+
+\section{Fourier Series Representations}
+
+The Fourier series naturally arises in studying differential equations that lie on the circle.  The reason why is due to the inherent periodic nature that functions defined on the circle must have (that is, the boundary values you imposed for the POAR).  Much like Taylor series, the Fourier series gives us a way to represent functions.  The idea is to break down functions into their different \boldblue{frequency components}.  For example, say that we have the function
+\[
+\sin(2\pi x).
+\]
+Then we showed that this function is \boldblue{periodic} with a \boldblue{period} of $\tau=1$ since
+\[
+\sin(2\pi (x+1))=\sin(2\pi x + 2\pi)=\sin(2\pi x).
+\]
+(If you need a refresher, see the complex numbers chapter in the text.) Then, we defined the \boldblue{frequency} $\nu$ to be
+\[
+\nu = \frac{1}{\tau}.
+\]
+
+The reason why this all works is due to the orthogonality of the $\sin$ and $\cos$ functions. Specifically, if we are given a function $f(x)$ defined on the interval $[0,L]$, we can find the components of $f(x)$ by using the inner product. That is, just like we previously showed, we can find $a_n^e$. Let's consider figuring out the frequency components for the following function $f(x)$ defined on $[0,L]$ given by
+\[
+f(x) = \begin{cases} 0 & x\leq L/2\\
+1 & x>L/2 \end{cases}
+\]
+
+\begin{problem}{}{12}
+Plot this function only on the region $[0,L]$ using Desmos.
+\end{problem}
+
+\noindent Now, we wish to write the function $f(x)$ as a Fourier series. Specifically, that means we want
+\[
+f(x) = \frac{1}{2}a_0 +\sum_{n=1}^\infty a_n^e \cos\left( \frac{n\pi x}{L}\right)+\sum_{n=1}^\infty a_n^o \sin\left( \frac{n\pi x}{L}\right).
+\]
+Hence, we need to determine $a_0$, $a_n^e$, and $a_n^o$ for all $n$. We can do this by computing, for example,
+\[
+a_n^e = \frac{1}{L}\int_0^L f(x) \cos\left(\frac{n\pi x}{L}\right).
+\]
+This is very much like the projection we did with the inner product for the POAR problem.
+
+\begin{problem}{}{13}
+Determine the values for $a_0$, $a_n^e$, and $a_n^o$.
+\end{problem}
+
+Just like with Taylor series, we can truncate the series at some finite value to obtain an approximation for the function.  This is rather useful in determining the periodic structure of a function.  If we take our function for example, we can see how accurate certain approximations are.
+
+\begin{problem}{}{14}
+Approximate the function $f(x)$ by trunctating the sum at:
+\begin{itemize}
+    \item $N=0$;
+    \item $N=1$;
+    \item $N=3$;
+    \item $N=10$;
+    \item $N=50$;
+    \item $N=100$.
+\end{itemize}
+Plot your approximations versus the original function on the interval $[0,L]$ using Desmos.
+\end{problem}
+
+You should find that since the coefficients drop off fairly quickly that higher and higher order approximations do a better job, but past a certain point adding more terms is really pretty pointless.
+
+Also, you may notice that around $0$, $L/2$, and $L$ the approximation has a ``spike" there.  This is known as the \boldblue{Gibb's phenomenon}.  This happens when the function we are approximating has discontinuities. 
+
+\section{Application to Spectroscopy}
+
+In order to determine, for example, the mass of a substance, one may use spectroscopy.  The idea of spectroscopy is to determine the frequency components associated to a measurement.  For example, the charge to mass ratio of an ion effects the frequency at which it vibrates back and forth in a magnetic field. Hence, we can determine the charge to mass ratio by performing the following experiment:
+\begin{itemize}
+    \item Apply a frequency-varying magnetic field.
+    \item Measure the intensity of vibration as a function of the magnetic field.
+    \item Mark where the intensity is largest, and associate that to the charge to mass ratio.
+\end{itemize}
+The last step is roughly done in this way. If we look at the Harmonic oscillator, we know it satisfies the equation
+\[
+x''=\frac{k}{m}x,
+\]
+and the \boldblue{natural frequency} $\omega$ of oscillation is given by 
+\[
+\omega=\sqrt{\frac{k}{m}}.
+\]
+Here, we know $k$ by building the experimental apparatus and we determined $\omega$ by making the measurements outlined above. Hence, we can determine the mass $m$ since it is the only undetermined parameter of the experiment. Also, note that the natural frequency $\omega$ is related to the frequency $\nu$ by
+\[
+\omega = 2\pi \nu.
+\]
+
+\begin{problem}{}{last}
+Write a short paragraph or two on the techniques of spectroscopy and include how the Fourier transform (a slight generalization of the Fourier series) is used. Don't worry about too much detail, just try to learn something new for yourself here! Spectroscopy is an important tool for chemists!
+\end{problem}
+\end{document}

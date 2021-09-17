@@ -1,0 +1,98 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Worksheet 3}\\
+   \textsc{First order autonomous and linear equations. Chemical kinetics.}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+    Let's revisit Newton's law of cooling and describe the equilibria of the system. 
+\begin{enumerate}[(a)]
+    \item Is the system autonomous? Explain.
+    \item Draw a phase line for the system.
+    \item Can you explain why the value you find for the equilibrium makes sense? Is this equilibrium be stable? Does this make sense? Explain.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Are the following ODEs separable, autonomous, linear, nonlinear, or none of the above? Keep in mind that some may satisfy more than one property!
+    \begin{enumerate}[(a)]
+        \item $x' = \sin(tx)$.
+        \item $x' = \sin(x)$.
+        \item $x' = t^2 x$.
+        \item $e^t x' + tx = e^{-k t} \cos(\omega t).$
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+For the following problems, show that the equation is linear by writing the equation in a recognizable form.
+    \begin{enumerate}[(a)]
+        \item $\frac{x'}{x} = t$.
+        \item $2xx'+x^2=xt$.
+        \item $\tan(t) x' + \sin(t) x = \ln(t).$
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    For the above linear equations, determine the integrating factor (even if you cannot compute the integral) and determine the solution $x(t)$ (again, even if you cannot compute the integral).
+\end{problem}
+
+\begin{problem}
+    Find the solution to the equation $x'+x=t^2$.
+\end{problem}
+
+\begin{problem}
+    Consider the dissociation chemical reaction
+    \[
+        AB \to A + B.
+    \]
+    Write down an equation for each species $A$, $B$, and $AB$.  Find a solution.
+\end{problem}
+
+\begin{problem}
+    Compare and contrast the equations for the above reaction and the synthesis reaction
+    \[
+        A+B \to AB.
+    \]
+    \emph{Hint: maybe this is a bit of an odd way to think, but is one just the reversal in time of the other?}
+\end{problem}
+
+\begin{problem}
+    Photosynthesis is an extremely important chemical reaction where plants convert carbon dioxide and water into glucose and oxygen. That is,
+    \[
+        6CO_2 + 6H_2O \to 6C_6 H_{12} O_6 + 6 O_2.
+    \]
+    \begin{enumerate}[(a)]
+        \item Write down the equations that describe the above equation.
+        \item Do we have any techniques to solve this type of equation (yet)?
+        \item The reaction also depends on the intensity of light.  How can we implement this into the equation?
+    \end{enumerate}   
+\end{problem}
+
+\begin{problem}
+Everybody loves combustion. It keeps us warm and it looks cool on the 4$^\textrm{th}$ of July!  Anyhow, combustion of propane in your grill at home is given by the equation
+    \[
+        C_3 H_8 + 5O_2 \to 4H_2O + 3CO_2 + \textrm{Energy}.
+    \]
+    \begin{enumerate}[(a)]
+        \item Write down the equations describing the above reaction (not including the energy term).
+        \item If a specific amount of energy is given off by each reaction (in this case, $2043\textrm{kJ}$ of energy per mole), include an equation for the total energy created if we begin with $1\textrm{kg}$ of propane in an abundance of oxygen.
+        \item Can you give some analogy to how much energy this is so that we may understand the usefulness a bit more? E.g., how many hot dogs could I cook on the 4$^\textrm{th}$ of July?
+    \end{enumerate}
+
+\end{problem}
+
+
+
+
+
+
+\end{document}

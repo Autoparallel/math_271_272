@@ -1,0 +1,73 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Homework 2}\\
+   \textsc{Due September 13$^\textrm{th}$}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+    Solve the following autonomous equation.
+    \[
+    x'=-x^2.
+    \]
+    Can $x(0)=0$ be an initial condition?
+\end{problem}
+
+\begin{problem}
+Objects near Earth fall due to gravity.  The acceleration of an object due to gravity is then
+\[
+x''=g,
+\]
+where $x$ represents the distance above the ground and $g\approx -9.8\frac{m}{s^2}$.  
+\begin{enumerate}[(a)]
+    \item Find the general solution to the equation.
+    \item Given the initial data $x(0)=0$ and $x'(0)=1$, find the particular solution.
+    \item Plot your solution over a meaningful range of time.
+    \item When is the object touching the ground?
+\end{enumerate}
+
+\end{problem}
+
+\begin{problem}
+Consider the following differential equation.
+\[
+x' = x\cos(t).
+\]
+\begin{enumerate}[(a)]
+    \item What is the order of this equation?
+    \item Find the general solution to this equation.
+    \item Given the initial data $x(0)=1$, find the particular solution.
+    \item Plot this function and explain in words what the solution represents if $x(t)$ is position.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the differential equation
+\[
+x'=\frac{x+t}{t}.
+\]
+\begin{enumerate}[(a)]
+    \item Let $f(x,t)=\frac{x+t}{t}$. Show that $f(x,t)=f(\lambda x, \lambda t)$.
+    \item Given (a) holds, use the change of variables $u=\frac{x}{t}$ to rewrite the differential equation as a separable equation in terms of $u$.
+    \item Find the general solution to the equation and write your solution in terms of the original variables $t$ and $x$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Find the general solution to the following equation.
+\[
+tx'+2x=\frac{\sin(t)}{t}.
+\]
+Show that your solution is correct. (\emph{Hint: can you use an integrating factor?})
+\end{problem}
+
+
+\end{document}

@@ -1,0 +1,88 @@
+\documentclass[12pt]{amsbook}
+\usepackage{preamble}
+
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\begin{center}
+   \textsc{\large MATH 271, Exam 2}\\
+   \textsc{Oral Examination Problems}\\
+   \textsc{Due one hour before your exam time slot.}
+\end{center}
+
+\vspace{1cm}
+
+\noindent\textbf{Instructions} \; You are allowed a textbook, homework, notes, worksheets, material on our Canvas page.  You can use online tools such as Desmos and Wolfram Alpha to check your work, but you will need to explain how you arrived at your answers.  You can work with other students and this is, in fact, encouraged! However, I will not be giving out direct help for these problems but can answer questions about previous problems and notes, for example. Ambiguous or illegible answers will not be counted as correct. Scan your solutions and submit them as a pdf on Canvas under Oral Exam 2.
+
+
+\vspace{1cm}
+
+
+\hrule
+
+\vspace*{1cm}
+\noindent\emph{Note, there are three total problems.}
+
+\newpage
+
+\begin{problem}
+Taylor series provides a useful method for approximating numerical values of functions. In particular, this is useful for computers as they can only perform the operations of addition and multiplication (which is nothing but repeated addition). Even when we cannot compute the whole series, one can still build polynomial approximations from partial sums of the Taylor series.
+\begin{enumerate}[(a)]
+    \item Write down a power series for $\cos(x^2)$ centered around $x=0$.
+    \item Plot the 0th, 4th, 8th, and 12th order approximations to $\cos(x^2)$ alongside of the function $\cos(x^2)$ itself.
+    \item But just how accurate are these approximations for approximating $\cos(x^2)$ in the domain $[-2,2]$? In particular, what is the worst error (difference between approximation and true function) that each of the approximations yields in the interval $[-2,2]$? Write these errors down for the 0th, 4th, 8th, and 12th order approximations.  
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+Bessel functions can arise as the vibrational states of disk shaped objects (e.g., ripples that form in drum heads and cymbals when struck), or as electromagnetic waves in a cylindrical waveguide, or in diffraction from DNA.  The \emph{Bessel equation of order zero} is given by
+\[
+x^2 f''+xf'+x^2f =0,
+\]
+where $f$ is a function of $x$.
+
+These parts will walk you through finding a solution to the equation.  I give you the answer in part (a) (which you will check is a solution), but you can (and should) use this to help guide you through the remaining parts. \textcolor{red}{The trick for this problem is to be careful and to write out the first few terms of series when needed. Wolfram Alpha can help you write partial sums.}
+\begin{enumerate}[(a)]
+    \item Show that the power series
+    \[
+        f(x) = a_0 \sum_{n=0}^\infty \frac{(-1)^n}{2^{2n} (n!)^2} x^{2n},
+    \]
+    is a solution to the Bessel equation of order zero.
+    \item Take a power series ansatz for $f(x)$.  Then, using that ansatz in the ODE, show that you arrive at the condition
+    \[
+        a_1x + \sum_{n=2}^\infty \left[ n^2 a_n + a_{n-2} \right]x^n = 0.
+    \]
+    \item Argue now that all the odd terms of the series for your solution must be odd. Do not use the given answer in (a) as your reasoning!
+    \item Determine a general form for $a_{2n}$ and show that you get the same solution as in part (a).
+\end{enumerate}
+\end{problem}
+
+
+\newpage
+\begin{problem}
+Consider the two example systems from quantum mechanics. First, for a particle in a box of length 1 we have the equation
+\[
+-\frac{\hbar^2}{2m}\frac{d^2 \Psi}{dx^2} = E\Psi,
+\]
+with boundary conditions $\Psi(0)=0$ and $\Psi(1)=0$.
+
+Second,  the Quantum Harmonic Oscillator (QHO)
+\[
+\left(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{1}{2} k x^2\right) \Psi = E\Psi
+\]
+\begin{enumerate}[(a)]
+    \item Write down the states for both systems. What are their similarities and differences?
+    \item Write down the energy eigenvalues for both systems. What are their similarities and differences?
+    \item Plot the first three states of the QHO along with the potential for the system.
+    \item Explain why you can observe a particle outside of the ``classically allowed region". \emph{Hint: you can use any state and compute an integral to determine a probability of a particle being in a given region.}
+\end{enumerate}
+\end{problem}
+
+
+
+
+
+
+\end{document}  

@@ -1,0 +1,103 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+\newcommand{\grad}{\boldsymbol{\vec{\nabla}}}
+\newcommand{\curvegamma}{\boldsymbol{\vec{\gamma}}}
+\newcommand{\tangentgamma}{\boldsymbol{\dot{\vec{\gamma}}}}
+\newcommand{\normalgamma}{\boldsymbol{\ddot{\vec{\gamma}}}}
+\newcommand{\vecfieldE}{\boldsymbol{\vec{E}}}
+\newcommand{\rhat}{\boldsymbol{\hat{r}}}
+\newcommand{\thetahat}{\boldsymbol{\hat{\theta}}}
+\newcommand{\phihat}{\boldsymbol{\hat{\phi}}}
+\newcommand{\rhohat}{\boldsymbol{\hat{\rho}}}
+\newcommand{\unitvec}{\boldsymbol{\hat{n}}}
+\newcommand{\vecfieldB}{\boldsymbol{\vec{B}}}
+\newcommand{\vecfieldJ}{\boldsymbol{\vec{J}}}
+\newcommand{\vecfieldF}{\boldsymbol{\vec{F}}}
+
+
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Homework 7}\\
+   \textsc{Due March 31$^\textrm{st}$}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+    Plot each of the following vector fields.
+    \begin{enumerate}[(a)]
+        \item $\rhohat = \frac{x}{\sqrt{x^2+y^2}}\xhat + \frac{y}{\sqrt{x^2+y^2}}\yhat$.
+        \item $\thetahat = \frac{-y}{\sqrt{x^2+y^2}}\xhat + \frac{x}{\sqrt{x^2+y^2}}\yhat$.
+        \item $\zhat$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the following vector field
+\[
+\vecfieldB = -\frac{y}{2}\xhat + \frac{x}{2}\yhat.
+\]
+Here, $\vecfieldB$ denotes the magnetic field. It may be helpful to plot the fields in this problem.
+\begin{enumerate}[(a)]
+    \item Show that $\grad \times \vecfieldB = \vecfieldJ$ (Amp\'ere's law) where 
+    \[
+    \vecfieldJ = \zhat.
+    \]
+    This vector field $\vecfieldJ$ represents the electric current (moving charges) in space. One could argue that the current creates the magnetic field via Amp\'ere's law.
+    \item Magnetic fields induce a force $\vecfieldF$ on charged particles by the Lorentz force
+    \[
+    \vecfieldF = \tangentgamma \times \vecfieldB = \normalgamma
+    \]
+    Where $\tangentgamma$ is the velocity of the particle (where we have chosen a mass $m=1$ and charge $q=1$).  Let us do the following.
+    \begin{itemize}
+        \item Assume that $\tangentgamma = \xhat$, what is the force on the particle?
+        \item Repeat the previous step for $\tangentgamma=\yhat$ and $\tangentgamma=\zhat$. 
+        \item Compare and contrast the forces you found.
+    \end{itemize}
+    \item Can you argue why applying a magnetic field to a molecule may cause it to heat up? Can you compare this idea with your home microwave? (Please don't put anything dangerous in your microwave due to this discovery!)
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Let us see some of the usefulness of cylindrical coordinates.
+\begin{enumerate}[(a)]
+    \item Using the fact that $\thetahat = \frac{-y}{\sqrt{x^2+y^2}}\xhat + \frac{x}{\sqrt{x^2+y^2}}\yhat$, convert the magnetic field from Problem 2 into Cylindrical coordinates (i.e., only a function of $\rho$, $\theta$, $z$, and $\rhohat$, $\thetahat$, and $\zhat$).  
+        \item Parameterize a curve $\curvegamma(t)$ that traces out the unit circle in the $xy$-plane in cylindrical coordinates.
+        \item What is the tangent vector $\tangentgamma(t)$ in terms of $\rhohat$, $\thetahat$, and $\zhat$?
+        \item Compute the following integral using cylindrical coordinates that we have found:
+        \[
+        \int_{\curvegamma} \vecfieldB \cdot d\curvegamma
+        \]
+        \item Using cylindrical coordinates, compare your result with
+        \[
+        \iint_\Sigma \left(\grad \times \vecfieldB\right) \cdot \unitvec d\Sigma,
+        \]
+        where $\Sigma$ is the unit disk.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Convert the following integrals to integrals in cylindrical coordinates. Also, describe the region in which you are integrating over. Do not evaluate the integrals.
+    \begin{enumerate}[(a)]
+        \item $\displaystyle{\int_{-1}^{1} \int_{-1}^{1} \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}} xyz dxdydz}$.
+        \item $\displaystyle{\int_0^1 \int_{-z}^z \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}} x^2+y^2+z^2 dxdydz}$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+	In spherical coordinates (either implicitly or explicitly), parameterize the following objects.
+	\begin{enumerate}[(a)]
+		\item A solid sphere with radius 3.
+		\item The surface of an infinite cone with a vertex angle of $\pi/4$.
+		\item A latitudinal curve on the unit sphere at the latitude of 30$^\circ$ above the equator.
+		\item A solid unit sphere with a cylinder of radius 1/2 removed from the core.
+	\end{enumerate}
+\end{problem}
+ 
+
+\end{document}

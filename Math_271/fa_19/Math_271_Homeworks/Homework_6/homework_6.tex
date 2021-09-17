@@ -1,0 +1,82 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Homework 6}\\
+   \textsc{Due October 18$^\textrm{th}$}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+Consider the differential equation
+\[
+f'(x) = \frac{1}{\sqrt{1-x^2}} f(x).
+\]
+\begin{enumerate}[(a)]
+    \item Write down the 2$^\textrm{nd}$ order Taylor approximation to $\frac{1}{\sqrt{1-x^2}}$ centered at zero.
+    \item Using this second order approximation, find the general solution to the differential equation using separation.
+    \item The solution you find using the approximation doesn't have an issue at $x=1$, but I claim the original equation does.  What is wrong at $x=1$? Our approximation is then only reasonable in the window $[0,1)$ (and really isn't that accurate near 1 either).
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the differential equation
+\[
+f'(x)=xf(x)
+\]
+with initial condition $f(0)=1$.  
+\begin{enumerate}[(a)]
+    \item Find the particular solution to this differential equation using separation.
+    \item What is the Taylor series centered at zero for this solution?
+    \item Now, assume that the solution $f(x)$ can be written as a power series
+    \[
+    f(x) = \sum_{n=0}^\infty a_n x^n.
+    \]
+    Determine all of the coefficients $a_n$ which will give us the power series representation for $f(x)$. \emph{Hint: use your solution from (a) to help you.}
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the differential equation
+\[
+(x-1)f'(x) + f(x)=0
+\]
+with initial condition $f(0)=1$.
+\begin{enumerate}[(a)]
+    \item Find the solution to this equation using separation.
+    \item Find the Taylor series centered at zero for your solution in (a).
+    \item Again, suppose that the solution can be written as a power series and determine all the coefficients $a_n$ so that we find the power series representation for $f(x)$. \emph{Hint: use your solution from (a) to help you.}
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+We derived two linearly independent (even and odd) solutions to \emph{Legendre's equation}
+\[
+(1-x^2)f''(x)-2xf'(x)+\alpha(\alpha+1)f(x)=0
+\]
+which were
+\[
+f(x)=\sum_{n=0}^\infty a_{2n}x^{2n} \qquad \textrm{and} \qquad f(x)=\sum_{n=0}^\infty a_{2n+1}x^{2n+1}.
+\]
+\begin{enumerate}[(a)]
+    \item Look up where this equation shows up in quantum mechanics and write it down.
+    \item If we add initial conditions then we get a finite polynomial for each choice of $\alpha = 0,1,2,3,\dots$. Using this, the first four polynomials are
+    \begin{align*}
+        f_0(x)&=1 &&& f_1(x)&=x\\
+        f_2(x)&=1-3x^2 &&& f_3(x)&=x-\frac{5x^3}{3}.
+    \end{align*}
+    Show that these above polynomials are \emph{orthogonal} by showing
+    \[
+    \int_{-1}^1 f_i(x)f_j(x)dx = 0 
+    \]
+    when $i\neq j$.
+\end{enumerate}
+\end{problem}
+
+\end{document}

@@ -1,0 +1,108 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+\newcommand{\curvegamma}{\boldsymbol{\vec{\gamma}}}
+\newcommand{\tangentgamma}{\boldsymbol{\dot{\vec{\gamma}}}}
+\newcommand{\normalgamma}{\boldsymbol{\ddot{\vec{\gamma}}}}
+%\newcommand{\forcevec}{\boldsymbol{\vec{F}}}
+\newcommand{\rvec}{\boldsymbol{\vec{r}}}
+\newcommand{\grad}{\boldsymbol{\vec{\nabla}}}
+\newcommand{\vecfieldV}{\boldsymbol{\vec{V}}}
+\newcommand{\vecfieldU}{\boldsymbol{\vec{U}}}
+\newcommand{\vecfieldW}{\boldsymbol{\vec{W}}}
+\newcommand{\veclaplace}{\boldsymbol{\vec{\Delta}}}
+\newcommand{\vecfieldB}{\boldsymbol{\vec{B}}}
+\usepackage{multicol}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Worksheet 7}\\
+   \textsc{Vector fields, and associated calculus.}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+Plot the following vector fields. Then compute the associated Jacobian matrix as well as the curl and divergence.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+    \item $\vecfieldU = \begin{pmatrix} xyz \\ xyz \\ xyz \end{pmatrix}$.
+    \item $\vecfieldV = \begin{pmatrix} e^{x+y+z} \\ e^{x+y+z} \\ e^{x+y+z} \end{pmatrix}$.
+    \item $\vecfieldW = \begin{pmatrix} x \sin(y) \\ x \cos(y) \\ xz \end{pmatrix}$.
+    \item $\forcevec = \begin{pmatrix} 5 + yz \\ -5 -xz \\ xy \end{pmatrix}$.
+\end{enumerate}
+\end{multicols}
+\end{problem}
+
+\begin{problem}
+    Explain (geometrically) why the field $\vecfieldU = \begin{pmatrix} 0 \\ x \\ 0 \end{pmatrix}$ has nonzero curl everywhere. Reason why the direction of the curl is solely along the $z$-axis.  Do this \underline{without} computing the curl.
+\end{problem}
+
+\begin{problem}
+    Explain (geometrically) why the field $\vecfieldV = \begin{pmatrix} x \\ 0 \\ 0 \end{pmatrix}$ has nonzero divergence everywhere. Reason why the divergence is a scalar quantity as opposed to a vector quantity. Do this \underline{without} computing the curl.
+\end{problem}
+
+\begin{problem}
+Compute the Laplacian of the following fields.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+    \item $f(x,y) = (x+y)^2$
+    \item $g(x,y) = (x+y)e^{x^2+y^2}$.
+    \item $\vecfieldU = \begin{pmatrix} \cos(x)\cos(y)\cos(z) \\ \sin(x)\sin(y)\sin(z) \\ xyz \end{pmatrix}$.
+    \item $\vecfieldV = \begin{pmatrix} \frac{y}{z} \\ \frac{x}{z} \\ \frac{x}{y} \end{pmatrix}$.
+\end{enumerate}
+\end{multicols}
+\end{problem}
+
+\begin{problem}
+    Suppose that $\vecfieldV = \grad \phi$ for some scalar field $\phi$.  Explain why if $\vecfieldV$ is divergence free (i.e., if $\grad \cdot \vecfieldV=0$) that $\veclaplace \vecfieldV = \zerovec$.
+\end{problem}
+
+\begin{problem}
+    One of Maxwell's equations states for a magnetic field $\vecfieldB$ that
+    \[
+    \grad \cdot \vecfieldB = 0,
+    \]
+    is an identity.  Does this mean that $\veclaplace \vecfieldB = 0$? 
+\end{problem}
+
+\begin{problem}
+Compute the flux of the vector fields given in Problem 1 through the following surfaces.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+    \item $\Sigma_1$ is the unit square in the $xy$-plane.  
+    \item $\Sigma_2$ is the unit square in the $xz$-plane.
+    \item $\Sigma_3$ is the unit square in the $yz$-plane.
+    \item $\Sigma_4$ is the surface of the unit cube.
+\end{enumerate}
+\end{multicols}
+\end{problem}
+
+\begin{problem}
+Compute the line integral of the vector fields given in Problem 1 along the following curves.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+    \item $\curvegamma_1$ is the boundary unit square in the $xy$-plane.  
+    \item $\curvegamma_2$ is the unit circle in the $xy$-plane.
+    \item $\curvegamma_3$ is the curve $\curvegamma_3(t)=\begin{pmatrix} t \\ t^2 \\ t^3 \end{pmatrix}$ from time $t=0$ to $t=1$.
+\end{enumerate}
+\end{multicols}
+\end{problem}
+
+\begin{problem}
+Compare the result for integrating $\vecfieldU$ from Problem 1 around $\curvegamma_1$ from Problem 8 with computing the flux of the curl of $\vecfieldU$ through $\Sigma_1$ from Problem. That is, check to see
+\[
+\int_{\curvegamma_1} \vecfieldU \cdot d\curvegamma_1 \stackrel{?}{=} \iint_{\Sigma_1} \left(\grad \times \vecfieldU \right)\cdot \unitvec d\Sigma_1.
+\]
+\emph{This result is typically referred to as Stokes' theorem. It is another way of relating an integral in a region to an integral along its boundary.}
+\end{problem}
+
+
+
+
+
+
+\end{document}

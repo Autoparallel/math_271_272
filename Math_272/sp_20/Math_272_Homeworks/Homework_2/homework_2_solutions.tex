@@ -1,0 +1,235 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Homework 2, \emph{Solutions}}\\
+   \textsc{Due February 10$^\textrm{th}$}
+\end{center}
+\vspace{.5cm}
+
+Linear operators play a fundamental role in quantum mechanics. Namely, we compute probabilities related to certain operators in order to gain insight on the problem at hand.  Throughout this assignment we will see some of the role of operators in this theory.  
+
+For the following problems, we will be referring to the free particle in the 1-dimensional box on the region $[0,L]$. Recall the normalized states
+   \[
+   \psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right),
+   \]
+   and the Hermitian inner product
+   \[
+   \innprod{\Psi}{\Phi} = \int_0^L \Psi(x)\Phi^*(x)dx.
+   \]
+   
+   Throughout this assignment you should use orthonormality as much as possible to simplify your computations. This will drastically decrease the amount of work you have to do.
+
+\begin{problem}
+  When making a measurement of the position of the particle, we will use the \emph{position operator} $x$.  This is the same as the variable $x$ in the original problem statement, but it is also an operator!
+   \begin{enumerate}[(a)]
+   		\item Show that the position operator $x$ is Hermitian.
+   		\item We can compute the expected position of a particle with wavefunction $\Psi(x)$ by computing
+   		\[
+   		\mathbb{E}[x]=\innprod{\Psi}{x\Psi}.
+   		\]
+   		Let $\Psi(x) = \frac{1}{\sqrt{2}} \psi_1(x) + \frac{1}{\sqrt{2}} \psi_2(x)$, compute $\mathbb{E}[x]$. This value $\mathbb{E}[x]$ tells you where we expect to find the particle on average.
+   	\end{enumerate}
+\end{problem}
+\begin{solution}
+	\begin{enumerate}[(a)]
+		\item Let $\Psi(x)$ and $\Phi(x)$ be arbitrary functions.  Then we have
+		\begin{align*}
+			\innprod{x\Psi}{\Phi} &= \int_0^L x \Psi(x)\Phi^*(x)dx\\
+			&= \int_0^L \Psi(x) \left(x \Phi(x)\right)^*dx &\textrm{since $x$ is real valued}\\
+			&= \innprod{\Psi}{x\Phi}.
+		\end{align*}
+		Thus we have that the position operator is Hermitian.
+		\item We can compute the expected value by
+		\begin{align*}
+			\mathbb{E}[x] = \innprod{\Psi}{x\Psi} &= \int_0^L \Psi(x) x^* \Psi(x)dx\\
+			&= \int_0^L x\left(\frac{1}{\sqrt{2}}\psi_1(x)+\frac{1}{\sqrt{2}} \psi_2(x)\right)^2dx\\
+			&= \int_0^L x \left(\frac{1}{2} \psi_1^2(x) + \psi_1(x)\psi_2(x) + \frac{1}{2} \psi_2^2(x)\right)dx.
+		\end{align*}
+		This can be split into three separate integrals. First,
+		\[
+		\int_0^L \frac{x}{2} \psi_1^2(x)dx = \int_0^L \frac{x}{L} \sin^2\left(\frac{\pi x}{L}\right)dx = \frac{L}{4}.
+		\]
+		Second,
+		\[
+		\int_0^L x \psi_1(x)\psi_2(x)dx = \int_0^L \frac{2x}{L} \sin\left(\frac{\pi x}{L}\right)\sin\left(\frac{2\pi x}{L}\right)dx = -\frac{16L}{9\pi^2}.
+		\]
+		Finally,
+		\[
+		\int_0^L x \psi_2^2(x)dx = \int_0^L \frac{x}{L} \sin^2\left(\frac{2\pi x}{L}\right)dx = \frac{L}{4}.
+		\]
+		Thus, we can add these all together to get
+		\[
+		\boxed{\mathbb{E}[x] = \frac{L}{2}-\frac{16L}{9\pi^2}\approx .32L}.
+		\]
+	\end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+	In fact, any real valued function $V(x)$ of the position operator $x$ is also Hermitian. Make a quick argument on why this must be true.
+\end{problem}
+\begin{solution}
+	If $V(x)$ is real valued, then $V^*(x)=V(x)$.  Hence, we have
+	\[
+	\innprod{V\Psi}{\Phi} = \int_0^L V(x)\Psi(x)\Phi^*(x)dx = \int_0^L \Psi(x)\left(V(x)\Phi(x)\right)^*dx = \innprod{\Psi}{V\Phi}.
+	\]
+\end{solution}
+
+\newpage
+\begin{problem}
+	Another related operator is the \emph{momentum operator} $\hat{p} = -i\hbar \frac{d}{dx}$. Using integration by parts, show that this operator is Hermitian.
+\end{problem}
+\begin{solution}
+We have
+\begin{align*}
+	\innprod{\hat{p} \Psi}{\Phi} &= \int_0^L \left(-i\hbar \frac{d \Psi}{dx}\right)\Phi^*(x)dx\\
+	&= \left.-i\hbar \Psi(x)\Phi^*(x)  \right\vert_0^L + \int_0^L i\hbar \Psi(x) \frac{d\Phi^*}{dx}dx & \textrm{by integration by parts}.
+\end{align*}
+Note now that the boundary conditions require both $\Psi(0)=\Psi(L)=0$ and $\Phi(0)=\Phi(L)=0$, since we are working over the space of solutions to the particle in the 1-dimensional box.  Hence, we have
+\begin{align*}
+	\innprod{\hat{p}\Psi}{\Phi} &= \int_0^L i\hbar \Psi(x) \frac{d\Phi^*}{dx}dx\\
+	&= \int_0^L \Psi(x)\left(-i\hbar \frac{d\Phi}{dx}\right)^* dx \\
+	&= \innprod{\Psi}{\hat{p}\Phi}.
+\end{align*}
+Thus, $\hat{p}$ is Hermitian.
+\end{solution}
+
+\newpage
+\begin{problem}
+	We can always take products, sums, and scalar multiples of operators to build new operators.  For example, in classical physics, we have the kinetic energy
+	\[
+	T=\frac{1}{2}m \vecv \cdot \vecv,
+	\]
+	where $\vecv$ is the velocity. In 1-dimension, this reduces to the familiar $\frac{1}{2}mv^2$.  However, we can also rewrite this 1-dimensional equation using the momentum $p=mv$ which gives us the kinetic energy
+	\[
+	T=\frac{p^2}{2m}.
+	\]
+	Hence, we can define the quantum \emph{kinetic energy operator}
+	\[
+	\hat{T}=\frac{\hat{p}^2}{2m}.
+	\]
+	\begin{enumerate}[(a)]
+		\item Show that $\hat{T} = \frac{-\hbar^2}{2m}\frac{d^2}{dx^2}$.
+		\item Make a quick argument as to why this kinetic energy operator $\hat{T}$ is Hermitian.
+		\item What are the energy eigenvalues $E_1$ and $E_2$ for the states $\psi_1(x)$ and $\psi_2(x)$?
+		\item Again, letting $\Psi(x)=\frac{1}{\sqrt{2}}\psi_1(x)+\frac{1}{\sqrt{2}}\psi_2(x)$, compute $\mathbb{E}[\hat{T}]$. The expected value $\mathbb{E}[\hat{T}]$ tells us what the observed energy will be on average. Yet, any time we measure a system we will find that energy must be one of the energy eigenvalues. Thus, for this wave function, this expected value should be the average between $E_1$ and $E_2$ which means that half the time we will measure the energy to be $E_1$ and half the time it will be $E_2$.
+	\end{enumerate}	
+\end{problem}
+\begin{solution}~
+	\begin{enumerate}[(a)]
+		\item We have $\hat{p}=-i\hbar \frac{d}{dx}$. Then, we construct $\hat{T}$ by
+		\begin{align*}
+		\hat{T}=\frac{\hat{p}^2}{2m} &= \frac{\left(-i\hbar \frac{d}{dx}\right)^2}{2m}\\
+		&= \frac{-\hbar^2}{2m}\frac{d^2}{dx^2}.
+		\end{align*}
+		
+		\item We have
+		\begin{align*}
+		\innprod{\hat{T}\Psi}{\Phi} &= \innprod{\frac{\hat{p}^2}{2m}\Psi}{\Phi}\\
+		&= \innprod{\hat{p}^2 \Psi}{\frac{1}{2m}\Phi} &\textrm{since $\frac{1}{2m}$ is a real constant}\\
+		&= \innprod{\hat{p}\Psi}{\frac{\hat{p}}{2m} \Phi} & \textrm{since $\hat{p}$ is Hermitian}\\
+		&= \innprod{\Psi}{\frac{\hat{p}^2}{2m} \Phi}\\
+		&= \innprod{\Psi}{\hat{T}\Phi}.
+		\end{align*}
+		Thus, $\hat{T}$ is Hermitian.
+		
+		\item We can determine $E_1$ and $E_2$ from the eigenvalue equation
+		\[
+		\hat{T} \Psi(x) = E \Psi(x).
+		\]
+		Specifically, we have
+		\[
+		\hat{T} \psi_n(x) = E_n \psi_n(x).
+		\]
+		So we take 
+		\[
+		\frac{-\hbar^2}{2m}\frac{d^2}{dx^2} \sqrt{\frac{2}{L}} \sin\left(\frac{n \pi x}{L}\right) = \frac{\hbar^2}{2m} \frac{n^2\pi^2}{L^2} \sqrt{\frac{2}{L}} \sin \left(\frac{n \pi x}{L}\right),
+		\]
+		which yields
+		\[
+		E_n = \frac{\hbar^2 n^2 \pi^2}{2mL^2}.
+		\]
+		Thus, plugging in 1 and 2, we get
+		\[
+		\boxed{E_1 = \frac{\hbar^2 \pi^2}{2mL^2} \qquad E_2 = \frac{4\hbar^2 \pi^2}{2mL^2}.}
+		\]
+		
+		\item Now, most of the work has been done for us, and the rest here will be taken care of by orthogonality.  We take
+		\begin{align*}
+			\innprod{\Psi}{\hat{T}\Psi} &= \innprod{\frac{1}{\sqrt{2}} \psi_1 + \frac{1}{\sqrt{2}} \psi_2}{\frac{E_1}{\sqrt{2}}\psi_1 + \frac{E_2}{\sqrt{2}}\psi_2}\\
+			&= \frac{E_1}{2} \innprod{\psi_1}{\psi_1} + \frac{E_1}{2}\innprod{\psi_2}{\psi_1}+\frac{E_2}{2}\innprod{\psi_1}{\psi_2} + \frac{E_2}{2} \innprod{\psi_2}{\psi_2}\\
+			&= \frac{E_1+E_2}{2}.
+		\end{align*}
+	\end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+If we are given a potential (energy) $V(x)$ and the kinetic energy $T$, we can take their sum and form the total energy $T+V(x)$ which we call the \emph{Hamiltonian}.  Thus, in the quantum realm, we create the Hamiltonian operator $\hat{H}$ by
+\[
+\hat{H}=\hat{T}+V(x).
+\]
+\begin{enumerate}[(a)]
+	\item Show that the Hamiltonian operator is Hermitian. \emph{Hint: you have already done the necessary work for this. You just need to combine it and show a few steps here.}
+	\item The spectrum of the Hamiltonian tells us the possible energy eigenvalues of a quantum system. Thus, we can compute the spectrum (in this case) by solving the eigenvalue equation
+	\[
+	\hat{H}\Psi(x)=E\Psi(x).
+	\]
+	Show that with $V(x)=0$ in $[0,L]$ and the boundary conditions $\Psi(0)=\Psi(L)=0$ that the spectrum of the Hamiltonian operator is discrete.  \emph{Hint: We have done this exact problem in the notes from Math 271. Feel free to use that!}
+\end{enumerate}
+\end{problem}
+\begin{solution}
+	\begin{enumerate}[(a)]
+		\item We know that both $\hat{T}$ and $V(x)$ are Hermitian.  Thus, we take
+		\[
+		\innprod{(\hat{T}+V)\Psi}{\Phi} = \innprod{\hat{T}\Psi}{\Phi}+\innprod{V\Psi}{\Phi} = \innprod{\Psi}{\hat{T}\Phi}+\innprod{\Psi}{V\Phi} = \innprod{\Psi}{(\hat{T}+V)\Phi}
+		\]
+		\item Since $V(x)=0$ in $[0,L]$, we have that
+		\[
+		\hat{H} = \hat{T} = -\frac{\hbar^2}{2m} \frac{d^2}{dx^2}.
+		\]
+		Hence, we are solving the equation
+		\[
+		-\frac{\hbar^2}{2m} \frac{d^2}{dx^2}\Psi(x) = E \Psi(x).
+		\]
+		Let $\omega^2 = \frac{2mE}{\hbar^2}$, and we have
+		\[
+		\Psi''(x) +\omega^2 \Psi(x) = 0,
+		\]
+		which is the harmonic oscillator equation.  Thus, our solution is
+		\[
+		\Psi(x) = C_1 e^{i\omega x}+C_2 e^{-i\omega x}.
+		\]
+		Now, if we apply the boundary conditions, we have
+		\[
+		0=\Psi(0)= C_1+C_2,
+		\]
+		thus $C_1=-C_2$. By Euler's formula, we can take
+		\[
+		C_1 e^{i\omega x}-C_1 e^{-i \omega x} = C \sin(\omega x).
+		\]
+		Now, our other boundary condition states
+		\[
+		0 = \Psi(L) = C\sin(\omega L),
+		\]
+		Thus we must have $\omega = \frac{n\pi}{L}$ for an integer $n$. Now, this means
+		\[
+		\frac{2mE}{\hbar^2}=\omega^2 = \frac{n^2\pi^2}{L^2},
+		\]
+		and we can solve for $E$ to get
+		\[
+		\boxed{E = \frac{n^2\pi^2\hbar^2}{2mL^2},}
+		\]		
+		which shows that the spectrum of $\hat{H}$ is discrete.
+	\end{enumerate}
+\end{solution}
+
+
+\end{document}

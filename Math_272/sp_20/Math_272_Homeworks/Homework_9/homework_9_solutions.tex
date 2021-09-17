@@ -1,0 +1,269 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Homework 9}\\
+   \textsc{Due April 20$^\textrm{th}$, \emph{Solutions}}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+    Consider the 2-dimensional source free isotropic heat equation given by
+    \[
+    \left( -k \Delta + \frac{\partial}{\partial t} \right) u(x,y,t) = 0,
+    \]
+    with the domain $\Omega$ as the unit square in the $xy$-plane. Take as well the Dirichlet boundary conditions $u(x,y,t)=0$ for $x$ and $y$ on the boundary of $\Omega$.
+    \begin{enumerate}[(a)]
+        \item Show that $u_{mn}(x,y,t)=\sin(m\pi x)\sin(n\pi y)e^{-k(n^2+m^2)\pi^2 t}$ is a solution to the PDE and Dirichlet boundary conditions for any non-negative integers $m$ and $n$.
+        \item Show that a linear combination of solutions $u_{mn}$ and $u_{pq}$ is also a solution.
+        \item For $m=n=1$ and $k=1$, plot the solution for the values $t=0$, $t=0.01$, $t=0.1$ and $t=1$.  Explain what is physically happening as time moves forward.
+        \item Explain what varying the value for the conductivity $k$ does to the solution.  Feel free to use plots to support your hypothesis.
+        \item Explain the mathematical reason why increasing $m$ and $n$ causes the solution to converge to zero more quickly.
+        \item Explain the physical reason why increasing $m$ and $n$ causes the solution to converge to zero more quickly. Plots may help support your reasoning.
+    \end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item We can simply take the necessary derivatives to show that $u_{mn}$ is a solution.  We have
+    \begin{align*}
+    -k\Delta u_{mn} &= -ke^{-k(m^2+n^2)\pi^2 t} \left( -m^2\pi^2 \sin(m\pi x)\sin(n\pi y)-n^2\pi^2 \sin(m\pi x)\sin(n\pi y)\right) \\
+    &=k(m^2+n^2)\pi^2 u_{mn}
+    \end{align*}
+    Then we also have
+    \[
+    \frac{\partial}{\partial t} u_{mn} = -k(m^2+n^2)\pi^2 u_{mn}.
+    \]
+    Hence, if we add these two together we have
+    \[
+    -k\Delta u_mn + \frac{\partial}{\partial t} u_{mn} = 0.
+    \]
+    So $u_{mn}(x,y,t)$ is a solution to the PDE for all $m$ and $n$.
+    
+    Now, as far as the boundary conditions go, the boundary to $\Omega$ is broken into four pieces
+    \begin{align*}
+    x\in [0,1] ~\& ~ y=0\\
+    x\in [0,1] ~\& ~ y=1\\
+    y\in [0,1] ~\& ~ x=0\\
+    y \in [0,1] ~\& ~ x=1.
+    \end{align*}
+    Note that when $x=0$ or $x=1$, we have $\sin(m\pi x)=0$ since $m$ is an integer. Similarly we have for $y=0$ or $y=1$ that $\sin(n\pi y)=0$.  Thus, $u_{mn}=0$ along the boundary.
+    
+    \item Take $u=\alpha_{mn}u_{mn}+\alpha_{pq}u_{pq}$.  Then
+    \begin{align*}
+        \left( -k \Delta + \frac{\partial}{\partial t} \right) u &= \left( -k \Delta + \frac{\partial}{\partial t} \right)(\alpha_{mn}u_{mn} + \alpha_{pq} u_{pq} )\\
+        &= \alpha_{mn} \left( -k \Delta + \frac{\partial}{\partial t} \right)u_{mn} + \alpha_{pq} \left( -k \Delta + \frac{\partial}{\partial t} \right) u_{pq}\\
+        &=0,
+    \end{align*}
+    since $u_{mn}$ and $u_{pq}$ are solutions.
+    
+    \item Here are the plots
+    \begin{figure}[H]
+    	\centering
+    	\def\svgwidth{0.6\columnwidth}
+    	\input{heat_solution_t=0.pdf_tex}
+        \caption{Solution at $t=0$.}
+    \end{figure}
+        \begin{figure}[H]
+        	\centering
+        	\def\svgwidth{0.6\columnwidth}
+        	\input{heat_solution_t=0_01.pdf_tex}
+            \caption{Solution at $t=0.01$.}
+        \end{figure}
+        \begin{figure}[H]
+        	\centering
+        	\def\svgwidth{0.6\columnwidth}
+        	\input{heat_solution_t=0_1.pdf_tex}
+            \caption{Solution at $t=0.1$.}
+        \end{figure}
+    As time moves forward, we find that the plate is cooling down to the temperature of the boundary.  So, the whole plate will reach a temperature of zero if we go indefinitely far in the future.
+    
+    \item $k$ decides how quickly heat will flow in our material. Larger values of $k$ means that temperature will flow more easily.  We can see this in the equation since a larger $k$ will make the exponential decay term in our equation approach zero more rapidly.  One can also repeat the plots in the previous part but for a larger value of $k$ to see this in action.
+    
+    \item The mathematical reason why is similar to what we discussed in the previous part.  If we increase $m$ or $n$, we find that the exponential decay happens at a quicker rate.
+    
+    \item Physically, as $m$ and $n$ increase, we have more hot and cold regions placed next to each other.  When there are two regions of vastly different temperature close to each other, they will equilibrate more quickly.  These two plots show what this looks like pictorially.
+            \begin{figure}[H]
+            	\centering
+            	\def\svgwidth{0.6\columnwidth}
+            	\input{heat_solution_m=3_n=3.pdf_tex}
+                \caption{At $t=0$, this is the profile for $m=3$ and $n=3$.}
+            \end{figure}
+            \begin{figure}[H]
+            	\centering
+            	\def\svgwidth{0.6\columnwidth}
+            	\input{heat_solution_m=5_n=5.pdf_tex}
+                \caption{At $t=0$, this is the profile for $m=5$ and $n=5$.}
+            \end{figure}
+\end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+    Consider the 1-dimensional homogeneous Laplace equation given by 
+    \[
+    \frac{\partial^2}{\partial x^2} u_E(x) = 0,
+    \]
+    with the domain $\Omega$ as the unit interval on the $x$-axis.  Take the Dirichlet boundary conditions $u_E(0)=T_0$ and $u_E(L)=T_L$.  Think of these values as the ambient temperature at the endpoints of the rod.  These temperatures are constant since the ambient environment is so large.
+    \begin{enumerate}[(a)]
+        \item Find the particular solution to this Laplace equation.
+        \item Suppose that $v(x,t)$ is a solution to the 1-dimensional source free isotropic heat equation with zero Dirichlet boundary values. Show that 
+        \[
+        u(x,t)=v(x,t)+u_E(x),
+        \]  
+        is a solution to the 1-dimensional source free isotropic heat equation with Dirichlet boundary values $u(0,t)=T_0$ and $u(L,t)=T_L$.
+        \item From Problem 1, we know that $\lim_{t\to \infty} v(x,t) = 0$.  Hence, show that the long time limit of a solution to the source free heat equation yields a solution to the Laplace equation.
+        \item Argue why the equilibrium temperature profile of a rod can be found without solving the heat equation.
+    \end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item Note that we can integrate this equation twice to get a general solution
+    \[
+    u_E(x) = ax+b.
+    \]
+    Now, by matching boundary conditions, we have
+    \[
+    T_0=u_E(0) = b,
+    \]
+    so $b=T_0$. The other condition gives
+    \[
+    T_L = u_E(L) = aL+T_0,
+    \]
+    thus we have $a= \frac{T_L-T_0}{L}$. This means our particular solution is
+    \[
+    \boxed{    u_E(L) = \frac{T_L-T_0}{L}x - T_0.}
+    \]
+    
+    \item First, we need to see if $u=v+u_E$ is a solution to the PDE.  If we plug this in, we have
+    \begin{align*}
+    \left( -k\frac{\partial^2}{\partial x^2} + \frac{\partial}{\partial t} \right) u &= \left( -k\frac{\partial^2}{\partial x^2} + \frac{\partial}{\partial t} \right)(v+u_E)\\
+    &= \left( -k\frac{\partial^2}{\partial x^2} + \frac{\partial}{\partial t} \right)v(x,t) + \left( -k\frac{\partial^2}{\partial x^2} + \frac{\partial}{\partial t} \right)u_E(x).
+    \end{align*}
+    Now, note that
+    \[
+    \left( -k\frac{\partial^2}{\partial x^2} + \frac{\partial}{\partial t} \right)v(x,t) = 0,
+    \]
+    since we stated $v$ is a solution to this equation and note
+    \[
+    \left( -k\frac{\partial^2}{\partial x^2} + \frac{\partial}{\partial t} \right)u_E(x) = 0
+    \]
+    since $u_E(x)$ doesn't depend on $t$ and $u_E(x)$ solves the Laplace equation.
+    
+    Finally, we need to show that $u=v+u_E$ satisfies the boundary conditions.  Since $v(0,t)=0=v(L,t)$ by our supposition, we have that $u(0,t)=u_E(0)=T_0$ and $u(L,t)=u_E(L)=T_L$. Thus $u(x,t)$ is indeed a solution to the boundary value problem.
+    
+    \item We can take
+    \[
+    \lim_{t\to \infty} u(x,t) = \lim_{t\to \infty} \left( v(x,t) + u_E(x) \right) = u_E(x),
+    \]
+    which shows that $u_E(x)$ is the equilibrium temperature profile.  This is also the solution to the Laplace equation!
+    
+    \item To find the equilibrium temperature profile, we just needed to solve the Laplace equation.  That was the argument we made in (c). The equilibrium does not depend on time, since it is the result of waiting for $t\to \infty$. So, determining this is a completely separate problem if we wish it to be!
+\end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+    Using intuition from the previous problem, explain how one could solve the heat equation with a nonzero source term that only depends on $x$. In other words, how could one try to solve
+    \[
+    \left( -k \frac{\partial^2}{\partial x^2} + \frac{\partial}{\partial t} \right) u(x,t) = f(x),
+    \]
+\end{problem}
+\begin{solution}
+One could argue that the equilibrium solution $u_E(x)$ will solve the equation
+\[
+-k\frac{\partial^2}{\partial x^2} u_E(x) = f(x),
+\]
+since this mimics what we did in the earlier problem.  This shows that when there are sources of heat in the material, they will contribute to the equilibrium temperature profile.  
+\end{solution}
+
+\newpage
+
+\begin{problem}
+    Consider the 1-dimensional wave equation given by
+    \[
+    \left( - \frac{\partial^2}{\partial x^2} +\frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right) u(x,t) =0,
+    \]
+    with the domain $\Omega$ as the unit interval on the $x$-axis.  We shall fix the string at each endpoint which requires $u(0,t)=0$ and $u(1,t)=0$ for all $t$.  Take the initial condition as well to be a plucked string so that $u(x,0)=\sin(\pi x)$ and $\frac{\partial}{\partial t}u(x,0)=0$. 
+    \begin{enumerate}[(a)]
+        \item Use the separation of variables ansatz $u(x,t)=X(x)T(t)$ to get a new separation constant. This will give two ODEs: one will be in terms of $X(x)$ and the other will be in terms of $T(t)$.
+        \item Use the boundary conditions and solve the ODE that is in terms of $X(x)$ which will simultaneously find the allowed values for the separation constant.
+        \item Using these allowed values for the separation constant, find the solution for $T(t)$.
+        \item Find the particular solution for $u(x,t)$ by matching the initial condition.
+        \item Plot your solution for $x\in [0,1]$ and $t\in [0,\infty)$ (i.e., just plot up to a large value of $t$). In this case, compare your plots for $c=1/2$ and $c=1$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item If we take $u(x,t)=X(x)T(t)$, then plugging this into the PDE yields
+    \[
+    -X''T+\frac{1}{c^2} XT'' = 0.
+    \]
+    We can then isolate each variable on one side of the equal sign to get
+    \[
+    \frac{X''}{X} = \frac{1}{c^2}\frac{T''}{T}.
+    \]
+    Note that the left hand side depends only on $x$, whereas the right hand side depends solely on $t$. Thus, it must be that both sides equal the same constant $\lambda$. This gives us two ODEs
+    \[
+    X'' -\lambda X = 0 \qquad \textrm{and} \qquad T'' -c^2 \lambda T = 0.
+    \]
+    
+    \item The boundary conditions are a spatial condition and thus we must satisfy them independent of time.  Hence, we must have that $X(0)=0$ and $X(1)=0$ so that $u(0,t)=0$ and $u(1,t)=0$ respectively.  This means that $\lambda<0$ so that we get
+    \[
+    X(x) = a\cos(\sqrt{-\lambda}x) +b \sin(\sqrt{-\lambda} x),
+    \]
+    since if $\lambda \geq 0$ we will only get constant solutions which are trivial and can't match the initial conditions or exponential solutions which can't match the boundary conditions.  Applying the boundary conditions yields that $A=0$ and $\sqrt{-\lambda}=n\pi$ for any positive integer $n$. Thus we have
+    \[
+    X_n(x) = a_n \sin(n\pi x), 
+    \]
+    is (nontrivial) a solution to this ODE for every positive integer $n$.
+    
+    \item Using this result for $\lambda$, we have that
+    \[
+    T_n(t) = b_n \sin(cn\pi t)+c_n \cos(cn\pi t),
+    \]
+    for every positive integer $n$.  
+    
+    \item Combining to get $u_n(x,t) =X_n(x)T_n(t)$, we can write
+    \[
+    u_n(x,t) = \left(a_n \sin(cn\pi t)+b_n \cos(cn\pi t)\right) \sin(n\pi x),
+    \]
+    is a general solution for each positive integer $n$.  Note that we have just renamed constants here to write this more simply.  Now, in general, a sum of these solutions is also a solution, but we have
+    \[
+    u(x,0)=\sin(\pi x),
+    \]
+    which means that $n=1$, $a_1=0$, and $b_1=1$.  All other constants $a_j$ and $b_j$ are all zero.  One can then check that our solution
+    \[
+    u(x,t) = \cos(c \pi t) \sin(\pi x),
+    \]
+    satisfies $\frac{\partial}{\partial t} u(x,0) = 0$.  
+    
+    \item Here are the plots for these functions. Note that in this case, we plotted the solution as a surface with one of the axes representing time.  This still just shows how the 1-dimensional elastic evolves over time. We see that when $c$ is increased, the elastic vibrates more quickly.
+    
+                \begin{figure}[H]
+                	\centering
+                	\def\svgwidth{0.6\columnwidth}
+                	\input{wave_solution_c=1_2.pdf_tex}
+                    \caption{The graph of the solution $u(x,t)$ for $c=1/2$.}
+                \end{figure}
+                \begin{figure}[H]
+                                	\centering
+                                	\def\svgwidth{0.6\columnwidth}
+                                	\input{wave_solution_c=1.pdf_tex}
+                                    \caption{The graph of the solution $u(x,t)$ for $c=1$.}
+                                \end{figure}
+\end{enumerate}
+\end{solution}
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,223 @@
+\documentclass[12pt]{amsbook}
+\usepackage{preamble}
+
+\begin{document}
+\pagenumbering{gobble} % This kills the page numbering
+
+\begin{center}
+   \textsc{\large MATH 271, Exam 2}\\
+\end{center}
+\vspace{1cm}
+
+\noindent\textbf{Name} \; \underline{\hspace{8cm}}
+
+\vspace{1cm}
+
+\noindent\textbf{Instructions} \; No textbook, homework, calculators, phones, or smart watches may be used for this exam. The exam is designed to take 50 minutes and must be submitted at the end of the class period. All of your solutions should be easily identifiable and supporting work must be shown. You may use any part of this packet as scratch paper, but please clearly label what work you want to be considered for grading. Ambiguous or illegible answers will not be counted as correct.\\
+
+\noindent\emph{Only the highest scoring \underline{five} problems will be counted towards your total score. You cannot get over 75 points.}
+
+\vspace{1cm}
+
+\begin{flushleft}
+\textbf{Problem 1} \; \underline{\hspace{1cm}}/15
+
+\vspace{.25cm}
+
+\textbf{Problem 2} \; \underline{\hspace{1cm}}/15
+
+\vspace{.25cm}
+
+\textbf{Problem 3} \; \underline{\hspace{1cm}}/15
+
+\vspace{.25cm}
+
+\textbf{Problem 4} \; \underline{\hspace{1cm}}/15
+
+\vspace{.25cm}
+
+\textbf{Problem 5} \; \underline{\hspace{1cm}}/15
+
+\vspace{.25cm}
+
+\textbf{Problem 6} \; \underline{\hspace{1cm}}/15
+
+\vspace{.5cm}
+
+\textbf{Total} \;\hspace{1.1cm} \underline{\hspace{1.25cm}}/75
+\end{flushleft}
+
+\vspace*{4cm}
+
+
+\begin{center}\large{There are extra pages between each problem for scratch work.\\
+
+Please circle your answers!}\end{center}
+
+
+
+
+
+
+
+
+
+% Problem 1
+\newpage
+\begin{problem} \textbf{(3pts. Each)}\\
+
+\def\arraystretch{4}% increase vertical spacing
+\noindent\begin{tabularx}{\textwidth}{cXcc}
+ & & T & F\\
+(\theabc) &  Given a sequence $\{a_n\}_{n=1}^\infty$ with $a_n \to 0$ then the series $\sum_{n=1}^\infty a_n$ converges. & \answerbox & \answerbox\\
+(\theabc) & Every differentiable function has a first order polynomial approximation in a small region around some point $x=a$ in its domain. & \answerbox & \answerbox\\
+(\theabc) & A function defined as a power series 
+\[
+f(x)=\sum_{n=0}^\infty a_n x^n
+\]
+is even if $a_{2k}=0$ for each $k\geq 0$. & \answerbox & \answerbox\\
+(\theabc) & Calculators use polynomial approximations of functions like $\sin(x)$ in order to compute output values of the function. & \answerbox & \answerbox\\
+(\theabc) & Power series allow us to solve second order linear differential equations of the form
+\[
+p(x)f''(x)+q(x)f'(x)+r(x)f(x)=0
+\]
+where $p(x)$, $q(x)$ and $r(x)$ are polynomial functions. & \answerbox & \answerbox\\
+\end{tabularx}
+\end{problem}
+
+\newpage
+\emph{Intentionally left blank to be used as scratch paper.}\\
+
+
+% Problem 2
+\newpage
+\begin{problem}
+Consider the power series 
+\[
+f(x) = \sum_{n=0}^\infty 3^{-n+1}x^n.
+\]
+\begin{enumerate}[(a)]
+    \item \textbf{(5pts.)} Recall that a geometric series is a series in the form $\displaystyle{\sum_{n=0}^\infty Ar^n}$  and converges to
+    \[
+    \sum_{n=0}^\infty Ar^n = \frac{A}{1-r}.
+    \]
+    when $|r|<1$.\\
+    
+    \noindent Write $f(x)$ as a geometric series. \emph{Hint: you need to identify what $A$ and $r$ will be in this case. Note, $r$ may depend on $x$ but $A$ will not.}
+    \vspace*{5cm}
+    \item \textbf{(5pts.)} Given that $f(x)$ can be written as a geometric series, for what values of $x$ does the series converge?
+    \vspace*{5cm}
+    \item \textbf{(5pts.)} Compute $f(-1)$ and $f(1)$.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\emph{Intentionally left blank to be used as scratch paper.}\\
+
+
+% Problem 3
+\newpage
+\begin{problem}
+The power series for $\sin(x)$ and $\cos(x)$ are given by
+\[
+\sin(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!} \qquad \textrm{and} \qquad \cos(x)=\sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}.
+\]
+\begin{enumerate}[(a)]
+    \item \textbf{(4pts.)} Write a power series for $x\sin\left( 5x\right)$.
+    \vspace*{3cm}
+    \item \textbf{(3pts.)} Compute the derivative $\frac{d}{dx}\left(x\sin \left(5x\right)\right)$ (Don't differentiate the power series you found in (a)).
+    \vspace*{3cm}
+    \item \textbf{(4pts.)} Write a power series for the function you found in (b). You do not need to simplify your result.
+    \vspace*{4cm}
+    \item \textbf{(4pts.)} Compute $\frac{d}{dx}\left(x\sin\left(5x \right)\right)$ by differentiating the power series you found in (a) and show you get the answer in (b). \emph{Hint: Consider writing out the series term by term.}
+\end{enumerate}
+\end{problem}
+
+\newpage
+\emph{Intentionally left blank to be used as scratch paper.}\\
+
+
+% Problem 4
+\newpage
+\begin{problem}
+The Morse potential is given by
+\[
+V(r)=D\left(1-e^{-ar}\right)^2
+\]
+where $D$ and $a$ are constants. 
+\begin{enumerate}[(a)]
+    \item \textbf{(5pts.)} Using the fact that to first order $e^x \approx 1+x$, show that with this approximation we have
+    \[
+    V(r)\approx Da^2r^2.
+    \]
+    \vspace*{5cm}
+    \item \textbf{(5pts.)} A particle moving in this potential satisfies
+    \[
+    r''(t)=-\frac{dV}{dr(t)}.
+    \]
+    Compute the derivative above for the original $V(r)$ and write out the differential equation.
+    \vspace*{4cm}
+    \item \textbf{(5pts.)} Repeat (b) but with the approximated potential.
+    \vspace*{4cm}
+    \item \textbf{(Bonus 3pts.)} What is the solution to the approximated differential equation?
+\end{enumerate}
+\end{problem}
+
+\newpage
+\emph{Intentionally left blank to be used as scratch paper.}\\
+
+
+% Problem 5
+\newpage
+\begin{problem} 
+Consider the differential equation
+\[
+xf'(x)-(x+1)f(x)=0.
+\]
+\begin{enumerate}[(a)]
+    \item \textbf{(6pts.)} Describe how you would find a general solution using a power series ansatz.
+    \vspace*{7cm}
+    \item \textbf{(6pts.)} Show that the following power series is a solution to the above differential equation,
+    \[
+    f(x) = \sum_{n=0}^\infty \frac{x^{n+1}}{n!}.
+    \]
+    \emph{Hint: Consider writing out the series term by term. For fewer points, explain how you would show $f(x)$ is a solution.}
+    \vspace*{7cm}
+    \item \textbf{(3pts.)} What is $f(x)$ given that $\displaystyle{e^x=\sum_{n=0}^\infty \frac{x^n}{n!}}?$
+\end{enumerate}
+\end{problem}
+
+\newpage
+\emph{Intentionally left blank to be used as scratch paper.}\\
+
+
+% Problem 6
+\newpage
+\begin{problem}
+Consider Legendre's equation defined on the region $\Omega=[-1,1]$
+\[
+(1-x^2)f''(x) -2xf'(x) +m(m+1) f(x) = 0
+\]
+for which we find there are polynomial solutions $f_m(x)$ for non-negative integer values of $m$. The first two Legendre polynomials are
+\begin{align*}
+    f_0(x)&=\sqrt{\frac{1}{2}} & f_1(x)&=\sqrt{\frac{3}{2}}x.
+\end{align*}
+\begin{enumerate}[(a)]
+    \item \textbf{(5pts.)} Show that $f_0(x)$ and $f_1(x)$ are normalized.
+    \vspace*{5cm}
+    \item \textbf{(5pts.)} Show that $f_0(x)$ and $f_1(x)$ are orthogonal by integrating over the region $\Omega=[-1,1]$.
+    \vspace*{4cm}
+    \item \textbf{(5pts.)} Let $\Psi(x)=\frac{1}{\sqrt{2}}f_0(x) + \frac{1}{\sqrt{2}}f_1(x)$, show that $\Psi(x)$ is normalized by showing
+    \[
+    \int_{-1}^1 |\Psi(x)|^2dx = 1.
+    \]
+    \emph{Hint: Results from (a) and (b) will reduce the amount of work considerably.}
+    \vspace*{4cm}
+    \item \textbf{(Bonus 2pts.)} Compute the probability of the particle described by $\Psi$ to be in the range $[0,1]$. (You must show work to get credit.)
+\end{enumerate}
+\end{problem}
+
+\newpage
+\emph{Intentionally left blank to be used as scratch paper.}\\
+
+\end{document}  

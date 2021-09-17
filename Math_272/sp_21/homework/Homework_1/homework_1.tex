@@ -1,0 +1,111 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Homework 1}\\
+   \textsc{Due January 29$^\textrm{nd}$}
+\end{center}
+\vspace{.5cm}
+\textcolor{red}{When doing problem 3 and looking at slices the students need to actually find what the function is...}
+\begin{problem}
+Plot the following curves and print pictures of each using GeoGebra.  
+\begin{enumerate}[(a)]
+	\item (Helix) $\curvegamma_1(t) = \begin{pmatrix} 3\cos(t) \\ 3\sin(t) \\ t\end{pmatrix}$, from $t=0$ to $t=2\pi$. Where might this show up? If you think about the Earth moving through space and Moon orbiting Earth, then the Moon follows a (locally) helical path.
+	
+	\item (Falling Ball) $\curvegamma_2(t) = \begin{pmatrix} t\\  0.5t \\ 9-t^2 \end{pmatrix}$ from $t=0$ to $t=3$.
+	
+	\item (Trefoil knot) $\curvegamma_3(t) = \begin{pmatrix} \sin(t)+2\sin(2t) \\ \cos(t)-2\cos(2t) \\ -\sin(3t) \end{pmatrix}$ from $t=0$ to $t=2\pi$. (Note that this is the simplest nontrivial \emph{knot}. See: \url{https://en.wikipedia.org/wiki/Trefoil_knot} to learn more.)
+	
+	\item Create your own curve.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+The length of a curve is an important notion. In fact, the length of a curve is often related to the energy of some configuration. We can compute the length of a curve over the time $t=t_0$ to $t=t_1$ by integrating the \emph{speed} of the curve over that time.  That is,
+\[
+\ell(\curvegamma) = \int_{t_0}^{t_1} \left|\tangentgamma(t)\right| \dif t.
+\]
+We can compute the \emph{energy} of a curve by taking
+\[
+E(\curvegamma) = \int_{t_0}^{t_1} \frac{1}{2} \left| \tangentgamma(t)\right|^2 \dif t.
+\]
+Find the length and energy of the Helix from Problem 1 (a).
+\end{problem}
+
+\begin{problem}
+Given a scalar field of two variables $f(x,y)$, we can create an object called the \emph{graph} of $f(x,y)$ by plotting the set of points $(x,y,f(x,y))$. In fact, you have done this many times in your life. For example, you have consistently plotted the graph of a function $f(x)$ by plotting $(x,f(x))$ in the plane!  
+
+Using GeoGebra, plot the graph of the following functions. Print these off and include them.  Also, describe the what the graph of the function does as we move along the $x$-axis, the $y$-axis, and along the line $y=x$. For each, use the range $-3\leq x \leq 3$ and $-3\leq y \leq 3$.
+\begin{enumerate}[(a)]
+	\item $f(x,y) = \frac{4xy}{1+x^2+y^2}$.
+	\item $g(x,y) = \sin(xy)$.
+	\item $h(x,y) = \frac{-x^2-y^2}{5}$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem} 
+Let us visualize vector fields using GeoGebra (specifically \url{https://www.geogebra.org/m/u3xregNW}). Plot the following vector fields and print them out. 
+\begin{enumerate}[(a)]
+    \item (Constant wind from the northwest) $\vecfieldV(x,y)=\begin{pmatrix} 1 \\ -1 \\ 0\end{pmatrix}$.
+    \item (Two wind fronts meeting) $\vecfieldU(x,y,z)=\begin{pmatrix} y \\ x \\ 0 \end{pmatrix}$.
+    \item (Source) $\vecfieldE(x,y,z) = \begin{pmatrix} \frac{x}{(x^2+y^2+z^2)^{3/2}} \\ \frac{y}{(x^2+y^2+z^2)^{3/2}} \\ \frac{z}{(x^2+y^2+z^2)^{3/2}} \end{pmatrix}$.
+    \item (Vortex) $\boldsymbol{\vec{S}}(x,y,z)=\begin{pmatrix} \frac{-y}{x^2+y^2+z^2} \\ \frac{x}{x^2+y^2+z^2} \\ 0\end{pmatrix}.$           
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Compute the divergence and curl of the Source and Vortex fields from Problem 4 (c) and (d).  What can we say about the divergence and curl of these fields at the origin?
+\end{problem}
+
+\begin{problem}
+Consider the following scalar field and vector field
+\[
+f(x,y,z) = x^2+y^2-z^2 \qquad \textrm{and} \qquad \vecfieldV(x,y,z) = \begin{pmatrix} -y \\ x \\ z \end{pmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item Compute all first order partial derivatives of $f$.
+    \item Show that $\frac{\dif^2 f}{\dif x \dif y} = \frac{\dif^2 f}{\dif y \dif x}$.
+    \item Explain why $\vecfieldV$ has nonzero curl when $x$ and $y$ are nonzero using a physical argument. (\emph{Hint: What plane would a rod start rotating in?})
+    \item Explain why $\vecfieldV$ has nonzero divergence when $z\neq 0$ using a physical argument. (\emph{Hint: In what direction would a particle start accelerating towards infinity?})
+    \item Compute the directional derivative of $f$ at $\vecx_0 = (1,2,-3)$ in the direction of $\vecfieldV(\vecx_0)$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+For this problem, let us consider a family of scalar fields of varying dimensionality. In the previous problem, we plotted the graph of a scalar field with two inputs, but when there are more than two inputs we must resort to other methods of visualization.
+
+In particular, we will seek out an understanding of the \emph{level sets} and how to relate these to the gradient of a scalar field. For each part, compute the set of points such that $f(\vecx)=1$, $f(\vecx)=2$, and $f(\vecx)=3$ and plot these sets (including all the different level sets in one plot per function). 
+
+Then for each field, compute the gradient (row) vector
+\[
+\nablavec f(\vecx) = \begin{pmatrix} \frac{\partial f}{\partial x_1} & \frac{\partial f}{\partial x_2} & \cdots & \frac{\partial f}{\partial x_n}\end{pmatrix}.
+\]
+Finally, draw an approximation of the the gradient vector field on your plots at a three different points for each part. (\emph{Hint: think of how the gradient relates to level sets of functions!})
+\begin{enumerate}[(a)]
+	\item Consider the 1-dimensional scalar field 
+	\[
+	f(x) = |x| = \sqrt{x^2}.
+	\]
+	Here each level set will be made up of distinct points.
+	\item Consider the 2-dimensional scalar field
+	\[
+	f(x,y) = |\vecx| = \sqrt{x^2+y^2}.
+	\]
+	Here each level set will be a curve.
+	\item Consider the 3-dimensional scalar field
+		\[
+		f(x,y,z) = |\vecx| = \sqrt{x^2+y^2+z^2}.
+		\]
+		Here each level set will be a surface.
+\end{enumerate}
+\end{problem}
+
+
+
+\end{document}

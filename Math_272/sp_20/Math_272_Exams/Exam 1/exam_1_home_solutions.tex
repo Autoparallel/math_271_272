@@ -1,0 +1,191 @@
+\documentclass[12pt]{amsbook}
+\usepackage{preamble}
+
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\begin{center}
+   \textsc{\large MATH 271, Exam 1}\\
+   \textsc{Take Home Portion}\\
+   \textsc{Due September 25$^\textrm{th}$ at the start of class}
+\end{center}
+\vspace{1cm}
+
+\noindent\textbf{Name} \; \underline{Solutions \hspace{6.5cm}}
+
+\vspace{1cm}
+
+\noindent\textbf{Instructions} \; You are allowed a textbook, homework, notes, worksheets, material on our Canvas page, but no other online resources (including calculators or WolframAlpha). for this portion of the exam.  \textbf{Do not discuss any problem any other person.} All of your solutions should be easily identifiable and supporting work must be shown.  Ambiguous or illegible answers will not be counted as correct. \textbf{Print out this sheet and staple your solutions to it. Use a new page for each problem.}
+
+
+\vspace{1cm}
+
+\begin{center}\textbf{Problem 1} \; \underline{\hspace{1cm}}/15 \qquad \qquad \textbf{Problem 2} \; \underline{\hspace{1cm}}/10\end{center}
+
+\vspace{1cm}
+
+\hrule
+
+\vspace*{1cm}
+\noindent\emph{Note, these are the solutions for Exam 1 - Take Home Portion}
+
+\newpage
+\begin{problem}
+Consider the endothermic breakdown of a molecule $x$ given by
+\[
+x \xrightarrow{kt^2} \textrm{Products}
+\]
+where we let $x(t)$ denote the concentration of reactants. Since the reaction is endothermic, if we also heat up the solution over time, we get a factor of $t^2$ as well since the reaction occurs more readily in higher temperatures. The concentration decreases over time based on differential equation
+\[
+x'=-kt^2(x-x_e).
+\]
+where $x_e$ is a constant that denotes the equilibrium concentration. 
+\begin{enumerate}[(a)]
+    \item Write an equivalent equation with the change of variables $\delta=x-x_e$.
+    \item Find the general solution to this new equation. 
+    \item What is the general solution in terms of the original variables $x$?
+    \item Given the initial amount of $x$ is $x(0)=1$, the equilibrium concentration is $x_e=1/2$, and $k=1$, find the particular solution for $x(t)$.
+    \item Does this reaction ever reach the equilibrium state?
+\end{enumerate}
+\end{problem}
+
+\hrule
+\vspace*{1cm}
+
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item If we let $\delta=x-x_e$ then $\delta'=(x-x_e)'=x'$.  Then we can write
+    \[
+    \delta'=x'=-kt^2(x-x_e)=-kt^2\delta.
+    \]
+    Thus we have the equation
+    \[
+    \boxed{\delta' = -kt^2 \delta}
+    \]
+    in the new variables.
+    \item This equation is separable, so we can separate to find the general solution
+    \begin{align*}
+        \delta'=\frac{d\delta}{dt}&=-kt^2\delta\\
+        \iff \frac{d\delta}{\delta}&= -kt^2dt.
+    \end{align*}
+    We can then integrate both sides
+    \begin{align*}
+        \int \frac{d \delta}{\delta}&=-k \int t^2 dt\\
+        \ln(\delta)&= -\frac{k}{3}t^3 + C.
+    \end{align*}
+    If we exponentiate both sides, we have the general solution
+    \[
+    \boxed{\delta(t) = e^{-\frac{k}{3}t^3+C}.}
+    \]
+    \item In terms of the original variables we have $\delta=x-x_e$ which we can substitute back in
+    \begin{align*}
+        \delta &= e^{-\frac{k}{3}t^3+C}\\
+        \iff x-x_e &= e^{-\frac{k}{3}t^3+C}\\
+        \iff x&= e^{-\frac{k}{3}t^3+C}+x_e.
+    \end{align*}
+    Hence, in our original variables, the general solution is
+    \[
+    \boxed{x(t)=e^{-\frac{k}{3}t^3+C}+x_e.}
+    \]
+    \item Let's first substitute in our given constants $x_e=1/2$ and $k=1$ to get
+    \[
+    x(t)=e^{-\frac{1}{3}t^3+C}+\frac{1}{2}.
+    \]
+    Now, our initial condition is that $x(0)=1$, which we can plug in as well
+    \begin{align*}
+        1=x(0)&=e^{-\frac{1}{3}\cdot 0^3 + C}+\frac{1}{2}\\
+        \iff 1&= e^C+\frac{1}{2},
+    \end{align*}
+    and thus $e^C=\frac{1}{2}$.  This gives us the particular solution
+    \[
+    \boxed{x(t)=\frac{1}{2}\left(e^{-\frac{1}{3}t^3}+1\right).}
+    \]
+    \item No, it never quite does as $e^{-\frac{1}{3}t^3}>0$ for all values of $t$.  In the limit that we were to wait infinite time, then we would have that $\lim_{t\to \infty} x(t)=\frac{1}{2}$. However, one would expect that after a reasonable amount of time the reaction would be seemingly at the equilibrium state since $e^{-\frac{1}{3}t^3}$ shrinks very quickly as $t$ grows.
+\end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+Consider the inhomogeneous linear differential equation
+\[
+x''+\omega^2x=\cos(\omega t),
+\]
+where $x(t)$ is a function of $t$. This is an example of resonance.
+\begin{enumerate}[(a)]
+    \item Find the general homogeneous solution $x_h(t)$.
+    \item Show that your solution solves the homogeneous equation
+    \[
+    x_h''+\omega^2x_h=0.
+    \]
+    \item For the particular integral, $x_p(t)$, take the ansatz
+    \[
+    x_p(t)=C_1t\cos(\omega t) + C_2 t\sin(\omega t)
+    \]
+    and find the undetermined coefficients $C_1$ and $C_2$.
+    \item Show that $x=x_h+x_p$ solves the inhomogeneous equation
+    \[
+    x''+\omega^2 x = \cos(\omega t).
+    \]
+\end{enumerate}
+\end{problem}
+\hrule
+\begin{solution}
+\begin{enumerate}[(a)]
+    \item The homogeneous solution $x_h$ is found by finding the general solution to
+    \[
+    x_h''+\omega^2 x_h = 0.
+    \]
+    We can find $x_h$ by first finding the roots to the characteristic polynomial
+    \[
+    \lambda^2 + \omega^2=0
+    \]
+    which are $\lambda_1 = i\omega$ and $\lambda_2=-i\omega$.  We can then put
+    \[
+    \boxed{x_h(t)=A_1 e^{i\omega t}+A_2 e^{-i\omega t}.}
+    \]
+    \item To see that this $x_h$ is indeed a solution, we need to plug $x_h$ into the left hand side of the homogeneous equation
+    \[
+    x_h''+ \omega^2 x_h
+    \]
+    and check that it is equal to zero.  So we have
+    \begin{align*}
+        x_h''+\omega^2x_h &= \left(i^2\omega^2 A_1 e^{i\omega t}+i^2\omega^2 A_2 e^{-i\omega t}\right) + \omega^2 \left( A_1 e^{i\omega t}+A_2 e^{-i\omega t}\right)\\
+        &= -\omega^2\left(A_1 e^{i\omega t}+A_2e^{-i\omega t}\right)+\omega^2\left(A_1 e^{i\omega t}+A_2e^{-i\omega t}\right)\\
+        &=0.
+    \end{align*}
+    \item If we take the ansatz for $x_p$, then we can find the coefficients $C_1$ and $C_2$ by plugging $x_p$ into
+    \[
+    x_p''+\omega^2x_p=\cos(\omega t).
+    \]
+    We have that
+    \[
+    x_p''= -\omega(2C_1+\omega tC_2)\sin(\omega t)+(\omega t C_1 - 2 C_2)\cos(\omega t)
+    \]
+    which we can plug in along with $x_p$ itself and find
+    \begin{align*}
+        x_p''+\omega^2x_p&=\cos(\omega t)\\
+        \iff 2\omega C_2 \cos(\omega t)-2\omega C_1\sin(\omega t))&=\cos(\omega t).
+    \end{align*}
+    In order for the left hand side to equal the right, we must have that $C_1=0$ and that $C_2=\frac{1}{2\omega}$.  Thus, we have that the particular integral is
+    \[
+    \boxed{x_p(t)=\frac{t}{2\omega}\sin(\omega t).}
+    \]
+    \item Note that we have
+    \begin{align*}
+        x''+\omega^2x&= (x_h+x_p)''+\omega^2(x_h+x_p)\\
+        &= \underbrace{x_h''+\omega^2 x_h}_{=0} + \underbrace{x_p''+\omega^2 x_p}_{=\cos(\omega t)}\\
+        &= \cos(\omega t).
+    \end{align*}
+    Indeed, $x=x_h+x_p$ is a solution to the inhomogeneous equation.
+\end{enumerate}
+\end{solution}
+
+
+
+
+
+
+
+
+\end{document}  

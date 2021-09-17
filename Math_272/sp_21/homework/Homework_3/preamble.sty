@@ -1,0 +1,95 @@
+\ProvidesPackage{preamble}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+
+%Tikz
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\RequirePackage{pgfplots}
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations}
+\usetikzlibrary{arrows,decorations.markings} 
+\usetikzlibrary{quotes,angles}
+
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+\usepackage{float, morefloats}
+\usepackage{subcaption}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Number systems
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+
+
+% Operators/functions
+\newcommand{\RE}{\mathrm{Re}}
+\newcommand{\IM}{\mathrm{Im}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% symbols
+\newcommand{\vecb}{\boldsymbol{\vec{b}}}
+\newcommand{\vecv}{\boldsymbol{\vec{v}}}
+\newcommand{\vecu}{\boldsymbol{\vec{u}}}
+\newcommand{\vecw}{\boldsymbol{\vec{w}}}
+\newcommand{\evec}{\boldsymbol{\vec{e}}}
+\newcommand{\xhat}{\boldsymbol{\hat{x}}}
+\newcommand{\yhat}{\boldsymbol{\hat{y}}}
+\newcommand{\zhat}{\boldsymbol{\hat{z}}}
+\newcommand{\colA}{\boldsymbol{\vec{A}}}
+\newcommand{\zerovec}{\boldsymbol{\vec{0}}}
+\newcommand{\vecr}{\boldsymbol{\vec{r}}}
+\newcommand{\Null}{\mathrm{Null}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\Rot}{[\mathrm{Rot}]}
+\newcommand{\Orth}{\mathrm{O}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\innprod}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\fourier}[1]{\mathcal{F}\left[ #1 \right]}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Italic font
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{axiom}{Axiom}
+
+% Plain font
+\theoremstyle{definition}
+% \newtheorem{definition}{Definition}[section]
+% \newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[]
+\newtheorem{solution}{Solution}
+\newtheorem{problem}{Problem}
+\newtheorem{question}{Question}
+\newtheorem{answer}{Answer}
+% \newtheorem{exercise}{Exercise}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,84 @@
+\documentclass[12pt]{amsbook}
+\usepackage{preamble}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\quati}{\mathbf{i}}
+\newcommand{\quatj}{\mathbf{j}}
+\newcommand{\quatk}{\mathbf{k}}
+
+
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\begin{center}
+   \textsc{\large MATH 271, Quiz 4}\\
+   \textsc{Due November 13$^\textrm{th}$ at the end of class}
+\end{center}
+
+\vspace{1cm}
+
+\noindent\textbf{Instructions} \; You are allowed a textbook, homework, notes, worksheets, material on our Canvas page, but no other online resources (including calculators or WolframAlpha) for this quiz.  \textbf{Do not discuss any problem any other person.} All of your solutions should be easily identifiable and supporting work must be shown.  Ambiguous or illegible answers will not be counted as correct.
+
+
+\vspace*{.5cm}
+\hrule
+\vspace*{.5cm}
+
+\begin{center}\textbf{\large THERE ARE 4 PROBLEMS AND 2 BONUS PROBLEMS.}\normalsize \end{center}
+
+\begin{problem} Consider the matrix
+\[
+[A] = \begin{pmatrix} 1 & 3 \\ 3 & 0 \end{pmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item \textbf{(3 pts.)} Show that for any arbitrary vectors $\vecu,\vecv \in \R^2$ that
+    \[
+        ([A] \vecu)\cdot \vecv = \vecu \cdot ([A] \vecv).
+    \]
+    \item \textbf{(2 pts.)} Is $[A]$ hermitian? Explain.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+For the following decide whether the statement is true or false. For full credit, provide an adequate explanation for your answer.
+\begin{enumerate}[(a)]
+    \item \textbf{(2 pts.)} Every matrix is diagonalizable.
+    \item \textbf{(2 pts.)} Every $n\times n$ matrix has $n$ complex eigenvalues.
+    \item \textbf{(2 pts.)} The trace satisfies $\tr([A][B][C]) = \tr([A])\tr([B])\tr([C])$.
+    \item \textbf{(2 pts.)} Similar matrices have the same eigenvalues.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the matrix
+\[
+[A] = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item \textbf{(2 pts.)} Argue why the eigenvalues of $[A]$ must be real.
+    \item \textbf{(2 pts.)} Find the eigenvalues of $[A]$.
+    \item \textbf{(2 pts.)} Find the eigenvectors of $[A]$.
+    \item \textbf{(2 pts.)} Show that the eigenvectors of $[A]$ are orthogonal.
+    \item \textbf{(2 pts.)} Explain how you can use the eigenvectors of $[A]$ to transform $[A]$ into a similar diagonal matrix.
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+\textbf{(3 pts.)} Let $A$ be a linear transformation and let $\evec_1,\dots,\evec_k$ be eigenvectors all with corresponding eigenvalue $\lambda$.  Show that any vector in the span of $\{\evec_1,\dots,\evec_k\}$ is also an eigenvector with eigenvalue $\lambda$.
+\end{problem}
+
+
+\begin{problem}
+    \textbf{(Bonus 3 pts.)} Consider the following set $\{1,-1,\quati,-\quati,\quatj,-\quatj,\quatk,-\quatk\}$ with the relationships
+    \[
+    \quati^2=\quatj^2=\quatk^2=\quati \quatj \quatk=-1,
+    \]
+    where $1$ and $-1$ behave as expected. Show that this set with multiplication is a group (called the \emph{quaternion group}).
+\end{problem}
+
+\begin{problem}
+    \textbf{(Bonus 3 pts.)} Consider the group of $n\times n$ invertible matrices denoted by $\operatorname{GL}(n)$. Explain why $\operatorname{GL}(n)$ is a group when the product operation is given by matrix multiplication but it is \textbf{\underline{NOT}} a group if we instead chose the operation to be addition.
+\end{problem}
+
+\end{document} 

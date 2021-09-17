@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{preamble}
+
+\usepackage{hyperref}
+\newcommand{\hamiltonian}{\mathcal{H}}
+
+\begin{document}
+
+\begin{center}
+   \LARGE{\textsc{MATH 272, Mini Project}}\\
+   \large{\textsc{Due May 15$^\textrm{th}$}}
+\end{center}
+\vspace{.5cm}
+
+
+\section*{Due Date}
+The assignment must be turned in via Canvas by Friday May 15$^\textrm{th}$, 2020, by 11:59PM mountain time.
+\subsection*{Requirements}
+\begin{itemize}
+    \item You may work together, but you must submit your own individual work.
+    \item You are to type out your work to this assignment using a program like Microsoft Word or \LaTeX. If you use a program like Microsoft Word, use the equation editor for any mathematical symbols you use. 
+    \item Save your document as a PDF as only PDF files will be accepted. Make sure your formatting comes out correctly when you save as a PDF! Microsoft Word has a way of making this more challenging than it needs to be.
+    \item For full credit, explain your work along the way and use consistent notation.  Though problems may not ask for much, a short and complete explanation is expected (e.g., Problem 1 has a short answer, but please explain why you know your answer is correct).
+\end{itemize}
+
+
+\section{Introduction}
+
+We have used the time-independent Schr\"odinger equation before to describe the behavior of a free quantum particle in a 1-dimensional box, or a 1-dimensional ring, and briefly for the quantum harmonic oscillator.  These systems serve as toy models for more elaborate real world systems and they allow us to get a sense for the differences between classical and quantum behavior. Now, with our further knowledge from Math 272, we are in a prime position to solve a very real and relevant problem.
+
+The simplest atom is the Hydrogen atom.  Comprised of a single proton and electron (and possibly some neutrons) creates a two body problem which is nearly exactly solvable using the mathematics we have on hand.  As you are probably aware, protons and electrons have opposite charges and thus they exert an attractive force on one another.  They also greatly differ in mass and this allows us to make the simplifying assumption that a proton remains stationary while the electron stays in motion.  When a person jumps on the Earth, the person exerts a force on Earth but due to the difference in mass, Earth is essentially not moved.
+
+Natural to this system as well (and is the case for all orbital problems) is that of spherical coordinates.  So, we will take this as our working set of coordinates from the beginning.  In this system of coordinates as well, the equation for the potential is simplified and we can also perform separation of variables with the Schr\"odinger equation.  From there, we can solve the relevant ODEs.  Some of these solutions will also be closely related to solutions we have found before. 
+
+\section{Solving the Hydrogen Atom Problem}
+The set up for this problem begins with the \boldblue{time independent Schr\"odinger equation} written as
+\begin{align*}
+    \hamiltonian\Psi(x,y,z) &= E \Psi(x,y,z)
+\end{align*}
+where $\Psi(x,y,z)$ is the \boldblue{wavefunction}, $E$ is the \boldblue{energy eigenvalue}, and $\hamiltonian$ is the \boldblue{Hamiltonian operator} given by
+\[
+\hamiltonian= \frac{-\hbar^2}{2m_e}\Delta + V(x,y,z),
+\]
+where $\hbar$ is Plank's reduced constant, $m_e$ is the mass of the electron, and $\Delta$ is the Laplace operator. Here, we then take the \boldblue{Coulomb potential} 
+\[
+V(x,y,z) = -\frac{e^2}{4\pi \epsilon_0 \sqrt{x^2+y^2 + z^2} },
+\]
+where $e$ is the (net) charge of an electron and $\epsilon_0$ is the permittivity of free space. 
+
+\begin{problem}{}{1}
+Convert the Hamiltonian $\hamiltonian$ into spherical coordinates.  Then convert into \boldblue{atomic units} so that $\frac{\hbar^2}{m_e}=1$ and $\frac{e^2}{4\pi \epsilon_0}=1$.  Finally, write down the full Schr\"odinger equation for the hydrogen atom in spherical coordinates with atomic units.
+\end{problem}
+\noindent From here, it is a matter of using the separation of variables ansatz that we are growing more familiar with.  In this case, we will take our wavefunction $\Psi(r,\theta,\phi)$ to be given by
+\[
+\Psi(r,\theta,\phi) = R(r) \Theta(\theta) \Phi(\phi).
+\]
+This guess will allow us to continue forward in solving this problem.
+\begin{problem}{}{2}
+Using the separation of variables ansatz, separate the Schr\"odinger equation into a radial component and a component for both the angular variables.
+\begin{itemize}
+    \item When you separate, choose the separation constant to be $l(l+1)$ Why is this choice convenient?
+    \item What does $l$ correspond to/how does it translate into talking about the atomic orbitals of hydrogen?
+\end{itemize}
+\end{problem}
+\noindent The equation has to now be separated one more time, and thus we will introduce another separation constant.  This will give us two more equations; one for the angular variable $\Phi(\phi)$ and the other for $\Theta(\theta)$.
+
+\begin{problem}{}{3}
+Separate the angular equation into $\Phi(\phi)$ and $\Theta(\theta)$ and use the separation constant $-m^2$ here.  Note that $m$ may be a positive or negative number.  (Note: this $m$ is not the same as the mass of the electron $m_e$.)
+\end{problem}
+
+\noindent Now with all of the equations separated, we have three ODEs that we will need to solve. The key tool to use here is the method of power series solutions.  Previously we have solved equations using this technique, and one of our specific solutions will arise again.
+
+\begin{problem}{}{4}
+Solve the $\Theta$ equation.
+\begin{itemize}
+    \item Write down appropriate boundary conditions. Use the boundary conditions to find a particular solution.
+    \item Normalize the solution.
+    \item Are there any restrictions for the values of $m$?
+    \item Write out (all) solutions for the first three values of $m$.
+\end{itemize}
+\end{problem}
+
+\begin{problem}{}{5}
+Solve the $\Phi$ equation by first performing the change of variable $x=\cos(\phi)$. Note, this $x$ is not the Cartesian $x$ but is merely a placeholder.  
+\begin{itemize}
+    \item Show that the resulting differential equation is actually a special differential equation with a known family of solutions (for example, Legendre, Laguerre, or Hermite). Identify the family and find the appropriate normalization constant.
+    \item Write out (all) solutions for the first two values of $l$ and three associated values of $m$.
+\end{itemize}
+\end{problem}
+
+\begin{problem}{}{6}
+Solve the radial ODE. Again, this can be solved by the series method (if you are ambitious).  You may also choose to use the change of variables.
+\begin{itemize}
+    \item Show that the resulting differential equation is actually a special differential equation with a known family of solutions (for example, Legendre, Laguerre, or Hermite). Identify the family and find the appropriate normalization constant.
+    \item Write out (all) solutions for the first two values of $l$ and three associated values of $n$ (the integer introduced when you solved the radial equation).  
+\end{itemize}
+\end{problem}
+
+\begin{problem}{}{7}
+Write out the first several (at least 3) solutions for $\Psi$.
+\end{problem}
+
+\noindent We have done the math now, and it's a good idea to understand what any of this actually means.  I advise visiting \url{https://www.feynmanlectures.caltech.edu/III_19.html} which will give you a good insight on what we have done.  It can also help you with the solutions to the previous portions.  Richard Feynman was one of the greatest physicists of all time and this is just a single portion of his wonderful series of lectures.
+
+\begin{problem}{}{8}
+Find an interpretation for the three \boldblue{quantum numbers} $l$, $m$, and $n$.  What do these have to do with atomic orbitals? What do they have to do with the spectrum of hydrogen? Write a paragraph or two giving your best understanding of these quantum numbers and their relationship to the periodic table.
+\end{problem}
+
+\noindent In principle, these states are also time dependent.  Since, as we have seen before, there is a time dependent version of the Schr\"odinger equation. 
+
+\begin{problem}{}{9}
+Write the time dependent Sch\"odinger equation for the Hydrogen atom in spherical coordinates with atomic units. Explain how you could use separation of variables to determine what the time dependence is.  How does the time dependence relate to the quantum numbers $l$, $m$, and $n$?
+\end{problem}
+
+
+\end{document}

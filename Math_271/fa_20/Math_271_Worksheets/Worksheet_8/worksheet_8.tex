@@ -1,0 +1,147 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Worksheet 8}\\
+   \textsc{Linear transformations, matrices, and linear systems.}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+    Note that any linear transformation $T\colon \R^m \to \R^n$ is fully understood by its action on the vectors
+    \[
+        \xhat_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \\ \vdots \\ 0 \end{pmatrix}, \quad \xhat_2 = \begin{pmatrix} 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}, ~\dots \quad, \xhat_m = \begin{pmatrix} 0 \\ 0 \\ 0 \\ \vdots \\ 1 \end{pmatrix},
+    \]
+    and note that all these vectors $\xhat_j \in \R^m$. In particular, we have
+    \begin{align*}
+        T(\xhat_1) &= \vecv_1\\
+        T(\xhat_2) &= \vecv_2\\
+                    & \vdots\\
+        T(\xhat_m) &= \vecv_m,\\
+    \end{align*}
+    where the vectors $\vecv_j \in \R^n$ and as such can be written as column vectors with $n$ entries.
+    \begin{enumerate}[(a)]
+        \item As per usual, let $\xhat = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ and let $\yhat = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$. Let $A \colon \R^2 \to \R^2$ be given by
+        \[
+            A(\xhat) = 5 \xhat + 6\yhat = \begin{pmatrix} 5 \\ 6 \end{pmatrix}
+        \]
+        and
+        \[
+            A(\xhat) = 2 \xhat - 3 \yhat = \begin{pmatrix} 2 \\ -3 \end{pmatrix}.
+        \]
+        If I wanted to transform an arbitrary vector $\vecu = u_1 \xhat + u_2 \yhat = \begin{pmatrix} u_1 \\ u_2 \end{pmatrix}$, how can I use the definition of $A$ acting on unit vectors?
+        \item Determine a matrix of numbers $[A] = \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}$ that captures this linear transformation through matrix-vector multiplication. 
+        \item How do the columns of $[A]$ relate to $A(\xhat)$ and $A(\yhat)$?
+        \item Now, how can I think of $[A]\vecu$ as describing a linear combination of the columns of $[A]$?
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Repeat the steps in Problem 1 but with the transformation $B \colon \R^2 \to \R^3$ given by
+    \[
+        B(\xhat) = \xhat + \yhat + \zhat \qquad \textrm{and} \qquad B(\yhat) = -\xhat + \yhat - \zhat.
+    \]
+\end{problem}
+
+\begin{problem}
+    Repeat the steps in Problem 1 but with the transformation $C\colon \R^3 \to \R^2$ given by
+    \[
+        C(\xhat) = \yhat, \qquad C(\yhat) = \xhat, \qquad C(\zhat) = \xhat.
+    \]
+\end{problem}
+
+\begin{problem}
+Let
+\vspace*{.25cm}
+\[
+[M]= \begin{pmatrix} 1 & 2\\ 0 & 1 \end{pmatrix} \quad 
+[P]=\begin{pmatrix} 1 \\ 1 \end{pmatrix} \quad 
+[Q]=\begin{pmatrix} 2 & 1 \end{pmatrix} \quad
+[R] = \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \quad
+[S]=\begin{pmatrix} 3 & 3 & 3 \\ 3 & 3 & 3 \end{pmatrix}
+\]
+\vspace*{.25cm}
+\begin{enumerate}[(a)]
+    \item Compute the following matrix products (when possible) and state which multiplications are not possible.
+\[
+[M][M], \qquad [P][P], \qquad [Q][P], \qquad [M][S], \qquad [S][M].
+\]
+    \item Compute the following:
+    \begin{enumerate}[i.]
+        \item $[A]=[P][Q]$;
+        \item $[B]=[Q]^T[P]^T$. Is this equal to $([P][Q])^T$?
+        \item $[C] = [M][R] - [R][M]$. Do these matrices commute?
+    \end{enumerate}
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The linear transformation $H\colon \R^2 \to \R^2$ given by
+    \[
+        H(\xhat) = \yhat \qquad \textrm{and} \qquad H(\yhat) = \xhat,
+    \]
+    has some nice properties. 
+    \begin{enumerate}[(a)]
+        \item In some sense, $H$ is the square root of $1$ in that $H^2 = H \circ H = 1$. Show that this is true.
+        \item Write down a matrix representation for $H$ and denote it by $[H]$.
+        \item Consider a linear combination of matrices 
+        \[
+            [\eta] = x[I] + y[H],
+        \]
+        where $[I]$ is the $2\times 2$ identity matrix. Compute $[\eta]^2$.  
+    \end{enumerate} 
+\end{problem}
+
+\begin{problem} 
+Consider the system of linear equations:
+\begin{align*}
+    x + 2y &= 3\\
+    x + y  &= 3
+\end{align*}
+\begin{enumerate}[(a)]
+    \item Write this system in the form:
+    \[
+    [A]\vec{\boldsymbol{x}} = \vec{\boldsymbol{y}}
+    \]
+    \item Row reduce to find a the solution $\vec{\boldsymbol{x}}$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the system of linear equations:
+\begin{align*}
+    3x+2y+0z&=5\\
+    1x+1y+1z&=3\\
+    0x+2y+2z&=4.
+\end{align*}
+\begin{enumerate}[(a)]
+    \item Write the augmented matrix $M$ for this system of equations.
+    \item Use row reduction to get the augmented matrix in row-echelon form.
+    \item Determine the solution to the system of equations.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the equation
+\[
+\begin{pmatrix} 1 & 3 & 4 \\ 2 & 9 & 9 \\ 1 & 5 & 5 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 8 \\ 20 \\ 11 \end{pmatrix}.
+\]
+Does this equation have a solution or not? If so, determine the solution.
+\end{problem}
+
+\begin{problem} 
+Consider the matrix
+\[
+[A] = \begin{pmatrix} 3 & 1 \\ 6 & 2 \end{pmatrix}.
+\]
+Determine the nullspace of $[A]$.
+\end{problem}
+
+
+\end{document}

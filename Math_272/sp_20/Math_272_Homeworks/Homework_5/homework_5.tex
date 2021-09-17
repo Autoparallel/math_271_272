@@ -1,0 +1,90 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Homework 5}\\
+   \textsc{Due March 9$^\textrm{th}$}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+A rough model of a molecular crystal can be described in the following way. Take the scalar function
+\[
+u(x,y)=\cos^2(x)+\cos^2(y).
+\]
+This function $u(x,y)$ describes the \emph{potential energy} for electrons in the crystal. Electrons are attracted to the areas with the smallest potential energy and move away from areas of high potential energy. 
+\begin{enumerate}[(a)]
+    \item Plot this function and include a printout.  Notice what this looks like.  You can imagine that each of the low points (well) is where a nucleus is located in the crystal.
+    \item Plot the level curves where $u(x,y)=0$, $u(x,y)=\frac{1}{4}$, $u(x,y)=\frac{1}{2}$, and $u(x,y)=1$ for the range of values $-\frac{3\pi}{2}\leq x \leq \frac{3\pi}{2}$ and $-\frac{3\pi}{2}\leq y \leq \frac{3\pi}{2}$. 
+    
+    Picking the constant for the level curve tells you the \emph{kinetic energy} of the electron you are looking at.  It turns out that electrons (roughly) will orbit along these level curves.  Notice, some level curves bleed into the different troughs of neighboring molecules which means that electrons of sufficient energy happily flow through the crystal. However, electrons like to behave a bit differently thanks to their quantum nature!
+    \item Find the gradient of this function $\grad u(x,y)$.
+    \item At what point(s) is the gradient zero? \emph{Hint: Use your graph of the level curves to help.}
+    \end{enumerate}
+\end{problem}
+
+
+
+\begin{problem} 
+Let us visualize vector fields using GeoGebra (specifically \url{https://www.geogebra.org/m/u3xregNW}). Plot the following vector fields and print them out. 
+\begin{enumerate}[(a)]
+    \item (Constant wind from the northwest) $\vecfieldV(x,y)=\begin{pmatrix} 1 \\ -1 \\ 0\end{pmatrix}$.
+        \item (Two wind fronts meeting) $\vecfieldU(x,y,z)=\begin{pmatrix} y \\ x \\ 0 \end{pmatrix}$.
+                        \item (Source) $\vecfieldE(x,y,z) = \begin{pmatrix} \frac{x}{(x^2+y^2+z^2)^{3/2}} \\ \frac{y}{(x^2+y^2+z^2)^{3/2}} \\ \frac{z}{(x^2+y^2+z^2)^{3/2}} \end{pmatrix}$.
+                  \item (Vortex) $\boldsymbol{\vec{S}}(x,y,z)=\begin{pmatrix} \frac{-y}{x^2+y^2+z^2} \\ \frac{x}{x^2+y^2+z^2} \\ 0\end{pmatrix}.$           
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Compute the divergence and curl of the Source and Vortex fields from the previous problem.  What can we say about the divergence and curl of these fields at the origin?
+\end{problem}
+
+\begin{problem}
+Consider the function
+\[
+f(x,y)=\sin\left(\frac{2\pi x}{5}\right)\sin\left(\frac{2\pi y}{5}\right).
+\]
+comes up when you want to find out how a square shaped drum head will vibrate when hit. 
+\begin{enumerate}[(a)]
+    \item Plot this function on the region $\Omega$ given by $0\leq x \leq 5$ and $0\leq y \leq 5$.  
+    \item What is the value the function $f(x,y)$ on the boundary of the given region $\Omega$ (i.e, when $x=0$, $x=5$, $y=0$, and $y=5$)?
+    \item Show that $f(x,y)$ is an eigenfunction of the Laplacian $\Delta = \grad \cdot \grad$. What is the eigenvalue?
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Consider the following vector field
+\[
+\vecfieldE(x,y,z) = \begin{pmatrix} \frac{x}{(x^2+y^2+z^2)^{3/2}} \\ \frac{y}{(x^2+y^2+z^2)^{3/2}} \\ \frac{z}{(x^2+y^2+z^2)^{3/2}} \end{pmatrix},
+\]
+which models the electric field of an proton (in units of of charge $q=1$) placed at the origin.
+\begin{enumerate}[(a)]
+	\item Show that $\vecfieldE(x,y,z) = - \grad V(x,y,z)$ where $V(x,y,z) = \frac{1}{\sqrt{x^2+y^2+z^2}}$.  We refer to $V(x,y,z)$ as the electrostatic potential or voltage.
+	\item Let $\Omega$ be a box with side lengths two centered at the origin.  Compute the total flux of $\vecfieldE$ through the surface of the box $\Sigma$. That is,
+	\[
+	\int_\Gamma \vecfieldE(x,y,z) \cdot \unitvec d\Gamma.
+	\]
+	\item Does the total flux depend on the size or shape of the box?
+	\item Using the provided argument, one can compute
+	\[
+	\int_\Omega \grad \cdot \vecfieldE(x,y,z) d\Omega.
+	\]
+	\begin{itemize}
+		\item Compute $\grad \cdot \vecfieldE$ and note that this is zero everywhere except at $(x,y,z)=(0,0,0)$.
+		\item Note that the two integrals in this problem are equal. This is known as the \emph{divergence theorem} and it is a special case of a more general theorem called \emph{Stokes' theorem} which generalizes the fundamental theorem of calculus. Hence, you can now argue why
+		\[
+		\grad\cdot \vecfieldE = \delta(x,y,z),
+		\]
+		where $\delta(x,y,z)$ is the 3-dimensional Dirac delta.
+	\end{itemize}
+\end{enumerate}
+\end{problem}
+
+\end{document}

@@ -1,0 +1,101 @@
+\documentclass[12pt]{amsbook}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\geometry{a4paper, top=25mm, right=25mm, bottom=25mm}
+%\geometry{landscape}                % Activate for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{relsize}             % Allows us to define \bigast
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+%\usepackage{pause}
+\usepackage{wasysym}            % Provides \checkmark
+\usepackage[firstpage]{draft watermark}             % Allows the watermark stuff
+\usepackage{wrapfig}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage[normalem]{ulem}
+
+\newcommand{\DD}{\displaystyle}
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\SetWatermarkText{
+\begin{minipage}[c][8cm]{8cm}
+\begin{center}
+ 
+\end{center}
+\end{minipage}
+}
+\SetWatermarkScale{1.5}
+\SetWatermarkColor[gray]{0.75}
+
+
+
+\begin{center}
+   \textsc{\large Math 272, Spring 2020 Syllabus}
+\end{center}
+\vspace{.5cm}
+
+\textbf{Course Title:} Math 272, Applied Mathematics for Chemists II \textcolor{red}{(Changes due to COVID-19)}
+
+\textbf{Instructor:} Colin Roberts, robertsp@rams.colostate.edu
+
+\textbf{Time/Location:} \sout{MTWF, 11:00-11:50 am, Engineering E103.} Online via Canvas.
+
+\textbf{Office Hours:} MW 10:00-11:00 am, W 1:00-2:00 pm.
+
+\sout{\textbf{Learning Assistant Help Hours:} TBD.}
+
+\textbf{Online Resources:} \begin{itemize}
+    \item Khan Academy.
+    \item 3Blue1Brown, YouTube.
+\end{itemize}
+
+\textbf{Calculator:} Will not be allowed on exams.  Don't worry, the problems given won't make one necessary.
+
+\textbf{Content:} Over the next year we will cover the mathematics necessary for upper-level chemistry courses, particularly physical chemistry. The spring semester will be split into three main parts:
+\begin{itemize}
+    \item \emph{Elements of Analysis II}. Inner product and function spaces, operators, orthogonal functions, and Fourier series and transforms.
+    \item \emph{Calculus in Higher Dimensions}. Curves, scalar and vector fields, differentiation, integration, coordinate systems, and parameterization
+    \item \emph{Partial Differential Equations}. Boundary value problems, time dependent problems, Laplace/Poisson/heat/wave equations, Maxwell's and Schr\"odinger's equations, and harmonics.
+\end{itemize}
+
+\textbf{Grading:} Letter grades will correspond to 10\% windows: 90-100\% is an A, 80-89\% is a B, etc. The following items will contribute to your final grade.
+\begin{itemize}
+\item \sout{ Exam 1 (50\%) - There will be three exams, one for each of the three parts above. These will happen in class, at dates specified several weeks in advance. Part of each exam will be a short take home portion. These are to be worked on with no outside help.} \textcolor{red}{Exam 1 has already passed. Exams will have a new grade breakdown.  Exams 2 and 3 will be of take-home format only (with more questions).}
+\item \textcolor{red}{Exam 1 (15\%)}
+\item \textcolor{red}{Exam 2 (25\%)}
+\item \textcolor{red}{Exam 3 (10\%)}
+\item Homework (40\%) - Assignments will be given each week aside from exam weeks. Solutions will be graded on correctness and clarity of supporting work. For example, complete sentences are expected. 
+\item Mini-Project (10\%) - The last week of class will consist of working on a mini-project.  Work can be done in class, but will also be expected outside of class. \emph{Collaboration is encouraged!}
+\end{itemize}
+
+\textbf{Academic Integrity:} Don't cheat. Check out \texttt{http://tilt.colostate.edu/integrity} for more details. While many things in life operate on the ``better to ask forgiveness than permission" principle, this is not one of them. When in doubt, ask me ahead of time.
+
+Groupwork, unless specified otherwise, is \emph{not} considered cheating in this class, and is very strongly \emph{encouraged}. However, you are expected to write up your solutions individually; word-for-word reproductions look fishy at best, so please make sure to write things in your own words.
+
+\textbf{RDS:} Have a Resources for Disabled Students (RDS) situation? No problem; just let me know as soon as possible.
+
+\textbf{Homework:} 
+\begin{itemize}
+    \item \sout{Homework must be \emph{neat} and \emph{stapled}.  Turn in problems on $8.5\times 11$" blank (printer) paper.  Tests are given on papers without lines and this can help you organize your work more freely.  You can always used line paper under printer paper to guide you.}
+    \item No late homework will be accepted.  \textcolor{red}{Homework will be turned in via Canvas. On Canvas you will find the date and time in which the homework is to be turned in by. }
+    \item \textcolor{red}{Homework will be submitted online in a .PDF or .doc or .docx file.}v
+    \item \sout{Homework is turned in at the end of class on the day that it is due.} Exceptions can be made, but you must provide documentation of proof for your delay. \textcolor{red}{Feel free to email me about extensions.  I will try to be very accomodating.}
+    
+\end{itemize}
+
+\textbf{Exam Conflicts:} If you are going to miss an exam for a university-sponsored event, provide the appropriate documentation at least a week ahead of time. \textcolor{red}{If there are other issues, please let me know and we can arrange something.}
+
+\textbf{Other Expectations:} Treat your classmates and me with respect: silence cell phones when you get to class, don't cause distractions during lecture, etc. Homework that is not written legibly or that is a loose collection of papers with no staple will not be accepted (if your handwriting is atrocious, practice or type up your work). Finally, I expect you to give an honest effort and have a good attitude. The number one cause of poor performance in a math class is an ``I can't do it" mentality.
+
+\textbf{Leftovers:} Extra stuff that didn't fit any of the categories above:
+\begin{itemize}
+\item As the instructor, I reserve the right to alter this syllabus at any time. I'll announce any such changes in class, in as timely a manner as possible. 
+\item If you have any issues at all, please do not hesitate to contact me. Pretty much every (non-homework) problem can be resolved via communication.
+\item Technology is a double-edged sword in learning mathematics. You should attempt to use technology to enhance your understanding without using it as a crutch. Immediately typing the problem into Wolfram Alpha and blindly copying the answer will not help you learn. Plugging the equation for a curve into Desmos (\texttt{https://www.desmos.com/calculator}) to get a good visual before finding a tangent line can be extremely beneficial.
+\item Related to the above, patience is your biggest ally. You will get stumped from time to time. Resist the urge to immediately ask for help or to right away Google the answer. Instead, try different things; see what you can do with the tools given. Draw a picture. Attempt to do the stupidest, most straight-forward thing possible, and work from there. The process of exploring questions and actively struggling with them will be the most helpful aspect of the class.
+\end{itemize}
+
+\end{document}  

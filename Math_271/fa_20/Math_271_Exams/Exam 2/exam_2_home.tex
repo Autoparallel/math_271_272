@@ -1,0 +1,88 @@
+\documentclass[12pt]{amsbook}
+\usepackage{preamble}
+
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\begin{center}
+   \textsc{\large MATH 271, Exam 2}\\
+   \textsc{Take Home Portion}\\
+   \textsc{Due October 23$^\textrm{rd}$ at the start of class}
+\end{center}
+\vspace{1cm}
+
+\noindent\textbf{Name} \; \underline{\hspace{8cm}}
+
+\vspace{1cm}
+
+\noindent\textbf{Instructions} \; You are allowed a textbook, homework, notes, worksheets, material on our Canvas page, but no other online resources (including calculators or WolframAlpha). for this portion of the exam.  \textbf{Do not discuss any problem any other person.} All of your solutions should be easily identifiable and supporting work must be shown.  Ambiguous or illegible answers will not be counted as correct. \textbf{Print out this sheet and staple your solutions to it. Use a new page for each problem.}
+
+
+\vspace{1cm}
+
+\begin{center}\textbf{Problem 1} \; \underline{\hspace{1cm}}/10 \qquad \qquad \textbf{Problem 2} \; \underline{\hspace{1cm}}/15\end{center}
+
+\vspace{1cm}
+
+\hrule
+
+\vspace*{1cm}
+\noindent\emph{Note, these problems span two pages.}
+
+\newpage
+\begin{problem}
+Sequences show up in the realm of approximation all the time.  One of the first sequences one may encounter comes from \emph{Newton's method} for calculating real roots (or zeros) to a function.  The idea is that we are handed a function $f(x)$ and pick an initial guess $x_0$ as a candidate for a root to $f(x)$. Then, we can compute a tangent line approximation to $f(x)$ at the point $x_0$. That is,
+\[
+f(x)\approx f'(x_0)(x-x_0)+f(x_0).
+\]
+From there, we can see where this tangent line intersects the $y=0$ axis which gives us a new $x$-value we call $x_1$.  If we solve for $x_1$, we find that we get
+\[
+x_1 = x_0 -\frac{f(x_0)}{f'(x_0)}.
+\]
+From here, we can generate a recursive sequence given by
+\[
+x_{n}=x_{n-1}-\frac{f(x_{n-1})}{f'(x_{n-1})}.
+\]
+that (typically) gives better and better approximations to a root of $f(x)$. Specifically, $x_n$ will tend to be an better approximation to a root of $f(x)$ than $x_{n-1}$. This method is in fact exactly how your calculator finds zeros to a function (notice that you give bounds and an initial guess when you do this)!\\
+
+\noindent Feel free to use a calculator for this problem.
+\begin{enumerate}[(a)]
+    \item \textbf{(2pts.)} Consider the function $f(x)=x^2-1$ with the starting point of $x_0=2$, draw a picture that illustrates the first two iterations of Newton's method. (\emph{Hint: This requires drawing a tangent line to $f(x)$ at two different points and telling me what the intersections of these lines with the $x$-axis represent.})
+    \item \textbf{(2pts.)} Write the first four terms in the sequence for Newton's method. That is, find $x_0,\dots,x_3$ and write
+    \[
+    \{x_n\}_{n=0}^\infty = x_0,~x_1,~x_2,~x_3,\dots.
+    \]
+    \item \textbf{(3pts.)} This sequence approaches $+\sqrt{1}=1$ since this is the nearest root to $f(x)$ compared to our starting value. What is the first value of $N$ where the error $|x_N-1|<10^{-6}$? 
+    \item \textbf{(3pts.)} If we instead have $g(x)=x^3-2x+2$ with an initial guess of $x_0=0$, write the first four terms of the sequence $x_0,\dots,x_3$ for Newton's method. Does this sequence seem to approach the real root $x\approx -1.7693$?
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+The way to define the natural logarithm is by the integral function
+\[
+\ln(x)=\int_1^x \frac{1}{r}dr.
+\]
+We can begin to approximate values the natural logarithm by doing the following.
+\begin{enumerate}[(a)]
+    \item \textbf{(4pts.)} Let $f(r)=\frac{1}{r}$. Find the Taylor series for $f(r)$ centered around the point $a=1$. 
+    \item \textbf{(4pts.)} Find the antiderivative of the series you found in (a) by integrating term by term. Just do this for the first three terms in the series.
+    \item \textbf{(4pts.)} You compute the value for $\ln(2)\approx .693147$ by integrating
+    \[
+        \ln(2) = \int_1^2  f(r)dr.   
+    \]
+    Use your result from (b) to obtain a third order approximation to $\ln(2)$. \emph{Hint: you have a series providing the antiderivative for $f(r)$ from \textnormal{(b)}; use the fundamental theorem of calculus to find the definite integral above.}
+    \item \textbf{(1pts.)} How close is your approximate value to the value for $\ln(2)$ provided above? In other words, how large is the error?
+    \item \textbf{(2pts.)} How would you make an improved approximation of $\ln(2)$?
+\end{enumerate}
+\end{problem}
+
+
+
+
+
+
+
+
+\end{document}  

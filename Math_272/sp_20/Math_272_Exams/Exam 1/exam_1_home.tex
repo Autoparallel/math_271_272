@@ -1,0 +1,120 @@
+\documentclass[12pt]{amsbook}
+\usepackage{preamble}
+
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\begin{center}
+   \textsc{\large MATH 272, Exam 1}\\
+   \textsc{Take Home Portion}\\
+   \textsc{Due February 19$^\textrm{th}$ at the start of class}
+\end{center}
+\vspace{1cm}
+
+\noindent\textbf{Name} \; \underline{\hspace{8cm}}
+
+\vspace{1cm}
+
+\noindent\textbf{Instructions} \; You are allowed a textbook, homework, notes, worksheets, material on our Canvas page, but no other online resources (including calculators or WolframAlpha). for this portion of the exam.  \textbf{Do not discuss any problem any other person.} All of your solutions should be easily identifiable and supporting work must be shown.  Ambiguous or illegible answers will not be counted as correct. \textbf{Print out this sheet and staple your solutions to it. Use a new page for each problem.}
+
+
+\vspace{1cm}
+
+\begin{center}\textbf{Problem 1} \; \underline{\hspace{1cm}}/15 \qquad \qquad \textbf{Problem 2} \; \underline{\hspace{1cm}}/10\end{center}
+
+\vspace{1cm}
+
+\hrule
+
+\vspace*{1cm}
+\noindent\emph{Note, these problems span two pages.}\\
+
+\newpage
+\begin{problem}
+Sometimes breaking down operators into smaller components can help one better understand a problem. Given this, let's consider the Hamiltonian operator $\hat{H}$ for the Quantum Harmonic Oscillator (QHO) given by
+\[
+\hat{H} = \hat{T}+V(x) = \frac{\hat{p}^2}{2m} + \frac{1}{2}m\omega^2 x^2,  \qquad \textrm{where} \qquad \hat{p} = -i\hbar \frac{d}{dx}
+\]
+where $m$ and $\omega$ are real constants.  Then, the following are states of the system
+\[
+\psi_0(x) = \left(\frac{m\omega}{\pi \hbar}\right)^{1/4} e^{-\frac{m\omega x^2}{2\hbar}} \qquad \textrm{and} \qquad \psi_1(x) = x \sqrt{\frac{2m\omega}{\hbar}}\left(\frac{m\omega}{\pi \hbar}\right)^{1/4} e^{-\frac{m\omega x^2}{2\hbar}},
+\]
+where $x \in \R$. 
+\begin{enumerate}[(a)]
+	\item (\textbf{3 pts.}) One can generate $\psi_1(x)$ from $\psi_0(x)$ by using the \emph{raising operator}
+	\[
+	\hat{a}^\dagger = \sqrt{\frac{m\omega }{2\hbar}}\left(x-\frac{i}{m\omega} \hat{p}\right).
+	\]  
+	Show that $\hat{a}^\dagger\psi_0 = \psi_1$.
+	
+	\item (\textbf{2 pts.}) Operators, just like matrices, do not always commute! So, we often want to see how ``far from commuting" two operators are. To this end, let $\Psi(x)$ be an arbitrary function, then the \emph{commutator} $[x,\hat{p}]$ is defined by
+	\[
+	[x,\hat{p}] \Psi(x) \coloneqq x \left(\hat{p}\left( \Psi(x)\right)\right) - \hat{p}\left(x\left(\Psi(x)\right)\right).
+	\]
+	Show that $[x,\hat{p}]=i\hbar$. \textit{Note that we also have $[\hat{p},x]=-[x,\hat{p}]$.}
+	
+	\item (\textbf{2 pts.}) We can define the \emph{lowering operator} $\hat{a}$ as the adjoint of $\hat{a}^\dagger$ which is given by
+	\[
+	\hat{a} = \sqrt{\frac{m\omega }{2\hbar}}\left(x+\frac{i}{m\omega} \hat{p} \right).
+	\]
+	This allows us to define the \emph{number operator} $\hat{N}=\hat{a}^\dagger \hat{a}$.  Compute $\hat{N}$. \textit{Hint: The commutator $[x,\hat{p}]$ appears in this equation.}
+	
+	\item (\textbf{2 pts.}) From this, we can define the Hamiltonian operator by $\hat{H}=\hbar \omega \left(N + \frac{1}{2}\right)$. Show that this is true.
+	
+	\item (\textbf{3 pts.}) Argue that $\hat{H}$ is Hermitian.  \textit{Hint: You can use results from our notes and homework.}
+	
+	\item (\textbf{3 pts.}) Show that the ground state $\psi_0$ is an eigenfunction of $\hat{H}$ with eigenvalue $\frac{1}{2} \hbar \omega$. (\textit{This means that the lowest energy state of the system has positive (nonzero) energy!})
+	
+%	\item (\textbf{2 pts.}) Using our Fourier transform table, compute the Fourier transform of the ground state to get
+%	\[
+%	\fourier{\psi_0(x)} = \phi_0(k).
+%	\]
+%	\item (\textbf{2 pts.}) Let $p=-2\pi \hbar k$ (this is \underline{not} $\hat{p}$).  Solve for $k$ in terms of $p$ and substitute this in to your function $\phi_0(k)$ to determine the function $\phi_0(p)$.  This new function $\phi_0(p)$ is the ground state written in the \emph{momentum space}.  That is to say that the Fourier transform converts a function in \emph{position space} to a function in momentum space!
+	\item (\textbf{Bonus 2pts.}) The fact that $\hat{H}$ is Hermitian implies that $\psi_0$ and $\psi_1$ must be orthogonal with respect to the inner product
+	\[
+	\innprod{\Psi}{\Phi} = \int_{-\infty}^\infty \Psi(x)\Phi^*(x)dx.
+	\]
+	Can you argue that this is true for the given $\psi_0$ and $\psi_1$?
+	\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+What is the Dirac delta? Let us define the function 
+\[
+S_t(x) = \begin{cases} 0 & x< -t \\ \frac{1}{2t} & -t\leq x \leq t \\ 0 & x>t \end{cases},
+\]
+where $t$ is some positive real number.
+\begin{enumerate}[(a)]
+	\item (\textbf{2 pts.}) Let us recall the Dirac delta $\delta(x)$. Given any function $f(x)$, what is
+	\[
+	\int_{-\infty}^\infty \delta(x) f(x)dx?
+	\]
+	\item (\textbf{3 pts.}) Show that for any fixed $t>0$ that 
+	\[
+	\int_{-\infty}^{\infty} S_t(x)dx = 1.
+	\]
+	\item (\textbf{3 pts.}) Now let $F(x)$ be the antiderivative of $f(x)$.  Evaluate the integral
+	\[
+	\int_{-\infty}^\infty S_t(x)f(x)dx.
+	\]
+	Note, your answer should be in terms of the antiderivative $F(x)$ and $t$.
+	\item (\textbf{2 pts.}) Recall that by definition, we have that $F'(x)=f(x)$.  In other words,
+	\[
+	\lim_{\Delta x \to 0} \frac{F(x+\Delta x)-F(x-\Delta x)}{2\Delta x} = F'(x) = f(x).
+	\]
+	With your answer in (c), take the limit as $t\to 0$ to show that you recover the answer you have in (a).
+\end{enumerate}
+Visit this Desmos URL to have an interactive look at the function $S_t(x)$ for various values of $t$.  \url{https://www.desmos.com/calculator/eh5jmqeky1}
+\end{problem}
+
+
+
+
+
+
+
+
+
+\end{document}  

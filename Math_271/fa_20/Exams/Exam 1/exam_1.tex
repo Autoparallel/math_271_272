@@ -1,0 +1,79 @@
+\documentclass[12pt]{amsbook}
+\usepackage{preamble}
+
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\begin{center}
+   \textsc{\large MATH 271, Exam 1}\\
+   \textsc{Oral Examination Problems}\\
+   \textsc{Due one hour before your exam time slot.}
+\end{center}
+
+\vspace{1cm}
+
+\noindent\textbf{Instructions} \; You are allowed a textbook, homework, notes, worksheets, material on our Canvas page.  You can use online tools such as Desmos and Wolfram Alpha to check your work, but you will need to explain how you arrived at your answers.  You can work with other students and this is, in fact, encouraged! However, I will not be giving out direct help for these problems but can answer questions about previous problems and notes, for example. Ambiguous or illegible answers will not be counted as correct. Scan your solutions and submit them as a pdf on Canvas under Oral Exam 1.
+
+
+\vspace{1cm}
+
+
+\hrule
+
+\vspace*{1cm}
+\noindent\emph{Note, there are three total problems.}
+
+\newpage
+
+\begin{problem}
+Consider the chemical reaction
+\[
+A\xrightarrow{k(T)} B,
+\]
+where the rate of reaction $k(T)$ depends on the temperature of the solution $T$ (in Kelvin, so $T>0$).
+\begin{enumerate}[(a)]
+    \item Write down expressions for the rate of change of the concentration for species $A$ and $B$.
+    \item Assuming, momentarily, $k(T)$ is constant, find the particular solution for the concentrations of $A$ and $B$ assuming $[A](0)=1$ and $[B](0)=0$.
+    \item Explain what happens to the concentrations as $t\to \infty$.
+    \item If the rate of reaction increases proportionally to $T$, then we can put $k(T)=\alpha T$ for some constant $\alpha>0$.  Explain how this changes the reaction.  That is, will the reaction occur more quickly,  more slowly, or something else? Why?
+    \item If instead $\alpha<0$, how will this change the reaction?
+    \item Which case, $\alpha<0$ or $\alpha>0$ more closely represents an endothermic reaction? That is, an endothermic reaction is one that requires heat in order to form products.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+Consider the autonomous equation 
+\[
+x' = \sin(x).
+\]
+\begin{enumerate}[(a)]
+    \item Draw the phase line for this system for $x$ values in the interval $[-3\pi, 3\pi]$. 
+    \item What are the equilibrium points for this system? (Consider all $x$ values, not just the ones that you plotted in the previous part.)
+    \item Which equilibrium points are stable and which are unstable. Explain.
+\end{enumerate}
+\end{problem}
+
+
+\newpage
+\begin{problem}
+Consider the Schr\"odinger equation for a particle in a box of length 1,
+\[
+-\frac{\hbar^2}{2m}\frac{d^2 \Psi}{dx^2} = E\Psi,
+\]
+with boundary conditions $\Psi(0)=0$ and $\Psi(1)=0$.
+\begin{enumerate}[(a)]
+    \item Find the general solution to the differential equation.
+    \item Apply the boundary conditions and write down a solution for each positive integer $n$. Recall that we call these solutions \emph{states} and denote the states by $\psi_n$.
+    \item Determine the normalization constant for each $\psi_n$.  Does this constant depend on $n$?
+    \item Explain why a superposition of states is also a solution to the Schr\"odinger equation.
+\end{enumerate}
+\end{problem}
+
+
+
+
+
+
+\end{document}  

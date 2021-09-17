@@ -1,0 +1,90 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+\newcommand{\vecx}{\boldsymbol{\vec{x}}}
+\newcommand{\vecy}{\boldsymbol{\vec{y}}}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Homework 10}\\
+   \textsc{Due November 20$^\textrm{nd}$}
+\end{center}
+\vspace{.5cm}
+
+
+\begin{problem}
+For each description below, construct a single $3\times 3$ transformation matrix.
+\begin{enumerate}[(a)]
+    \item A rotation by $\frac{\pi}{2}$ in the $yz$-plane.
+    \item A rotation by $\frac{\pi}{2}$ in the $xy$-plane, an interchange of the $x$ and $y$ coordinates.
+    \item A matrix which undoes everything in part (b).
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Consider the system of linear equations
+\begin{align*}
+    2x-y-2z&=4\\
+    -x + 3y +4z &= -2\\
+    2x+y-2z&=8.
+\end{align*}
+\begin{enumerate}[(a)]
+    \item Write this system of equations as a matrix/vector equation
+    \[
+    [A]\vecx=\vecy.
+    \]
+    \item Solve the system of equations by finding the inverse of the matrix $[A]$.
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Consider the matrix
+\[
+[A]=\begin{pmatrix} 1 & 3 & 0 \\ 3 & 1 & 0 \\
+ 0 & 4 & 1 \end{pmatrix}
+\]
+\begin{enumerate}[(a)]
+    \item Compute the eigenvalues and eigenvectors for the matrix $[A]$.
+    \item Show that $\det([A])=\lambda_1\lambda_2\lambda_3$ and $\tr([A])=\lambda_1 + \lambda_2+\lambda_3$ where $\lambda_1$, $\lambda_2$, and $\lambda_3$ are the eigenvalues you found in (a).
+    \item Argue why the eigenvalues of $[A]^{-1}$ must be $\frac{1}{\lambda_1}$, $\frac{1}{\lambda_2}$, and $\frac{1}{\lambda_3}$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the matrix
+\[
+[A] = \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item Find the eigenvalues and eigenvectors for this matrix.
+    \item Construct the matrix $[P]$ such that
+    \[
+    [\Lambda] = [P]^{-1}[A][P]
+    \]
+    from the eigenvectors you found. 
+    \item Find $[P]^{-1}$ and compute
+    \[
+    [\Lambda] = [P]^{-1}[A][P].
+    \]
+    Is this $[\Lambda]$ diagonal?
+\end{enumerate} 
+\end{problem}
+
+\begin{problem}
+Let $A \colon \C^n \to \C^n$ be hermitian.  We prove the two theorems in the text.
+\begin{enumerate}[(a)]
+    \item Show that all eigenvalues of $A$ are real.
+    \item Show that eigenvectors corresponding to different eigenvalues are orthogonal with the hermitian inner product.
+\end{enumerate}
+\end{problem}
+
+
+
+
+\end{document}

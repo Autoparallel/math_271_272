@@ -1,0 +1,84 @@
+\documentclass[12pt]{amsbook}
+\usepackage{preamble}
+
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\begin{center}
+   \textsc{\large MATH 271, Exam 1}\\
+   \textsc{Take Home Portion}\\
+   \textsc{Due September 25$^\textrm{th}$ at the start of class}
+\end{center}
+\vspace{1cm}
+
+\noindent\textbf{Name} \; \underline{\hspace{8cm}}
+
+\vspace{1cm}
+
+\noindent\textbf{Instructions} \; You are allowed a textbook, homework, notes, worksheets, material on our Canvas page, but no other online resources (including calculators or WolframAlpha). for this portion of the exam.  \textbf{Do not discuss any problem any other person.} All of your solutions should be easily identifiable and supporting work must be shown.  Ambiguous or illegible answers will not be counted as correct. \textbf{Print out this sheet and staple your solutions to it. Use a new page for each problem.}
+
+
+\vspace{1cm}
+
+\begin{center}\textbf{Problem 1} \; \underline{\hspace{1cm}}/15 \qquad \qquad \textbf{Problem 2} \; \underline{\hspace{1cm}}/10\end{center}
+
+\vspace{1cm}
+
+\hrule
+
+\vspace*{1cm}
+\noindent\emph{Note, these problems span two pages.}
+
+\begin{problem}
+Consider the endothermic breakdown of a molecule $x$ given by
+\[
+x \xrightarrow{kt^2} \textrm{Products}
+\]
+where we let $x(t)$ denote the concentration of reactants. Since the reaction is endothermic, if we also heat up the solution over time, we get a factor of $t^2$ as well since the reaction occurs more readily in higher temperatures. The concentration decreases over time based on differential equation
+\[
+x'=-kt^2(x-x_e).
+\]
+where $x_e$ is a constant that denotes the equilibrium concentration. 
+\begin{enumerate}[(a)]
+    \item Write an equivalent equation with the change of variables $\delta=x-x_e$.
+    \item Find the general solution to this new equation. 
+    \item What is the general solution in terms of the original variables $x$?
+    \item Given the initial amount of $x$ is $x(0)=1$, the equilibrium concentration is $x_e=1/2$, and $k=1$, find the particular solution for $x(t)$.
+    \item Does this reaction ever reach the equilibrium state?
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+Consider the inhomogeneous linear differential equation
+\[
+x''+\omega^2x=\cos(\omega t),
+\]
+where $x(t)$ is a function of $t$. This is an example of resonance.
+\begin{enumerate}[(a)]
+    \item Find the general homogeneous solution $x_h(t)$.
+    \item Show that your solution solves the homogeneous equation
+    \[
+    x_h''+\omega^2x_h=0.
+    \]
+    \item For the particular integral, $x_p(t)$, take the ansatz
+    \[
+    x_p(t)=C_1t\cos(\omega t) + C_2 t\sin(\omega t)
+    \]
+    and find the undetermined coefficients $C_1$ and $C_2$.
+    \item Show that $x=x_h+x_p$ solves the inhomogeneous equation
+    \[
+    x''+\omega^2 x = \cos(\omega t).
+    \]
+\end{enumerate}
+\end{problem}
+
+
+
+
+
+
+
+
+\end{document}  

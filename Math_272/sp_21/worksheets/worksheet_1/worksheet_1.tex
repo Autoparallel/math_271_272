@@ -1,0 +1,107 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\newcommand{\curvegamma}{\boldsymbol{\vec{\gamma}}}
+\newcommand{\tangentgamma}{\boldsymbol{\dot{\vec{\gamma}}}}
+\newcommand{\normalgamma}{\boldsymbol{\ddot{\vec{\gamma}}}}
+%\newcommand{\forcevec}{\boldsymbol{\vec{F}}}
+\newcommand{\rvec}{\boldsymbol{\vec{r}}}
+\newcommand{\grad}{\boldsymbol{\vec{\nabla}}}
+\usepackage{multicol}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Worksheet 1}\\
+   \textsc{Curves, scalar fields, and partial derivatives.}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+    Consider the curve 
+    \[
+    \curvegamma(t) = \begin{pmatrix} (5+3\cos(8t))\cos(t) \\ (5+3\cos(8t))\sin(t) \\ 3\sin(8t) \end{pmatrix}.
+    \]
+    \begin{enumerate}[(a)]
+        \item Plot this curve from $t=0$ to $t=2\pi$.
+        \item Compute the tangent (velocity) vector $\tangentgamma(t)$.
+        \item Compute the normal (acceleration) vector $\normalgamma(t)$.
+        \item Compute the following 
+        \[
+        \int_0^{2\pi} \left| \normalgamma(t) \right| dt,
+        \]
+        which is closely related to the total curvature of the curve.  Indeed, this would be the total force applied to an object of mass $m=1$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}~
+\begin{enumerate}[(a)]
+\item Write an equation for a curve
+\[
+\curvegamma \colon \R \to \R^3,
+\]
+satisfying:
+\begin{itemize}
+    \item Starts with $\curvegamma(0)=\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}$.
+    \item Ignoring the $z$-component, makes a spiral emanating from the origin.
+    \item Moves upward at a constant rate in the $z$-direction.
+\end{itemize}
+Plot this curve that you made to verify that it is correct.
+\item Find the tangent vector $\tangentgamma(t)$ to this curve.
+\item Find the normal vector $\normalgamma(t)$ to this curve.
+\end{enumerate}
+\end{problem}
+
+\begin{problem} Consider the two dimensional scalar function 
+\[
+f(x,y)=e^{\frac{xy}{x^2+y^2-1}}.
+\]  
+    \begin{enumerate}[(a)]
+        \item Plot the graph of this function $(x,y,f(x,y))$ for $x^2+y^2<1$.  
+        \item Plot the graph for $x^2+y^2>1$.  
+        \item Compute $\frac{\partial f}{\partial x}$ and $\frac{\partial f}{\partial y}$.
+        \item Compute all second partial derivatives of $f$.
+%        \item Compute the gradient vector field $\grad f$.  
+%        \item Plot the vector field $\grad f$. 
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}~
+Write the equation for a scalar function 
+    \[
+    f\colon \R^2 \to \R,
+    \]
+    satisfying,
+    \begin{itemize}
+        \item Has positive $\frac{\partial f}{\partial x}$ everywhere.  
+        \item Has negative $\frac{\partial f}{\partial y}$ everywhere.  
+    \end{itemize}
+    (\emph{Hint: it may help to try adding single variable functions together. That is, let $f(x,y)=u(x)+v(y)$.})
+\end{problem}
+
+
+\begin{problem}
+For the following functions, plot the level sets for $c=-1$, $c=0$, and $c=1$. 
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+    \item For just $c=1$, plot the level set for $E(x,y,z) = \frac{x^2}{25} + \frac{y^2}{16} + \frac{z^2}{9}$.
+    \item $f(x,y,z) = xyz$.
+    \item $g(x,y,z) = e^x-y^2-z^2$.
+    \item $h(x,y,z) = \sin(x)+\cos(y)-\tanh(z)$.
+    \item $p(x,y,z) = \sin^2(x)+\sin^2(y)-\frac{1}{2}\sin(z)$.
+    \item $q(x,y,z) = x^2+xy+y^2+sin(yz)$.
+    \item One of your own choosing.
+\end{enumerate}
+\end{multicols}
+\end{problem}
+
+
+
+
+
+
+\end{document}

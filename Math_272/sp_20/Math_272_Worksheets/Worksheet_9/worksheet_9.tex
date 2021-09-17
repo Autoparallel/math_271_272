@@ -1,0 +1,116 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Worksheet 9}\\
+   \textsc{Cylindrical and Spherical Coordinates}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+    Consider a description of the plane $\R^2$ in both Cartesian coordinates $(x,y)$ and polar coordinates $(r,\theta)$.  Recall the coordinate transformations
+    \begin{align*}
+        x(r,\theta)&= r\cos \theta\\
+        y(r,\theta)&= r\sin \theta.
+    \end{align*}
+    Let $f(x,y) = \frac{1}{\sqrt{1-x^2-y^2}}$ and let us attempt to integrate
+    \[
+    \iint_{\Sigma} f(x,y)d\Sigma,
+    \]
+    where $\Sigma$ is the unit disk defined by $x^2+y^2\leq 1$.
+    \begin{enumerate}[(a)]
+        \item Convert $f(x,y)$ in Cartesian coordinates to a function $f(r,\theta)$ in polar coordinates.
+        \item Note that we can convert the area form $d\Sigma=dxdy$ in Cartesian coordinates to an area form in polar coordinates.  Think of the function
+        \[
+        \vec{\textrm{Pol}}(r,\theta) = \begin{pmatrix} x(r,\theta) \\ y(r,\theta) \end{pmatrix},
+        \]
+        as the function that coverts Cartesian coordinates into polar coordinates.  Then, 
+        \[
+        [J]_{\vec{\textrm{Pol}}} = \begin{pmatrix} \frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} \\ \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta} \end{pmatrix},
+        \]
+        is the Jacobian of this transformation. The magnitude of determinant of a matrix describes the stretching that the matrix does to the space at a point, and thus the magnitude of the determinant will be a function that depends on each point that describes the local stretching behavior.
+        
+        Compute $[J]_{\vec{\textrm{Pol}}}$ and compute the determinant of this matrix as well. Simplify this expression as much as possible.
+        \item Now, to find the area form in polar coordinates, we simply take
+        \[
+        \left|\det\left([J]_{\vec{\textrm{Pol}}}\right)\right|drd\theta.
+        \]
+        Confirm that you have the area form $rdrd\theta$.
+        \item Draw a picture of a small segment (sides $dr$ and $d\theta$) in the plane.  Can you see why the area of this segment depends on the radius? Can you also see why it does \underline{not} depend on the angle?
+        \item We know we have this correct if 
+        \[
+        \int_{0}^{2\pi} \int_0^R rdrd\theta = \pi R^2,
+        \]
+        since this is the area contained inside a circle of radius $R$.  Show that the above integral is true.
+        \item Now, set up the integral posed initially in polar coordinates and evaluate this integral using a change of variables (\underline{do not use WolframAlpha}).
+    \end{enumerate}
+\end{problem}
+
+\vspace*{1cm}
+\begin{problem}
+    Repeat a very similar argument to show that the volume element $d\Omega$ in cylindrical coordinates is $\rho d\rho d\theta dz$.  \emph{Hint: The coordinate transformations for $x$ and $y$ are analogous.  But, we have the addition of the $z$-coordinate, but this is identical to the Cartesian $z$-coordinate.}
+\end{problem}
+
+\vspace*{1cm}
+\begin{problem}
+Provide an explicit or implicit description (both if possible) of the following regions in $\R^3$ in Cartesian coordinates, cylindrical coordinates, and spherical coordinates.
+    \begin{enumerate}[(a)]
+        \item A solid box with side lengths $a$, $b$, and $c$.
+        \item A solid cylinder of height $h$.
+        \item A solid ball of radius $R$.
+    \end{enumerate}
+\end{problem}
+
+\vspace*{1cm}
+\begin{problem}
+Likewise, provide an explicit or implicit description (both if possible) of the following surfaces in $\R^3$ in Cartesian coordinates, cylindrical coordinates, and spherical coordinates.
+    \begin{enumerate}[(a)]
+        \item A the surface of a box with side lengths $a$, $b$, and $c$.
+        \item A the surface of a cylinder of height $h$ including endcaps.
+        \item A the surface of a ball of radius $R$ (i.e., the sphere).
+    \end{enumerate}
+\end{problem}
+
+\vspace*{1cm}
+\begin{problem}
+One can also take a look at curves in each coordinate system.  Plot the following curves by hand. Play around with different choices of parameterizations. Hold certain variables constant. See how this affects your curve!
+\begin{enumerate}[(a)]
+    \item $x(t)=t$, $y(t)=t$, $z(t)=t$.
+    \begin{itemize}
+        \item What happens if we hold $x(t)=C$ constant? 
+        \item What if we held both $x(t)=C_1$, and $y(t)=C_2$ constant?
+        \item Choose some other functions (including constants) for $x(t)$, $y(t)$, and $z(t)$, and plot these as well.
+    \end{itemize}
+    \item $\rho(t)=t$, $\theta(t)=t$, $z(t)=t$.
+    \begin{itemize}
+        \item What happens if we hold $\rho(t)=C$ constant? 
+        \item What if we held both $\rho(t)=C_1$, and $\theta(t)=C_2$ constant? Or held $\rho(t)$ and $z(t)$ constant?
+        \item Choose some other functions (including constants) for $\rho(t)$, $\theta(t)$, and $z(t)$, and plot these as well.
+    \end{itemize}
+    \item $r(t)=t$, $\theta(t)=t$, $\phi(t)=t$.
+    \begin{itemize}
+        \item What happens if we hold $r(t)=C$ constant? 
+        \item What if we held both $r(t)=C_1$, and $\theta(t)=C_2$ constant? Or held $r(t)$ and $\phi(t)$ constant?
+        \item Choose some other functions (including constants) for $\rho(t)$, $\theta(t)$, and $z(t)$, and plot these as well.
+    \end{itemize}
+    \item ** Find a parameterization of a straight line passing through a point $(x_0,y_0,z_0)$ in cylindrical and spherical coordinates. \emph{Hint: This isn't too hard in those coordinate systems if the curve passes through the origin. But, it can be a bit difficult otherwise!}
+\end{enumerate}
+\end{problem}
+
+\vspace*{1cm}
+\begin{problem}
+Integrate the following functions in their relevant coordinate systems over the given region $\Omega$.
+\begin{enumerate}[(a)]
+    \item $f(x,y,z) = xy+yz$ over $\Omega$ which is the solid unit cube.
+    \item $f(\rho,\theta,z) = \frac{z}{\rho}\sin(\theta)$ over $\Omega$ which is the cylinder of radius $1$ and of height $2$. Align this cylinder so the $z$-axis runs through the core of the cylinder and so the height is split at the $xy$-plane.
+    \item $f(r,\theta,\phi) = \frac{1}{r^2}\sin(\theta)\sin(\phi)$ over the unit ball centered at the origin.
+\end{enumerate}
+\end{problem}
+
+\end{document}

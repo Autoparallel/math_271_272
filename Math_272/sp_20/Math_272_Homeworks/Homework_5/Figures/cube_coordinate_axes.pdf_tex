@@ -1,0 +1,78 @@
+%% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'cube_coordinate_axes.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{343.74631146bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.84559924)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{cube_coordinate_axes.pdf}}%
+    \put(0.13201529,0.82448628){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$z$\end{tabular}}}}%
+    \put(0.59176244,0.00483617){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{cube_coordinate_axes.pdf}}%
+    \put(0.60096221,0.41483804){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$y$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{cube_coordinate_axes.pdf}}%
+    \put(-0.06984338,0.68358117){\color[rgb]{0,0.60784314,0.04313725}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(-1,-1,1)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{cube_coordinate_axes.pdf}}%
+    \put(-0.09339882,0.27471671){\color[rgb]{0,0.60784314,0.04313725}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(-1,-1,-1)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{cube_coordinate_axes.pdf}}%
+    \put(0.27733499,0.05037049){\color[rgb]{0,0.60784314,0.04313725}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(1,-1,-1)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{cube_coordinate_axes.pdf}}%
+    \put(0.87886236,0.22750591){\color[rgb]{0,0.60784314,0.04313725}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(1,1,-1)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{cube_coordinate_axes.pdf}}%
+    \put(0.87588651,0.61308201){\color[rgb]{0,0.60784314,0.04313725}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(1,1,1)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{cube_coordinate_axes.pdf}}%
+    \put(0.44696483,0.78485239){\color[rgb]{0,0.60784314,0.04313725}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(-1,1,1)$\end{tabular}}}}%
+    \put(0.29424748,0.49497562){\color[rgb]{0,0.60784314,0.04313725}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(1,-1,1)$\end{tabular}}}}%
+    \put(0.27497532,0.38573464){\color[rgb]{0,0.60784314,0.04705882}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Sigma_2$\end{tabular}}}}%
+    \put(0.46224922,0.62656176){\color[rgb]{0,0.60784314,0.04705882}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Sigma_1$\end{tabular}}}}%
+    \put(0.64090277,0.36031114){\color[rgb]{0,0.60784314,0.04705882}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Sigma_3$\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

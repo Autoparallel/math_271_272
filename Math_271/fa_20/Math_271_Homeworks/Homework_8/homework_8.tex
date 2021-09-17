@@ -1,0 +1,106 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+\usepackage{amssymb}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Homework 8}\\
+   \textsc{Due November 6$^\textrm{th}$}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+Let a mass $m_1$ weighing $1kg.$ be placed at $\vecr_1=2\xhat -3 \yhat -\zhat$ and a mass $m_2$ of $2kg.$ be placed at $\vecr_2 = 4\yhat -2\zhat$.  Where must a mass $m_3$ of $3kg.$ be placed so that the center of mass is at the origin $\zerovec$?
+\end{problem}
+
+\begin{problem}
+Which of the following are linear transformations? For those that are not, which properties of \emph{linearity} (the properties (i) and (ii) in our notes) fail? Show your work. 
+\begin{enumerate}[(a)]
+    \item $T_a \colon \R \to \R$ given by $T_a(x)=\frac{1}{x}$.
+    \item $T_b \colon \R^3 \to \R^2$ given by
+    \[
+    T_b \begin{pmatrix} x\\ y\\ z \end{pmatrix}
+    = \begin{pmatrix} x\\ y \end{pmatrix}.
+    \]
+    \item $T_c \colon \R \to \R^3$ given by
+    \[
+    T_c(t)=\begin{pmatrix} t\\ t^2\\ t^3 \end{pmatrix}.
+    \]
+    \item $T_d \colon \R^2 \to \R^3$ given by
+    \[
+    T_d \begin{pmatrix} x\\ y \end{pmatrix}
+    = \begin{pmatrix} x+y\\ x+y\\ x+y \end{pmatrix}.
+    \]
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the linear transformation $J \colon R^2 \to \R^2$ defined by 
+\[
+J(\xhat) = \yhat \qquad \textrm{and} \qquad J(\yhat) = -\xhat.
+\]
+This linear transformation is fundamental in understanding how we can reconstruct complex numbers using matrices.
+\begin{enumerate}[(a)]
+    \item Show that $J^2 = J\circ J= -1$.
+    \item Determine a matrix representation for $J$ and denote it by $[J]$.
+    \item Recall that we can represent a complex number as $z=x + iy$ and that we can represent $z$ as a vector in $\R^2$ as $\vec{\boldsymbol{\zeta}} = x\xhat + y\yhat$.  Show that $J \vec{\boldsymbol{\zeta}}$ corresponds to $iz$.
+    \item We can completely reconstruct a representation of $\C$ by using a matrix representation.  In particular, we can take
+    \[
+        [z] = x [I] + y [J].
+    \]
+    Show that we recover the complex addition and multiplication using this representation.
+    \item We can represent a unit complex number as $z=e^{i\theta}$.  Show that the representation described before leads to
+    \[
+        [z] = \begin{pmatrix} \cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \end{pmatrix}.
+    \]
+\end{enumerate}
+\hrule
+\vspace*{5pt}
+You've now concretely realized that complex numbers can be fully represented using linear algebra and arise as nothing more than some type of special matrices.  In particular, you've represented the $\C$ algebra in (d) and the unitary group $\operatorname{U}(1)$ in (e).  
+
+To throw some more bonus technical terms out there, you've also realized the Lie algebra associated to the Lie group $\operatorname{U}(1)$, $\mathfrak{u}(1)$ is none other than $\R$ (the $\theta$ that shows up in $e^{i\theta}$) and that $\operatorname{U}(1)$ just happens to be a nice way to think about $\operatorname{Spin}(2)$.  Remember, we can rotate any complex number $z$ by letting $e^{i \theta}$ multiply $z$ which is a convenient way of seeing (what is essentially) the adjoint representation of $\operatorname{Spin}(2)$ ($e^{i\theta}$ in this case) on $\mathfrak{spin}(2)$ ($z$ in this case) which is equivalent to $\C$. I don't expect you to understand these terms, but when you do, you'd be well on your way to Dirac's theory of the electron!
+
+We will discuss groups and symmetries later on in 271 and the group $\operatorname{U}(1)$ will show up in yet another guise as rotational symmetries of the plane which we write as $\operatorname{SO}(2)$ which just so happens to be the same as $\operatorname{U}(1)$.  What's the point? It just goes to show that there are so many ways of thinking about these structures we have used and they provide convenient tools to break down important physical problems. For example, in 272 we will find the symmetries under $\operatorname{U}(1)$ are important for understanding the Sch\"odinger equation and the Fourier transform. 
+\vspace*{5pt}
+\hrule
+\end{problem}
+
+
+\begin{problem}
+Write down the matrix for the following linear transformation $T\colon \R^3 \to \R^3$:
+\[
+T\begin{pmatrix} x\\ y\\ z \end{pmatrix}
+= \begin{pmatrix} x+y+z\\ 2x\\ 3y + z \end{pmatrix}.
+\]
+\end{problem}
+
+
+\begin{problem}
+    Take the following matrices:
+    \[
+        [A] = \begin{pmatrix} 4 & 3 & 10 & 2 \\ 1 & 1 & 0 & 9 \end{pmatrix},\quad [B] = \begin{pmatrix} 8 & 5 & 8 \\ 10 & 9 & 2 \\ 4 & 6 &3 \end{pmatrix}, \quad [C] = \begin{pmatrix} 0 & 0 & 9 \\ 7 & 9 & 9 \\ 1 & 9 & 9 \\ 3 & 3 & 1\end{pmatrix}
+    \]
+    \begin{enumerate}[(a)]
+        \item Compute either $[A][C]$ or $[C][A]$ and state which multiplication is not possible.
+        \item Compute either $[B][C]$ or $[C][B]$ and state which multiplication is not possible.
+        \item Can you add any of these matrices?
+        \item Describe each matrix as linear transformation $T\colon \R^m \to \R^n$. What is $m$ and $n$ for each? How does this relate to the number of rows and columns?
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Solve the following equation.
+\[
+\begin{pmatrix} 1 & 1 & 1 \\ 1 & 2 & 1 \\ 1 & 2 & 2 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 6 \\ 8 \\ 11 \end{pmatrix}.
+\]
+\end{problem}
+
+
+
+\end{document}

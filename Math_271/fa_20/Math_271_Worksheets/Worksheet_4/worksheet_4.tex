@@ -1,0 +1,142 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Worksheet 4}\\
+   \textsc{Second Order Linear Equations and Boundary Value Problems}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+Write down the characteristic polynomial for the following equations.  Then, find the roots to the characteristic polynomial and write down the general solution.
+\begin{enumerate}[(a)]
+    \item $x''+x'+x=0$.
+    \item $x''-x'-x=0$.
+    \item $x''-x'+x=0$.
+    \item $x''+x'-x=0$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+For the above solutions, analyze their behavior qualitatively. That is, do the solutions oscillate, grow, decay, or some combination of these, or something else entirely?
+\end{problem}
+
+\begin{problem}
+Consider the equation
+\[
+x''+bx'+cx=0.
+\]
+The roots to the characteristic polynomial are then
+\[
+\lambda = \frac{-b\pm \sqrt{b^2-4c}}{2}.
+\]
+\begin{enumerate}[(a)]
+    \item Explain why if $c>0$ and $b=0$ the solution $x(t)$ will be purely oscillatory.
+    \item Explain why if $b>0$ and $b^2<4c$, the solution will oscillate and decay.
+    \item Explain why if $b<0$ and $b^2<4c$, the solution will oscillate and grow.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Write down a second order linear differential equation that oscillates and also decays over time.
+\end{problem}
+
+\begin{problem}
+Consider the following differential equation
+\[
+x''+x=0.
+\]
+\begin{enumerate}[(a)]
+    \item Find the general solution to this equation.
+    \item Given the initial conditions $x(0)=1$ and $x'(0)=1$, find the particular solution.
+    \item Plot your particular solution.
+    \item Does the solution grow or decay over time? 
+    \item What is $\lim_{t\to \infty}x(t)$?
+\end{enumerate}
+
+\end{problem}
+
+\begin{problem}
+Next, consider a related equation
+\[
+x''+x=t.
+\]
+that has an additional linear external force.
+\begin{enumerate}[(a)]
+    \item What is the solution to the homogenous equation?
+    \item Find the particular integral with the given forcing term.
+    \item What is the specific solution to this equation?
+    \item Does the solution grow or decay over time?
+    \item What is $\lim_{t\to \infty}x(t)$?
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider now the equation
+\[
+x''+x=F(t)
+\]
+where the external force is $F(t)=\cos(t)$.
+\begin{enumerate}[(a)]
+    \item Find the particular integral with the given forcing term.
+    \item What is the specific solution to this equation?
+    \item What is $\lim_{t\to \infty}$? What does this mean about the growth or decay of the solution over time?
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the boundary value problem
+\[
+x''=g
+\]
+with boundary values $x(0)=0$, $x\left(-\frac{2}{g}\right)=0$ and $g=-9.8[m/s^2]$.  We can think of this as solving the \emph{inverse problem} of one that we have seen in a homework. Specifically, think of this as knowing where a ball is launched and knowing where it lands and trying to find the speed it must have been thrown at.  
+
+Another interpretation is the shape of a rod bending due to gravity.  $x''$ would measure the curvature of this rod, and this equation would say that the rod under the force of gravity would have a constant curvature. In this case, the dependent variable $t$ should be thought of as spatial rather than temporal.
+
+Finally, this equation above is referred to as\emph{Poisson's equation}.
+\begin{enumerate}[(a)]
+    \item Find the general solution. If you already know it from the homework, just write it down.
+    \item Use the boundary values above to find the particular solution.
+    \item Is the solution unique? 
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the \emph{time independent Sch\"odinger equation} for a \emph{free particle} constrained inside of a 1-dimensional box of length $L$. That is, we have the equation
+\[
+-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\psi(x)=E\psi(x)
+\]
+on the unit interval $[0,L]$.
+\begin{enumerate}[(a)]
+    \item Find the general solution to this equation with no constraint.
+    \item Given the constraint, we have the boundary values $\psi(0)=\psi(L)=0$. What are the general solutions given this constraint?
+    \item Show that the sum of two solution $\psi_1(x)$ and $\psi_2(x)$ is also a solution. When we have a particle whose state (or \emph{wavefunction}) $\psi$ is a sum of general solutions, we say that $\psi$ is in a \emph{superposition state.}
+    \item The wavefunction is not really a physically meaningful quantity.  However, if we consider a region $[a,b]$ in the box $[0,L]$ the quantity
+    \[
+    P([a,b])=\int_a^b |\psi(x)|^2dx
+    \]
+    \emph{is} meaningful. This expression tells us the \emph{probability} that a particle will be observed in the region $[a,b]$.  Take your general solutions you found in (b) (with the constraint) and solve for the constants that give you
+    \[
+    \int_0^L |\psi(x)|^2dx=1.
+    \]
+    We call this \emph{normalization} and we must do so for each state so that we can interpret the integral $P([a,b])$ as a probability.
+\end{enumerate}
+\end{problem}
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

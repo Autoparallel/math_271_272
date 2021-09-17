@@ -1,0 +1,111 @@
+\documentclass{article}
+\usepackage{termcal}
+
+% Few useful commands (our classes always meet either on Monday and Wednesday 
+% or on Tuesday and Thursday)
+
+\newcommand{\MTWFClass}{%
+\calday[Monday]{\classday} % Monday
+\calday[Tuesday]{\classday} % Tuesday
+\calday[Wednesday]{\classday} % Wednesday
+\skipday % Thursday (no class)
+\calday[Friday]{\classday} % Friday 
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\TRClass}{%
+\skipday % Monday (no class)
+\calday[Tuesday]{\classday} % Tuesday
+\skipday % Wednesday (no class)
+\calday[Thursday]{\classday} % Thursday
+\skipday % Friday 
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\Holiday}[2]{%
+\options{#1}{\noclassday}
+\caltext{#1}{#2}
+}
+
+\begin{document}
+\begin{center}
+   \textsc{\large MATH 272, Tentative Calendar}\\
+   \textsc{Spring 2020}
+\vspace{.5cm}
+
+\begin{calendar}{1/20/2020}{16} % Semester starts on 1/11/2010 and last for 16
+                    % weeks, including finals week
+\setlength{\calboxdepth}{.3in}
+\MTWFClass
+% schedule
+\caltexton{1}{First day, review. Complex functions.}
+\caltextnext{Complex functions, phase.}
+\caltextnext{\textbf{Homework 0 due.}\\ Function spaces and Inner products.}
+\caltextnext{Hilbert spaces, symmetries.}
+\caltextnext{Infinite orthonormal bases.}
+\caltextnext{Series and integrals as linear combinations.}
+\caltextnext{\textbf{Homework 1 due.}\\ Projection with bases.}
+\caltextnext{Linear operators and adjoints.}
+\caltextnext{Hermitian and differential operators.}
+\caltextnext{Spectra of differential operators.}
+\caltextnext{\textbf{Homework 2 due.}\\Fourier series.}
+\caltextnext{Cont.}
+\caltextnext{Fourier transforms.}
+\caltextnext{Special functions (distributions).}
+\caltextnext{Cont.}
+\caltextnext{\textbf{Homework 3 due.}\\ Review.}
+\caltextnext{Review.}
+\caltextnext{\textbf{Take home Exam 1 due.}\\ Review.}
+\caltextnext{\textbf{Exam 1.}}
+\caltextnext{Curves and tangent vectors.}
+\caltextnext{Scalar Fields and partial differentiation.}
+\caltextnext{Gradient and directional derivatives.}
+\caltextnext{Integration of scalar fields.}
+\caltextnext{\textbf{Homework 4 due.} Vector fields and the Jacobian.}
+\caltextnext{Divergence and curl of vector fields.}
+\caltextnext{Laplace operator and flux.}
+\caltextnext{Integral calculus of vector fields.}
+\caltextnext{\textbf{Homework 5 due.}  Conservative potential functions.}
+\caltextnext{Implicit surfaces and surface normals.}
+\caltextnext{Explicit parameterizations, tangent planes, and normals.}
+\caltextnext{Cont.}
+\caltextnext{DAY OFF.}
+\caltextnext{DAY OFF.}
+\caltextnext{\textbf{Homework 6 due}. Cylindrical coordinates.}
+\caltextnext{Cont.}
+\caltextnext{Cont.}
+\caltextnext{\textbf{Homework 7 due.} Spherical coordinates.}
+\caltextnext{Cont.}
+\caltextnext{Cont.}
+\caltextnext{\textbf{Homework 8 due.}  Review.}
+\caltextnext{Review.}
+\caltextnext{Review.}
+\caltextnext{\textbf{Exam 2 due.}}
+\caltextnext{Higher dimensional ODEs and the derivation of the 1D Heat equation.}
+\caltextnext{Separation of variables.}
+\caltextnext{Poisson equation.}
+\caltextnext{The wave equation.}
+\caltextnext{\textbf{Homework 9 due.} Cont.}
+\caltextnext{Time dependent Sch\"odinger equation.}
+\caltextnext{Cont. Maxwell's Equations}
+\caltextnext{Cont.}
+\caltextnext{\textbf{Homework 10 due.} Review.}
+\caltextnext{Review.}
+\caltextnext{Review.}
+\caltextnext{\textbf{Exam 3 due.}}
+\caltextnext{Mini-project: Hydrogen atom.}
+\caltextnext{Mini-project: Hydrogen atom.}
+\caltextnext{Mini-project: Hydrogen atom.}
+\caltextnext{Mini-project: Hydrogen atom.}
+
+
+% Holidays
+\Holiday{1/20/2020}{Martin Luther King Day}
+\Holiday{3/16/2020}{Spring Break}
+\Holiday{3/17/2020}{Spring Break}
+\Holiday{3/18/2020}{Spring Break}
+\Holiday{3/20/2020}{Spring Break}
+
+\end{calendar}
+\end{center}
+\end{document}

@@ -1,0 +1,118 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+\newcommand{\vecx}{\boldsymbol{\vec{x}}}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Homework 5}\\
+   \textsc{Due March 15$^\textrm{th}$}
+\end{center}
+\vspace{.5cm}
+
+
+\begin{problem}
+Let $\vecfieldV$ be a vector field in the plane $\R^2$ defined by
+\[
+\vecfieldV(x,y) = \begin{pmatrix} \frac{1}{2}x-y \\ x + \frac{1}{2}y \end{pmatrix},
+\]
+and let $\vecx(t) = \begin{pmatrix}  e^{\frac{1}{2}t} (-c_1 \sin(t) + c_2 \cos(t) ) \\ e^{\frac{1}{2}t} (c_1 \cos(t) + c_2 \sin(t)) \end{pmatrix}$ for $t\in [0,\pi]$ where $c_1$ and $c_2$ are yet undetermined constants.
+\begin{enumerate}[(a)]
+    \item Show that a flow of $\vecfieldV$ yields a linear system of equations.
+    \item Show that $\vecx(t)$ is a flow of the vector field $\vecfieldV$.
+    \item Let $\vecx(0)=\begin{pmatrix} 1 \\ 0 \end{pmatrix}$. Determine the particular solution to the initial value problem.
+    \item \textbf{[MATLAB]} Plot the $\vecfieldV$ and your particular solution $\vecx$ simultaneously by modifying 
+\begin{verbatim} vector_field_2d.m \end{verbatim}
+ and
+ \begin{verbatim} curve.m \end{verbatim} 
+Then enter the following into the command window
+\begin{verbatim} vector_field_2d \end{verbatim}
+ followed by 
+\begin{verbatim} curve \end{verbatim}
+and finally to get the correct view enter
+\begin{verbatim} view(0,90) \end{verbatim}
+Choose good bounds for your plot so that the whole curve is visible.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Let us consider the discrete heat equation for $n$ equally spaced particles on a line segment for which we have the following picture
+\begin{figure}[H]
+	\centering
+	\resizebox{.9\columnwidth}{!}{\input{figures/equally_spaced_line_points.pdf_tex}}
+\end{figure}
+Let $u_j(t) \coloneqq u(x_j,t)$ denote the temperature of particle $j$ at time $t$, let $k_j$ be the thermal transport coefficient between particles $j$ and $j+1$, and let $f_j(t)=f(x_j,t)$ be the thermal energy source on particle $j$.
+\begin{enumerate}[(a)]
+    \item For the boundary particles $x_1$ and $x_n$, we have
+    \[
+    \dot{u}_1 = -k_1 u_1 + k_1 u_{2} + f_1 \qquad \textrm{and} \qquad \dot{u}_n = -k_n u_{n} + k_{n-1} u_{n-1} +f_n,
+    \]
+    which correspond to \emph{Neumann type boundary conditions}. Explain each term in the above equations.
+    \item If we attached $x_1$ to $x_n$ with a material with a thermal transport coefficent of $k_0$ the above equations would need modification. Write these new equations. These are the \emph{periodic boundary conditions}. 
+    \item Explain why periodic boundary conditions are the same as working with a circular domain.
+    \item If we force $u_1$ and $u_n$ to be constant, what will the equations for the boundary particles be? These would be the \emph{Dirichlet type boundary conditions}.
+    \item For the interior particles, we have the relationship
+    \[
+    \dot{u}_j = -k_{j-1}u_j - k_{j} u_j + k_{j-1}u_{j-1} + k_{j} u_{j+1} +f_j \qquad \textrm{for $j=2,\dots,n-1$}.
+    \]
+    Explain what each term describes in the above equation.
+    \item In the limit as $n\to \infty$, we then have that $k$ is described as a function of position, $x$. The source free heat equation then reads
+    \[
+    \frac{\partial}{\partial t}u(x,t) = \frac{\partial}{\partial x} \left( k(x)\frac{\partial}{\partial x} u(x,t) \right) + f(x,t).
+    \]
+    Explain how this equation differs from the equation
+    \[
+    \frac{\partial}{\partial t}u(x,t) = k(x) \frac{\partial^2}{\partial x^2} u(x,t)+f(x,t).
+    \]
+\end{enumerate}
+\end{problem}
+
+
+
+\begin{problem}
+    Consider the 1-dimensional homogeneous Laplace equation given by 
+    \[
+    \frac{\partial^2}{\partial x^2} u_E(x) = 0,
+    \]
+    with the domain $\Omega$ as the unit interval on the $x$-axis.  Take the Dirichlet boundary conditions $u_E(0)=T_0$ and $u_E(L)=T_L$.  Think of these values as the ambient temperature at the endpoints of the rod.  These temperatures are constant since the ambient environment is so large.
+    \begin{enumerate}[(a)]
+        \item Find the particular solution to this Laplace equation.
+        \item Suppose that $v(x,t)$ is a solution to the 1-dimensional source free isotropic heat equation with zero Dirichlet boundary values. Show that 
+        \[
+        u(x,t)=v(x,t)+u_E(x),
+        \]  
+        is a solution to the 1-dimensional source free isotropic heat equation with Dirichlet boundary values $u(0,t)=T_0$ and $u(L,t)=T_L$.
+        \item From Problem 1, we know that $\lim_{t\to \infty} v(x,t) = 0$.  Hence, show that the long time limit of a solution to the source free heat equation yields a solution to the Laplace equation.
+        \item Argue why the equilibrium temperature profile of a rod can be found without solving the heat equation.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Using intuition from the previous problem, explain how one could solve the heat equation with a nonzero source term that only depends on $x$. In other words, how could one try to solve
+    \[
+    \left( -k \frac{\partial^2}{\partial x^2} + \frac{\partial}{\partial t} \right) u(x,t) = f(x),
+    \]
+\end{problem}
+
+\begin{problem}
+    Consider the 2-dimensional source free isotropic heat equation given by
+    \[
+    \left( -k \Delta + \frac{\partial}{\partial t} \right) u(x,y,t) = 0,
+    \]
+    with the domain $\Omega$ as the unit square in the $xy$-plane. Take as well the Dirichlet boundary conditions $u(x,y,t)=0$ for $x$ and $y$ on the boundary of $\Omega$.
+    \begin{enumerate}[(a)]
+        \item Show that $u_{mn}(x,y,t)=\sin(m\pi x)\sin(n\pi y)e^{-k(n^2+m^2)\pi^2 t}$ is a solution to the PDE and Dirichlet boundary conditions for any non-negative integers $m$ and $n$.
+        \item Show that a linear combination of solutions $u_{mn}$ and $u_{pq}$ is also a solution.
+        \item For $m=n=1$ and $k=1$, plot the solution for the values $t=0$, $t=0.01$, $t=0.1$ and $t=1$.  Explain what is physically happening as time moves forward.
+        \item Explain what varying the value for the conductivity $k$ does to the solution.  Feel free to use plots to support your hypothesis.
+        \item Explain the mathematical reason why increasing $m$ and $n$ causes the solution to converge to zero more quickly.
+        \item Explain the physical reason why increasing $m$ and $n$ causes the solution to converge to zero more quickly. Plots may help support your reasoning.
+    \end{enumerate}
+\end{problem}
+
+
+\end{document}

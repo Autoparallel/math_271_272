@@ -1,0 +1,178 @@
+\documentclass[12pt]{amsbook}
+\usepackage{preamble}
+
+\newcommand{\vecfieldE}{\boldsymbol{\vec{E}}}
+\newcommand{\rhat}{\boldsymbol{\hat{r}}}
+\newcommand{\thetahat}{\boldsymbol{\hat{\theta}}}
+\newcommand{\rhohat}{\boldsymbol{\hat{\rho}}}
+\newcommand{\vecfieldW}{\boldsymbol{\vec{W}}}
+
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\begin{center}
+   \textsc{\large MATH 272, Exam 3}\\
+   \textsc{COVID-19 Edition}\\
+   \textsc{Due May 4$^\textrm{th}$ by 11:59PM}
+\end{center}
+\vspace{1cm}
+
+\noindent\textbf{Name} \; \underline{\hspace{8cm}}
+
+\vspace{1cm}
+
+\noindent\textbf{Instructions} \; You are allowed a textbook, homework, notes, worksheets, material on our Canvas page, but no other online resources (including calculators or WolframAlpha). for this portion of the exam.  \textbf{Do not discuss any problem any other person.} All of your solutions should be easily identifiable and supporting work must be shown.  Ambiguous or illegible answers will not be counted as correct. 
+
+
+\vspace{1cm}
+
+\begin{center}
+\textbf{Problem 1} \; \underline{\hspace{1cm}}/10 \qquad \qquad
+ \textbf{Problem 2} \; \underline{\hspace{1cm}}/21 \\
+ \vspace*{.5cm}
+ \textbf{Problem 3} \; \underline{\hspace{1cm}}/21 \qquad \qquad
+  \textbf{Problem 4} \; \underline{\hspace{1cm}}/10\\
+  \vspace*{.5cm}
+  \textbf{Problem 5} \; \underline{\hspace{1cm}}/13 \qquad \qquad
+
+\end{center}
+
+\vspace{1cm}
+
+\hrule
+
+\vspace*{1cm}
+\noindent\emph{Note, these problems span two pages.}
+
+\newpage
+\begin{problem}
+   Related to the wave equation is the \emph{Korteweg-de Vries (KdV) equation}.  It can be written as
+   \[
+   \frac{\partial}{\partial t} u +  \frac{\partial^3}{\partial x^3} u - 6 u \frac{\partial}{\partial x}u = 0,
+   \]
+   where $u=u(x,t)$ is a function of a single spatial variable $x$ and one temporal variable $t$. This equation seeks to model waves for thin materials such as waves for shallow water surfaces or in crystal lattices.
+   \vspace*{.5cm}
+   \begin{enumerate}[(a)]
+        \item (\textbf{5 pts.}) If $u$ and $v$ are both solutions to this equation, is the linear combination $w=\alpha u + \beta v$ for constants $\alpha$ and $\beta$ also a solution?
+        \vspace*{.5cm}
+        \item (\textbf{5 pts.}) Explain why separation of variables (with the variables $x$ and $t$) will not work with this equation. \emph{Hint: if you start trying this ansatz, can you see where it fails?}
+        \vspace*{.5cm}
+   \end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+Consider the 1-dimensional wave equation
+\[
+\left(-\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial t^2}\right)u(x,t) = 0,
+\]
+with domain $\Omega = [0,1]$. Without any boundary or initial conditions, the general solution to the PDE is given by 
+    \[
+    u(x,t) = \left( A \sin(\lambda x) + B \cos(\lambda x) \right) \left(C \sin(\lambda t) + D\cos(\lambda t)\right),
+    \]
+    where $A$, $B$, $C$, and $D$ are undetermined constants and $\lambda$ is the separation constant.
+\vspace*{.5cm}
+\begin{enumerate}[(a)]
+    \item (\textbf{5 pts.}) With Neumann boundary conditions $\frac{\partial}{\partial x}u(0,t) =0 = \frac{\partial}{\partial x}u(1,t)$ and initial conditions $u(x,0)=\cos(\pi x)$ and $\frac{\partial}{\partial t} u(x,0)=0$, find the particular solution.  
+    \vspace*{.5cm}
+    \item (\textbf{5 pts.}) We can change the problem slightly by forcing new boundary and initial conditions.  Take instead the mixed conditions $u(0,t)=0$ and $\frac{\partial}{\partial x} u(1,t) = 0$ with initial conditions $u(x,0)=\sin\left(\frac{\pi x}{2}\right)$ and $\frac{\partial}{\partial t} u(x,0)=0$ and find the particular solution.
+    \vspace*{.5cm}
+    \item (\textbf{3 pts.}) Describe possible physical scenarios that could would be modeled by the problems posed in (a) and (b).  Pay special attention the boundary conditions.
+    \vspace*{.5cm}
+    \item (\textbf{5 pts.}) Plot your two solutions at the times $t=0$, $t=1/2$, and $t=1$. 
+    \vspace*{.5cm}
+    \item (\textbf{3 pts.}) The amount of peaks/troughs one sees in a vibrating string (made from the same material) determines the pitch of the sound it will make.  More peaks/troughs correspond to higher frequency sound (hence the name frequency).  Which solution, (a) or (b), has a higher frequency sound output? Why?
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+Consider the 1-dimensional heat equation
+\[
+\left(-\frac{\partial^2}{\partial x^2} + \frac{\partial}{\partial t}\right)u(x,t) = 1
+\]
+on the domain $\Omega = [0,1]$ with Dirichlet boundary conditions $u(0,t)=1=u(1,t)$ and initial condition $u(x,0)=\sin(\pi x)-\frac{1}{2}x^2+\frac{1}{2}x+1$. You can imagine this problem describes a rod made of radioactive material that is constantly generating heat while being cooled down from both ends.
+\vspace*{.5cm}
+\begin{enumerate}[(a)]
+    \item (\textbf{5 pts.}) First, find the equilibrium solution by solving
+    \[
+    -\frac{\partial^2}{\partial x^2} u_E(x) =1,
+    \]
+    and using the above boundary conditions.
+    \vspace*{.5cm}
+    \item (\textbf{2 pts.}) Do you expect that this rod will approach a constant temperature over a very long time? Why or why not. Explain.
+    \vspace*{.5cm}
+    \item (\textbf{6 pts.}) Next, using separation of variables, find a general solution $v(x,t)$ that solves the source free heat equation
+    \[
+    \left(-\frac{\partial^2}{\partial x^2} + \frac{\partial}{\partial t}\right)v(x,t) = 0,
+    \]
+    that satisfies the boundary conditions $v(0,t)=0=v(1,t)$. \emph{Hint: you should get a general solution for every positive integer $n$.}
+    \vspace*{.5cm}
+    \item (\textbf{3 pts.}) Take $u(x,t) = v(x,t) + u_E(x)$ as your candidate solution and match the unitial condition $u(x,0)$ to find the particular solution. \emph{Hint: you may want to think of $v(x,t)$ as a sum of the solutions you found in (c) and determine coefficients from there. You can see examples of this in the notes.}
+    \vspace*{.5cm}
+    
+    \item (\textbf{3 pts.}) Now, show that $u(x,t)=v(x,t)+u_E(x)$ solves the original problem.
+    \vspace*{.5cm}
+    \item (\textbf{2 pts.}) Explain (to the best of your ability) why we can split up the solution $u(x,t)$ into the two functions $v(x,t)$ and $u_E(x)$. Thinking physically may help you understand what's going on.  Thinking mathematically may allow you to see how the two functions mesh together in a useful way.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+The time dependent Schr\"odinger equation for the free particle in the 1-dimensional box $\Omega = [0,L]$ is given by
+\[
+\left(-\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} - i\hbar \frac{\partial}{\partial t} \right) \Psi(x,t) = 0,
+\]     
+with boundary conditions $\Psi(0,t)=0=\Psi(L,t)$. The states were given by
+\[
+\psi_n(x,t) = e^{-i \frac{n^2 \pi^2 \hbar}{2mL^2} t} \sin\left(\frac{n \pi x}{L}\right).
+\]
+
+
+\vspace*{.5cm}
+   \begin{enumerate}[(a)]
+        \item (\textbf{5 pts.}) Using Euler's formula, plot the real and imaginary parts of the state $\psi_1(x,t)$ for times $t=0$, $t=1/2$ and $t=1$. For the simplicity of plotting, use $m=\hbar=L=1$. However, keep these constants in the equation for the remainder of the problem.
+        \vspace*{.5cm}
+        \item (\textbf{5 pts.}) Show that the real and imaginary parts of $\psi_1(x,t)$ solve the wave equation
+        \[
+        \left(-\frac{\partial^2}{\partial x^2} + \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right) u(x,t)=0,
+        \]
+        for a certain value of $c$ with Dirichlet boundary conditions $u(0,t)=0=u(L,t)$.  Showing this will also require you to determine $c$!
+   \end{enumerate}
+\end{problem}
+
+
+\newpage
+\begin{problem} 
+Waves can also appear in higher dimensional materials.  For example, the surface of water. KdV describes this one way, but we can also use the spherically symmetric wave equation
+\[
+\left(-\frac{\partial^2}{\partial r^2} - \frac{2}{r} \frac{\partial}{\partial r} +\frac{k^2}{\omega^2}\frac{\partial^2}{\partial t^2} \right) u(r,t) = 0,
+\]
+that can be used to describe waves that propagate through space from a point source.
+\vspace*{.5cm}
+\begin{enumerate}[(a)]
+    \item (\textbf{5 pts.}) Show that $u(r,t) = \frac{1}{r}e^{i(kr\pm\omega t)}$ is a solution to this equation.
+    \vspace*{.5cm}
+    \item (\textbf{2 pts.}) We can take a portion (real part) of this solution by letting
+    \[
+    w(r,t) = \frac{1}{r} \cos(kr+\omega t).
+    \]
+    Then, using the conversions
+    \[
+    x = r\cos \theta \qquad \textrm{and} \qquad y = r\sin \theta,
+    \]
+    convert $w(r,t)$ to a function $w(x,y,t)$.
+    \vspace*{.5cm}
+    \item (\textbf{3 pts.}) Plot the solution $w(x,y,t)$ as a surface for $k=\omega = 1$ and for $t=0$, $t=1/2$ and $t=1$.  
+    \vspace*{.5cm}
+    \item (\textbf{3 pts.}) Describe what happens to $w(x,y,t)$ as we vary $\omega$ and $k$.  Note that $\omega$ and $k$ must be greater than zero. Plotting this may prove useful.
+    
+\end{enumerate}
+\end{problem}
+
+
+
+
+
+\end{document}  

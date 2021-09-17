@@ -1,0 +1,67 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Homework 3}\\
+   \textsc{Due September 20$^\textrm{th}$}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+Consider the second order chemical reaction given by
+\[
+A+B \xrightarrow{k} \textrm{Products}.
+\]
+\begin{enumerate}[(a)]
+    \item Write a \emph{system} of differential equations to describe the concentration of the reactants $A$ and $B$ (this means write one for each).
+    \item The concentrations of $A$ and $B$ can be related to each other in the following way: Let $A=A_0-x$ and $B=B_0-x$. Here, we think of $x$ as the amount of each chemical that has reacted, and note that it depends on time $t$. Use this change of variables to rewrite the differential equation for chemical $A$ in terms of $x$ and $t$.
+    \item Solve the differential equation in (b) with the initial condition $x(0)=0$.You will need to use \emph{partial fraction decomposition} to evaluate the integral.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+If $x_1(t)$ and $x_2(t)$ are solutions to the differential equation
+\[
+x'' + bx' +cx = 0
+\]
+is $x=x_1+x_2+k$ for a constant $k$ always a solution? Is the function $y=tx_1$ a solution? 
+\end{problem}
+
+
+\begin{problem}
+Consider the following initial value problem:
+\begin{align*}
+    x''+4x'+3x&=0
+\end{align*}
+with initial data $x(0)=1$, $x'(0)=0$.  
+\begin{enumerate}[(a)]
+    \item Find the solution.
+    \item Sketch a plot of the solution.
+    \item Explain in words what is happening to the solution as time goes on. What happens as $t\to \infty$?
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Write down a homogeneous second-order linear differential equation where the system displays a decaying oscillation.
+\end{problem}
+
+\begin{problem}
+Consider the following differential equation:
+\[
+x''+2x'+x=3e^{-t}+2t.
+\]
+\begin{enumerate}[(a)]
+    \item Find the homogeneous solution $x_H(t)$.
+    \item Find the particular integral $x_P(t)$.
+    \item Find the specific solution corresponding to the initial data $x(0)=0$, $x'(0)=0$.
+\end{enumerate}
+\end{problem}
+
+
+\end{document}

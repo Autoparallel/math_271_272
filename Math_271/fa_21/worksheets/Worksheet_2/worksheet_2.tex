@@ -1,0 +1,90 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+\usepackage{hyperref}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Worksheet 2}\\
+   \textsc{Ordinary Differential Equations}
+\end{center}
+\vspace{.5cm}
+
+\begin{center}
+    Problems 1-6 are related.
+\end{center}
+
+\begin{problem}
+    (Newton's law of cooling) Write down a differential equation that models the following scenario:\\
+    
+    \noindent\emph{The temperature of a substance in an ambient environment changes temperature over time proportionally to the difference of the temperature of the substance from the temperature of the ambient environment. Assume that the ambient environment is large enough to maintain a constant temperature.}\\
+    
+    \noindent Let $T(t)$ be the temperature of the substance, $T_a$ be the ambient temperature, and $k$ be the constant of proportionality.
+\end{problem}
+
+\begin{problem}
+    With the equation found above, find a general solution.
+\end{problem}
+
+\begin{problem}
+    With the parameter values $T_a=100$, $k=1$, and initial data $T(0)=50$, find the particular solution.  Find as well the particular solution when $T(0)=55$ and when $T(0)=150$. Plot each of the particular solutions and explain the results.
+\end{problem}
+
+
+\begin{problem}
+    What happens instead if the initial temperature is equal to the ambient temperature? That is, when $T(0)=T_a=100$. Does your solution reflect this? Does this make physical sense? Explain.
+\end{problem}
+
+\begin{problem}
+    Let $\delta = (T_a-T)$. Show that the equation you found in Problem 1 reduces to
+    \[
+    \delta' = -k\delta.
+    \]
+    What is this equation describing physically? Explain.
+\end{problem}
+
+\begin{problem}
+    The equation you arrived at earlier, $\delta'(t) = -k\delta(t)$, is \emph{autonomous}.  In this particular instance, it means that this problem has a derivative that is independent of time $t$.  In fact, for this system, this essentially means that total energy is conserved! 
+    \begin{enumerate}[(a)]
+        \item Using the slope field generator found at: \url{https://www.desmos.com/calculator/p7vd3cdmei}, plot the slope field in the $t\delta$-plane and explore what happens as you vary $k$. What happens when $k=0$? How about $k>0$? How about $k<0$? 
+        \item In this slope field plot, explain the symmetry.  Can you see why this shows that we can always choose the initial time to be $t_0=0$ regardless of the value of the initial condition? 
+        \item $k$ represents the conductivity of the object.  Explain what the the solutions for $k<0$, $k=0$, and $k>0$ mean physically. Should we think of objects with $k\leq 0$?
+        \item If instead we had an equation $y'=-kty$, can you see why we can no longer simply choose $t_0=0$ as the initial time?
+    \end{enumerate}
+\end{problem}  
+
+\begin{center}
+    Problems 7-8 are related.
+\end{center}
+\begin{problem}
+    Show that $x=c_1\sin(t)+c_2\cos(t)$ is a general solution to the equation
+    \[
+        x''+x=0.
+    \]
+\end{problem}
+
+\begin{problem}
+    Find the particular solution if $x(0)=1$ and $x'(0)=0$. Plot your solution in the $t,x$-plane and in the $x,x'$-plane. 
+\end{problem}
+
+\begin{problem}
+    Consider the differential equation
+    \[
+    x'=\frac{x^2+tx+t^2}{tx}.
+    \]
+    \begin{enumerate}[(a)]
+        \item Let $f(x,t)=\frac{x^2+tx+t^2}{tx}$.  Show that $f(\lambda x, \lambda t)=f(x,t)$.
+        \item Use the substitution $u=\frac{x}{t}$ in order to make the original equation separable.
+        \item Find the general solution to this separable equation in terms of $u$ and $t$. You may use Wolfram Alpha to compute the necessary integral.
+        \item Find the solution to the original equation using the substitution $u=\frac{x}{t}$ and your solution from (c).
+    \end{enumerate}
+\end{problem}
+
+
+
+
+\end{document}

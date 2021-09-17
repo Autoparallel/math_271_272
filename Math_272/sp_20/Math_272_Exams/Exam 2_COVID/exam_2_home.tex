@@ -1,0 +1,216 @@
+\documentclass[12pt]{amsbook}
+\usepackage{preamble}
+
+\newcommand{\vecfieldE}{\boldsymbol{\vec{E}}}
+\newcommand{\rhat}{\boldsymbol{\hat{r}}}
+\newcommand{\thetahat}{\boldsymbol{\hat{\theta}}}
+\newcommand{\rhohat}{\boldsymbol{\hat{\rho}}}
+\newcommand{\vecfieldW}{\boldsymbol{\vec{W}}}
+
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\begin{center}
+   \textsc{\large MATH 272, Exam 2}\\
+   \textsc{COVID-19 Edition}\\
+   \textsc{Due April 10$^\textrm{rd}$ by 11:59PM}
+\end{center}
+\vspace{1cm}
+
+\noindent\textbf{Name} \; \underline{\hspace{8cm}}
+
+\vspace{1cm}
+
+\noindent\textbf{Instructions} \; You are allowed a textbook, homework, notes, worksheets, material on our Canvas page, but no other online resources (including calculators or WolframAlpha). for this portion of the exam.  \textbf{Do not discuss any problem any other person.} All of your solutions should be easily identifiable and supporting work must be shown.  Ambiguous or illegible answers will not be counted as correct. 
+
+
+\vspace{1cm}
+
+\begin{center}
+\textbf{Problem 1} \; \underline{\hspace{1cm}}/15 \qquad \qquad
+ \textbf{Problem 2} \; \underline{\hspace{1cm}}/15 \\
+ \vspace*{.5cm}
+ \textbf{Problem 3} \; \underline{\hspace{1cm}}/15 \qquad \qquad
+  \textbf{Problem 4} \; \underline{\hspace{1cm}}/15\\
+  \vspace*{.5cm}
+  \textbf{Problem 5} \; \underline{\hspace{1cm}}/20 \qquad \qquad
+   \textbf{Problem 6} \; \underline{\hspace{1cm}}/20
+
+\end{center}
+
+\vspace{1cm}
+
+\hrule
+
+\vspace*{1cm}
+\noindent\emph{Note, these problems span two pages.}
+
+
+
+\newpage
+\begin{problem} Pressure differences in a fluid cause particles to move.  Specifically, particles will flow towards regions of lower and lower pressure. So, let us consider the scalar field
+\[
+P(x,y) = x^2+y^2
+\] 
+that describes the pressure of a fluid in a planar region and consider the curve
+\[
+\curvegamma(t) = \begin{pmatrix} 3e^{-2t} \\ 2e^{-2t} \end{pmatrix}
+\]
+for $t\in [0,\infty)$ that tracks a particle that moves in this fluid.
+    \begin{enumerate}[(a)]
+        \item (\textbf{5 pts.}) Show that at all times $t$, the tangent vector $\tangentgamma$ is equal to the vector field given by $-\grad P$ at that point. In other words, show
+        \[
+        \tangentgamma(t) = -\grad P(\curvegamma(t)).
+        \]
+        \vspace*{.25cm}
+        
+        \item (\textbf{2 pts.}) Plot $-\grad P$ and draw a rough estimate of the curve $\curvegamma$ if the starting point is at $(x,y)=(3,2)$. Keep in mind that $\curvegamma$ flows along this vector field.
+        \vspace*{.25cm}
+        
+        \item (\textbf{2 pts.}) Seeing as the particle seeks a position of minimum pressure, where will the particle end up at as time goes to infinity? In other words, where is pressure minimized? Keep in mind that you can use the gradient as a helpful tool.
+        \vspace*{.25cm}
+        
+        \item (\textbf{4 pts.}) The amount of energy this particle gains can be computed by
+        \[
+        \int_{\curvegamma} -\grad P \cdot d\curvegamma. 
+        \]
+        Compute this integral and show that it is indeed equal to
+        \[
+        \lim_{b\to \infty}\left[ -P(\curvegamma(b))+P(\curvegamma(0))\right].
+        \]
+        \vspace*{.25cm}
+        
+        \item (\textbf{2 pts.}) Argue why adding a constant $C$ to the pressure field $P$ does not change the results in part (a), (b), (c), or (d).  
+    \end{enumerate}
+    %curves, Parameterize ellipse. Set up integral? Soemthing that's not just a perfect circle.
+\end{problem}
+
+\newpage
+\begin{problem}
+    Consider the vector field $\vecfieldV$ and scalar field $T$ given by
+    \[
+    \vecfieldV(x,y,z) = \begin{pmatrix} e^{-x^2} \\ e^{-y^2} \\ e^{-z^2} \end{pmatrix} \qquad \textrm{and} \qquad T(x,y,z) = xyz.
+    \]
+    Imagine $\vecfieldV$ describes the motion of a fluid and $T$ describes the temperature. However, for this model, differences in temperature affects this fluid flow and we should consider instead the product of the two fields given by
+    \[
+    \vecfieldU = T\vecfieldV
+    \]
+    as the model for fluid motion.
+    \begin{enumerate}[(a)]
+        \item (\textbf{3 pts.}) Show that
+        \[
+        \grad \cdot \vecfieldU = \left(\grad T\right) \cdot \vecfieldV + T* \left(\grad \cdot \vecfieldV\right).
+        \]
+        \vspace*{.25cm}
+        \item (\textbf{3 pts.}) Show that
+        \[
+        \grad \times \vecfieldU = \left(\grad T\right)\times \vecfieldV + T*\left(\grad \times \vecfieldV\right).
+        \]
+                \vspace*{.25cm}
+
+        \item (\textbf{3 pts.}) Set up (but do not compute) the integral that computes the flux of $\vecfieldU$ through the unit square in the $xy$-plane.
+                \vspace*{.25cm}
+        \item (\textbf{3 pts.}) Without computing an integral, is the net (or mangnitude of) flux of the vector field $\vecfieldV$ through the unit square in the $xy$-plane greater than, equal to, or less than that of the vector field $\vecfieldU$. Explain.
+                \vspace*{.25cm}
+                \item (\textbf{3 pts.}) If you were instead given some nonzero scalar field $f$ and another nonzero vector field $\vecfieldW$, is it possible that $f\vecfieldW$ can be conservative if $\vecfieldW$ is \underline{non}-conservative? Explain or give an example of an $f$ and $\vecfieldW$ where $\vecfieldW$ is conservative but $f\vecfieldW$ is not.
+    \end{enumerate}
+    %scalar fields, gradient, integral, level sets
+\end{problem}
+
+\newpage
+\begin{problem}
+    Consider the vector field
+    \[
+    \vecfieldU(x,y,z) = \begin{pmatrix} e^y \\ x^2 \\ \sin(y)+z^2 \end{pmatrix}.
+    \]
+    defined over all of $\R^3$. 
+    \begin{enumerate}[(a)]
+        \item (\textbf{3 pts.}) True or false.  There is a scalar field $\phi(x,y,z)$ such that $\vecfieldU=\grad \phi$. Explain.
+                \vspace*{.25cm}
+        \item (\textbf{5 pts.}) One can create a scalar function that describes how volume is distorted by this vector field by taking
+        \[
+        \det \left( [J]_{\vecfieldU}\right).
+        \]
+        Integrate this function over the unit cube in $\R^3$.  Is this value larger, equal to, or smaller than the volume of the unit cube?
+                \vspace*{.25cm}
+        \item (\textbf{5 pts.}) Find an equation for a plane that passes through the point $(x,y,z)=(1,3,5)$ that is also perpendicular to the vector field at that point $(x,y,z)=(1,3,5)$.
+        \vspace*{.25cm}
+        \item (\textbf{2 pts.}) Compute the vector Laplacian of $\vecfieldU$.
+    \end{enumerate}
+    %vector fields, jacobian, div, curl, explain physically. Potentials
+\end{problem}
+
+\newpage
+\begin{problem} For the following, feel free to use implicit or explicit parameterizations.  For (c), there are many possible options!
+    \begin{enumerate}[(a)]
+        \item (\textbf{3 pts.}) In Cartesian coordinates, parameterize an ellipse with a major axis of 25 and a minor axis of 9.
+        \vspace*{.25cm}
+        \item (\textbf{3 pts.}) In Cartesian coordinates, parameterize a solid cone of height 3 and radius 9.
+        \vspace*{.25cm}
+        \item (\textbf{3 pts.}) In cylindrical coordinates, create a scalar field that is always positive but every partial derivative is negative.
+        \vspace*{.25cm}
+        \item (\textbf{3 pts.}) In cylindrical coordinates, parameterize the surface of a sphere of radius 2.
+        \vspace*{.25cm}
+        \item (\textbf{3 pts.}) In spherical coordinates, parameterize a spiral that starts at the north pole of a unit sphere, wraps three times around the sphere latitudinally, and ends at the south pole.
+    \end{enumerate}
+    %parameterizations
+\end{problem}
+
+\newpage
+\begin{problem} Consider the scalar field 
+\[
+f(x,y,z) = \frac{1}{1-x^2-y^2-z^2}\frac{z}{\sqrt{x^2+y^2}}
+\] 
+    \begin{enumerate}[(a)]
+        \item (\textbf{3 pts.}) Compute the Cartesian Laplacian of the scalar field $f$.
+                \vspace*{.25cm}
+        \item (\textbf{4 pts.}) Convert your answer from (a) into spherical coordinates.
+                \vspace*{.25cm}
+        \item (\textbf{4 pts.}) Convert the field $f$ into spherical coordinates. That is, in terms of the variables $r$, $\theta$, and $\phi$.
+                \vspace*{.25cm}
+        \item (\textbf{4 pts.}) Compute the spherical Laplacian of the field $f$ you found in (c).
+                \vspace*{.25cm}
+        \item (\textbf{5 pts.}) In spherical coordinates, set up (but do not evaluate) an integral of the scalar field $f$ over the portion of the solid sphere of radius 1/2 contained in the octant where $x$, $y$, and $z$ are all positive.
+        \vspace*{.25cm}
+
+    \end{enumerate}
+    %coordinate systems. Convert scalar fields and vector fields.  Compute laplacian in both and show they're the same. 
+\end{problem}
+
+\newpage
+\begin{problem} Consider the scalar field $f(x,y,z)=e^{-z} \sin(\sqrt{x^2+y^2})$
+    \begin{enumerate}[(a)]
+                \item (\textbf{4 pts.}) Convert this scalar field into a scalar field in cylindrical coordinates.
+                \vspace*{.25cm}
+                
+                \item (\textbf{4 pts.}) Describe (geometrically) the level set for $f(\rho,\theta,z)=0$. 
+                \vspace*{.25cm}
+                
+                \item (\textbf{4 pts.}) The cylindrical gradient is given by
+                \[
+                \grad f(\rho,\theta,z) = \frac{\partial f}{\partial \rho}\rhohat + \frac{1}{\rho} \frac{\partial f}{\partial \theta} \thetahat + \frac{\partial f}{\partial z} \zhat,
+                \]
+                find the normal vector to the level surface where $\rho=\pi$.
+                \vspace*{.25cm}
+                \item (\textbf{4 pts.}) Explain why a vector field given by
+                \[
+                \vecfieldV = V_1(\rho,\theta,z)\thetahat + V_2(\rho,\theta,z) \zhat,
+                \]
+                will have no flux passing through the surface in part (c).
+                
+                \vspace*{.25cm}
+                \item (\textbf{4 pts.}) Using the cylindrical gradient, argue why the portion of the level set where $\rho=0$  is \underline{not} a surface.
+                                
+                                
+                
+                
+    \end{enumerate}
+%use a similar integral from homework 7 problem 4 (b) to convert to spherical. Cylindrical stuff
+\end{problem}
+
+
+
+
+
+\end{document}  

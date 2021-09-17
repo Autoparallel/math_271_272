@@ -1,0 +1,80 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Worksheet 2}\\
+   \textsc{Ordinary Differential Equations}
+\end{center}
+\vspace{.5cm}
+
+\begin{center}
+    Problems 1-6 are related.
+\end{center}
+
+\begin{problem}
+    (Newton's law of cooling) Write down a differential equation that models the following scenario:\\
+    
+    \noindent\emph{The temperature of a substance in an ambient environment changes over time proportionally to the difference of the substance from the ambient environment.}\\
+    
+    \noindent Let $T(t)$ be the temperature of the substance, $T_a$ be the ambient temperature, and $k$ be the constant of proportionality.
+\end{problem}
+
+\begin{problem}
+    With the equation found above, find a general solution.
+\end{problem}
+
+\begin{problem}
+    With the parameter values $T_a=100$, $k=1$, and initial data $T(0)=50$, find the particular solution.
+\end{problem}
+
+\begin{problem}
+    Plot the particular solution to the problem and interpret what this means for the temperature over time.
+\end{problem}
+
+\begin{problem}
+    What happens instead if the initial temperature is equal to the ambient temperature? Does your solution reflect this? Does this make physical sense?
+\end{problem}
+
+\begin{problem}
+    Let $\delta = (T_a-T)$. Show that the equation you found in Problem 1 reduces to
+    \[
+    \delta' = -k\delta.
+    \]
+    What is this equation describing physically?
+\end{problem}
+
+\begin{center}
+    Problems 7-8 are related.
+\end{center}
+\begin{problem}
+    Show that $x=c_1\sin(t)+c_2\cos(t)$ is a general solution to the equation
+    \[
+        x''+x=0.
+    \]
+\end{problem}
+
+\begin{problem}
+    Find the particular solution if $x(0)=1$ and $x'(0)=2$. Plot your solution in the $t,x$-plane and in the $x,x'$-plane. 
+\end{problem}
+
+\begin{problem}
+    Consider the differential equation
+    \[
+    x'=\frac{x^2+tx+t^2}{tx}.
+    \]
+    \begin{enumerate}[(a)]
+        \item Let $f(x,t)=x^2+tx+t^2$.  Show that $f(\lambda x, \lambda t)=f(x,t)$.
+        \item Use the substitution $u=\frac{x}{t}$ in order to make the original equation separable.
+        \item Find the general solution to this separable equation in terms of $u$ and $t$. You may use Wolfram Alpha to compute the necessary integral.
+        \item Find the solution to the original equation using the substitution $u=\frac{x}{t}$ and your solution from (c).
+    \end{enumerate}
+\end{problem}
+
+
+\end{document}

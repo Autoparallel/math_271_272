@@ -1,0 +1,86 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Homework 2}\\
+   \textsc{Due February 10$^\textrm{th}$}
+\end{center}
+\vspace{.5cm}
+
+Linear operators play a fundamental role in quantum mechanics. Namely, we compute probabilities related to certain operators in order to gain insight on the problem at hand.  Throughout this assignment we will see some of the role of operators in this theory.  
+
+For the following problems, we will be referring to the free particle in the 1-dimensional box on the region $[0,L]$. Recall the normalized states
+   \[
+   \psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right),
+   \]
+   and the Hermitian inner product
+   \[
+   \innprod{\Psi}{\Phi} = \int_0^L \Psi(x)\Phi^*(x)dx.
+   \]
+   
+   Throughout this assignment you should use orthonormality as much as possible to simplify your computations. This will drastically decrease the amount of work you have to do.
+
+\begin{problem}
+  When making a measurement of the position of the particle, we will use the \emph{position operator} $x$.  This is the same as the variable $x$ in the original problem statement, but it is also an operator!
+   \begin{enumerate}[(a)]
+   		\item Show that the position operator $x$ is Hermitian.
+   		\item We can compute the expected position of a particle with wavefunction $\Psi(x)$ by computing
+   		\[
+   		\mathbb{E}[x]=\innprod{\Psi}{x\Psi}.
+   		\]
+   		Let $\Psi(x) = \frac{1}{\sqrt{2}} \psi_1(x) + \frac{1}{\sqrt{2}} \psi_2(x)$, compute $\mathbb{E}[x]$. This value $\mathbb{E}[x]$ tells you where we expect to find the particle on average.
+   	\end{enumerate}
+\end{problem}
+
+\begin{problem}
+	In fact, any real valued function $V(x)$ of the position operator $x$ is also Hermitian. Make a quick argument on why this must be true.
+\end{problem}
+
+\begin{problem}
+	Another related operator is the \emph{momentum operator} $\hat{p} = -i\hbar \frac{d}{dx}$. Using integration by parts, show that this operator is Hermitian.
+\end{problem}
+
+\begin{problem}
+	We can always take products, sums, and scalar multiples of operators to build new operators.  For example, in classical physics, we have the kinetic energy
+	\[
+	T=\frac{1}{2}m \vecv \cdot \vecv,
+	\]
+	where $\vecv$ is the velocity. In 1-dimension, this reduces to the familiar $\frac{1}{2}mv^2$.  However, we can also rewrite this 1-dimensional equation using the momentum $p=mv$ which gives us the kinetic energy
+	\[
+	T=\frac{p^2}{2m}.
+	\]
+	Hence, we can define the quantum \emph{kinetic energy operator}
+	\[
+	\hat{T}=\frac{\hat{p}^2}{2m}.
+	\]
+	\begin{enumerate}[(a)]
+		\item Show that $\hat{T} = \frac{-\hbar^2}{2m}\frac{d^2}{dx^2}$.
+		\item Make a quick argument as to why this kinetic energy operator $\hat{T}$ is Hermitian.
+		\item What are the energy eigenvalues $E_1$ and $E_2$ for the states $\psi_1(x)$ and $\psi_2(x)$?
+		\item Again, letting $\Psi(x)=\frac{1}{\sqrt{2}}\psi_1(x)+\frac{1}{\sqrt{2}}\psi_2(x)$, compute $\mathbb{E}[\hat{T}]$. The expected value $\mathbb{E}[\hat{T}]$ tells us what the observed energy will be on average. Yet, any time we measure a system we will find that energy must be one of the energy eigenvalues. Thus, for this wave function, this expected value should be the average between $E_1$ and $E_2$ which means that half the time we will measure the energy to be $E_1$ and half the time it will be $E_2$.
+	\end{enumerate}	
+\end{problem}
+
+\begin{problem}
+If we are given a potential (energy) $V(x)$ and the kinetic energy $T$, we can take their sum and form the total energy $T+V(x)$ which we call the \emph{Hamiltonian}.  Thus, in the quantum realm, we create the Hamiltonian operator $\hat{H}$ by
+\[
+\hat{H}=\hat{T}+V(x).
+\]
+\begin{enumerate}[(a)]
+	\item Show that the Hamiltonian operator is Hermitian. \emph{Hint: you have already done the necessary work for this. You just need to combine it and show a few steps here.}
+	\item The spectrum of the Hamiltonian tells us the possible energy eigenvalues of a quantum system. Thus, we can compute the spectrum (in this case) by solving the eigenvalue equation
+	\[
+	\hat{H}\Psi(x)=E\Psi(x).
+	\]
+	Show that with $V(x)=0$ in $[0,L]$ and the boundary conditions $\Psi(0)=\Psi(L)=0$ that the spectrum of the Hamiltonian operator is discrete.  \emph{Hint: We have done this exact problem in the notes from Math 271. Feel free to use that!}
+\end{enumerate}
+\end{problem}
+
+
+\end{document}

@@ -1,0 +1,85 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Homework 4}\\
+   \textsc{Due October 4$^\textrm{th}$}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+Consider the following sequences,
+\[
+a_n = \frac{1}{2}, \frac{1}{4}, \frac{1}{8}, \dots, \frac{1}{2^n}, \dots,
+\]
+and
+\[
+b_n =  1, \frac{1}{2}, \frac{1}{6},\frac{1}{24}, \dots,\frac{1}{n!}, \dots.
+\]
+\begin{enumerate}[(a)]
+    \item For what values of $N$ do we need for $a_N<0.01$ and $b_N<0.01$? Note, these will be different values for $N$.
+    \item Compute $\displaystyle{\lim_{n\to \infty} a_n}$.
+    \item Compute $\displaystyle{\lim_{n\to \infty} b_n}$.
+    \item Which sequence converges more quickly to its limit? (\emph{Hint: consider a ratio of the terms of the sequences and take a limit. Part (a) should help you think about this.})
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+With the same $a_n$ from $1$, consider the series
+\[
+A = \sum_{n=1}^\infty a_n.
+\]
+\begin{enumerate}[(a)]
+    \item Write down the $N^\textrm{th}$ partial sum $A_N$ for this series.  
+    \item Does this sequence of partial sums converge? If so, to what?
+    \item Note that this is an \emph{geometric series} with $a=1$ and $r=\frac{1}{2}$. However, we start from $n=1$ instead of $n=0$. Show the value that this series converges to using the formula for a geometric series.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+With the same $b_n$ from $1$, consider the series
+\[
+B = \sum_{n=0}^\infty b_n.
+\]
+\begin{enumerate}[(a)]
+    \item Use the ratio test to show that this series converges.
+    \item Approximate the value the series converges to by considering larger and larger partial sums.
+    \item What number does this series converge to?
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the two series
+\[
+\cos(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} \qquad \textrm{and} \qquad \sin(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!}.
+\]
+\begin{enumerate}[(a)]
+    \item Show that $\cos(-x)=\cos(x)$.
+    \item Show that $\sin(-x)=-\sin(x)$.
+    \item To take a derivative of a power series $f(x) = \displaystyle{\sum_{n=0}^\infty a_n x^n}$ we can do the following: 
+    \[
+    \frac{d}{dx}f(x) = \frac{d}{dx} \sum_{n=0}^\infty a_n x^n = \sum_{n=0}^\infty a_n \frac{d}{dx} x^n.
+    \]
+    Compute $\frac{d}{dx} \sin(x)$ and $\frac{d}{dx} \cos(x)$ and show that they are equal to what you already know. \emph{Warning: be careful with the powers of $x$ in the case with $\sin$ and $\cos$!}
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the \emph{$p$-series}:
+\[
+\sum_{n=1}^\infty \frac{1}{n^p}.
+\]
+\begin{enumerate}[(a)]
+    \item For $p=1$, show that the ratio test is inconclusive.
+    \item For $p=2$, show that the ratio test is again inconclusive.
+    \item Look up the sum of the series for $p=1$ and $p=2$.  Notice how the ratio test is not perfect!
+\end{enumerate}
+\end{problem}
+
+\end{document}

@@ -1,0 +1,87 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Homework 9}\\
+   \textsc{Due April 20$^\textrm{th}$}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+    Consider the 2-dimensional source free isotropic heat equation given by
+    \[
+    \left( -k \Delta + \frac{\partial}{\partial t} \right) u(x,y,t) = 0,
+    \]
+    with the domain $\Omega$ as the unit square in the $xy$-plane. Take as well the Dirichlet boundary conditions $u(x,y,t)=0$ for $x$ and $y$ on the boundary of $\Omega$.
+    \begin{enumerate}[(a)]
+        \item Show that $u_{mn}(x,y,t)=\sin(m\pi x)\sin(n\pi y)e^{-k(n^2+m^2)\pi^2 t}$ is a solution to the PDE and Dirichlet boundary conditions for any non-negative integers $m$ and $n$.
+        \item Show that a linear combination of solutions $u_{mn}$ and $u_{pq}$ is also a solution.
+        \item For $m=n=1$ and $k=1$, plot the solution for the values $t=0$, $t=0.01$, $t=0.1$ and $t=1$.  Explain what is physically happening as time moves forward.
+        \item Explain what varying the value for the conductivity $k$ does to the solution.  Feel free to use plots to support your hypothesis.
+        \item Explain the mathematical reason why increasing $m$ and $n$ causes the solution to converge to zero more quickly.
+        \item Explain the physical reason why increasing $m$ and $n$ causes the solution to converge to zero more quickly. Plots may help support your reasoning.
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+    Consider the 1-dimensional homogeneous Laplace equation given by 
+    \[
+    \frac{\partial^2}{\partial x^2} u_E(x) = 0,
+    \]
+    with the domain $\Omega$ as the unit interval on the $x$-axis.  Take the Dirichlet boundary conditions $u_E(0)=T_0$ and $u_E(L)=T_L$.  Think of these values as the ambient temperature at the endpoints of the rod.  These temperatures are constant since the ambient environment is so large.
+    \begin{enumerate}[(a)]
+        \item Find the particular solution to this Laplace equation.
+        \item Suppose that $v(x,t)$ is a solution to the 1-dimensional source free isotropic heat equation with zero Dirichlet boundary values. Show that 
+        \[
+        u(x,t)=v(x,t)+u_E(x),
+        \]  
+        is a solution to the 1-dimensional source free isotropic heat equation with Dirichlet boundary values $u(0,t)=T_0$ and $u(L,t)=T_L$.
+        \item From Problem 1, we know that $\lim_{t\to \infty} v(x,t) = 0$.  Hence, show that the long time limit of a solution to the source free heat equation yields a solution to the Laplace equation.
+        \item Argue why the equilibrium temperature profile of a rod can be found without solving the heat equation.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Using intuition from the previous problem, explain how one could solve the heat equation with a nonzero source term that only depends on $x$. In other words, how could one try to solve
+    \[
+    \left( -k \frac{\partial^2}{\partial x^2} + \frac{\partial}{\partial t} \right) u(x,t) = f(x),
+    \]
+\end{problem}
+%\begin{problem}
+%    Consider the 1-dimensional source free heat equation given by
+%    \[
+%    \left( - \frac{\partial^2}{\partial x^2} + \frac{\partial}{\partial t} \right) u(x,t) = 0
+%    \]
+%    with the domain $\Omega$ as the unit interval on the $x$-axis. Take as well the Dirichlet boundary conditions $u(0,t)=-1$ and $u(1,t)=1$.
+%\end{problem}
+
+\begin{problem}
+    Consider the 1-dimensional wave equation given by
+    \[
+    \left( - \frac{\partial^2}{\partial x^2} +\frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right) u(x,t) =0,
+    \]
+    with the domain $\Omega$ as the unit interval on the $x$-axis.  We shall fix the string at each endpoint which requires $u(0,t)=0$ and $u(1,t)=0$ for all $t$.  Take the initial condition as well to be a plucked string so that $u(x,0)=\sin(\pi x)$ and $\frac{\partial}{\partial t}u(x,0)=0$. 
+    \begin{enumerate}[(a)]
+        \item Use the separation of variables ansatz $u(x,t)=X(x)T(t)$ to get a new separation constant. This will give two ODEs: one will be in terms of $X(x)$ and the other will be in terms of $T(t)$.
+        \item Use the boundary conditions and solve the ODE that is in terms of $X(x)$ which will simultaneously find the allowed values for the separation constant.
+        \item Using these allowed values for the separation constant, find the solution for $T(t)$.
+        \item Find the particular solution for $u(x,t)$ by matching the initial condition.
+        \item Plot your solution for $x\in [0,1]$ and $t\in [0,\infty)$ (i.e., just plot up to a large value of $t$). In this case, compare your plots for $c=1/2$ and $c=1$.
+    \end{enumerate}
+\end{problem}
+
+
+
+
+
+
+
+
+\end{document}

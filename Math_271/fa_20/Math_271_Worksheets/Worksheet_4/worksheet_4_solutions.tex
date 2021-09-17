@@ -1,0 +1,416 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Worksheet 4, \emph{Solutions}}\\
+   \textsc{Second order linear equations and boundary value problems.}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+Write down the characteristic polynomial for the following equations.  Then, find the roots to the characteristic polynomial and write down the general solution.
+\begin{enumerate}[(a)]
+    \item $x''+x'+x=0$.
+    \item $x''-x'-x=0$.
+    \item $x''-x'+x=0$.
+    \item $x''+x'-x=0$.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}[(a)]~
+        \item The characteristic polynomial is 
+         \[
+\lambda^2+\lambda+1=0.
+\]
+ This has roots
+        \[
+            \lambda_1 = -\frac{1}{2} -i\frac{\sqrt{3}}{2} \qquad \textrm{and} \qquad \lambda_2 = -\frac{1}{2} + i\frac{\sqrt{3}}{2}.
+        \]
+    This leads to the general solution
+        \[
+            \boxed{x(t) = e^{-\frac{1}{2}t} \left(c_1 \sin\left(\frac{\sqrt{3}}{2}t\right) +c_2 \cos\left(\frac{\sqrt{3}}{2}t\right) \right).}
+        \]
+
+        \item The characteristic polynomial is 
+        \[
+            \lambda^2-\lambda-1=0.
+        \]
+         This has roots
+        \[
+            \lambda_1 = \frac{1}{2} -\frac{\sqrt{5}}{2} \approx -0.618 \qquad \textrm{and} \qquad \lambda_2 = \frac{1}{2} + \frac{\sqrt{5}}{2} \approx 1.618.
+        \]
+    This leads to the general solution
+        \[
+            \boxed{x(t) = c_1 e^{\left(\frac{1}{2}-\frac{\sqrt{5}}{2}\right)t}  +c_2 e^{\left(\frac{1}{2}+\frac{\sqrt{5}}{2}\right)t}.}
+        \]
+
+        \item The characteristic polynomial is 
+         \[
+\lambda^2-\lambda+1=0.
+\]
+ This has roots
+        \[
+            \lambda_1 = \frac{1}{2} -i\frac{\sqrt{3}}{2} \qquad \textrm{and} \qquad \lambda_2 = \frac{1}{2} + i\frac{\sqrt{3}}{2}.
+        \]
+    This leads to the general solution
+        \[
+            \boxed{x(t) = e^{\frac{1}{2}t} \left(c_1 \sin\left(\frac{\sqrt{3}}{2}t\right) +c_2 \cos\left(\frac{\sqrt{3}}{2}t\right) \right).}
+        \]
+
+        \item The characteristic polynomial is 
+        \[
+            \lambda^2+\lambda-1=0.
+        \]
+         This has roots
+        \[
+            \lambda_1 = -\frac{1}{2} -\frac{\sqrt{5}}{2} \approx -1.618 \qquad \textrm{and} \qquad \lambda_2 = -\frac{1}{2} + \frac{\sqrt{5}}{2} \approx 0.618.
+        \]
+    This leads to the general solution
+        \[
+            \boxed{x(t) = c_1 e^{\left(-\frac{1}{2}-\frac{\sqrt{5}}{2}\right)t}  +c_2 e^{\left(-\frac{1}{2}+\frac{\sqrt{5}}{2}\right)t}.}
+        \]
+
+    \end{enumerate}
+\end{solution}
+
+\newpage
+
+\begin{problem}
+For the above solutions, analyze their behavior qualitatively. That is, do the solutions oscillate, grow, decay, or some combination of these, or something else entirely?
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+    \item This solution shows decaying oscillatory behavior.
+    \item This solution shows exponential growth with a transient decay behavior.  Notice that the term with a negative in the exponential will seem to disappear over time.  We refer to this as transient.
+    \item This solution shows exponential growth and oscillatory behavior.
+    \item This solution is analogous to the one in (b) just with slightly different exponents.
+\end{enumerate}
+\end{solution}
+
+\newpage
+
+\begin{problem}
+Consider the equation
+\[
+x''+bx'+cx=0.
+\]
+The roots to the characteristic polynomial are then
+\[
+\lambda = \frac{-b\pm \sqrt{b^2-4c}}{2}.
+\]
+\begin{enumerate}[(a)]
+    \item Explain why if $c>0$ and $b=0$ the solution $x(t)$ will be purely oscillatory.
+    \item Explain why if $b>0$ and $b^2<4c$, the solution will oscillate and decay.
+    \item Explain why if $b<0$ and $b^2<4c$, the solution will oscillate and grow.
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+    \begin{enumerate}[(a)]
+        \item If $b=0$, then the real part of the roots $\lambda_1$ and $\lambda_2$ will be zero. Thus, there will be no growth or decay.  If $c>0$ as well, then we will have a square root of a negative appear, and we will get a nonzero imaginary part for the roots. Thus, we will have oscillation.
+        \item If $b>0$, then the real part of the roots will be negative and we will see decay.  If $b^2<4c$, then we have a square root of a negative appearing which gives a nonzero imaginary part to the roots and we will have oscillation.
+        \item This answer is the same as (b) except for if $b<0$ we will see growth instead of decay since the real part of the roots will be positive.
+    \end{enumerate}
+\end{solution}
+
+\newpage
+
+\begin{problem}
+Write down a second order linear differential equation that oscillates and also decays over time.
+\end{problem}
+\begin{solution}
+Since our solution should oscillate and decay, we need some form of a ``spring" and some form of damping.  These terms show up respectively as $b$ and $c$ in the equation
+\[
+x''+bx'+cx=0.
+\]
+Now, also note that (aside from one special case of two of the same real roots), our general solution has the form
+\[
+x(t)=C_1 e^{\lambda_1 t}+C_2e^{\lambda_2 t}
+\]
+where $\lambda_1$ and $\lambda_2$ are roots to the characteristic polynomial
+\[
+\lambda^2+b\lambda + c =0.
+\]
+Now, the roots for the characteristic polynomial are
+\[
+\lambda = \frac{-b \pm \sqrt{b^2-4c}}{2}.
+\]
+\begin{itemize}
+    \item To have oscillation, our roots must have an imaginary part and thus 
+    \[
+    b^2-4c<0.
+    \]
+    In other words, $b^2<4c.$
+    \item To have a decaying solution, the real part of the roots must be negative. The real part of the roots will be $\frac{-b}{2}$ and thus we need
+    \[
+    \frac{-b}{2}<0.
+    \]
+\end{itemize}
+Now, I'll choose $b=1$ and $c=1$ which satisfy both of these requirements. We then have
+\[
+x''+x'+x=0
+\]
+as our equation.
+
+Note, we can also find the solution as the roots are then
+\[
+\lambda = \frac{-1\pm \sqrt{1-4}}{2}=\frac{-1}{2}\pm \frac{\sqrt{3}}{2}.
+\]
+Plugging this into the form for the general solution and we get
+\[
+x(t)=e^{-\frac{1}{2}t}\left(C_1 \sin\left(\frac{\sqrt{3}}{2}\right) + \cos\left(\frac{\sqrt{3}}{2}\right)\right)
+\]
+\end{solution}
+
+\newpage
+
+\begin{problem}
+Consider the following differential equation
+\[
+x''+x=0.
+\]
+\begin{enumerate}[(a)]
+    \item Find the general solution to this equation.
+    \item Given the initial conditions $x(0)=1$ and $x'(0)=1$, find the particular solution.
+    \item Plot your particular solution.
+    \item Does the solution grow or decay over time? 
+    \item What is $\lim_{t\to \infty}x(t)$?
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item To find a general solution to this equation we can write down the characteristic polynomial
+    \[
+    \lambda^2+1
+    \]
+    and find the roots
+    \begin{align*}
+        \lambda^2+1&=0\\
+        \lambda^2&=-1\\
+        \lambda&=\pm i.
+    \end{align*}
+    Thus the general solution is
+    \[
+    x(t)=C_1e^{\lambda_1 t}+C_2e^{\lambda_2 t}=C_1e^{it}+C_2e^{-it},
+    \]
+    where $C_1$ and $C_2$ are complex numbers. We could also equivalently write
+    \[
+    x(t)=C_1\sin(t)+C_2\cos(t).
+    \]
+    \item This solution oscillates with the same amplitude for all time. So it does not grow or decay!
+    \item ``If the limit never approaches anything... The limit does not exist. The limit does not exist!"  Who doesn't love a Mean Girls quote.
+\end{enumerate}
+\end{solution}
+
+\newpage
+
+\begin{problem}
+Next, consider a related equation
+\[
+x''+x=t.
+\]
+that has an additional linear external force.
+\begin{enumerate}[(a)]
+    \item What is the solution to the homogenous equation?
+    \item Find the particular integral with the given forcing term.
+    \item What is the specific solution to this equation?
+    \item Does the solution grow or decay over time?
+    \item What is $\lim_{t\to \infty}x(t)$?
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+    \item We found the homogeneous solution in the previous problem. We have
+    \[
+    x_h = C_1\sin(t)+C_2\cos(t).
+    \]
+    \item With this forcing term we would take 
+    \[
+    x_p = a_0 + a_1t.
+    \]
+    \item We need to find the undetermined coefficients $a_0$ and $a_1$.  So we plug in $x_p$ into our differential equation
+    \begin{align*}
+        x_p''+x_p&=t\\
+        a_0+a_1t&=t
+    \end{align*}
+    so $a_0=0$ and $a_1=1$. So the specific solution to this problem is
+    \[
+    \boxed{x=x_h+x_p=C_1\sin(t)+C_2\cos(t)+t.}
+    \]
+    \item This solution grows over time since the $t$ term in our solution $x$ dominates the oscillating terms.
+    \item Part (d) can be equivalently stated in this way.  We consider $\lim_{t\to \infty} t = \infty$, which shows us that the solutions grows over time.
+\end{enumerate}
+\end{solution}
+
+\newpage
+
+\begin{problem}
+Consider now the equation
+\[
+x''+x=F(t)
+\]
+where the external force is $F(t)=\cos(t)$.
+\begin{enumerate}[(a)]
+    \item Find the particular integral with the given forcing term.
+    \item What is the specific solution to this equation?
+    \item What is $\lim_{t\to \infty}$? What does this mean about the growth or decay of the solution over time?
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+    \item With this forcing term we try 
+    \[
+    x_p = K \cos(t)+M\sin(t).
+    \]
+    \item If we try to find the specific solution with this ansatz above, there will be an issue.  Let's see what happens.  
+    \begin{align*}
+        x_p''+x_p &= \cos(t)\\
+        (-K\cos(t)-M\sin(t))+(K\cos(t)+M\sin(t)&=\cos(t)\\
+        0&=\cos(t).
+    \end{align*}
+    So this ansatz is not correct.  It turns out we must consider an ansatz of
+    \[
+    x_p=Kt\cos(t)+Mt\sin(t).
+    \]
+    In general, whenever the ansatz doesn't work, be can add another term that has an extra power of $t$ on it.
+    \item This solution will in fact grow over time.  What we get is an ever increasing amplitude of oscillation. This specific case is called \emph{resonance} since we are forcing the system at its fundamental frequency.
+\end{enumerate}
+\end{solution}
+
+\newpage
+
+\begin{problem}
+Consider the boundary value problem
+\[
+x''=g
+\]
+with boundary values $x(0)=0$, $x\left(-\frac{2}{g}\right)=0$ and $g=-9.8[m/s^2]$.  We can think of this as solving the \emph{inverse problem} of one that we have seen in a homework. Specifically, think of this as knowing where a ball is launched and knowing where it lands and trying to find the speed it must have been thrown at.  
+
+Another interpretation is the shape of a rod bending due to gravity.  $x''$ would measure the curvature of this rod, and this equation would say that the rod under the force of gravity would have a constant curvature. In this case, the dependent variable $t$ should be thought of as spatial rather than temporal.
+
+Finally, this equation above is referred to as\emph{Poisson's equation}.
+\begin{enumerate}[(a)]
+    \item Find the general solution. If you already know it from the homework, just write it down.
+    \item Use the boundary values above to find the particular solution.
+    \item Is the solution unique? 
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+    \item The general solution is found by integrating twice.  It has been done in the homework, so I'll just say that we have
+    \[
+    x=\frac{1}{2}gt^2+C_1t+C_2.
+    \]
+    \item We plug in the boundary values to get
+    \begin{align*}
+        0=x(0)&=\frac{1}{2}g\cdot 0 + C_1 \cdot 0 + C_2 = C_2
+    \end{align*}
+    and so $C_2=0$. Then we also have
+    \begin{align*}
+        0=x\left(-\frac{2}{g}\right)&= \frac{1}{2}g\cdot \left(\frac{-2}{g}\right)^2+C_1 \cdot \frac{-2}{g}= \frac{2}{g}+\frac{-2}{g}C_1\\
+        \iff -\frac{2}{g}&=-\frac{2}{g}C_1
+    \end{align*}
+    so $C_1=1$. Thus our particular solution is
+    \[
+    x=\frac{1}{2}gt^2 + t.
+    \]
+    \item Yes, the solution is unique.  We did not find any other option it could be.  However, we could ask related questions that sometimes don't have unique answers!
+\end{enumerate}
+\end{solution}
+
+\newpage
+
+\begin{problem}
+Consider the \emph{time independent Sch\"odinger equation} for a \emph{free particle} constrained inside of a 1-dimensional box of length $L$. That is, we have the equation
+\[
+-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\psi(x)=E\psi(x)
+\]
+on the unit interval $[0,L]$.
+\begin{enumerate}[(a)]
+    \item Find the general solution to this equation with no constraint.
+    \item Given the constraint, we have the boundary values $\psi(0)=\psi(L)=0$. What are the general solutions given this constraint?
+    \item Show that the sum of two solution $\psi_1(x)$ and $\psi_2(x)$ is also a solution. When we have a particle whose state (or \emph{wavefunction}) $\psi$ is a sum of general solutions, we say that $\psi$ is in a \emph{superposition state.}
+    \item The wavefunction is not really a physically meaningful quantity.  However, if we consider a region $[a,b]$ in the box $[0,L]$ the quantity
+    \[
+    P([a,b])=\int_a^b |\psi(x)|^2dx
+    \]
+    \emph{is} meaningful. This expression tells us the \emph{probability} that a particle will be observed in the region $[a,b]$.  Take your general solutions you found in (b) (with the constraint) and solve for the constants that give you
+    \[
+    \int_0^L |\psi(x)|^2dx=1.
+    \]
+    We call this \emph{normalization} and we must do so for each state so that we can interpret the integral $P([a,b])$ as a probability.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+    \item We have a second order linear differential equation with constant coefficients. In fact, it is also homogeneous as we can write 
+\[
+\frac{d^2\psi}{dx^2}+\frac{2mE}{\hbar^2}\psi =0.
+\]
+Now, to solve this, find roots $\lambda_1$ and $\lambda_2$ to the characteristic polynomial
+\[
+\lambda^2+\frac{2mE}{\hbar^2}=0.
+\]
+We solve this by letting $\omega^2 = \frac{2mE}{\hbar^2}$ and putting
+\begin{align*}
+    \lambda^2&=-\omega\\
+    \lambda&=\pm i \omega,
+\end{align*}
+so $\lambda_1=i\omega$ and $\lambda_2=\lambda_1^*$. This then gives us the general solution
+\[
+\psi(x)=C_1 e^{i\omega x}+C_2 e^{-i\omega x}.
+\]
+Of course, it is also possible to write 
+\[
+\psi(x)=C_1\cos(\omega x)+C_2\sin(\omega x),
+\]
+as this is just an equivalent way to write out the general solution. 
+\item Now, we have our boundary conditions $\psi(0)=0$ and $\psi(L)=0$ as well.  Plugging these into our general solution gives us
+\begin{align*}
+    0=\psi(0)&=C_1 \cos(\omega \cdot 0)+C_2 \sin(\omega \cdot 0)\\
+    &= C_1,
+\end{align*}
+so $C_1=0$.  Next, we have
+\begin{align*}
+    0=\psi(L)&=C_2\sin(\omega \cdot L).
+\end{align*}
+Now, how are we to solve this equation? We must have that input to the sin function must be an integer $n=\dots,-2,-1,0,1,2,\dots$ copy of $\pi$ as $\sin(n\pi)=0$. Else, we force $C_2=0$ which gives us nothing!  So, we require
+\[
+\omega L = n\pi.
+\]
+Recall that $\omega = \frac{2mE}{\hbar^2}$ and that $E$ is not determined (yet)! So now we have that $\omega = \frac{n\pi}{L}$ which gives us a general solution we will denote with a subscript $n$
+\[
+C\psi_n(x)=\sin\left(\frac{n\pi x}{L}\right).
+\]
+\item Let's consider two solutions $\psi_n=C_n\sin\left(\frac{n\pi x}{L}\right)$ and $\psi_m=C_m\sin\left(\frac{m\pi x}{L}\right)$ and the sum of solutions
+\[
+\Psi=\psi_n + \psi_m.
+\]
+Then we can plug these into the equation
+\begin{align*}
+    \frac{d^2}{dx^2}\Psi + \omega^2 \Psi&=\frac{d^2}{dx^2}(\psi_n + \psi_m)+\omega^2(\psi_n+\psi_m)\\ 
+    &= \psi_n'' + \psi_m''  + \omega^2 \psi_n + \omega^2 \psi_m\\
+    &= -\omega^2 \psi_n -\omega^2\psi_m+\omega^2\psi_n + \omega^2\psi_m\\
+    &=0.
+\end{align*}
+Indeed, the sum of two solutions is a solution.
+\item We can integrate
+\begin{align*}
+1=\int_0^L \left|C_n\sin(\left(\frac{n\pi x}{L}\right)\right|^2dx&= |C_n|^2 \int_0^L \sin^2\left(\frac{n \pi x}{L}\right)\\
+&= C_n \frac{L}{2}
+\end{align*}
+which means that $C_n=\sqrt{\frac{2}{L}}$. In fact, this is true for all $n$.
+\end{enumerate}
+\end{solution}
+
+
+
+
+
+
+\end{document}

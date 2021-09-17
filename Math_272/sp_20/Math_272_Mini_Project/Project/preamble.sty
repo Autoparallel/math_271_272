@@ -1,0 +1,138 @@
+\ProvidesPackage{preamble}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+
+%Tikz
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\RequirePackage{pgfplots}
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations}
+\usetikzlibrary{arrows,decorations.markings} 
+\usetikzlibrary{quotes,angles}
+
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+\usepackage{float, morefloats}
+\usepackage{svg}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Number systems
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+
+% Operators/functions
+\newcommand{\RE}{\mathrm{Re}}
+\newcommand{\IM}{\mathrm{Im}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% symbols
+\newcommand{\vecv}{\boldsymbol{\vec{v}}}
+\newcommand{\vecu}{\boldsymbol{\vec{u}}}
+\newcommand{\vecw}{\boldsymbol{\vec{w}}}
+\newcommand{\xhat}{\boldsymbol{\hat{x}}}
+\newcommand{\yhat}{\boldsymbol{\hat{y}}}
+\newcommand{\zhat}{\boldsymbol{\hat{z}}}
+\newcommand{\zerovec}{\boldsymbol{\vec{0}}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Italic font
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{axiom}{Axiom}
+
+% Plain font
+\theoremstyle{definition}
+% \newtheorem{definition}{Definition}[section]
+% \newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[]
+%\newtheorem{solution}{Solution}
+%\newtheorem{problem}{Problem}
+\newtheorem{question}{Question}
+\newtheorem{answer}{Answer}
+% \newtheorem{exercise}{Exercise}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{titlesec}
+\titleformat{\section}{\LARGE\bfseries}{\thesection}{1em}{}[\hrule] %section styles
+
+\definecolor{nice_blue}{RGB}{59,140,245} 
+
+\newcommand\boldblue[1]{\textcolor{nice_blue}{\emph{\textbf{#1}}}}
+
+\usepackage{geometry}
+\geometry{
+	top=1in,            
+	inner=1in,
+	outer=1in,
+	bottom=1in,
+	headheight=10ex,       
+	headsep=7ex,          
+	footskip=10ex
+}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{etoolbox}
+\makeatletter
+%\patchcmd{\f@nch@head}{\rlap}{\color{red}\rlap}{}{}
+\patchcmd{\headrule}{\hrule}{\color{gray}\hrule}{}{}
+%\patchcmd{\f@nch@foot}{\rlap}{\color{green}\rlap}{}{}
+%\patchcmd{\footrule}{\hrule}{\color{green}\hrule}{}{}
+\makeatother
+\rhead{\textcolor{gray}{Math 272}}
+\lhead{\textcolor{gray}{Mini-Project}}
+\lfoot{\textcolor{gray}{Colin Roberts}}
+\rfoot{\textcolor{gray}{Colorado State University}}
+\cfoot{\textcolor{gray}{\thepage}}
+
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{theorems}
+\tcbuselibrary{skins}
+
+\newtcbtheorem[]{problem}{Problem}
+{enhanced,breakable,arc=0mm,outer arc=0mm,
+	boxrule=0.3pt,toprule=0.3pt,bottomrule=0.3pt,left=0.2cm,right=0.2cm,
+	titlerule=0.3pt,toptitle=0.1cm,bottomtitle=0.1cm,top=0.1cm,
+	colframe=white!25!black,colback=white,coltitle=black,
+	title style={white!100},
+	fonttitle=\bfseries,fontupper=\normalsize,before
+	skip=20pt plus 2pt,after skip=20pt plus 2pt}{ex}
+
+\newtcbtheorem[]{solution}{Solution}
+{enhanced,breakable,arc=0mm,outer arc=0mm,
+	boxrule=0.3pt,toprule=0.3pt,bottomrule=0.3pt,left=0.2cm,right=0.2cm,
+	titlerule=0.3pt,toptitle=0.1cm,bottomtitle=0.1cm,top=0.1cm,
+	colframe=white!25!black,colback=white,coltitle=black,
+	title style={white!100},
+	fonttitle=\bfseries,fontupper=\normalsize,before
+	skip=20pt plus 2pt,after skip=20pt plus 2pt}{ex}

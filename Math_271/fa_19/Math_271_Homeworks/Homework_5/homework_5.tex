@@ -1,0 +1,62 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Homework 5}\\
+   \textsc{Due October 11$^\textrm{th}$}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem} $p$-series are actually related to a very important function called the \emph{Riemann zeta function}.  This function is involved in a million dollar math problem! If you're interested in other million dollar problems, look up the Clay Institute Millennium Problems. The Riemann zeta function is given by
+\[
+\zeta (s) = \sum_{n=1}^\infty \frac{1}{n^s}.
+\]
+\begin{enumerate}[(a)]
+    \item Use the integral test to show that the $p$-series
+    \[
+    \sum_{n=1}^\infty \frac{1}{n^2}
+    \]
+    converges.  Look up what this series converges to and write it down. This is $\zeta(2)$.
+    \item Use the comparison test to show that the $p$-series
+    \[
+    \sum_{n=1}^\infty \frac{1}{n^3}
+    \]
+    converges. This converges as well to $\zeta(3)$. Look up what this approximate value is.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+How can we approximate a (possibly complicated) function by using a power series? Why is this useful (specifically for computation on a computer)?
+\end{problem}
+
+\begin{problem} Consider the function
+\[
+f(x)=\frac{1}{1-x}.
+\]
+\begin{enumerate}[(a)]
+    \item Compute the Maclaurin series for the function.
+    \item Find the integral $\int \frac{dx}{1-x}$ using the Maclaurin series for $f(x)$ found in (a).  
+    \item Write down the Macluarin series for $\ln(1-x)$ and compare to your answer in (b).
+\end{enumerate}
+\end{problem}
+
+\begin{problem} 
+Compute the Taylor series centered at $a=0$ for $f(x)=e^{-\frac{x^2}{2}}$. Then, instead use the Taylor series for $e^x$ and modify it to work for $f(x)$.  For each of these power series, plot the original function $f(x)$ compared to the four term approximation on the same graph.
+\end{problem}
+
+\begin{problem}
+Find the radius of convergence for the following power series
+\begin{enumerate}[(a)]
+    \item $\displaystyle{\sum_{n=1}^\infty \frac{x^n}{n(n+1)}}$;
+    \item $\displaystyle{\sum_{n=0}^\infty \frac{x^{2n+1}}{(2n+1)!}}$.
+\end{enumerate}
+\end{problem}
+
+
+\end{document}

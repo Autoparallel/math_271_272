@@ -1,0 +1,96 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Homework 4}\\
+   \textsc{Due March$^\textrm{nd}$}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+Plot the following curves and print pictures of each using GeoGebra.  
+\begin{enumerate}[(a)]
+	\item (Helix) $\curvegamma_1(t) = \begin{pmatrix} 3\cos(t) \\ 3\sin(t) \\ t\end{pmatrix}$, from $t=0$ to $t=2\pi$. Where might this show up? If you think about the Earth moving through space and Moon orbiting Earth, then the Moon follows a (locally) helical path.
+	
+	\item (Falling Ball) $\curvegamma_2(t) = \begin{pmatrix} t\\  0.5t \\ 9-t^2 \end{pmatrix}$ from $t=0$ to $t=3$.
+	
+	\item (Perturbed Orbiter) $\curvegamma_3(t) = \begin{pmatrix} 3\cos(t) \\ 3 \sin(t) \\ \sin(10t)\end{pmatrix}$ from $t=0$ to $t=2\pi$.
+	
+	\item Create your own curve.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+The length of a curve is an important notion. In fact, the length of a curve is often related to the energy of some configuration. We can compute the length of a curve over the time $t=t_0$ to $t=t_1$ by integrating the \emph{speed} of the curve over that time.  That is,
+\[
+l(\curvegamma) = \int_{t_0}^{t_1} \left|\tangentgamma(t)\right| dt.
+\]
+We can compute the \emph{energy} of a curve by taking
+\[
+E(\curvegamma) = \int_{t_0}^{t_1} \frac{1}{2} \left| \tangentgamma(t)\right|^2dt.
+\]
+\begin{enumerate}[(a)]
+	\item Find the length of the Helix from Problem 1 (a).
+	\item Find the energy of the Perturbed Orbiter in Problem 1 (c).  Roughly, this corresponds to the potential energy a rubber band stretched this way would have.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Given a scalar field of two variables $F(x,y)$, we can create an object called the \emph{graph} of $F(x,y)$ by plotting the set of points $(x,y,F(x,y))$. In fact, you have done this many times in your life. For example, you have consistently plotted the graph of a function $f(x)$ by plotting $(x,f(x))$ in the plane!  
+
+Using GeoGebra, plot the graph of the following functions. Print these off and include them.  Also, describe the what the graph of the function does as we move along the $x$-axis, the $y$-axis, and along the line $y=x$. For each, use the range $-3\leq x \leq 3$ and $-3\leq y \leq 3$.
+\begin{enumerate}[(a)]
+	\item $F(x,y) = \frac{4xy}{1+x^2+y^2}$.
+	\item $G(x,y) = \sin(xy)$.
+	\item $H(x,y) = \frac{-x^2-y^2}{5}$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+For this problem, let us consider a family of scalar fields of varying dimensionality.  We will seek out an understanding of the level sets and how to relate these to the derivatives of a scalar field. For each part, compute the set of points such that $f(\vecx)=\frac{1}{2}$, $f(\vecx)=1$, $f(\vecx)=2$, and $f(\vecx)=3$ and plot these sets. 
+
+Compute as well the vector of partial derivatives (referred to as the \emph{gradient vector}) which we write as
+\[
+\nablavec f(\vecx) = \begin{pmatrix} \frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\ \frac{\partial f}{\partial x_n}\end{pmatrix}.
+\]
+in $\R^n$. Draw the gradient vector on your plots at a three different points for each part.
+\begin{enumerate}[(a)]
+	\item Consider the 1-dimensional scalar field 
+	\[
+	f(x) = \frac{1}{|x|}=\frac{1}{\sqrt{x^2}}.
+	\]
+	Here each level set will be made up of distinct points.
+	\item Consider the 2-dimensional scalar field
+	\[
+	f(x,y) = \frac{1}{|\vec{x}|} = \frac{1}{\sqrt{x^2+y^2}}.
+	\]
+	Here each level set will be a curve.
+	\item Consider the 3-dimensional scalar field
+		\[
+		f(x,y,z) = \frac{1}{|\vec{x}|} = \frac{1}{\sqrt{x^2+y^2+z^2}}.
+		\]
+		Here each level set will be a surface.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the two dimensional scalar field $T(x,y)=x+y$ that describes the temperature on the square plate $\Omega$ given by the set $0\leq x,y \leq 1$.  Compare the two answers you get!
+\begin{enumerate}[(a)]
+	\item Compute the integral
+	\[
+	\int_\Omega T(x,y)d\Omega.
+	\]
+	\item Let $\curvegamma$ be the curve that traverses the boundary of the square plate in the counterclockwise direction.  Compute
+	\[
+	\int_{\curvegamma} T(\curvegamma)d\curvegamma. 
+	\]
+\end{enumerate}
+\end{problem}
+
+\end{document}

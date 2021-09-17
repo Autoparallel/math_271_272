@@ -1,0 +1,89 @@
+\BOOKMARK [-1][-]{part.1}{I Prerequisites}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Introduction \046 Review}{part.1}% 2
+\BOOKMARK [1][-]{section.1.1}{Introduction}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{How to read this text}{chapter.1}% 4
+\BOOKMARK [2][-]{subsection.1.2.1}{Mathematical language}{section.1.2}% 5
+\BOOKMARK [1][-]{section.1.3}{Review}{chapter.1}% 6
+\BOOKMARK [2][-]{subsection.1.3.1}{Computation}{section.1.3}% 7
+\BOOKMARK [2][-]{subsection.1.3.2}{Algebra}{section.1.3}% 8
+\BOOKMARK [2][-]{subsection.1.3.3}{Geometry}{section.1.3}% 9
+\BOOKMARK [2][-]{subsection.1.3.4}{Trigonometry}{section.1.3}% 10
+\BOOKMARK [2][-]{subsection.1.3.5}{Functions}{section.1.3}% 11
+\BOOKMARK [2][-]{subsection.1.3.6}{Calculus}{section.1.3}% 12
+\BOOKMARK [0][-]{chapter.2}{Tutorials}{part.1}% 13
+\BOOKMARK [1][-]{section.2.1}{Wolfram Alpha}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.1.1}{Solving Algebraic Expressions}{section.2.1}% 15
+\BOOKMARK [2][-]{subsection.2.1.2}{Error Checking}{section.2.1}% 16
+\BOOKMARK [1][-]{section.2.2}{Geogebra}{chapter.2}% 17
+\BOOKMARK [1][-]{section.2.3}{CalcPlot3D}{chapter.2}% 18
+\BOOKMARK [-1][-]{part.2}{II Ordinary Differential Equations}{}% 19
+\BOOKMARK [0][-]{chapter.3}{The Complex Numbers}{part.2}% 20
+\BOOKMARK [1][-]{section.3.1}{Introduction to Complex Numbers}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.2}{Complex Number Algebra}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.3}{Geometry of complex numbers}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.4}{Polar coordinates}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.4.1}{Euler's Formula}{section.3.4}% 25
+\BOOKMARK [2][-]{subsection.3.4.2}{Polar Coordinates and Transformations}{section.3.4}% 26
+\BOOKMARK [2][-]{subsection.3.4.3}{Multiplication of complex numbers in polar form}{section.3.4}% 27
+\BOOKMARK [1][-]{section.3.5}{Periodic Motion}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.6}{Problems}{chapter.3}% 29
+\BOOKMARK [0][-]{chapter.4}{First and Second Order Dynamics}{part.2}% 30
+\BOOKMARK [1][-]{section.4.1}{Ordinary Differential Equations}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.2}{Solutions to an ODE}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.3}{General and Particular Solutions}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.4}{Separable Equations}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.5}{Changing Variables and Symmetry}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.6}{First Order Linear Differential Equations}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.7}{Applications to Chemical Kinetics}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.8}{Second Order Equations}{chapter.4}% 38
+\BOOKMARK [2][-]{subsection.4.8.1}{Homogeneous and Constant Coefficients}{section.4.8}% 39
+\BOOKMARK [2][-]{subsection.4.8.2}{Qualitative Analysis}{section.4.8}% 40
+\BOOKMARK [2][-]{subsection.4.8.3}{Inhomogeneous Linear Equations}{section.4.8}% 41
+\BOOKMARK [1][-]{section.4.9}{Problems}{chapter.4}% 42
+\BOOKMARK [0][-]{chapter.5}{Boundary Value Problems}{part.2}% 43
+\BOOKMARK [1][-]{section.5.1}{Laplace's and Poisson's Equations}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.2}{A Particle in a 1-Dimensional Box}{chapter.5}% 45
+\BOOKMARK [-1][-]{part.3}{III Elements of Analysis}{}% 46
+\BOOKMARK [0][-]{chapter.6}{Sequences and Series}{part.3}% 47
+\BOOKMARK [1][-]{section.6.1}{Sequences}{chapter.6}% 48
+\BOOKMARK [2][-]{subsection.6.1.1}{Convergence}{section.6.1}% 49
+\BOOKMARK [2][-]{subsection.6.1.2}{Recursive Sequences}{section.6.1}% 50
+\BOOKMARK [1][-]{section.6.2}{Series}{chapter.6}% 51
+\BOOKMARK [0][-]{chapter.7}{Power Series}{part.3}% 52
+\BOOKMARK [1][-]{section.7.1}{Power Series}{chapter.7}% 53
+\BOOKMARK [1][-]{section.7.2}{Taylor Series}{chapter.7}% 54
+\BOOKMARK [1][-]{section.7.3}{Operations with Power Series}{chapter.7}% 55
+\BOOKMARK [1][-]{section.7.4}{Approximation with Power Series}{chapter.7}% 56
+\BOOKMARK [1][-]{section.7.5}{Power Series Solutions to Differential Equations}{chapter.7}% 57
+\BOOKMARK [1][-]{section.7.6}{Orthogonal Polynomials from Power Series Solutions}{chapter.7}% 58
+\BOOKMARK [2][-]{subsection.7.6.1}{Legendre's Equation}{section.7.6}% 59
+\BOOKMARK [-1][-]{part.4}{IV Finite Dimensional Linear Algebra}{}% 60
+\BOOKMARK [0][-]{chapter.8}{Vectors and Vector Spaces}{part.4}% 61
+\BOOKMARK [1][-]{section.8.1}{Vector Spaces}{chapter.8}% 62
+\BOOKMARK [1][-]{section.8.2}{Vector Algebra}{chapter.8}% 63
+\BOOKMARK [2][-]{subsection.8.2.1}{Linear Combinations}{section.8.2}% 64
+\BOOKMARK [1][-]{section.8.3}{Vector Components}{chapter.8}% 65
+\BOOKMARK [1][-]{section.8.4}{Vector Algebra with Components}{chapter.8}% 66
+\BOOKMARK [1][-]{section.8.5}{Products of Vectors}{chapter.8}% 67
+\BOOKMARK [2][-]{subsection.8.5.1}{The Dot Product}{section.8.5}% 68
+\BOOKMARK [2][-]{subsection.8.5.2}{The Cross Product}{section.8.5}% 69
+\BOOKMARK [2][-]{subsection.8.5.3}{The Geometric Product}{section.8.5}% 70
+\BOOKMARK [0][-]{chapter.9}{Linear Transformations and Matrices}{part.4}% 71
+\BOOKMARK [1][-]{section.9.1}{Linear Transformations}{chapter.9}% 72
+\BOOKMARK [1][-]{section.9.2}{Matrix Representation of Linear Transformations}{chapter.9}% 73
+\BOOKMARK [2][-]{subsection.9.2.1}{Matrix Algebra}{section.9.2}% 74
+\BOOKMARK [2][-]{subsection.9.2.2}{Properties of Matrix Multiplication}{section.9.2}% 75
+\BOOKMARK [1][-]{section.9.3}{Systems of Linear Equations}{chapter.9}% 76
+\BOOKMARK [1][-]{section.9.4}{Solving Linear Systems of Equations}{chapter.9}% 77
+\BOOKMARK [1][-]{section.9.5}{Linear Independence, Span, and Bases}{chapter.9}% 78
+\BOOKMARK [1][-]{section.9.6}{The Determinant and Trace}{chapter.9}% 79
+\BOOKMARK [2][-]{subsection.9.6.1}{Determinants and Systems of Equations}{section.9.6}% 80
+\BOOKMARK [2][-]{subsection.9.6.2}{Properties of determinants}{section.9.6}% 81
+\BOOKMARK [2][-]{subsection.9.6.3}{The Trace}{section.9.6}% 82
+\BOOKMARK [1][-]{section.9.7}{Inverse Matrices and Similarity }{chapter.9}% 83
+\BOOKMARK [2][-]{subsection.9.7.1}{Properties Related to Inverse Matrices}{section.9.7}% 84
+\BOOKMARK [1][-]{section.9.8}{The Eigen-Problem}{chapter.9}% 85
+\BOOKMARK [1][-]{section.9.9}{Diagonalization and Special Matrices}{chapter.9}% 86
+\BOOKMARK [2][-]{subsection.9.9.1}{Hermitian Matrices}{section.9.9}% 87
+\BOOKMARK [1][-]{section.9.10}{Groups and Symmetry}{chapter.9}% 88
+\BOOKMARK [0][-]{chapter.10}{Remarks for Math 271}{part.4}% 89

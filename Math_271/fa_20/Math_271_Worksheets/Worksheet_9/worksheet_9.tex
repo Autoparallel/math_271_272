@@ -1,0 +1,131 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Worksheet 9}\\
+   \textsc{Linear independence, span, and bases. Matrix determinants and traces.}
+\end{center}
+\vspace{.5cm}
+
+
+
+\begin{problem}
+Consider the following three vectors $\vecu,\vecv,\vecw\in \R^3$ given by
+\[
+\vecu = \xhat + \yhat +\zhat, \qquad \vecv = 2\xhat + \yhat + 2\zhat, \qquad \vecw = -2\xhat + \yhat +\zhat. 
+\]
+\begin{enumerate}[(a)]
+    \item We can write a linear combination of these vectors by taking
+    \[
+    \alpha \vecu + \beta \vecv + \gamma \vecw,
+    \]
+    where $\alpha,\beta,\gamma \in \R$.  Write this linear combination as a matrix times a vector.
+    \item Are these vectors linearly independent?
+    \item Does this list of vectors form a basis for $\R^3$? \emph{Hint: use the above work. Can any vector in $\R^3$ be written as a linear combination of these vectors?}
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the following three vectors $\vecu,\vecv,\vecw\in \R^3$ given by
+\[
+\vecu = \xhat + \yhat +\zhat, \qquad \vecv = \xhat + \yhat, \qquad \vecw = 2\xhat + 2\yhat +\zhat. 
+\]
+\begin{enumerate}[(a)]
+    \item We can write a linear combination of these vectors by taking
+    \[
+    \alpha \vecu + \beta \vecv + \gamma \vecw,
+    \]
+    where $\alpha,\beta,\gamma \in \R$.  Write this linear combination as a matrix times a vector.
+    \item Are these vectors linearly independent?
+    \item Does this list of vectors form a basis for $\R^3$? \emph{Hint: use the above work. Can any vector in $\R^3$ be written as a linear combination of these vectors?}
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Compute the determinants of the matrices you found in Problems 1 and 2.  Explain how this gives insight on your ability to find solutions to inhomogeneous and homogeneous equations with those matrices.
+\end{problem}
+
+\begin{problem}
+Suppose we have a matrix $[A]$ such that $[A]\vecu = \lambda \vecu$ for some constant $\lambda$.  Suppose as well that $\vecv$ satisfies the same equation in that $[A]\vecv = \lambda \vecv$.  Finally, suppose there exists a vector $\vecw$ that satisfies a similar equation $[A]\vecw = \eta \vecw$ but with $\eta\neq \lambda$.
+\begin{enumerate}[(a)]
+    \item Show that any vector in the span of $\vecu$ and $\vecv$ also satisfies the same equation as $\vecu$ and $\vecv$.
+    \item Show that the span of $\vecu$ and $\vecw$ does not solve either of the given equations.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the matrix 
+\[
+[J] = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix},
+\]
+which acts as a counter clockwise rotation by $\pi/2$ in the $xy$-plane.  
+\begin{enumerate}[(a)]
+    \item Show that $\det([J])=1$.
+    \item Explain why $[J]$ does not distort areas using what you know about the determinant.
+    \item Consider a new matrix $[J]-\lambda [I]$ where $[I]$ is the $2\times 2$ identity matrix and $\lambda$ is a scalar variable.  Compute $\det([J]-\lambda [I])$. This is called the \emph{characteristic polynomial}.
+    \item Find the roots of the characteristic polynomial.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the matrices
+\[
+[A] = \begin{pmatrix} 0 & 3 \\ 2 & 0 \end{pmatrix}, \quad [B] = \begin{pmatrix} 3 & -1 \\ 1 & 2 \end{pmatrix}, \quad [C] = \begin{pmatrix} 3 & 2 \\ 3 & 2 \end{pmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item Compute the determinant of each matrix.
+    \item For each matrix, draw the vectors $\xhat$ and $\yhat$ and draw the transformed vectors (the matrix applied to $\xhat$ and $\yhat$). Explain how the matrices transform areas and relate this back to the determinant of the matrices.  Do this in a different plane for each matrix to avoid making this look messy.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the vectors in $\R^3$, $\vecu=3\xhat - \yhat + 4\zhat$ and $\vecv=-\yhat - 2\zhat$.  Show that $\tr(\vecu \vecv^\top) = \vecu^\top \vecv$.
+\end{problem}
+
+\begin{problem}
+Prove the previous problem for two arbitrary vectors in $\R^n$.
+\end{problem}
+
+\begin{problem}
+Is it true that $\tr([A]^\top)=\tr([A])$ for any matrix? Why or why not?
+\end{problem}
+
+\begin{problem}
+Consider the linear transformations on $\R^3$ to $\R^3$ given by
+\begin{align*}
+    R_x(\theta) &= \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\theta & -\sin \theta \\ 0 & \sin\theta & \cos \theta \end{pmatrix}\\
+    R_y(\theta) &= \begin{pmatrix} \cos \theta & 0 & \sin \theta \\ 0 & 1 & 0 \\ -\sin \theta & 0 & \cos \theta \end{pmatrix}\\
+    R_z(\theta) &= \begin{pmatrix} \cos \theta & -\sin \theta & 0 \\ \sin \theta & \cos \theta  & 0 \\ 0 & 0 & 1 \end{pmatrix}.
+\end{align*}
+\textbf{Fact:} These matrices are generators for the \emph{group of rotations} $\SO(3)$ of $\R^3$.
+\begin{enumerate}[(a)]
+    \item Let $\theta = \pi/2$. Show that $R_x(\pi/2)$ rotates a vector counter clockwise by $\pi/2$ radians around the $x$-axis.
+    \item Show that the determinant of each of these matrices is 1 for any value of $\theta$.
+    \item Using properties of determinants, show that the determinant of a product of rotation matrices is also 1.
+    \item Explain geometrically why a rotation matrix must have a determinant of 1.
+    \item Show that $R_x(\theta)R_x(\theta)^\top = I$. This in fact true for any rotation matrix.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the matrix 
+\[
+M = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item Compute $\tr(M)$. 
+    \item Compute $M^{R_x}=R_x(\pi/2)MR_x(\pi/2)^\top$.
+    \item What is the trace of $M^{R_x}$?
+    \item Can you see why you have the answer in (c) from properties of the trace?
+\end{enumerate}
+\end{problem}
+
+
+
+\end{document}

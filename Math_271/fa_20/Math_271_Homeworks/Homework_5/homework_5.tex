@@ -1,0 +1,83 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Homework 5}\\
+   \textsc{Due October 9$^\textrm{th}$}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem} $p$-series are actually related to a very important function called the \emph{Riemann zeta function}.  This function is involved in a million dollar math problem! If you're interested in other million dollar problems, look up the Clay Institute Millennium Problems. The Riemann zeta function is given by
+\[
+\zeta (s) = \sum_{n=1}^\infty \frac{1}{n^s}.
+\]
+\begin{enumerate}[(a)]
+    \item Use the integral test to show that the $p$-series
+    \[
+    \sum_{n=1}^\infty \frac{1}{n^2}
+    \]
+    converges.  Look up what this series converges to and write it down. This is $\zeta(2)$.
+    \item Use the comparison test to show that the $p$-series
+    \[
+    \sum_{n=1}^\infty \frac{1}{n^3}
+    \]
+    converges. This converges as well to $\zeta(3)$. Look up what this approximate value is.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Find the radius of convergence for the following power series
+\begin{enumerate}[(a)]
+    \item $\displaystyle{\sum_{n=1}^\infty \frac{x^n}{n(n+1)}}$;
+    \item $\displaystyle{\sum_{n=0}^\infty \frac{x^{2n+1}}{(2n+1)!}}$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the two series
+\[
+\cos(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} \qquad \textrm{and} \qquad \sin(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!}.
+\]
+\begin{enumerate}[(a)]
+    \item Show that $\cos(-x)=\cos(x)$.
+    \item Show that $\sin(-x)=-\sin(x)$.
+    \item To take a derivative of a power series $f(x) = \displaystyle{\sum_{n=0}^\infty a_n x^n}$ we can do the following: 
+    \[
+    \frac{d}{dx}f(x) = \frac{d}{dx} \sum_{n=0}^\infty a_n x^n = \sum_{n=0}^\infty a_n \frac{d}{dx} x^n.
+    \]
+    Compute $\frac{d}{dx} \sin(x)$ and $\frac{d}{dx} \cos(x)$ and show that they are equal to what you already know. \emph{Warning: be careful with the powers of $x$ in the case with $\sin$ and $\cos$!}
+\end{enumerate}
+\end{problem}
+
+\begin{problem} Consider the function
+\[
+f(x)=\frac{1}{1-x}.
+\]
+\begin{enumerate}[(a)]
+    \item Compute the Taylor series centered at $a=0$ for the function.
+    \item Find the antiderivative $\int \frac{dx}{1-x}$ using the Taylor series for $f(x)$ found in (a).  
+    \item Write down the Taylor series for $\ln(1-x)$ centered at $a=0$ and compare to your answer in (b).
+\end{enumerate}
+\end{problem}
+
+\begin{problem}~
+\begin{enumerate}[(a)]
+    \item Compute the Taylor series centered at $a=0$ for $f(x)=e^{-\frac{x^2}{2}}$.
+    \item Use the Taylor series for $e^x$ and modify it to find a power series for $f(x)$. Is this the same as the series in (a)?
+    \item Plot the original function $f(x)$ compared to the first, second, third, and fourth term approximation for the series on the same graph.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+How can we approximate a (possibly complicated) function by using a power series? Why is this useful (specifically for computation on a computer)?
+\end{problem}
+
+
+
+\end{document}

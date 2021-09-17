@@ -1,0 +1,80 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Homework 8}\\
+   \textsc{Due November 8$^\textrm{th}$}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+Let a mass $m_1$ weighing $1kg.$ be placed at $\vecr_1=2\xhat -3 \yhat -\zhat$ and a mass $m_2$ of $2kg.$ be placed at $\vecr_2 = 4\yhat -2\zhat$.  Where must a mass $m_3$ of $3kg.$ be placed so that the center of mass is at the origin $\zerovec$?
+\end{problem}
+
+\begin{problem}
+Which of the following are linear transformations? For those that are not, which properties of \emph{linearity} (the properties (i) and (ii) in our notes) fail? Show your work. 
+\begin{enumerate}[(a)]
+    \item $T_a \colon \R \to \R$ given by $T_a(x)=\frac{1}{x}$.
+    \item $T_b \colon \R^3 \to \R^2$ given by
+    \[
+    T_b \begin{pmatrix} x\\ y\\ z \end{pmatrix}
+    = \begin{pmatrix} x\\ y \end{pmatrix}.
+    \]
+    \item $T_c \colon \R \to \R^3$ given by
+    \[
+    T_c(t)=\begin{pmatrix} t\\ t^2\\ t^3 \end{pmatrix}.
+    \]
+    \item $T_d \colon \R^2 \to \R^3$ given by
+    \[
+    T_d \begin{pmatrix} x\\ y \end{pmatrix}
+    = \begin{pmatrix} x+y\\ x+y\\ x+y \end{pmatrix}.
+    \]
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Write down the matrix for the following linear transformation $T\colon \R^3 \to \R^3$:
+\[
+T\begin{pmatrix} x\\ y\\ z \end{pmatrix}
+= \begin{pmatrix} x+y+z\\ 2x\\ 3y + z \end{pmatrix}.
+\]
+\end{problem}
+
+\begin{problem}
+A linear transformation $T\colon \R^3 \to \R^3$ is given by the matrix
+\[
+[T]= \begin{pmatrix}
+1& 2& 0\\
+2& 1& 2\\
+0& 2& 1
+\end{pmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item Compute how $T$ transforms the standard basis elements for $\R^3$. That is, find
+    \[
+    T(\xhat), \qquad
+    T(\yhat), \qquad 
+    T(\zhat).
+    \]
+    This gives a nice interpretation of matrix vector multiplication as linear combinations of the column vectors that make up a matrix.
+    \item If we apply this linear transformation to the unit cube (that is, all points who have $(x,y,z)$ coordinates with $0\leq x \leq 1$, $0\leq y \leq 1$, and $0\leq z \leq 1$), what will the volume of the transformed cube be? (\emph{Hint: the determinant of this matrix $[T]$ provides us this information.})
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Solve the following equation.
+\[
+\begin{pmatrix} 1 & 1 & 1 \\ 1 & 2 & 1 \\ 1 & 2 & 2 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 6 \\ 8 \\ 11 \end{pmatrix}.
+\]
+\end{problem}
+
+
+
+\end{document}

@@ -1,0 +1,103 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Worksheet 5}\\
+   \textsc{Sequences and Series}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+Write down the first few terms in the sequence for the following:
+\begin{enumerate}[(a)]
+    \item $a_n = n$;
+    \item $b_n = \frac{1}{n^2}$;
+    \item $c_n = 2^{-n}$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+For the above sequences, state whether each converges or diverges.  If they converge, state the limit.
+\end{problem}
+
+\begin{problem}
+Consider the recursive sequence
+\[
+a_n = \frac{1}{2} a_{n-1} + 1
+\]
+with $a_1 = 1$.  
+\begin{enumerate}[(a)]
+    \item Write the first few terms in the sequence.
+    \item Can you write $a_n$ as a function $f(n)$? If so, what is $f(n)$?
+    \item Does this sequence converge or diverge? Can you show why with a limit $\lim_{n\to \infty} f(n)$?
+    \item Can you show that this is a Cauchy sequence?
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the sequence
+\[
+a_n = a r^n.
+\]
+\begin{enumerate}[(a)]
+    \item If $|r|<1$, show that this sequence $\{a_n\}_{n=0}^\infty$ converges to zero.
+    \item Consider now the \emph{geometric series}
+    \[
+    \sum_{n=0}^\infty a_n = \sum_{n=0}^\infty ar^n.
+    \]
+    Show that the $N^\textrm{th}$ partial sum for this series satisfies
+    \[
+    \sum_{n=0}^N ar^n = a\left( \frac{1-r^{N+1}}{1-r}\right).
+    \]
+    \item Does the geometric series converge for all $r$? For $|r|<1$? When it converges, what does it converge to?
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Often we wish to think about functions being represented by series.  For example, we can consider the function
+\[
+f(x)=\sum_{n=0}^\infty \frac{x^n}{n!}
+\]
+where $n!$ is read as ``$n$-factorial" and 
+\[
+n! = n\cdot (n-1)\cdot (n-2) \cdots 2 \cdot 1.
+\]
+Then $1!=1$ and we define $0!=1$ as well.
+\begin{enumerate}[(a)]
+    \item Consider $f(1)$.  Use a tool like WolframAlpha to compute the series
+    \[
+    f(1)=\sum_{n=0}^\infty \frac{1}{n!}
+    \]
+    \item For any value of $x$, this series converges. So this defines a function on all real numbers. In fact, the series converges even for complex numbers. Simplify the series into its real and imaginary parts. Note,
+    \[
+    f(ix) = \sum_{n=0}^\infty \frac{(ix)^n}{n!}.
+    \]
+    \item We can take derivatives of the function $f(x)$ by differentiating the series \emph{term by term}. That is,
+    \[
+    \frac{d}{dx} f(x) = \frac{d}{dx} \sum_{n=0}^\infty \frac{x^n}{n!} = \sum_{n=0}^\infty \frac{d}{dx} \left( \frac{ x^n}{n!}\right).
+    \]
+    \item Show that $\frac{d}{dx}f(x)=f(x)$.
+    \item What is your guess for what function $f(x)$ is?
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Find the radius of convergence for the following power series.
+\begin{enumerate}[(a)]
+    \item $\displaystyle{\sum_{n=1}^\infty \frac{x^n}{n}}$;
+    \item $\displaystyle{\sum_{n=1}^\infty \frac{x^n}{n^2}}$;
+    \item $\displaystyle{\sum_{n=0}^\infty (-1)^n x^n}$;
+    \item Repeat (c) but for $z\in \C$ instead of $x\in \R$.
+    \item How does the convergence in (a) and (b) compare with the convergence of the typical $p$-series?
+\end{enumerate}
+\end{problem}
+
+
+
+\end{document}

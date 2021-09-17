@@ -1,0 +1,331 @@
+\documentclass{article}
+\usepackage{termcal}
+\usepackage[dvipsnames]{xcolor} %https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX for color list
+\usepackage{soul}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{
+  top=1in,            
+  inner=1in,
+  outer=1in,
+  bottom=1in,
+  headheight=10ex,       
+  headsep=7ex,          
+  footskip=10ex
+}
+\usepackage{enumitem}
+% Few useful commands (our classes always meet either on Monday and Wednesday 
+% or on Tuesday and Thursday)
+
+
+\newcommand{\MTWFClass}{%
+\calday[Monday]{\classday} % Monday
+\calday[Tuesday]{\classday} % Tuesday
+\calday[Wednesday]{\classday} % Wednesday
+\skipday % Thursday (no class)
+\calday[Friday]{\classday} % Friday 
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\TRClass}{%
+\skipday % Monday (no class)
+\calday[Tuesday]{\classday} % Tuesday
+\skipday % Wednesday (no class)
+\calday[Thursday]{\classday} % Thursday
+\skipday % Friday 
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\Holiday}[2]{%
+\options{#1}{\noclassday}
+\caltext{#1}{#2}
+}
+
+\newcommand{\reading}[1]{\textcolor{OliveGreen}{\textbf{#1}}}
+\newcommand{\exam}[1]{\textcolor{RoyalBlue}{\textbf{#1}}}
+\newcommand{\hw}[1]{\textcolor{Bittersweet}{\textbf{#1}}}
+\newcommand{\noclass}[1]{\textcolor{Gray}{\textbf{#1}}}
+
+
+\begin{document}
+\begin{center}
+   \textsc{\large MATH 272 Calendar}\\
+   \textsc{Spring 2021}
+\vspace{.5cm}
+
+\flushleft\textbf{Color coding:}
+\begin{itemize}
+\item \reading{Reading assignments to be done before class on the scheduled day.}
+\item \exam{Quizzes or exams set to take place on those days.}
+\item \hw{Assignments due on these days.}
+\item \noclass{No class on this day.}
+\end{itemize}
+
+\begin{calendar}{1/18/2021}{16} % Semester starts on 1/11/2010 and last for 16
+                    % weeks, including finals week
+\setlength{\calboxdepth}{.3in}
+\setlength{\calwidth}{\textwidth}
+
+\MTWFClass
+% schedule
+\caltexton{1}{First day, review. Functions in higher dimensions.}
+\caltextnext{Curves and velocity/acceleration vectors.}
+\caltextnext{Scalar Fields and partial differentiation.}
+\caltextnext{Vector fields and the directional derivative. Gradient.}
+\caltextnext{Cont.}
+\caltextnext{Divergence and curl of vector fields. Jacobian. Laplacian.}
+\caltextnext{\hw{Homework 1 due.}\\ Cont.}
+\caltextnext{Integration over curves.}
+\caltextnext{Cont.}
+\caltextnext{Potential functions and conservation.}
+\caltextnext{\textcolor{RoyalBlue}{\textbf{Quiz 1.}}}
+\caltextnext{\textcolor{Bittersweet}{\textbf{Homework 2 due.}}\\ Area and volume integrals.}
+\caltextnext{Surfaces. Implicit and explicit parameterizations.}
+\caltextnext{Tangent planes and normals.}
+\caltextnext{Integration over surfaces and flux.}
+\caltextnext{\noclass{Cold day.}}
+\caltextnext{Cont. }
+\caltextnext{\textcolor{Bittersweet}{\textbf{Homework 3 due.}}\\ Cylindrical coordinates.}
+\caltextnext{Cont.}
+\caltextnext{Spherical coordinates.}
+\caltextnext{Open.}
+\caltextnext{Open}
+\caltextnext{\textcolor{RoyalBlue}{\textbf{Quiz 2}}\\ \textcolor{Bittersweet}{\textbf{Homework 4 due.}} }
+\caltextnext{Open.}
+\caltextnext{Open.}
+\caltextnext{\textcolor{RoyalBlue}{\textbf{Oral Exam 1.}}}
+\caltextnext{\textcolor{RoyalBlue}{\textbf{Oral Exam 1.}}}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+    \item Higher dimensional ODEs.
+    \item \reading{Ch. 5.1, 5.2.}
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Continuum limit and partial differential equations.
+\item \reading{Ch. 5.2, 5.3}
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Continue.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item \hw{Discussion due:\\ A mathematician's lament.}
+\item Understanding the
+\begin{itemize}
+\item Laplace
+\item Poisson
+\item heat
+\item wave
+\end{itemize}
+equations.
+\end{itemize}
+}
+
+
+
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item \noclass{Snow day.}
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item \hw{Homework 5 due.}
+\item d'Alembert's solution to the wave equation.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Separation of variables.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item \exam{Quiz 3.}
+\item \hw{Discussion due:\\ Homework 5.}
+\item \hw{Discussion due:\\ The interesting utility of geometry and topology.}
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item \hw{Homework 6 due.}
+\item Time dependent Sch\"odinger equation.
+\end{itemize}
+}
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Superposition states.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Continue.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item \hw{Homework 6 discussion due.}
+\item \hw{Discussion due: Mathematics is the sense you never knew you had.}
+\item Maxwell's equations.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item \hw{Homework 7 due.}
+\item PDEs in other coordinate systems.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Continue.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item \exam{Oral Exam 2.}
+\item \hw{Homework 7 discussion due.}
+\item \textcolor{Gray}{No class.}
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item \exam{Oral Exam 2.}
+\item \hw{Discussion due: Is mathematics invented or discovered?}
+\item \textcolor{Gray}{No class.}
+\end{itemize}
+}
+
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Complex functions and phase.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Function spaces and inner products.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Linear operators and adjoints.
+\end{itemize}
+}
+\caltextnext{
+\begin{itemize}[leftmargin=*] 
+\item \hw{Discussion due: Mathematics and music.}
+\item Differential operators and domains.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Spectra of differential and Hermitian operators.
+\end{itemize}
+}
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Orthonormal bases and projection.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Continue.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item \hw{Homework 8 due.}
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Fourier series.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Fourier transform on $\mathbb{R}$ and $\mathbb{R}^n$.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Dirac delta and fundamental solutions.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item \textcolor{RoyalBlue}{\textbf{Quiz 4.}}.
+\item \hw{Homework 9 due.}
+\item \hw{Homework 8 discussion due.}
+\item Continue.
+\end{itemize}
+}
+
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item \hw{Homework 10 due.} 
+\item Project and review.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Project and review.
+\end{itemize}
+}
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item \exam{Oral Exam 3.}
+\item \hw{Homework 10 discussion due.}
+\item \noclass{No class.}
+\end{itemize}
+}
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item \exam{Oral Exam 3.}
+\item \noclass{No class.}
+\end{itemize}
+}
+
+
+% Holidays
+\Holiday{1/18/2021}{\noclass{Martin Luther King Day.}}
+\Holiday{4/12/2021}{\noclass{Spring Break.}}
+\Holiday{4/13/2021}{\noclass{Spring Break.}}
+\Holiday{4/14/2021}{\noclass{Spring Break.}}
+\Holiday{4/16/2021}{\noclass{Spring Break.}}
+
+\end{calendar}
+\end{center}
+\end{document}

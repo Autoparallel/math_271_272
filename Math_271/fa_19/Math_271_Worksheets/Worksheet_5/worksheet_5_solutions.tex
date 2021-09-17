@@ -1,0 +1,276 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Worksheet 5, \emph{Solutions}}\\
+   \textsc{Power Series}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+Find the radius of convergence for the following power series.
+\begin{enumerate}[(a)]
+    \item $\displaystyle{\sum_{n=1}^\infty \frac{x^n}{n}}$;
+    \item $\displaystyle{\sum_{n=1}^\infty \frac{x^n}{n^2}}$;
+    \item $\displaystyle{\sum_{n=0}^\infty (-1)^n x^n}$;
+    \item Repeat (c) but for $z\in \C$ instead of $x\in \R$.
+    \item How does the convergence in (a) and (b) compare with the convergence of the typical $p$-series?
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item We use the ratio test like so:
+    \begin{align*}
+        \lim_{n\to \infty} \left| \frac{\frac{x^{n+1}}{n+1}}{\frac{x^n}{n}}\right|&= \lim_{n\to \infty} \left| \frac{nx}{n+1}\right|\\
+        &= |x|.
+    \end{align*}
+    Then, in order for this series to converge, we require the limit of this ratio to be less than $1$, and hence
+    \[
+    |x|<1,
+    \]
+    which means the series converges for $x\in (-1,1)$ and the radius of convergence is 1.
+    \item Similarly,
+        \begin{align*}
+        \lim_{n\to \infty} \left| \frac{\frac{x^{n+1}}{(n+1)^2}}{\frac{x^n}{n^2}}\right|&= \lim_{n\to \infty} \left| \frac{n^2x}{(n+1)^2}\right|\\
+        &= |x|.
+    \end{align*}
+    And again, this means $x\in (-1,1)$ for the series to converge.
+    \item Once again,
+    \begin{align*}
+        \lim_{n\to \infty} \left| \frac{(-1)^{n+1}x^{n+1}}{(-1)^nx^n}\right|&= |x|,
+    \end{align*}
+    and we find again that the series converges when $x\in (-1,1)$.
+    \item We found the limit in (c), and hence we have that the series converges for $|z|<1$. So this is all points inside of the unit circle, but not necessarily on the unit circle.
+    \item The $p$-series for (a) with $p=1$ diverges. However, having the power of $x$ on top allows for convergence when $|x|<1$. The $p$-series in (b) with $p=2$ converges and so we have that this power series converges for $|x|\leq 1$. 
+\end{enumerate}
+\end{solution}
+
+\hrule
+\begin{problem}
+A \emph{Taylor series centered at $a$} is a power series for a function $f$ is computed by 
+\[
+f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(x)}{n!}(x-a)^n.
+\]
+When $a=0$, we call this a \emph{Maclaurin series}.  
+\begin{enumerate}[(a)]
+    \item Compute the Maclaurin series for $e^x$.
+    \item Compute the Taylor series for $e^x$ centered at $a=1$.
+    \item Compute the Maclaurin series for $\cos(x)$.
+    \item Compute the Maclaurin series for $\sin(x)$.
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item We have the following for $f(x)=e^x$,
+    \begin{align*}
+        f^{(0)}(x)&=e^x &&& \implies~ f^{(0)}(0)&=1\\
+        f^{(1)}(x)&=e^x &&& \implies~ f^{(1)}(0)&=1\\
+        f^{(2)}(x)&=e^x &&& \implies~ f^{(2)}(0)&=1\\
+        & \vdots \\
+        f^{(n)}(x)&=e^x &&& \implies ~ f^{(n)}(0)&=1.
+    \end{align*}
+    Hence, the Maclaurin series for $e^x$ is 
+    \[
+    e^x =\sum_{n=0}^\infty \frac{x^n}{n!}.
+    \]
+    \item Instead if we center at $a=1$, then
+        \begin{align*}
+        f^{(0)}(x)&=e^x &&& \implies~ f^{(0)}(1)&=e\\
+        f^{(1)}(x)&=e^x &&& \implies~ f^{(1)}(1)&=e\\
+        f^{(2)}(x)&=e^x &&& \implies~ f^{(2)}(1)&=e\\
+        & \vdots \\
+        f^{(n)}(x)&=e^x &&& \implies ~ f^{(n)}(1)&=e.
+    \end{align*}
+    This gives us the Taylor series
+    \[
+    e^x = \sum_{n=0}^\infty \frac{ex^n}{n!} (x-e)^n.
+    \]
+    \item Letting $f(x)=\cos(x)$, we have
+    \begin{align*}
+        f^{(0)}(x)&=\cos(x) &&& \implies~ f^{(0)}(0)&=1\\
+        f^{(1)}(x)&=-\sin(x) &&& \implies~ f^{(1)}(0)&=0\\
+        f^{(2)}(x)&=-\cos(x) &&& \implies~ f^{(2)}(0)&=-1\\
+        & \vdots \\
+        f^{(2n)}(x)&=(-1)^n \cos(x)&&& \implies ~ f^{(2n)}(0)&=(-1)^n\\
+        f^{(2n+1)}(x)&=(-1)^n \sin(x) &&& \implies ~f^{(2n+1)}(0)&=0.
+    \end{align*}
+    Hence the Maclaurin series for $\cos(x)$ is
+    \[
+    \cos(x) =\sum_{n=0}^\infty \frac{x^{2n}}{(2n)!}.
+    \]
+    \item Similarly, we let $f(x)=\sin(x)$ and we have
+    \begin{align*}
+        f^{(0)}(x)&=\sin(x) &&& \implies~ f^{(0)}(0)&=0\\
+        f^{(1)}(x)&=\cos(x) &&& \implies~ f^{(1)}(0)&=1\\
+        f^{(2)}(x)&=-\sin(x) &&& \implies~ f^{(2)}(0)&=0\\
+        & \vdots \\
+        f^{(2n)}(x)&=(-1)^n \sin(x)&&& \implies ~ f^{(2n)}(0)&=0\\
+        f^{(2n+1)}(x)&=(-1)^n \cos(x) &&& \implies ~f^{(2n+1)}(0)&=(-1)^n.
+    \end{align*}
+    So the Maclaurin series for $\sin(x)$ is
+    \[
+    \sin(x) = \sum_{n=0}^\infty \frac{x^{2n+1}}{(2n+1)!}.
+    \]
+\end{enumerate}
+\end{solution}
+
+\hrule
+\begin{problem}
+Consider the recursive sequence generated by $a_n = \frac{a_{n-1}}{n}$ with $a_0=1$.  We can generate a power series for $e^x$ we have seen before from this data
+\[
+e^x=\sum_{n=0}^\infty a_n x^n
+\]
+from this data. 
+\begin{enumerate}[(a)]
+    \item Write down the first five terms of the sequence $\{a_n\}_{n=0}^\infty$ to show that it is the same as the sequence $\left\{\frac{1}{n!}\right\}_{n=0}^\infty$.
+    \item Using some test for series convergence, show that the power series for $e^x$ converges for any $x\in \R$. This defines the function $e^x$ on all real numbers.
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item We have that
+    \[
+    \{a_n\}_{n=0}^\infty = 1,~\frac{1}{1}, ~\frac{1}{2}, ~\frac{1}{6}, ~\frac{1}{24},\dots.
+    \]
+    Which is indeed the same as the sequence $\left\{ \frac{1}{n!}\right\}_{n=0}^\infty$.
+    \item We'll use the ratio test 
+    \begin{align*}
+        \lim_{n\to \infty} \left| \frac{\frac{x^{n+1}}{(n+1)!}}{\frac{x^n}{n!}}\right| &= \lim_{n\to \infty} \left| \frac{x}{n+1} \right|\\
+        &=0.
+    \end{align*}
+    Hence, for any choice of $x$, we have that this limit of the ratio is equal to 0. Since this is less than 1, we know the series converges for any $x$.
+\end{enumerate}
+\end{solution}
+
+\hrule
+\begin{problem}
+How might you arrive at the above recursive sequential definition for $e^x$? Consider defining $e^x$ to be the solution to the initial value problem
+\[
+\frac{d}{dx} e^x = e^x \qquad \textrm{and} \qquad e^0=1.
+\]
+We have seen that we can differentiate a power series term by term and this will help us here.
+\begin{enumerate}[(a)]
+    \item Let $e^x = \sum_{n=0}^\infty a_n x^n$ where we are pretending (for the moment) that we don't know what $a_n$ is.  Using the series definition of $e^x$, write out the differential equation above.
+    \item Now, by matching coefficients on the same powers of $x$, can you find the relationship on $a_n$ posed in Problem 1?
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item We let $e^x = \sum_{n=0}^\infty a_nx^n$ and we compute the derivative
+    \[
+    \frac{d}{dx} e^x = \sum_{n=1}^\infty na_n x^{n-1}.
+    \]
+    Then we set the derivative equal to the original function like so
+    \[
+    \sum_{n=1}^\infty na_n x^{n-1} = \sum_{n=0}^\infty a_n x^n.
+    \]
+    \item Then we can solve the equation to find conditions on the coefficients
+    \begin{align*}
+        \sum_{n=1}^\infty na_nx^{n-1} &= \sum_{n=0}^\infty a_n x^n\\
+        \left( a_1 + 2a_2 x + 3a_3 x^2 + \cdots \right)-\left( a_0 +a_1 x + a_2 x^2 + \cdots \right)&=0.
+    \end{align*}
+    This gives us the equations
+    \begin{align*}
+        a_1 &= a_0\\
+        a_2 &= \frac{1}{2} a_1\\
+        a_3 &= \frac{1}{3} a_2\\
+        &\vdots\\
+        a_n &= \frac{1}{n} a_{n-1}l,
+    \end{align*}
+    which is the recursive sequence we arrived at previously.
+\end{enumerate}
+\end{solution}
+
+\hrule
+\begin{problem}
+Recall that we can also take $e^z$ with complex numbers $z\in \C$. In the last worksheet, we found we can write
+\begin{align*}
+e^{ix} = \sum_{n=0}^\infty \frac{(ix)^n}{n!}&= \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} + i \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!}\\
+&= \cos(x) + i \sin(x).
+\end{align*}
+Using the above fact and work from Problem 1, show that $e^z$ converges for any $z\in \C$.
+\end{problem}
+\begin{solution}
+    \item Note that we can write $z\in \C$ as $z=a+ix$ where $a,x\in \R$. Then we have
+    \[
+    e^z = e^ae^{ix}.
+    \]
+    We already found that $e^a$ converges for any $a\in \R$ from Problem 1.  Now we know that $\cos(x)$ and $\sin(x)$ are bounded between $-1$ and $1$ and converge for any $x$ hence we have
+    \[
+    e^{ix}
+    \]
+    converges for any $x\in \R$. Thus, we have $e^z$ converges for any $z\in \C$.  One could similarly use the ratio test with a complex $z$ instead of real $x$ from the beginning and arrive at the same conclusion (the work for that is analogous to the work in Problem 1).
+\end{solution}
+
+
+\hrule
+\begin{problem}
+We have differentiated series term by term which will prove to be useful for solving ODEs.  However, we can also integrate them term by term which proves useful for computing integrals of functions that have no ``closed-form" anti-derivative.  Take for example, the \emph{Gaussian function} (or \emph{normal distribution})
+\[
+f(x;\mu,\sigma)=\frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}.  
+\]
+This describes a probability distribution on the real line with mean $\mu$ and standard deviation $\sigma$. The semi-colon notation for $f(x;\mu,\sigma)$ just means $\mu,\sigma$ are parameters (as opposed to variables) for the function.
+\begin{enumerate}[(a)]
+    \item Using the power series for $e^x$, write the power series for the Gaussian $f(x;\mu,\sigma)$.
+    \item Now, suppose we want to find the probability of an event occurring between $\mu \pm \sigma$ (that is, within one standard deviation of the mean).  For the sake of ease, let $\mu=0$ and $\sigma=1$ and integrate the series term by term.
+    \item Using the anti-derivative you made in (b), compute an approximation to the definite integral on the region $[-1,1]$ which will tell us the probability of an event occuring within one standard deviation of the mean.
+    \item Look at a $z$-score table to see how close your approximation is.
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item Since we have
+    \[
+    e^x = \sum_{n=0}^\infty \frac{x^n}{n!},
+    \]
+    we can take
+    \[
+    f(x;\mu,\sigma)=\frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} = \frac{1}{\sqrt{2 \pi \sigma^2}} \sum_{n=0}^\infty \frac{\left(-\frac{(x-\mu)^2}{2\pi \sigma^2}\right)^n}{n!}.
+    \]
+    \item Letting $\mu=0$ and $\sigma=1$ we have
+    \[
+    f(x;0,1)=\frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}=\frac{1}{\sqrt{2\pi}} \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{2^nn!}
+    \]
+    This we can integrate term by term to get
+    \begin{align*}
+        \int f(x;0,1) dx &= C+\frac{1}{\sqrt{2\pi}} \sum_{n=0}^\infty \int \frac{(-1)^nx^{2n}}{n!}dx\\
+        &= C+ \frac{1}{\sqrt{2\pi}} \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{2^n n! (2n+1)}
+    \end{align*}
+    \item Note that the constant dissapears when we evaluate a definite integral, so we can take a one term approximation
+    \begin{align*}
+    \int_{-1}^1 f(x;0,1)dx &\approx \left[\frac{x}{\sqrt{2\pi}}\right]_{-1}^1\\
+    &= \frac{2}{\sqrt{2\pi}}\\
+    &\approx 0.79788.
+    \end{align*}
+    Taking a two term approximation, we have
+    \begin{align*}
+    \int_{-1}^1 f(x;0,1)dx &\approx \frac{1}{\sqrt{2\pi}}\left[x-\frac{x^3}{6}\right]_{-1}^1\\
+    &= \frac{5}{3\sqrt{2\pi}}\\
+    &\approx 0.66490.
+    \end{align*}
+    Taking a three term approximation, we have
+    \begin{align*}
+    \int_{-1}^1 f(x;0,1)dx &\approx \frac{1}{\sqrt{2\pi}}\left[x-\frac{x^3}{6}+\frac{x^5}{40}\right]_{-1}^1\\
+    &= \frac{103}{60\sqrt{2\pi}}\\
+    &\approx 0.68485.
+    \end{align*}
+    \item Using a $z$-score table or by performing the integral on Wolfram Alpha by
+    \begin{verbatim}
+        Integrate[(1/sqrt(2 pi))*(e^(-x^2/2)),{x,-1,1}]
+    \end{verbatim}
+    we get that
+    \[
+    \int_{-1}^1 f(x;0,1)dx = \mathrm{erf}\left(\frac{1}{\sqrt{2}}\right) \approx 0.682689.
+    \]
+    We can see that our three term approximation is reasonably close. The function $\mathrm{erf}$ above is explicitly computed using this power series approximation (likely for many many more terms).  What this result says is that $\approx 68.2689\%$ of the probability lies between $\pm 1$ standard deviation from the mean.
+\end{enumerate}
+\end{solution}
+
+
+\end{document}

@@ -1,0 +1,435 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Worksheet 8, \emph{Solutions}.}\\
+   \textsc{Linear transformations, matrices, and linear systems.}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+    Note that any linear transformation $T\colon \R^m \to \R^n$ is fully understood by its action on the vectors
+    \[
+        \xhat_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \\ \vdots \\ 0 \end{pmatrix}, \quad \xhat_2 = \begin{pmatrix} 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}, ~\dots \quad, \xhat_m = \begin{pmatrix} 0 \\ 0 \\ 0 \\ \vdots \\ 1 \end{pmatrix},
+    \]
+    and note that all these vectors $\xhat_j \in \R^m$. In particular, we have
+    \begin{align*}
+        T(\xhat_1) &= \vecv_1\\
+        T(\xhat_2) &= \vecv_2\\
+                    & \vdots\\
+        T(\xhat_m) &= \vecv_m,\\
+    \end{align*}
+    where the vectors $\vecv_j \in \R^n$ and as such can be written as column vectors with $n$ entries.
+    \begin{enumerate}[(a)]
+        \item As per usual, let $\xhat = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ and let $\yhat = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$. Let $A \colon \R^2 \to \R^2$ be given by
+        \[
+            A(\xhat) = 5 \xhat + 6\yhat = \begin{pmatrix} 5 \\ 6 \end{pmatrix}
+        \]
+        and
+        \[
+            A(\xhat) = 2 \xhat - 3 \yhat = \begin{pmatrix} 2 \\ -3 \end{pmatrix}.
+        \]
+        If I wanted to transform an arbitrary vector $\vecu = u_1 \xhat + u_2 \yhat = \begin{pmatrix} u_1 \\ u_2 \end{pmatrix}$, how can I use the definition of $A$ acting on unit vectors?
+        \item Determine a matrix of numbers $[A] = \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}$ that captures this linear transformation through matrix-vector multiplication. 
+        \item How do the columns of $[A]$ relate to $A(\xhat)$ and $A(\yhat)$?
+        \item Now, how can I think of $[A]\vecu$ as describing a linear combination of the columns of $[A]$?
+    \end{enumerate}
+\end{problem}
+\begin{solution}~
+    \begin{enumerate}[(a)]
+        \item We apply $A$ to $\vecu$ and use the properties of linearity. Specifically,
+        \begin{align*}
+            A(\vecu) &= A(u_1 \xhat + u_2\yhat)\\
+                &= A(u_1\xhat) + A(u_2\yhat) & \textrm{by property (i) of linearity}\\
+                &= u_1 A(\xhat) + u_2A(\yhat) & \textrm{by property (ii) of linearity}\\
+                &= u_1(5\xhat + 6\yhat) + u_2(2\xhat-3\yhat) & \textrm{by definition of $A$}\\
+                &= (5u_1 +2u_2)\xhat + (6u_1 -3u_2)\yhat.
+        \end{align*}
+        \item To determine a matrix $[A]$ that represents the transformation $A$, we can take
+        \[
+            [A] = \begin{pmatrix} \vert & \vert \\ A(\xhat) & A(\yhat) \\ \vert & \vert \end{pmatrix} = \begin{pmatrix} 5 & 2 \\ 6 & -3 \end{pmatrix}.
+        \]
+        \item The columns of $[A]$ are exactly $A(\xhat)$ and $A(\yhat)$.
+        \item If we perform $[A]\vecu$ we can see this. In particular
+        \[
+            [A]\vecu = \begin{pmatrix} \vert & \vert \\ A(\xhat) & A(\yhat) \\ \vert & \vert \end{pmatrix} \begin{pmatrix} u_1 \\ u_2 \end{pmatrix} = u_1 A(\xhat) + u_2 A(\yhat),
+        \]
+        which is exactly what we got in (a).
+    \end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+    Repeat the steps in Problem 1 but with the transformation $B \colon \R^2 \to \R^3$ given by
+    \[
+        B(\xhat) = \xhat + \yhat + \zhat \qquad \textrm{and} \qquad B(\yhat) = -\xhat + \yhat - \zhat.
+    \]
+\end{problem}
+\begin{solution} The steps for this problem are analogous to the previous. There is no need to worry about the fact that the dimensions change with $B$. Just follow the same recipe!
+    \begin{enumerate}[(a)]
+        \item We apply $B$ to $\vecu$,
+        \begin{align*}
+            B(\vecu) &= B(u_1 \xhat + u_2\yhat)\\
+                &= B(u_1\xhat) + B(u_2\yhat) & \textrm{by property (i) of linearity}\\
+                &= u_1 B(\xhat) + u_2B(\yhat) & \textrm{by property (ii) of linearity}\\
+                &= u_1(\xhat + \yhat+\zhat) + u_2(-\xhat+\yhat-\zhat) & \textrm{by definition of $A$}\\
+                &= (u_1 - u_2)\xhat + (u_1 + u_2)\yhat + (u_1 - u_2)\zhat.
+        \end{align*}
+        \item To determine a matrix $[B]$ that represents the transformation $B$, we can take
+        \[
+            [B] = \begin{pmatrix} \vert & \vert \\ B(\xhat) & B(\yhat) \\ \vert & \vert \end{pmatrix} = \begin{pmatrix} 1 & -1 \\ 1 & 1 \\ 1 & -1 \end{pmatrix}.
+        \]
+        \item The columns of $[B]$ are exactly $B(\xhat)$ and $B(\yhat)$.
+        \item If we perform $[B]\vecu$ we can see this. In particular
+        \[
+            [B]\vecu = \begin{pmatrix} \vert & \vert \\ B(\xhat) & B(\yhat) \\ \vert & \vert \end{pmatrix} \begin{pmatrix} u_1 \\ u_2 \end{pmatrix} = u_1 B(\xhat) + u_2 B(\yhat),
+        \]
+        which is exactly what we got in (a).
+    \end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+    Repeat the steps in Problem 1 but with the transformation $C\colon \R^3 \to \R^2$ given by
+    \[
+        C(\xhat) = \yhat, \qquad C(\yhat) = \xhat, \qquad C(\zhat) = \xhat.
+    \]
+\end{problem}
+\begin{solution} The steps for this problem are analogous to the previous. Just note that we should take $\vecu \in \R^3$ as an input and we let $\vecu = u_1\xhat + u_2 \yhat + u_3 \zhat$. 
+    \begin{enumerate}[(a)]
+        \item We apply $C$ to $\vecu$,
+        \begin{align*}
+            C(\vecu) &= C(u_1 \xhat + u_2\yhat + u_3 \zhat)\\
+                &= C(u_1\xhat) + C(u_2\yhat) + C(u_3 \zhat) & \textrm{by property (i) of linearity}\\
+                &= u_1 C(\xhat) + u_2C(\yhat) + u_3 C(\zhat) & \textrm{by property (ii) of linearity}\\
+                &= u_1(\yhat) + u_2(\xhat) + u_3(\xhat) & \textrm{by definition of $A$}\\
+                &= (u_2 + u_3)\xhat + (u_1)\yhat.
+        \end{align*}
+        \item To determine a matrix $[C]$ that represents the transformation $C$, we can take
+        \[
+            [C] = \begin{pmatrix} \vert & \vert & \vert \\ C(\xhat) & C(\yhat) & C(\zhat) \\ \vert & \vert & \vert \end{pmatrix} = \begin{pmatrix} 0 & 1 & 1\\ 1 & 0 & 0 \end{pmatrix}.
+        \]
+        \item The columns of $[C]$ are exactly $C(\xhat)$, $C(\yhat)$, and $C(\zhat)$.
+        \item If we perform $[C]\vecu$ we can see this. In particular
+        \[
+            [B]\vecu = \begin{pmatrix} \vert & \vert & \vert \\ C(\xhat) & C(\yhat) & C(\zhat) \\ \vert & \vert & \vert \end{pmatrix} = \begin{pmatrix} 0 & 1 & 1\\ 1 & 0 & 0 \end{pmatrix} \begin{pmatrix} u_1 \\ u_2 \\ u_3 \end{pmatrix} = u_1 B(\xhat) + u_2 B(\yhat) + u_3 B(\zhat),
+        \]
+        which is exactly what we got in (a).
+    \end{enumerate}
+\end{solution}
+
+
+\newpage
+\begin{problem}
+Let
+\vspace*{.25cm}
+\[
+[M]= \begin{pmatrix} 1 & 2\\ 0 & 1 \end{pmatrix} \quad 
+[P]=\begin{pmatrix} 1 \\ 1 \end{pmatrix} \quad 
+[Q]=\begin{pmatrix} 2 & 1 \end{pmatrix} \quad
+[R] = \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} \quad
+[S]=\begin{pmatrix} 3 & 3 & 3 \\ 3 & 3 & 3 \end{pmatrix}
+\]
+\vspace*{.25cm}
+\begin{enumerate}[(a)]
+    \item Compute the following matrix products (when possible) and state which multiplications are not possible.
+\[
+[M][M], \qquad [P][P], \qquad [Q][P], \qquad [M][S], \qquad [S][M].
+\]
+    \item Compute the following:
+    \begin{enumerate}[i.]
+        \item $[A]=[P][Q]$;
+        \item $[B]=[Q]^T[P]^T$. Is this equal to $([P][Q])^T$?
+        \item $[C] = [M][R] - [R][M]$. Do these matrices commute?
+    \end{enumerate}
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+    \begin{enumerate}[(a)]
+        \item We will go through these and compute the multiplications as necessary.
+        \begin{itemize}
+            \item $[M][M]$ is possible since $[M]$ is square and we are multiplying it times itself. We get
+            \[
+            [M] [M] = \begin{pmatrix} 1 & 2\\ 0 & 1 \end{pmatrix} \begin{pmatrix} 1 & 2\\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 1 & 4 \\ 0 & 1 \end{pmatrix}.
+            \]
+            \item $[P][P]$ is not possible since $[P]$ is a $2\times 1$ matrix and we cannot multiply a $2\times 1$ by a $2\times 1$.
+            \item $[Q][P]$ is possible since it is a $1\times 2$ matrix multiplied times a $2 \times 1$ matrix. We get
+            \[
+                [Q][P] = \begin{pmatrix} 2 & 1 \end{pmatrix} \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \begin{pmatrix} 3 \end{pmatrix}.
+            \]
+            Since $[Q][P]$ is a $1 \times 1 $ matrix, we usually drop the parentheses and just write $[Q][P] = 3$.
+            \item $[M][S]$ is possible since we are multiplying a $2 \times 2$ with a $2 \times 3$. We get
+            \[
+                [M][S] = \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 3 & 3 & 3 \\ 3 & 3 & 3 \end{pmatrix} = \begin{pmatrix} 9 & 9 & 9 \\ 3 & 3 & 3 \end{pmatrix}.
+            \]
+            \item $[S][M]$ is not possible since it is a $2\times 3$ times a $2 \times 2$.
+        \end{itemize}
+        \item We will compute each of the next products taking into account that for some matrix $[T]$ with elements $t_{ij}$ we have the transpose $[T]^T$ with components $t_{ji}$. That is, we swap rows for columns when we transpose a matrix.
+        \begin{enumerate}[i.]
+            \item We have
+            \[
+                [A] = \begin{pmatrix} 1 \\ 1 \end{pmatrix} \begin{pmatrix} 2 & 1 \end{pmatrix} = \begin{pmatrix} 2 & 1 \\ 2 & 1 \end{pmatrix}.
+            \]
+            \item First note
+            \[
+            [Q]^T = \begin{pmatrix} 2 \\ 1 \end{pmatrix} \qquad \textrm{and} \qquad [P]^T = \begin{pmatrix}  1 & 1 \end{pmatrix}.
+            \]
+            Thus,
+            \[
+                [Q]^T [P]^T = 3.
+            \]
+            Yes, this is equal to $([P][Q])^T$, and this fact is true in general.
+            \item We take
+            \[
+            [M][R] = \begin{pmatrix} 3 & 1 \\ 1 & 0 \end{pmatrix} 
+            \]
+            and
+            \[
+            [R][M] = \begin{pmatrix} 1 & 3 \\ 1 & 2 \end{pmatrix}.
+            \]
+            Then
+            \[
+            [M][R] - [R][M] = \begin{pmatrix} 2 & -2 \\ 0 & -2 \end{pmatrix}.
+            \]
+        \end{enumerate}
+    \end{enumerate}
+\end{solution}
+
+
+\newpage
+\begin{problem}
+    The linear transformation $H\colon \R^2 \to \R^2$ given by
+    \[
+        H(\xhat) = \yhat \qquad \textrm{and} \qquad H(\yhat) = \xhat,
+    \]
+    has some nice properties. 
+    \begin{enumerate}[(a)]
+        \item In some sense, $H$ is the square root of $1$ in that $H^2 = H \circ H = 1$. Show that this is true.
+        \item Write down a matrix representation for $H$ and denote it by $[H]$.
+        \item Consider a linear combination of matrices 
+        \[
+            [\eta] = x[I] + y[H],
+        \]
+        where $[I]$ is the $2\times 2$ identity matrix. Compute $[\eta]^2$.  
+    \end{enumerate} 
+\end{problem}
+\begin{solution}~
+    \begin{enumerate}[(a)]
+        \item Let $\vecu = u_1 \xhat + u_2 \yhat$ be an arbitrary vector in $\R^2$.  Then
+        \[
+        H^2 (\vecu) = H(H(\vecu)) = H(H(u_1\xhat + u_2 \yhat)) = H(u_2\xhat + u_1 \yhat) = u_1 \xhat + u_2\yhat,
+        \]
+        so indeed $H^2$ acts like multiplication by 1.
+        \item We can construct a matrix representation as we did in earlier problems.  Namely,
+        \[
+        [H] = \begin{pmatrix} \vert & \vert \\ H(\xhat) & H(\yhat) \\ \vert & \vert \end{pmatrix} = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}.
+        \]
+        \item We have
+        \[
+        [\eta]^2 = (x[I]+y[H])^2 = x^2 [I]^2 + xy[I][H] + xy [H][I] + y^2 [H]^2.
+        \]
+        Now, using what we know about $[I]$ in that $[I][H]=[H][I]=[H]$, $[I]^2=[I]$, and that $[H]^2=[I]$ by (a), we have
+        \[
+        [\eta]^2 = (x^2+y^2) [I] + 2xy [H].
+        \]
+        Note that one can explicitly show $[H]^2=[I]$ using the matrix representation, but the work from (a) suffices since the matrix behaves analogously to the original linear transformation (which is the point!).
+    \end{enumerate}
+\end{solution}
+
+
+\newpage
+\begin{problem} 
+Consider the system of linear equations:
+\begin{align*}
+    x + 2y &= 3\\
+    x + y  &= 3
+\end{align*}
+\begin{enumerate}[(a)]
+    \item Write this system in the form:
+    \[
+    [A]\vec{\boldsymbol{x}} = \vec{\boldsymbol{y}}
+    \]
+    \item Row reduce to find a the solution $\vec{\boldsymbol{x}}$.
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+   \begin{enumerate}[(a)]
+        \item Let $\vec{\boldsymbol{x}} = \begin{pmatrix} x \\ y \end{pmatrix}$, $\vec{\boldsymbol{y}} = \begin{pmatrix} 3 \\ 3 \end{pmatrix}$, and note that this yields $[A] = \begin{pmatrix} 1 & 2 \\ 1 & 1 \end{pmatrix}$. One can explicitly determine $[A]$ by simply computing the elements $a_{ij}$ by taking
+        \[
+        [A]\vec{\boldsymbol{x}} = \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} x + 2y \\ x + y \end{pmatrix}.
+        \]  
+        \item Now, we create the augmented matrix
+        \[
+        \left( \begin{tabular} {cc | c} 1 & 2 & 3 \\ 1 & 1 & 3 \end{tabular} \right).
+        \]  
+        Subtract R1 from R2 to get
+        \[
+        \left( \begin{tabular} {cc | c} 1 & 2 & 3 \\ 0 & -1 & 0 \end{tabular} \right).
+        \]
+        Add 2R2 to R1 to get 
+        \[
+        \left( \begin{tabular} {cc | c} 1 & 0 & 3 \\ 0 & -1 & 0 \end{tabular} \right).
+        \]
+        Finally, we can multiply R2 by -1 (which is not totally necessary) and get
+        \[
+        \left( \begin{tabular} {cc | c} 1 & 0 & 3 \\ 0 & 1 & 0 \end{tabular} \right).
+        \]
+        The solution can now be read off from the last column to yield $x=3$ and $y=0$.
+   \end{enumerate}  
+\end{solution}
+
+
+\newpage
+\begin{problem}
+Consider the system of linear equations:
+\begin{align*}
+    3x+2y+0z&=5\\
+    1x+1y+1z&=3\\
+    0x+2y+2z&=4.
+\end{align*}
+\begin{enumerate}[(a)]
+    \item Write the augmented matrix $M$ for this system of equations.
+    \item Use row reduction to get the augmented matrix in row-echelon form.
+    \item Determine the solution to the system of equations.
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+    \begin{enumerate}[(a)]
+        \item The augmented matrix for this system of equations is
+        \[
+            [M] = \left( \begin{tabular}{c c c | c} 
+                3 & 2 & 0 & 5\\
+                1 & 1 & 1 & 3\\
+                0 & 2 & 2 & 4
+                \end{tabular} \right).
+        \]
+        \item To row reduce, we start by dividing row 3 (R3) by 2 to get
+        \[
+            \left( \begin{tabular}{c c c | c} 
+                3 & 2 & 0 & 5\\
+                1 & 1 & 1 & 3\\
+                0 & 1 & 1 & 2
+                \end{tabular} \right).
+        \]
+        Then, we can subtract R1 from R2 to get
+        \[
+            \left( \begin{tabular}{c c c | c} 
+                3 & 2 & 0 & 5\\
+                1 & 0 & 0 & 1\\
+                0 & 1 & 1 & 2
+                \end{tabular} \right).
+        \]
+        Next, we can subtract 3R2 from R1 to get
+        \[
+\left( \begin{tabular}{c c c | c} 
+                0 & 2 & 0 & 2\\
+                1 & 0 & 0 & 1\\
+                0 & 1 & 1 & 2
+                \end{tabular} \right).
+        \]
+        Now, divide R1 by 2,
+            \[
+\left( \begin{tabular}{c c c | c} 
+                0 & 1 & 0 & 1\\
+                1 & 0 & 0 & 1\\
+                0 & 1 & 1 & 2
+                \end{tabular} \right).
+        \]    
+        Subtract R1 from R3
+        \[
+\left( \begin{tabular}{c c c | c} 
+                0 & 1 & 0 & 1\\
+                1 & 0 & 0 & 1\\
+                0 & 0 & 1 & 1
+                \end{tabular} \right).
+        \]
+        This step is a bit unecessary, but we can swap R1 and R2
+        \[
+\left( \begin{tabular}{c c c | c} 
+                1 & 0 & 0 & 1\\
+                0 & 1 & 0 & 1\\
+                0 & 0 & 1 & 1
+                \end{tabular} \right).
+        \]
+        \item Thus, from the row-echelon form, we arrive at the solution $x=1$, $y=1$, and $z=1$.
+    \end{enumerate}
+\end{solution}
+
+
+\newpage
+\begin{problem}
+Consider the equation
+\[
+\begin{pmatrix} 1 & 3 & 4 \\ 2 & 9 & 9 \\ 1 & 5 & 5 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 8 \\ 20 \\ 11 \end{pmatrix}.
+\]
+Does this equation have a solution or not? If so, determine the solution.
+\end{problem}
+\begin{solution}
+    We can see whether this equation has a solution by row reducing.  Later on, we will be able to use the \emph{determinant} to determine this more quickly.  At any rate, we have the augmented matrix
+    \[
+        [M] = \left( \begin{tabular}{c c c | c} 
+                1 & 3 & 4 & 8\\
+                2 & 9 & 9 & 20\\
+                1 & 5 & 5 & 5
+                \end{tabular} \right).
+    \]
+    I skip the steps here, but one can row reduce to
+    \[
+\left( \begin{tabular}{c c c | c} 
+                1 & 0 & 0 & -54\\
+                0 & 1 & 0 & -10\\
+                0 & 0 & 1 & 23
+                \end{tabular} \right).
+    \]
+    Since we achieved our goal of having the right half of the reduced matrix having 1's along the diagonal (it is an identity matrix), we do indeed have a solution. In particular, the solution is $x=-54$, $y=-10$, and $z=23$.  One can check this by performing the matrix multiplication posed in the statement of this problem.
+\end{solution}
+
+\newpage
+\begin{problem} 
+Consider the matrix
+\[
+[A] = \begin{pmatrix} 3 & 1 \\ 6 & 2 \end{pmatrix}.
+\]
+Determine the nullspace of $[A]$.
+\end{problem}
+\begin{solution}
+    The nullspace of $[A]$, $\operatorname{Null}([A])$ consists of all the vectors $\vec{\boldsymbol{x}}$ such that 
+    \[
+        [A]\vec{\boldsymbol{x}} = \zerovec.
+    \]
+    Thus, we are seeking to solve the homogeneous equation, or, in other words, the system of equations
+    \begin{align*}
+        3x + y &= 0 \\
+        6x + 2y &= 0.
+    \end{align*}
+    So, we create the augmented matrix
+    \[
+        \left( \begin{tabular}{cc | c} 3 & 1 & 0 \\ 6 & 2 & 0 \end{tabular} \right).
+    \]
+    Notice that R2 is equal to 2R1 and so we can subtract 2R1 from R2 to get
+    \[
+        \left( \begin{tabular}{cc | c} 3 & 1 & 0 \\ 0 & 0 & 0 \end{tabular} \right).
+    \]
+    Indeed, we cannot further reduce this matrix.  However, we can see that the new system of equations is
+    \begin{align*}
+        3x + y &= 0\\
+        0x + 0y &= 0.
+    \end{align*}
+    The first equation says that $y=-3x$ while the second says $x$ and $y$ are free to be anything.  So, we are free to choose $x$ and $y$ but we are subject to the constraint from the first equation.  In particular, we can take $x=1$ to yield $y=-3$, and so one solution in particular is
+    \[
+        \vec{\boldsymbol{x}} = \begin{pmatrix} 1 \\ -3 \end{pmatrix}.
+    \]
+    Notice that if I take a constant $\alpha$, then $\alpha \vec{\boldsymbol{x}}$ is also a solution.  To see this, we take
+    \[
+        [A] (\alpha \vec{\boldsymbol{x}}) = \alpha [A] \vec{\boldsymbol{x}} = 0,
+    \]
+    due to the linearity of $[A]$.  So, the nullspace is the set of vectors $\begin{pmatrix} \alpha \\ -3\alpha \end{pmatrix}$ for any constant $\alpha \in \R$.
+\end{solution}
+
+\end{document}

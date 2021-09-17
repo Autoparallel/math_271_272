@@ -1,0 +1,67 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Homework 2}\\
+   \textsc{Due September 11$^\textrm{th}$}
+\end{center}
+\vspace{.5cm}
+
+
+\begin{problem} 
+Consider the following autonomous equation.
+    \[
+    x'=-x^2.
+    \]
+    \begin{enumerate}[(a)]
+        \item Draw the phase line for this system. What are the equilibrium point(s)? Which equilibria are stable? Which are unstable? Explain.
+        \item Find a general solution to the ODE.
+        \item Explain how your general solution fits the qualitative behavior expected from the phase line. That is, can you show that limits of your general solution match your qualitative analysis?
+        \item Can $x(0)=0$ be an initial condition? Explain. \emph{Hint: your analysis from the phase line may prove to be more useful than the general solution you found.}
+    \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Let $y$ be a function of $x$ and consider the following differential equation.
+\[
+y' = y\cos(x).
+\]
+\begin{enumerate}[(a)]
+    \item What is the order of this equation? Is the equation separable? Explain.
+    \item Plot an approximation of the slope field for this equation using this Desmos link: \url{https://www.desmos.com/calculator/e93gktwtfo}. \emph{Note that you will have to modify the $g(x,y)$ equation in that page.}
+    \item Find the general solution to this equation.
+    \item Given the initial data $y(0)=1$, find the particular solution.
+    \item Plot this function over your slope field. Explain how you could have approximated this solution using just the slope field.
+    \item Explain in words what the solution describes if we let $y(x)$ be the position of some object and $x$ represents time.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the differential equation
+\[
+x'=\frac{x+t}{t}.
+\]
+\begin{enumerate}[(a)]
+    \item Let $f(x,t)=\frac{x+t}{t}$. Show that $f(x,t)=f(\lambda x, \lambda t)$.
+    \item Given (a) holds, use the change of variables $u=\frac{x}{t}$ to rewrite the differential equation as a separable equation in terms of $u$.
+    \item Find the general solution to the equation and write your solution in terms of the original variables $t$ and $x$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Find the general solution to the following equation.
+\[
+tx'+2x=\frac{\sin(t)}{t}.
+\]
+Show that your solution is correct. (\emph{Hint: can you use an integrating factor?})
+\end{problem}
+
+
+\end{document}

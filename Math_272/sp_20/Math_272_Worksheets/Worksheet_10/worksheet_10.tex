@@ -1,0 +1,185 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Worksheet 10}\\
+   \textsc{Derivations of calculus in coordinate systems}
+\end{center}
+\vspace{.5cm}
+
+\vspace*{1cm}
+\begin{problem}
+In Cartesian coordinates, one can consider the curves given when two of the Cartesian coordinates are held constant. That is,
+\begin{itemize}
+    \item Define $\curvegamma_x$ by $x(t)=t$, $y(t)=y_0$, and $z(t)=z_0$;
+    \item Define $\curvegamma_y$ by $x(t)=x_0$, $y(t)=t$, and $z(t)=z_0$;
+    \item Define $\curvegamma_z$ by $x(t)=x_0$, $y(t)=y_0$, and $z(t)=t$.
+\end{itemize}
+If we consider the unit tangent vectors to these curves, we will recover our basis vectors $\xhat$, $\yhat$, and $\zhat$ at whichever point we wish.  Let's see how.
+\begin{enumerate}[(a)]
+    \item Compute the tangent vectors $\tangentgamma_x$, $\tangentgamma_y$, and $\tangentgamma_z$.  Normalize these vectors if need be.
+    \item For example, does choosing values of $t$, $y_0$, and $z_0$ for $\tangentgamma_x(t)$ change the tangent vector? That is, do the tangent vectors change based on the point at which they are based? Make sure to consider all the different tangent vectors!
+    \item To see what these unit vectors $\xhat$, $\yhat$, and $\zhat$ look like, we can also compute, for example,
+        \[
+        \xhat(x,y,z) = \frac{\grad x(x,y,z)}{\left| \grad x(x,y,z)\right|}.
+        \]
+        Note that $x(x,y,z)=x$. This is just saying the $x$-position only depends on the $x$-value of the point we are at.
+    \item Show that these vectors are orthogonal at every point $(x,y,z)$.
+    \item Plot the vector fields $\xhat(x,y,z)$, $\yhat(x,y,z)$, and $\zhat(x,y,z)$.
+\end{enumerate}
+\end{problem}
+
+\vspace*{1cm}
+\begin{center}
+For the following two problems, you will want to plot these curves by converting back to Cartesian coordinates.  One will also notice that there is nothing to surprising happening.  For example, the unit tangent vector (field) $\thetahat$ will always point in the positive $\theta$ direction at any given point.
+\end{center}
+
+\vspace*{1cm}
+\begin{problem}
+* In cylindrical coordinates, one can consider the curves given when two of the cylindrical coordinates are held constant.  That is, 
+\begin{itemize}
+    \item Define $\curvegamma_\rho$ by $\rho(t)=t$, $\theta(t)=\theta_0$, and $z(t)=z_0$;
+    \item Define $\curvegamma_\theta$ by $\rho(t)=\rho_0$, $\theta(t)=t$, and $z(t)=z_0$;
+    \item Define $\curvegamma_z$ by $\rho(t)=\rho_0$, $\theta(t)=\theta_0$, and $z(t)=t$.
+\end{itemize}
+If we consider the unit tangent vectors to these curves, we will recover a new set of basis vectors $\rhohat$, $\thetahat$, and $\zhat$.  In fact, these basis vectors depend on the point at which they are based, and hence they are actually defining a field of vectors.  One should emphasize this by putting $\rhohat(\rho,\theta,z)$, $\thetahat(\rho,\theta,z)$, and $\zhat(\rho,\theta,z)$.
+\begin{enumerate}[(a)]
+    \item Compute the tangent vectors $\tangentgamma_\rho$, $\tangentgamma_\theta$, and $\tangentgamma_z$.  Normalize these vectors if need be.
+    \item For example, does choosing values of $t$, $\theta_0$, and $z_0$ for $\tangentgamma_\rho(t)$ change the tangent vector? That is, do the tangent vectors change based on the point at which they are based? Make sure to consider all the different tangent vectors!
+    \item To find out what these vectors $\rhohat$, $\thetahat$, and $\zhat$ look like in terms of the unit vectors $\xhat$, $\yhat$ and $\zhat$, we can also compute, for example,
+    \[
+    \rhohat(x,y,z) = \frac{\grad \rho(x,y,z)}{\left| \grad \rho(x,y,z) \right|}.
+    \]
+    Show that
+    \begin{align*}
+        \rhohat(x,y,z) &= \frac{x}{\sqrt{x^2+y^2}}\xhat + \frac{y}{\sqrt{x^2+y^2}} \yhat,\\
+        \thetahat(x,y,z) &= \frac{-y}{\sqrt{x^2+y^2}} \xhat + \frac{x}{\sqrt{x^2+y^2}} \yhat,\\
+        \zhat(x,y,z) &= \zhat.
+    \end{align*}
+    \item Show that these vectors are orthogonal at every point $(x,y,z)$.
+    \item Plot the vector fields $\rhohat(x,y,z)$, $\thetahat(x,y,z)$, and $\zhat(x,y,z)$.
+\end{enumerate}
+\end{problem}
+
+\vspace*{1cm}
+\begin{problem}
+* In spherical coordinates, one can consider the curves given when two of the spherical coordinates are held constant.  That is, 
+\begin{itemize}
+    \item Define $\curvegamma_r$ by $r(t)=t$, $\theta(t)=\theta_0$, and $\phi(t)=\phi_0$;
+    \item Define $\curvegamma_\theta$ by $r(t)=r_0$, $\theta(t)=t$, and $\phi(t)=\phi_0$;
+    \item Define $\curvegamma_\phi$ by $r(t)=r_0$, $\theta(t)=\theta_0$, and $\phi(t)=t$.
+\end{itemize}
+If we consider the unit tangent vectors to these curves, we will recover a new set of basis vectors $\rhohat$, $\thetahat$, and $\phihat$.  In fact, these basis vectors depend on the point at which they are based, and hence they are actually defining a field of vectors.  One should emphasize this by putting $\rhat(r,\theta,\phi)$, $\thetahat(r,\theta,\phi)$, and $\phihat(r,\theta,\phi)$.
+\begin{enumerate}[(a)]
+    \item Compute the tangent vectors $\tangentgamma_r$, $\tangentgamma_\theta$, and $\tangentgamma_\phi$.  Normalize these vectors if need be.
+    \item For example, does choosing values of $t$, $\theta_0$, and $\phi_0$ for $\tangentgamma_r(t)$ change the tangent vector? That is, do the tangent vectors change based on the point at which they are based? Make sure to consider all the different tangent vectors!
+    \item To find out what these vectors $\rhat$, $\thetahat$, and $\phihat$ look like in terms of the unit vectors $\xhat$, $\yhat$ and $\zhat$, we can also compute, for example,
+    \[
+    \rhat(x,y,z) = \frac{\grad r(x,y,z)}{\left| \grad r(x,y,z) \right|}.
+    \]
+    Show that
+    \begin{align*}
+        \rhat(x,y,z) &= \frac{x}{\sqrt{x^2+y^2+z^2}}\xhat + \frac{y}{\sqrt{x^2+y^2+z^2}} \yhat + \frac{z}{\sqrt{x^2+y^2+z^2}} \zhat,\\
+        \thetahat(x,y,z) &= \frac{-y}{\sqrt{x^2+y^2}} \xhat + \frac{x}{\sqrt{x^2+y^2}} \yhat,\\
+        \phihat(x,y,z) &= \frac{xz}{\sqrt{x^2+y^2}(x^2+y^2+z^2)}\xhat + \frac{yz}{\sqrt{x^2+y^2}(x^2+y^2+z^2)}\yhat + \frac{-\sqrt{x^2+y^2}}{x^2+y^2+z^2}\zhat
+    \end{align*}
+    \item Show that these vectors are orthogonal at every point $(x,y,z)$.
+    \item Plot the vector fields $\rhat(x,y,z)$, $\thetahat(x,y,z)$, and $\phihat(x,y,z)$.
+\end{enumerate}
+\end{problem}
+
+
+
+
+\vspace*{1cm}
+\begin{center} The following four problems are used to determine how the gradient vector is found in various coordinate systems.
+\end{center}
+
+\vspace*{1cm}
+\begin{problem} *
+    Suppose that we have the vector $\vecv = x\xhat + y\yhat$ in the plane $\R^2$.  If I move this vector infinitesimally in each component, then how much length is swept out? That is, what is the differential $d\vecv$? We can compute this differential by taking,
+    \[
+    d\vecv = \frac{\partial \vecv}{\partial x}dx+\frac{\partial \vecv}{\partial y}dy.
+    \]
+    Then we can refer to, for example, the value
+    \[
+    h_x = \left| \frac{\partial \vecv}{\partial x} \right|,
+    \]
+    as the scale factor for $x$.
+    \begin{enumerate}[(a)]
+        \item Show that in Cartesian coordinates that
+        \[
+        d\vecv = h_x \xhat dx + h_y \yhat dy = \xhat dx + \yhat dy.
+        \]
+        In other words, show the scale factors $h_x$ and $h_y$ are one.
+        \item In general, the gradient $\grad$ is computed by swapping $dx$ for $\frac{\partial}{\partial x}$ and likewise $dy$ for $\frac{\partial}{\partial y}$.  We also invert the scale factors. Thus,
+        \[
+        \grad = \frac{1}{h_x} \xhat \frac{\partial }{\partial x} + \frac{1}{h_y} \yhat \frac{\partial }{\partial y} = \xhat \frac{\partial }{\partial x} + \yhat \frac{\partial }{\partial y}
+        \]
+    \end{enumerate}
+\end{problem}
+
+\vspace*{1cm}
+\begin{problem} *
+    Likewise, suppose that we have the vector $\vecv = x\xhat + y\yhat$ in the plane $\R^2$.  Now, use the polar coordinates
+    \begin{align*}
+    x &= r \cos \theta\\
+    y &= r \sin \theta
+    \end{align*}
+    If I move this vector infinitesimally in each component, then how much length is swept out? That is, what is the differential $d\vecv$? We can compute this differential by taking,
+    \[
+    d\vecv = \frac{\partial \vecv}{\partial \rho}d\rho+\frac{\partial \vecv}{\partial \theta}d\theta.
+    \]
+    Then we can refer to, for example, the value
+        \[
+        h_\rho = \left| \frac{\partial \vecv}{\partial \rho} \right|,
+        \]
+        as the scale factor for $\rho$.
+    \begin{enumerate}[(a)]
+        \item Show that in polar coordinates that
+        \[
+        h_r = 1 \qquad \textrm{and} \qquad h_\theta = r.
+        \]
+        This means that
+        \[
+        d\vecv =  \rhohat d\rho + r\thetahat d\theta.
+        \]
+        \item Argue why the gradient in polar coordinates is then
+        \[
+        \grad = \rhat \frac{\partial}{\partial r} + \thetahat \frac{1}{r}\frac{\partial}{\partial \theta}.
+        \]
+    \end{enumerate}
+\end{problem}
+
+\vspace*{1cm}
+\begin{problem}
+    * Repeat the previous arguments for cylindrical coordinates.
+\end{problem}
+
+\vspace*{1cm}
+\begin{problem}
+    * Repeat the previous arguments for cylindrical coordinates.
+\end{problem}
+
+\vspace*{1cm}
+\begin{centering} The following two problems derive the divergence and Laplacian in cylindrical and spherical coordinates.
+\end{centering}
+
+\vspace*{1cm}
+\begin{problem}
+    Divergence in cylindrical then divergence of gradient is laplacian.
+\end{problem}
+
+
+\vspace*{1cm}
+\begin{problem}
+    **** Picture the surface of the unit sphere.  If we have a (tangent) vector field defined along the surface (i.e., solely vectors that are a combination of $\thetahat$ and $\phihat$), is it possible that this vector field is nonzero everywhere? This is known as the \emph{Hairy Ball Theorem} since it is analogous to the idea of ``combing a fuzzy tennis ball with no cowlicks." \emph{Hint: You can certainly comb a hairy torus, though!}
+\end{problem}
+
+\end{document}

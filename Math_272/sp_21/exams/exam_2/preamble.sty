@@ -1,0 +1,91 @@
+\ProvidesPackage{preamble}
+
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{hyperref}
+
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\usetikzlibrary{angles}
+\RequirePackage{pgfplots}
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+\usepackage{float}
+\usepackage{morefloats}
+\usepackage{pgf,tikz}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{subcaption}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{fancyvrb}
+\usepackage{longtable,booktabs}
+\usepackage{stackrel}
+\usepackage{tabularx}
+\newcounter{abc}
+\renewcommand{\theabc}{\stepcounter{abc}\alph{abc}}
+\newcommand{\answerbox}{\fbox{\phantom{M}}}
+\newcommand{\filledanswer}{\fbox{\checkmark}}
+
+\newtheoremstyle{probstyle}
+{1cm} % Space above
+{1cm} % Space below
+{} % Body font
+{} % Indent amount
+{\bfseries} % Theorem head font
+{.} % Punctuation after theorem head
+{.5em} % Space after theorem head
+{} % Theorem head spec (can be left empty, meaning `normal')
+
+\theoremstyle{probstyle} \newtheorem{problem}{Problem}
+\newtheorem{solution}{Solution}
+
+% Symbols
+
+\newcommand{\RE}{\mathrm{Re}}
+\newcommand{\IM}{\mathrm{Im}}
+
+\newcommand{\xhat}{\boldsymbol{\hat{x}}}
+\newcommand{\yhat}{\boldsymbol{\hat{y}}}
+\newcommand{\zhat}{\boldsymbol{\hat{z}}}
+\newcommand{\vecv}{\boldsymbol{\boldsymbol{\vec{v}}}}
+\newcommand{\vecu}{\boldsymbol{\boldsymbol{\vec{u}}}}
+\newcommand{\vecw}{\boldsymbol{\boldsymbol{\vec{w}}}}
+\newcommand{\vecr}{\boldsymbol{\boldsymbol{\vec{r}}}}
+\newcommand{\vecx}{\boldsymbol{\boldsymbol{\vec{x}}}}
+\newcommand{\vecy}{\boldsymbol{\boldsymbol{\vec{y}}}}
+\newcommand{\vecp}{\boldsymbol{\boldsymbol{\vec{p}}}}
+\newcommand{\vecb}{\boldsymbol{\boldsymbol{\vec{b}}}}
+\newcommand{\evec}{\boldsymbol{\vec{e}}}
+\newcommand{\zerovec}{\boldsymbol{\vec{0}}}
+\newcommand{\unitvec}{\boldsymbol{\hat{n}}}
+\newcommand{\basvec}{\boldsymbol{\hat{e}}}
+\newcommand{\forcevec}{\boldsymbol{\vec{F}}}
+\newcommand{\displacement}{\boldsymbol{\vec{d}}}
+\newcommand{\matA}{[A]}
+\newcommand{\matB}{[B]}
+\newcommand{\matC}{[C]}
+\newcommand{\matT}{[T]}
+\newcommand{\colA}{\boldsymbol{\vec{A}}}
+
+\newcommand{\Span}{\mathrm{Span}}
+\newcommand{\Null}{\mathrm{Null}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\Rot}{[\mathrm{Rot}]}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\Orth}{\mathrm{O}}
+\newcommand{\U}{\mathrm{U}}
+\newcommand{\SU}{\mathrm{SU}}
+\usepackage{xfrac}
+
+\newcommand{\DD}{\displaystyle}
+
+

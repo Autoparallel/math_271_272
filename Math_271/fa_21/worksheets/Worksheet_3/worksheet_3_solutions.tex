@@ -1,0 +1,303 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Worksheet 3, \emph{Solutions}}\\
+   \textsc{First order autonomous and linear equations. Chemical kinetics.}
+\end{center}
+\vspace{.5cm}
+
+
+\begin{problem}
+    Let's revisit Newton's law of cooling and describe the equilibria of the system. 
+\begin{enumerate}[(a)]
+    \item Is the system autonomous? Explain.
+    \item Draw a phase line for the system.
+    \item Can you explain why the value you find for the equilibrium makes sense? Is this equilibrium be stable? Does this make sense? Explain.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}[(a)]
+        \item Yes, the equation is autonomous. Recall the equation is given by
+        \[
+            T' = k(T_a-T)
+        \]
+        and the derivative $T'$ only depends on the dependent variable $T$, and not the independent variable $t$.
+        \item Let us consider the equivalent system given by
+        \[
+            \delta' = -k\delta,
+        \]
+        where $\delta = T_a-T$. Then the phase line takes the form
+        
+                        \begin{centering}
+                \begin{tikzpicture}[thick, scale=3]
+                
+                    \DrawHorizontalPhaseLine[$\delta$]{-1,0,1}{-0.75, -0.5, -0.25}{0.25,0.5,0.75}
+                    \draw [domain=-1:1,smooth,variable=\x,red] plot (\x,-\x);
+                \end{tikzpicture}
+                \end{centering}
+
+        
+        \item Yes, the phase line shows that $\delta=0$ is the only equilibrium.  Then, we can note that $\delta = T_a-T$ and hence the equilibria is achieved when $T_a=T$. That is, the equilibrium temperature for the object is the temperature of the ambient environment. This is exactly what we expect!
+    \end{enumerate}
+\end{solution}
+
+\newpage
+
+\begin{problem}
+Are the following ODEs separable, autonomous, linear, nonlinear, or none of the above? Keep in mind that some may satisfy more than one property!
+    \begin{enumerate}[(a)]
+        \item $x' = \sin(tx)$.
+        \item $x' = \sin(x)$.
+        \item $x' = t^2 x$.
+        \item $e^t x' + tx = e^{-k t} \cos(\omega t).$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}[(a)]
+        \item This equation is a first order nonlinear equation. Finding a solution to this is extremely difficult.  However, one can numerically find an approximate solution fairly easily!
+        \item This is a first order separable, autonomous, and nonlinear system. Finding a solution is possible, but requires some integration techniques we haven't covered.
+        \item This is a first order separable and linear equation.  You should be able to find this solution on your own.
+        \item This is a first order linear equation. You could attempt to solve this using the integrating factor, but the integrals may be very difficult to do!
+    \end{enumerate}
+\end{solution}
+
+\newpage
+
+\begin{problem}
+For the following problems, show that the equation is linear by writing the equation in a recognizable form.
+    \begin{enumerate}[(a)]
+        \item $\frac{x'}{x} = t$.
+        \item $2xx'+x^2=xt$.
+        \item $\tan(t) x' + \sin(t) x = \ln(t).$
+    \end{enumerate}
+\end{problem}
+\begin{solution}~
+    \begin{enumerate}[(a)]
+        \item We can take
+        \begin{align*}
+            \frac{x'}{x} &= t\\
+    \iff ~ x' &= xt\\
+    \iff ~ x' - xt &= 0,
+        \end{align*}
+        which is in the general form for a linear equation.
+
+        \item Likewise, take
+        \begin{align*}
+            2xx' +x^2 &= xt\\
+            \iff ~ x' +\frac{1}{2} x &= \frac{1}{2} t.
+        \end{align*}
+
+        \item Finally,
+        \begin{align*}
+            \tan(t)x' + \sin(t) x = \ln(t)\\
+            \iff ~ x' + \sec(t) x = \frac{\log(t)}{\tan(t)}.
+        \end{align*}        
+    \end{enumerate}
+\end{solution}
+
+\newpage
+
+\begin{problem}
+    For the above linear equations, determine the integrating factor (even if you cannot compute the integral) and determine the solution $x(t)$ (again, even if you cannot compute the integral).
+\end{problem}
+\begin{solution}~
+    \begin{enumerate}[(a)]
+        \item We have that
+        \begin{align*}
+            \mu(t) &= e^{\int -tdt}\\
+            &= e^{-\frac{1}{2}t^2}.
+        \end{align*}
+        Then, the solution is given by
+        \begin{align*}
+            x(t) &= \frac{1}{\mu(t)} \int \mu(t) \cdot 0 dt\\
+            &= Ce^{\frac{1}{2}t^2}.
+        \end{align*}
+        
+        \item We have that
+        \begin{align*}
+            \mu(t) &= e^{\int \frac{1}{2} dt}\\
+            &= e^{\frac{1}{2}t}.
+        \end{align*}
+        Then, the solution is given by
+        \begin{align*}
+            x(t) &= \frac{1}{\mu(t)} \int \mu(t) \frac{1}{2} t dt\\
+            &= \frac{1}{2} e^{-\frac{1}{2}t} \int te^{\frac{1}{2} t}dt .
+        \end{align*} 
+        I'll leave this integration for you to do. \emph{Hint: use integration by parts.}
+
+        \item We have that
+        \begin{align*}
+            \mu(t) &= e^{\int \sec(t) dt}\\
+            &= \ln(\tan(t)+\sec(t)),
+        \end{align*}
+        which you should verify.  Then, the solution is given by
+        \begin{align*}
+            x(t) &= \frac{1}{\mu(t)} \int \mu(t) \frac{\ln(t)}{\tan(t)} dt\\
+            &= \frac{1}{\ln(\tan(t)+\sec(t))} \int \ln(\tan(t)+\sec(t)) \frac{\ln(t)}{\tan(t)}dt.
+        \end{align*}
+    \end{enumerate}
+\end{solution}
+
+\newpage
+
+\begin{problem}
+    Find the solution to the equation $x'+x=t^2$.
+\end{problem}
+\begin{solution}
+    We first find the integrating factor
+    \begin{align*}
+        \mu(t) = e^{\int dt} = e^t.
+   \end{align*}
+    Then the solution is given by
+    \begin{align*}
+        x(t) &= e^{-t} \int t^2 e^t dt\\
+        &= t^2 -2t + 2 +ce^{-t}.
+    \end{align*}.
+\end{solution}
+
+\newpage
+
+\begin{problem}
+    Consider the dissociation chemical reaction
+    \[
+        AB \to A + B.
+    \]
+    Write down an equation for each species $A$, $B$, and $AB$.  Find a solution.
+\end{problem}
+\begin{solution}
+    We have
+    \begin{align*}
+        [AB]' &= -k[AB]\\
+        [A]' &= k[AB]\\
+        [B]' &= k[AB].
+    \end{align*}
+    Then, we can find a solution for $[AB]$ since the equation is separable. Namely,
+    \begin{align*}
+        \frac{1}{[AB]} d[AB] &= -k dt\\
+        \ln([AB]) &= -kt+c\\
+        [AB] = Ce^{-kt}.
+    \end{align*}
+    If we have the initial concentrations $[AB](0)=[AB]_0$, $[A](0)=[A]_0$ and $[B](0)=[B]_0$, then we arrive at
+    \[
+        \boxed{[AB] = [AB]_0 e^{-kt}.}
+    \]
+    Then we have for $[A]$,
+    \begin{align*}
+        [A]' &= k[AB]_0 e^{-kt}\\
+        d[A] &= k[AB]_0 e^{-kt} dt\\
+        [A] &= -[AB]_0 e^{-kt} + c.
+    \end{align*}
+    Then, if $[A](0)=[A]_0$ we ahve
+    \[ 
+        [A]_0 = -[AB]_0 +c,
+    \]
+    so $c= [AB]_0 + [A]_0$. Thus,
+    \[
+        \boxed{[A]= [AB]_0 (1-e^{-kt}) + [A]_0.}
+    \]
+    The work for $[B]$ is analogous and we arrive at
+    \[
+      \boxed{[B] = [AB]_0 (1-e^{-kt}) +[B]_0.}  
+    \]
+\end{solution}
+
+\newpage
+
+\begin{problem}
+    Compare and contrast the equations for the above reaction and the synthesis reaction
+    \[
+        A+B \to AB.
+    \]
+    \emph{Hint: maybe this is a bit of an odd way to think, but is one just the reversal in time of the other?}
+\end{problem}
+\begin{solution}
+    Here we have the equations
+    \begin{align*}
+        [A]' &= -k [A][B]\\
+        [B]' &= -k [A][B]\\
+        [AB]' &= k [A][B].
+    \end{align*}
+     The previous (decomposition) reaction $AB\to A+B$ gave linear equations that we could solve.  In this case, the equations are nonlinear since we have two dependent variables multiplied together.  In some sense, yes, it seems as if this equation is the time reversal of the other, but the process of combination is a bit different than the process of decomposition.  Let's think about it.
+
+    Decomposition will happen over time with no requirement on reactants mixing.  For this synthesis reaction, you have to have an $A$ molecule run into a $B$ molecule which means the synthesis reaction is a bit more restrictive. So, to be exact, no this is not just the time reversal of the previous reaction! It's much like watching an egg break -- in forward motion this will look normal, but if we rewind the tape and watch the egg come together, this will not seem natural at all.  Entropy is at play!  Some actions are not naively reversible!
+\end{solution}
+
+\newpage
+
+\begin{problem}
+    Photosynthesis is an extremely important chemical reaction where plants convert carbon dioxide and water into glucose and oxygen. That is,
+    \[
+        6CO_2 + 6H_2O \to 6C_6 H_{12} O_6 + 6 O_2.
+    \]
+    \begin{enumerate}[(a)]
+        \item Write down the equations that describe the above equation.
+        \item Do we have any techniques to solve this type of equation (yet)?
+        \item The reaction also depends on the intensity of light.  How can we implement this into the equation?
+    \end{enumerate}   
+\end{problem}
+\begin{solution}
+    \begin{enumerate}[(a)]
+        \item The equations we arrive at are
+        \begin{align*}
+            [CO_2]' &= -6k [CO_2]^6[H_2 O]^6\\
+            [H_2O]' &= -6 k[CO_2]^6[H_2 O]^6\\
+            [C_6 H_{12} O_6]' &= 6 k[CO_2]^6[H_2 O]^6\\
+            [O_2]' &= 6 k[CO_2]^6[H_2 O]^6.
+        \end{align*}
+        \item No we do not.  These are \emph{coupled} nonlinear equations.
+
+        \item We make $k(I)$ a function of the intensity of light $I$.  Namely, the more light, the more quickly this reaction will take place.  So $k(I)$ should be an increasing function of $I$.
+    \end{enumerate}
+\end{solution}
+
+\newpage
+
+\begin{problem}
+Everybody loves combustion. It keeps us warm and it looks cool on the 4$^\textrm{th}$ of July!  Anyhow, combustion of propane in your grill at home is given by the equation
+    \[
+        C_3 H_8 + 5O_2 \to 4H_2O + 3CO_2 + \textrm{Energy}.
+    \]
+    \begin{enumerate}[(a)]
+        \item Write down the equations describing the above reaction (not including the energy term).
+        \item If a specific amount of energy is given off by each reaction (in this case, $2043\textrm{kJ}$ of energy per mole), include an equation for the total energy created if we begin with $1\textrm{kg}$ of propane in an abundance of oxygen.
+        \item Can you give some analogy to how much energy this is so that we may understand the usefulness a bit more? E.g., how many hot dogs could I cook on the 4$^\textrm{th}$ of July?
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}[(a)]
+        \item We have the equations
+        \begin{align*}
+            [C_3 H_8]' &= -k [C_3 H_8][O_2]^5 \\
+            [O_2]' &= -5k [C_3 H_8][O_2]^5\\
+            [H_2 O]' &= 4k [C_3 H_8][O_2]^5\\
+            [CO_2]' &= 3k [C_3 H_8][O_2]^5.
+        \end{align*}
+        \item The amount of energy is proportional to how much propane has reacted.  Note that propane has a molecular weight of 44.1g/mol. and so 
+        \[
+            1000\textrm{g} \cdot \frac{1 \textrm{mol}}{44.1 \textrm{g}} \approx 22.67 \textrm{mol}.
+        \]
+        Thus, the total energy expended is approximately
+        \[
+            (22.67\cdot 2043) \textrm{kJ} =  46314.81 \textrm{kJ}.
+        \]
+        \item Now, note that a hot dog is mostly water. So we approximate a typical quarter pound hot dog as a tube of water.  In grams, this is roughly 114g. A typical fridge stores a hot dog at roughly 3C, and a hot dog is cooked at roughly 70C.  So we need to raise a hot dog 67C. It requires 4.2J to raise a gram of water one degree.  Thus, one hot dog takes
+        \[
+            (67\cdot 0.0042 \cdot 114) \textrm{kJ} = 32.08\textrm{kJ}.
+        \]
+        Thus, we can cook
+        \[
+            \frac{46314.81}{32.08} \approx 1412.55 \textrm{~hot dogs.}
+         \]
+        Of course, this is assuming all the energy goes into cooking the hot dogs when, in reality, much of it is wasted. Say, 75\% is wasted, we could really cook about 350 hot dogs per kg of propane!
+    \end{enumerate}
+\end{solution}
+
+
+\end{document}

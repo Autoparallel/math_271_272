@@ -1,0 +1,115 @@
+% Optional calls for page styles
+
+\documentclass[12pt,letterpaper, openany]{book} %took out one side
+%\usepackage[top=2cm, bottom=2cm, lmargin=3.5cm,rmargin=2.5cm,marginparwidth=6cm,marginparsep=2em]{geometry}
+
+%PRINTING FORMAT
+\usepackage[top=1.75cm, bottom=1.75cm, lmargin=3.25cm,rmargin=2.25cm,marginparwidth=6cm,marginparsep=2em, twoside]{geometry}
+
+%ONLINE FORMAT
+%\usepackage[top=1.75cm, bottom=1.75cm, lmargin=3.25cm,rmargin=2.25cm,marginparwidth=6cm,marginparsep=2em]{geometry}
+
+
+%\setlength\parindent{0pt} %crush the auto indentation
+
+%Footnote separation
+\addtolength{\skip\footins}{1pc}
+
+\reversemarginpar
+\usepackage{import}
+\usepackage{design}
+\usepackage{preamble}
+
+% Watermarking
+%\usepackage{draftwatermark}
+
+
+ 
+\usepackage{makeidx}
+\makeindex
+
+
+%% Above notes: You can remove twoside and replace with oneside in documentclass to have a better "online pdf" format. twoside is better for printing and binding. You may want to mess with margins to make this better for online viewing.
+ 
+\begin{document}
+
+% WATERMARK
+%\SetWatermarkText{Property of Colin Roberts. NOT FOR REDISTRIBUTION.}
+%\SetWatermarkColor[gray]{0.75}
+%\SetWatermarkFontSize{1cm}
+%\SetWatermarkAngle{45}
+%\SetWatermarkHorCenter{10cm}
+ 
+\frontmatter
+\input{Frontmatter/title.tex}
+
+
+%No preface for now. Need a new one for 272.
+%\input{preface.tex}
+ 
+\clearpage
+\thispagestyle{empty}
+ 
+\tableofcontents
+ 
+\mainmatter
+
+\setcounter{part}{4}
+\part{Further Topics in Linear Algebra}
+
+\chapter{Complex Functions and Transformations}
+\input{Chapters_Part_5/complex_functions_transformations.tex} 
+
+\chapter{Hilbert Spaces}
+\input{Chapters_Part_5/hilbert_spaces.tex}
+
+\chapter{Linear Operators}
+\input{Chapters_Part_5/linear_operators.tex}
+
+\chapter{Fourier Theory}
+\input{Chapters_Part_5/fourier_theory.tex}
+
+\part{Calculus in Higher Dimensions}
+
+\chapter{Curves and Scalar Fields}
+\input{Chapters_Part_6/curves_fields.tex}
+
+\chapter{Vector Fields}
+\input{Chapters_Part_6/vector_fields.tex}
+
+\chapter{Implicit and Explicit Parameterizations}
+\input{Chapters_Part_6/coordinate_systems_paramaterization.tex}
+% ADD IN PARAMETERIZATIONS OF TORUS FROM IMPLICIT AND FROM TWO PARAMETERS, SAME WITH SPHERE
+
+
+
+\part{Partial Differential Equations}
+
+\chapter{Modelling}
+\input{Chapters_Part_7/modelling.tex}
+
+\chapter{Separation of Variables}
+\input{Chapters_Part_7/separation_of_variables.tex}
+
+
+
+%\chapter{Remarks for Math 271}
+%\input{Chapters_Part_4/remarks_271.tex}
+
+
+ 
+\newenvironment{changemargin}[1]{%
+\begin{list}{}{%
+\setlength{\topsep}{#1}
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{\parskip}%
+}%
+\item[]}{\end{list}}
+
+\begin{changemargin}{0cm}
+\printindex 
+\end{changemargin}
+
+ 
+\end{document}

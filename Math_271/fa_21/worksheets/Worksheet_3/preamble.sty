@@ -1,0 +1,183 @@
+\ProvidesPackage{preamble}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color, soul, xcolor} % Colored text and highlighting, respectively
+
+%Tikz
+\usepackage{tikz-cd} % For commutative diagrams
+\usepackage{tikz-3dplot}
+\RequirePackage{pgfplots}
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations}
+\usetikzlibrary{arrows,decorations.markings} 
+\usetikzlibrary{quotes,angles}
+
+\usepackage{mathtools}
+\usepackage{answers}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{marvosym,wasysym} %fucking smileys
+\usepackage{float,morefloats}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Number systems
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+
+% Functions
+
+\newcommand{\RE}{\mathrm{Re}}
+\newcommand{\IM}{\mathrm{Im}}
+
+\newcommand{\xhat}{\boldsymbol{\hat{x}}}
+\newcommand{\yhat}{\boldsymbol{\hat{y}}}
+\newcommand{\zhat}{\boldsymbol{\hat{z}}}
+\newcommand{\vecv}{\boldsymbol{\boldsymbol{\vec{v}}}}
+\newcommand{\vecu}{\boldsymbol{\boldsymbol{\vec{u}}}}
+\newcommand{\vecw}{\boldsymbol{\boldsymbol{\vec{w}}}}
+\newcommand{\vecr}{\boldsymbol{\boldsymbol{\vec{r}}}}
+\newcommand{\zerovec}{\boldsymbol{\vec{0}}}
+\newcommand{\unitvec}{\boldsymbol{\hat{n}}}
+\newcommand{\basvec}{\boldsymbol{\hat{e}}}
+\newcommand{\forcevec}{\boldsymbol{\vec{F}}}
+\newcommand{\displacement}{\boldsymbol{\vec{d}}}
+\newcommand{\vhat}{\boldsymbol{\boldsymbol{\hat{v}}}}
+\newcommand{\uhat}{\boldsymbol{\boldsymbol{\hat{u}}}}
+\newcommand{\what}{\boldsymbol{\boldsymbol{\hat{w}}}}
+\newcommand{\rhat}{\boldsymbol{\boldsymbol{\hat{r}}}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\tr}{\mathrm{tr}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Italic font
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{axiom}{Axiom}
+
+% Plain font
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[]
+\newtheorem{solution}{Solution}
+\newtheorem{problem}{Problem}
+\newtheorem{question}{Question}[section]
+\newtheorem{answer}{Answer}[section]
+\newtheorem{exercise}{Exercise}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand*{\TickSize}{2pt}%
+
+\newcommand*{\AxisMin}{0}%
+\newcommand*{\AxisMax}{0}%
+
+\newcommand*{\DrawHorizontalPhaseLine}[4][]{%
+    % #1 = axis tick labels
+    % #2 = right arrows positions as CSV
+    % #3 = left arrow positions as CSV
+    \gdef\AxisMin{0}%
+    \gdef\AxisMax{0}%
+    \edef\MyList{#2}% Allows for #1 to be both a macro or not
+    \foreach \X in \MyList {
+        \draw  (\X,\TickSize) -- (\X,-\TickSize) node [below] {$\X$};
+        \ifnum\AxisMin>\X
+            \xdef\AxisMin{\X}%
+        \fi
+        \ifnum\AxisMax<\X
+            \xdef\AxisMax{\X}%
+        \fi
+    }
+
+    \edef\MyList{#3}% Allows for #2 to be both a macro or not
+    \foreach \X in \MyList {% Right arrows
+        \draw [->] (\X-0.1,0) -- (\X,0);
+        \ifnum\AxisMin>\X
+            \xdef\AxisMin{\X}%
+        \fi
+        \ifnum\AxisMax<\X
+            \xdef\AxisMax{\X}%
+        \fi
+    }
+
+    \edef\MyList{#4}% Allows for #3 to be both a macro or not
+    \foreach \X in \MyList {% Left arrows
+        \draw [<-] (\X-0.1,0) -- (\X,0);
+        \ifnum\AxisMin>\X
+            \xdef\AxisMin{\X}%
+        \fi
+        \ifnum\AxisMax<\X
+            \xdef\AxisMax{\X}%
+        \fi
+    }
+
+    \draw  (\AxisMin-1,0) -- (\AxisMax+1,0) node [right] {#1};
+}%
+
+\newcommand*{\DrawVerticalPhaseLine}[4][]{%
+    % #1 = axis tick labels
+    % #2 = up arrows positions as CSV
+    % #3 = down arrow positions as CSV
+    \gdef\AxisMin{0}%
+    \gdef\AxisMax{0}%
+    \edef\MyList{#2}% Allows for #1 to be both a macro or not
+    \foreach \X in \MyList {
+        \draw  (-\TickSize,\X) -- (\TickSize,\X) node [right] {$\X$};
+        \ifnum\AxisMin>\X
+            \xdef\AxisMin{\X}%
+        \fi
+        \ifnum\AxisMax<\X
+            \xdef\AxisMax{\X}%
+        \fi
+    }
+
+    \edef\MyList{#3}% Allows for #2 to be both a macro or not
+    \foreach \X in \MyList {% Up arrows
+        \draw [->] (0,\X-0.1) -- (0,\X);
+        \ifnum\AxisMin>\X
+            \xdef\AxisMin{\X}%
+        \fi
+        \ifnum\AxisMax<\X
+            \xdef\AxisMax{\X}%
+        \fi
+    }
+
+    \edef\MyList{#4}% Allows for #3 to be both a macro or not
+    \foreach \X in \MyList {% Down arrows
+        \draw [<-] (0,\X+0.1) -- (0,\X);
+        \ifnum\AxisMin>\X
+            \xdef\AxisMin{\X}%
+        \fi
+        \ifnum\AxisMax<\X
+            \xdef\AxisMax{\X}%
+        \fi
+    }
+
+    \draw  (0,\AxisMin-1) -- (0,\AxisMax+1) node [above] {#1};
+}%

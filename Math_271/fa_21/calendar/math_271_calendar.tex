@@ -1,0 +1,451 @@
+\documentclass{article}
+\usepackage{termcal}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{geometry}
+\geometry{
+  top=1in,
+  inner=1in,
+  outer=1in,
+  bottom=1in,
+  headheight=10ex,
+  headsep=7ex,
+  footskip=10ex
+}
+% Few useful commands (our classes always meet either on Monday and Wednesday
+% or on Tuesday and Thursday)
+
+\newcommand{\MTWFClass}{%
+\calday[Monday]{\classday} % Monday
+\calday[Tuesday]{\classday} % Tuesday
+\calday[Wednesday]{\classday} % Wednesday
+\skipday % Thursday (no class)
+\calday[Friday]{\classday} % Friday
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\TRClass}{%
+\skipday % Monday (no class)
+\calday[Tuesday]{\classday} % Tuesday
+\skipday % Wednesday (no class)
+\calday[Thursday]{\classday} % Thursday
+\skipday % Friday
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\Holiday}[2]{%
+\options{#1}{\noclassday}
+\caltext{#1}{#2}
+}
+
+\newcommand{\reading}[1]{\textcolor{OliveGreen}{\textbf{#1}}}
+\newcommand{\exam}[1]{\textcolor{RoyalBlue}{\textbf{#1}}}
+\newcommand{\hw}[1]{\textcolor{Bittersweet}{\textbf{#1}}}
+\newcommand{\noclass}[1]{\textcolor{Gray}{\textbf{#1}}}
+
+
+\begin{document}
+\begin{center}
+   \textsc{\large MATH 271, Calendar}\\
+   \textsc{Fall 2021}
+\vspace{.5cm}
+
+\flushleft\textbf{Color coding:}
+\begin{itemize}
+\item \reading{Reading assignments to be done before class on the scheduled day.}
+\item \exam{Quizzes or exams set to take place on those days.}
+\item \hw{Assignments due on these days.}
+\item \noclass{No class on this day.}
+\end{itemize}
+
+\begin{calendar}{8/23/2021}{16} % Semester starts on 1/11/2010 and last for 16
+                    % weeks, including finals week
+\setlength{\calboxdepth}{.3in}
+\setlength{\calwidth}{\textwidth}
+\MTWFClass
+%% schedule
+\caltexton{1}{
+\begin{itemize}
+	\item First day. Syllabus and course material.
+	\item Complex numbers.
+	\item \reading{Review Chapter 1.}
+	\item \reading{Chapter 3 Sections 1, 2.}
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}
+\item Geometry of $\mathbb{C}$ and polar coordinates.
+\item \reading{Chapter 3 Sections 3, 4.}
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}
+	\item Polar coordinates and periodicity.
+	\item \reading{Chapter 3 Sections 4, 5.}
+\end{itemize}}
+
+\caltextnext{
+\begin{itemize}
+	\item Intro to ODEs.
+	\item \reading{Chapter 4 Section 1, 2.}
+	\item \hw{Homework 0 due.}
+	\item \hw{Discussion due: A mathematician's lament.}
+	\end{itemize}}
+
+\caltextnext{
+\begin{itemize}
+	\item General and particular solutions.
+	\item \reading{Chapter 4 Sections 3.}
+\end{itemize}  }
+
+\caltextnext{
+\begin{itemize}
+	\item Separable ODEs.
+	\item \reading{Chapter 4 Sections 4.}
+	\end{itemize}}
+
+\caltextnext{
+\begin{itemize}
+	\item \textcolor{purple}{Iodine clock experiment.}
+		\item Changing variables and qualitative analysis.
+		\item \reading{Chapter 4 Section 5, 6.}
+\end{itemize}}
+
+\caltextnext{
+\begin{itemize}
+	\item \exam{Quiz 1.}
+	\item \hw{Homework 1 due.}
+	\item \hw{Discussion due: The Mandelbrot and Julia Sets.}
+	\item \hw{Review due: Homework 0.}
+	\end{itemize}}
+
+\caltextnext{
+\begin{itemize}
+	\item First order linear equations and integrating factor.
+	\item \reading{Chapter 4 Section 7.}
+	\end{itemize}}
+
+\caltextnext{
+\begin{itemize}
+	\item Chemical kinetics.
+	\item \reading{Chapter 4 Section 8.}
+	\end{itemize}}
+
+\caltextnext{
+\begin{itemize}
+	\item Cascading chemical reaction example.
+	\item \hw{Discussion due: Is Mathematics Invented or Discovered?}
+	\end{itemize}}
+
+\caltextnext{
+\begin{itemize}
+	\item  Second order ODEs and initial value problems.
+	\item \reading{Chapter 4 Section 9.}
+	\item \hw{Homework 2 due.}
+	\end{itemize}}
+
+\caltextnext{
+\begin{itemize}
+	\item Damped oscillation.
+	\item \reading{Chapter 4 Section 9.}
+	\item \hw{Review due: Homework 1.}
+	\item \hw{Quiz Redo due: Quiz 1.}
+	\end{itemize}}
+
+\caltextnext{
+\begin{itemize}
+    \item Driven and damped oscillation.
+	\item \reading{Chapter 5 Section 1.}
+	\end{itemize}}
+
+\caltextnext{
+\begin{itemize}
+	\item \exam{Quiz 2}
+	\item \hw{Discussion due: Richard Feynman.}
+	\end{itemize}}
+
+\caltextnext{
+\begin{itemize}
+	\item Boundary value problems and the Schr\"odinger equation.
+	\item \reading{Chapter 5 Section 2.}
+	\end{itemize}}
+
+\caltextnext{
+\begin{itemize}
+	\item More on the Schr\"odinger equation.
+	\item \reading{Chapter 5 Section 2.}
+	\item \hw{Homework 3 due.}
+	\item \hw{Review due: Homework 2.}
+	\end{itemize}}
+
+\caltextnext{
+\begin{itemize}
+	\item \exam{Exam 1.}
+	\end{itemize}}
+
+\caltextnext{
+\begin{itemize}
+	\item \exam{Exam 1.}
+	\item \hw{Review due: Homework 3.}
+	\end{itemize}}
+
+\caltextnext{
+\begin{itemize}
+	\item Sequences and series.
+	\item \reading{Chapter 6 Section 1, 2.}
+	\end{itemize}}
+
+\caltextnext{
+\begin{itemize}
+	\item Series and convergence.
+    \item \textcolor{red}{Explicit Euler method.}
+	\item \reading{Chapter 6 Section 2.}
+	\end{itemize}}
+
+\caltextnext{
+\begin{itemize}
+	\item Power series and radius of convergence.
+	\item \reading{Chapter 7 Section 1.}
+	\end{itemize}}
+
+\caltextnext{
+\begin{itemize}
+	\item Continue.
+	\item \reading{Chapter 7 Section 1.}
+	\item \hw{Homework 4 due.}
+	\item \hw{Discussion due: TBD.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Integration and differentiation with power series.
+	\item \reading{Chapter 7 Section 2.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Taylor series.
+	\item \reading{Chapter 7 Section 3.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Approximation with Taylor series and Morse potential.
+	\item \reading{Chapter 7 Section 4.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item \exam{Quiz 3.}
+	\item \hw{Homework 5 due.}
+	\item \hw{Discussion due: TBD.}
+	\item \hw{Review due: Homework 4.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Series solutions to ODEs.
+	\item \reading{Chapter 7 Section 5.}
+	\end{itemize}}
+\caltextnext{
+\begin{itemize}
+	\item Continue.
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Special polynomials.
+	\item \reading{Chapter 7 Section 6.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Quantum harmonic oscillator.
+	\item \reading{Chapter 7 Section 7.}
+	\item \hw{Homework 6 due.}
+	\item \hw{Discussion due: TBD.}
+	\item \hw{Review due: Homework 5.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Continue.
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Open.
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item \exam{Oral Exam 2.}
+	\item \hw{Review due: Homework 6.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item \exam{Oral Exam 2.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Vectors and vector spaces.
+	\item \reading{Chapter 8 Sections 1, 2.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Algebra of vector spaces.
+	\item \reading{Chapter 8 Section 3, 4.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Inner and cross products.
+	\item \reading{Chapter 8 Section 5.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Linear transformations and matrices.
+	\item \reading{Chapter 9 Section 1.}
+	\item \hw{Homework 7 due.}
+	\item \hw{Discussion due: TBD.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Continue.
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Matrix algebra.
+	\item \reading{Chapter 9 Section 2.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Systems of inhomogeneous linear equations.
+	\item \reading{Chapter 9 Section 3, 4.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Systems of homogeneous equations, nullspace.
+	\item \reading{Chapter 9 Section 3, 4.}
+	\item \hw{Homework 8 due.}
+	\item \hw{Discussion due: TBD.}
+	\item \hw{Review due: Homework 7.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Linear independence, span, and bases.
+	\item \reading{Chapter 9 Section 5.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Determinants, traces, and their properties.
+	\item \reading{Chapter 9 Section 6.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Continue.
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item \exam{Quiz 4.}
+	\item \hw{Homework 9 due.}
+	\item \hw{Discussion due: TBD.}
+	\item \hw{Review due: Homework 8.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Inverse and similar matrices.
+	\item \reading{Chapter 9 Section 7.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Eigen-problem.
+	\item \reading{Chapter 9 Section 8.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Diagonalization and Hermitian matrices.
+	\item \reading{Chapter 9 Section 9.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Continue.
+	\item \hw{Homework 10 due.}
+	\item \hw{Discussion due: TBD.}
+	\item \hw{Review due: Homework 9.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Groups and symmetries.
+	\item \reading{Chapter 9 Section 10.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Continue.
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Continue.
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item \exam{Quiz 5.}
+	\item \hw{Homework 11 due.}
+	\item \hw{Discussion due: TBD.}
+	\item \hw{Review due: Homework 10.}
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Project and review.
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item Project and review.
+	\end{itemize} }
+
+\caltextnext{
+\begin{itemize}
+	\item \exam{Exam 3.}
+	\item \hw{Review due: Homework 11.}
+	\end{itemize} }
+
+	\caltextnext{
+	\begin{itemize}
+		\item \exam{Exam 3.}
+		\end{itemize} }
+%
+
+% Holidays
+\Holiday{9/6/2021}{\noclass{Labor Day}}
+\Holiday{11/22/2021}{\noclass{Fall Break}}
+\Holiday{11/23/2021}{\noclass{Fall Break}}
+\Holiday{11/24/2021}{\noclass{Fall Break}}
+\Holiday{11/26/2021}{\noclass{Fall Break}}
+
+\end{calendar}
+\end{center}
+\end{document}

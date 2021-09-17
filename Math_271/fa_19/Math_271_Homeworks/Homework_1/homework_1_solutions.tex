@@ -1,0 +1,220 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Homework 1, \emph{Solutions}}\\
+   \textsc{Due September 6$^\textrm{th}$}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+    Look up how to do \emph{integration by parts}. Use this technique to compute the integral
+    \[
+        \int t e^{3t}dt.
+    \]
+\end{problem}
+
+\begin{solution}
+    Integration by parts is a combination of the derivative product rule and the fundamental theorem of calculus.  Given functions $u(x)$ and $v(x)$ we can write
+    \[
+    (uv)'=u'v+uv'.
+    \]
+    Then if we integrate both sides, we have
+    \[
+    \int_a^b (uv)'dx = \int_a^b u'vdx + \int_a^b uv'dx.
+    \]
+    Fundamental theorem of calculus gives us that
+    \[
+    \int_a^b (uv)'dx = u(b)v(b)-u(a)v(a)
+    \]
+    and thus
+    \[
+    \int_a^b u'vdx = u(b)v(b)-u(a)v(a)-\int_a^b uv'dx.
+    \]
+    Or, without bounds on the integral, we can write
+    \[
+    \int u'vdx = uv - \int uv'dx.
+    \]
+    I like to think of integration by parts as shifting the derivative from one function to another with a penalty term.  Above, we swap a derivative on $u$ to a derivative on $v$ but have to correct with the function $uv$.  This can all be derived in higher dimensions using Stokes' theorem. It's an excellent tool in the study of differential equations.
+    
+    Now, the technique to doing integration by parts is to identify a function that when we take its derivative it gets simpler.  So, in our integral
+    \[
+    \int te^{3t}dt
+    \]
+    we have that $t$ is a function that gets simpler when we take its derivative. That is, $\frac{d}{dt}t=1$. So, I'll let $u'=e^{3t}$ and $v=t$.  Then we have $u=\frac{1}{3}e^{3t}$ and $v'=1$. Let's replace these into our formula
+    \begin{align*}
+        \int u'vdt &= uv - \int uv'dt\\
+        \int e^{3t}tdt &= \frac{t}{3}e^{3t} - \int \frac{1}{3}e^{3t}\cdot 1 dt\\
+        &= \frac{t}{3} e^{3t} - \frac{1}{9}e^{3t}+c\\
+        &= \left( \frac{t}{3}-\frac{1}{9}\right)e^{3t}+c.
+    \end{align*}
+\end{solution}
+\newpage
+
+\begin{problem}
+Convert the following numbers in Cartesian coordinates to polar coordinates and compute all pairwise products.
+\begin{enumerate}[(a)]
+    \item $z_1=\frac{1}{2}-\frac{1}{2}i$;
+    \item $z_2=-1+3i$;
+    \item $z_3=-2-3i$.
+\end{enumerate}
+\end{problem}
+
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item We have that
+    \[
+    r=\sqrt{z_1z_1^*}=\sqrt{\frac{1}{4}+\frac{1}{4}}=\frac{1}{\sqrt{2}}
+    \]
+    and since $a>0$, 
+    \[
+    \theta = \arctan\left( \frac{1/2}{-1/2}\right)=-\frac{\pi}{4}.
+    \]
+    So
+    \[
+    z_1 = \frac{1}{\sqrt{2}} e^{-i\frac{\pi}{4}}.
+    \]
+    \item We have $a<0$ so
+    \[
+    r=\sqrt{10} \qquad \textrm{and} \qquad \theta = \arctan\left( \frac{3}{-1}\right)+\pi
+    \]
+    giving us that
+    \[
+    z_2 \approx \sqrt{10}e^{1.893i}.
+    \]
+    \item Again, $a<0$ so we have,
+    \[
+    r=\sqrt{13} \qquad \textrm{and} \qquad \theta = \arctan \left(\frac{-3}{-2}\right)+\pi.
+    \]
+    Hence,
+    \[
+    z_3 \approx \sqrt{13}e^{4.124i}.
+    \]
+\end{enumerate}
+Now we can compute all pairwise products.
+\begin{align*}
+    z_1 z_2 &= 1+2i\approx 2.236e^{1.107i}\\
+    z_1 z_3 &= \frac{1}{2}-\frac{5}{2}i\approx 2.550e^{-1.373i}\\
+    z_2 z_3 &= 11-3i\approx 11.402e^{-0.266i}.
+\end{align*}
+
+\end{solution}
+
+\newpage
+
+\begin{problem}
+Find the square roots of $-i$ using a geometrical argument.
+\end{problem}
+
+\begin{solution}
+Thinking of $-i=e^{i\frac{3\pi}{2}}$ we can find the square root by finding a number that has a half this rotation in a clockwise way, or a counter clockwise way.  So, we have
+\[
+\sqrt{-i}=e^{i\frac{3\pi}{4}}
+\]
+and
+\[
+\sqrt{-i}=e^{-i\frac{\pi}{4}}.
+\]
+Here's a picture to illustrate this.
+ \begin{center}
+            \begin{tikzpicture}
+            \draw[<->] (-3,0)--(3,0) node[right]{$\RE$};
+            \draw[<->] (0,-3)--(0,3) node[above]{$\IM$};
+            \tdplotdrawarc[->,line width = 1pt, black]{(0,0)}{1}{0}{270}{}{};
+            \node[anchor=east] at (-.75,1){};
+            \tdplotdrawarc[->,line width = 1pt, black]{(0,0)}{1.3}{0}{135}{}{};
+            \node[anchor=west] at (1.4,.5){};
+            \tdplotdrawarc[->,line width = 1pt, black]{(0,0)}{.5}{0}{-45}{}{};
+            \node[anchor=north east] at (-1,-1){};
+            \draw[line width=2pt,red,-stealth](0,0)--(0,-2) node[anchor=south east] at (0,4){};
+            \draw[line width=2pt,blue,-stealth](0,0)--(-1.414,1.414) node[anchor=south east] at (2.828,2.828){};
+            \draw[line width=2pt,blue,-stealth](0,0)--(1.414,-1.414) node[anchor=south west] at (1,1){};
+            \foreach \Point/\PointLabel in {(0,-2)/{-i}, (-1.414,1.414)/{e^{i\frac{3\pi}{4}}}, (1.414,-1.414)/{e^{-i\frac{\pi}{4}}}}
+            \draw[fill=black] \Point circle (0.05) node[anchor=south west] {$\PointLabel$};
+            \draw (0,0) circle (2);
+            \end{tikzpicture}
+        \end{center}
+\end{solution}
+
+\newpage
+
+\begin{problem}
+Draw the unit circle in the complex plane. Plot the complex numbers $z_1$, $z_2$, and $z_3$ given above and find their inverses. Explain what taking the inverse does geometrically.
+\end{problem}
+
+\begin{solution}
+From the previous problem we had
+\begin{align*}
+z_1 &= \frac{1}{2}-\frac{1}{2}i = \frac{1}{\sqrt{2}}e^{-i\frac{\pi}{4}}\\
+z_2 &= -1 + 3i \approx \sqrt{10}e^{-1.893i}\\
+z_3 &= -2 - 3i \approx \sqrt{13}{e^{4.4124i}}.
+\end{align*}
+Recall that the inverse for a complex number $z=a+bi=re^{i\theta}$ is given by
+\[
+z^{-1}=\frac{z^*}{\|z\|^2}=\frac{a}{a^2+b^2}-\frac{bi}{a^2+b^2}
+\]
+or in polar coordinates by
+\[
+z^{-1}=\frac{1}{r}e^{-i\theta}.
+\]
+So we have
+\begin{align*}
+    z_1^{-1} &= 1+i = \sqrt{2}e^{i\frac{\pi}{4}}\\
+    z_2^{-1} &= \frac{-1}{10}-\frac{3i}{10} \approx \frac{1}{\sqrt{10}} e^{1.893i}\\
+    z_3^{-1} &= \frac{-2}{13}+\frac{3i}{13} \approx \frac{1}{\sqrt{13}} e^{-4.4124i}.
+\end{align*}
+    \begin{center}
+            \begin{tikzpicture}[scale=.75]
+            \draw[<->] (-10,0)--(10,0) node[right]{$\RE$};
+            \draw[<->] (0,-10)--(0,10) node[above]{$\IM$};
+            \foreach \Point/\PointLabel in {(1.5,-1.5)/{z_1}, (-3,9)/{z_2}, (-6,-9)/{z_3}, (3,3)/{{z_1}^{-1}}, (-.3,-.9)/{z_2^{-1}}, (-.46,.69)/{z_3^{-1}}}
+            \draw[fill=black] \Point circle (0.05) node[anchor=east] {$\PointLabel$};
+            \draw (0,0) circle (3);
+            \end{tikzpicture}
+        \end{center}
+    Geometrically what the inverse does is reverses the angle (or argument) $\theta$ of the complex number to $-\theta$ and scales the length $r$ by $1/r$. 
+\end{solution}
+
+\newpage
+
+\begin{problem}
+    Look up a differential equation in chemistry that interests you.  Write it down, and explain what it attempts to model.
+\end{problem}
+
+\begin{solution}
+    One that interests me is the \emph{Schr\"odinger equation}. It is useful in describing the motion of subatomic particles and gives rise to the structure of the hydrogen atom.  One can then expand a bit to study the helium atom and generalize this further to understand the whole of the periodic table.  The equation is, to me, a bit like a square root of a wave equation. The \emph{wave equation} is
+    \[
+    \nabla^2 f(\mathbf{r},t) = \frac{1}{c^2}\frac{\partial^2}{\partial t^2}f(\mathbf{r},t),
+    \]
+    which describes, for example, the vibration of a guitar string or ripples on the surface of a pool. The Schr\"odinger equation is 
+    \[
+    \left( \frac{-\hbar^2}{2m}\nabla^2 + V(\mathbf{r},t)\right) \Psi(\mathbf{r},t) = i\hbar \frac{\partial}{\partial t}\Psi (\mathbf{r},t).
+    \]
+    This equation is essentially the quantum version of Newton's law $F=ma$. The equation is very successful at modelling interactions of very small particles such as protons and electrons.  The function $V$ is an external potential which could come from, say, an electric field. When $V=0$, then we have something very similar to a wave equation. The function we wish to solve for is $\Psi$. However, $\Psi$ itself is not \emph{really} physical.  But, it gives rise to statistics which we can measure.  For example, if we have a solution $\Psi$ to the equation that describes the position of a particle, then
+    \[
+    \int_\Omega \Psi^*(\mathbf{r}',t) \Psi(\mathbf{r}',t) d\mathbf{r}'
+    \]
+    gives the probability of a particle being in the region $\Omega$ at time $t$.
+\end{solution}
+
+\newpage
+
+\begin{problem}
+    What is a differential equation? What does it mean for a function to be a solution to a differential equation?
+\end{problem}
+
+\begin{solution}
+    A differential equation is an expression containing a function and its derivatives. The idea is that a differential equation relates the rate of change of a function at a point with its values at that point.  For example, a function may have a rate of change proportional to its current value which gives rise to
+    \[
+    x'(t)=kx(t).
+    \]
+    A function is a solution to a differential equation if, when we plug it in, the expression holds true. The solution may describe the path a particle takes over time, or a how a system chages in space, or many other things really.   
+\end{solution}
+
+\end{document}

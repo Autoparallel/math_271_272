@@ -1,0 +1,137 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Homework 6}\\
+   \textsc{Due March 22$^\textrm{nd}$}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+Consider the 1-dimensional wave equation given by
+\[
+\left(-\frac{\partial^2}{\partial x^2} +\frac{1}{c^2} \frac{\partial^2}{\partial  t^2} \right) u(x,t) = 0.
+\]
+We'll consider two distinct scenarios. First, we'll take an infinitely long elastic rod and second we'll take a rod of finite length with Dirichlet boundary conditions.
+\begin{enumerate}[(a)]
+    \item For a rod of infinite length, consider the initial conditions
+    \[
+    u(x,0) = \begin{cases} x+1 & -1\leq x \leq 0 \\ 1-x & 0\leq x \leq 1 \\ 0 & \textrm{otherwise} \end{cases} \qquad \textrm{and} \qquad \frac{\partial}{\partial t} u(x,0) = 0.
+    \]
+    Find and plot the portion of the wave that moves to the right with $c=1$.
+    \item Let $u_R(x,t)$ be your solution from (a), show that this satisfies the right-moving wave equation
+    \[
+    \left(\frac{\partial}{\partial x} + \frac{1}{c} \frac{\partial}{\partial t} \right)u_R(x,t) = 0.
+    \]
+    \item Why is it that we can ignore the points where your function $u_R(x,t)$ is not differentiable even though we are considering this as a solution to a PDE?
+    \item For an elastic rod $\Omega$ of finite length, $\Omega = [0,1]$, assume that we take the Dirichlet conditions $u(0,t)=0=u(1,t)$.  With the initial conditions
+    \[
+    u(x,0) = \sin(\pi x) \qquad \textrm{and} \qquad \frac{\partial}{\partial t} u(x,0)=0,
+    \]
+    find the solution using d'Alembert's formula.
+    \item Let $w(x,t)$ be your solution for (d), show that it is indeed equal to
+    \[
+    w(x,t) = \sin(\pi x)\cos(\pi c t).
+    \]
+    \item With your result from (e), explain how we can decompose a standing wave into a linear combination of two waves; one moving towards the left and one moving towards the right and both reflecting off the boundary.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Consider the wave problem on the region $\Omega=[0,1]$ given by
+    \[
+    \begin{cases}
+    \left( - \frac{\partial^2}{\partial x^2} +\frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right) u(x,t) =0, & \textrm{in $(0,1)$},\\
+    u(0,t)=0 \textrm{~and~} u(1,t)=0, &\textrm{as boundary conditions},\\
+    u(x,0)=\sin(\pi x), &\textrm{as the initial condition}.
+    \end{cases}
+    \]
+    This problem corresponds to taking a plucked elastic string fixed at the endpoints.
+    \begin{enumerate}[(a)]
+        \item Use the separation of variables ansatz $u(x,t)=X(x)T(t)$ to get a new separation constant. This will give two ODEs: one will be in terms of $X(x)$ and the other will be in terms of $T(t)$.
+        \item Use the boundary conditions and solve the ODE that is in terms of $X(x)$ which will simultaneously find the allowed values for the separation constant.
+        \item Using these allowed values for the separation constant, find the solution for $T(t)$.
+        \item Find the particular solution for $u(x,t)$ by matching the initial condition.
+        \item Plot your solution for $x\in [0,1]$ and $t\in [0,\infty)$ (i.e., just plot up to a large value of $t$). In this case, compare your plots for $c=1/2$ and $c=1$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the heat flow problem on the region $\Omega=[0,1]$ given by
+\[
+\begin{cases}
+\frac{\partial}{\partial t} u(x,t) = \frac{\partial^2}{\partial x^2} u(x,t) - 1, & \textrm{in $(0,1)$},\\
+u(0,t)=0 \textrm{~and~} u(1,t)=1, & \text{as boundary conditions},\\
+u(x,0) = \sin\left(\pi x\right) + \frac{1}{2}(x^2+x), & \textrm{as the initial condition}.
+\end{cases}
+\]
+This corresponds to a rod kept at fixed temperatures at the endpoints that starts with a warm center initially.
+\begin{enumerate}[(a)]
+    \item As with the previous homework, take an ansatz
+    \[
+    u(x,t) = v(x,t) + u_E(x)
+    \]
+    where $v(x,t)$ solves the following problem
+    \[
+\begin{cases}
+\frac{\partial}{\partial t} v(x,t) = \frac{\partial^2}{\partial x^2} v(x,t), & \textrm{in $(0,1)$},\\
+v(0,t)=0 \textrm{~and~} v(1,t)=0, & \text{as boundary conditions}.
+\end{cases}
+    \]
+    Find the general solution $v(x,t)$ using separation of variables. \emph{Hint: feel free to use the work in the notes (Example ``Solving the Heat Equation" and Example ``Particular Solution to the 1D Heat Equation").}
+
+    \item Show that for $u(x,t)$ to be a solution that
+    \[
+    \frac{\partial^2}{\partial x^2} u_E(x) = 1.
+    \]
+
+    \item Find the solution $u_E(x)$ to the following problem
+    \[
+    \begin{cases}
+    \frac{\partial^2}{\partial x^2} u_E(x) = 1, & \textrm{in $(0,1)$},\\
+    u_E(0)=0 \textrm{~and~} u_E(1)=1, & \text{as boundary conditions}.
+    \end{cases}
+    \]
+    
+    \item All is left in determining the function $u(x,t)$ is to determine the particular solution that satisfies the initial condition. Using our ansatz $u(x,t)=v(x,t)+u_E(x)$, determine the particular solution.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[Bonus]
+Take the set up from the previous problem, but let us modify the initial conditions and boundary conditions slightly. Instead, we have
+\[
+\begin{cases}
+\frac{\partial}{\partial t} u(x,t) = \frac{\partial^2}{\partial x^2} u(x,t) - 1, & \textrm{in $(0,1)$},\\
+u(0,t)=0 \textrm{~and~} u(1,t)=0, & \text{as boundary conditions},\\
+u(x,0) = -(2x-1)^2+1, & \textrm{as the initial condition}.
+\end{cases}
+\]
+We want to discover how we can possibly solve problems with more general initial conditions. If you pay attention to the work in 3, you will find the initial conditions were chosen in a very contrived manner. This is not ideal if we want to solve a problem in general!
+
+Taking a look at Example ``Particular Solution to the 1D Heat Equation" in the notes. Notice that it is of the form
+\[
+u_n(x,t) = A_ne^{-n^2\pi^2 t} \sin(n \pi x),
+\]
+is a general solution for all integers $n$. 
+\begin{enumerate}[(a)]
+    \item Can you recreate the initial condition $u(x,0)$ with a single $u_n(x,0)$?
+    \item Can you recreate the initial condition with a finite sum of $u_n(x,0)$?
+    \item Suppose that we can take an infinite sum
+    \[
+    \sum_{n=1}^\infty A_n e^{-n^2\pi^2} \sin(n \pi x).
+    \]
+    Show that
+    \[
+    \sum_{n=1}^\infty -\frac{8\left(2\left(-1\right)^{n}-2\right)}{\pi^{3}n^{3}}\sin\left(n\pi x\right) = u(x,0)
+    \]
+    by plotting both $u(x,0)$ and the sum (up to a large $N$) simultaneously. It is worthwhile to steadily increase the upper bound of the sum to see this convergence!
+    \item Comment on this. Do you think this is something we can do in general for any initial condition?
+\end{enumerate}
+\end{problem}
+\end{document}

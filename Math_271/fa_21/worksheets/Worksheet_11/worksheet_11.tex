@@ -1,0 +1,110 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Worksheet 11}\\
+   \textsc{Symmetries, groups, and applications to chemistry.}
+\end{center}
+\vspace{.5cm}
+
+
+\begin{problem}
+Consider the two matrices 
+\[
+[A] = \begin{pmatrix} 3 & 1 \\ 6 & 2 \end{pmatrix} \qquad \textrm{and} \qquad [B] = \begin{pmatrix} 1 & 2\\ 2 & 1 \end{pmatrix}.
+\]
+Note that $[A]$ is the same matrix as Problem 9.
+\begin{enumerate}[(a)]
+    \item Argue why the matrix $[A]$ cannot be invertible. \emph{Hint: you can use ideas from Problem 9 to show this.}
+    \item Compute the inverse matrix $[B]^{-1}$ for $[B]$.  
+    \item Solve the system of equations $[B]\vec{\boldsymbol{x}} = \vec{\boldsymbol{y}}$ for the following vectors.
+    \begin{enumerate}[i.]
+        \item $\vec{\boldsymbol{y}} = \begin{pmatrix} 2 \\ 2 \end{pmatrix}$.
+        \item $\vec{\boldsymbol{y}} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$.
+        \item $\vec{\boldsymbol{y}} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$.
+    \end{enumerate}
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the matrix 
+\[
+M = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item Compute $\tr(M)$. 
+    \item Compute $M^{R_x}=R_x(\pi/2)MR_x(\pi/2)^\dagger$.
+    \item What is the trace of $M^{R_x}$?
+    \item Can you see why you have the answer in (c) from properties of the trace?
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Consider the following three vectors $\vecu,\vecv,\vecw\in \R^3$ given by
+\[
+\vecu = \xhat + \yhat +\zhat, \qquad \vecv = 2\xhat + \yhat + 2\zhat, \qquad \vecw = -2\xhat + \yhat +\zhat. 
+\]
+\begin{enumerate}[(a)]
+    \item We can write a linear combination of these vectors by taking
+    \[
+    \alpha \vecu + \beta \vecv + \gamma \vecw,
+    \]
+    where $\alpha,\beta,\gamma \in \R$.  Write this linear combination as a matrix times a vector.
+    \item Does this list of vectors form a basis for $\R^3$? \emph{Hint: use the above work. Can any vector in $\R^3$ be written as a linear combination of these vectors?}
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Consider the following three vectors $\vecu,\vecv,\vecw\in \R^3$ given by
+\[
+\vecu = \xhat + \yhat +\zhat, \qquad \vecv = 2\xhat + \yhat + 2\zhat, \qquad \vecw = -2\xhat + \yhat +\zhat. 
+\]
+\begin{enumerate}[(a)]
+    \item We can write a linear combination of these vectors by taking
+    \[
+    \alpha \vecu + \beta \vecv + \gamma \vecw,
+    \]
+    where $\alpha,\beta,\gamma \in \R$.  Write this linear combination as a matrix times a vector.
+    \item Does this list of vectors form a basis for $\R^3$? \emph{Hint: use the above work. Can any vector in $\R^3$ be written as a linear combination of these vectors?}
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the matrix 
+\[
+M = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item Compute $\tr(M)$. 
+    \item Compute $M^{R_x}=R_x(\pi/2)MR_x(\pi/2)^\dagger$.
+    \item What is the trace of $M^{R_x}$?
+    \item Can you see why you have the answer in (c) from properties of the trace?
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the linear transformations on $\R^3$ to $\R^3$ given by
+\begin{align*}
+    R_x(\theta) &= \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\theta & -\sin \theta \\ 0 & \sin\theta & \cos \theta \end{pmatrix}\\
+    R_y(\theta) &= \begin{pmatrix} \cos \theta & 0 & \sin \theta \\ 0 & 1 & 0 \\ -\sin \theta & 0 & \cos \theta \end{pmatrix}\\
+    R_z(\theta) &= \begin{pmatrix} \cos \theta & -\sin \theta & 0 \\ \sin \theta & \cos \theta  & 0 \\ 0 & 0 & 1 \end{pmatrix}.
+\end{align*}
+\textbf{Fact:} These matrices are generators for the \emph{group of rotations} $\SO(3)$ of $\R^3$.
+\begin{enumerate}[(a)]
+    \item Let $\theta = \pi/2$. Show that $R_x(\pi/2)$ rotates a vector counter clockwise by $\pi/2$ radians around the $x$-axis.
+    \item Show that the determinant of each of these matrices is 1 for any value of $\theta$.
+    \item Using properties of determinants, show that the determinant of a product of rotation matrices is also 1.
+    \item Explain geometrically why a rotation matrix must have a determinant of 1.
+    \item Show that $R_x(\theta)R_x(\theta)^\dagger = I$. This in fact true for any rotation matrix.
+\end{enumerate}
+\end{problem}
+
+\end{document}

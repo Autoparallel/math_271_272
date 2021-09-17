@@ -1,0 +1,117 @@
+\documentclass[12pt]{amsbook}
+\usepackage{preamble}
+
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\begin{center}
+   \textsc{\large MATH 272, Exam 2}\\
+   \textsc{Oral Examination Problems}\\
+   \textsc{Due one hour before your exam time slot.}
+\end{center}
+
+\vspace{1cm}
+
+\noindent\textbf{Instructions} \; You are allowed a textbook, homework, notes, worksheets, material on our Canvas page.  You can use online tools such as Desmos and Wolfram Alpha to check your work, but you will need to explain how you arrived at your answers.  You can work with other students and this is, in fact, encouraged! However, I will not be giving out direct help for these problems but can answer questions about previous problems and notes, for example. Ambiguous or illegible answers will not be counted as correct. Scan your solutions and submit them as a pdf on Canvas under Oral Exam 2.
+
+
+\vspace{1cm}
+
+
+\hrule
+
+\vspace*{1cm}
+\noindent\emph{Note, there are three total problems.}
+
+\newpage
+
+\begin{problem}
+Consider a two dimensional Helmholtz equation problem
+\[
+\begin{cases}
+    \Delta f(x,y) = -k^2 f(x,y) & \textrm{on the unit square $0<x<1$ and $0<y<1$}\\
+    f(x,y) = 0 & \textrm{on the boundary of the unit square}.
+\end{cases}
+\]
+Note that $k$ is a real number that we are \underline{not} fixing to be any specific value. $k$ 
+\begin{enumerate}[(a)]
+\vspace*{0.25cm}
+    \item Take a separation of variables ansatz $f(x,y)=X(x)Y(y)$ and separate the PDE into two ODEs.
+\vspace*{0.25cm}
+    \item Apply the boundary conditions for $X(x)$ and determine a set of general solutions $X_m(x)$ for each integer $m$.
+\vspace*{0.25cm}
+    \item Repeat the same process but for $Y(y)$ to determine a set of general solutions $Y_n(y)$ for each integer $n$.
+\vspace*{0.25cm}
+    \item Note that $f_{mn}=C_{mn}\sin(m\pi x)\sin(n \pi y)$. Does this agree with your solutions found by $f_{mn}(x,y)=X_m(x)Y_n(x)$? To this end, consider the following:
+\vspace*{0.25cm}
+\begin{itemize}
+    \item What is $f_{mn}(x,y)$ if $m=0$? What about $n=0$? 
+\vspace*{0.25cm}
+    \item Plot your solution for $m=3$ and $n=1$ \emph{only on the unit square}.
+\end{itemize}
+\vspace*{0.25cm}
+    \item Deduce the constant $-k^2$ in terms of $m$ and $n$. 
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+The wave equation in 2-dimensions can be used to model the vibrational states of membranes. Indeed, it is actually partly determined by the Helmholtz equation. To this end, let us consider the wave problem
+\[
+\begin{cases}
+    \frac{\partial^2}{\partial t^2} u(x,y,t) = \Delta u(x,y,t) & \textrm{on the unit square}\\
+    u(x,y,t) = 0 & \textrm{on the boundary of the unit square}\\
+    u(x,y,0) = \sin(3\pi x)\sin(\pi y) \quad \frac{\partial}{\partial t} u(x,y,0)=0 &\textrm{as the initial conditions}.
+\end{cases}
+\]
+where we have set $c=1$ and we note that $\Delta$ is the spatial Laplacian from Problem 1.
+\begin{enumerate}[(a)]
+\vspace*{0.25cm}
+    \item Let $u(x,y,t)=T(t)f(x,y)$ where $f(x,y)$ is from Problem 1. Show that this reduces to the 2-dimensional Helmholtz equation for $f(x,y)$ and an ODE for $T(t)$.
+\vspace*{0.25cm}
+    \item Given that you have the solutions $f_{mn}(x,y)$ for the Helmholtz equation, solve the ODE for $T(t)$ to find a general solution. \emph{Hint: you know what $\Delta f_{mn}(x,y)$ is equal to and you know the value for $-k^2$. You can save yourself quite a bit of work by finding your solution $T(t)$ using this data. Note that $T(t)$ should have some dependence on your choice of $m$ and $n$!}
+\vspace*{0.25cm}
+    \item Find the particular solution for $u(x,y,t)$ using the given initial condition. 
+\vspace*{0.25cm}
+    \item Let us plot $u(x,y,t)$ \emph{only on the unit square}.
+\vspace*{0.25cm}
+\begin{itemize}
+    \item Plot $u(x,y,0)$ and show this yields the same surface as in Problem 1.
+\vspace*{0.25cm}
+    \item Plot $u(x,y,0.1)$.
+\vspace*{0.25cm}
+    \item Plot $u(x,y,0.25)$.
+\vspace*{0.25cm}
+\end{itemize}
+    \item What is the first time $\tau$ so that $u(x,y,0)=u(x,y,\tau)$?
+\end{enumerate}
+\end{problem}
+
+
+\newpage
+\begin{problem}
+We studied the 1-dimensional time dependent Schr\"odinger equation to some degree. Let us do a bit more analysis. First, let us take $\hbar=m=L=1$ and note we have the energy eigenvalues
+\[
+E_n = \frac{n^2 \pi^2}{2}
+\]
+which correspond to the normalized stationary states
+\[
+\psi_n(x,t) = \sqrt{2} e^{-iE_n t} \sin(n\pi x).
+\]
+\begin{enumerate}[(a)]
+\vspace*{0.25cm}
+    \item Show the state $\psi_n(x,t)$ is normalized over the region $[0,1]$ for all times $t$. \emph{Recall that we can determine this by an integral of $\psi_n(x,t)\psi_n^*(x,t)$ over $[0,1]$.}
+\vspace*{0.25cm}
+    \item Consider the superposition state $\Psi(x,t) = \frac{1}{\sqrt{2}}\left( \psi_1(x,t) + \psi_2(x,t) \right)$. Show that this state is normalized over $[0,1]$ for all times $t$. \emph{Hint: you can use the fact that functions of just $t$ are constant in $x$ and note that $\psi_1(x,0)$ and $\psi_2(x,0)$ are orthogonal.}
+\vspace*{0.25cm}
+    \item We want to compute the following likelihoods. For this, free to use this visualization \url{https://www.desmos.com/calculator/bxgoq94uwg}. For $t=\frac{3}{\pi}$, compute the likelihood that the particle is found between $\left[0,\frac{1}{2}\right]$. What would the likelihood be for the particle to be found in $\left[\frac{1}{2}, 1\right]$. \emph{Please don't compute two integrals here! Save yourself some time by thinking about what the total probability must be.}
+\end{enumerate}
+\end{problem}
+
+
+
+
+
+
+\end{document}  

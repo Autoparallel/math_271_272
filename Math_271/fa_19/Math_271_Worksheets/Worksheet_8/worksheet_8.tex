@@ -1,0 +1,75 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Worksheet 8}\\
+   \textsc{Matrix Multiplication, Linear Systems, and the Eigen-problem}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+Multiply matrices.
+\end{problem}
+
+\begin{problem}
+Solve systems of equations using row reduction
+\end{problem}
+
+\begin{problem} Consider the matrix 
+\[
+A= \begin{bmatrix}
+3 & 0\\
+0 & -3
+\end{bmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item Compute $\det(A-\lambda I)$.
+    \item Find the solutions $\lambda$ for $\det(A-\lambda I)=0$.  These are your eigenvalues.
+    \item Solve 
+    \[
+    (A-\lambda_1)\mathbf{v}_1=\mathbf{0}
+    \]
+    where $\lambda_1$ is your first eigenvalue. This will give you the corresponding eigenvector $\mathbf{v}_1$.
+    \item Solve 
+    \[
+    (A-\lambda_2)\mathbf{v}_2=\mathbf{0}
+    \]
+    where $\lambda_2$ is your first eigenvalue. This will give you the corresponding eigenvector $\mathbf{v}_2$.
+    \item Do you notice anything about the eigenvalues and the matrix $A$? What about the $\det(A)$ and the eigenvalues?
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the matrix
+\[
+A=\begin{bmatrix}
+0 & 5\\
+5 & 0
+\end{bmatrix}.
+\]
+Repeat the process given in Problem 1 to determine the two eigenvalues and eigenvectors for $A$.
+\end{problem}
+
+\begin{problem}
+Consider the matrix 
+\[
+A=
+\begin{bmatrix}
+0 & -1\\
+1 & 0
+\end{bmatrix}.
+\]
+What happens when we try to find
+\[
+\det(A-\lambda I)=0? 
+\]
+How must we resolve this issue?
+\end{problem}
+
+\end{document}

@@ -1,0 +1,112 @@
+% Optional calls for page styles
+
+
+
+
+
+\documentclass[12pt,letterpaper, openany]{book} %took out one side
+%\usepackage[top=2cm, bottom=2cm, lmargin=3.5cm,rmargin=2.5cm,marginparwidth=6cm,marginparsep=2em]{geometry}
+
+%PRINTING FORMAT
+\usepackage[top=1.75cm, bottom=1.75cm, lmargin=3.25cm,rmargin=2.25cm,marginparwidth=6cm,marginparsep=2em, twoside]{geometry}
+
+%ONLINE FORMAT
+%\usepackage[top=1.75cm, bottom=1.75cm, lmargin=3.25cm,rmargin=2.25cm,marginparwidth=6cm,marginparsep=2em]{geometry}
+
+
+%\setlength\parindent{0pt} %crush the auto indentation
+
+%Footnote separation
+\addtolength{\skip\footins}{1pc}
+
+\reversemarginpar
+\usepackage{import}
+\usepackage{design}
+\usepackage{preamble}
+
+% Watermarking
+%\usepackage{draftwatermark}
+
+
+ 
+\usepackage{makeidx}
+\makeindex
+
+
+%% Above notes: You can remove twoside and replace with oneside in documentclass to have a better "online pdf" format. twoside is better for printing and binding. You may want to mess with margins to make this better for online viewing.
+ 
+\begin{document}
+
+% WATERMARK
+%\SetWatermarkText{Property of Colin Roberts. NOT FOR REDISTRIBUTION.}
+%\SetWatermarkColor[gray]{0.75}
+%\SetWatermarkFontSize{1cm}
+%\SetWatermarkAngle{45}
+%\SetWatermarkHorCenter{10cm}
+ 
+\frontmatter
+\input{Frontmatter/title.tex}
+
+
+%No preface for now. Need a new one for 271.
+%\input{preface.tex}
+ 
+\clearpage
+\thispagestyle{empty}
+ 
+\tableofcontents
+ 
+\mainmatter
+
+\part{Prerequisites}
+\chapter{Introduction \& Review}
+\input{Chapters_Part_1/introduction_review.tex}
+
+\chapter{Tutorials}
+\input{Chapters_Part_1/tutorials.tex}
+
+\part{Ordinary Differential Equations}
+
+\chapter{The Complex Numbers}
+\input{Chapters_Part_2/complex_numbers.tex}
+
+\chapter{First and Second Order Dynamics}
+\input{Chapters_Part_2/first_second_dynamics.tex}
+
+\chapter{Boundary Value Problems}
+\input{Chapters_Part_2/boundary_value.tex}
+
+\part{Elements of Analysis}
+\chapter{Sequences and Series}
+\input{Chapters_Part_3/sequences_and_series.tex}
+
+\chapter{Power Series}
+\input{Chapters_Part_3/power_series.tex}
+
+\part{Finite Dimensional Linear Algebra}
+\chapter{Vectors and Vector Spaces}
+\input{Chapters_Part_4/vectors.tex}
+
+\chapter{Linear Transformations and Matrices}
+\input{Chapters_Part_4/matrices.tex}
+
+\chapter{Remarks for Math 271}
+\input{Chapters_Part_4/remarks_271.tex}
+
+
+ 
+\newenvironment{changemargin}[1]{%
+\begin{list}{}{%
+\setlength{\topsep}{#1}
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{\parskip}%
+}%
+\item[]}{\end{list}}
+
+\begin{changemargin}{0cm}
+\printindex 
+\end{changemargin}
+
+ 
+\end{document}

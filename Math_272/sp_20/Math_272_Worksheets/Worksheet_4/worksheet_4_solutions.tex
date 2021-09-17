@@ -1,0 +1,215 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Worksheet 4, \emph{Solutions}}\\
+   \textsc{Sequences and Series}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+Write down the first few terms in the sequence for the following:
+\begin{enumerate}[(a)]
+    \item $a_n = n$;
+    \item $b_n = \frac{1}{n^2}$;
+    \item $c_n = 2^{-n}$.
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item We have
+    \[
+    \{a_n\}_{n=1}^\infty = 1,~2,~3,~4,~5,\dots.
+    \]
+    \item We have
+    \[
+    \{b_n\}_{n=1}^\infty = 1,~\frac{1}{4},~,~\frac{1}{9},~\frac{1}{16},~\frac{1}{25},\dots.
+    \]
+    \item We have
+    \[
+    \{c_n\}_{n=1}^\infty = 1,~\frac{1}{2},~\frac{1}{4},~\frac{1}{8},~\frac{1}{16},~\frac{1}{32},\dots.
+    \]
+\end{enumerate}
+\end{solution}
+
+\hrule
+\begin{problem}
+For the above sequences, state whether each converges or diverges.  If they converge, state the limit.
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item The sequence $\{a_n\}_{n=1}^\infty$ diverges as $a_n \to \infty$. In other words, the $a_n$ continue to grow without bound.
+    \item The sequence $\{b_n\}_{n=1}^\infty$ converges to zero.  For any value $\epsilon>0$, I can find an $N\in \N$ so that the term $0<b_N<\epsilon$.
+    \item Similarly, the sequence $\{c_n\}_{n=1}^\infty$ converges to zero.
+\end{enumerate}
+\end{solution}
+
+\hrule
+\begin{problem}
+Consider the recursive sequence
+\[
+a_n = \frac{1}{2} a_{n-1} + 1
+\]
+with $a_1 = 1$.  
+\begin{enumerate}[(a)]
+    \item Write the first few terms in the sequence.
+    \item Can you write $a_n$ as a function $f(n)$? If so, what is $f(n)$?
+    \item Does this sequence converge or diverge? Can you show why with a limit $\lim_{n\to \infty} f(n)$?
+    \item Can you show that this is a Cauchy sequence?
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item Given that $a_1 = 1$, we can get
+    \begin{align*}
+        a_2 &= \frac{1}{2}a_1 +1 = \frac{3}{2}\\
+        a_3 &= \frac{1}{2}a_2 +1 = \frac{7}{4}\\
+        a_4 &= \frac{1}{2}a_3 +1 = \frac{15}{8}\\
+        a_5 &= \frac{1}{2}a_4 +1 = \frac{31}{16}.
+    \end{align*}
+    \item Yes, we can.  Notice that we have
+    \[
+    a_n = \frac{2^n -1}{2^{n-1}} = f(n).
+    \]
+    \item Yes, this sequence converges to $2$ since
+    \[
+    \lim_{x\to \infty} f(x) = 2.
+    \]
+    \item Yes, so we need to show that for any $\epsilon>0$ that we have for some $N\in \N$ that for $K\geq N$ 
+    \[
+    |a_{K}-a_{K+1}|<\epsilon.
+    \]
+    So we have
+    \[
+    a_K = \frac{2^K -1 }{2^{K-1}} \qquad \textrm{and} \qquad a_{K+1} = \frac{2^{K+1}-1}{2^K}.
+    \]
+    Then
+    \begin{align*}
+        \left| \frac{2^K-1}{2^{K-1}}-\frac{2^{K+1}-1}{2^K}\right|&=\left| \frac{2^{K+1}-2}{2^K}-\frac{2^{K+1}-1}{2^K}\right|\\
+        &= \left| \frac{-1}{2^K}\right|\\
+        &= \frac{1}{2^K}.
+    \end{align*}
+    So now we wish to have $\frac{1}{2^K}<\epsilon$ and if we choose $K>\log_2\left(\frac{1}{\epsilon}\right)$, then we have shown this sequence is Cauchy.
+\end{enumerate}
+\end{solution}
+
+\begin{remark}
+Showing that a sequence is Cauchy is a bit of a stretch for us.  Just know what it means when we say a sequence is Cauchy!
+\end{remark}
+
+\hrule
+\begin{problem}
+Consider the sequence
+\[
+a_n = a r^n.
+\]
+\begin{enumerate}[(a)]
+    \item If $|r|<1$, show that this sequence $\{a_n\}_{n=0}^\infty$ converges to zero.
+    \item Consider now the \emph{geometric series}
+    \[
+    \sum_{n=0}^\infty a_n = \sum_{n=0}^\infty ar^n.
+    \]
+    Show that the $N^\textrm{th}$ partial sum for this series satisfies
+    \[
+    \sum_{n=0}^N ar^n = a\left( \frac{1-r^{N+1}}{1-r}\right).
+    \]
+    \item Does the geometric series converge for all $r$? For $|r|<1$? When it converges, what does it converge to?
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item Let $|r|<1$, then we consider the sequence
+    \[
+    \{a_n\}_{n=0}^\infty = \{ar^n\}_{n=0}^\infty = a,~ar,~ar^2,~ar^3,\dots.
+    \]
+    Now, since $|r|<1$, we have that $|r|^{n+1}<|r|^n$.  Since this continues indefinitely, we have that $\lim_{n\to \infty} |r|^n = 0$.  If $r<0$, then the sequence just alternates in sign, but still converges to zero.  Also, multiplication by a constant $a$ does not affect convergence as well. That is, $\lim_{n\to \infty} a|r|^n = a\cdot \lim_{n\to \infty} |r|^n$.  
+    \item This is a bit tough, but I work through this in the notes.  Consider
+    \[
+    A_N = \sum_{n=0}^N ar^n = a + ar+ar^2 + \cdots ar^N = a(1+r+r^2+\cdots+r^N).
+    \]
+    Then, if we subtract $rA_N$ to both sides, we get
+    \begin{align*}
+        A_N - rA_N &= a(1+r+r^2+\cdots + r^N)  ra(1+r+r^2+\cdots+r^N)\\
+        (1-r)A_N&= a(1+r+r^2+\cdots+r^N)-a(r+r^2+r^3+\cdots + r^{N+1})\\
+        (1-r)A_N&= a(1-r^{N+1})\\
+        A_N &= \frac{1-r^{N+1}}{1-r}.
+    \end{align*}
+    \item No, the sequence does not converge for all $r$ as if we have $r=1$ the series becomes
+    \[
+    \sum_{n=0}^\infty a = a \sum_{n=0}^\infty 1,
+    \]
+    which diverges unless $a=0$.  Similarly, if $r>1$, then $|r|^{n+1}>|r|^n$ and the series will diverge as well which we can see by taking the limit of the sequence of partial sums.  For $|r|<1$, the limit of sequence of partial sums does converge, and specifically it will converge to
+    \[
+    A_N \to \frac{a}{1-r}.
+    \]
+\end{enumerate}
+\end{solution}
+
+\hrule
+\begin{problem}
+Often we wish to think about functions being represented by series.  For example, we can consider the function
+\[
+f(x)=\sum_{n=0}^\infty \frac{x^n}{n!}
+\]
+where $n!$ is read as ``$n$-factorial" and 
+\[
+n! = n\cdot (n-1)\cdot (n-2) \cdots 2 \cdot 1.
+\]
+Then $1!=1$ and we define $0!=1$ as well.
+\begin{enumerate}[(a)]
+    \item Consider $f(1)$.  Use a tool like WolframAlpha to compute the series
+    \[
+    f(1)=\sum_{n=0}^\infty \frac{1}{n!}
+    \]
+    \item For any value of $x$, this series converges. So this defines a function on all real numbers. In fact, the series converges even for complex numbers. Simplify the series into its real and imaginary parts. Note,
+    \[
+    f(ix) = \sum_{n=0}^\infty \frac{(ix)^n}{n!}.
+    \]
+    \item We can take derivatives of the function $f(x)$ by differentiating the series \emph{term by term}. That is,
+    \[
+    \frac{d}{dx} f(x) = \frac{d}{dx} \sum_{n=0}^\infty \frac{x^n}{n!} = \sum_{n=0}^\infty \frac{d}{dx} \left( \frac{ x^n}{n!}\right).
+    \]
+    \item Show that $\frac{d}{dx}f(x)=f(x)$.
+    \item What is your guess for what function $f(x)$ is?
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item Using WolframAlpha one can write
+    \begin{verbatim}
+        Sum[1/(n!),{n,0,infty}]
+    \end{verbatim}
+    which will output
+    \[
+    e=\sum_{n=0}^\infty \frac{1}{n!}.
+    \]
+    \item Note that $f(x)=e^x$ (although I don't tell you that here). Anyways, we take
+    \begin{align*}
+        \sum_{n=0}^\infty \frac{(ix)^n}{n!} &= 1 + ix - \frac{x^2}{2!} - \frac{ix^3}{3!} + \frac{x^4}{4!} + \frac{ix^5}{5!}+\cdots \\
+        &= \left(1-\frac{x^2}{2!} + \frac{x^4}{4!} +\cdots \right) + i \left( x -\frac{x^3}{3!} +\frac{x^5}{5!} -\cdots \right).
+    \end{align*}
+    Thus we have
+    \[
+    \RE(f(ix)) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} \qquad \textrm{and} \qquad \IM(f(ix)) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!}.
+    \]
+    Notice that these are the series for $\cos(x)$ and $\sin(x)$ respectively.
+    \item If we take
+    \begin{align*}
+    \frac{d}{dx}\sum_{n=0}^\infty \frac{x^n}{n!} &= \frac{d}{dx}\left(1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\cdots\right)\\
+    &= 0 + 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots \\
+    &= \sum_{n=0}^\infty \frac{x^n}{n!}.
+    \end{align*}
+    \item Since $\frac{d}{dx} f(x) =f(x)$, we know that $f(x)=Ce^x$ for some constant $C$. In fact, it is true that $f(x)=e^x$.
+\end{enumerate}
+\end{solution}
+
+
+
+
+\end{document}

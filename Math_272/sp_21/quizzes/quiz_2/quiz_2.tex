@@ -1,0 +1,99 @@
+\documentclass[12pt]{amsbook}
+\usepackage{preamble}
+\newcommand{\vecfieldE}{\boldsymbol{\vec{E}}}
+\newcommand{\vecfieldV}{\boldsymbol{\vec{V}}}
+%\newcommand{\unitvec}{\boldsymbol{\vec{n}}}
+\newcommand{\curvegamma}{\boldsymbol{\vec{\gamma}}}
+\newcommand{\thetahat}{\boldsymbol{\hat{\theta}}}
+\newcommand{\rhohat}{\boldsymbol{\hat{\rho}}}
+
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\begin{center}
+   \textsc{\large MATH 272, Quiz 2}\\
+   \textsc{Due February 26$^\textrm{th}$ at the end of class}
+\end{center}
+
+\vspace{1cm}
+
+\noindent\textbf{Instructions} \; You are allowed a textbook, homework, notes, worksheets, material on our Canvas page, but no other online resources (including calculators or WolframAlpha) for this quiz.  \textbf{Do not discuss any problem any other person.} All of your solutions should be easily identifiable and supporting work must be shown.  Ambiguous or illegible answers will not be counted as correct.
+
+
+\vspace*{.5cm}
+\hrule
+\vspace*{.5cm}
+
+\begin{center}\textbf{\large THERE ARE 4 TOTAL PROBLEMS.}\normalsize \end{center}
+
+\begin{problem} 
+Decide if the following statements are \textbf{TRUE} or \textbf{FALSE}. For full credit, provide an explanation or proof for your answer.
+\begin{enumerate}[(a)]
+    \item \textbf{(2 pts.)} Let $\vecfieldE$ be a conservative vector field. Then
+    \[
+    \int_{\curvegamma} \vecfieldE \cdot d \curvegamma = 0
+    \]
+    for all curves $\curvegamma$.
+    
+    \item \textbf{(2 pts.)} Let $f(x,y)$ be a scalar field, then 
+    \[
+        \int_{0}^1 \int_{-y}^{y} f(x,y) dxdy
+    \]
+    computes the net volume under the graph of $f$ and above the unit square in the $xy$-plane.
+
+    \item \textbf{(2 pts.)} Consider a vector field $\vecfieldV(x,y,z) = \xhat$ and consider the surface $\Sigma$ defined to be the surface of the unit cube. Then
+    \[
+        \iint_{\Sigma} \vecfieldV \cdot \unitvec d\Sigma \neq 0.
+    \]
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Provide a parameterization of the following regions in any choice of coordinate system.
+\begin{enumerate}[(a)]
+    \item \textbf{(3 pts.)} A straight curve beginning at $x_0=1$, $y_0=-1$, and $z_0=3$ and ending at $x_1 = 0$, $y_0=2$, and $z_1=3$.
+    \item \textbf{(3 pts.)} A solid cone with a vertex at the origin with a height of 1 above the $xy$-plane and a maximum radius of 1.
+    \item \textbf{(3 pts.)} A thick spherical shell with an inner radius of 1 and an outer radius of 2.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider a surface flux integral
+\[
+    \iint_{\Sigma} \vecfieldV \cdot \unitvec d\Sigma.
+\]
+\begin{enumerate}[(a)]
+    \item \textbf{(2 pts.)} Explain what $\unitvec$ represents geometrically. Does this depend in the position along the surface?
+    \item \textbf{(2 pts.)} What does the quantity $\vecfieldV \cdot \unitvec$ represent? Explain.
+    \item \textbf{(BONUS 3 pts.)} Explain what $d\Sigma$ represents geometrically. When would \[d\Sigma \neq dx dy?\] Explain.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Convert the following fields into cylindrical coordinates. Also, recall that
+\begin{align*}
+\rhohat &= \frac{x}{\sqrt{x^2+y^2}}\xhat + \frac{y}{\sqrt{x^2+y^2}}\yhat \\
+\thetahat &= -\frac{y}{\sqrt{x^2+y^2}}\xhat + \frac{x}{\sqrt{x^2+y^2}}\yhat
+\end{align*}
+\begin{enumerate}[(a)]
+    \item \textbf{(3 pts.)} $f(x,y,z)= (x+y)^2$.
+    \item \textbf{(3 pts.)} $\displaystyle{\vecfieldV(x,y,z) = \frac{xz+yz}{(x^2+y^2)^{3/2}}\xhat + \frac{yz-xz}{(x^2+y^2)^{3/2}}}\yhat.$
+\end{enumerate}
+\end{problem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}  

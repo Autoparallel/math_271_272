@@ -1,0 +1,156 @@
+\documentclass[12pt]{amsbook}
+\usepackage{preamble}
+
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+
+\begin{center}
+   \textsc{\large MATH 271, Quiz 2}\\
+   \textsc{Due September 17$^\textrm{th}$ at the end of class}
+\end{center}
+
+\vspace{1cm}
+
+\makebox[.8\textwidth]{Name:\enspace\hrulefill}
+
+\vspace{.5cm}
+
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c||c|}
+\hline
+    \textrm{Problem 1} & \textrm{Problem 2} & \textrm{Problem 3} & \textrm{Problem 4} &\textrm{Problem 5} & \qquad\textrm{Total}\qquad\qquad\\
+\hline
+~ & ~ & ~ & ~ & ~ & ~\\
+~ & ~ & ~ & ~ & ~ & ~\\
+~ & ~ & ~ & ~ & ~ & ~\\
+\hline
+    \textbf{6 pts.} & \textbf{6 pts.} & \textbf{5 pts.} & \textbf{5 pts.} & \textbf{8 pts.} & \textbf{25 pts.}\\
+\hline
+\end{tabular}
+\end{center}
+
+
+\vspace*{.5cm}
+\hrule
+\vspace*{.5cm}
+
+\noindent \textbf{\large There are 5 problems worth a total of 30 points.}\\
+\noindent \textbf{\large The quiz will be graded out of 25.}
+
+\normalsize
+
+\vspace*{.5cm}
+\hrule
+\vspace*{.5cm}
+
+
+\begin{center}\fbox{\fbox{\parbox{6in}{\textbf{Instructions:} \; You are allowed a textbook, homework, notes, worksheets, and material on our Canvas page, but no other online resources (including calculators or WolframAlpha) for this quiz.  \textbf{Do not discuss any problem any other person.} All of your solutions should be easily identifiable and supporting work must be shown.  Ambiguous or illegible answers will not be counted as correct. Staple your work to this sheet.}}}\end{center}
+
+
+
+
+\begin{problem}
+Describe the following ODEs using the adjectives separable, autonomous, linear, or nonlinear, and provide the order of the equation as well. Then explain what you must specify as initial data in order to have a well-defined initial value problem.
+\begin{enumerate}[(a)]
+	\item \textbf{(2 pts.)} $x'''' = k^4 x$.
+	\item \textbf{(2 pts.)} $\frac{1}{t} x' + \sin(t) x = \frac{\sin(t)}{t}$.
+	\item \textbf{(2 pts.)} $mx''+\mu x' + kx = \sin(x)$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+For the following chemical reactions, determine an ODE that describes the rate of change of the concentration for a chemical species $x$.  Mention whether the equation is linear or nonlinear.
+\begin{enumerate}[(a)]
+    \item \textbf{(2 pts.)} $3x \to B$.
+    \item \textbf{(2 pts.)} $B+C \to 2x$.
+    \item \textbf{(2 pts.)} $3A\to x+B \to 2C$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the following autonomous equation
+\[
+x' = (x-1)(x-2)(x-3)
+\]
+\begin{enumerate}[(a)]
+    \item \textbf{(2 pts.)} Draw the phase line for this system.
+    \item \textbf{(1 pts.)} Label the equilibria on your phase line.
+    \item \textbf{(1 pts.)} Which equilibria are stable?
+    \item \textbf{(1 pts.)} Explain what the different behaviors of the system will be over a long period of time. \emph{Hint: consider initial conditions in the different regions of your phase line.}
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the following initial value problem
+\[
+\begin{cases}
+x' = t  & \textrm{as the ODE}\\
+x(0) = 0 & \textrm{as the initial data}.
+\end{cases}
+\]
+\begin{enumerate}[(a)]
+    \item \textbf{(1 pts.)} Show that the above equation is separable by showing it can assume the proper form of a separable equation
+	\item \textbf{(2 pts.)} Find the general solution to the ODE.
+	\item \textbf{(2 pts.)} Find a particular solution satisfying the initial value problem.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the following initial value problem
+\[
+\begin{cases}
+	x''+3x'+2x = 0 & \textrm{as the ODE}\\
+	x(0)=1,~x'(0)=0 &\textrm{as the initial data}.
+	\end{cases}
+\]
+Note that the particular solution is $x(t)=2 e^{-t}-e^{-2t}$.
+\begin{enumerate}[(a)]
+	\item \textbf{(2 pts.)} Show that $x$ solves the ODE without using the characteristic polynomial.
+	\item \textbf{(1 pt.)} Show that $x$ satisfies the initial conditions.
+	\item \textbf{(2 pts.)} Find the characteristic polynomial for the ODE.
+	\item \textbf{(2 pts.)} Find the roots to the characteristic polynomial and write down a general solution.
+	\item \textbf{(1 pt.)} What happens with this system if we wait a \emph{very} long time?
+\end{enumerate}
+\end{problem}
+
+\end{document}
+
+%\begin{problem} For the following, say whether the statement is true or false. For full credit, justify your answer with an explanation.
+%\begin{enumerate}[(a)]
+%    \item \textbf{(2 pts.)} If $x_1$ and $x_2$ are solutions to a second order linear inhomogeneous equation, then $x=\alpha_1 x_1 + \alpha_2 x_2$ is also a solution.
+%    \item \textbf{(2 pts.)} The system given by the ODE $x'' + x' +x=0$ exhibits decaying oscillatory behavior.
+%\end{enumerate}
+%\end{problem}
+%
+%\begin{problem}
+%\textbf{(6 pts.)} Classify the following equations (e.g., $n^\textrm{th}$ order, separable, linear, etc.) and explain your reasoning. Then put which method you would use to find a general solution.
+%\begin{enumerate}[(a)]
+%    \item $x' + x = xt$.
+%    \item $x'' + 5x'+2x = 0$.
+%    \item $x'+e^t x = e^t$.
+%\end{enumerate}
+%\end{problem}
+%
+%\begin{problem}
+%\textbf{(5 pts.)} Consider the following autonomous equation
+%\[
+%x' = (x-1)(x-2)(x-3)
+%\]
+%\begin{enumerate}[(a)]
+%    \item Draw the phase line for this system.
+%    \item Label the equilibria on your phase line.
+%    \item Which equilibria are stable? Also, explain what the different behaviors of the system will be over a long period of time. \emph{Hint: consider initial conditions in the different regions of your phase line.}
+%\end{enumerate}
+%\end{problem}
+%
+%\newpage
+%\begin{problem}
+%\textbf{(6 pts.)} Let
+%\[
+%x' = \frac{1}{xt}
+%\]
+%Make a quick argument for why the above equation is separable.  Then, find the particular solution given $x(1)=1$.
+%\end{problem}

@@ -1,0 +1,356 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+\newcommand{\curvegamma}{\boldsymbol{\vec{\gamma}}}
+\newcommand{\tangentgamma}{\boldsymbol{\dot{\vec{\gamma}}}}
+\newcommand{\normalgamma}{\boldsymbol{\ddot{\vec{\gamma}}}}
+\newcommand{\vecfieldB}{\boldsymbol{\vec{B}}}
+\newcommand{\vecfieldJ}{\boldsymbol{\vec{J}}}
+\newcommand{\vecfieldF}{\boldsymbol{\vec{F}}}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Homework 2, \emph{Solutions}}\\
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+A rough model of a molecular crystal can be described in the following way. Take the scalar function
+\[
+u(x,y)=\cos^2(x)+\cos^2(y).
+\]
+This function $u(x,y)$ describes the \emph{potential energy} for electrons in the crystal. Electrons are attracted to the areas with the smallest potential energy and move away from areas of high potential energy. 
+\begin{enumerate}[(a)]
+    \item Plot this function and include a printout.  Notice what this looks like.  You can imagine that each of the low points (well) is where a nucleus is located in the crystal.
+    \item Plot the level curves where $u(x,y)=0$, $u(x,y)=\frac{1}{4}$, $u(x,y)=\frac{1}{2}$, and $u(x,y)=1$ for the range of values $-\frac{3\pi}{2}\leq x \leq \frac{3\pi}{2}$ and $-\frac{3\pi}{2}\leq y \leq \frac{3\pi}{2}$. Picking the constant for the level curve tells you the \emph{kinetic energy} of the electron you are looking at.  It turns out that electrons (roughly) will orbit along these level curves.  Notice, some level curves bleed into the different troughs of neighboring molecules which means that electrons of sufficient energy happily flow through the crystal. For what energy values do the electrons move throughout the whole crystal?
+    \item Find the gradient of this function $\grad u(x,y)$.
+    \item At what point(s) is the gradient zero? \emph{Hint: Use your graph of the level curves to help.}
+    \end{enumerate}
+\end{problem}
+
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item Here is the plot
+    \begin{figure}[H]
+        \centering
+	\def\svgwidth{0.75\columnwidth}
+	\input{Figures/crystal.pdf_tex}
+    \end{figure}
+    \item Here is the plot of the level curves.
+    \begin{figure}[H]
+        \centering
+	\def\svgwidth{0.75\columnwidth}
+	\input{Figures/level_curves.pdf_tex}
+        \caption{Contour plot labeled with relevant values. Colors match the colors in the previous figure.}
+    \end{figure}
+    
+    \item The gradient is
+    \[
+    \grad u(x,y) = \begin{pmatrix} -2\cos(x)\sin(x) \\ -2\cos(y)\sin(y) \end{pmatrix}.
+    \]
+    \item We want to find where
+    \[
+    \grad u(x,y) = \zerovec.
+    \]
+    This gives us two equations to work with:
+    \begin{align}
+        -2\cos(x)\sin(x) &= 0,\\
+        -2\cos(y)\sin(y) &= 0.
+    \end{align}
+    Note that (1) is zero whenever $\cos(x)$ or $\sin(x)$ is zero, which happens at $x=\frac{n\pi}{2}$ for all integers $n$. Similarly, we have that (2) is zero when $y=\frac{m\pi}{2}$ for all integers $m$.  This gives us many different solutions in our given range of values.
+    
+    If we think graphically, these values where the gradient is zero occur at the tops and bottoms of the peaks and valleys respectively.  These are the maxima and minima of the function $u(x,y)$.
+    
+    However, not all of these solutions are solutions where the electrons will want to stay put.  We will have to work harder to find out which ones are minimizers of the energy!
+\end{enumerate}
+\end{solution}
+
+
+
+\newpage
+\begin{problem}
+Consider the function
+\[
+f(x,y)=\sin\left(\frac{2\pi x}{5}\right)\sin\left(\frac{2\pi y}{5}\right).
+\]
+comes up when you want to find out how a square shaped drum head will vibrate when hit. 
+\begin{enumerate}[(a)]
+    \item Plot this function on the region $\Omega$ given by $0\leq x \leq 5$ and $0\leq y \leq 5$.  
+    \item What is the value the function $f(x,y)$ on the boundary of the given region $\Omega$ (i.e, when $x=0$, $x=5$, $y=0$, and $y=5$)?
+    \item Show that $f(x,y)$ is an eigenfunction of the Laplacian $\Delta$. That is, $\Delta f = \lambda f$ for some eigenvalue $\lambda$. What is the eigenvalue?
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item Here is the plot of the vibrating square drum head:
+    \begin{figure}[H]
+        \centering
+	\def\svgwidth{0.75\columnwidth}
+	\input{Figures/drum_head.pdf_tex}
+    \end{figure}
+    \item When $x=0$ we have
+    \[
+    f(0,y) = \sin\left( \frac{2\pi 0}{5}\right) \sin\left(\frac{2\pi y}{5}\right) = 0.
+    \]
+    Similarly, when $x=5$ $f(5,y)=0$, when $y=0$ $f(x,0)=0$, and when $y=5$ $f(x,5)=0$. 
+    
+    These are the boundary of the drum head.  That is, where the head of the drum is clamped down.
+    
+    \item We have
+    \begin{align*}
+        \frac{\partial f}{\partial x} &= \frac{2\pi}{5} \cos \left( \frac{2\pi x}{5} \right) \sin \left( \frac{2\pi y}{5} \right),\\
+        \frac{\partial^2 f}{\partial x^2} &= \frac{-4\pi^2}{25} \sin \left( \frac{2\pi x}{5} \right) \sin \left( \frac{2\pi y}{5} \right),\\
+        \frac{\partial f}{\partial y} &= \frac{2\pi}{5} \sin \left( \frac{2\pi x}{5} \right) \cos \left( \frac{2\pi y}{5} \right),\\
+        \frac{\partial^2 f}{\partial y^2} &= \frac{-4\pi}{25} \sin \left( \frac{2\pi x}{5} \right) \sin \left( \frac{2\pi y}{5} \right).
+    \end{align*}
+    Then we have
+    \[
+    \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} = -\frac{8\pi^2}{25} \sin \left( \frac{2\pi x}{5} \right) \sin \left( \frac{2\pi y}{5} \right) = -\frac{8\pi^2}{25} f(x,y).
+    \]
+    So, the way a drum head vibrates is an eigen-problem.
+\end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+Consider the following vector field
+\[
+\vecfieldB = -\frac{y}{2}\xhat + \frac{x}{2}\yhat.
+\]
+Here, $\vecfieldB$ denotes the magnetic field. It may be helpful to plot the fields in this problem.
+\begin{enumerate}[(a)]
+    \item Show that $\vecfieldB$ has no divergence. (This is one of Gauss's laws.)
+    \item Show that $\grad \times \vecfieldB = \vecfieldJ$ (Amp\'ere's law) where 
+    \[
+    \vecfieldJ = \zhat.
+    \]
+    This vector field $\vecfieldJ$ represents the electric current (moving charges) in space. One could argue that the current creates the magnetic field via Amp\'ere's law.
+    \item Magnetic fields induce a force $\vecfieldF$ on charged particles by the Lorentz force
+    \[
+    \vecfieldF = \tangentgamma \times \vecfieldB = \normalgamma
+    \]
+    Where $\tangentgamma$ is the velocity of the particle (where we have chosen a mass $m=1$ and charge $q=1$).  Let us do the following.
+    \begin{itemize}
+        \item Assume that $\tangentgamma = \xhat$, what is the force on the particle?
+        \item Repeat the previous step for $\tangentgamma=\yhat$ and $\tangentgamma=\zhat$. 
+        \item Compare and contrast the forces you found.
+    \end{itemize}
+    \item Can you argue why applying a magnetic field to a molecule may cause it to heat up? Can you compare this idea with your home microwave?
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item We have
+    \begin{align*}
+        \begin{pmatrix} \frac{\partial}{\partial x} \\ \frac{\partial}{\partial y} \\ \frac{\partial}{\partial z} \end{pmatrix} \times \begin{pmatrix} \frac{-y}{2} \\ \frac{x}{2} \\ 0 \end{pmatrix} &= \begin{pmatrix} 0 \\ 0 \\   \frac{\partial}{\partial x} \frac{x}{2} - \frac{\partial}{\partial y} \frac{-y}{2} \end{pmatrix} \\
+                &= \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}\\
+                &= \zhat.
+    \end{align*}
+    \item We will look at the case for the three different tangent vectors.
+    \begin{itemize} 
+        \item If $\tangentgamma = \xhat$, then
+        \[
+        \tangentgamma \times \vecfieldB = \frac{x}{2}\zhat.
+        \]
+        \item If $\tangentgamma = \yhat$, then
+        \[
+        \tangentgamma \times \vecfieldB = \frac{y}{2} \zhat.
+        \]
+        \item Finally, if $\tangentgamma =\zhat$, then
+        \[
+        \tangentgamma \times \vecfieldB = -\frac{y}{2}\yhat -\frac{x}{2}\xhat.
+        \]
+    \end{itemize}
+    Note that if $\tangentgamma$ is in the $x$- or $y$-direction, we get a force that is aligned in the $z$-direction.  When $\tangentgamma$ is in the $z$-direction, then the forces are in the $x$- and $y$-direction. Moreover, the forces that align in the $z$-direction will cause the particle to move away indefinitely in the $z$-direction whereas when the force is in the $x$- or $y$-direction, we will have a force that causes the particle to oscillate.
+    
+    \item If we apply a magnetic field to charged particles, the particles undergo forces. By giving particles more energy of motion, we are heating them up.  If we apply the correct kind of magnetic field, it is conceivable that we would simply causes a particle to vibrate with more intensity.
+\end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+    Set up but do not compute the integrals of the given fields over the given curves.
+    \begin{enumerate}[(a)]
+        \item $f(x,y) = xe^{x+y}+\cos(xy)$, $\curvegamma(t) = \begin{pmatrix} \cos(t) \\ \sin(t) \end{pmatrix}$, $t_0 = 0$, $t_1=2\pi$.
+        \item $g(x,y,z) = \frac{\ln(z^2)}{e^{xy}}$, $\curvegamma(t) = \begin{pmatrix} t \\ t^2 \\ t^3 \end{pmatrix}$ , $t_0 = 1$, $t_1=-1$.
+        \item $\vecfieldU(x,y) = \begin{pmatrix} -y \\ x \end{pmatrix}$, $\curvegamma(t) = \begin{pmatrix} e^t \\ e^t \end{pmatrix}$, $t_0 = 5$, $t_1=10$.
+        \item $\vecfieldV(x,y,z) = \begin{pmatrix} 2x \\ y \\ x \end{pmatrix}$, $\curvegamma(t) = \begin{pmatrix} \cos(t) \\ t \\ \sqrt{t} \end{pmatrix}$, $t_0 = 0$, $t_1=1$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item We want to integrate
+    \[
+    \int_{\curvegamma} f d\curvegamma = \int_{t_0}^{t_1} f(\curvegamma(t)) \left| \tangentgamma(t) \right| dt.
+    \]
+    We just have to determine each part of this integral. We know $t_0$ and $t_1$, so we just need $f(\curvegamma(t))$ and the speed $\left|\tangentgamma(t)\right|$. Evaluating yields,
+    \[
+    f(\curvegamma(t)) = \cos(t)e^{\cos(t)+\sin(t)} + \cos(\cos(t)\sin(t)),
+    \]
+    and
+    \[
+    \tangentgamma(t) = \begin{pmatrix} -\sin(t) \\ \cos(t) \end{pmatrix}
+    \]
+    which means
+    \[
+    \left| \tangentgamma(t) \right| = \sqrt{\sin^2(t) + \cos^2(t)} = 1.
+    \]
+    Thus, we have
+    \[
+    \boxed{\int_{\curvegamma} f d\curvegamma = \int_0^{2\pi} \cos(t)e^{\cos(t)+\sin(t)} + \cos(\cos(t)\sin(t)) dt.}
+    \]
+
+    \item This part is analogous to (a), so we have
+    \[
+    g(\curvegamma(t)) = \frac{\ln(t^6)}{e^{t^3}},
+    \]
+    \[
+    \tangentgamma(t) = \begin{pmatrix} 1 \\ 2t \\ 3t^2 \end{pmatrix},
+    \]
+    therefore
+    \[
+    \left| \tangentgamma(t) \right| = \sqrt{1+4t^2+9t^4}.
+    \]
+    Thus,
+    \[
+    \boxed{\int_{\curvegamma} g d\curvegamma = \int_{1}^{-1} \frac{\ln(t^6)}{e^{t^3}} \sqrt{1+4t^2+9t^4} dt.}
+    \]
+
+    \item We want to integrate
+    \[
+    \int_{\curvegamma} \vecfieldU \cdot d\curvegamma = \int_{t_0}^{t_1} \vecfieldU(\curvegamma(t)) \cdot \tangentgamma(t) dt.
+    \]
+    So, we determine each individual part of this integral. We have
+    \[
+    \vecfieldU(\curvegamma(t)) = \begin{pmatrix} -e^t \\ e^t \end{pmatrix}
+    \]
+    and
+    \[
+    \tangentgamma(t) = \begin{pmatrix} e^t \\ e^t \end{pmatrix}.
+    \]
+    Lastly, we compute the dot product
+    \[
+    \vecfieldU(\curvegamma(t)) \cdot \tangentgamma(t) = -e^{2t} + e^{2t} = 0.
+    \]
+    Thus,
+    \[
+    \boxed{\int_{\curvegamma} \vecfieldU \cdot d\curvegamma = \int_{5}^{10} 0 dt = 0.}
+    \]
+
+    \item This part is analogous to (c). We have
+    \[
+    \vecfieldV(\curvegamma(t)) = \begin{pmatrix} 2 \cos(t) \\ t \\ \cos(t) \end{pmatrix}
+    \]
+    and
+    \[
+    \tangentgamma(t) = \begin{pmatrix} \sin(t) \\ 1 \\ \frac{1}{2\sqrt{t}} \end{pmatrix}.
+    \]
+    Then,
+    \[
+    \vecfieldV(\curvegamma(t)) \cdot \tangentgamma(t) = 2 \cos(t) \sin(t) + t + \frac{\cos(t)}{2\sqrt{t}}.
+    \]
+    Thus,
+    \[
+    \boxed{\int_{\curvegamma} \vecfieldV \cdot d\curvegamma = \int_0^1 2 \cos(t) \sin(t) + t + \frac{\cos(t)}{2\sqrt{t}} dt.}
+    \]
+\end{enumerate}
+\end{solution}
+
+\newpage
+\begin{problem}
+Let $f(x,y,z)=x \cos(y) + yz$ be a scalar field and let $\curvegamma = \begin{pmatrix} 1 \\ t \\ \sin(t) \end{pmatrix}$ be a curve from time $t_0 = 0$ to $t_1 = 2 \pi$. Compute
+\[
+    \int_{\curvegamma} f(\curvegamma)d\curvegamma.
+\]
+\end{problem}
+\begin{solution}
+First,
+\[
+f(\curvegamma(t)) = \cos(t) + t \sin(t),
+\]
+\[
+\tangentgamma(t) = \begin{pmatrix} 0 \\ 1 \\ \cos(t) \end{pmatrix},
+\]
+and
+\[
+\left| \tangentgamma(t) \right| = \sqrt{1+\cos^2(t)}.
+\]
+Thus, we now compute
+\begin{align*}
+    \int_{\curvegamma} f(\curvegamma)d\curvegamma & = \int_0^{2\pi} (\cos(t) + t \sin(t)) \sqrt{1+\cos^2(t)} dt\\
+    &\approx -7.2118.
+\end{align*}
+This was computed using WolframAlpha by inputting:
+\begin{verbatim}
+integrate[(cos(t)+t sin(t)) sqrt(1+cos^2(t)), {t,0,2pi}]
+\end{verbatim}
+\end{solution}
+
+\newpage
+\begin{problem}
+    Consider the following vector field
+    \[
+    \vecfieldE = \frac{x}{\left(x^2+y^2+z^2\right)^{3/2}} \xhat + \frac{y}{\left(x^2+y^2+z^2\right)^{3/2}} \yhat + \frac{z}{\left(x^2+y^2+z^2\right)^{3/2}} \zhat,
+    \]
+    which you can think of as the electric field of a positive point charge.  We argued that this field $\vecfieldE$ is conservative in a previous homework problem. Specifically, $\vecfieldE = \grad \phi$, for the scalar field 
+\[
+\phi(x,y,z) = \frac{1}{\sqrt{x^2+y^2+z^2}}
+\] 
+This follows from Faraday's law for static charges.
+    \begin{enumerate}[(a)]
+        \item Compute the integral
+        \[
+        T=\int_{\curvegamma} \vecfieldE \cdot d\curvegamma \qquad \textrm{where} \qquad \curvegamma(t) = \begin{pmatrix} t \\ t \\ t \end{pmatrix},
+        \]
+        and $t\in [t_0,t_1]$ with $t_0$ and $t_1$ both greater than 0.  Note that this integral $T$ describes the gain in kinetic energy of a charged particle that moved along the path $\curvegamma$. 
+        \item Equivalently, since $\vecfieldE$ is conservative, we have
+        \[
+        T=\int_{\curvegamma} \vecfieldE \cdot d\curvegamma = \phi(\curvegamma(t_1))-\phi(\curvegamma(t_0)).
+        \]
+        Show that this is true for the given vector field and potential. This shows that the choice of path does not matter; only the endpoints $\curvegamma(t_0)$ and $\curvegamma(t_1)$ matter.
+        \item Argue why the integral around any closed curve must be zero.
+        \item Argue why it must be that $\vecfieldE$ has no curl.
+    \end{enumerate}
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item First, note that
+    \[
+    d\curvegamma = \tangentgamma(t) dt = (\xhat + \yhat + \zhat)dt.
+    \]
+    Thus, we have that
+    \[
+    \vecfieldE(\curvegamma(t))= \frac{t}{\left(3t^2\right)^{3/2}} \xhat + \frac{t}{\left(3t^2\right)^{3/2}} \yhat + \frac{t}{\left(3t^2\right)^{3/2}} \zhat,
+    \]
+    and therefore
+    \[
+    \vecfieldE(\curvegamma(t)) \cdot d\curvegamma = \frac{3t}{\left(3t^2\right)^{3/2}}dt = \frac{1}{t^2\sqrt{3}}dt.
+    \]
+    Now, we have
+    \begin{align*}
+        \int_{\curvegamma} \vecfieldE \cdot d\gamma &= \int_{t_0}^{t_1} \frac{1}{t^2\sqrt{3}}dt\\
+        &= \frac{-1}{\sqrt{3}}\left(\frac{1}{t_1} - \frac{1}{t_0}\right).
+    \end{align*}
+    \item Note that we have
+    \[
+    \phi(x,y,z) = \frac{-1}{\sqrt{x^2+y^2+z^2}},
+    \]
+    and we can evalute 
+    \begin{align*}
+        \phi(\curvegamma(t_1))-\phi(\curvegamma(t_0)) &= \frac{-1}{\sqrt{3t_1^2}}-\frac{1}{\sqrt{3t_0^2}}\\
+        &= \frac{-1}{\sqrt{3}} \left(\frac{1}{t_1}-\frac{1}{t_0}\right),
+    \end{align*}
+    which is identical to the answer from (a).
+    \item For a closed curve, we have $\curvegamma(t_1)=\curvegamma(t_0)$ and thus
+    \[
+    \int_{\curvegamma} \vecfieldE \cdot d\gamma = \phi(\curvegamma(t_1))-\phi(\curvegamma(t_0)) = \phi(\curvegamma(t_0))-\phi(\curvegamma(t_0))=0.
+    \]
+    \item The fact that $\vecfieldE = \grad \phi$ or, equivalently, the work in part (c) shows that $\vecfieldE$ is conservative. Note that all conservative vector fields are curl free which means $\grad \times \vecfieldE = \zerovec$.
+\end{enumerate}
+\end{solution}
+
+\end{document}

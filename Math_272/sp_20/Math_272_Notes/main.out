@@ -1,0 +1,96 @@
+\BOOKMARK [-1][-]{part.5}{V Further Topics in Linear Algebra}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Complex Functions and Transformations}{part.5}% 2
+\BOOKMARK [1][-]{section.1.1}{Introduction}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Complex Functions}{chapter.1}% 4
+\BOOKMARK [2][-]{subsection.1.2.1}{Cartesian and Polar Representations}{section.1.2}% 5
+\BOOKMARK [2][-]{subsection.1.2.2}{Complex Valued Functions}{section.1.2}% 6
+\BOOKMARK [0][-]{chapter.2}{Hilbert Spaces}{part.5}% 7
+\BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 8
+\BOOKMARK [2][-]{subsection.2.1.1}{Infinite Dimensions}{section.2.1}% 9
+\BOOKMARK [1][-]{section.2.2}{Function Spaces}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.3}{Inner Products and Norms}{chapter.2}% 11
+\BOOKMARK [2][-]{subsection.2.3.1}{Norms}{section.2.3}% 12
+\BOOKMARK [1][-]{section.2.4}{Inner Product Spaces}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.5}{Symmetries}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.6}{Bases}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.6.1}{Orthonormal Bases}{section.2.6}% 16
+\BOOKMARK [2][-]{subsection.2.6.2}{Series and Integrals as Linear Combinations}{section.2.6}% 17
+\BOOKMARK [2][-]{subsection.2.6.3}{Projection}{section.2.6}% 18
+\BOOKMARK [0][-]{chapter.3}{Linear Operators}{part.5}% 19
+\BOOKMARK [1][-]{section.3.1}{Matrices}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.2}{Linear Operators}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.2.1}{Adjoints}{section.3.2}% 22
+\BOOKMARK [2][-]{subsection.3.2.2}{Hermitian Operators}{section.3.2}% 23
+\BOOKMARK [1][-]{section.3.3}{Differential and Integral Operators}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.3.1}{Integral Operators}{section.3.3}% 25
+\BOOKMARK [1][-]{section.3.4}{Spectra}{chapter.3}% 26
+\BOOKMARK [0][-]{chapter.4}{Fourier Theory}{part.5}% 27
+\BOOKMARK [1][-]{section.4.1}{Fourier Series}{chapter.4}% 28
+\BOOKMARK [2][-]{subsection.4.1.1}{Solving Equations}{section.4.1}% 29
+\BOOKMARK [1][-]{section.4.2}{Fourier Transform}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.2.1}{Fourier Transform Operator}{section.4.2}% 31
+\BOOKMARK [1][-]{section.4.3}{The Dirac Delta Function}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.4}{Computing Fourier Transforms}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.5}{The Inverse Fourier Transform}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.6}{Solving Differential Equations}{chapter.4}% 35
+\BOOKMARK [-1][-]{part.6}{VI Calculus in Higher Dimensions}{}% 36
+\BOOKMARK [0][-]{chapter.5}{Curves and Scalar Fields}{part.6}% 37
+\BOOKMARK [1][-]{section.5.1}{Overview of multivariate functions}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.2}{Curves in space}{chapter.5}% 39
+\BOOKMARK [2][-]{subsection.5.2.1}{Derivatives of Curves}{section.5.2}% 40
+\BOOKMARK [2][-]{subsection.5.2.2}{Lengths of Curves}{section.5.2}% 41
+\BOOKMARK [1][-]{section.5.3}{Scalar fields}{chapter.5}% 42
+\BOOKMARK [2][-]{subsection.5.3.1}{Directional Derivatives}{section.5.3}% 43
+\BOOKMARK [1][-]{section.5.4}{Optimization}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.5}{Integrals of Scalar Fields}{chapter.5}% 45
+\BOOKMARK [2][-]{subsection.5.5.1}{Line Integrals}{section.5.5}% 46
+\BOOKMARK [0][-]{chapter.6}{Vector Fields}{part.6}% 47
+\BOOKMARK [1][-]{section.6.1}{Vector Fields}{chapter.6}% 48
+\BOOKMARK [1][-]{section.6.2}{Differentiation of Vector fields}{chapter.6}% 49
+\BOOKMARK [2][-]{subsection.6.2.1}{Operations with Fields}{section.6.2}% 50
+\BOOKMARK [2][-]{subsection.6.2.2}{The Jacobian of a Vector Field}{section.6.2}% 51
+\BOOKMARK [2][-]{subsection.6.2.3}{Divergence and Curl}{section.6.2}% 52
+\BOOKMARK [1][-]{section.6.3}{Laplace Operator}{chapter.6}% 53
+\BOOKMARK [2][-]{subsection.6.3.1}{The Laplacian of a Scalar Field}{section.6.3}% 54
+\BOOKMARK [2][-]{subsection.6.3.2}{Vector Laplacian}{section.6.3}% 55
+\BOOKMARK [1][-]{section.6.4}{Composite Functions and Chain Rule}{chapter.6}% 56
+\BOOKMARK [2][-]{subsection.6.4.1}{Composite Functions}{section.6.4}% 57
+\BOOKMARK [1][-]{section.6.5}{Integration of Vector Fields}{chapter.6}% 58
+\BOOKMARK [2][-]{subsection.6.5.1}{Line integrals of vector fields}{section.6.5}% 59
+\BOOKMARK [1][-]{section.6.6}{Flux and Surface Integrals}{chapter.6}% 60
+\BOOKMARK [2][-]{subsection.6.6.1}{Volume Integrals}{section.6.6}% 61
+\BOOKMARK [1][-]{section.6.7}{Potential Functions}{chapter.6}% 62
+\BOOKMARK [2][-]{subsection.6.7.1}{Integrating the Gradient}{section.6.7}% 63
+\BOOKMARK [2][-]{subsection.6.7.2}{Requirements for Potentials}{section.6.7}% 64
+\BOOKMARK [2][-]{subsection.6.7.3}{Properties of Fields with Potentials}{section.6.7}% 65
+\BOOKMARK [0][-]{chapter.7}{Implicit and Explicit Parameterizations}{part.6}% 66
+\BOOKMARK [1][-]{section.7.1}{Implicit surfaces}{chapter.7}% 67
+\BOOKMARK [2][-]{subsection.7.1.1}{Normal Vectors to Implicit Surfaces}{section.7.1}% 68
+\BOOKMARK [2][-]{subsection.7.1.2}{Implicit Function Theorem}{section.7.1}% 69
+\BOOKMARK [1][-]{section.7.2}{Surfaces as Graphs}{chapter.7}% 70
+\BOOKMARK [2][-]{subsection.7.2.1}{Equation for a Plane}{section.7.2}% 71
+\BOOKMARK [2][-]{subsection.7.2.2}{Tangent Planes and Surface Normals}{section.7.2}% 72
+\BOOKMARK [1][-]{section.7.3}{Area Form and Integration}{chapter.7}% 73
+\BOOKMARK [0][-]{chapter.8}{Coordinate Systems}{part.6}% 74
+\BOOKMARK [1][-]{section.8.1}{Cylindrical Coordinates}{chapter.8}% 75
+\BOOKMARK [2][-]{subsection.8.1.1}{Functions and Calculus in Cylindrical Coordinates}{section.8.1}% 76
+\BOOKMARK [2][-]{subsection.8.1.2}{Cylindrical Unit Vector Fields}{section.8.1}% 77
+\BOOKMARK [2][-]{subsection.8.1.3}{Integration in Cylindrical Coordinates}{section.8.1}% 78
+\BOOKMARK [2][-]{subsection.8.1.4}{Derivatives in Cylindrical Coordinates}{section.8.1}% 79
+\BOOKMARK [1][-]{section.8.2}{Spherical Coordinates}{chapter.8}% 80
+\BOOKMARK [2][-]{subsection.8.2.1}{Integration in Spherical Coordinates}{section.8.2}% 81
+\BOOKMARK [-1][-]{part.7}{VII Partial Differential Equations}{}% 82
+\BOOKMARK [0][-]{chapter.9}{Modelling}{part.7}% 83
+\BOOKMARK [0][-]{chapter.10}{Systems of ODE}{part.7}% 84
+\BOOKMARK [1][-]{section.10.1}{Qualitative Analysis}{chapter.10}% 85
+\BOOKMARK [1][-]{section.10.2}{Linearity}{chapter.10}% 86
+\BOOKMARK [1][-]{section.10.3}{Higher Order ODE}{chapter.10}% 87
+\BOOKMARK [1][-]{section.10.4}{Linear Systems}{chapter.10}% 88
+\BOOKMARK [1][-]{section.10.5}{Linearization}{chapter.10}% 89
+\BOOKMARK [1][-]{section.10.6}{General Solutions to Second Order Linear Equations}{chapter.10}% 90
+\BOOKMARK [1][-]{section.10.7}{Examples of PDE}{chapter.10}% 91
+\BOOKMARK [1][-]{section.10.8}{The Problem Statement}{chapter.10}% 92
+\BOOKMARK [1][-]{section.10.9}{The Heat Equation}{chapter.10}% 93
+\BOOKMARK [1][-]{section.10.10}{The Laplace Equation}{chapter.10}% 94
+\BOOKMARK [1][-]{section.10.11}{The Wave Equation}{chapter.10}% 95
+\BOOKMARK [0][-]{chapter.11}{Separation of Variables}{part.7}% 96

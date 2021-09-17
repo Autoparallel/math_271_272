@@ -1,0 +1,904 @@
+   \chapter{Systems of ODE}
+        Though ODE consist of a single variable, it's possible that many ODE interact with each other and form a system.  Another case of interest would be finding trajectories as curves in higher dimensions (usually 2 or 3 for physical problems).  In this case we say that we have an \emph{system of ODE}.  
+        
+        For example, a system of three first order ODEs takes the form
+        \begin{align*}
+            x' &= f(x,y,z,t),\\
+            y' &= g(x,y,z,t),\\
+            z' &= h(x,y,z,t).
+        \end{align*}
+        
+        \begin{df}{System of ODE}{system_of_ode}
+            A \textbf{system of ODE} is a collection of differential equations of various order.  We call the system \textbf{coupled} if one of the differential equations is dependent on another.
+        \end{df}
+        
+        \begin{ex}{SIR Model in Ecology}{sir_model}
+        A biological example of a system of first order equations comes from modeling the spread of disease in a colony.  We let $S(t)$ denote the number of susceptible animals, $I(t)$ denote the number of infected animals, and $R(t)$ denote the animals resistant to the disease.  The model is a system of ODE of the form
+        \begin{align*}
+            S' &= -\frac{\beta IS}{N},\\
+            I' &= \frac{\beta I S}{N} - \gamma I,\\
+            R' &= \gamma I.
+        \end{align*}
+        We let $N=S(t)+I(t)+R(t)$ denote the constant population, and $\beta$ and $\gamma$ are other measured parameters.
+        
+        This is a coupled system since, for example, the equation $S'$ contains the function $I$.  We also see that the equation for $I'$ contains the function $S$.  Lastly, the equation for $R'$ contains the function $I$.  
+        \end{ex}
+        
+ 
+        
+        \section{Qualitative Analysis}
+        The great part about a system of first order ODEs is that we can analyze them pictorially. 
+        
+        \begin{ex}{Zoo of First Order Linear Systems}{first_order_zoo}
+        Let's consider the following systems.
+        
+        \begin{enumerate}[(I)]
+            \item 
+            \begin{align*}
+                x' = x+y,\\
+                y' = x+y.
+            \end{align*}
+            What we can do is put $x'$ and $y'$ into a vector 
+            \[
+            \mathbf{v}' = \begin{bmatrix} x' \\ y' \end{bmatrix}.
+            \]
+            This is actually a vector field $\mathbf{v}'(x,y)$!  We can plot this vector field and analyze from there.
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=.6\textwidth]{Figures/x+yx+y.png}
+                \caption{A plot of the vector field $\mathbf{v}'(x,y)$.}
+            \end{figure}
+            Our goal is to then find a vector as a function of time given by
+            \[
+            \mathbf{v}(t) = \begin{bmatrix} x(t) \\ y(t) \end{bmatrix}
+            \]
+            as this will contain the solutions to our system of ODE.
+            
+            What we do next is pick an initial condition, $(x_0,y_0)$ and note that our vector field gives us the velocity vector $\mathbf{v}'(x_0,y_0)$ at that point. 
+            
+            The solution (curve/trajectory) to our system of ODE follows the vector field above since it describes the velocity of our curve at that point. We call this solution curve an \textbf{integral curve} as it is obtained (roughly) through integration of $\mathbf{v}'$.  However, you should know that it is not always possible to explicitly compute this integral.  We will learn techniques for solving certain systems, however.
+            
+            One should feel comfortable tracing an estimate for a solution curve for a given system as it gives a qualitative answer to the problem. In this case, if we pick a point along the line $y=-x$, the trajectory is stationary.  Otherwise, the solution follows a curve that is parallel to the $y=x$ line and the direction depends on which location it begins.
+            \item We can repeat this process for another example
+            \begin{align*}
+                x' &= x+y,\\
+                y' &= -x +y.
+            \end{align*}
+            This has a vector field plot:
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=.6\textwidth]{Figures/x+yx-y.png}
+                \caption{The vector field $\mathbf{v}'(x,y)$ given by our system.}
+            \end{figure}
+            This solution has a stationary trajectory at the point $(0,0)$. Otherwise, the solution spirals outward in a clockwise direction. We say that this \emph{stationary point} $(0,0)$ is \emph{unstable}.
+            \item Here is another example given by
+            \begin{align*}
+                x' &= -x +y,\\
+                y' &= -x -y.
+            \end{align*}
+            Here is the plot of the vector field
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=.6\textwidth]{Figures/-x+y-x-y.png}
+                \caption{The vector field $\mathbf{v}'(x,y)$ given by our system.}
+            \end{figure}
+            Here our solution again has a stationary trajectory at the point $(0,0)$.  Otherwise, the solution spirals inward in a clockwise direction.  Here we say that the stationary point $(0,0)$ is \emph{stable}.
+            \item Let us take yet another example given by
+            \begin{align*}
+                x' &= y,\\
+                y' &= -x.
+            \end{align*}
+            This has a vector field plot
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=.6\textwidth]{Figures/y-x.png}
+                \caption{The vector field $\mathbf{v}'(x,y)$ given by our system.}
+            \end{figure}
+            Again, $(0,0)$ is a stationary point.  All the other trajectories form circles that rotate counter clockwise about the origin.
+        \end{enumerate}
+        \end{ex}
+        
+        These systems above show the four main dynamics we can see in the plane. All dynamics in the plane roughly look like one of these in close proximity to any point.
+        
+        \begin{ex}{General Solutions to the Zoo of Linear Systems}{gen_solns_zoo}
+        We can look at the integral curves for these vector fields.  Without solving them explicitly, let's see what they would look like.
+        \begin{enumerate}[(I)]
+            \item The general solution for this system is
+            \begin{align*}
+                x(t)&= \frac{1}{2}c_1 \left( e^{2t}+1\right)+\frac{1}{2}c_2\left(e^{2t}-1\right),\\
+                y(t)&=\frac{1}{2}c_1 \left( e^{2t}-1\right)+\frac{1}{2}c_2\left(e^{2t}+1\right).
+            \end{align*}
+            The initial data is dictated by the problem, and comes in the form of knowing $(x(0),y(0))$.  Here is a plot of a few integral curves (trajectories).
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=.6\textwidth]{Figures/x+yx+yintegralcurves.png}
+                \caption{Integral curves. Red: $(0,1)$; Orange: $(1,1)$; Purple: $(-1,-1)$; Blue: $(0,-1)$. Green are all stationary points.}
+            \end{figure}
+            \item The general solution for this system is
+            \begin{align*}
+                x(t)&= c_2 e^t \sin(t)+c_1e^t\cos(t),\\
+                y(t)&= c_2 e^t \cos(t) - c_1e^1 \sin(t).
+            \end{align*}
+            Here are trajectories. Keep in mind these move radially \emph{outward} away from the stationary point!
+                        \begin{figure}[H]
+                \centering
+                \includegraphics[width=.6\textwidth]{Figures/x+y-x+yintegralcurves.png}
+                \caption{Integral curves. Red: $(0,1)$; Orange: $(1,1)$; Purple: $(-1,-1)$; Blue: $(0,-1)$. Green:$(0,0)$ is the stationary point.}
+            \end{figure}
+            \item The general solution for this system is
+            \begin{align*}
+                x(t)&=c_2 e^{-t}\sin(t)+c_1 e^{-t}\cos(t),\\
+                y(t)&=c_2e^{-t}\cos(t)-c_1e^{-t}\sin(t).
+            \end{align*}
+            Here are trajectories. Keep in mind these are moving radially \emph{inward} towards the stationary point! Also note the difference in scale here.
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=.6\textwidth]{Figures/-x+y-x-yintegralcurves.png}
+                \caption{Integral curves. Red: $(0,1)$; Orange: $(1,1)$; Purple: $(-1,-1)$; Blue: $(0,-1)$. Green: $(0,0)$ is the stationary point.}
+            \end{figure}
+            \item The general solution for this system is
+            \begin{align*}
+                x(t)&= c_2 \sin(t) + c_1 \cos(t),\\
+                y(t)&= c_2 \cos(t) - c_1 \sin(t).
+            \end{align*}
+            Some of the trajectories here end up overlapping if we plot them over too much time.  Here's what I mean.
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=.6\textwidth]{Figures/y-xintegralcurves.png}
+                \caption{Integral curves. Red: $(0,1)$; Orange: $(1,1)$; Purple: $(-1,-1)$; Blue: $(0,-1)$. Green: $(0,0)$ is the stationary point.}
+                \label{fig:my_label}
+            \end{figure}
+            However, here is what it looks like over a shorter period of time.
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=.6\textwidth]{Figures/y-xintegralcurves2.png}
+                \caption{Integral curves. Red: $(0,1)$; Orange: $(1,1)$; Purple: $(-1,-1)$; Blue: $(0,-1)$. Green: $(0,0)$ is the stationary point.}
+                \label{fig:my_label}
+            \end{figure}
+            In a sense, each chosen initial conditions will chase one of the others forever in time.
+        \end{enumerate}
+        \end{ex}
+        
+        \section{Linearity}
+        The above systems were all \emph{linear}.  These systems are in fact exactly solvable.  We'll get to the solutions shortly.  However, many systems in nature are \emph{nonlinear}.  Take for example, the SIR model. What does it mean for an ODE to be linear? 
+        
+        \begin{df}{Linear and Nonlinear ODE}{lin_ode}
+        An $n$th order ODE is \textbf{linear} if it can take the following form
+        \[
+        x^{(n)}(t)+f_{n-1}(t)x^{(n-1)}(t)+\cdots + f_1(t)x'(t) +f_0(t)x(t)=g(t).
+        \]
+        This looks a bit complicated, so let's restate this for second order ODE.
+        
+        A second order $ODE$ is \textbf{linear} if it can take the following form
+        \[
+        x''+f(t)x'+g(t)x=h(t).
+        \]
+        And a first order ODE is linear if it can take the form
+        \[
+        x'+f(t)x=g(t).
+        \]
+        
+        If an ODE does not satisfy the above definition, we say that it is \textbf{nonlinear}.
+        \end{df}
+        
+        
+        \section{Higher Order ODE}
+        Higher order ODE show up in nature quite often.  For example, second order equations are abundant in physics due to Newton's laws.  Equations of order higher than two appear in material strain and stress (which tend to be fourth order).  
+        
+        The wonderful fact is that we do not need any new theory to understand higher order ODE.  This is due to the following theorem.
+        
+        \begin{thm}{Reduction of Order}{red_of_order}
+        Any $n ^\textrm{th}$ order ODE is equivalent to a system of $n$ first order ODE.  
+        \end{thm}
+        
+        The moral is that we need only know how to analyze first order systems in order to understand \emph{any} possible ODE.  Let's see an example of this.
+        
+        \begin{ex}{Order Reducing the Harmonic Oscillator}{order_red_harm_osc}
+        Consider the harmonic oscillator equation
+        \[
+        x''=-x.
+        \]
+        We can define a new variable, $v$ so that $v=x'$.  Then note we have that $v'=x''$.  Substituting these gives us two first order equations
+        \begin{align*}
+            x'&=v,\\
+            v'&=-x.
+        \end{align*}
+        It may seem like we have essentially done nothing.  But we've actually changed the problem for the better.  We'll see why soon.
+        \end{ex}
+        
+        \begin{ex}{The Biharmonic Equation}{biharmonic_eq}
+        Consider the \emph{biharmonic equation}
+        \[
+        x''''=x.
+        \]
+        We can define a set of new variables $y=x'$, $z=y'$, and $w=z'$.  Note that $w'=z''=y'''=x''''$. Then we arrive at the system
+        \begin{align*}
+            x'&=y,\\
+            y'&=z,\\
+            z'&=w,\\
+            w'&=x.
+        \end{align*}
+        We have turned a fourth order ODE into a system of four first order ODE.
+        \end{ex}
+        
+        \section{Linear Systems}
+        Let's say we are given a nonlinear higher order ODE or system. We wish to be able to convert this to a linear problem of the form 
+        \[
+        \mathbf{v}'=A\mathbf{v}+\mathbf{F}
+        \]
+        where, for example, 
+        \[
+        \mathbf{v}=\begin{bmatrix} x(t) \\ y(t) \\ z(t) \end{bmatrix} \qquad \mathbf{v}'=\begin{bmatrix} x'(t) \\ y'(t) \\ z'(t) \end{bmatrix} \qquad \begin{bmatrix} f_1(t) \\ f_2(t) \\ f_3(t) \end{bmatrix}.
+        \]
+        We call this the \emph{inhomogeneous} system. 
+        
+        Roughly speaking, we can think of $\mathbf{F}$ as an external forcing term acting on the system.  We will concentrate more on solving the case where $\mathbf{F}=\mathbf{0}$ so that we have
+        \[
+        \mathbf{v}'=A\mathbf{v}.
+        \]
+        We call this the \emph{homogeneous} system. Here, $A$ is a $3\times 3$-matrix whose coefficients could possibly depend on time.  That is,
+        \[
+        A = \begin{bmatrix} A_{11}(t) & A_{12}(t) & A_{13}(t)\\
+        A_{21}(t) & A_{22}(t) & A_{23}(t)\\
+        A_{31}(t) & A_{32}(t) & A_{33}(t)\end{bmatrix}.
+        \]
+        We will ignore the case where the matrix depends on time and just work on the case where the coefficients are constant. This is called an \emph{autonomous} system.
+        
+        \begin{df}{Linear System of ODE}{linear_system}
+            A system of first order differential equations is \textbf{linear} if it can be expressed as a matrix equation
+            \[
+            \mathbf{v}' = A(t)\mathbf{v}+\mathbf{F}(t).
+            \]
+            The linear system is said to have \textbf{constant coefficients} if the matrix $A(t)$ only contains constant.  That is, $A$ does not actually depend on $t$.
+        \end{df}
+        
+        \begin{df}{Homogeneous and Inhomogeneous Linear Systems}{homogeneous_systems}
+            A linear system of differential equations is 
+            \textbf{inhomogeneous} if it can be expressed as
+            \[
+            \mathbf{v}' = A(t)\mathbf{v}+\mathbf{F}(t).
+            \]
+            If $\mathbf{F}(t)=0$ and we have
+            \[
+            \mathbf{v}' = A(t)\mathbf{v}
+            \]
+            then we say the system of differential equations is \textbf{homogeneous}.
+        \end{df}
+        
+        \begin{df}{Autonomous}{autonomous}
+        An \textbf{autonomous} first order system (in 3-dimensions) is given by the equations
+        \begin{align*}
+        x' &= f(x,y,z),\\
+        y' &= g(x,y,z),\\
+        z' &= h(x,y,z).
+        \end{align*}
+        This is autonomous due to the fact that $t$ does not appear as an argument for the functions $f,g,$ and $h$.
+        \end{df}
+        
+        Autonomous systems are extremely common in reality which is why it is not a bad idea to emphasize them here.  These are the systems in which some quantity is being conserved over time, and hence the apparent $t$ dependence of the functions (shown above) is gone.  Of course, the functions still depend on $t$!  A few examples are
+        \begin{itemize}
+            \item mechanical systems (energy is conserved),
+            \item closed thermodynamic systems (energy is conserved),
+            \item short time ecologocial systems (animal number is conserved), 
+            \item closed chemically reacting systems (total atomic count is constant).
+        \end{itemize}
+        
+        For us, we are going to concentrate on dynamics for a system of two equations.  That is, equations that exist in the plane.  For one, these systems are easier to solve by hand than the higher dimensional systems.  They are also very common to see due again to Newton's laws.  Often, we will find we can decompose larger systems of equations into sets of systems of two equations. Lastly, these are likely the easiest to visualize and build intuition with.  
+        
+        \section{Linearization}
+        If we are given a planar (autonomous) and possibly nonlinear system, 
+        \begin{align*}
+            x'&= f(x,y),\\
+            y'&= g(x,y),
+        \end{align*}
+        we want to approximate this system with a homogeneous linear system with a matrix with constant coefficients.  That is
+        \[
+        \begin{bmatrix} x' \\ y' \end{bmatrix} \approx \begin{bmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}.
+        \]
+    
+        Remember that what we have here is a 2-dimensional vector field given by our system
+        \[
+        \mathbf{v}(x,y) = \begin{bmatrix} f(x,y) \\ g(x,y) \end{bmatrix}.
+        \]
+        The best linear approximation to this vector field at a point $(x_0,y_0)$ is given by the Jacobian $J(x_0,y_0)$ for this vector field
+        \[
+        J(x_0,y_0) = \begin{bmatrix} \frac{\partial f}{\partial x}(x_0,y_0) & \frac{\partial f}{\partial y}(x_0,y_0) \\
+        \frac{\partial g}{\partial x}(x_0,y_0) & \frac{\partial g}{\partial y}(x_0,y_0) \end{bmatrix}.
+        \]
+        We will then let the coefficient matrix be given by this Jacobian.  That is, we get
+        \[
+        \begin{bmatrix} x' \\ y' \end{bmatrix} = J(x_0,y_0)\begin{bmatrix} x \\ y \end{bmatrix}.
+        \]
+        Let's work an example.
+        
+        \begin{ex}{Lotka-Volterra Model Linearization}{lotka_volterra_linearization}
+        Let us consider a predator and prey system given by the Lotka-Volterra model.  Here we let the number of prey be given by $R(t)$ and the number of predators be given by $S(t)$.  The system is
+        \begin{align*}
+            S' &= (-c+dR)S,\\
+            R' &= (a-bS)R,
+        \end{align*}
+        where $a,b,c,d>0$. Here we can say that we have
+        \begin{align*}
+        f(S,R) &= (-c+dR)S,\\
+        g(S,R) &= (a-bS)R.
+        \end{align*}
+        We compute each partial derivative
+        \begin{align*}
+            \frac{\partial f}{\partial S} &= -c+dR & \frac{\partial f}{\partial R} &=dS \\
+            \frac{\partial g}{\partial S} &= -bR & \frac{\partial g}{\partial R} &= a-bS.
+        \end{align*}
+        Evaluating each at the point $(S_0,R_0)$ and placing into a matrix gives us the Jacobian
+        \[
+        J(S_0,R_0)=\begin{bmatrix} -c+dR_0 & dS_0 \\ -bR_0 & a-bS_0 \end{bmatrix}.
+        \]
+        
+        Now, about this point, our system approximately takes the form
+        \[
+        \begin{bmatrix} S' \\ R' \end{bmatrix} = \begin{bmatrix} -c+dR_0 & dS_0 \\ -bR_0 & a-bS_0 \end{bmatrix} \begin{bmatrix} S \\ R \end{bmatrix}.
+        \]
+        \end{ex}
+        
+        Our goal now is to learn how we can explicitly solve these planar systems.  With that, we will be able to solve many problems.
+        
+        
+        Now that we can take many common ODE, convert them to a system of first order ODE, and linearize the system, we can work to solve these specific equations.  The detail is captured by the following.
+        
+        \begin{prop}{Eigenfunction of the Derivative}{eigenfunction}
+        The exponential function $e^{kx}$ is an \textbf{eigenfunction} for the derivative.  \\
+        
+        \noindent \emph{Proof.} We take 
+        \[
+        \frac{d}{dt} e^{kt} = ke^{kt}.
+        \]
+        So, the eigenvalue is $k$ for this eigenfunction. \qed
+        \end{prop}
+        
+        
+        Spending the time being more rigorous with this is an interesting endeavor, but we have done enough theoretical results for now.  Let us see an example.
+        
+        \begin{ex}{Harmonic Oscillator Eigenvalue}{harm_osc_eigen}
+        If we take the Harmonic Oscillator equation
+        \[
+        x'' = -x
+        \]
+        we can realize this extremely similar to an eigen equation with
+        \[
+        x'=ix.
+        \]
+        So, this eigen equation has a solution
+        \[
+        x(t)=e^{it}.
+        \]
+        Note that this solves the Harmonic oscillator equation since
+        \[
+        \frac{d^2}{dt^2} x(t) = \frac{d}{dt}ie^{it} = -e^{it}=-x.
+        \]
+        Remember that
+        \[
+        e^{it}=\cos(t)+i\sin(t)
+        \]
+        which captures the oscillating behavior.
+        \end{ex}
+        
+        In short, these exponential functions capture oscillations, growth, and decay.  With these functions, we can model all linear systems.
+        
+        \begin{prop}{General Solution to Planar Linear Systems}{gen_soln_lin_systems}
+        Given a two dimensional linear system with constant coefficients $A,B,C$, and $D$,
+        \begin{align*}
+        x' &= Ax+By,\\
+        y' &= Cx+Dy,
+        \end{align*}
+        we can write this as a matrix equation
+        \[
+        \begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} A & B\\ C & D \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix},
+        \]
+        with
+        \[
+        M=\begin{bmatrix} A & B \\ C & D \end{bmatrix}.
+        \]
+        Let $\lambda_1$ and $\lambda_2$ be the (complex) eigenvalues of $M$ and $\mathbf{v}_1$ and $\mathbf{v}_2$ be the corresponding eigenvectors.  Then, the solution to the system of equations is
+        \[
+        \begin{bmatrix} x(t) \\ y(t) \end{bmatrix} = c_1 \mathbf{v}_1 e^{\lambda_1t} + c_2 \mathbf{v}_2e^{\lambda_2 t}.
+        \]
+        \end{prop}
+        
+        Let us unravel this with an example problem.
+        
+        \begin{ex}{Damped Harmonic Motion}{damped_harm_motion}
+        Consider the Damped Harmonic Oscillator equation
+        \[
+        x'' +\mu x' + kx = 0,
+        \]
+        with initial data $x(0)=1$ and $x'(0)=0$.\\ 
+        
+        Let us first think about this problem with our intuition.  This equation is modelling a spring mass system that is in a damping medium (i.e., underwater).  What happens as this system evolves?  One should expect oscillation, but will the system oscillate indefinitely? No.  One should expect that this system will also begin to oscillate with less intensity over time.  With this, one could hazard a guess that
+        \[
+        x(t) \approx e^{-t}\cos(t).
+        \]
+        
+        We can reduce the order of this equation by letting $y=x'$.  This gives us the system
+        \begin{align*}
+        x' &= y,\\
+        y' &= -kx -\mu y.
+        \end{align*}
+        So we can write this as a matrix equation
+        \[
+        \begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} 0 & 1 \\ -k & -\mu \end{bmatrix}.
+        \]
+        For simplicity, let $k=\mu=1$, and we get the matrix
+        \[
+        M = \begin{bmatrix} 0 & 1 \\ - 1& - 1 \end{bmatrix}.
+        \]
+        Then the eigenvalues to this matrix are
+        \[
+        \lambda_1 = \frac{1}{2}(-1+i\sqrt{3})\quad \textrm{and} \quad \lambda_2 = \frac{1}{2}(-1-i\sqrt{3}).
+        \]
+        The eigenvectors are
+        \[
+        \mathbf{v}_1 = \begin{bmatrix} \frac{1}{2} (-1-i\sqrt{3}) \\ 1 \end{bmatrix} \quad \textrm{and} \quad \mathbf{v}_2 = \begin{bmatrix} \frac{1}{2} (-1+i\sqrt{3}) \\ 1 \end{bmatrix}.
+        \]
+        By the proposition, our solution is
+        \[
+        \begin{bmatrix} x(t) \\ y(t) \end{bmatrix} = c_1 \begin{bmatrix} \frac{1}{2} (-1-i\sqrt{3}) \\ 1 \end{bmatrix} e^{\frac{1}{2}(-1+i\sqrt{3})t}+c_2  \begin{bmatrix} \frac{1}{2} (-1+i\sqrt{3}) \\ 1 \end{bmatrix} e^{\frac{1}{2}(-1-i\sqrt{3})t}.
+        \]
+        However, in this case we are wishing to just find $x(t)$ that fits this data, and what we find is this system of equations reduces to
+        \begin{align*}
+        x(t) &= c_1 e^{\frac{1}{2}(-1+i\sqrt{3})t}+c_2 e^{\frac{1}{2}(-1-i\sqrt{3})t},
+        \end{align*}
+        by looking at just the first entry of each vector and realizing that since $c_1$ and $c_2$ are undetermined constants, we can remove the other constants that appear.
+        
+        Now, let's use Euler's formula, and we have
+        \begin{align*}
+            x(t) &= c_1 e^{\frac{1}{2}(-1+i\sqrt{3})t}+c_2 e^{\frac{1}{2}(-1-i\sqrt{3})t}\\
+            &= c_1 e^{-t/2}\left(\cos\left(\frac{\sqrt{3}}{2}t\right)+i\sin\left(\frac{\sqrt{3}}{2}t\right)\right)+c_2 e^{-t/2}\left(\cos\left(-\frac{\sqrt{3}}{2}t\right)+i\sin\left(-\frac{\sqrt{3}}{2}t\right)\right).
+        \end{align*}
+        There are a few more simplifications that can be done, but in the end we find the general solution
+        \[
+        x(t) = c_1 e^{-t/2} \sin\left(\frac{\sqrt{3}}{2}t\right)+c_2e^{-t/2}\cos\left(\frac{\sqrt{3}}{2}t\right).
+        \]
+        We were given that $x(0)=1$ and we have that
+        \[
+        x(0)=1=c_2
+        \]
+        by plugging into our general solution.  We also have that
+        \[
+        x'(0)=0=\frac{-\sqrt{3}}{4}c_1
+        \]
+        which means $c_1=0$.  So our particular solution is
+        \[
+        x_p(t) = e^{-1/2t}\cos \left(\frac{\sqrt{3}}{2}t\right).
+        \]
+        
+        This solution also seems fit our physical expectations of the damped spring-mass system.  Great!
+        \end{ex}
+        
+        \begin{exercise}
+        Verify that this $x_p$ above is indeed a solution to the original ODE with $k=\mu=1$.
+        \end{exercise}
+
+        \begin{remark}
+        The apparent difficulty of solving ODEs becomes obvious here.  In this extremely nice case it still took a large amount of work.  The case for other systems is generally worse.
+        \end{remark}
+        
+        \section{General Solutions to Second Order Linear Equations}
+        
+        We can now write the general solutions to all second order linear equations.  We have the following.
+        
+        \begin{prop}{General Solutions to Second Order Linear Equations}{gen_solns_second_order}
+        Given a second order homogeneous linear ODE
+        \[
+        x'' + \mu x' + kx = 0
+        \]
+        we can write this as a system of first order linear equations given by
+        \[
+        \mathbf{v}' = M \mathbf{v},
+        \]
+        where
+        \[
+        \mathbf{v} = \begin{bmatrix} x \\ y \end{bmatrix}.
+        \]
+        the eigenvalues of $M$ are either purely real or complex.
+        
+        \begin{itemize}
+            \item If the eigenvalues $\lambda_1$ and $\lambda_2$ are complex, then the solution is
+        \[
+        x(t)= c_1 e^{\RE(\lambda_1)t} \sin(\IM(\lambda_1)t) + c_2 e^{\RE(\lambda_1)t} \sin(\IM(\lambda_1)t).
+        \]
+        It does not actually matter if we choose $\lambda_1$ or $\lambda_2$!
+        \item         If the eigenvalues $\lambda_1$ and $\lambda_2$ are real then the general solution is:
+        \[
+        x(t) = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}.
+        \]
+        \end{itemize}
+        \end{prop}
+
+    \textcolor{red}{Add in Noether's theorem for ODEs and groups, a little bit of vector fields and stuff?}
+
+
+        We now want to investigate a larger class of differential equations.  These are the \boldgreen{partial differential equations} or PDEs.  These equations become yet more complicated to solve, but are very prevalent in the study of the physical world.
+        
+        Fundamentally, these are time-varying differential equations of vector and scalar fields of many variables.  The goal for us is to be able to recognize a few specific example equations and understand their behavior.  We will also be able to solve a few equations with our tools from studying ODE. However, it is easy to pose a PDE that is virtually impossible to solve.  
+        
+        \begin{df}{Partial Differential Equation}{pde}
+        A \boldgreen{partial differential equation of a scalar field} of three spatial variables $x,y,z$ and a time variable $t$ is an expression of a scalar function $u(x,y,z,t)$, the partial derivatives of $u(x,y,z,t)$, and other functions.
+        \end{df}
+        
+        \begin{df}{Vector Partial Differential Equation}{vec_pde}
+        A \boldgreen{partial differential equation of a vector field}
+        \[
+        \vecfieldV(x,y,z,t) = \begin{bmatrix} V_1(x,y,z,t) \\ V_2(x,y,z,t) \\ V_3(x,y,z,t) \end{bmatrix}
+        \]
+        is an equation containing $\vecfieldV$, the (component) derivatives of $\vecfieldV$, and other vector fields.
+        \end{df}
+        
+        With the difficulty of these expressions as is, we will concentrate solely on the equations with scalar functions.
+    % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Examples of PDE
+    % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+        \section{Examples of PDE}
+        
+        \begin{ex}{Heat Equation}{heat_eqn}
+        The \boldgreen{linear heat equation} in three dimensional space is the equation
+        \[
+        \frac{\partial u}{\partial t}(x,y,z,t) -k\nabla \cdot (\nabla u(x,y,z,t)) = f(x,y,z,t).
+        \]
+        This equation models the diffusion of heat in a region of space, hence the name.  In this case, we think of $u(x,y,z,t)$ being the temperature at the point $(x,y,z)$ at the time $t$.
+        \end{ex}
+        
+        \begin{ex}{Laplace (Poisson) Equation}{laplace}
+        The \boldgreen{Laplace} (sometimes \boldgreen{Poisson}) \boldgreen{equation} in three dimensional space is the equation
+        \[
+        -\Delta=-\nabla \cdot (\nabla u(x,y,z))=f(x,y,z).
+        \]
+        \emph{Notice, there is no dependence on time!} This equation is the long term behavior of the heat equation.  If $u(x,y,z)$ describes temperature, then the solution to this equation tells you the equilibrium temperature. Since this is an equilibrium solution, the time component is gone.
+        \end{ex}
+        
+        \begin{ex}{The Wave Equation}{wave}
+        The \boldgreen{linear wave equation} in three dimensional space is the equation
+        \[
+        \frac{\partial^2 u}{\partial^2 t}(x,y,z,t) -c^2\Delta \cdot (\nabla u(x,y,z,t)) = f(x,y,z,t).
+        \]
+        The solutions here are wavelike.  Think of plucking a guitar string, or the ripples on the surface of a lake after a rock has been tossed in, or the vibrating cymbal or drum head.
+        \end{ex}
+        
+        \begin{ex}{Maxwell's Equations}{maxwell}
+        Maxwell's equations describe the electric $\vecfieldE$ and magnetic $\vecfieldB$ fields that permeate space due to charged particles.  These equations turn out to be coupled PDE.  They read
+        \begin{align*}
+            \grad \cdot \vecfieldE(x,y,z,t) &= \frac{\rho(x,y,z,t)}{\epsilon},\\
+            \grad \cdot \vecfieldB(x,y,z,t) &= 0,\\
+            \grad \times \vecfieldE(x,y,z,t) &= -\frac{\partial \vecfieldB}{\partial t}(x,y,z,t),\\
+            \grad \times \vecfieldB(x,y,z,t) &= \mu \vecfieldJ + \mu \epsilon \frac{\partial \vecfieldE}{\partial t}(x,y,z,t).
+        \end{align*}
+        \end{ex}
+        
+        \section{The Problem Statement}
+        
+        In order to move forward, we need to also properly specify the problem we want to solve.
+        
+        The one-dimensional source-free heat equation is a great starting point to begin our process.  We are given the following data:
+        \begin{itemize}
+            \item A region $\Omega$ in space that we are concerned with.  For example, in one dimension, we can consider the interval $\Omega=(0,1)$.
+            \item A PDE
+            \[
+            \frac{\partial u}{\partial t}(x,t) -k \frac{\partial^2 u}{\partial x}^2 = 0.
+            \]
+            \item Boundary conditions. These can come in a few forms, but we will concentrate on just one. We must specify $u(0,t)=a$ and $u(1,t)=b$.  These boundary conditions correspond to fixing the temperature at the ends of a rod constant.
+            \item Initial conditions. We specify the initial temperature distribution
+            \[
+            u(x,0)=u_0(x).
+            \]
+        \end{itemize}
+    
+    % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % The Heat Equation
+    % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+        \section{The Heat Equation}
+        One of the most illuminating examples of PDEs is the heat equation.  Let us work through a specific example of the heat equation and keep in mind the physical intuition throughout.
+        
+        \begin{ex}{Solving the Heat Equation}{solving_heat_equation}
+        Let us consider the simplified one-dimensional source free (i.e., the right hand side is zero) heat equation given by the following:
+        \[
+        \frac{\partial u}{\partial t}(x,t)-\frac{\partial^2 u}{\partial x^2} = 0.
+        \]
+        We can require boundary conditions and initial conditions later on.\\
+        
+        Let us assume that the solution function $u(x,t)$ can be written as
+        \[
+        u(x,t) = f(x)g(t).
+        \]
+        We call this approach the \boldgreen{separation of variables}. We then plug in this assumption to our PDE.
+        \begin{align*}
+            \frac{\partial}{\partial t} (f(x)g(t))-\frac{\partial^2}{\partial x^2} (f(x)g(t)) &= 0\\
+            f(x)\frac{\partial g}{\partial t}-g(t)\frac{\partial^2 f}{\partial x^2}&=0\\
+            fg'-f''g &=0.
+        \end{align*}
+        We can then do a bit more algebra.
+        \begin{align*}
+            fg'-f''g&=0\\
+            fg'&= f''g\\
+            \frac{g'(t)}{g(t)}&=\frac{f''(x)}{f(x)}.
+        \end{align*}
+        Now, notice that both sides depend on different variables.  We have successfully separated this equation into an equation for each variable.  This is to say, since each side of the equation depends on a different variable, each side must be equal to a constant $\lambda$! So we have two equations.
+        \begin{align*}
+            \frac{g'(t)}{g(t)}&=\lambda\\
+            \frac{f''(x)}{f(x)}&=\lambda.
+        \end{align*}
+        We can then solve both of these as ODE. Note, it will be helpful to to instead choose $-\lambda$ as the constant.
+        \end{ex}
+        
+        \begin{exercise}
+        What are the general solutions to the above ODE?
+        \end{exercise}
+        
+        \begin{exercise}
+        Given those general solutions, what is the general solution to the heat equation?
+        \end{exercise}
+        
+        \begin{answer}
+        We get
+        \[
+        \boxed{u(x,t)=f(x)g(t) = Ae^{-\lambda t}\sin(\sqrt{\lambda}t)+Be^{-\lambda t}\cos(\sqrt{\lambda}t).}
+        \]
+        \end{answer}
+        
+        Previously we found the general solution to the heat equation 
+        \[
+        \frac{\partial u}{\partial t}(x,t) - \frac{\partial^2 u}{\partial x^2} (x,t) = 0
+        \]
+        is
+        \[
+        u(x,t)=Ae^{-\lambda t}\sin(\sqrt{\lambda}x)+Be^{-\lambda t}\cos(\sqrt{\lambda}x).
+        \]
+        However, this solution is very general.  We have the undetermined constants $\lambda$, $A$, and $B$. We need more information to get a particular solution.
+        
+        \begin{ex}{Particular Solution to the 1D Heat Equation}{particular_heat}
+        We will stick with the one-dimensional case but we must pick the following.  
+        \begin{itemize}
+            \item Domain: Let $\Omega = (0,1)$.
+            \item Initial Conditions: $u(x,0)=\sin(\pi x)$.
+            \item Boundary Conditions: $u(1,t)=u(0,t)=0$.  
+        \end{itemize}
+        This list of requirements gives us enough information to solve the equation explicitly for a particular solution.\\
+        
+        First, let us take the boundary conditions. We impose these on our general solution:
+        \[
+        u(x,t)=Ae^{-\lambda t}\sin(\sqrt{\lambda}x)+Be^{-\lambda t}\cos(\sqrt{\lambda}x).
+        \]
+        Thus we require
+        \[
+        0=u(0,t)=Ae^{-\lambda t}\sin(0)+Be^{-\lambda t}\cos(0)
+        \]
+        which gives us that
+        \[
+        B=0.
+        \]
+        The other boundary condition is
+        \[
+        0=u(1,t)=Ae^{-\lambda t}\sin(\sqrt{\lambda}).
+        \]
+        Specifically, this means that $A=0$, which gives us a trivial solution or that we have
+        \[
+        \sqrt{\lambda}=n\pi
+        \]
+        for any integer $n$.  This is because $\sin(n\pi)=0$ when $n$ is an integer. Thus our solution now reads
+        \[
+        u(x,t)=Ae^{-n^2\pi^2}\sin(n\pi x).
+        \]
+        
+        Lastly, we match our initial conditions.  So we have
+        \[
+        \sin(\pi x)=u(x,0)=A e^0 \sin(n\pi x)
+        \]
+        and so we find that $n=1$.  Thus, our solution is
+        \[
+        \boxed{u(x,t)=e^{-\pi^2 t} \sin(\pi x).}
+        \] 
+        
+        We can plot this solution as follows.
+        \begin{figure}[H]
+        	\centering
+        	\def\svgwidth{0.75\columnwidth}
+        	\input{Figures_Part_7/heat_solution.pdf_tex}
+        \end{figure}
+        \end{ex}
+        
+        \begin{exercise}
+        Can you interpret what this is physically describing as $t$ gets larger?
+        \end{exercise}
+        
+    % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % The Laplace Equation
+    % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+        \section{The Laplace Equation}
+        In the long time limit ($t\to \infty$) or steady-state of the (source free) heat equation, one arrives at the so called Laplace equation
+        \[
+        -\Delta u = 0.
+        \]
+        In the one-dimensional case, this equation reads
+        \[
+        -\frac{d^2 u}{dx^2}(x) = 0.
+        \]
+        Note there is no dependence on time as this is the steady-state behavior for the heat equation.
+        
+        \begin{exercise}
+        This is an ODE in the variable $x$.  You can solve this and find a general solution by integration.  
+        \end{exercise} 
+        
+        \begin{answer}
+        The general solution to the one-dimensional Laplace equation is the equation for a line
+        \[
+        u(x) = Ax+B.
+        \]
+        One can show that this is indeed a solution by taking two derivatives of $u(x)$ and finding that you get zero.
+        \end{answer}
+        
+        \begin{ex}{Particular Solution to the 1D Laplace Equation}{particular_laplace}
+        Through integration, we find
+        \[
+        u(x) = Ax+B
+        \]
+        where $A$ and $B$ are undetermined constants.  In order to specify these constants, we must provide the following.
+        \begin{itemize}
+            \item Domain: Let $\Omega = (0,1)$.
+            \item Boundary Conditions: $u(0)=0$ and $u(1)=0$.  
+        \end{itemize}
+        Note that we do not need initial conditions since there is no time dependence in this PDE.\\
+        
+        Now, to find the particular solution, we apply the boundary conditions to our general solution.  So we have
+        \[
+        0=u(0)=A(0)+B,
+        \]
+        so $B=0$.  Then the other condition 
+        \[
+        0=u(1)=A,
+        \]
+        so $A=0$.  Thus, our solution is
+        \[
+        \boxed{u(x)=0}.
+        \]
+        Now, compare this to the solution to the heat equation previously
+        \[
+        u(x,t)=e^{-\pi^2 t}\sin(\pi x).
+        \]
+        We claimed the Laplace equation is the long-time solution of the heat equation and indeed if we look at $t\to\infty$, we have
+        \[
+        \lim_{t\to \infty} u(x,t)=0.
+        \]
+        \end{ex}
+        
+    % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % The Wave Equation
+    % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+        \section{The Wave Equation}
+        The wave equation is studied when one wants to find the oscillatory behavior of some medium.  For example, one can pluck a guitar string or hit a drum head.  These actions induce vibrations in the medium (the string or head) and it is the vibrations that one hears.  The equation that models these phenomenon is the wave equation
+        \[
+        \frac{\partial^2 u}{\partial t^2}(x,y,z,t)-c^2 \nabla \cdot \nabla u(x,y,z,t)=f(x,y,z,t).
+        \]
+        
+        \begin{ex}{Solving the 1D Wave Equation}{1d_wave}
+        In one-dimension, the simplified source free wave equation reads
+        \[
+        \frac{\partial^2 u}{\partial t^2}(x,t) -\frac{\partial^2 u}{\partial x^2}(x,t)=0.
+        \]
+        
+        It turns out we can solve the 1D wave equation in the same way we did the heat equation. So, we assume a separation of variables approach in that 
+        \[
+        u(x,t) = f(x)g(t).
+        \]
+        We plug this into the PDE to find
+        \begin{align*}
+            \frac{\partial^2}{\partial t^2}(f(x)g(t))-\frac{\partial^2}{\partial x^2}(f(x)g(t))&=0\\
+            f(x)\frac{\partial^2 g}{\partial t^2}-g(t)\frac{\partial^2 f}{\partial x^2}&=0\\
+            f(x)g''(t)-f''(x)g(t)&=0.
+        \end{align*}
+        We then wish to make the left hand side and right hand side functions of different input variables
+        \begin{align*}
+            f(x)g''(t)-f''(x)g(t)&=0\\
+            f(x)g''(t)&=f''(x)g(t)\\
+            \frac{g''(t)}{g(t)}&= \frac{f''(x)}{f(x)}.
+        \end{align*}
+        Since each side depends on a different input variable, each side must be equal to a constant.  So this gives us
+        \[
+        \frac{g''(t)}{g(t)}= \frac{f''(x)}{f(x)}= -\lambda^2,
+        \]
+        where $-\lambda^2$ is an undetermined constant but was chosen to make the next steps easier. We then get two ODEs
+        \begin{align*}
+            f''(x)&=-\lambda^2 f(x),\\
+            g''(t)&=-\lambda^2 g(t),
+        \end{align*}
+        which are both harmonic oscillator equations.  Thus, since we know the solutions to the harmonic oscillator equation, we have
+        \begin{align*}
+            f(x)&=C_1 \sin(\lambda x)+ C_2 \cos(\lambda x),\\
+            g(t)&=C_3 \sin(\lambda t)+ C_3 \cos(\lambda t).
+        \end{align*}
+        It follows that our solution is thus
+        \[
+        \boxed{u(x,t)=f(x)g(t)= (C_1 \sin(\lambda x)+ C_2 \cos(\lambda x))(C_3 \sin(\lambda t)+ C_3 \cos(\lambda t)).}
+        \]
+        \end{ex}
+        
+        With a general solution to the wave equation written down.  We can work to solve a particular case of the wave equation.  Let's see this.
+        
+        \begin{ex}{Particular Solution to the 1D Wave Equation}{part_wave}
+        We found that the general solution to the 1D wave equation is
+        \[
+        u(x,t)=(C_1 \sin(\lambda x)+ C_2 \cos(\lambda x))(C_3 \sin(\lambda t)+ C_3 \cos(\lambda t)).
+        \]
+        Let us multiply this out and re-collect the constants to get
+        \[
+        u(x,t) = C_1 \sin(\lambda x)\sin(\lambda t) + C_2 \sin(\lambda x)\cos(\lambda t) + C_3 \cos(\lambda x)\sin(\lambda t)+ C_4 \cos(\lambda x)\sin(\lambda t).
+        \]
+        In order to specify these constants, we provide the following:
+        \begin{itemize}
+            \item Domain: Let $\Omega=(0,1)$.
+            \item Initial Conditions: We let $u(x,0)=\sin(\pi x)$ and $\frac{\partial u}{\partial t}(x,0)=0.$ 
+            \item Boundary Conditions: Take $u(0)=u(1)=0$.
+        \end{itemize}
+        Note the need for both initial position $u(x,0)$ and initial velocity $\frac{\partial u}{\partial t}(x,0)$.\\
+        
+        Now, we find the particular solution by first applying our boundary conditions.  Specifically, we have
+        \[
+        0=u(0,t)= C_1 \sin(0)\sin(\lambda t) + C_2 \sin(0)\cos(\lambda t) + C_3 \cos(0)\sin(\lambda t)+ C_4 \cos(0)\sin(\lambda t) 
+        \]
+        which reduces to
+        \[
+        0= C_3 \sin(\lambda t)+ C_4 \cos(\lambda t).
+        \]
+        The only way this can be equal to zero for all $t$ is if $C_3=C_4=0$.  Thus, we now have
+        \[
+        u(x,t) = C_1 \sin(\lambda x)\sin(\lambda t) + C_2 \sin(\lambda x)\cos(\lambda t).
+        \]
+        Applying the next boundary condition
+        \[
+        0=u(1,t)= C_1 \sin(\lambda ) \sin(\lambda t) + C_2 \sin(\lambda)\cos(\lambda t)
+        \]
+        gives us that $\lambda = n\pi$ for any integer $n$ since in this case $\sin(n\pi)=0$. And so our solution is now
+        \[
+        u(x,t) = C_1 \sin(n \pi x) \sin(n \pi t) + C_2 \sin(n \pi x)\cos (n \pi t).
+        \]
+        
+        We then apply the initial conditions. Specifically, we required that
+        \[
+        \sin(\pi x) = u(x,0) = C_1 \sin(n\pi x) \sin(0)+ C_2 \sin(n\pi x) \cos(0)
+        \]
+        which reduces to
+        \[
+        \sin(\pi x) = C_2 \sin(n\pi x).
+        \]
+        Thus we have that $n=1$ and $C_2=1$.  Our solution is now
+        \[
+        u(x,t)=C_1 \sin(\pi x)\sin(\pi t) +  \sin(\pi x)\cos(\pi t).
+        \]
+        Now, we also required that
+        \[
+        0=\frac{\partial u}{\partial t}(x,0) =C_1 \pi \sin(\pi x)\cos(0) - \pi \sin(\pi x) \sin(0)
+        \]
+        which reduces to
+        \[
+        0 = C_1 \pi \sin(\pi x)
+        \]
+        which means that
+        \[
+        C_1=0.
+        \]
+        Thus, we now have the particular solution
+        \[
+        \boxed{u(x,t)=\sin(\pi x)\cos(\pi t).}
+        \]
+        We can plot a graph of this solution with $z$ representing the height of the function, the $x$-axis giving our position in the domain $\Omega$ and the $t$-axis moving perpendicularly to $x$ and $z$. We get
+\begin{figure}[H]
+	\centering
+	\def\svgwidth{0.75\columnwidth}
+	\input{Figures_Part_7/wave_solution.pdf_tex}
+\end{figure}
+        % \begin{figure}[H]
+        %     \centering
+        %     \includegraphics[width=.5\textwidth]{Figures/wave_solution.png}
+        % \end{figure}
+        \end{ex}
+
+% \end{document}

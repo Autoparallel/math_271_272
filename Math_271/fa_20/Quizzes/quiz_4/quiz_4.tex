@@ -1,0 +1,88 @@
+\documentclass[12pt]{amsbook}
+\usepackage{preamble}
+\newcommand{\R}{\mathbb{R}}
+
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\begin{center}
+   \textsc{\large MATH 271, Quiz 4}\\
+   \textsc{Due November 13$^\textrm{th}$ at the end of class}
+\end{center}
+
+\vspace{1cm}
+
+\noindent\textbf{Instructions} \; You are allowed a textbook, homework, notes, worksheets, material on our Canvas page, but no other online resources (including calculators or WolframAlpha) for this quiz.  \textbf{Do not discuss any problem any other person.} All of your solutions should be easily identifiable and supporting work must be shown.  Ambiguous or illegible answers will not be counted as correct.
+
+
+\vspace*{.5cm}
+\hrule
+\vspace*{.5cm}
+
+\begin{center}\textbf{\large THERE ARE 5 TOTAL PROBLEMS.}\normalsize \end{center}
+
+\begin{problem} Consider the vectors $\vecu = 3\xhat -\yhat$, $\vecv = -\yhat$, and $\vecw = -\xhat + 2\yhat$.
+\begin{enumerate}[(a)]
+    \item \textbf{(2 pts.)} Draw the vectors $\vecu$, $\vecv$, $\vecw$, and $\vecu+\vecv$ in the plane.
+    \item \textbf{(3 pts.)} Compute $\vecu \cdot \vecv$, $\|\vecu\|$, and $\|\vecv\|$.
+    \item \textbf{(2 pts.)} What is the angle betwen $\vecu$ and $\vecv$? (Do not worry about getting a numerical answer, just show the work to explain what the angle is.)
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the following functions.
+\begin{enumerate}[i.]
+    \item $f\colon \R \to \R$ given by $f(x)=2x+1$.
+    \item $g\colon \R^2 \to \R$ given by $g\begin{pmatrix} x \\ y \end{pmatrix} = x+y$.
+\end{enumerate}
+\begin{enumerate}[(a)]
+    \item \textbf{(2 pts.)} Is $f$ linear or nonlinear? Explain.
+    \item \textbf{(2 pts.)} Show that $g$ is linear.
+\end{enumerate}
+\end{problem}
+
+
+
+\begin{problem}
+Consider the matrices
+\[
+[A] = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}, \quad [B] = \begin{pmatrix} 3 & 1 & 1 \\ 0 & 2 & -1 \end{pmatrix}, \quad [C] = \begin{pmatrix} -2 & -1 \\ 1 & 0 \\ 0 & 3 \end{pmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item \textbf{(2 pts.)} Say which of the following products can you compute
+    \[
+    [A][B],\quad [B][A], \quad [A][C], \quad [C][A], \quad [B][C], \quad [C][B].
+    \]
+    \item \textbf{(2 pts.)} What are $n$ and $m$ if we think of $[C] \colon \R^n \to \R^m$?
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Consider the two matrices 
+\[
+[A] = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, \quad [B] = \begin{pmatrix} 1 & 1 \\ 2 & 2 \end{pmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item \textbf{(2 pts.)} Find the solution(s) to the homogeneous equation $[A]\vecx = \zerovec$.
+    \item \textbf{(2 pts.)} What is the nullspace of $[A]$?
+    \item \textbf{(2 pts.)} Can you find a solution to $[B]\vecx = \vecy$ with $\vecy = 2\xhat +5\yhat$? Explain.
+    \item \textbf{(2 pts.)} Explain why $\det([B])=0$ without computing it.
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Take the same two two matrices from Problem 4
+\[
+[A] = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}, \quad [B] = \begin{pmatrix} 1 & 1 \\ 2 & 2 \end{pmatrix}
+\]
+\begin{enumerate}[(a)]
+    \item \textbf{(2 pts.)} Compute $\det([A])$ and $\det([B])$.
+    \item \textbf{(1 pts.)} Compute $\det([A][B])$ without computing $[A][B]$.
+    \item \textbf{(2 pts.)} Are the columns of $[A]$ linearly independent? Explain.
+\end{enumerate}
+\end{problem}
+
+\end{document}  

@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage{termcal}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{xcolor}
+% Few useful commands (our classes always meet either on Monday and Wednesday 
+% or on Tuesday and Thursday)
+
+\newcommand{\MTWFClass}{%
+\calday[Monday]{\classday} % Monday
+\calday[Tuesday]{\classday} % Tuesday
+\calday[Wednesday]{\classday} % Wednesday
+\skipday % Thursday (no class)
+\calday[Friday]{\classday} % Friday 
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\TRClass}{%
+\skipday % Monday (no class)
+\calday[Tuesday]{\classday} % Tuesday
+\skipday % Wednesday (no class)
+\calday[Thursday]{\classday} % Thursday
+\skipday % Friday 
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\Holiday}[2]{%
+\options{#1}{\noclassday}
+\caltext{#1}{#2}
+}
+
+\begin{document}
+\begin{center}
+   \textsc{\large MATH 271, Calendar}\\
+   \textsc{Fall 2020}
+\vspace{.5cm}
+
+\begin{calendar}{8/24/2020}{16} % Semester starts on 1/11/2010 and last for 16
+                    % weeks, including finals week
+\setlength{\calboxdepth}{.3in}
+\MTWFClass
+%% schedule
+\caltexton{1}{First day. Syllabus and course material. \textcolor{green}{Review Chapter 1.}}
+\caltextnext{Complex numbers. \textcolor{green}{Chapter 3 Sections 1, 2.}}
+\caltextnext{Geometry of $\mathbb{C}$ and polar coordinates. \textcolor{green}{Chapter 3 Sections 3, 4.}}
+\caltextnext{\textbf{\textcolor{red}{Homework 0 due.}} Polar coordinates and periodicity. \textcolor{green}{Chapter 3 Sections 4, 5.}}
+\caltextnext{Intro to ODEs. \textcolor{green}{Chapter 4 Section 1, 2.}}
+\caltextnext{General and particular solutions. Separable ODEs. \textcolor{green}{Chapter 4 Sections 3, 4.}}
+\caltextnext{Changing variables and qualitative analysis. \textcolor{green}{Chapter 4 Section 5, 6.}}
+\caltextnext{\textbf{\textcolor{red}{Quiz 1. Homework 1 due.}}}
+\caltextnext{First order linear equations and integrating factor. \textcolor{green}{Chapter 4 Section 7.}}
+\caltextnext{Chemical kinetics. \textcolor{green}{Chapter 4 Section 8.}}
+\caltextnext{\textbf{\textcolor{red}{Homework 2 due.}} Second order ODEs and initial value problems. \textcolor{green}{Chapter 4 Section 9}}
+\caltextnext{Cont.\textcolor{green}{Chapter 4 Section 9.}}
+\caltextnext{Damped and driven oscillation. \textcolor{green}{Chapter 4 Section 9.}}
+\caltextnext{Boundary value problems. \textcolor{green}{Chapter 5 Section 1.}}
+\caltextnext{\textbf{\textcolor{red}{Quiz 2}}}
+\caltextnext{\textbf{\textcolor{red}{Homework 3 due.}} Understanding the Schr\"odinger equation. \textcolor{green}{Chapter 5 Section 2.}}
+\caltextnext{More on the Schr\"odinger equation. \textcolor{green}{Chapter 5 Section 2.}}
+\caltextnext{\textbf{\textcolor{red}{Oral Exam 1}}}
+\caltextnext{\textbf{\textcolor{red}{Oral Exam 1}}}
+\caltextnext{Sequences and series. \textcolor{green}{Chapter 6 Section 1, 2.}}
+\caltextnext{Series and convergence. \textcolor{green}{Chapter 6 Section 2.}}
+\caltextnext{Power series and radius of convergence. \textcolor{green}{Chapter 7 Section 1.}}
+\caltextnext{Cont. \textcolor{green}{Chapter 7 Section 1.} \textbf{\textcolor{red}{Homework 4 due.}}}
+\caltextnext{Integration and differentiation with power series. \textcolor{green}{Chapter 7 Section 2.}}
+\caltextnext{Taylor series. \textcolor{green}{Chapter 7 Section 3.}}
+\caltextnext{Approximation with Taylor series and Morse potential. \textcolor{green}{Chapter 7 Section 4.}}
+\caltextnext{\textbf{\textcolor{red}{Quiz 3. Homework 5 due.}}}
+\caltextnext{Series solutions to ODEs. \textcolor{green}{Chapter 7 Section 5.}}
+\caltextnext{Cont.}
+\caltextnext{Special polynomials. \textcolor{green}{Chapter 7 Section 6.}}
+\caltextnext{Quantum harmonic oscillator.}
+\caltextnext{\textbf{\textcolor{red}{ Homework 6 due.}} Cont.}
+\caltextnext{Open}
+\caltextnext{\textbf{\textcolor{red}{Oral Exam 2}}}
+\caltextnext{\textbf{\textcolor{red}{Oral Exam 2}}}
+\caltextnext{\textcolor{purple}{SNOW DAY.} Vectors and vector spaces. \textcolor{green}{Chapter 8 Sections 1, 2.}}
+\caltextnext{Algebra of vector spaces. \textcolor{green}{Chapter 8 Section 3, 4.}}
+\caltextnext{Inner and cross products. \textcolor{green}{Chapter 8 Section 5.}}
+\caltextnext{Linear transformations and matrices. \textcolor{green}{Chapter 9 Section 1.}} 
+\caltextnext{Cont. \textbf{\textcolor{red}{Homework 7 due.}}}
+\caltextnext{Matrix algebra. \textcolor{green}{Chapter 9 Section 2.}}
+\caltextnext{Systems of inhomogeneous linear equations. \textcolor{green}{Chapter 9 Section 3, 4.}}
+\caltextnext{\textbf{\textcolor{red}{Homework 8 due.}} Systems of homogeneous equations, nullspace.  \textcolor{green}{Chapter 9 Section 3, 4.}}
+\caltextnext{Linear independence, span, and bases. \textcolor{green}{Chapter 9 Section 5.}}
+\caltextnext{Determinants, traces, and their properties. \textcolor{green}{Chapter 9 Section 6.}}
+\caltextnext{Cont.}
+\caltextnext{\textbf{\textcolor{red}{Quiz 4. Homework 9 due.}}}
+\caltextnext{Inverse and similar matrices. \textcolor{green}{Chapter 9 Section 7.}}
+\caltextnext{Eigen-problem. \textcolor{green}{Chapter 9 Section 8.}}
+\caltextnext{Diagonalization and Hermitian matrices. \textcolor{green}{Chapter 9 Section 9.}}
+\caltextnext{\textbf{\textcolor{red}{Homework 10 due.}} Cont.}
+\caltextnext{Groups and symmetries. \textcolor{green}{Chapter 9 Section 10.}}
+\caltextnext{Cont.}
+\caltextnext{Cont.}
+\caltextnext{\textbf{\textcolor{red}{Quiz 5. Homework 11 due.}}}
+\caltextnext{Project and review.}
+\caltextnext{Project and review.}
+\caltextnext{\textbf{\textcolor{red}{Oral Exam 3}}}
+\caltextnext{\textbf{\textcolor{red}{Oral Exam 3}}}
+%
+
+% Holidays
+\Holiday{9/7/2020}{\textcolor{blue}{Labor Day}}
+\Holiday{11/23/2020}{\textcolor{blue}{Fall Break}}
+\Holiday{11/24/2020}{\textcolor{blue}{Fall Break}}
+\Holiday{11/25/2020}{\textcolor{blue}{Fall Break}}
+\Holiday{11/27/2020}{\textcolor{blue}{Fall Break}}
+
+\end{calendar}
+\end{center}
+\end{document}

@@ -1,0 +1,149 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\newcommand{\vecfieldV}{\boldsymbol{\vec{V}}}
+\newcommand{\vecfieldW}{\boldsymbol{\vec{W}}}
+\newcommand{\vecfieldU}{\boldsymbol{\vec{U}}}
+\newcommand{\curvegamma}{\boldsymbol{\vec{\gamma}}}
+\newcommand{\tangentgamma}{\boldsymbol{\dot{\vec{\gamma}}}}
+\newcommand{\grad}{\boldsymbol{\vec{\nabla}}}
+\newcommand{\curveeta}{\boldsymbol{\vec{\eta}}}
+\newcommand{\rvec}{\boldsymbol{\vec{r}}}
+%\newcommand{\forcevec}{\boldsymbol{\vec{F}}}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Worksheet 3}\\
+   \textsc{Integration over curves and potential functions.}
+\end{center}
+\vspace{.5cm}
+
+%\textcolor{red}{JACOBIAN???}
+
+
+\begin{problem}
+    Draw a picture explaining what an integral of a scalar field over a curve is computing. That is, explain the reasoning behind the definition
+    \[
+    \int_{\curvegamma} f(\gamma)d\curvegamma = \int_{t_0}^{t_1} f(\gamma(t))\left|\tangentgamma(t)\right|dt,
+    \]
+    where $f$ is a scalar field and $\curvegamma$ is some curve starting at time $t_0$ and ending at time $t_1$.
+\end{problem}
+
+\begin{problem}
+Compute the integrals of the scalar field $f(x,y,z)=2-x+y-z$ over the following curves.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+    \item $\curvegamma_1$ is the boundary of the unit square in the $xy$-plane.  
+    \item $\curvegamma_2$ is the unit circle in the $xy$-plane.
+    \item $\curvegamma_3$ is the curve $\curvegamma_3(t)=\begin{pmatrix} t \\ t^2 \\ t^3 \end{pmatrix}$ from time $t=0$ to $t=1$.
+\end{enumerate}
+\end{multicols}
+\end{problem}
+
+\begin{problem}
+    Draw a picture explaining what an integral of a vector field over a curve is computing. That is, explain the reasoning behind the definition
+\[
+\int_{\curvegamma} \vecfieldV(\curvegamma) \cdot d\curvegamma = \int_{t_0}^{t_1} \vecfieldV(\curvegamma(t))\cdot \tangentgamma(t) dt,
+\]
+where $\vecfieldV$ is a vector field and $\curvegamma$ is some curve starting at time $t_0$ and ending at time $t_1$.
+\end{problem}
+
+\begin{problem} 
+We have briefly discussed the idea of \emph{work} (change in energy) before and wrote
+\[
+W = \forcevec \cdot \rvec,
+\]
+where $\forcevec$ was a constant force and $\rvec$ was a straight line displacement.
+
+Now, we can write the real version of this. The work done on a particle moving along a curve $\curvegamma(t)$ that is experiencing a spatially dependent force field $\forcevec(x,y,z)$ is
+\[
+W = \int_{\curvegamma} \forcevec(\curvegamma) \cdot d\curvegamma.
+\]
+Compute the work given the following
+\[
+\forcevec(x,y,z) = \begin{pmatrix} x^2 \\ y \\ \sqrt{z} \end{pmatrix} \qquad \textrm{and} \qquad \curvegamma(t) = \begin{pmatrix} t \\ t^2 \\ t^3 \end{pmatrix}.
+\]
+\end{problem}
+
+
+
+\begin{problem}
+    Note that the identity $\grad \times (\grad f)=\zerovec$ always holds for any smooth scalar field $f$. 
+    \begin{itemize}
+        \item Pick a few functions $f(x,y)$ of your own and plot the graphs $z=f(x,y)$ and plot the vector field $\grad f$ as well.  Can you reason why the identity must be true from these plots? 
+        \item If you plot the vector field $\vecfieldV = \begin{pmatrix} 0 \\ x \end{pmatrix}$ (which has nonzero curl), could this have come from the gradient of some function? What would the surface have to look like in order to have this as a gradient? Could it even be a valid function/surface?
+    \end{itemize}
+\end{problem}
+
+\begin{problem}
+    Decide whether the following fields have potentials.  Explain your reasoning. If they do have a potential, determine what it is. Plot the vector fields as well.
+    \begin{enumerate}[(a)]
+        \item $\vecfieldU(x,y,z) = \begin{pmatrix} 2x + 2y + 2z \\ 2x + 2y + 2z \\ 2x + 2y + 2z \end{pmatrix}$.
+        \item $\vecfieldV(x,y,z) = \begin{pmatrix} yz \\ xz \\ xy \end{pmatrix}$.
+        \item $\vecfieldW(x,y,z) = \begin{pmatrix} e^y \\ e^x \\ \sin(x)\sin(y) \end{pmatrix}$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Consider the vector fields in Problem 6. 
+\begin{enumerate}[(a)]
+    \item Take the curves $\curvegamma_1(t) =\begin{pmatrix} t \\ t \\ t\end{pmatrix}$ and $\curvegamma_2(t)=\begin{pmatrix} t \\ t^2 \\ t^3 \end{pmatrix}$ from time $t=0$ to time $t=1$ and integrate
+    \[
+    \int_{\curvegamma_i} \forcevec \cdot d\curvegamma_i.
+    \]
+    for the given vector fields.
+
+    \item For which fields should this integral \underline{not} depend on the choice of curve? In other words, which of the vector fields are conservative?
+    \item Compute
+    \[
+    \int_{\curvegamma_2} (\grad \times \vecfieldW) \cdot d\curvegamma_2.
+    \]
+    \item Compute
+    \[
+    \int_{\curvegamma_1} (\grad \cdot \vecfieldU)(\curvegamma) d\curvegamma_1.
+    \]
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Consider the vector field $\vecfieldV(x,y,z) = \begin{pmatrix} yz \cos(xyz) \\ xz \cos(xyz) \\ xy \cos(xyz) \end{pmatrix}$. 
+\begin{enumerate}[(a)]
+    \item Show that $\vecfieldV$ is conservative.
+    \item Find the potential function $f$ for $\vecfieldV$.
+    \item Let $\gamma(t) = \begin{pmatrix} 0 \\ 0 \\ t \end{pmatrix}$ running from $t_0=0$ to $t_1=1$. Show that
+    \[
+    \int_{\curvegamma} \vecfieldV \cdot d \curvegamma = f(\curvegamma(t_1))-f(\curvegamma(t_0)).
+    \]
+    \item If you knew $(c)$ was true, does this prove that $\vecfieldV$ is conservative? Why or why not?
+\end{enumerate}
+\end{problem}
+
+\begin{problem} ***
+    Given a conservative vector field $\vecfieldV$ and a curve $\curvegamma \colon [t_0,t_1]\to \R^3$, we know that 
+    \[
+    \int_{\curvegamma} \vecfieldV\cdot d\curvegamma,
+    \]
+    only depends on the start and end points of the curve $\curvegamma$.  That is, if we fix $\curvegamma(a)$ and $\curvegamma(b)$, the path between those two points does \underline{not} change the integral.
+    
+    If $\vecfieldV$ is conservative, then $\vecfieldV = \grad f$ for some scalar field $f$.  This yields the identity,
+    \begin{equation}
+    \int_{\curvegamma} \left(\grad f\right) \cdot d\curvegamma = f(\curvegamma(t_1))-f(\curvegamma(t_0)).
+    \end{equation}
+    This is, once again, some type of generalization of the Fundamental Theorem of Calculus (FTC) via the very general Stokes' theorem.
+    \begin{enumerate}[(a)]
+        \item Show that the above identity in Equation (1) is nothing but FTC.  \emph{Hint: take your (1-dimensional) curve $\curvegamma(x)=x$ so that $\curvegamma(t_0)=t_0$ and $\curvegamma(t_1)=t_1$. Finally, note $\grad = \frac{d}{dx}$.}
+        \item Consider now a different curve $\curveeta \colon [\tilde{t_0},\tilde{t_1}]\to \R$. So long as $\curveeta(\tilde{t_0})=t_0$ and $\curveeta(\tilde{t_1})=t_1$, our identity states that the integral should output the same value.  Realize this as the $u$-substitution (or change of variables) that you learned in Calc. 1.
+        \item Now, in 3-dimensions, we can discretize any curve to $n$ small movements in the $x$-, $y$-, or $z$-direction, and in each direction FTC will hold.  Thus, summing up the $n$ integrals (one from each movement) will cancel off many contributions and leave you only with the beginning and end point of the whole curve as a contribution.  Taking the limit that these movements are $dx$, $dy$, and $dz$, one can see that a choice of path for a smooth curve will not matter.  Draw a picture of this argument and clarify the approach to a proof.
+    \end{enumerate}
+\end{problem}
+
+
+
+\end{document}

@@ -1,0 +1,111 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 271, Homework 9}\\
+   \textsc{Due November 15$^\textrm{th}$}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+Compute the following:
+\begin{enumerate}[(a)]
+    \item 
+    \[
+    [A]=\begin{pmatrix} 1& 1& 1 \end{pmatrix}
+    \begin{pmatrix} 2\\ 1\\ 3 \end{pmatrix}.
+    \]
+    \item
+    \[
+    [B]=\begin{pmatrix} 1& 2& 3& 4\\ 5& 6& 7& 8\\ 9& 10& 11& 12\end{pmatrix}
+    \begin{pmatrix} 3& 2\\ 2& 3\\ 3& 2\\ 2& 3\end{pmatrix}
+    \]
+    \item Take
+    \[
+    [M]=\begin{pmatrix} 10& 15\\ 20& 10 \end{pmatrix}
+    \]
+    and
+    \[
+    [N]=\begin{pmatrix} 1 & 2\\ 2& 1\end{pmatrix}.
+    \]
+    Compute $[M][N]$ and $[N][M]$ to see that matrices do not commute in general.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Compute the following determinants:
+\begin{enumerate}[(a)]
+    \item
+    \[
+    \det([A])=\left| \begin{array}{ccc}
+    -3& 1 & 5\\
+    -3& 4 & 2\\
+    -3& 2 & 1
+    \end{array}\right|
+    \]
+    \item 
+    \[
+    \det([B])=\left| \begin{array}{ccc}
+    1& 2& 3\\
+    4& 5& 6\\
+    7& 8& 9
+    \end{array}\right|
+    \]
+    \item Compute $\det([A][B])$ using properties of the determinant. \emph{Hint: this should be very quick to do. Do not compute the product of the matrices $[A]$ and $[B]$!}
+\end{enumerate}
+\end{problem}
+
+\begin{problem}~
+\begin{enumerate}[(a)]
+    \item Show that for any $2\times 2$-matrix that the sign of the determinant changes if either a row or column is swapped. \emph{Note: this is true for square matrices of any size}.
+    \item Show that for any $2\times 2$-matrix that multiplying a column by a constant scales the determinant by that constant as well. \emph{Note: this is true for square matrices of any size.}
+    \item Show that for any $2\times 2$-matrix that adding a scalar multiple one column to the other will not change the determinant. \emph{Note: this is true in broader generality. In fact, adding linear combinations of columns to another column will not change the determinant.}
+\end{enumerate}
+
+\end{problem}
+
+\begin{problem}$\boldsymbol{~^*}$
+Using the facts above, argue that a square matrix with columns that are linearly dependent must have a determinant of zero.
+\end{problem}
+
+\begin{problem}
+What does a zero determinant indicate about the solutions of a non-homogeneous system of linear equations? (Think geometrically!)
+\end{problem}
+
+\begin{problem}
+What does a zero determinant indicate about the solutions of a homogeneous system of linear equations? (Think geometrically!)
+\end{problem}
+
+\begin{problem}
+Given the matrices
+\[
+[A]=\begin{pmatrix} 1 & 0 & 2 \\ 2  & 1 & 3 \\ -2 & -2 & 0 \end{pmatrix} \qquad \textrm{and} \qquad [B]=\begin{pmatrix} -3 & 1 & 1 \\ 2 & -2 & 4 \\ -1 & -1 & -1 \end{pmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item Compute $\tr([A])$ and $\tr([B])$.  
+    \item Compute $\tr([A][B])$ and compare it to $\tr([B][A])$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the equation
+\[
+[A]\vecv = \zerovec,
+\]
+where
+\[
+[A] = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix}.
+\]
+\begin{enumerate}[(a)]
+    \item What vector(s) $\vecv$ satisfy this equation? In other words, what is $\Null([A])$?
+    \item Using what you found above, what must $\det([A])$ be equal to? \emph{Hint: you do not need to compute the determinant!}
+\end{enumerate}
+\end{problem}
+
+\end{document}

@@ -27,31 +27,37 @@
 \newpage
 
 \begin{problem}
-Consider the chemical reaction
+Consider the endothermic breakdown of a molecule $x$ given by
 \[
-A\xrightarrow{k(T)} B,
+x \xrightarrow{kt^2} \textrm{Products}
 \]
-where the rate of reaction $k(T)$ depends on the temperature of the solution $T$ (in Kelvin, so $T>0$).
+where we let $x(t)$ denote the concentration of reactants. Since the reaction is endothermic, if we also heat up the solution over time, we get a factor of $t^2$ as well since the reaction occurs more readily in higher temperatures. The concentration decreases over time based on differential equation
+\[
+x'=-kt^2(x-x_e).
+\]
+where $x_e$ is a constant that denotes the equilibrium concentration.
 \begin{enumerate}[(a)]
-    \item Write down expressions for the rate of change of the concentration for species $A$ and $B$.
-    \item Assuming, momentarily, $k(T)$ is constant, find the particular solution for the concentrations of $A$ and $B$ assuming $[A](0)=1$ and $[B](0)=0$.
-    \item Explain what happens to the concentrations as $t\to \infty$.
-    \item If the rate of reaction increases proportionally to $T$, then we can put $k(T)=\alpha T$ for some constant $\alpha>0$.  Explain how this changes the reaction.  That is, will the reaction occur more quickly,  more slowly, or something else? Why?
-    \item If instead $\alpha<0$, how will this change the reaction?
-    \item Which case, $\alpha<0$ or $\alpha>0$ more closely represents an endothermic reaction? That is, an endothermic reaction is one that requires heat in order to form products.
+    \item Write an equivalent equation with the change of variables $\delta=x-x_e$.
+    \item Find the general solution to this new equation.
+    \item What is the general solution in terms of the original variables $x$?
+    \item Given the initial amount of $x$ is $x(0)=1$, the equilibrium concentration is $x_e=1/2$, and $k=1$, find the particular solution for $x(t)$.
+    \item Does this reaction ever reach the equilibrium state?
 \end{enumerate}
 \end{problem}
 
 \newpage
 \begin{problem}
-Consider the autonomous equation 
+Let the height above ground at time $t$ be given by the function $y(t)$. A ball falling through air experiences gravitational acceleration and damping due to air friction. It follows the differential equation
 \[
-x' = \sin(x).
+y'' = -ky' - g.
 \]
 \begin{enumerate}[(a)]
-    \item Draw the phase line for this system for $x$ values in the interval $[-3\pi, 3\pi]$. 
-    \item What are the equilibrium points for this system? (Consider all $x$ values, not just the ones that you plotted in the previous part.)
-    \item Which equilibrium points are stable and which are unstable. Explain.
+    \item Describe the type of this equation (e.g., separable, autonomous, linear, etc.). What is the order?
+    \item Find the solution to the homogeneous equation. Call this solution $x_H$.
+    \item Find the particular integral to the inhomogeneous equation. Call this $x_P$.
+    \item What is the general solution to the ODE given in this problem?
+    \item Suppose that $k=1$ and $g=10$. Let $y(0)=1,000$ and $y'(0)=0$. Find the particular solution to this problem.
+    \item Plot your particular solution. Plot the derivative of your solution $y'(t)$ as well. If your solution is correct, the derivative (velocity) $y'$ should approach a constant value called the \emph{terminal velocity}.
 \end{enumerate}
 \end{problem}
 
@@ -76,4 +82,4 @@ with boundary conditions $\Psi(0)=0$ and $\Psi(1)=0$.
 
 
 
-\end{document}  
+\end{document}

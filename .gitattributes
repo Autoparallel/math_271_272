@@ -1,2 +1,3 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+git config --global user.email "robertsp@rams.colostate.edu"

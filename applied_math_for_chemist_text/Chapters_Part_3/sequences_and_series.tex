@@ -104,17 +104,17 @@ We can see a picture of what is going on here.  I'll put the $\epsilon$ as a sol
         \begin{figure}[H]
     \centering
     \begin{subfigure}[h]{0.3\textwidth}
-        \includegraphics[width=\textwidth,bb=0 0 30 30]{Figures_Part_3/tolerance_epsilon=05.png}
+        \includegraphics[width=\textwidth]{Figures_Part_3/tolerance_epsilon=05.png}
         \caption{$\epsilon=0.5$.}
     \end{subfigure}
     ~ 
     \begin{subfigure}[h]{0.3\textwidth}
-        \includegraphics[width=\textwidth,bb=0 0 30 30]{Figures_Part_3/tolerance_epsilon=01.png}
+        \includegraphics[width=\textwidth]{Figures_Part_3/tolerance_epsilon=01.png}
         \caption{$\epsilon=0.1$.}
     \end{subfigure}
     ~
     \begin{subfigure}[h]{0.3\textwidth}
-        \includegraphics[width=\textwidth,bb=0 0 30 30]{Figures_Part_3/tolerance_epsilon=002.png}
+        \includegraphics[width=\textwidth]{Figures_Part_3/tolerance_epsilon=002.png}
         \caption{$\epsilon=0.02$.}
     \end{subfigure}
 
@@ -270,7 +270,7 @@ We are often provided each element of a sequence by a function. That is, $a_n=f(
 \begin{ex}{Geometric Series}{geo_series}
 Consider a sequence defined by $a_n = ar^n$.  Then we call the following a \boldgreen{geometric series}
 \[
-\sum_{n=1}^\infty = \sum_{n=1}^\infty ar^n
+\sum_{n=1}^\infty a_n = \sum_{n=1}^\infty ar^n
 \]
 In order for the series to converge, we must have that the sequence $a_n \to 0$.  This means that we must have $|r|<1$ as if $|r|<1$ then $\lim_{n\to \infty} a_n =0$. If this is the case, then we can take our series
 \[

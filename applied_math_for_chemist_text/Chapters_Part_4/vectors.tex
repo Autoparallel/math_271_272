@@ -204,28 +204,28 @@ at (0,0,\az){};
         \draw[thin,gray!40] (-3,-3) grid (3,3);
         \draw[<->] (-3,0)--(3,0) node[right]{$x$};
         \draw[<->] (0,-3)--(0,3) node[above]{$y$};
-        \draw[line width=2pt,blue,-stealth](0,0)--(1,1) node[anchor=east] at (.5,1){$\mathbf{a}$};
+        \draw[line width=2pt,blue,-stealth](0,0)--(1,1) node[anchor=east] at (.5,1){$\vecv$};
         \end{tikzpicture}
         \qquad
         \begin{tikzpicture}
         \draw[thin,gray!40] (-3,-3) grid (3,3);
         \draw[<->] (-3,0)--(3,0) node[right]{$x$};
         \draw[<->] (0,-3)--(0,3) node[above]{$y$};
-        \draw[line width=2pt,blue,-stealth](0,0)--(2,2) node[anchor=east] at (1,2){$2\mathbf{a}$};
+        \draw[line width=2pt,blue,-stealth](0,0)--(2,2) node[anchor=east] at (1,2){$2\vecv$};
         \end{tikzpicture}
         
         \begin{tikzpicture}
         \draw[thin,gray!40] (-3,-3) grid (3,3);
         \draw[<->] (-3,0)--(3,0) node[right]{$x$};
         \draw[<->] (0,-3)--(0,3) node[above]{$y$};
-        \draw[line width=2pt,blue,-stealth](0,0)--(.5,.5) node[anchor=east] at (.25,.5){$\frac{1}{2}\mathbf{a}$};
+        \draw[line width=2pt,blue,-stealth](0,0)--(.5,.5) node[anchor=east] at (.25,.5){$\frac{1}{2}\vecv$};
         \end{tikzpicture}
         \qquad
         \begin{tikzpicture}
         \draw[thin,gray!40] (-3,-3) grid (3,3);
         \draw[<->] (-3,0)--(3,0) node[right]{$x$};
         \draw[<->] (0,-3)--(0,3) node[above]{$y$};
-        \draw[line width=2pt,blue,-stealth](0,0)--(-1,-1) node[anchor=east] at (-.25,-.25){$-\mathbf{a}$};
+        \draw[line width=2pt,blue,-stealth](0,0)--(-1,-1) node[anchor=east] at (-.25,-.25){$-\vecv$};
         \end{tikzpicture}
         \end{center}
         
@@ -255,12 +255,12 @@ at (0,0,\az){};
         \draw[thin,gray!40] (-3,-3) grid (3,3);
         \draw[<->] (-3,0)--(3,0) node[right]{$x$};
         \draw[<->] (0,-3)--(0,3) node[above]{$y$};
-        \draw[line width=2pt,blue,-stealth](0,0)--(1,2) node[anchor=east] at (.5,1){$\mathbf{a}$};
-        \draw[line width=2pt, red, -stealth](0,0)--(2,1) node[anchor=north] at (1,.5){$\mathbf{b}$};
-        \draw[line width=2pt, red, -stealth](1,2)--(-1,1) node[anchor=south] at (0,1.5){$-\mathbf{b}$};
-        \draw[line width=2pt, blue, -stealth](2,1)--(1,-1) node[anchor=west] at (1.5,-.25){-$\mathbf{a}$};
-        \draw[line width=2pt, green, -stealth](0,0)--(1,-1) node[anchor=north]{$\mathbf{b}-\mathbf{a}$};
-        \draw[line width=2pt, orange, -stealth](0,0)--(-1,1) node[anchor=east] at (-.5,.5){$\mathbf{a}-\mathbf{b}$};
+        \draw[line width=2pt,blue,-stealth](0,0)--(1,2) node[anchor=east] at (.5,1){$\vecu$};
+        \draw[line width=2pt, red, -stealth](0,0)--(2,1) node[anchor=north] at (1,.5){$\vecv$};
+        \draw[line width=2pt, red, -stealth](1,2)--(-1,1) node[anchor=south] at (0,1.5){$-\vecv$};
+        \draw[line width=2pt, blue, -stealth](2,1)--(1,-1) node[anchor=west] at (1.5,-.25){-$\vecu$};
+        \draw[line width=2pt, green, -stealth](0,0)--(1,-1) node[anchor=north]{$\vecv-\vecu$};
+        \draw[line width=2pt, orange, -stealth](0,0)--(-1,1) node[anchor=east] at (-.75,.5){$\vecu-\vecv$};
         \end{tikzpicture}
         \end{center}
         
@@ -288,15 +288,15 @@ at (0,0,\az){};
         \draw[line width=2pt,blue,-stealth](0,0)--(4,4) node[anchor=east] at (2,2.5){$\vecv$};
         \draw[vector guide] (4,0) -- (4,4);
         \draw[vector guide] (0,0) -- (4,0);
-        \node[anchor=north] at (2,0){$v_x$};
-        \node[anchor=west] at (4,2){$v_y$};
+        \node[anchor=north] at (2,0){$v_1$};
+        \node[anchor=west] at (4,2){$v_2$};
         \end{tikzpicture}
         \end{center}
-        We can break down this vector into the portions that are in the $x$-direction and $y$-direction.  We say that the component of the vector in the $x$-direction is $v_x$ and the component of the vector in the $y$-direction is $v_y$.  Using the Pythagorean theorem, it follows that the length of the vector is $\|\vecv\|=\sqrt{v_x^2+v_y^2}$. This is exactly how we defined the modulus of a complex number $\|z\|$.
+        We can break down this vector into the portions that are in the $x$-direction and $y$-direction.  We say that the component of the vector in the $x$-direction is $v_1$ and the component of the vector in the $y$-direction is $v_2$.  Using the Pythagorean theorem, it follows that the length of the vector is $\|\vecv\|=\sqrt{v_1^2+v_2^2}$. This is exactly how we defined the modulus of a complex number $\|z\|$.
         
         Hence, we would write
         \[
-        \vecv=\begin{pmatrix} v_x \\ v_y \end{pmatrix}.
+        \vecv=\begin{pmatrix} v_1 \\ v_2 \end{pmatrix}.
         \]
         \end{ex} 
         
@@ -305,42 +305,42 @@ at (0,0,\az){};
         \section{Vector Algebra with Components}
         Let us work with vectors in space $\R^3$.  These vectors each have three components, so it suffices to specify $\vecv$ as 
         \[
-        \vecv = \begin{pmatrix} v_x \\ v_y \\ v_z \end{pmatrix}.
+        \vecv = \begin{pmatrix} v_1 \\ v_2 \\ v_3 \end{pmatrix}.
         \]
         One can then also specify the length $\|\vecv\|$ of $\vecv$ by writing
         \[
-        \|\vecv\| = \sqrt{ v_x^2 + v_y^2 + v_z^2},
+        \|\vecv\| = \sqrt{ v_1^2 + v_2^2 + v_3^2},
         \]
         which is much like the Pythagorean theorem. If a vector $\unitvec$ has length one, that is, if $\|\unitvec\|=1$, then we say that $\unitvec$ is a \boldgreen{unit vector}. One may also say that $\unitvec$ is a \boldgreen{normalized} vector. We also tend to place hats on unit vectors as opposed to arrows to denote the unit length.
         
-        When we write these coordinates for a vector, we are really saying that $\vecv$ points an amount $v_x$ in the $x$-direction, $v_y$ in the $y$-direction, and $v_z$ in the $z$-direction.  So, if we consider unit vectors that point in these different directions, then we can  write $\vecv$ as a linear combination of these vectors.  So, we set
+        When we write these coordinates for a vector, we are really saying that $\vecv$ points an amount $v_1$ in the $x$-direction, $v_2$ in the $y$-direction, and $v_3$ in the $z$-direction.  So, if we consider unit vectors that point in these different directions, then we can  write $\vecv$ as a linear combination of these vectors.  So, we set
         \[
         \xhat = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \qquad \yhat = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \qquad \zhat = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}.
         \]
         We call the above vectors the \boldgreen{unit basis vectors} since they are of  length one and we can write any vector in $\R^3$ as a linear combination of the three of them.  That is, we can write 
         \[
-        \vecv = v_x \xhat + v_y \yhat + v_z \zhat.
+        \vecv = v_1 \xhat + v_2 \yhat + v_3 \zhat.
         \]
         
 
         Now, we want to be able to understand vector algebra in these components. Let 
         \[
-        \vecu = u_x \xhat + u_y \yhat + u_z \zhat \qquad \textrm{and} \qquad \vecv = v_x \xhat + v_y \yhat + v_z \zhat,
+        \vecu = u_1 \xhat + u_2 \yhat + u_3 \zhat \qquad \textrm{and} \qquad \vecv = v_1 \xhat + v_2 \yhat + v_3 \zhat,
         \]
         then we can note the following:
         
         \begin{itemize}
             \item \textbf{Equality:} Vectors are equal when their components are equal,
             \[
-            \vecu=\vecv ~~ \textrm{if} ~~ u_x=v_x, ~~ u_y=v_y ~~ \textrm{and} ~~ u_z=v_z.
+            \vecu=\vecv ~~ \textrm{if} ~~ u_1=v_1, ~~ u_2=v_2 ~~ \textrm{and} ~~ u_3=v_3.
             \]
             \item \textbf{Addition:} The sum $\vecu + \vecv$ is done by adding components together,
             \[
-            \vecu+\vecv=(u_x+v_x)\xhat + (u_y + v_y)\yhat + (u_z + v_z)\zhat.
+            \vecu+\vecv=(u_1+v_1)\xhat + (u_2 + v_2)\yhat + (u_3 + v_3)\zhat.
             \]
             \item \textbf{Scalar Multiplication:} The product $\alpha \vecv$ is obtained by multiplying each component of $\vecv$ by $\alpha$,
             \[
-            \alpha \vecv = (\alpha v_x) \xhat + (\alpha v_y)\yhat + (\alpha v_z)\zhat.
+            \alpha \vecv = (\alpha v_1) \xhat + (\alpha v_2)\yhat + (\alpha v_3)\zhat.
             \]
         \end{itemize}
         
@@ -401,11 +401,11 @@ at (0,0,\az){};
         
         Take for example vectors in the real plane $\R^2$.  We have that the unit basis vectors $\xhat$ and $\yhat$ form a basis for $\R^2$ since any vector $\vecv$ can be written as a linear combination as 
         \[
-        \vecv = v_x \xhat + v_y\yhat.
+        \vecv = v_1 \xhat + v_2\yhat.
         \]
         Similarly, a vector $\vecu$ in space $\R^3$ can be written as a linear combination of the unit basis vectors $\xhat$, $\yhat$, and $\zhat$ as
         \[
-        \vecu = u_x \xhat + u_y \yhat + u_z \zhat.
+        \vecu = u_1 \xhat + u_2 \yhat + u_3 \zhat.
         \]
         Hence the unit basis vectors for $\R^3$ are also a basis.  One shouldn't have been surprised based on the name we chose!
         
@@ -438,14 +438,14 @@ at (0,0,\az){};
             So, let $\vecr = r_x\xhat + r_y\yhat + r_z \zhat$, and we have
             \begin{align*}
                 \vecr &= \alpha_1 \vecu + \alpha_2 \vecv + \alpha_3 \vecw\\
-                u_x \xhat + u_y \yhat + u_z \zhat &= \alpha_1 (\xhat + \yhat + \zhat) + \alpha_2 (2\xhat + \yhat) + \alpha_3 (\xhat + \zhat)\\
-                u_x \xhat + u_y \yhat + u_z \zhat &= (\alpha_1 +2\alpha_2 + \alpha_3)\xhat + (\alpha_1 +\alpha_2)\yhat + (\alpha_1 +\alpha_3)\zhat.
+                u_1 \xhat + u_2 \yhat + u_3 \zhat &= \alpha_1 (\xhat + \yhat + \zhat) + \alpha_2 (2\xhat + \yhat) + \alpha_3 (\xhat + \zhat)\\
+                u_1 \xhat + u_2 \yhat + u_3 \zhat &= (\alpha_1 +2\alpha_2 + \alpha_3)\xhat + (\alpha_1 +\alpha_2)\yhat + (\alpha_1 +\alpha_3)\zhat.
             \end{align*}
             This gives us three equations. One for each component of the vector $\vecu$. Specifically, we have
             \begin{align*}
-                u_x &= \alpha_1 + 2\alpha_2 + \alpha_3 \\
-                u_y &= \alpha_1 + \alpha_2\\
-                u_z &= \alpha_1 + \alpha_3.
+                u_1 &= \alpha_1 + 2\alpha_2 + \alpha_3 \\
+                u_2 &= \alpha_1 + \alpha_2\\
+                u_3 &= \alpha_1 + \alpha_3.
             \end{align*}
             The goal is now to determine whether or not this system of equations can be solved in general!
         \end{ex}
@@ -480,11 +480,11 @@ at (0,0,\az){};
             \item A vector $\vecv \in \R^1=\R$ is just a real number.
             \item A vector $\vecv \in \R^2$ is written as 
             \[
-            \vecv = v_x \xhat + v_y \yhat = \begin{pmatrix} v_x \\ v_y \end{pmatrix}.
+            \vecv = v_1 \xhat + v_2 \yhat = \begin{pmatrix} v_1 \\ v_2 \end{pmatrix}.
             \]
             \item A vector $\vecv \in \R^3$ is written as 
             \[
-            \vecv = v_x \xhat + v_y \yhat + v_z \zhat = \begin{pmatrix} v_x \\ v_y \\ v_z \end{pmatrix}.
+            \vecv = v_1 \xhat + v_2 \yhat + v_3 \zhat = \begin{pmatrix} v_1 \\ v_2 \\ v_3 \end{pmatrix}.
             \]
             \item In general, a vector $\vecv \in \R^n$ is written as
             \[
@@ -602,13 +602,13 @@ at (0,0,\az){};
         \begin{exercise}
         Take two vectors $\vecu=2\xhat + \yhat$ and $\vecv=\xhat + \yhat$.  Compute the dot product in both ways.  That is
         \[
-        \vecu\cdot \vecv=u_xv_x + u_y v_y=\|\vecu\|\|\vecv\|\cos \theta.
+        \vecu\cdot \vecv=u_1v_1 + u_2 v_2=\|\vecu\|\|\vecv\|\cos \theta.
         \]
         Verify that they give the same answer.
         \end{exercise}
         
         \begin{ex}{Work by Constant Force}{work_constant_force}
-        The \boldgreen{work} $W$ done by a constant force $\boldsymbol{\vec{F}}$ on a mass $m$ displaced from position $\vecu=u_x \xhat + u_y \yhat + u_z\zhat $ to $\vecv = v_x \xhat + v_y \yhat + v_z \zhat$ is given by
+        The \boldgreen{work} $W$ done by a constant force $\boldsymbol{\vec{F}}$ on a mass $m$ displaced from position $\vecu=u_1 \xhat + u_2 \yhat + u_3\zhat $ to $\vecv = v_1 \xhat + v_2 \yhat + v_3 \zhat$ is given by
         \[
         W=\forcevec\cdot \displacement
         \]
@@ -629,7 +629,7 @@ at (0,0,\az){};
         \]
         Using the other means of computing the dot product, we have
         \[
-        \boxed{\vecv \cdot \vecv = \|\vecv\|^2 = v_x^2 + v_y^2}
+        \boxed{\vecv \cdot \vecv = \|\vecv\|^2 = v_1^2 + v_2^2}
         \]
         which is just the Pythagorean theorem!  This of course generalizes to 3-dimensions and higher.
         
@@ -654,12 +654,12 @@ at (0,0,\az){};
         \subsubsection{Components via the Inner Product}
             One may also wish to recover components of a vector via the dot product.  For example, if one wants to recover the $x$-component of a vector $\vecv \in \R^3$, then one can compute
             \[
-            \vecv \cdot \xhat = v_x \cdot 1 + v_y \cdot 0 + v_z \cdot 0 = v_x.
+            \vecv \cdot \xhat = v_1 \cdot 1 + v_2 \cdot 0 + v_3 \cdot 0 = v_1.
             \]
             Then we can do this for each component as well by
             \begin{align*}
-                \vecv \cdot \yhat &= v_x \cdot 0 + v_y \cdot 1 + v_z \cdot 0 = v_y\\
-                \vecv \cdot \zhat &= v_x \cdot 0 + v_y \cdot 0 + v_z \cdot 1 = v_z.
+                \vecv \cdot \yhat &= v_1 \cdot 0 + v_2 \cdot 1 + v_3 \cdot 0 = v_2\\
+                \vecv \cdot \zhat &= v_1 \cdot 0 + v_2 \cdot 0 + v_3 \cdot 1 = v_3.
             \end{align*}
             
         
@@ -714,9 +714,9 @@ at (0,0,\az){};
         With these rules in place, we can now attempt the next exercise.
         
         \begin{exercise}
-        Show that for $\vecu = u_x \xhat + u_y\yhat + u_z \zhat$ and $\vecv = v_x \xhat + v_y \yhat + v_z\zhat$ that we have
+        Show that for $\vecu = u_1 \xhat + u_2\yhat + u_3 \zhat$ and $\vecv = v_1 \xhat + v_2 \yhat + v_3\zhat$ that we have
         \[
-        \vecu\times \vecv = (u_yv_z-u_zv_y)\xhat + (u_zv_x-u_xv_z)\yhat+ (u_xv_y - u_yv_x)\zhat.
+        \vecu\times \vecv = (u_2 v_3-u_3 v_2)\xhat + (u_3 v_1-u_1 v_3)\yhat+ (u_1 v_2 - u_2 v_1)\zhat.
         \]
         \end{exercise}
         
@@ -768,7 +768,7 @@ at (0,0,\az){};
         \begin{center}
         \begin{figure}[H]
             \centering
-            \includegraphics[width=.3\textwidth,bb=0 0 30 30]{Figures/Angular_velocity.png}
+            \includegraphics[width=.3\textwidth]{Figures/Angular_velocity.png}
             \caption{A particle moving around a circle of radius $\|\vecr\|$ in a counter-clockwise motion.}
             \label{angular-momentum}
         \end{figure}
@@ -779,7 +779,7 @@ at (0,0,\az){};
         \begin{center}
         \begin{figure}[H]
             \centering
-            \includegraphics[width=.3\textwidth,bb=0 0 30 30]{Figures/507px-Right_hand_rule_cross_product.png}
+            \includegraphics[width=.3\textwidth]{Figures/507px-Right_hand_rule_cross_product.png}
             \caption{The right-hand rule.}
         \end{figure}
         \end{center}

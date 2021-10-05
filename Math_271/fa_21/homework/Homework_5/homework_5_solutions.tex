@@ -4,6 +4,7 @@
 \documentclass[12pt]{article} %report allows for chapters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{preamble}
+\usepackage{cleveref}
 
 \begin{document}
 
@@ -13,142 +14,157 @@
 \end{center}
 \vspace{.5cm}
 
-\begin{problem} $p$-series are actually related to a very important function called the \emph{Riemann zeta function}.  This function is involved in a million dollar math problem! If you're interested in other million dollar problems, look up the Clay Institute Millennium Problems. The Riemann zeta function is given by
-\[
-\zeta (s) = \sum_{n=1}^\infty \frac{1}{n^s}.
-\]
-\begin{enumerate}[(a)]
-    \item Use the integral test to show that the $p$-series
-    \[
-    \sum_{n=1}^\infty \frac{1}{n^2}
-    \]
-    converges.  Look up what this series converges to and write it down. This is $\zeta(2)$.
-    \item Use the comparison test to show that the $p$-series
-    \[
-    \sum_{n=1}^\infty \frac{1}{n^3}
-    \]
-    converges. This converges as well to $\zeta(3)$. Look up what this approximate value is.
-\end{enumerate}
+\begin{problem}[Euler's Formula]
+	Given that
+	\[
+	\cos(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} \qquad \textrm{and} \qquad \sin(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!},
+	\]
+	\begin{enumerate}[(a)]
+		\item Plot the approximations of both $\cos(x)$ and $\sin(x)$ versus the original function for order 1,5,20 over the domain $[-4\pi,4\pi]$.
+		\item Show that
+		\[
+		e^{ix} = \cos(x) + i \sin(x),
+		\]
+		using the power series representation for the exponential function $e^x$.
+		\item Show that cosine is even, $\cos(-x)=\cos(x)$, and that sine is odd $\sin(-x)=-\sin(x)$.
+		\item Compute $\frac{d}{dx} e^{ix}$ using the series representation and show that $\frac{d}{dx}\cos(x)=-\sin(x)$ and $\frac{d}{dx}\sin(x)=\cos(x)$. 
+	\end{enumerate}	
 \end{problem}
-\begin{solution}~
-\begin{enumerate}[(a)]
-    \item Note that $a_n = f(n)=\frac{1}{n^2}$.  Hence we can make a comparison to the integral
-    \[
-    \int_1^\infty f(x)dx,
-    \]
-    where we start at $x=1$ since our sum begins there as well.  We evaluate the integral
-    \begin{align*}
-        \int_1^\infty f(x)dx &= \int_1^\infty \frac{1}{x^2}dx\\
-        &= \left[\frac{-1}{x}\right]_1^\infty\\
-        &= \lim_{b\to \infty} \left[ \frac{-1}{x}\right]_1^b\\
-        &= \lim_{b\to \infty} \frac{-1}{b} - \frac{-1}{1}\\
-        &= 1.
-    \end{align*}
-    So since the integral is finite the series converges.  \emph{Warning: the integral does \underline{not} tell us what the series converges to! The series in fact converges to $\zeta(2)=\frac{\pi^2}{6}$.}
-    \item Note that for $N\geq 2$ we have that $b_n=\frac{1}{n^3}\leq \frac{1}{n^2}=a_n$. Thus, since we have this inequality and we found $\sum_{n=1}^\infty a_n$ converges, we also have that $\sum_{n=1}^\infty b_n$ converges as well. \emph{Warning: again, this comparison test does \underline{not} tell us what the series converges to. If we look it up we find that $\zeta(3)\approx 1.20206$.}
-\end{enumerate}
-\end{solution}
 
-
-\newpage
-\begin{problem}
-Find the radius of convergence for the following power series
-\begin{enumerate}[(a)]
-    \item $\displaystyle{\sum_{n=1}^\infty \frac{x^n}{n(n+1)}}$;
-    \item $\displaystyle{\sum_{n=0}^\infty \frac{x^{2n+1}}{(2n+1)!}}$.
-\end{enumerate}
-\end{problem}
 \begin{solution}~
-\begin{enumerate}[(a)]
-    \item To find the radius of convergence we must look at the ratio of terms in the sequence as $n\to \infty$. Specifically, we take
-    \begin{align*}
-        \lim_{n\to \infty} \left| \frac{\frac{x^{n+1}}{(n+1)(n+2)}}{\frac{x^n}{n(n+1)}}\right| &= \lim_{n\to \infty}\left| \frac{nx}{n+2}\right|\\
-        &= |x|.
-    \end{align*}
-    Now, in order for this series to converge, the ratio test above must give us a limit $L<1$, and hence we must have that $|x|<1$. So the radius of convergence is 1.
-    \item Similarly, we have
-    \begin{align*}
-        \lim_{n\to \infty} \left| \frac{\frac{x^{2n+3}}{(2n+3)!}}{\frac{x^{2n+1}}{(2n+1)!}} \right| &= \lim_{n\to \infty} \left|\frac{x^2}{(2n+3)(2n+2)}\right|\\
-        &= 0.
-    \end{align*}
-    Hence the limit is $0<1$ and so for any value of $x$ this series converges and it follows that the radius of convergence is infinite.
-\end{enumerate}
-\end{solution}
-
-\newpage
-\begin{problem}
-Consider the two series
-\[
-\cos(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} \qquad \textrm{and} \qquad \sin(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!}.
-\]
-\begin{enumerate}[(a)]
-    \item Show that $\cos(-x)=\cos(x)$.
-    \item Show that $\sin(-x)=-\sin(x)$.
-    \item To take a derivative of a power series $f(x) = \displaystyle{\sum_{n=0}^\infty a_n x^n}$ we can do the following: 
-    \[
-    \frac{d}{dx}f(x) = \frac{d}{dx} \sum_{n=0}^\infty a_n x^n = \sum_{n=0}^\infty a_n \frac{d}{dx} x^n.
-    \]
-    Compute $\frac{d}{dx} \sin(x)$ and $\frac{d}{dx} \cos(x)$ and show that they are equal to what you already know. \emph{Warning: be careful with the powers of $x$ in the case with $\sin$ and $\cos$!}
-\end{enumerate}
-\end{problem}
-\begin{solution}~
-\begin{enumerate}[(a)]
-    \item We take
-    \begin{align*}
-        \cos(-x)=\sum_{n=0}^\infty \frac{(-1)^n (-x)^{2n}}{(2n)!} &= \sum_{n=0}^\infty \frac{(-1)^n \left((-x)^2\right)^n}{(2n)!}\\
-        &= \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}\\
-        &= \cos(x).
-    \end{align*}
-    Fundamentally, this is because all powers of $x$ in the terms in the series are even.  This is why we call $\cos$ an \emph{even} function!
-    \item Similarly, we take
-    \begin{align*}
-        \sin(-x)=\sum_{n=0}^\infty \frac{(-1)^n (-x)^{2n+1}}{(2n+1)!}&= \sum_{n=0}^\infty \frac{(-1)^n (-x)\cdot (-x)^{2n}}{(2n+1)!}\\
-        &= -\sum_{n=0}^\infty \frac{(-1)^n x\cdot x^{2n}}{(2n+1)!}\\
-        &= -\sum_{n=0}^\infty \frac{(-1) x^{2n+1}}{(2n+1)!}\\
-        &= -\sin(x).
-    \end{align*}
-    Again, this is happening due to the fact that all powers of $x$ in the terms for the series are odd. This is why we call $\sin$ an \emph{odd} function.
-    \item Consider first $\frac{d}{dx} \sin(x)$.  We take
-    \begin{align*}
-        \frac{d}{dx} \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!} &= \frac{d}{dx} \left( x-\frac{x^3}{3!}+\frac{x^5}{5!} - \cdots \right)\\
-        &= \frac{d}{dx} x -\frac{d}{dx} \frac{x^3}{3!} +\frac{d}{dx} \frac{x^5}{5!} - \cdots\\
-        &= 1 - \frac{x^2}{2!} +\frac{x^4}{4!} - \cdots.
-    \end{align*}
-    These are the first few terms of the $\cos(x)$ series.  Notice if we take
-    \[
-    \frac{d}{dx} \frac{(-1)^n x^{2n+1}}{(2n+1)!} = \frac{(-1) x^{2n}}{(2n)!}.
-    \]
-    So we have
-    \[
-    \frac{d}{dx} \sin(x) = \cos(x).
-    \]
-    
-    When we consider $\frac{d}{dx}$ of $\cos(x)$ we have to be a bit more careful.  Let's see what happens.  We take
-    \begin{align*}
-        \frac{d}{dx} \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} &= \frac{d}{dx} \left(1-\frac{x^2}{2!}+\frac{x^4}{4!} - \cdots \right)\\
-        &= \frac{d}{dx} 1 -\frac{d}{dx} \frac{x^2}{2!} +\frac{d}{dx} \frac{x^4}{4!} - \cdots\\
-        &= 0 - x +\frac{x^3}{3!} - \cdots
-    \end{align*}
-    which look like the first terms in the series for $-\sin(x)$. However, let's take a derivative of the term
-    \[
-    \frac{d}{dx} \frac{(-1)^n x^{2n}}{(2n)!} = \frac{(-1)^n x^{2n-1}}{(2n-1)!}.
-    \]
-    Now if we were to have this in our series we find
-    \[
-        \frac{d}{dx} \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} \not=  \sum_{n=0}^\infty \frac{(-1)^n x^{2n-1}}{(2n-1)!},
-    \]
-    since the first term on the right has an $x^{-1}$ in it! When we write out the terms of the series and differentiate them, we don't make this mistake.  We just have to be careful.  What we really should have is
-    \begin{align*}
-                \frac{d}{dx} \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} &=  \sum_{n=1}^\infty \frac{(-1)^n x^{2n-1}}{(2n-1)!}\\
-                &=\sum_{n=0}^\infty \frac{(-1)^{n+1} x^{2n+1}}{(2n+1)!}\\
-                &= -\sin(x).
-    \end{align*}
-    Notice above I \emph{reindexed} the series.  This is not something I'm going to worry too much about you doing.
-\end{enumerate}
+	\begin{enumerate}[(a)]
+		\item Here is the plot of the approximations of $\sin(x)$. \emph{Note that order refers to the highest power of $x$ seen in the approximations \underline{NOT} the $N$ used for a partial sum!}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=.75\textwidth]{sine_approx.png}
+			\caption{1$^\textrm{st}$ order in red, 5$^\textrm{th}$ order in blue, and 20$^\textrm{th}$ order in orange compared to $\sin(x)$ itself in green.}
+		\end{figure}
+		And now the figure for the approximations of $\cos(x)$.
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=.75\textwidth]{cosine_approx.png}
+			\caption{1$^\textrm{st}$ order in red, 5$^\textrm{th}$ order in blue, and 20$^\textrm{th}$ order in orange compared to $\cos(x)$ itself in green.}
+		\end{figure}
+		\item 
+		\item We take
+		\begin{align*}
+			\cos(-x)=\sum_{n=0}^\infty \frac{(-1)^n (-x)^{2n}}{(2n)!} &= \sum_{n=0}^\infty \frac{(-1)^n \left((-x)^2\right)^n}{(2n)!}\\
+			&= \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}\\
+			&= \cos(x).
+		\end{align*}
+		Fundamentally, this is because all powers of $x$ in the terms in the series are even.  This is why we call $\cos$ an \emph{even} function!
+		\item Similarly, we take
+		\begin{align*}
+			\sin(-x)=\sum_{n=0}^\infty \frac{(-1)^n (-x)^{2n+1}}{(2n+1)!}&= \sum_{n=0}^\infty \frac{(-1)^n (-x)\cdot (-x)^{2n}}{(2n+1)!}\\
+			&= -\sum_{n=0}^\infty \frac{(-1)^n x\cdot x^{2n}}{(2n+1)!}\\
+			&= -\sum_{n=0}^\infty \frac{(-1) x^{2n+1}}{(2n+1)!}\\
+			&= -\sin(x).
+		\end{align*}
+		Again, this is happening due to the fact that all powers of $x$ in the terms for the series are odd. This is why we call $\sin$ an \emph{odd} function.
+		\item Consider first $\frac{d}{dx} \sin(x)$.  We take
+		\begin{align*}
+			\frac{d}{dx} \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!} &= \frac{d}{dx} \left( x-\frac{x^3}{3!}+\frac{x^5}{5!} - \cdots \right)\\
+			&= \frac{d}{dx} x -\frac{d}{dx} \frac{x^3}{3!} +\frac{d}{dx} \frac{x^5}{5!} - \cdots\\
+			&= 1 - \frac{x^2}{2!} +\frac{x^4}{4!} - \cdots.
+		\end{align*}
+		These are the first few terms of the $\cos(x)$ series.  Notice if we take
+		\[
+		\frac{d}{dx} \frac{(-1)^n x^{2n+1}}{(2n+1)!} = \frac{(-1) x^{2n}}{(2n)!}.
+		\]
+		So we have
+		\[
+		\frac{d}{dx} \sin(x) = \cos(x).
+		\]
+		
+		When we consider $\frac{d}{dx}$ of $\cos(x)$ we have to be a bit more careful.  Let's see what happens.  We take
+		\begin{align*}
+			\frac{d}{dx} \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} &= \frac{d}{dx} \left(1-\frac{x^2}{2!}+\frac{x^4}{4!} - \cdots \right)\\
+			&= \frac{d}{dx} 1 -\frac{d}{dx} \frac{x^2}{2!} +\frac{d}{dx} \frac{x^4}{4!} - \cdots\\
+			&= 0 - x +\frac{x^3}{3!} - \cdots
+		\end{align*}
+		which look like the first terms in the series for $-\sin(x)$. However, let's take a derivative of the term
+		\[
+		\frac{d}{dx} \frac{(-1)^n x^{2n}}{(2n)!} = \frac{(-1)^n x^{2n-1}}{(2n-1)!}.
+		\]
+		Now if we were to have this in our series we find
+		\[
+		\frac{d}{dx} \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} \not=  \sum_{n=0}^\infty \frac{(-1)^n x^{2n-1}}{(2n-1)!},
+		\]
+		since the first term on the right has an $x^{-1}$ in it! When we write out the terms of the series and differentiate them, we don't make this mistake.  We just have to be careful.  What we really should have is
+		\begin{align*}
+			\frac{d}{dx} \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} &=  \sum_{n=1}^\infty \frac{(-1)^n x^{2n-1}}{(2n-1)!}\\
+			&=\sum_{n=0}^\infty \frac{(-1)^{n+1} x^{2n+1}}{(2n+1)!}\\
+			&= -\sin(x).
+		\end{align*}
+		Notice above I \emph{reindexed} the series.  This is not something I'm going to worry too much about you doing.
+	\end{enumerate}
 \end{solution}
 \begin{remark}
-Again, some of my work here is beyond what I was expecting. If you would have taken the derivatives of the first few terms and showed they are equal, you can extrapolate beyond that and assume it will work for the rest of the terms.  Just be careful with this!
+	Again, some of my work here is beyond what I was expecting. If you would have taken the derivatives of the first few terms and showed they are equal, you can extrapolate beyond that and assume it will work for the rest of the terms.  Just be careful with this!
 \end{remark}
+
+%
+%\begin{problem} $p$-series are actually related to a very important function called the \emph{Riemann zeta function}.  This function is involved in a million dollar math problem! If you're interested in other million dollar problems, look up the Clay Institute Millennium Problems. The Riemann zeta function is given by
+%\[
+%\zeta (s) = \sum_{n=1}^\infty \frac{1}{n^s}.
+%\]
+%\begin{enumerate}[(a)]
+%    \item Use the integral test to show that the $p$-series
+%    \[
+%    \sum_{n=1}^\infty \frac{1}{n^2}
+%    \]
+%    converges.  Look up what this series converges to and write it down. This is $\zeta(2)$.
+%    \item Use the comparison test to show that the $p$-series
+%    \[
+%    \sum_{n=1}^\infty \frac{1}{n^3}
+%    \]
+%    converges. This converges as well to $\zeta(3)$. Look up what this approximate value is.
+%\end{enumerate}
+%\end{problem}
+%\begin{solution}~
+%\begin{enumerate}[(a)]
+%    \item Note that $a_n = f(n)=\frac{1}{n^2}$.  Hence we can make a comparison to the integral
+%    \[
+%    \int_1^\infty f(x)dx,
+%    \]
+%    where we start at $x=1$ since our sum begins there as well.  We evaluate the integral
+%    \begin{align*}
+%        \int_1^\infty f(x)dx &= \int_1^\infty \frac{1}{x^2}dx\\
+%        &= \left[\frac{-1}{x}\right]_1^\infty\\
+%        &= \lim_{b\to \infty} \left[ \frac{-1}{x}\right]_1^b\\
+%        &= \lim_{b\to \infty} \frac{-1}{b} - \frac{-1}{1}\\
+%        &= 1.
+%    \end{align*}
+%    So since the integral is finite the series converges.  \emph{Warning: the integral does \underline{not} tell us what the series converges to! The series in fact converges to $\zeta(2)=\frac{\pi^2}{6}$.}
+%    \item Note that for $N\geq 2$ we have that $b_n=\frac{1}{n^3}\leq \frac{1}{n^2}=a_n$. Thus, since we have this inequality and we found $\sum_{n=1}^\infty a_n$ converges, we also have that $\sum_{n=1}^\infty b_n$ converges as well. \emph{Warning: again, this comparison test does \underline{not} tell us what the series converges to. If we look it up we find that $\zeta(3)\approx 1.20206$.}
+%\end{enumerate}
+%\end{solution}
+
+
+%\newpage
+%\begin{problem}
+%Find the radius of convergence for the following power series
+%\begin{enumerate}[(a)]
+%    \item $\displaystyle{\sum_{n=1}^\infty \frac{x^n}{n(n+1)}}$;
+%    \item $\displaystyle{\sum_{n=0}^\infty \frac{x^{2n+1}}{(2n+1)!}}$.
+%\end{enumerate}
+%\end{problem}
+%\begin{solution}~
+%\begin{enumerate}[(a)]
+%    \item To find the radius of convergence we must look at the ratio of terms in the sequence as $n\to \infty$. Specifically, we take
+%    \begin{align*}
+%        \lim_{n\to \infty} \left| \frac{\frac{x^{n+1}}{(n+1)(n+2)}}{\frac{x^n}{n(n+1)}}\right| &= \lim_{n\to \infty}\left| \frac{nx}{n+2}\right|\\
+%        &= |x|.
+%    \end{align*}
+%    Now, in order for this series to converge, the ratio test above must give us a limit $L<1$, and hence we must have that $|x|<1$. So the radius of convergence is 1.
+%    \item Similarly, we have
+%    \begin{align*}
+%        \lim_{n\to \infty} \left| \frac{\frac{x^{2n+3}}{(2n+3)!}}{\frac{x^{2n+1}}{(2n+1)!}} \right| &= \lim_{n\to \infty} \left|\frac{x^2}{(2n+3)(2n+2)}\right|\\
+%        &= 0.
+%    \end{align*}
+%    Hence the limit is $0<1$ and so for any value of $x$ this series converges and it follows that the radius of convergence is infinite.
+%\end{enumerate}
+%\end{solution}
 
 
 \newpage
@@ -252,6 +268,65 @@ This proves to be very useful as we can take finite truncations of the complete 
 f(x)\approx \sum_{n=0}^N \frac{f^{(n)}(a)}{n!}(x-a)^n.
 \]
 It turns out that this is a reasonable approximation for $f$ as long as we don't look too far away from $x=a$.  Also, computers really only have the ability to add.  Of course, multiplication is sequential adding, division can be done through subtraction and multiplication, and powers come from sequential multiplication.  The point is, computers work with polynomials (or rational functions) and this gives us a way to realize a complicated non-polynomial function as (approximately) a polynomial function.
+\end{solution}
+
+\newpage
+\begin{problem}[Explicit Euler Method]
+	Consider the differential equation $x'=kx$ where $k\in \C$ is a complex parameter for the system. Note that the solution to this equation given the initial condition $x(0)=1$ is $x=e^{kt}$. 
+	\begin{enumerate}[(a)]
+		\item Suppose we want to find an approximation to a solution using a computer. Let $t_0$ be some arbitrary time, define $\delta t$ to some fixed change in the input variable $t$ and let $\delta x =x(t_0+\delta t)-x(t_0)$ be the corresponding change in the output $x$. Compute the first order Taylor approximation of $x$ at the point $t_0$ to see that
+		\begin{equation}
+			\label{eq:1}
+			x(t_0+\delta t) \approx x(t_0)+x'(t_0)(\delta t)
+		\end{equation}
+		from which you can then note that
+		\begin{equation}
+			\label{eq:2}
+			x'(t_0) \approx \frac{\delta x}{\delta t}
+		\end{equation}
+		\item Define the \emph{explicit Euler approximation sequence} $\{x_\tau\}_{\tau=0}^T$ so that $x(t_0)=x_0$ and at later times $x(t_0+\tau\delta t)=x_\tau$. Show using the previous equations, the ODE itself, and the fact that $x_{\tau-1}+\delta x = x_{\tau}$ means can make a sequence
+		\[
+		x_{\tau} = x_{\tau-1} + kx_{\tau-1} \delta t.
+		\]
+		\item Let $k=1$, $\delta t = 0.01$, $t_0=0$, and let $x(0)=1$. Plot the explicit Euler approximation sequence using the following URL \url{http://www.calcul.com/show/calculator/recursive}. Compare this graph to the solution $x(t)=e^{t}$.
+		\item Let $k=-1$, $\delta t = 2$, $t_0=0$, and let $x(0)=1$. Plot the approximation again. Is there something wrong? How does this compare to what the solution should be?
+	\end{enumerate}
+\end{problem}
+\begin{solution}~
+	\begin{enumerate}[(a)]
+		\item The Taylor series for the function $x$ centered at $t_0$ is given by
+		\[
+		x(t) = \sum_{n=0}^\infty \frac{x'(t_0)}{n!}(t-t_0)^{(n)}.
+		\]
+		Hence, to first order
+		\[ x(t) \approx x(t_0)+x'(t_0)(t-t_0).\]
+		Now, let $t=t_0+\delta t$ and we have
+		\[ \boxed{x(t_0+\delta t) \approx x(t_0)+x'(t_0)\delta t.}\]
+		\item Note that
+		\[ x_\tau = x_{\tau -1}+\delta x\]
+		and by \cref{eq:2} that in general
+		\[ \delta x = x'(t)\delta t.\]
+		Hence, by the previous two equations
+		\[ x_{\tau}=x_{\tau-1}+x'(t_0+(\tau -1)\delta t)\delta t\].
+		By the ODE itself $x'=kx$ therefore $x'(t_0+(\tau -1)\delta t)=kx_{\tau -1}$ and we have our intended result
+		\[\boxed{ x_\tau = x_{\tau -1}+kx_{\tau-1}\delta t.}\]
+		\item Take our parameters as given so our equation assumes the form
+		\[ x_\tau = x_{\tau-1} + 0.01\cdot x_{\tau-1}=1.01 x_{\tau-1}\]
+		along with the initial condition $x_0 = 1$. Notice that we have turned exponential growth into a sequence of ``geometric" growth. Here is a graph of 500 points of the approximation.
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=.75\textwidth]{explicit_euler_1.png}
+		\end{figure}
+		The graph here matches the true solution $x(t)e^t$ very closely.
+		
+		\item Let us now take the next set of parameters so that
+		\[ x_\tau = x_{\tau-1} - 2 x_{\tau-1} = -x_{\tau-1}\]
+		along with the initial condition $x_0=1$. Now, we can notice that this sequence will behave quite differently since $x_\tau = -x_{\tau-1}$ shows that our sequence will just oscillate between two numbers. 
+				\begin{figure}[H]
+			\centering
+			\includegraphics[width=.75\textwidth]{explicit_euler_2.png}
+		\end{figure}
+	\end{enumerate}
 \end{solution}
 
 

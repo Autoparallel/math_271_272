@@ -9,53 +9,55 @@
 
 \begin{center}
    \textsc{\large MATH 271, Homework 5}\\
-   \textsc{Due October 9$^\textrm{th}$}
+   \textsc{Due October 11$^\textrm{th}$}
 \end{center}
 \vspace{.5cm}
 
-%% DO A FORWARD EULER PROBLEM
 
-\begin{problem} $p$-series are actually related to a very important function called the \emph{Riemann zeta function}.  This function is involved in a million dollar math problem! If you're interested in other million dollar problems, look up the Clay Institute Millennium Problems. The Riemann zeta function is given by
+\begin{problem}[Euler's Formula]
+	Given that
+	\[
+	\cos(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} \qquad \textrm{and} \qquad \sin(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!},
+	\]
+	\begin{enumerate}[(a)]
+		\item Plot the approximations of both $\cos(x)$ and $\sin(x)$ versus the original function for order 1,5,20 over the domain $[-4\pi,4\pi]$.
+\item Show that
 \[
-\zeta (s) = \sum_{n=1}^\infty \frac{1}{n^s}.
+e^{ix} = \cos(x) + i \sin(x),
 \]
-\begin{enumerate}[(a)]
-    \item Use the integral test to show that the $p$-series
-    \[
-    \sum_{n=1}^\infty \frac{1}{n^2}
-    \]
-    converges.  Look up what this series converges to and write it down. This is $\zeta(2)$.
-    \item Use the comparison test to show that the $p$-series
-    \[
-    \sum_{n=1}^\infty \frac{1}{n^3}
-    \]
-    converges. This converges as well to $\zeta(3)$. Look up what this approximate value is.
-\end{enumerate}
+using the power series representation for the exponential function $e^x$.
+\item Show that cosine is even, $\cos(-x)=\cos(x)$, and that sine is odd $\sin(-x)=-\sin(x)$.
+\item Compute $\frac{d}{dx} e^{ix}$ using the series representation and show that $\frac{d}{dx}\cos(x)=-\sin(x)$ and $\frac{d}{dx}\sin(x)=\cos(x)$. 
+	\end{enumerate}
+
 \end{problem}
 
-\begin{problem}
-Find the radius of convergence for the following power series
-\begin{enumerate}[(a)]
-    \item $\displaystyle{\sum_{n=1}^\infty \frac{x^n}{n(n+1)}}$;
-    \item $\displaystyle{\sum_{n=0}^\infty \frac{x^{2n+1}}{(2n+1)!}}$.
-\end{enumerate}
-\end{problem}
+%\begin{problem} $p$-series are actually related to a very important function called the \emph{Riemann zeta function}.  This function is involved in a million dollar math problem! If you're interested in other million dollar problems, look up the Clay Institute Millennium Problems. The Riemann zeta function is given by
+%\[
+%\zeta (s) = \sum_{n=1}^\infty \frac{1}{n^s}.
+%\]
+%\begin{enumerate}[(a)]
+%    \item Use the integral test to show that the $p$-series
+%    \[
+%    \sum_{n=1}^\infty \frac{1}{n^2}
+%    \]
+%    converges.  Look up what this series converges to and write it down. This is $\zeta(2)$.
+%    \item Use the comparison test to show that the $p$-series
+%    \[
+%    \sum_{n=1}^\infty \frac{1}{n^3}
+%    \]
+%    converges. This converges as well to $\zeta(3)$. Look up what this approximate value is.
+%\end{enumerate}
+%\end{problem}
 
-\begin{problem}
-Consider the two series
-\[
-\cos(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!} \qquad \textrm{and} \qquad \sin(x) = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!}.
-\]
-\begin{enumerate}[(a)]
-    \item Show that $\cos(-x)=\cos(x)$.
-    \item Show that $\sin(-x)=-\sin(x)$.
-    \item To take a derivative of a power series $f(x) = \displaystyle{\sum_{n=0}^\infty a_n x^n}$ we can do the following: 
-    \[
-    \frac{d}{dx}f(x) = \frac{d}{dx} \sum_{n=0}^\infty a_n x^n = \sum_{n=0}^\infty a_n \frac{d}{dx} x^n.
-    \]
-    Compute $\frac{d}{dx} \sin(x)$ and $\frac{d}{dx} \cos(x)$ and show that they are equal to what you already know. \emph{Warning: be careful with the powers of $x$ in the case with $\sin$ and $\cos$!}
-\end{enumerate}
-\end{problem}
+%\begin{problem}
+%Find the radius of convergence for the following power series
+%\begin{enumerate}[(a)]
+%    \item $\displaystyle{\sum_{n=1}^\infty \frac{x^n}{n(n+1)}}$;
+%    \item $\displaystyle{\sum_{n=0}^\infty \frac{x^{2n+1}}{(2n+1)!}}$.
+%\end{enumerate}
+%\end{problem}
+
 
 \begin{problem} Consider the function
 \[
@@ -78,6 +80,28 @@ f(x)=\frac{1}{1-x}.
 
 \begin{problem}
 How can we approximate a (possibly complicated) function by using a power series? Why is this useful (specifically for computation on a computer)?
+\end{problem}
+
+\begin{problem}[Explicit Euler Method]
+	Consider the differential equation $x'=kx$ where $k\in \C$ is a complex parameter for the system. Note that the solution to this equation given the initial condition $x(0)=1$ is $x=e^{kt}$. 
+	\begin{enumerate}[(a)]
+		\item Suppose we want to find an approximation to a solution using a computer. Let $t_0$ be some arbitrary time, define $\delta t$ to some fixed change in the input variable $t$ and let $\delta x =x(t_0+\delta t)-x(t_0)$ be the corresponding change in the output $x$. Compute the first order Taylor approximation of $x$ at the point $t_0$ to see that
+		\begin{equation}
+			\label{eq:1}
+		x(t_0+\delta t) \approx x(t_0)+x'(t_0)(\delta t)
+		\end{equation}
+		from which you can then note that
+		\begin{equation}
+			\label{eq:2}
+		x'(t_0) \approx \frac{\delta x}{\delta t}
+		\end{equation}
+	\item Define the \emph{explicit Euler approximation sequence} $\{x_\tau\}_{\tau=0}^T$ so that $x(t_0)=x_0$ and at later times $x(t_0+\tau\delta t)=x_\tau$. Show using the previous equations, the ODE itself, and the fact that $x_{\tau-1}+\delta x = x_{\tau}$ means can make a sequence
+	\[
+	x_{\tau} = x_{\tau-1} + kx_{\tau-1} \delta t.
+	\]
+	\item Let $k=1$, $\delta t = 0.01$, $t_0=0$, and let $x(0)=1$. Plot the explicit Euler approximation sequence using the following URL \url{http://www.calcul.com/show/calculator/recursive}. Compare this graph to the solution $x(t)=e^{t}$.
+	\item Let $k=-1$, $\delta t = 2$, $t_0=0$, and let $x(0)=1$. Plot the approximation again. Is there something wrong? How does this compare to what the solution should be?
+	\end{enumerate}
 \end{problem}
 
 

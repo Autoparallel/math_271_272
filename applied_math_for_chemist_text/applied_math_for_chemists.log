@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.23)  28 SEP 2021 17:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.23)  30 SEP 2021 08:41
 entering extended mode
 **./applied_math_for_chemists.tex
 (applied_math_for_chemists.tex
@@ -2024,22 +2024,18 @@ Underfull \vbox (badness 4981) has occurred while \output is active []
 
  [140]
 [141] [142] [143] [144] [145]
-Package pdftex.def Info: Option `bb' equivalent to `viewport' with the pdftex d
-river on input line 771.
 <Figures/Angular_velocity.png, id=2055, 1284.8pt x 970.62625pt>
 File: Figures/Angular_velocity.png Graphic file (type png)
 <use Figures/Angular_velocity.png>
 Package pdftex.def Info: Figures/Angular_velocity.png  used on input line 771.
-(pdftex.def)             Requested size: 127.95337pt x 127.96658pt.
-Package pdftex.def Info: Option `bb' equivalent to `viewport' with the pdftex d
-river on input line 782.
+(pdftex.def)             Requested size: 127.95337pt x 96.65361pt.
 <Figures/507px-Right_hand_rule_cross_product.png, id=2056, 508.90125pt x 460.72
 125pt>
 File: Figures/507px-Right_hand_rule_cross_product.png Graphic file (type png)
 <use Figures/507px-Right_hand_rule_cross_product.png>
 Package pdftex.def Info: Figures/507px-Right_hand_rule_cross_product.png  used 
 on input line 782.
-(pdftex.def)             Requested size: 127.95337pt x 127.96658pt.
+(pdftex.def)             Requested size: 127.95337pt x 115.83382pt.
  [146]) [147 <./Figures/Angular_velocity.png> <./Figures/507px-Right_hand_rule_
 cross_product.png>]
 Chapter 9.
@@ -3004,10 +3000,10 @@ ed.
 (rerunfilecheck)             Checksum: B2FEE19CAD4A1C18BFCFC9428E5B6915;32612.
  ) 
 Here is how much of TeX's memory you used:
- 51363 strings out of 478927
- 1181088 string characters out of 2852535
+ 51364 strings out of 478927
+ 1181105 string characters out of 2852535
  1618894 words of memory out of 3000000
- 66873 multiletter control sequences out of 15000+600000
+ 66874 multiletter control sequences out of 15000+600000
  531589 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,22n,145p,1122b,2679s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3059,7 +3055,7 @@ b><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/sym
 bols/msam10.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/amsfonts/symbols/msbm10.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fon
 ts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on applied_math_for_chemists.pdf (358 pages, 15423906 bytes).
+Output written on applied_math_for_chemists.pdf (358 pages, 15423766 bytes).
 PDF statistics:
  4375 PDF objects out of 5155 (max. 8388607)
  1291 named destinations out of 1440 (max. 500000)

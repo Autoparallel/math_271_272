@@ -144,7 +144,7 @@ V(x)=\begin{cases} 0 & \textrm{if } 0<x<L\\
 \]
 This gives rise to the boundary value problem
 \[
--\frac{\hbar^2}{2m}\frac{d^2\Psi}{dx^2}=E\psi
+-\frac{\hbar^2}{2m}\frac{d^2\Psi}{dx^2}=E\Psi
 \]
 with boundary conditions $\Psi(0)=0$ and $\Psi(L)=0$. This should look much like the eigenfunction equation for the Laplacian we saw previously. These boundary conditions will seem more sensible when we get a better interpretation of the wavefunction $\Psi$. If you'd like, you can essentially plug in $V(x)=\infty$ and see that the only possibility for a solution is that $\Psi(x)=0$ (but this is a bit handwavy). 
 
@@ -299,7 +299,7 @@ More generally, due to the orthonormality of the stationary states, we can write
     \item The equation for the 1-Dimensional box is the same as the eigenfunctions of the Laplacian equation shown before. That is, we have $V(x)=0$ and we allow for $x$ to be in the range $[0,L]$ and get the equation
     \begin{align*}
         H\Psi &= E \Psi\\
-        -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\Psi = E \Psi.
+        -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\Psi &= E \Psi.
     \end{align*}
     \item We solved this equation as a second order linear equation and used the boundary values to determine possible solutions.  It turns out that we get a quantized set of solutions $\psi_n$ each corresponding to an energy level $E_n$. These energy levels were given by $E_n = \frac{n^2 \hbar^2 \pi^2}{2mL}$ and so the energies increase proportionally to $n^2$. We can see a plot of energies here.
     \begin{figure}[H]

@@ -13,10 +13,19 @@
 \end{center}
 \vspace{.5cm}
 
+    \item For polynomials $f,g\in P_3(\C)$, define an inner product
+    \[
+\langle f,g\rangle \coloneqq \int_{-1}^1 fg^* dx.
+\]
+    Show (or find in the text) evidence that the basis $B_L$ is orthonormal.
+    \item Find the projection of $f(x)=x$ onto the basis function $f_3$.
+
+legendre eigenfunctions
+
 \begin{problem}
 Compute the following:
 \begin{enumerate}[(a)]
-    \item 
+    \item
     \[
     [A]=\begin{pmatrix} 1& 1& 1 \end{pmatrix}
     \begin{pmatrix} 2\\ 1\\ 3 \end{pmatrix}.
@@ -51,7 +60,7 @@ A linear transformation $T\colon \R^3 \to \R^3$ is given by the matrix
     \item Compute how $T$ transforms the standard basis elements for $\R^3$. That is, find
     \[
     T(\xhat), \qquad
-    T(\yhat), \qquad 
+    T(\yhat), \qquad
     T(\zhat)
     \]
     and relate these values to the columns of $[T]$.
@@ -61,7 +70,7 @@ A linear transformation $T\colon \R^3 \to \R^3$ is given by the matrix
 \end{problem}
 
 \begin{problem}
-Consider some linear transformation $T\colon \R^n \to \R^m$.  Let $\vecv_1, \dots, \vecv_k$ be vectors in $\operatorname{Null}(T)$.  
+Consider some linear transformation $T\colon \R^n \to \R^m$.  Let $\vecv_1, \dots, \vecv_k$ be vectors in $\operatorname{Null}(T)$.
 \begin{enumerate}[(a)]
     \item Show that the span of these vectors is also in the nullspace of $T$.
     \item How many linearly independent vectors can be in the nullspace?
@@ -104,7 +113,7 @@ Compute the following determinants:
     -3& 2 & 1
     \end{array}\right|
     \]
-    \item 
+    \item
     \[
     \det([B])=\left| \begin{array}{ccc}
     1& 2& 3\\
@@ -129,7 +138,7 @@ Given the matrices
 [A]=\begin{pmatrix} 1 & 0 & 2 \\ 2  & 1 & 3 \\ -2 & -2 & 0 \end{pmatrix} \qquad \textrm{and} \qquad [B]=\begin{pmatrix} -3 & 1 & 1 \\ 2 & -2 & 4 \\ -1 & -1 & -1 \end{pmatrix}.
 \]
 \begin{enumerate}[(a)]
-    \item Compute $\tr([A])$ and $\tr([B])$.  
+    \item Compute $\tr([A])$ and $\tr([B])$.
     \item Compute $\tr([A][B])$ and compare it to $\tr([B][A])$.
 \end{enumerate}
 \end{problem}

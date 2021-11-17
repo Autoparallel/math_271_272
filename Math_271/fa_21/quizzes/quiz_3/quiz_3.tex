@@ -5,78 +5,152 @@
 \begin{document}
 \pagenumbering{gobble}       % This kills the page numbering
 
+
 \begin{center}
    \textsc{\large MATH 271, Quiz 2}\\
-   \textsc{Due October 9$^\textrm{th}$ at the end of class}
+   \textsc{Due September 17$^\textrm{th}$ at the end of class}
 \end{center}
 
 \vspace{1cm}
 
-\noindent\textbf{Instructions} \; You are allowed a textbook, homework, notes, worksheets, material on our Canvas page, but no other online resources (including calculators or WolframAlpha) for this quiz.  \textbf{Do not discuss any problem any other person.} All of your solutions should be easily identifiable and supporting work must be shown.  Ambiguous or illegible answers will not be counted as correct.
+\makebox[.8\textwidth]{Name:\enspace\hrulefill}
+
+\vspace{.5cm}
+
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{|c|c|c|c||c|}
+\hline
+    \textrm{Problem 1} & \textrm{Problem 2} & \textrm{Problem 3} & \textrm{Problem 4}  & \qquad\textrm{Total}\qquad\qquad\\
+\hline
+~ & ~ & ~ & ~ &  ~\\
+~ & ~ & ~ & ~ &  ~\\
+~ & ~ & ~ & ~ &  ~\\
+\hline
+    \textbf{8 pts.} & \textbf{4 pts.} & \textbf{6 pts.} & \textbf{4 pts.} &  \textbf{20 pts.}\\
+\hline
+\end{tabular}
+\end{center}
 
 
 \vspace*{.5cm}
 \hrule
 \vspace*{.5cm}
 
-\begin{center}\textbf{\large THERE ARE 6 TOTAL PROBLEMS.}\normalsize \end{center}
+\noindent \textbf{\large There are 4 problems worth a total of 22 points.}\\
+\noindent \textbf{\large The quiz will be graded out of 20.}
 
-\begin{problem} For the following, say whether the statement is true or false. For full credit, justify your answer with an explanation.
+\normalsize
+
+\vspace*{.5cm}
+\hrule
+\vspace*{.5cm}
+
+
+\begin{center}\fbox{\fbox{\parbox{6in}{\textbf{Instructions:} \; You are allowed a textbook, homework, notes, worksheets, and material on our Canvas page, but no other online resources (including calculators or WolframAlpha) for this quiz.  \textbf{Do not discuss any problem any other person.} All of your solutions should be easily identifiable and supporting work must be shown.  Ambiguous or illegible answers will not be counted as correct. Staple your work to this sheet.}}}\end{center}
+
+
+\vspace*{0.5cm}
+
+
+
+\begin{problem} ~
 \begin{enumerate}[(a)]
-    \item \textbf{(2 pts.)} If the sequence $a_n \to 0$, then $\displaystyle{\sum_{n=1}^\infty a_n}$ converges.
-    \item \textbf{(2 pts.)} The power series $\displaystyle{\sum_{n=1}^\infty x^n}$ has an infinite radius of convergence.
+\item \textbf{(3 pts.)} Give a definition of a sequence and explain the difference between a sequence and series. (\emph{This does not need to be overly precise!})
+
+\item \textbf{(3 pts.)} Give a definition for a sequence to converge to a limit $L$. How can you use this to give a definition for a series to converge? (\emph{Again, this does not need to be overly precise!})
+
+    \item \textbf{(2 pts.)} Explain why the following statement is true or false. To show the statement is true, provide a sound argument. To show a statement is false, you need only provide a counter example.\\
+
+\emph{If the sequence $a_n \to 0$, then $\displaystyle{\sum_{n=1}^\infty a_n}$ converges.}
+
 \end{enumerate}
 \end{problem}
 
 \begin{problem}
-\textbf{(3 pts.)} What is the derivative of the power series
+Note that the power series for $\sin(x)$ is given by
 \[
-f(x) = \sum_{n=1}^\infty \frac{x^n}{n^n}
+\sin(x) = \sum_{n=0}^\infty \frac{(-1)^{n}}{(2n+1)!}x^{2n+1}.
 \]
-\end{problem}
-
-
-
-\begin{problem}
-\textbf{(3 pts.)} What is the antiderivative of the power series
+\begin{enumerate}[(a)]
+\item \textbf{(2 pts.)} To third order, we have
 \[
-g(x) = \sum_{n=0}^\infty (n+1)x^n
+\sin(x) \approx x -\frac{x^3}{6}.
 \]
+Approximate $\sin(\pi)$ and compare to to the true answer ($\sin(\pi)=0$). \emph{Hint: you can assume $\pi \approx 3$.}
+\item \textbf{(2 pts.)} Write down the power series for $\sin(3x^3)$.
+\end{enumerate}
 \end{problem}
 
+\vspace*{0.5cm}
+%\begin{problem}~
+%\begin{enumerate}[(a)]
+%\item \textbf{(2 pts.)} Compute the derivative of the power series
+%\[
+%f(x) = \sum_{n=1}^\infty \frac{x^n}{n^n}.
+%\]
+%\item \textbf{(2 pts.)} Compute the antiderivative of the power series
+%\[
+%g(x) = \sum_{n=0}^\infty (n+1)x^n.
+%\]
+%\end{enumerate}
+%\end{problem}
 
-\begin{problem}
-\textbf{(3 pts.)} For what values of $x$ does the above series $g(x)$ converge? In other words, what is the radius of convergence?
-\end{problem}
-\vspace*{.5cm}
 
 \begin{problem}~
 \begin{enumerate}[(a)]
-    \item \textbf{(3 pts.)} Write down the first order approximation to $\tan(x)$ about the point $x=0$.
-    \item \textbf{(2 pts.)} Explain how you would determine a higher order approximation.
+\item \textbf{(2 pts.)} Consider the recursive sequence
+\[
+a_{n} = \frac{1}{2} a_{n-1}
+\]
+with the base case $a_0=1$. Show that the formula for $a_n$ is
+\[
+a_n = \frac{1}{2^n}.
+\]
+\item \textbf{(2 pts.)} Consider the power series with these coefficients
+\[
+f(x)=\sum_{n=0}^\infty a_n x^n = \sum_{n=0}^\infty \frac{x^n}{2^n}.
+\]
+Argue that
+\[
+f(x)=\frac{2}{2-x}.
+\]
+\emph{Hint: can you think of this as a geometric series?}
+\item \textbf{(2 pts.)} Compute the derivative of $f(x)$ using the power series representation.
 \end{enumerate}
 \end{problem}
 
-\newpage
 
-\begin{problem}
-\textbf{(2 pts.)} Consider the differential equation
+\begin{problem} Consider the function
 \[
-x' = t^2 + \tan(x).
+f(x)=\sqrt{x}.
 \]
-Explain how you can use a first order approximation to $\tan(x)$ to approximate the above (nonlinear) equation as a first order linear equation. \textcolor{red}{Should say something about initial conditions}
+\begin{enumerate}[(a)]
+\item \textbf{(2 pts.)} Find the second order Taylor approximation to $f(x)$ at the point $x=1$.
+\item \textbf{(2 pts.)} Consider the nonlinear 2$\textrm{nd}$ order autonomous equation
+\[
+x'' + x' + \sqrt{x} = 0.
+\]
+How could we make an approximate ODE using Taylor approximations?
+\end{enumerate}
 \end{problem}
 
+%\begin{problem}~
+%\begin{enumerate}[(a)]
+%    \item \textbf{(3 pts.)} Write down the first order approximation to $\tan(x)$ about the point $x=0$.
+%    \item \textbf{(2 pts.)} Explain how you would determine a higher order approximation.
+%\end{enumerate}
+%\end{problem}
+
+
+%\begin{problem}
+%\textbf{(2 pts.)} Consider the differential equation
+%\[
+%x' = t^2 + \tan(x).
+%\]
+%Explain how you can use a first order approximation to $\tan(x)$ to approximate the above (nonlinear) equation as a first order linear equation. \textcolor{red}{Should say something about initial conditions}
+%\end{problem}
 
 
 
-
-
-
-
-
-
-
-
-
-\end{document}  
+\end{document}

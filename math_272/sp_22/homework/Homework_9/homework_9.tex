@@ -1,0 +1,119 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+\newcommand{\innprod}[2]{\langle #1, #2 \rangle}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Homework 9}\\
+   \textsc{Due May 3$^\textrm{rd}$}
+\end{center}
+\vspace{.5cm}
+
+
+\begin{problem}
+	Let $\Psi(x)$ be a complex function with domain $[0,L]$.  Show that multiplication by a global phase $e^{i\theta}$ does not affect the norm of $\Psi(x)$ under the Hermitian (integral) inner product. In more generality, this shows that you cannot fully determine a quantum state -- there will always be an undetermined phase. \emph{For simplicity, use the inner product for the particle in the box.}
+\end{problem}
+
+\begin{problem}
+	Consider the real function $f(x)=1$ on the domain $[0,L]$.
+	\begin{enumerate}[(a)]
+		\item What is the norm of $f$, $\|f\|$?
+		\item Normalize $f(x)$.
+		\item Find a nonzero normalized polynomial of degree $\leq 1$ that is orthogonal to $f(x)$.
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}
+	A wavefunction $\Psi(x)$ for a particle in the 1-dimensional box $[0,L]$ could be written as a superposition of normalized states
+	\[
+	\psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right).
+	\]
+	That is,
+	\[
+	\Psi(x) = \sum_{n=1}^\infty a_n \psi_n(x),
+	\]
+	for some choice of the coefficients $a_n$.
+	\begin{enumerate}[(a)]
+		\item Let $a_n = \frac{\sqrt{6}}{n\pi}$. Show that $\Psi(x)$ is normalized. \emph{Hint: first, use orthogonality of the states $\psi_n(x)$ to your advantage. Then you will need to know what an infinite series evaluates to. Use a tool like WolframAlpha to evaluate this series.}
+		\item Note that we can approximate $\Psi(x)$ by taking a finite sum approximation up to some chosen $N$ by
+		\[
+			\Psi(x) \approx \sum_{n=1}^N a_n \psi_n(x).
+		\]
+		Plot the approximation of $\Psi(x)$ for $N=1,5,50,100$.  \emph{Hint: you can modify my Desmos examples.}
+		\end{enumerate}
+\end{problem}
+
+%\begin{problem}
+%	Suppose we have two vectors $\vecu,\vecv \in \R^3$.  We can compute the distance between the vectors
+%	\[
+%	d(\vecu,\vecv) = \|\vecu-\vecv\| = \sqrt{(\vecu-\vecv)\cdot(\vecu-\vecv)}.
+%	\]
+%	That is to say, we inherit not only a norm from an inner product, but a distance function from a norm!  Intuitively, we are finding the length (or norm) of the vector extending from the head of $\vecv$ to the head of $\vecu$.
+%	\begin{enumerate}[(a)]
+%		\item Show that
+%		\[
+%		d(\vecu,\vecv) = \sqrt{\|\vecu\|^2+\|\vecv\|^2-2\vecu\cdot \vecv}.
+%		\]
+%		\item Compute the distance between vectors $\vecu=\xhat + \zhat$ and $\vecv = \xhat - \yhat$.  
+%		\item Extend this notion to compute the distance between the Legendre polynomials $f_1,f_2\colon [-1,1] \to \R$ where $f_1(x)=\sqrt{\frac{3}{2}}x$ and $f_2(x)=\sqrt{\frac{5}{8}}\left(1-3x^2\right)$. \emph{Hint: make sure you use the correct integral inner product for this domain!}
+%	\end{enumerate}
+%\end{problem}
+
+\begin{problem}
+  When making a measurement of the position of the particle, we will use the \emph{position operator} $x$.  This is the same as the variable $x$ in the original problem statement, but it is also an operator!
+   \begin{enumerate}[(a)]
+   		\item Show that the position operator $x$ is Hermitian.
+   		\item We can compute the expected position of a particle with wavefunction $\Psi(x)$ by computing
+   		\[
+   		\mathbb{E}[x]=\innprod{\Psi}{x\Psi}.
+   		\]
+   		Let $\Psi(x) = \frac{1}{\sqrt{2}} \psi_1(x) + \frac{1}{\sqrt{2}} \psi_2(x)$, compute $\mathbb{E}[x]$. This value $\mathbb{E}[x]$ tells you where we expect to find the particle on average.
+        \item In fact, any real valued function $V(x)$ of the position operator $x$ is also Hermitian. Make a quick argument on why this must be true.
+   	\end{enumerate}
+\end{problem}
+
+\begin{problem}
+	Another related operator is the \emph{momentum operator} $p = -i\hbar \frac{d}{dx}$. Using integration by parts, show that this operator is Hermitian.
+\end{problem}
+
+\begin{problem}
+	We can always take products, sums, and scalar multiples of operators to build new operators.  For example, in classical physics, we have the kinetic energy
+	\[
+	T=\frac{1}{2}m \vecv \cdot \vecv,
+	\]
+	where $\vecv$ is the velocity. In 1-dimension, this reduces to the familiar $\frac{1}{2}mv^2$.  However, we can also rewrite this 1-dimensional equation using the momentum $p=mv$ which gives us the kinetic energy
+	\[
+	T=\frac{p^2}{2m}.
+	\]
+	Hence, we can define the quantum \emph{kinetic energy operator} using the above equation and the definition of $p$ from the previous problem.
+	\begin{enumerate}[(a)]
+		\item Show that $T = \frac{-\hbar^2}{2m}\frac{d^2}{dx^2}$.
+		\item Make a quick argument that shows that $T$ is Hermitian.
+		\item Again, letting $\Psi(x)=\frac{1}{\sqrt{2}}\psi_1(x)+\frac{1}{\sqrt{2}}\psi_2(x)$, compute $\mathbb{E}[T]$. The expected value $\mathbb{E}[\hat{T}]$ tells us what the observed energy will be on average. Yet, any time we measure a system we will find that energy must be one of the energy eigenvalues. Thus, for this wave function, this expected value should be the average between $E_1$ and $E_2$ which means that half the time we will measure the energy to be $E_1$ and half the time it will be $E_2$.
+	\end{enumerate}	
+\end{problem}
+
+\begin{problem}
+If we are given a potential (energy) $V(x)$ and the kinetic energy $T$, we can take their sum and form the total energy $T+V(x)$ which we call the \emph{Hamiltonian}.  Thus, in the quantum realm, we create the Hamiltonian operator $\hat{H}$ by
+\[
+H=T+V(x).
+\]
+\begin{enumerate}[(a)]
+	\item Show that the Hamiltonian operator is Hermitian. \emph{Hint: you have already done the necessary work for this. You just need to combine it and show a few steps here.}
+	\item The spectrum of the Hamiltonian tells us the possible energy eigenvalues of a quantum system. Thus, we can compute the spectrum (in this case) by solving the eigenvalue equation
+	\[
+	H\Psi(x)=E\Psi(x).
+	\]
+	Explain why the spectrum of $H$ is discrete for the particle in the box problem. \emph{Hint: We have done this exact problem before. Feel free to use that!}
+\end{enumerate}
+\end{problem}
+
+
+
+
+\end{document}

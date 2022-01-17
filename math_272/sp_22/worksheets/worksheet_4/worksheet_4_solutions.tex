@@ -1,0 +1,228 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+\usepackage{hyperref}
+
+\newcommand{\vecfieldV}{\boldsymbol{\vec{V}}}
+\newcommand{\vecfieldU}{\boldsymbol{\vec{U}}}
+\newcommand{\vecfieldW}{\boldsymbol{\vec{W}}}
+%\newcommand{\curvegamma}{\boldsymbol{\vec{\gamma}}}
+
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Worksheet 4}\\
+   \textsc{Surfaces, volumes, parameterization, and integration. \emph{Solutions}.}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+Consider the function $f(x,y)=-(x^2+y^2)+8$ defined on the domain $x,y \in [-2,2]$. 
+\begin{enumerate}[(a)]
+    \item Plot a graph of this function over the given domain.
+    \item If we were to integrate over the domain, would the integral be positive, negative, or zero? Explain.
+    \item Compute the volume under the graph of $f(x,y)$ over the given domain via a double integral.
+    \item Instead, compute the double integral over the domain $x\in [-2,2]$ and for $0<y<x$. 
+\end{enumerate}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+
+
+\begin{problem}
+    Compute the integral of the following scalar fields over the following regions.
+\begin{itemize}
+    \item $E(x,y,z) = \frac{x^2}{25} + \frac{y^2}{16} + \frac{z^2}{9}$.
+    \item $f(x,y,z) = xyz$.
+    \item $g(x,y,z) = e^x-y^2-z^2$.
+    \item $q(x,y,z) = x^2+xy+y^2+\sin(yz)$.
+\end{itemize}
+  \begin{multicols}{2}
+  \begin{enumerate}[(a)]
+      \item $\Omega_1$ is the unit cube.
+      \item $\Omega_2$ is the unit cube along with the rectangular prism given by $2<x<3$, $2<y<4$, and $-1<z<1$.
+      \item $\Omega_3$ is the portion of the unit cube left over after slicing diagonally by the plane given by the equation $x+y+z=\frac{1}{2}$. Specifically, take the region left \underline{under} the plane and in the unit cube.
+  \end{enumerate}
+  \end{multicols}  
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\begin{problem}
+    Plot the following surfaces and determine the surface normal $\unitvec$.
+\begin{enumerate}[(a)]
+    \item The graph of $f(x,y)=\sin(\sin(x^3)\sin(y^3))$.
+    \item The level (implicit) surface $\left(\sqrt{x^2+y^2}-5\right)^2 + z^2 - 3^2 = 0$.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\begin{problem}
+    Can the implicit surface defined by
+    \[
+        2y(y^2-3x^2)(1-z^2)+(x^2+y^2)^2-(9z^2-1)(1-z^2)=0,
+    \]
+    be described as the graph of a single $f(x,y)$? Explain.
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\begin{problem}
+    Find either an explicit or implicit description for the following surfaces. 
+\begin{enumerate}[(a)]
+    \item A plane passing through the point $(1,2,3)$ perpendicular to the vector $\begin{pmatrix} -3 \\ 0 \\ 1 \end{pmatrix}$.
+    \item A sphere of radius 3 centered at $(0,1,1)$.
+    \item A hyperboloid of one sheet with a ``neck" radius of $1$.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\begin{problem}
+    For the following scalar fields $f$, decide whether the level set is a surface or not. If the level set is a surface, what portions (if any) can be described as a graph $z=g(x,y)$?  What about as graphs $y=h(x,z)$ or $x=p(y,z)$? Plot after your analysis to see if your predictions are correct.
+    \begin{enumerate}[(a)]
+        \item $f(x,y,z)=xyz$ with $C=1$.
+        \item $f(x,y,z)=xyz$ with $C=0$.
+        \item $f(x,y,z) = z(x-y)+z(e^x-e^y)$ with $C=1$.
+        \item $f(x,y,z) = z + \cos(xy)$ with $C=0$.
+        \item $f(x,y,z) = z\sin(x)\sin(y)\sin(z)$ with $C=1$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\begin{problem}
+    For the sets above that do indeed describe surfaces, find the surface normal $\unitvec$ and the area form $d\Sigma$.
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\begin{problem}
+    Consider the surface of the unit cube in $\R^3$ which we'll call $\Sigma$.  Does the normal $\unitvec$ and the area form $d\Sigma$ change in smooth way as we move along the cube?  What is the (right handed) area form on each portion of the cube? Is there a well defined $\unitvec$ along edges or corners? Why does this not matter when we consider the total flux of some vector field $\vecfieldV$,
+    \[
+        \iint_\Sigma \vecfieldV \cdot \unitvec d\Sigma?
+    \]
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\begin{problem}
+    Consider the surface defined by the graph of $z = \sqrt{1-x^2-y^2}$ for $x^2+y^2\leq 1$. Become familiar with this example!
+    \begin{enumerate}[(a)]
+        \item Plot this surface.
+        \item Plot the image of following curves \underline{on the surface $\Sigma$}. 
+        \begin{itemize}
+            \item $\curvegamma_1(t) = \begin{pmatrix} t\\ 0 \end{pmatrix}$.
+            \item $\curvegamma_2(t) = \begin{pmatrix} 0 \\ t \end{pmatrix}$. 
+            \item $\curvegamma_3(t) = \begin{pmatrix} \frac{1}{2} \cos(t) \\ \frac{1}{2} \sin(t) \end{pmatrix}$.
+        \end{itemize}
+        Which (if any) correspond to a line of longitude or a line of latitude?
+        \item Find an equation for the tangent plane at the point $(0,0,1)$.
+        \item Note that the point $(0.1,0.1,1)$ is on this tangent plane.  How close is this point to corresponding point on the sphere? That is, how close is $(0.1,0.1,1)$ to the point $(0.1,0.1,\sqrt{1-(0.1)^2-(0.1)^2})$? Is the tangent plane a reasonable approximation? What if instead we take $(0.01,0.01,1)$ instead?
+        \item Find the surface normal $\unitvec$.
+        \item What is the area form $d\Sigma$?
+        \item Set up an integral that computes the surface area of $\Sigma$.
+        \item Set up an integral that computes the total flux of the vector field $\vecfieldV(x,y,z) = \begin{pmatrix} yz \\ xz \\ xy \end{pmatrix}$ through the surface.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\begin{problem}
+    Consider the surface defined by the graph of $z=\sin(x)\sin(y)$ for $0\leq x \leq \pi$ and $0\leq y\leq \pi$. 
+    \begin{enumerate}[(a)]
+        \item Consider as well the curve $\curvegamma(t) = \begin{pmatrix} t \\ t \end{pmatrix}$.  What is the area under the curve if we take its image on the surface?
+        \item Find the area form $d\Sigma$.
+        \item If we have as well a scalar function $f(x,y,z)=x^2+y^2+z^2$, compute the integral
+        \[
+        \iint_\Sigma f d\Sigma.
+        \]
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\begin{problem}
+    Our surfaces have been frozen in time.  However, essentially every physical phenomenon evolves over time.  There are a few ways surfaces arise when time is involved.  Let us consider two examples.
+    \begin{enumerate}[(a)]
+        \item Consider the two variable scalar field $T(x,t) = \sin(x)e^{-t}$ with $0\leq x \leq L$ and $t\geq 0$. 
+        \begin{itemize}
+            \item Show that this function satisfies $\left(-\frac{\partial^2}{\partial x^2} + \frac{\partial}{\partial t}\right) T(x,t)=0$. This is known as the 1-dimensional heat equation. Here $T(x,t)$ models the temperature of point $x$ at time $t$ on a rod of length $L$.
+            \item Plot the graph $z=T(x,t)$ for $0\leq x \leq L$ and $t\geq 0$.  What can we say about the temperature of the rod as $t\to \infty$?
+        \end{itemize}
+        \item Consider the three variable scalar field $u(x,y,t) = \sin(mx)\sin(ny)\sin(t)$ with $0\leq x \leq \pi$, $0\leq y \leq \pi$, $t\geq 0$, and $m$ and $n$ are positive integers.
+        \begin{itemize}
+            \item Show that this function satisfies $\left(-\frac{\partial^2}{\partial x^2}-\frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial t^2}\right)u(x,y,t) = 0.$ This is known as the 2-dimensional wave equation. Here, $u(x,y,t)$ models the height of a membrane at the point $(x,y)$ and time $t$.
+            \item Plot the graph of the surface $u(x,y,t_0)$ for various values of $t_0$, $m$ and $n$.  Or, visit \url{https://www.geogebra.org/3d/y55rd83m} to have full freedom with this surface (and watch it move over time).
+        \end{itemize}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+
+\begin{problem}
+Compute the flux of the following vector fields through the following surfaces.
+\begin{itemize}
+    \item $\vecfieldU = \begin{pmatrix} xyz \\ xyz \\ xyz \end{pmatrix}$.
+    \item $\vecfieldV = \begin{pmatrix} e^{x+y+z} \\ e^{x+y+z} \\ e^{x+y+z} \end{pmatrix}$.
+    \item $\vecfieldW = \begin{pmatrix} x \sin(y) \\ x \cos(y) \\ xz \end{pmatrix}$.
+    \item $\forcevec = \begin{pmatrix} 5 + yz \\ -5 -xz \\ xy \end{pmatrix}$.
+\end{itemize}
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+    \item $\Sigma_1$ is the unit square in the $xy$-plane.  
+    \item $\Sigma_2$ is the unit square in the $xz$-plane.
+    \item $\Sigma_3$ is the unit square in the $yz$-plane.
+    \item $\Sigma_4$ is the surface of the unit cube.
+\end{enumerate}
+\end{multicols}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\begin{problem}
+Compare the result for integrating $\vecfieldU$ from Problem 1 around $\curvegamma_1$ from Problem 8 with computing the flux of the curl of $\vecfieldU$ through $\Sigma_1$ from Problem. That is, check to see
+\[
+\int_{\curvegamma_1} \vecfieldU \cdot d\curvegamma_1 \stackrel{?}{=} \iint_{\Sigma_1} \left(\grad \times \vecfieldU \right)\cdot \unitvec d\Sigma_1.
+\]
+\emph{This result is typically referred to as Stokes' theorem. It is another way of relating an integral in a region to an integral along its boundary.}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+
+
+\end{document}

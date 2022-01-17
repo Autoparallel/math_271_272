@@ -1,0 +1,116 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+\newcommand{\grad}{\boldsymbol{\vec{\nabla}}}
+\newcommand{\curvegamma}{\boldsymbol{\vec{\gamma}}}
+\newcommand{\tangentgamma}{\boldsymbol{\dot{\vec{\gamma}}}}
+\newcommand{\normalgamma}{\boldsymbol{\ddot{\vec{\gamma}}}}
+\newcommand{\vecfieldE}{\boldsymbol{\vec{E}}}
+\newcommand{\rhat}{\boldsymbol{\hat{r}}}
+\newcommand{\thetahat}{\boldsymbol{\hat{\theta}}}
+\newcommand{\phihat}{\boldsymbol{\hat{\phi}}}
+\newcommand{\rhohat}{\boldsymbol{\hat{\rho}}}
+\newcommand{\unitvec}{\boldsymbol{\hat{n}}}
+\newcommand{\vecfieldB}{\boldsymbol{\vec{B}}}
+\newcommand{\vecfieldJ}{\boldsymbol{\vec{J}}}
+\newcommand{\vecfieldF}{\boldsymbol{\vec{F}}}
+\newcommand{\vecfieldV}{\boldsymbol{\vec{V}}}
+\newcommand{\vecx}{\boldsymbol{\vec{x}}}
+
+\newcommand{\veclaplace}{\boldsymbol{\vec{\Delta}}}
+
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Homework 7}\\
+   \textsc{Due March 31$^\textrm{st}$}
+\end{center}
+\vspace{.5cm}
+
+\begin{problem}
+Previously we studied the time-independent Schr\"odinger equation. Now, we can take a look at the time-dependent version given by
+\[
+H \Psi(x,t) = i\hbar \frac{\partial}{\partial t} \Psi(x,t),
+\]
+where $H$ is the Hamiltonian operator.  Consider the situation for the free particle in the 1-dimensional box of length $L$ so that $V(x)=0$ and $\Psi(0,t)=0=\Psi(L,t)$.  
+\begin{enumerate}[(a)]
+    \item Take a separation of variables ansatz and find a set of solutions (one for every positive integer $n$) to the time-dependent equation.
+    \item Show that a super position of solutions is also a solution.
+    \item For a single state $\psi_n(x,t)$, show that 
+    \[
+    \int_0^L \left|\psi_n(x,t)\right|^2 dx,
+    \]
+    is independent of $t$. This shows that the states $\psi_n$ are \emph{stationary} since their total probability does not depend on time.
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+Maxwell's equations are given as
+\begin{align*}
+\grad \cdot \vecfieldB &= 0  & \grad \cdot \vecfieldE &= \frac{\rho}{\epsilon_0}\\
+\grad \times \vecfieldB -\mu_0 \epsilon_0\frac{\partial \vecfieldE}{\partial t}&=\mu_0 \vecfieldJ & \grad \times \vecfieldE + \frac{\partial \vecfieldB}{\partial t} &= \zerovec
+\end{align*}
+\begin{enumerate}[(a)]
+    \item Look up each of the terms in the equations above and describe them.
+    \item Describe what each equation is saying and why these are PDEs.
+    \item In the absence of all charges we will have $\vecfieldJ=\zerovec$ and $\rho=0$.  Using that and the following two facts
+    \[
+    \veclaplace \vecfieldV = \grad (\grad \cdot \vecfieldV) - \grad \times (\grad \times \vecfieldV) \qquad \textrm{and} \qquad \grad \times \frac{\partial \vecfieldV}{\partial t} = \frac{\partial}{\partial t} (\grad \times \vecfieldV),
+    \]
+    derive the vector wave equations for light
+    \[
+    \left( - \veclaplace + \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}\right) \vecfieldE = \zerovec
+    \]
+    and
+    \[
+    \left( - \veclaplace + \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}\right) \vecfieldB = \zerovec
+    \]
+    \item From the equations you derived, determine the wave speed of light in the vacuum, $c_0$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+In 3-dimensional space, we can write down the Hamiltonian operator for an electron orbiting a proton. Specifically, this is
+\[
+H = -\frac{\hbar^2}{2\mu} \Delta + V(x,y,z).
+\]
+where $\mu$ is the reduced mass and with the Coulomb potential
+    \[
+    V(x,y,z) = \frac{1}{4\pi \epsilon_0} \frac{e^2}{\sqrt{x^2+y^2+z^2}},
+    \]
+which is the electrostatic potential created by a single proton pulling on a single electron. 
+\begin{enumerate}[(a)]
+    \item Write down the time independent Schr\"odinger equation in spherical coordinates. \emph{That means you must also convert the laplacian as well.}
+    \item Take the separation of variables ansatz $\Psi(r,\theta,\phi) = R(r)Y(\theta,\phi)$ and show that the time independent equation is separable into radial and angular components.
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}[BONUS]
+The differential equation for the static magnetic field $\vecfieldB$ is given by Ampere's law
+\[
+\grad \times \vecfieldB = \mu_0 \vecfieldJ.
+\]
+This equation is solvable by the Biot-Savart law. Let us consider a loop of wire with a constant current so that
+\[
+\curvegamma(t) = \begin{pmatrix} \cos(t) \\ \sin(t) \\ 0 \end{pmatrix} \qquad t\in [0,2\pi],
+\]
+and $\vecfieldJ= J \tangentgamma(t)$ along $\curvegamma$ and is zero elsewhere. Let $\vecx = \begin{pmatrix} x \\ y \\ z \end{pmatrix}$ denote the position in space we wish to measure the magnetic field.
+\begin{enumerate}[(a)]
+    \item The Biot-Savart law says
+    \[
+    \vecfieldB(\vecx) = \frac{\mu_0}{4\pi} \int_{\curvegamma} \frac{(J d\curvegamma) \times (\vecx - \curvegamma)}{|\vecx-\curvegamma|}.
+    \]
+    Find $\vecfieldB$ using this law. \emph{Note that the magnetic field is ill defined along the current loop itself.} See \url{https://pages.uncc.edu/phys2102/online-lectures/chapter-7-magnetism/7-2-magnetic-field-biot-savart-law/example-magnetic-field-of-a-current-loop/} for help.
+    \item Draw a picture displaying what the above integral is computing.
+    \item Compute $\grad \times \vecfieldB$. Is your answer a solution to Ampere's law?
+\end{enumerate}
+\end{problem}
+ 
+
+\end{document}

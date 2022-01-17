@@ -1,0 +1,125 @@
+\documentclass[12pt]{amsbook}
+\usepackage{preamble}
+\newcommand{\vecfieldE}{\boldsymbol{\vec{E}}}
+\newcommand{\vecfieldV}{\boldsymbol{\vec{V}}}
+\newcommand{\vecfieldU}{\boldsymbol{\vec{U}}}
+\newcommand{\rhat}{\boldsymbol{\hat{r}}}
+\newcommand{\thetahat}{\boldsymbol{\hat{\theta}}}
+\newcommand{\rhohat}{\boldsymbol{\hat{\rho}}}
+\newcommand{\vecfieldW}{\boldsymbol{\vec{W}}}
+\newcommand{\curvegamma}{\boldsymbol{\vec{\gamma}}}
+\newcommand{\tangentgamma}{\boldsymbol{\dot{\vec{\gamma}}}}
+\newcommand{\grad}{\boldsymbol{\vec{\nabla}}}
+\newcommand{\R}{\mathbb{R}}
+
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\begin{center}
+   \textsc{\large MATH 272, Exam 1}\\
+   \textsc{Oral Examination Problems}\\
+   \textsc{Due one hour before your exam time slot.}
+\end{center}
+
+\vspace{1cm}
+
+\noindent\textbf{Instructions} \; You are allowed a textbook, homework, notes, worksheets, material on our Canvas page.  You can use online tools such as Desmos and Wolfram Alpha to check your work, but you will need to explain how you arrived at your answers.  You can work with other students and this is, in fact, encouraged! However, I will not be giving out direct help for these problems but can answer questions about previous problems and notes, for example. Ambiguous or illegible answers will not be counted as correct. Scan your solutions and submit them as a pdf on Canvas under Oral Exam 1.
+
+
+\vspace{1cm}
+
+
+\hrule
+
+\vspace*{1cm}
+\noindent\emph{Note, there are four total problems.}
+
+\newpage
+
+\begin{problem} Fluids flow along pressure gradients by moving towards regions of lower and lower pressure until they ultimately reach the lowest pressure region available. Let us consider a pressure scalar field
+\[
+P(x,y) = x^2+y^2
+\] 
+that describes the pressure of a fluid in a planar region and consider the curve
+\[
+\curvegamma(t) = \begin{pmatrix} 3e^{-2t} \\ 2e^{-2t} \end{pmatrix}
+\]
+for $t\in [0,\infty)$ that tracks a particle that moves in this fluid. Show that at all times $t$, the tangent vector $\tangentgamma$ is equal to the vector field given by $-\grad P$ at that point. In other words, show
+\[
+\tangentgamma(t) = -\grad P(\curvegamma(t)).
+\]
+\end{problem}
+
+\newpage
+\begin{problem}
+Consider a curve 
+\[
+\curvegamma(t) = \begin{pmatrix} \cos(t) \\ \sin(t) \\ \cos(2t) \end{pmatrix} \qquad t\in [0,2\pi].
+\]
+Imagine this curve is a wire that we dip into a soapy solution. What will the shape of the bubble that forms on this wire look like? Let's work through it.
+        \vspace*{0.25cm}
+    \begin{enumerate}[(a)]
+        \item Consider the function $f(x,y)=x^2-y^2$. Plot the graph of this function and the curve $\curvegamma$ simultaneously.
+        \vspace*{0.25cm}
+        \item Show that for points $(x,y)$ on the unit circle in the $xy$-plane that the graph of $f(x,y)$ matches the points along $\curvegamma$. \emph{Hints:}
+        \begin{itemize}
+        \item \emph{You should be able to see this in your plot from (a). This isn't proof, but it can help you visualize the problem.}
+        \item \emph{Can you parameterize the unit circle as a curve $\boldsymbol{\vec{\eta}}(t)$ and consider $f(\boldsymbol{\vec{\eta}}(t))$?}
+        \end{itemize}
+        \vspace*{0.25cm}
+        \item Show that $f(x,y)$ is harmonic. That is, show $\Delta f = 0$. This shows the bubble is a \emph{minimal surface}.
+        \vspace*{0.25cm}
+        \item Set up the integral 
+        \[
+        \int_\Sigma d\Sigma,
+        \]
+        which computes the area of the soap film. Here, $\Sigma$ is the graph of the function $f(x,y)$ with the domain given by the unit disk $x^2+y^2\leq 1$.
+        \vspace*{0.25cm}
+        \item \textrm{(BONUS)} Convert the integral in the previous part to cylindrical coordinates and find a numerical value for the integral. \emph{You will not be able to get WolframAlpha to compute this integral in cartesian coordinates -- this is another reason why using coordinate systems better suited to your problem is important!}
+    \end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem} Let us explore our other coordinate systems.
+    \begin{enumerate}[(a)]
+        \item Define a function in cylindrical coordinates that is constant on the surface of an infinitely tall cylinder of radius 1 but is not constant in all of space.
+        \vspace*{0.25cm}
+        \item Set up the bounds of an integral in spherical coordinates that integrates over an eighth of a thick spherical shell with inner radius 5 and outer radius 25. Take the eighth that lies in the octant where $x$ and $y$ are both positive.
+        \vspace*{0.25cm}
+        \item Convert the following function 
+        \[
+        f(x,y,z) = \frac{x}{y(x^2+y^2+z^2)}
+        \]
+        into spherical coordinates.
+    \end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem} 
+Consider the vector fields
+\[
+\vecfieldU = \begin{pmatrix} xy \\ z \\ z^2 \end{pmatrix} \qquad \textrm{and} \qquad \vecfieldV = \begin{pmatrix} -y \\ x \\ z \end{pmatrix}.
+\]
+        \vspace*{0.25cm}
+\begin{enumerate}[(a)]
+    \item Are either $\vecfieldU$ or $\vecfieldV$ conservative? 
+        \vspace*{0.25cm}
+    \item Show that
+    \[
+        \grad \cdot (\vecfieldU \times \vecfieldV) = \vecfieldV \cdot (\grad \times \vecfieldU) - \vecfieldU \cdot (\grad \times \vecfieldV),
+    \]
+    for the two given fields.
+        \vspace*{0.25cm}
+    \item Set up but do not evaluate the integral that computes
+    \[
+        \int_{\curvegamma} \vecfieldU \cdot d\curvegamma,
+    \]
+    for the curve $\curvegamma(t) = \begin{pmatrix} t \\ \cos(t) \\ \sin(t) \end{pmatrix}$ for $t\in [0,1]$.
+        \vspace*{0.25cm}
+    \item Set up an integral that computes the flux of $\vecfieldV$ through the unit square in the $xy$-plane.
+\end{enumerate}
+\end{problem}
+
+
+\end{document}  

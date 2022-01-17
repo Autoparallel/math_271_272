@@ -1,0 +1,115 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} %report allows for chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{preamble}
+\newcommand{\grad}{\boldsymbol{\vec{\nabla}}}
+\newcommand{\curvegamma}{\boldsymbol{\vec{\gamma}}}
+\newcommand{\tangentgamma}{\boldsymbol{\dot{\vec{\gamma}}}}
+\newcommand{\normalgamma}{\boldsymbol{\ddot{\vec{\gamma}}}}
+\newcommand{\vecfieldE}{\boldsymbol{\vec{E}}}
+\newcommand{\rhat}{\boldsymbol{\hat{r}}}
+\newcommand{\thetahat}{\boldsymbol{\hat{\theta}}}
+\newcommand{\phihat}{\boldsymbol{\hat{\phi}}}
+\newcommand{\rhohat}{\boldsymbol{\hat{\rho}}}
+\newcommand{\unitvec}{\boldsymbol{\hat{n}}}
+\newcommand{\vecfieldB}{\boldsymbol{\vec{B}}}
+\newcommand{\vecfieldJ}{\boldsymbol{\vec{J}}}
+\newcommand{\vecfieldF}{\boldsymbol{\vec{F}}}
+\newcommand{\vecfieldV}{\boldsymbol{\vec{V}}}
+\newcommand{\vecfieldU}{\boldsymbol{\vec{U}}}
+
+\begin{document}
+
+\begin{center}
+   \textsc{\large MATH 272, Homework 3}\\
+   \textsc{Due February 17$^\textrm{th}$}
+\end{center}
+\vspace{.5cm}
+
+
+\begin{problem}
+Show that for any smooth (more than twice differentiable) fields $f(x,y,z)$ and $\vecfieldV(x,y,z)$ that
+\begin{enumerate}[(a)]
+	\item $\grad \times \left(\grad f\right)=\boldsymbol{\vec{0}}$;
+	\item $\grad \cdot \left(\grad \times \vecfieldV\right)=0$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+	Let 
+	\[
+	\vecfieldU(x,y,z) = \begin{pmatrix} -y \\ x \\ 0 \end{pmatrix} \qquad \textrm{and} \qquad \vecfieldV(x,y,z) = \begin{pmatrix} 2x \\ 2y \\ 2z \end{pmatrix},
+	\] 
+	be vector fields.  
+	\begin{enumerate}[(a)]
+		\item Explain why there exists no potential function $\phi(x,y,z)$ for the vector field $\vecfieldU$.
+		\item Explain why there does exist a potential function $\phi(x,y,z)$ for the field $\vecfieldV$.
+		\item Compute the potential function for $\vecfieldV$.
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the two dimensional scalar field $T(x,y)=x+y$ that describes the temperature on the square plate $\Omega$ given by the set $0\leq x,y \leq 1$.  Compare the two answers you get!
+\begin{enumerate}[(a)]
+	\item Compute the integral
+	\[
+	\int_\Omega T d\Omega.
+	\]
+	\item Let $\curvegamma$ be the curve that traverses the boundary of the square plate in the counterclockwise direction.  Compute
+	\[
+	\int_{\curvegamma} T d\curvegamma. 
+	\]
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Let $f(x,y,z)=2xy+e^{xz}+\sin(y)$ be a scalar field. Integrate $f$ over the triangular prism $\Omega$ defined by taking the half triangle of the unit square in the $xy$-plane satisfying $x\leq y$ and with height 4 above the $xy$-plane.
+\end{problem}
+
+\begin{problem}
+Consider $f(x,y)= 3x^4+x^3-18x^2y^2-3xy^2+3y^4$. 
+\begin{enumerate}[(a)]
+    \item Show $\Delta f = 0$.
+    \item Find the surface normal to the graph of $f$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem} 
+Parameterize the following either implicitly or explicitly. In Cartesian coordinates, find the parameterization of the normal vector as well.
+\begin{enumerate}[(a)]
+	\item The plane perpendicular to the vector $\vecv = \xhat + \yhat + \zhat$ passing through the point $(1,1,1)$.
+	\item The upper half of the unit disk in the $xy$-plane.
+	\item The surface of the unit sphere in $\R^3$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Consider the following vector field
+\[
+\vecfieldE(x,y,z) = \begin{pmatrix} \frac{x}{(x^2+y^2+z^2)^{3/2}} \\ \frac{y}{(x^2+y^2+z^2)^{3/2}} \\ \frac{z}{(x^2+y^2+z^2)^{3/2}} \end{pmatrix},
+\]
+which models the electric field of a proton (in units of of charge $q=1$) placed at the origin.
+\begin{enumerate}[(a)]
+	\item Show that $\vecfieldE(x,y,z) = - \grad \phi(x,y,z)$ where $\phi(x,y,z) = \frac{1}{\sqrt{x^2+y^2+z^2}}$.  We refer to $\phi(x,y,z)$ as the electrostatic potential (or voltage).
+	\item Let $\Omega$ be a box with side lengths two centered at the origin.  Compute the total flux of $\vecfieldE$ through the surface of the box $\Sigma$. That is,
+	\[
+	\int_\Sigma \vecfieldE \cdot \unitvec d\Sigma.
+	\]
+	\item Using the provided argument, one can compute
+	\[
+	\int_\Omega \grad \cdot \vecfieldE d\Omega.
+	\]
+	\begin{itemize}
+		\item Compute $\grad \cdot \vecfieldE$ and note that this is zero everywhere except at $(x,y,z)=(0,0,0)$.
+		\item Note that the two integrals in this problem are equal. This is known as the \emph{divergence theorem} and it is a special case of a more general theorem called \emph{Stokes' theorem} which generalizes the fundamental theorem of calculus. Is it true that $\grad \cdot \vecfieldE = 0$ everywhere?
+	\end{itemize}
+	\item Does the total flux depend on the size or shape of the box?
+\end{enumerate}
+\end{problem}
+
+
+
+
+\end{document}

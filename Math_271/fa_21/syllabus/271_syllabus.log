@@ -1,299 +1,295 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.27)  24 AUG 2021 08:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.23)  13 DEC 2021 16:18
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
-**271_syllabus.tex
-(./271_syllabus.tex
-LaTeX2e <2018-12-01>
-(/usr/local/texlive/2019/texmf-dist/tex/latex/amscls/amsbook.cls
-Document Class: amsbook 2017/10/31 v2.20.4
-\linespacing=\dimen102
-\normalparindent=\dimen103
-\normaltopskip=\skip41
-(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2018/12/01 v2.17b AMS math features
-\@mathmargin=\skip42
+**./271_syllabus.tex
+(271_syllabus.tex
+LaTeX2e <2021-06-01> patch level 1
+L3 programming layer <2021-08-27>
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsbook.cls
+Document Class: amsbook 2020/05/29 v2.20.6
+\linespacing=\dimen138
+\normalparindent=\dimen139
+\normaltopskip=\skip47
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2021/04/20 v2.17j AMS math features
+\@mathmargin=\skip48
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amstext.sty
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsgen.sty
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks14
-\ex@=\dimen104
+\@emptytoks=\toks16
+\ex@=\dimen140
 ))
-(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen105
+\pmbraise@=\dimen141
 )
-(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsopn.sty
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count80
-LaTeX Info: Redefining \frac on input line 223.
-\uproot@=\count81
-\leftroot@=\count82
-LaTeX Info: Redefining \overline on input line 385.
-\classnum@=\count83
-\DOTSCASE@=\count84
-LaTeX Info: Redefining \ldots on input line 482.
-LaTeX Info: Redefining \dots on input line 485.
-LaTeX Info: Redefining \cdots on input line 606.
-\Mathstrutbox@=\box27
-\strutbox@=\box28
-\big@size=\dimen106
-LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
-\macc@depth=\count85
-\c@MaxMatrixCols=\count86
-\dotsspace@=\muskip10
-\c@parentequation=\count87
-\dspbrk@lvl=\count88
-\tag@help=\toks15
-\row@=\count89
-\column@=\count90
-\maxfields@=\count91
-\andhelp@=\toks16
-\eqnshift@=\dimen107
-\alignsep@=\dimen108
-\tagshift@=\dimen109
-\tagwidth@=\dimen110
-\totwidth@=\dimen111
-\lineht@=\dimen112
-\@envbody=\toks17
-\multlinegap=\skip43
-\multlinetaggap=\skip44
-\mathdisplay@stack=\toks18
-LaTeX Info: Redefining \[ on input line 2844.
-LaTeX Info: Redefining \] on input line 2845.
+\inf@bad=\count182
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count183
+\leftroot@=\count184
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count185
+\DOTSCASE@=\count186
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box50
+\strutbox@=\box51
+\big@size=\dimen142
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count187
+\c@MaxMatrixCols=\count188
+\dotsspace@=\muskip16
+\c@parentequation=\count189
+\dspbrk@lvl=\count190
+\tag@help=\toks17
+\row@=\count191
+\column@=\count192
+\maxfields@=\count193
+\andhelp@=\toks18
+\eqnshift@=\dimen143
+\alignsep@=\dimen144
+\tagshift@=\dimen145
+\tagwidth@=\dimen146
+\totwidth@=\dimen147
+\lineht@=\dimen148
+\@envbody=\toks19
+\multlinegap=\skip49
+\multlinetaggap=\skip50
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 377.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 376
+.
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
 \copyins=\insert199
-\abstractbox=\box29
-\listisep=\skip45
-\c@part=\count92
-\c@chapter=\count93
-\c@section=\count94
-\c@subsection=\count95
-\c@subsubsection=\count96
-\c@paragraph=\count97
-\c@subparagraph=\count98
-\c@figure=\count99
-\c@table=\count100
-\abovecaptionskip=\skip46
-\belowcaptionskip=\skip47
-\captionindent=\dimen113
-\thm@style=\toks19
-\thm@bodyfont=\toks20
-\thm@headfont=\toks21
-\thm@notefont=\toks22
-\thm@headpunct=\toks23
-\thm@preskip=\skip48
-\thm@postskip=\skip49
-\thm@headsep=\skip50
-\dth@everypar=\toks24
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2018/04/16 v5.8 Page Geometry
+\abstractbox=\box52
+\listisep=\skip51
+\c@part=\count194
+\c@chapter=\count195
+\c@section=\count196
+\c@subsection=\count197
+\c@subsubsection=\count198
+\c@paragraph=\count266
+\c@subparagraph=\count267
+\c@figure=\count268
+\c@table=\count269
+\abovecaptionskip=\skip52
+\belowcaptionskip=\skip53
+\captionindent=\dimen149
+\thm@style=\toks21
+\thm@bodyfont=\toks22
+\thm@headfont=\toks23
+\thm@notefont=\toks24
+\thm@headpunct=\toks25
+\thm@preskip=\skip54
+\thm@postskip=\skip55
+\thm@headsep=\skip56
+\dth@everypar=\toks26
+) (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks25
+\KV@toks@=\toks27
 )
-(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifvtex.sty
-Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
-Package ifvtex Info: VTeX not detected.
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/ifxetex/ifxetex.sty
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-)
-\Gm@cnth=\count101
-\Gm@cntv=\count102
-\c@Gm@tempcnt=\count103
-\Gm@bindingoffset=\dimen114
-\Gm@wd@mp=\dimen115
-\Gm@odd@mp=\dimen116
-\Gm@even@mp=\dimen117
-\Gm@layoutwidth=\dimen118
-\Gm@layoutheight=\dimen119
-\Gm@layouthoffset=\dimen120
-\Gm@layoutvoffset=\dimen121
-\Gm@dimlist=\toks26
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/parskip/parskip.sty
-Package: parskip 2019-01-16 v2.0c non-zero parskip adjustments
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count270
+\Gm@cntv=\count271
+\c@Gm@tempcnt=\count272
+\Gm@bindingoffset=\dimen150
+\Gm@wd@mp=\dimen151
+\Gm@odd@mp=\dimen152
+\Gm@even@mp=\dimen153
+\Gm@layoutwidth=\dimen154
+\Gm@layoutheight=\dimen155
+\Gm@layouthoffset=\dimen156
+\Gm@layoutvoffset=\dimen157
+\Gm@dimlist=\toks28
 
-(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
-(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
-(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-
-(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-))))
-(/usr/local/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count104
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.s
+ty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count273
 )
 Couldn't patch \@starttoc
-) (/usr/local/texlive/2019/texmf-dist/tex/latex/relsize/relsize.sty
+) (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/relsize\relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 LaTeX Info: Redefining \larger on input line 150.
 LaTeX Info: Redefining \smaller on input line 151.
 )
-(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 107.
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen122
-\Gin@req@width=\dimen123
+\Gin@req@height=\dimen158
+\Gin@req@width=\dimen159
 )
-(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf.sty
-Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf.s
+ty
+Package: epstopdf 2020-01-24 v2.11 Conversion with epstopdf on the fly (HO)
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/grfext\grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+keys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 ))
-(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
-Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
+85.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
+(grfext)             \AppendGraphicsExtensions on input line 504.
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 )))
-(/usr/local/texlive/2019/texmf-dist/tex/latex/wasysym/wasysym.sty
-Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\wasysym.sty
+Package: wasysym 2020/01/19 v2.4 Wasy-2 symbol support package
 \symwasy=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
-(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 90.
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 93.
 )
-(/usr/local/texlive/2019/texmf-dist/tex/latex/draftwatermark/draftwatermark.sty
-Package: draftwatermark 2015/02/19 1.2 Put a gray textual watermark on document
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/draftwatermark\draftwat
+ermark.sty
+Package: draftwatermark 2020/12/08 3.0 Put a gray textual watermark on document
  pages
-(/usr/local/texlive/2019/texmf-dist/tex/latex/everypage/everypage.sty
-Package: everypage 2007/06/20 1.1 Hooks to run on every page
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
+Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
+
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package color Info: Driver file: pdftex.def on input line 147.
-)
-\sc@wm@hcenter=\skip51
-\sc@wm@vcenter=\skip52
-\sc@wm@fontsize=\skip53
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen124
-\WF@size=\dimen125
-\c@WF@wrappedlines=\count105
-\WF@box=\box30
-\WF@everypar=\toks27
+Package color Info: Driver file: pdftex.def on input line 149.
+)) (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.sty
+\wrapoverhang=\dimen160
+\WF@size=\dimen161
+\c@WF@wrappedlines=\count274
+\WF@box=\box53
+\WF@everypar=\toks29
 Package: wrapfig 2003/01/31  v 3.6
-)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/soul/soul.sty
+) (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/soul\soul.sty
 Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
-\SOUL@word=\toks28
-\SOUL@lasttoken=\toks29
-\SOUL@cmds=\toks30
-\SOUL@buffer=\toks31
-\SOUL@token=\toks32
-\SOUL@spaceskip=\skip54
-\SOUL@ttwidth=\dimen126
-\SOUL@uldp=\dimen127
-\SOUL@ulht=\dimen128
+\SOUL@word=\toks30
+\SOUL@lasttoken=\toks31
+\SOUL@cmds=\toks32
+\SOUL@buffer=\toks33
+\SOUL@token=\toks34
+\SOUL@spaceskip=\skip57
+\SOUL@ttwidth=\dimen162
+\SOUL@uldp=\dimen163
+\SOUL@ulht=\dimen164
 )
-(./271_syllabus.aux)
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def
+File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count275
+\l__pdf_internal_box=\box54
+) (271_syllabus.aux)
 \openout1 = `271_syllabus.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Try loading font information for U+msa on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
+
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+wasy on input line 20.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 20
+.
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/wasysym/uwasy.fd
-File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\uwasy.fd
+File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -329,19 +325,21 @@ File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count106
-\scratchdimen=\dimen129
-\scratchbox=\box31
-\nofMPsegments=\count107
-\nofMParguments=\count108
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count109
-\MPscratchDim=\dimen130
-\MPnumerator=\count110
-\makeMPintoPDFobject=\count111
-\everyMPtoPDFconversion=\toks34
+\scratchcounter=\count276
+\scratchdimen=\dimen165
+\scratchbox=\box55
+\nofMPsegments=\count277
+\nofMParguments=\count278
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count279
+\MPscratchDim=\dimen166
+\MPnumerator=\count280
+\makeMPintoPDFobject=\count281
+\everyMPtoPDFconversion=\toks36
 )
 Overfull \hbox (1.91429pt too wide) in paragraph at lines 62--63
 []\OT1/cmr/m/it/12 Finite Di-men-sional Lin-ear Al-ge-bra and Groups\OT1/cmr/m/
@@ -349,89 +347,91 @@ n/12 . Vec-tors, ma-tri-ces, eigen-problem,
  []
 
 
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <142.26378> not available
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <149.37697> not available
 (Font)              size <24.88> substituted on input line 72.
 
-LaTeX Font Info:    Calculating math sizes for size <142.26378> on input line 7
+LaTeX Font Info:    Calculating math sizes for size <149.37697> on input line 7
 2.
 
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <99.5842> not available
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <104.56342> not available
 (Font)              size <24.88> substituted on input line 72.
 
 
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <71.13188> not available
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <74.68848> not available
 (Font)              size <24.88> substituted on input line 72.
 
 
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <142.26378> not available
-
-(Font)              size <24.88> substituted on input line 72.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <99.5842> not available
-(Font)              size <24.88> substituted on input line 72.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <71.13188> not available
-(Font)              size <24.88> substituted on input line 72.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <142.26378> not available
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <149.37697> not available
 
 (Font)              size <24.88> substituted on input line 72.
 
 
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <99.5842> not available
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <104.56342> not available
+
 (Font)              size <24.88> substituted on input line 72.
 
 
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <71.13188> not available
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <74.68848> not available
 (Font)              size <24.88> substituted on input line 72.
 
 
-LaTeX Font Warning: Font shape `U/wasy/m/n' in size <142.26378> not available
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <149.37697> not available
+
 (Font)              size <24.88> substituted on input line 72.
 
 
-LaTeX Font Warning: Font shape `U/wasy/m/n' in size <99.5842> not available
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <104.56342> not available
+
 (Font)              size <24.88> substituted on input line 72.
 
 
-LaTeX Font Warning: Font shape `U/wasy/m/n' in size <71.13188> not available
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <74.68848> not available
 (Font)              size <24.88> substituted on input line 72.
 
-[1{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Font Warning: Font shape `U/wasy/m/n' in size <149.37697> not available
+(Font)              size <24.88> substituted on input line 72.
+
+
+LaTeX Font Warning: Font shape `U/wasy/m/n' in size <104.56342> not available
+(Font)              size <24.88> substituted on input line 72.
+
+
+LaTeX Font Warning: Font shape `U/wasy/m/n' in size <74.68848> not available
+(Font)              size <24.88> substituted on input line 72.
+
+[1{C:/Users/colin/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
 Overfull \hbox (2.2518pt too wide) in paragraph at lines 76--77
 []\OT1/cmr/bx/n/12 Academic In-tegrity: \OT1/cmr/m/n/12 Don't cheat. Check out 
 \OT1/cmtt/m/n/12 http://tilt.colostate.edu/integrity
  []
 
-[2] (./271_syllabus.aux)
+[2] (271_syllabus.aux)
 
 LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 117.38377pt have occurred.
+(Font)              up to 124.49696pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 4194 strings out of 492609
- 55000 string characters out of 6129048
- 134690 words of memory out of 5000000
- 7868 multiletter control sequences out of 15000+600000
- 16326 words of font info for 66 fonts, out of 8000000 for 9000
+ 4845 strings out of 478927
+ 68362 string characters out of 2852535
+ 380111 words of memory out of 3000000
+ 22458 multiletter control sequences out of 15000+600000
+ 416155 words of font info for 79 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 37i,12n,34p,861b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
-></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
-usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr
-/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
-local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/l
-ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on 271_syllabus.pdf (2 pages, 96622 bytes).
+ 71i,15n,80p,625b,395s stack positions out of 5000i,500n,10000p,200000b,80000s
+<C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmbx12.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmcsc10.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmmi12.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/colin/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/colin/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/colin/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/colin/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on 271_syllabus.pdf (2 pages, 108948 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 49 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

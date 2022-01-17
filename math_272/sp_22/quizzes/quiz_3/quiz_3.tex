@@ -1,0 +1,117 @@
+\documentclass[12pt]{amsbook}
+\usepackage{preamble}
+
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\begin{center}
+   \textsc{\large MATH 271, Quiz 2}\\
+   \textsc{Due March 19$^\textrm{th}$ at the end of class}
+\end{center}
+
+\vspace{1cm}
+
+\noindent\textbf{Instructions} \; You are allowed a textbook, homework, notes, worksheets, material on our Canvas page, but no other online resources (including calculators or WolframAlpha) for this quiz.  \textbf{Do not discuss any problem any other person.} All of your solutions should be easily identifiable and supporting work must be shown.  Ambiguous or illegible answers will not be counted as correct.
+
+
+\vspace*{.5cm}
+\hrule
+\vspace*{.5cm}
+
+\begin{center}\textbf{\large THERE ARE 7 TOTAL PROBLEMS.}\normalsize \end{center}
+
+\begin{problem} For the following, say whether the statement is true or false. For full credit, justify your answer with an explanation.
+\begin{enumerate}[(a)]
+    \item \textbf{(2 pts.)} A partial differential equation must always have initial conditions.
+    \item \textbf{(2 pts.)} The Dirichlet boundary conditions for the heat equation specify a specific temperature at each point along the boundary of the domain.
+    \item \textbf{(2 pts.)} The 1-dimensional wave equation
+    \[
+    \left(-\frac{\partial^2}{\partial x^2}+\frac{1}{c^2} \frac{\partial^2}{\partial t^2}\right) u(x,t) =0
+    \]
+    with $c>0$ will reach an equilibrium position as we let $t\to \infty$ regardless of the initial conditions $u(x,0)$ and $\frac{\partial}{\partial t} u(x,0)$.
+\end{enumerate}
+\end{problem}
+\vspace*{.5cm}
+
+\begin{problem}
+Let us take a discrete set of points on a line like so
+\begin{figure}[H]
+    \centering
+	\resizebox{.9\columnwidth}{!}{\input{figures/equally_spaced_line_points.pdf_tex}}
+\end{figure}
+A discrete version of the 1-dimensional Poisson equation
+\[
+-k\frac{d^2}{dx^2} u(x) = f(x),
+\] 
+can be written for each of the interior points as
+\[
+-k \frac{u_{j+1} - 2 u_j + u_{j-1}}{\delta x^2} = f(x_j).
+\]
+Here, $\delta x$ is the distance between each particle, $k\neq 0$ is the strength of a spring connecting each particle, $u_j$ describes the height of the particle above the $x$-axis, and $f(x_j)$ is the force acting on particle $j$. 
+
+\begin{enumerate}[(a)]
+    \item \textbf{(2 pts.)} True or false. The force on particle $j$ does not affect particle $j+2$. Explain.
+    \item \textbf{(2 pts.)} Neumann boundary conditions prescribe values for
+    \[
+        \frac{\partial}{\partial x} u(0) \qquad \textrm{and} \qquad \frac{\partial}{\partial x} u(1).
+    \]
+    Explain why in this approximation we would instead prescribe a value for
+    \[
+    \frac{u_1-u_2}{\delta x}  \qquad \textrm{and} \qquad \frac{u_{n} - u_{n-1}}{\delta x}.
+    \]
+    \emph{Hint: think about what happens as you consider the continuum limit (i.e., $n\to \infty$)}.
+    \item \textbf{(2 pts.)} In general, what are the equations for the boundary particles 1 and $n$?
+\end{enumerate}
+\end{problem}
+\vspace*{.5cm}
+
+\begin{problem}
+\textbf{(3 pts.)} Consider the Helmholtz equation
+\[
+\Delta f = -k^2 f,
+\]
+where $\Delta$ is the Laplacian. Suppose that $f_1$ is a solution with $k=k_1$ and $f_2$ is a solution with $k=k_2$ and suppose further that $k_1 \neq k_2$. Show that 
+\[
+f = f_1+f_2
+\]
+is \emph{not} a solution to the Helmholtz equation. 
+\end{problem}
+\vspace*{.5cm}
+
+\begin{problem}
+\textbf{(BONUS 2 pts.)} Argue that the previous problem would yield a solution if $k_1=k_2$.
+\end{problem}
+\vspace*{.5cm}
+
+\begin{problem}
+Consider the 1-dimensional heat equation.
+\begin{enumerate}[(a)]
+    \item \textbf{(2 pts.)} Let the domain be $\Omega = [0,1]$ with the boundary conditions 
+        \[
+    \frac{\partial}{\partial x}u(0,t)=0 \qquad \textrm{and} \frac{\partial}{\partial x} u(1,t)=0.
+    \]
+    Show that $u_n(x,t) = A_n e^{n^2 \pi^2 t}\cos(n\pi x)$ satisfies the boundary conditions for any integer $n$.
+    \item \textbf{(2 pts.)} Using your solution in (a), find the particular solution that satisfies the initial condition $u(x,0)=13 \cos(18\pi x)$.
+\end{enumerate}
+\end{problem}
+\vspace*{.5cm}
+
+\begin{problem}
+\textbf{(3 pts.)} Find the solution to the wave equation on $\mathbb{R}$ with $c=1$ using d'Alembert's formula with the initial conditions
+\[
+u(x,0)=0 \qquad \textrm{and} \qquad \frac{\partial}{\partial t} u(x,0) = 1.
+\]
+\end{problem}
+\vspace*{.5cm}
+
+\begin{problem}
+\textbf{(BONUS 3 pts.)}  Let $u(x,t)$ be a solution to the heat equation with time dependent heat sources given by $f(x,t)$. That is, $u(x,t)$ solves the equation
+    \[
+    \frac{\partial}{\partial t} u(x,t) = k\frac{\partial^2}{\partial x^2}u(x,t) + f(x,t).
+    \]
+    Show that equilibrium can only be achieved if $\lim_{t\to \infty} f(x,t) = g(x)$.
+\end{problem}
+
+
+\end{document}  

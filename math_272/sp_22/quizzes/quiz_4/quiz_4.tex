@@ -1,0 +1,81 @@
+\documentclass[12pt]{amsbook}
+\usepackage{preamble}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\innprod}[2]{\langle #1, #2 \rangle}
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\begin{center}
+   \textsc{\large MATH 271, Quiz 4}\\
+   \textsc{Due April 30$^\textrm{th}$ at the end of class}
+\end{center}
+
+\vspace{1cm}
+
+\noindent\textbf{Instructions} \; You are allowed a textbook, homework, notes, worksheets, material on our Canvas page, but no other online resources (including calculators or WolframAlpha) for this quiz.  \textbf{Do not discuss any problem any other person.} All of your solutions should be easily identifiable and supporting work must be shown.  Ambiguous or illegible answers will not be counted as correct.
+
+
+\vspace*{.5cm}
+\hrule
+\vspace*{.5cm}
+
+\begin{center}\textbf{\large THERE ARE 4 TOTAL PROBLEMS.}\normalsize \end{center}
+
+\begin{problem} For the following, decide whether the statment is \textbf{true} or \textbf{false}. For full credit, provide an explanation for your answer.
+\begin{enumerate}[(a)]
+    \item \textbf{(2 pts.)} Consider the differential operator $\frac{d}{dx}$. Then the function $f(x)=1$ is an eigenfunction with eigenvalue 0.
+    \item \textbf{(2 pts.)} Let $f(x)$ and $g(x)$ be two complex valued functions defined on $[0,L]$. Then we say $f(x)$ and $g(x)$ are orthogonal if
+    \[
+    \innprod{f}{g} = \int_0^L f(x)g^*(x)dx = 0.
+    \]
+    \item \textbf{(2 pts.)} Let $f(x)$ be a complex valued function defined on all of $\R$. Then we say $f(x)$ is normalized if
+    \[
+    \sqrt{\innprod{f}{f}} = \sqrt{\int_{-\infty}^\infty f(x)f^*(x)dx} = 1.
+    \]
+    \item \textbf{(2 pts.)} Suppose that we are given a wavefunction $\Psi(x)$ for a free particle in a box $[0,L]$ and let $\psi_n(x)$ denote the normalized states for $n=1,2,3,\dots$. Then, we can write
+    \[
+    \Psi(x) = \sum_{n=1}^\infty a_n \psi_n(x)dx
+    \]
+    with 
+    \[
+    a_n = \innprod{\Psi}{\psi_n} = \int_0^L \Psi(x) \psi_n^*(x)dx.
+    \]
+    \item \textbf{(2 pts.)} Let $\delta(x)$ be the Dirac delta. Then
+    \[
+    \int_{-\infty}^\infty \delta(x-3) f(x)dx = f(0).
+    \]
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+\textbf{(4 pts.)} Consider the quantum harmonic oscillator with $x$ the position operator and $p$ the momentum operator and note that both operators are self adjoint (Hermitian). Define the \emph{lowering operator}
+\[
+a = \sqrt{\frac{m\omega}{2\hbar}} \left(x+\frac{i}{m\omega} p\right).
+\]
+Show, using the definition of the adjoint (i.e., in terms of the inner product) that the adjoint is given by
+\[
+a^\dagger = \sqrt{\frac{m\omega}{2\hbar}} \left(x-\frac{i}{m\omega} p\right).
+\]
+\emph{Hint: you really don't need to know any more than what I've given you here except for the definition of the inner product. Recall that it is defined by an integral and the domain for the QHO is all of $\R$.} \emph{Optional: if you feel like you can't work this out, try to provide your best reasoning as to why this is true.}
+\end{problem}
+
+\begin{problem}
+\textbf{(2 pts.)} Define $f(x)$ by the Fourier series
+\[
+f(x) = \sum_{n=-\infty}^\infty a_n e^{2\pi i n x}.
+\]
+Describe/explain the roles of $a_n$ and $e^{2\pi i n x}$ in some mathematical or physical way. \emph{Just do your best here!}
+\end{problem}
+
+
+\begin{problem}
+\textbf{(BONUS 4 pts.)} We say that an operator $\mathcal{U}$ is \emph{unitary} if
+\[
+\innprod{\mathcal{U}\Psi}{\mathcal{U}\Phi}= \innprod{\Psi}{\Phi}.
+\]
+Show that it must be that $\mathcal{U}$ has an inverse $\mathcal{U}^{-1}$ and moreover that the inverse is the adjoint  $\mathcal{U}^{-1} = \mathcal{U}^\dagger$.
+\end{problem}
+
+
+\end{document}  

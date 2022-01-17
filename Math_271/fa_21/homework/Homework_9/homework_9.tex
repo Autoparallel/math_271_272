@@ -5,22 +5,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{preamble}
 
+
+\newcommand{\vhat}{\boldsymbol{\hat{v}}}
+\newcommand{\ehat}{\boldsymbol{\hat{e}}}
+\newcommand{\Span}{\operatorname{Span}}
+
 \begin{document}
 
 \begin{center}
    \textsc{\large MATH 271, Homework 9}\\
-   \textsc{Due November 13$^\textrm{th}$}
+   \textsc{Due December 3$^\textrm{rd}$}
 \end{center}
 \vspace{.5cm}
-
-    \item For polynomials $f,g\in P_3(\C)$, define an inner product
-    \[
-\langle f,g\rangle \coloneqq \int_{-1}^1 fg^* dx.
-\]
-    Show (or find in the text) evidence that the basis $B_L$ is orthonormal.
-    \item Find the projection of $f(x)=x$ onto the basis function $f_3$.
-
-legendre eigenfunctions
 
 \begin{problem}
 Compute the following:
@@ -59,21 +55,13 @@ A linear transformation $T\colon \R^3 \to \R^3$ is given by the matrix
 \begin{enumerate}[(a)]
     \item Compute how $T$ transforms the standard basis elements for $\R^3$. That is, find
     \[
-    T(\xhat), \qquad
-    T(\yhat), \qquad
-    T(\zhat)
+    T(\ehat_1), \qquad
+    T(\ehat_2), \qquad
+    T(\ehat_3)
     \]
     and relate these values to the columns of $[T]$.
-    \item Are the vectors $T(\xhat)$, $T(\yhat)$, and $T(\zhat)$ linearly independent? Do these vectors form a basis for $\R^3$?
-    \item If we apply this linear transformation to the unit cube (that is, all points who have $(x,y,z)$ coordinates with $0\leq x \leq 1$, $0\leq y \leq 1$, and $0\leq z \leq 1$), what will the volume of the transformed cube be? (\emph{Hint: the determinant of this matrix $[T]$ provides us this information.})
-\end{enumerate}
-\end{problem}
-
-\begin{problem}
-Consider some linear transformation $T\colon \R^n \to \R^m$.  Let $\vecv_1, \dots, \vecv_k$ be vectors in $\operatorname{Null}(T)$.
-\begin{enumerate}[(a)]
-    \item Show that the span of these vectors is also in the nullspace of $T$.
-    \item How many linearly independent vectors can be in the nullspace?
+    \item Is the transformed basis $T(\ehat_1)$, $T(\ehat_2)$, and $T(\ehat_3)$ linearly independent? Do these vectors form a basis for $\R^3$?
+    \item If we apply this linear transformation to the unit cube (that is, all points who have $(x,y,z)$ coordinates with $0\leq x \leq 1$, $0\leq y \leq 1$, and $0\leq z \leq 1$), what will the volume of the transformed cube be? (\emph{Hint: use the determinant.})
 \end{enumerate}
 \end{problem}
 
@@ -97,17 +85,17 @@ where
 \]
 \begin{enumerate}[(a)]
     \item Are the columns of $[A]$ linearly independent or dependent? Explain.
-    \item What vector(s) $\vecv$ satisfy this equation? In other words, what is $\Null([A])$?
-    \item Using what you found above, what must $\det([A])$ be equal to? \emph{Hint: you do not need to compute the determinant!}
+    \item What vector(s) $\vecv$ satisfy this equation? In other words, what is $\ker[A]$?
+    \item Using what you found above, what must $\det[A]$ be equal to? \emph{Hint: you do not need to compute the determinant!}
 \end{enumerate}
 \end{problem}
 
 \begin{problem}
-Compute the following determinants:
+Compute the following.
 \begin{enumerate}[(a)]
     \item
     \[
-    \det([A])=\left| \begin{array}{ccc}
+    \det[A]=\left| \begin{array}{ccc}
     -3& 1 & 5\\
     -3& 4 & 2\\
     -3& 2 & 1
@@ -115,32 +103,99 @@ Compute the following determinants:
     \]
     \item
     \[
-    \det([B])=\left| \begin{array}{ccc}
+    \det[B]=\left| \begin{array}{ccc}
     1& 2& 3\\
     4& 5& 6\\
     7& 8& 9
     \end{array}\right|
     \]
     \item Compute $\det([A][B])$ using properties of the determinant. \emph{Hint: this should be very quick to do. Do not compute the product of the matrices $[A]$ and $[B]$!}
+    \item Compute $\tr([C])$ and $\tr([D])$ where
+    \[
+[C]=\begin{pmatrix} 1 & 0 & 2 \\ 2  & 1 & 3 \\ -2 & -2 & 0 \end{pmatrix} \qquad \textrm{and} \qquad [D]=\begin{pmatrix} -3 & 1 & 1 \\ 2 & -2 & 4 \\ -1 & -1 & -1 \end{pmatrix}.
+\]
+    \item Compute $\tr([C][D])$ and compare it to $\tr([D][C])$.
+\end{enumerate}
+\end{problem}
+
+
+
+\begin{problem}
+Consider some linear transformation $T\colon \R^n \to \R^m$.  Let $\vecv_1, \dots, \vecv_k$ be vectors in the kernel $\ker(T)$.
+\begin{enumerate}[(a)]
+    \item Show that the span of these vectors is also in the kernel of $T$.
+    \item How many linearly independent vectors can be in the kernel? Give bounds using $n$ and $m$.
 \end{enumerate}
 \end{problem}
 
 \begin{problem}~
+    Suppose that the operator $T\colon V \to V$ has a nonzero kernel (e.g., some vector $\vecv$ other than $\zerovec$ is in the kernel). Prove that $T$ has no inverse. \emph{Hint: this means you can construct a vector that is not in the image of $T$!}
+\end{problem}
+
+\begin{problem}
+The previous problem will be very helpful for these two parts.
 \begin{enumerate}[(a)]
-    \item What does a zero determinant indicate about the solutions of a non-homogeneous system of linear equations? (Think geometrically!)
-    \item What does a zero determinant indicate about the solutions of a homogeneous system of linear equations? (Think geometrically!)
+    \item Let $T\colon V\to V$ be an operator such that $\det [T]=0$. Explain why there exists a solution to the homogeneous equation $S\vecu = \zerovec.$
+    \item Suppose $S\colon V \to V$ is another operator such that $\det [S] \neq 0$. Explain why there exists a solution to the inhomogeneous equation $S\vecv = \vecw$ for any $\vecw \in V$.
 \end{enumerate}
 \end{problem}
 
 \begin{problem}
-Given the matrices
+Prove that the eigenvectors with eigenvalue 0 of an operator $T\colon V \to V$ correspond to vectors in the kernel of $T$.
+\end{problem}
+
+\begin{problem}
+Consider the linear operator $J\colon \R^2 \to \R^2$ defined by
 \[
-[A]=\begin{pmatrix} 1 & 0 & 2 \\ 2  & 1 & 3 \\ -2 & -2 & 0 \end{pmatrix} \qquad \textrm{and} \qquad [B]=\begin{pmatrix} -3 & 1 & 1 \\ 2 & -2 & 4 \\ -1 & -1 & -1 \end{pmatrix}.
+J(\ehat_1) = \ehat_2 \qquad \textrm{and} \qquad J(\ehat_2) = -\ehat_1.
 \]
 \begin{enumerate}[(a)]
-    \item Compute $\tr([A])$ and $\tr([B])$.
-    \item Compute $\tr([A][B])$ and compare it to $\tr([B][A])$.
+    \item Show that operator polynomial
+    \[
+    P(J) \coloneqq J^2 + I \colon \R^2 \to \R^2
+    \]
+    annihilates $\R^2$. Or, said another way, show that every $\vecv \in \R^2$ is in the kernel of $P(J)$.
+    \item Show that the characteristic polynomial of $J$ is
+    \[
+    p(\lambda) = \lambda^2 + 1.
+    \]
+    Does this coincide with $P(J)$? \emph{If need be, use your matrix representation $[J]$ from the previous homework.}
+    \item Compute the eigenvalues $\lambda_1$ and $\lambda_2$ of $J$.
+    \item Compute the corresponding eigenvectors of $J$.
+    \item If we don't allow for complex scalars, $J$ has no eigenvalues. However, $J^2$ does have only real eigenvalues. Using (a), show that $J$ has eigenvalue $\lambda=-1$ with eigenvectors $\ehat_1$ and $\ehat_2$.
+    \item (Bonus) Can you argue that any nonzero rotation of $\R^2$ must have imaginary eigenvalues?
 \end{enumerate}
 \end{problem}
+
+\begin{problem} For this problem, we will consider eigenvectors of three operators that act on the space of analytic functions $C^\omega(\C)$. Your goal should be to realize that these correspond to differential equations you have seen before.
+\begin{enumerate}[(a)]
+    \item Take the operator $\frac{d}{dx}\colon C^\omega(\C)\to C^\omega(\C)$. Show that the exponential $e^{kx}\in C^\omega(\C)$ is an eigenvector (or eigenfunction) with eigenvalue $k$. Write down the corresponding ODE. \emph{Hint: just by doing the problem properly, you will probably write down the ODE.}
+    \item Take the operator $\frac{d^2}{dx^2}\colon C^\omega(\C)\to C^\omega(\C)$. Show that there are two eigenfunctions $e^{i\omega x}$ and $e^{-i\omega x}$ with eigenvalue $-\omega^2$. Write down the corresponding ODE. \emph{Hint: just by doing the problem properly, you will probably write down the ODE.}
+    \item Take the operator $x\frac{d}{dx} \colon C^\omega(\C) \to C^\omega(\C)$. Find the eigenfunctions to this operator using the fact that this corresponds to a separable ODE.
+\end{enumerate}
+\end{problem}
+
+\begin{problem} Consider the Legendre polynomials
+    \[
+        B_L = \left\{f_0 = \sqrt{\frac{1}{2}}, ~ f_1 = \sqrt{\frac{3}{2}}x, ~ f_2 = \sqrt{\frac{5}{8}} (1-3x^2),~ f_3=\sqrt{\frac{63}{8}}\left(x-\frac{5x^3}{3}\right) \right\}
+    \]
+which form a basis for $P_3(\C)$.
+\begin{enumerate}[(a)]
+    \item For polynomials $f,g\in P_3(\C)$, define an inner product
+    \[
+\langle g,h\rangle \coloneqq \int_{-1}^1 gh^* dx.
+\]
+    Show (or find in the text or previous homeworks) evidence that the basis $B_L$ is orthonormal with respect to this inner product.
+    \item Consider the operator
+    \[
+    \mathcal{L} \coloneqq (1-x^2)\frac{d^2}{dx^2} - 2x \frac{d}{dx} \colon P_3(\C) \to P_3(\C).
+    \]
+    Show that $\mathcal{L}$ is linear.
+    \item Show that each Legendre polynomial $f_i$ is an eigenvector (or eigenfunction) of $\mathcal{L}$. What are the corresponding eigenvalues? How do these eigenvalues correspond to the $m$ that appears in Legendre's equation (see the section in our text).
+\end{enumerate}
+\end{problem}
+
+
+
 
 \end{document}

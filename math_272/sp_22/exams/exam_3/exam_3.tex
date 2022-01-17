@@ -1,0 +1,103 @@
+\documentclass[12pt]{amsbook}
+\usepackage{preamble}
+%\newcommand{\vecy}{\boldsymbol{\vec{y}}}
+%\newcommand{\vecu}{\boldsymbol{\vec{u}}}
+%\newcommand{\vecv}{\boldsymbol{\vec{v}}}
+%\newcommand{\vecw}{\boldsymbol{\vec{w}}}
+\newcommand{\R}{\mathbb{R}}
+
+
+\begin{document}
+\pagenumbering{gobble}       % This kills the page numbering
+
+\begin{center}
+   \textsc{\large MATH 272, Exam 3}\\
+   \textsc{Oral Examination Problems}\\
+   \textsc{Due one hour before your exam time slot.}
+\end{center}
+
+\vspace{1cm}
+
+\noindent\textbf{Instructions} \; You are allowed a textbook, homework, notes, worksheets, material on our Canvas page.  You can use online tools such as Desmos and Wolfram Alpha to check your work, but you will need to explain how you arrived at your answers.  You can work with other students and this is, in fact, encouraged! However, I will not be giving out direct help for these problems but can answer questions about previous problems and notes, for example. Ambiguous or illegible answers will not be counted as correct. Scan your solutions and submit them as a pdf on Canvas under Oral Exam 3.
+
+
+\vspace{1cm}
+
+
+\hrule
+
+\vspace*{1cm}
+\noindent\emph{Note, there are three total problems.}
+
+\newpage
+\begin{problem}
+Consider the function $f(x)=x-\frac{1}{2}$ the region $[0,1]$ which makes a sawtooth wave pattern if we repeat this function for every integer $[k,k+1]$.
+\begin{enumerate}[(a)]
+    \item Determine the coefficients of the Fourier series for the function $f(x)=x-\frac{1}{2}$. This is the Fourier transform of $f$ on the domain $[0,1]$.
+    \item Now, to simplify our analysis, we can solely use the orthonormal basis functions $\sqrt{2}\sin(2\pi n x)$ so we can write
+    \[
+        f(x) = \sum_{n=1}^\infty b_n \sqrt{2}\sin(2\pi n x).
+    \]
+    Find the coefficients $b_n$ by computing $\langle f, \sqrt{2}\sin(2\pi n x)\rangle$.
+    \item Plot an approximation by summing up the first $N=1,5,10,25,50$ terms of the sine version of series. 
+    \item What is the value of the series at $x=0$? What about $x=1$? Does this disagree with $f(x)$?
+    \item Explain why your approximation is periodic but the given function $f(x)$ is not. \emph{Hint: think about what we are using as the orthonormal basis functions!}
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+One application of the Fourier series is to solve differential equations with discontinuous terms. Take for example, the 1-dimensional elastic deformation problem
+\[
+\begin{cases}
+    \frac{d^2}{dx^2}u(x) = \delta\left(x-\frac{1}{2}\right), & \textrm{in $(0,1)$}\\
+    u(0)=u(1)=0, &\textrm{as boundary conditions}
+\end{cases}
+\]
+where $u(x)$ models the displacement of the elastic and $\delta$ is the Dirac delta. To picture this physically, imagine an elastic string attached at two endpoints 0 and 1. Then, the Dirac delta corresponds to an external force that acts akin to pressing a very tiny needle down along the halfway point of this elastic. The solution $u$ that we find is called a \emph{fundamental solution}. Though we did not reach this point in class, if we are able to solve this equation, we then have a clear method for which to solve this equation with any given right hand side. 
+\begin{enumerate}[(a)]
+    \item Note that we can put
+    \[
+    \delta\left( x - \frac{1}{2} \right) = \sum_{n=1}^\infty (-1)^n 2 \cos(2\pi n x).
+    \]
+    Plot an approximate of this function by summing up to $N=1,5,10,25,50$. 
+    \item Now, let us assume that we can write $u(x)$ as a Fourier series in the following way
+    \[
+    u(x) = c_0 + \sum_{n=1}^\infty a_n \sqrt{2}\cos(2\pi n x) + \sum_{n=1}^\infty b_n \sqrt{2}\sin(2\pi n x).
+    \]
+    Write the Fourier series for $\frac{d^2}{dx^2}u(x)$.
+    \item Given (b), we now just have to match coefficients of the unknown Fourier series with the known Fourier series for $\delta\left( x - \frac{1}{2}\right)$. Determine the coefficients $a_n$ and $b_n$.
+    \item Finally, determine $c_0$ using our boundary conditions.
+    \item Stringing this all together, \underline{show your work} to determine the Fourier series for $u(x)$. You can compare this to the answer I have, which is
+    \[
+    u(x) = \frac{1}{24} + \sum_{n=1}^\infty \frac{(-1)^n}{2n^2\pi^2} \cos(2\pi n x).
+    \]
+    Your result should match this. At any rate, plot $u(x)$ by summing up to $N=1,5,10,25,50$.
+\end{enumerate}
+\emph{Note that there are examples of this type of solution method in the notes. See Example 10.6.1 and 10.6.2. We did not go over this method in class, so please feel free to ask questions. It is also very similar to the power series solutions for ODEs that we did cover in Math 271 -- so you compare with that as well.}
+\end{problem}
+
+
+\newpage
+\begin{problem}
+Let us use the Fourier transform to deduce the diffraction pattern of a single slit. In this case, we shine a plane wave of light from a monochromatic source towards a very thin slit. The light passes through this slit and forms a diffraction pattern on the image plane which is located a distance away from the slit such that this distance is much larger than the slit itself. One receives a pattern like this:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\textwidth]{single_slit.jpg}
+\end{figure}
+From this exercise, you will be able to realize that a diffraction pattern is created in essence by taking the Fourier transform of the apperture the light passes through. I've taken some liberty here in dropping some details, but the key fact remains.
+\begin{enumerate}[(a)]
+    \item Let us define the aperture function
+    \[
+    A(x) = \begin{cases} 1, & -\frac{1}{2} \leq x \leq \frac{1}{2}\\
+    0, &\textrm{otherwise}.
+    \end{cases}
+    \]
+    Plot this function $A(x)$ and note that this defines a slit of width 1 centered at the origin which we call the aperture. For all other $x$ values outside the range of $-\frac{1}{2} \leq x \leq \frac{1}{2}$, we can imagine there is a barrier that does not allow light to pass through.
+    \item Using WolframAlpha, compute the Fourier transform of $A(x)$ and call it $\hat{A}(k)$.
+    \item The brightness of light (or, really, the electric field strength) on the image plane is given by the function $\hat{A}^2(k)$. Plot this function. %If noPlot $\hat{A}^2(k)$ and compare this with the given image.
+    \item \textbf{BONUS:} If you are interested, attempt to repeat this for a double slit experiment.
+\end{enumerate}
+\end{problem}
+
+\end{document}  

@@ -6,16 +6,16 @@
 \usepackage{amssymb}
 \usepackage{geometry}
 \geometry{
-  top=1in,            
+  top=1in,
   inner=1in,
   outer=1in,
   bottom=1in,
-  headheight=10ex,       
-  headsep=7ex,          
+  headheight=10ex,
+  headsep=7ex,
   footskip=10ex
 }
 \usepackage{enumitem}
-% Few useful commands (our classes always meet either on Monday and Wednesday 
+% Few useful commands (our classes always meet either on Monday and Wednesday
 % or on Tuesday and Thursday)
 
 
@@ -24,7 +24,7 @@
 \calday[Tuesday]{\classday} % Tuesday
 \calday[Wednesday]{\classday} % Wednesday
 \skipday % Thursday (no class)
-\calday[Friday]{\classday} % Friday 
+\calday[Friday]{\classday} % Friday
 \skipday\skipday % weekend (no class)
 }
 
@@ -33,7 +33,7 @@
 \calday[Tuesday]{\classday} % Tuesday
 \skipday % Wednesday (no class)
 \calday[Thursday]{\classday} % Thursday
-\skipday % Friday 
+\skipday % Friday
 \skipday\skipday % weekend (no class)
 }
 
@@ -51,51 +51,166 @@
 \begin{document}
 \begin{center}
    \textsc{\large MATH 272 Calendar}\\
-   \textsc{Spring 2021}
+   \textsc{Spring 2022}
 \vspace{.5cm}
 
 \flushleft\textbf{Color coding:}
 \begin{itemize}
 \item \reading{Reading assignments to be done before class on the scheduled day.}
-\item \exam{Quizzes or exams set to take place on those days.}
+\item \exam{Exams set to take place on those days.}
 \item \hw{Assignments due on these days.}
 \item \noclass{No class on this day.}
 \end{itemize}
 
-\begin{calendar}{1/18/2021}{16} % Semester starts on 1/11/2010 and last for 16
+\begin{calendar}{1/17/2022}{16} % Semester starts on 1/11/2010 and last for 16
                     % weeks, including finals week
 \setlength{\calboxdepth}{.3in}
 \setlength{\calwidth}{\textwidth}
 
 \MTWFClass
 % schedule
-\caltexton{1}{First day, review. Functions in higher dimensions.}
-\caltextnext{Curves and velocity/acceleration vectors.}
-\caltextnext{Scalar Fields and partial differentiation.}
-\caltextnext{Vector fields and the directional derivative. Gradient.}
-\caltextnext{Cont.}
-\caltextnext{Divergence and curl of vector fields. Jacobian. Laplacian.}
-\caltextnext{\hw{Homework 1 due.}\\ Cont.}
-\caltextnext{Integration over curves.}
-\caltextnext{Cont.}
-\caltextnext{Potential functions and conservation.}
-\caltextnext{\textcolor{RoyalBlue}{\textbf{Quiz 1.}}}
-\caltextnext{\textcolor{Bittersweet}{\textbf{Homework 2 due.}}\\ Area and volume integrals.}
-\caltextnext{Surfaces. Implicit and explicit parameterizations.}
-\caltextnext{Tangent planes and normals.}
-\caltextnext{Integration over surfaces and flux.}
-\caltextnext{\noclass{Cold day.}}
+\caltexton{1}{
+\begin{itemize}[leftmargin=*]
+\item First day: syllabus and review.
+\item Functions in higher dimensions.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Curves.
+\item Velocity (tangent) and acceleration (normal) vectors.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Scalar fields.
+\item Partial derivatives.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Vector fields.
+\item Directional derivatives.
+\item Gradient.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Continue.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Divergence and curl of vector fields.
+\item Jacobian.
+\item Laplacian.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Continue.
+\item \hw{Homework 1.}
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Integration over curves.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Continue.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Potential functions.
+\item Conservative fields.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item \hw{Homework 1 Presentations.}
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Area and volume integrals.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Surfaces.
+\item Implicit and explicit parameterizations.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Tangent planes and normals.
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Integration over surfaces.
+\item Flux.
+\item \hw{Homework 2.}
+\end{itemize}
+}
+
+
+\caltextnext{OPEN}
 \caltextnext{Cont. }
-\caltextnext{\textcolor{Bittersweet}{\textbf{Homework 3 due.}}\\ Cylindrical coordinates.}
-\caltextnext{Cont.}
+\caltextnext{Cylindrical coordinates.}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item Continue.
+\item \hw{Homework 2 Presentations.}
+\end{itemize}
+}
+
 \caltextnext{Spherical coordinates.}
 \caltextnext{Open.}
 \caltextnext{Open}
-\caltextnext{\textcolor{RoyalBlue}{\textbf{Quiz 2}}\\ \textcolor{Bittersweet}{\textbf{Homework 4 due.}} }
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item \hw{Homework 3.}
+\end{itemize}
+}
+
 \caltextnext{Open.}
-\caltextnext{Open.}
-\caltextnext{\textcolor{RoyalBlue}{\textbf{Oral Exam 1.}}}
-\caltextnext{\textcolor{RoyalBlue}{\textbf{Oral Exam 1.}}}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item \hw{Homework 3 Presentations.}
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item \exam{Exam 1.}
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
+\item \exam{Exam 1.}
+\end{itemize}
+}
 
 \caltextnext{
 \begin{itemize}[leftmargin=*]
@@ -119,7 +234,6 @@
 
 \caltextnext{
 \begin{itemize}[leftmargin=*]
-\item \hw{Discussion due:\\ A mathematician's lament.}
 \item Understanding the
 \begin{itemize}
 \item Laplace
@@ -128,6 +242,7 @@
 \item wave
 \end{itemize}
 equations.
+\item \hw{Homework 4.}
 \end{itemize}
 }
 
@@ -136,13 +251,6 @@ equations.
 
 \caltextnext{
 \begin{itemize}[leftmargin=*]
-\item \noclass{Snow day.}
-\end{itemize}
-}
-
-\caltextnext{
-\begin{itemize}[leftmargin=*]
-\item \hw{Homework 5 due.}
 \item d'Alembert's solution to the wave equation.
 \end{itemize}
 }
@@ -155,24 +263,21 @@ equations.
 
 \caltextnext{
 \begin{itemize}[leftmargin=*]
-\item \exam{Quiz 3.}
-\item \hw{Discussion due:\\ Homework 5.}
-\item \hw{Discussion due:\\ The interesting utility of geometry and topology.}
+\item Time dependent Sch\"odinger equation.
 \end{itemize}
 }
 
 \caltextnext{
 \begin{itemize}[leftmargin=*]
-\item \hw{Homework 6 due.}
-\item Time dependent Sch\"odinger equation.
+\item \hw{Homework 4 Presentations.}
 \end{itemize}
 }
+
 \caltextnext{
 \begin{itemize}[leftmargin=*]
 \item Superposition states.
 \end{itemize}
 }
-
 \caltextnext{
 \begin{itemize}[leftmargin=*]
 \item Continue.
@@ -181,38 +286,38 @@ equations.
 
 \caltextnext{
 \begin{itemize}[leftmargin=*]
-\item \hw{Homework 6 discussion due.}
-\item \hw{Discussion due: Mathematics is the sense you never knew you had.}
 \item Maxwell's equations.
 \end{itemize}
 }
 
 \caltextnext{
 \begin{itemize}[leftmargin=*]
-\item \hw{Homework 7 due.}
+\item \hw{Homework 5.}
+
+\end{itemize}
+}
+
+\caltextnext{
+\begin{itemize}[leftmargin=*]
 \item PDEs in other coordinate systems.
 \end{itemize}
 }
 
 \caltextnext{
 \begin{itemize}[leftmargin=*]
-\item Continue.
+\item \hw{Homework 5 Presentations.}
 \end{itemize}
 }
 
 \caltextnext{
 \begin{itemize}[leftmargin=*]
 \item \exam{Oral Exam 2.}
-\item \hw{Homework 7 discussion due.}
-\item \textcolor{Gray}{No class.}
 \end{itemize}
 }
 
 \caltextnext{
 \begin{itemize}[leftmargin=*]
 \item \exam{Oral Exam 2.}
-\item \hw{Discussion due: Is mathematics invented or discovered?}
-\item \textcolor{Gray}{No class.}
 \end{itemize}
 }
 
@@ -235,9 +340,9 @@ equations.
 \end{itemize}
 }
 \caltextnext{
-\begin{itemize}[leftmargin=*] 
-\item \hw{Discussion due: Mathematics and music.}
+\begin{itemize}[leftmargin=*]
 \item Differential operators and domains.
+\item \hw{Homework 6.}
 \end{itemize}
 }
 
@@ -260,7 +365,7 @@ equations.
 
 \caltextnext{
 \begin{itemize}[leftmargin=*]
-\item \hw{Homework 8 due.}
+\item \hw{Homework 6 Presentations.}
 \end{itemize}
 }
 
@@ -272,7 +377,7 @@ equations.
 
 \caltextnext{
 \begin{itemize}[leftmargin=*]
-\item Fourier transform on $\mathbb{R}$ and $\mathbb{R}^n$.
+\item Fourier transform on $\mathbb{R}$.
 \end{itemize}
 }
 
@@ -284,47 +389,61 @@ equations.
 
 \caltextnext{
 \begin{itemize}[leftmargin=*]
-\item \textcolor{RoyalBlue}{\textbf{Quiz 4.}}.
-\item \hw{Homework 9 due.}
-\item \hw{Homework 8 discussion due.}
 \item Continue.
+\item \hw{Homework 7.}
 \end{itemize}
 }
 
 
 \caltextnext{
 \begin{itemize}[leftmargin=*]
-\item \hw{Homework 10 due.} 
 \item Project and review.
 \end{itemize}
 }
 
 \caltextnext{
 \begin{itemize}[leftmargin=*]
-\item Project and review.
+\item \hw{Homework 7 Presentations.}
 \end{itemize}
 }
 \caltextnext{
 \begin{itemize}[leftmargin=*]
 \item \exam{Oral Exam 3.}
-\item \hw{Homework 10 discussion due.}
-\item \noclass{No class.}
 \end{itemize}
 }
 \caltextnext{
 \begin{itemize}[leftmargin=*]
 \item \exam{Oral Exam 3.}
-\item \noclass{No class.}
 \end{itemize}
 }
 
 
 % Holidays
-\Holiday{1/18/2021}{\noclass{Martin Luther King Day.}}
-\Holiday{4/12/2021}{\noclass{Spring Break.}}
-\Holiday{4/13/2021}{\noclass{Spring Break.}}
-\Holiday{4/14/2021}{\noclass{Spring Break.}}
-\Holiday{4/16/2021}{\noclass{Spring Break.}}
+\Holiday{1/17/2022}{
+\begin{itemize}
+\item \noclass{Martin Luther King Day.}
+\end{itemize}
+}
+\Holiday{3/14/2022}{
+\begin{itemize}
+\item \noclass{Spring Break.}
+\end{itemize}
+}
+\Holiday{3/15/2022}{
+\begin{itemize}
+\item \noclass{Spring Break.}
+\end{itemize}
+}
+\Holiday{3/16/2022}{
+\begin{itemize}
+\item \noclass{Spring Break.}
+\end{itemize}
+}
+\Holiday{3/18/2022}{
+\begin{itemize}
+\item \noclass{Spring Break.}
+\end{itemize}
+}
 
 \end{calendar}
 \end{center}

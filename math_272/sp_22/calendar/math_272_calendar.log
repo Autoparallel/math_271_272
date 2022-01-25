@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.23)  17 JAN 2022 13:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.23)  25 JAN 2022 08:59
 entering extended mode
 **./math_272_calendar.tex
 (math_272_calendar.tex
@@ -273,12 +273,12 @@ ii
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 448
+LaTeX Font Info:    Trying to load font information for U+msa on input line 501
 .
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 448
+LaTeX Font Info:    Trying to load font information for U+msb on input line 501
 .
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -289,24 +289,25 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {C:/Users/colin/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2] [3]
 (math_272_calendar.aux) ) 
 Here is how much of TeX's memory you used:
- 4143 strings out of 478927
- 56113 string characters out of 2852535
- 422634 words of memory out of 3000000
- 21988 multiletter control sequences out of 15000+600000
- 406995 words of font info for 41 fonts, out of 8000000 for 9000
+ 4146 strings out of 478927
+ 56151 string characters out of 2852535
+ 429634 words of memory out of 3000000
+ 21990 multiletter control sequences out of 15000+600000
+ 407335 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,14n,66p,265b,596s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\colin\AppData\Local\MiKTeX\fonts/pk/ljfour/
-jknappen/ec/dpi600\tcrm1000.pk><C:/Users/colin/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/colin/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/colin/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/colin/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/col
-in/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb
->
-Output written on math_272_calendar.pdf (3 pages, 76978 bytes).
+jknappen/ec/dpi600\tcbx1000.pk> <C:\Users\colin\AppData\Local\MiKTeX\fonts/pk/l
+jfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/colin/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/colin/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/colin/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/colin
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Use
+rs/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb>
+Output written on math_272_calendar.pdf (3 pages, 77966 bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
+ 47 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

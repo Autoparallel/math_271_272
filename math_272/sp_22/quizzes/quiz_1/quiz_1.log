@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.23)  18 JAN 2022 12:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.23)  27 JAN 2022 13:15
 entering extended mode
 **./quiz_1.tex
 (quiz_1.tex
@@ -1414,7 +1414,7 @@ Package epstopdf Info: Source file: <figures/vecfield.eps>
 (epstopdf)                    size: 36175 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/vecfield-eps
 -converted-to.pdf figures/vecfield.eps>
-(epstopdf)             \includegraphics on input line 84.
+(epstopdf)             \includegraphics on input line 73.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -1424,7 +1424,7 @@ F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: figures/vecfield-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/vecfield-eps-converted-to.pdf>
 Package pdftex.def Info: figures/vecfield-eps-converted-to.pdf  used on input l
-ine 84.
+ine 73.
 (pdftex.def)             Requested size: 377.0444pt x 282.78987pt.
 Package epstopdf Info: Source file: <figures/vecfield_xy.eps>
 (epstopdf)                    date: 2021-09-21 21:40:26
@@ -1434,7 +1434,7 @@ Package epstopdf Info: Source file: <figures/vecfield_xy.eps>
 (epstopdf)                    size: 23105 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/vecfield_xy-
 eps-converted-to.pdf figures/vecfield_xy.eps>
-(epstopdf)             \includegraphics on input line 91.
+(epstopdf)             \includegraphics on input line 80.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -1444,7 +1444,7 @@ pdfTeX warning: pdflatex.exe (file ./figures/vecfield_xy-eps-converted-to.pdf):
 File: figures/vecfield_xy-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/vecfield_xy-eps-converted-to.pdf>
 Package pdftex.def Info: figures/vecfield_xy-eps-converted-to.pdf  used on inpu
-t line 91.
+t line 80.
 (pdftex.def)             Requested size: 199.60895pt x 149.71002pt.
 Package epstopdf Info: Source file: <figures/vecfield_xz.eps>
 (epstopdf)                    date: 2021-09-21 21:40:26
@@ -1454,7 +1454,7 @@ Package epstopdf Info: Source file: <figures/vecfield_xz.eps>
 (epstopdf)                    size: 25370 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/vecfield_xz-
 eps-converted-to.pdf figures/vecfield_xz.eps>
-(epstopdf)             \includegraphics on input line 97.
+(epstopdf)             \includegraphics on input line 86.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -1464,36 +1464,32 @@ pdfTeX warning: pdflatex.exe (file ./figures/vecfield_xz-eps-converted-to.pdf):
 File: figures/vecfield_xz-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/vecfield_xz-eps-converted-to.pdf>
 Package pdftex.def Info: figures/vecfield_xz-eps-converted-to.pdf  used on inpu
-t line 97.
+t line 86.
 (pdftex.def)             Requested size: 199.60895pt x 149.71002pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.102     \item \textbf
-                       {(2 pts.)} Does this vector field have divergence? Ex...
-[2 <./figures/vecfield-eps-converted-to.pdf>]pdfTeX warning (ext4): destination
- with the same identifier (name{page.}) has been already used, duplicate ignore
-d
+l.100 \end{problem}
+                    [2 <./figures/vecfield-eps-converted-to.pdf> <./figures/vec
+field_xy-eps-converted-to.pdf> <./figures/vecfield_xz-eps-converted-to.pdf>]pdf
+TeX warning (ext4): destination with the same identifier (name{page.}) has been
+ already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.113 \end{document}
-                     [3 <./figures/vecfield_xy-eps-converted-to.pdf> <./figures
-/vecfield_xz-eps-converted-to.pdf>] (quiz_1.aux)
+l.102 \end{document}
+                     [3] (quiz_1.aux)
 Package rerunfilecheck Info: File `quiz_1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 42661 strings out of 478927
- 992663 string characters out of 2852535
+ 42657 strings out of 478927
+ 992633 string characters out of 2852535
  1412913 words of memory out of 3000000
  59579 multiletter control sequences out of 15000+600000
  420564 words of font info for 95 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 131i,13n,136p,728b,704s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 131i,13n,136p,728b,702s stack positions out of 5000i,500n,10000p,200000b,80000s
 <C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmbsy10.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmbx12.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/
@@ -1507,12 +1503,11 @@ in/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:
 cmmib8.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmr10.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmr12.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmr8.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/colin/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on quiz_1.pdf (3 pages, 253759 bytes).
+type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/colin/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on quiz_1.pdf (3 pages, 242743 bytes).
 PDF statistics:
- 164 PDF objects out of 1000 (max. 8388607)
- 23 named destinations out of 1000 (max. 500000)
+ 155 PDF objects out of 1000 (max. 8388607)
+ 19 named destinations out of 1000 (max. 500000)
  172 words of extra memory for PDF output out of 10000 (max. 10000000)
 

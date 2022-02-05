@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.23)  18 JAN 2022 12:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.23)  27 JAN 2022 14:15
 entering extended mode
 **./homework_2.tex
 (homework_2.tex
@@ -1043,46 +1043,71 @@ Package morefloats Info: Maximum number of possible floats asked for: 36
 )
 \c@answer=\count332
 
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
+Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
+
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+
+(C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen309
+\captionmargin@=\dimen310
+\captionwidth=\dimen311
+\caption@tempdima=\dimen312
+\caption@indent=\dimen313
+\caption@parindent=\dimen314
+\caption@hangindent=\dimen315
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count333
+\c@continuedfloat=\count334
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+)
+\c@subfigure=\count335
+\c@subtable=\count336
+)
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count333
+\l__color_backend_stack_int=\count337
 \l__pdf_internal_box=\box133
 ) (homework_2.aux)
 \openout1 = `homework_2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count334
-\scratchdimen=\dimen309
+\scratchcounter=\count338
+\scratchdimen=\dimen316
 \scratchbox=\box134
-\nofMPsegments=\count335
-\nofMParguments=\count336
+\nofMPsegments=\count339
+\nofMParguments=\count340
 \everyMPshowfont=\toks55
-\MPscratchCnt=\count337
-\MPscratchDim=\dimen310
-\MPnumerator=\count338
-\makeMPintoPDFobject=\count339
+\MPscratchCnt=\count341
+\MPscratchDim=\dimen317
+\MPnumerator=\count342
+\makeMPintoPDFobject=\count343
 \everyMPtoPDFconversion=\toks56
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
@@ -1099,9 +1124,9 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
 your preamble.
- on input line 16.
+ on input line 18.
 
-Package hyperref Info: Link coloring OFF on input line 16.
+Package hyperref Info: Link coloring OFF on input line 18.
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1112,11 +1137,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count340
+\c@section@level=\count344
 )
-LaTeX Info: Redefining \ref on input line 16.
-LaTeX Info: Redefining \pageref on input line 16.
-LaTeX Info: Redefining \nameref on input line 16.
+LaTeX Info: Redefining \ref on input line 18.
+LaTeX Info: Redefining \pageref on input line 18.
+LaTeX Info: Redefining \nameref on input line 18.
  (homework_2.out) (homework_2.out)
 \@outlinefile=\write4
 \openout4 = `homework_2.out'.
@@ -1156,24 +1181,26 @@ LaTeX Info: Redefining \nameref on input line 16.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 20
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 22
 .
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
 
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
 
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 20
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 22
 .
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\uwasy.fd
@@ -1181,46 +1208,110 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 45.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 28.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 45.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 28.
 
+Package epstopdf Info: Source file: <figures/vecfield.eps>
+(epstopdf)                    date: 2021-09-21 21:40:26
+(epstopdf)                    size: 192240 bytes
+(epstopdf)             Output file: <figures/vecfield-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-09-21 21:40:26
+(epstopdf)                    size: 36175 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=figures/vecfield-eps
+-converted-to.pdf figures/vecfield.eps>
+(epstopdf)             \includegraphics on input line 31.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figures/vecfield-eps-converted-to.pdf): PD
+F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<figures/vecfield-eps-converted-to.pdf, id=30, 421.575pt x 316.18124pt>
+File: figures/vecfield-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/vecfield-eps-converted-to.pdf>
+Package pdftex.def Info: figures/vecfield-eps-converted-to.pdf  used on input l
+ine 31.
+(pdftex.def)             Requested size: 399.29463pt x 299.47794pt.
+Package epstopdf Info: Source file: <figures/vecfield_xy.eps>
+(epstopdf)                    date: 2021-09-21 21:40:26
+(epstopdf)                    size: 183852 bytes
+(epstopdf)             Output file: <figures/vecfield_xy-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-09-21 21:40:26
+(epstopdf)                    size: 23105 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=figures/vecfield_xy-
+eps-converted-to.pdf figures/vecfield_xy.eps>
+(epstopdf)             \includegraphics on input line 38.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figures/vecfield_xy-eps-converted-to.pdf):
+ PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<figures/vecfield_xy-eps-converted-to.pdf, id=31, 421.575pt x 316.18124pt>
+File: figures/vecfield_xy-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/vecfield_xy-eps-converted-to.pdf>
+Package pdftex.def Info: figures/vecfield_xy-eps-converted-to.pdf  used on inpu
+t line 38.
+(pdftex.def)             Requested size: 211.38832pt x 158.54373pt.
+Package epstopdf Info: Source file: <figures/vecfield_xz.eps>
+(epstopdf)                    date: 2021-09-21 21:40:26
+(epstopdf)                    size: 184790 bytes
+(epstopdf)             Output file: <figures/vecfield_xz-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-09-21 21:40:26
+(epstopdf)                    size: 25370 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=figures/vecfield_xz-
+eps-converted-to.pdf figures/vecfield_xz.eps>
+(epstopdf)             \includegraphics on input line 44.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figures/vecfield_xz-eps-converted-to.pdf):
+ PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<figures/vecfield_xz-eps-converted-to.pdf, id=32, 421.575pt x 316.18124pt>
+File: figures/vecfield_xz-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/vecfield_xz-eps-converted-to.pdf>
+Package pdftex.def Info: figures/vecfield_xz-eps-converted-to.pdf  used on inpu
+t line 44.
+(pdftex.def)             Requested size: 211.38832pt x 158.54373pt.
 [1
 
-{C:/Users/colin/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2] [3]
-(homework_2.aux)
+{C:/Users/colin/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./figures/vecfi
+eld-eps-converted-to.pdf> <./figures/vecfield_xy-eps-converted-to.pdf> <./figur
+es/vecfield_xz-eps-converted-to.pdf>] [2] [3] [4] [5] (homework_2.aux)
 Package rerunfilecheck Info: File `homework_2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 35316 strings out of 478927
- 838890 string characters out of 2852535
- 1246984 words of memory out of 3000000
- 52513 multiletter control sequences out of 15000+600000
- 414069 words of font info for 67 fonts, out of 8000000 for 9000
+ 36745 strings out of 478927
+ 867375 string characters out of 2852535
+ 1266497 words of memory out of 3000000
+ 53890 multiletter control sequences out of 15000+600000
+ 417142 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,10n,136p,734b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 131i,13n,136p,734b,669s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\colin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1200.pk><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbsy10.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/amsfonts/cm/cmbx12.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/
 type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/colin/AppData/Local/Programs/MiK
 TeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/colin/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/colin/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/colin/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/User
-s/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pf
-b><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cme
-xtra/cmmib8.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmr12.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmr6.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/colin/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on homework_2.pdf (3 pages, 160751 bytes).
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/colin/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/colin
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Use
+rs/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mmib10.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cmextra/cmmib8.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmr10.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/colin/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/colin/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/colin/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/colin
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on homework_2.pdf (5 pages, 279139 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
- 24 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 204 PDF objects out of 1000 (max. 8388607)
+ 48 named destinations out of 1000 (max. 500000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 

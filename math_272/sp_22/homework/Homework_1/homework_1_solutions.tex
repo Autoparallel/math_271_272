@@ -13,15 +13,42 @@
 \vspace{.5cm}
 
 \begin{problem}
-Plot the following curves and print pictures of each using GeoGebra.
+\textbf{(9 pts.)} Give a real world example of a
 \begin{enumerate}[(a)]
-	\item (Helix) $\curvegamma_1(t) = \begin{pmatrix} 3\cos(t) \\ 3\sin(t) \\ t\end{pmatrix}$, from $t=0$ to $t=2\pi$. Where might this show up? If you think about the Earth moving through space and Moon orbiting Earth, then the Moon follows a (locally) helical path.
+    \item \textbf{(3 pts.)} curve;
+    \item \textbf{(3 pts.)} scalar field;
+    \item \textbf{(3 pts.)} vector field;
+\end{enumerate}
+that take place in 3-dimensional space. (Don't use examples from this homework -- come up with your own new examples.) Explain the differences between each.
+\end{problem}
+\begin{solution}~
+\begin{enumerate}[(a)]
+    \item The position of the center of mass of a rigid body in motion. This is a function that describes a vector that changes over time, in other words $\curvegamma \colon [0,\tau ) \to \R^3$. This differs from a scalar field since it inputs a single number and outputs a vector instead of inputting a vector (or point in space) and outputting a single number. Likewise, it is different from a vector field since the input is just a single number, not a vector (or point in space)
+    \item The temperature distribution of a three dimensional object. This differs from a curve since the input depends on more than one parameter. This differs from a vector field since the output is not a vector.
+    \item The wind velocity at every point on earth. Differs from a curve since the input depends on a point in 3-dimensional space and differs from a scalar field since the output is a vector not scalar.
+\end{enumerate}
+\end{solution}
+\vspace*{1cm}
+\textcolor{red}{
+\noindent \textbf{Rubric:}
+\begin{enumerate}[(a)]
+    \item \textbf{(1 pt.)} For a valid example. \textbf{(1 pt.)} For why it isn't a scalar field. \textbf{(1 pt.)} For why it isn't a vector field.
+    \item \textbf{(1 pt.)} For a valid example. \textbf{(1 pt.)} For why it isn't a curve. \textbf{(1 pt.)} For why it isn't a vector field.
+    \item \textbf{(1 pt.)} For a valid example. \textbf{(1 pt.)} For why it isn't a curve. \textbf{(1 pt.)} For why it isn't a scalar field.
+\end{enumerate}
+}
+\newpage
 
-	\item (Falling Ball) $\curvegamma_2(t) = \begin{pmatrix} t\\  0.5t \\ 9-t^2 \end{pmatrix}$ from $t=0$ to $t=3$.
+\begin{problem}
+\textbf{(8 pts.)} Plot the following curves and print pictures of each using GeoGebra.
+\begin{enumerate}[(a)]
+	\item \textbf{(2 pts.)} (Helix) $\curvegamma_1(t) = \begin{pmatrix} 3\cos(t) \\ 3\sin(t) \\ t\end{pmatrix}$, from $t=0$ to $t=2\pi$. Where might this show up? If you think about the Earth moving through space and Moon orbiting Earth, then the Moon follows a (locally) helical path.
 
-	\item (Trefoil knot) $\curvegamma_3(t) = \begin{pmatrix} \sin(t)+2\sin(2t) \\ \cos(t)-2\cos(2t) \\ -\sin(3t) \end{pmatrix}$ from $t=0$ to $t=2\pi$. (Note that this is the simplest nontrivial \emph{knot}. See: \url{https://en.wikipedia.org/wiki/Trefoil_knot} to learn more.)
+	\item \textbf{(2 pts.)} (Falling Ball) $\curvegamma_2(t) = \begin{pmatrix} t\\  0.5t \\ 9-t^2 \end{pmatrix}$ from $t=0$ to $t=3$.
 
-	\item Create your own curve.
+	\item \textbf{(2 pts.)} (Trefoil knot) $\curvegamma_3(t) = \begin{pmatrix} \sin(t)+2\sin(2t) \\ \cos(t)-2\cos(2t) \\ -\sin(3t) \end{pmatrix}$ from $t=0$ to $t=2\pi$. (Note that this is the simplest nontrivial \emph{knot}. See: \url{https://en.wikipedia.org/wiki/Trefoil_knot} to learn more.)
+
+	\item \textbf{(2 pts.)} Create your own curve.
 \end{enumerate}
 \end{problem}
 
@@ -56,17 +83,48 @@ Plot the following curves and print pictures of each using GeoGebra.
     \caption{A knot that can be tied around a torus (i.e., the surface of a donut). The trefoil knot is also a torus knot!  $t=0$ bright green and $t=2\pi$ red.}
 \end{figure}
 \end{solution}
-
-
+\textcolor{red}{
+\noindent \textbf{Rubric:}
+\begin{enumerate}[(a)]
+    \item \textbf{(1 pt.)} Correct looking curve. \textbf{(1 pt.)} Correct starting and ending points.
+    \item \textbf{(1 pt.)} Correct looking curve. \textbf{(1 pt.)} Correct starting and ending points.
+    \item \textbf{(1 pt.)} Correct looking curve. \textbf{(1 pt.)} Correct starting and ending points.
+    \item \textbf{(1 pt.)} Valid curve. \textbf{(1 pt.)} Provides start and end points.
+\end{enumerate}
+}
 \newpage
+
 \begin{problem}
-The length of a curve is an important notion. In fact, the length of a curve is often related to the energy of some configuration. We can compute the length of a curve over the time $t=t_0$ to $t=t_1$ by integrating the \emph{speed} of the curve over that time.  That is,
+\textbf{(4 pts.)} For the helical curve $\curvegamma(t) = \begin{pmatrix} \cos(t) \\ \sin(t) \\ t \end{pmatrix}$, compute the tangent (velocity) vector and the normal (acceleration) vector as a function of $t$. Explain why there is no acceleration in the $z$-direction.
+\end{problem}
+\begin{solution}
+We have the velocity vector is
+\begin{align*}
+\tangentgamma(t) &= \begin{pmatrix} \frac{d}{dt}\cos(t) \\ \frac{d}{dt}\sin(t) \\ \frac{d}{dt}t \end{pmatrix}\\
+&= \begin{pmatrix} -\sin(t) \\ \cos(t) \\ 1 \end{pmatrix}.
+\end{align*}
+Then the acceleration vector is
+\begin{align*}
+\normalgamma(t) &= \begin{pmatrix} \frac{d^2}{dt^2}\cos(t) \\ \frac{d^2}{dt^2}\sin(t) \\ \frac{d^2}{dt^2}t \end{pmatrix}\\
+&= \begin{pmatrix} -\cos(t) \\ -\sin(t) \\ 0 \end{pmatrix}.
+\end{align*}
+We can see that the curve increases in the $z$ direction linearly with $t$. So, by taking two derivatives and computing the acceleration vector, this term disappears leaving 0 acceleration in that component.
+\end{solution}
+\textcolor{red}{
+\noindent \textbf{Rubric:}}
+\textcolor{red}{
+\textbf{(1 pt.)} Tangent vector. \textbf{(1 pt.)} Velocity vector.  \textbf{(2 pt.)} Valid explanation for why there is no acceleration.
+}
+\newpage
+
+\begin{problem}
+\textbf{(6 pts.)} The length of a curve is an important notion. In fact, the length of a curve is often related to the energy of some configuration. We can compute the length of a curve over the time $t=t_0$ to $t=t_1$ by integrating the \emph{speed} of the curve over that time.  That is,
 \[
-\ell(\curvegamma) = \int_{t_0}^{t_1} \left|\tangentgamma(t)\right| d t.
+\ell(\curvegamma) = \int_{t_0}^{t_1} \left|\tangentgamma(t)\right| \dif t.
 \]
 We can compute the \emph{energy} of a curve by taking
 \[
-E(\curvegamma) = \int_{t_0}^{t_1} \frac{1}{2} \left| \tangentgamma(t)\right|^2 d t.
+E(\curvegamma) = \int_{t_0}^{t_1} \frac{1}{2} \left| \tangentgamma(t)\right|^2 \dif t.
 \]
 Find the length and energy of the Helix from Problem 1 (a).
 \end{problem}
@@ -96,16 +154,25 @@ based on our work before and so
 E(\curvegamma) = \int_0^{2\pi} 5 dt = 10 \pi.
 \]
 \end{solution}
+\textcolor{red}{
+\noindent \textbf{Rubric:}}
+\textcolor{red}{
+\begin{itemize}
+\item \textbf{(1 pt.)} Correct set up for length. \textbf{(2 pt.)} Correct length integral.
+\item \textbf{(1 pt.)} Correct set up for energy. \textbf{(2 pt.)} Correct energy integral.
+\end{itemize}
+}
+
 
 \newpage
 \begin{problem}
-Given a scalar field of two variables $f(x,y)$, we can create an object called the \emph{graph} of $f(x,y)$ by plotting the set of points $(x,y,f(x,y))$. In fact, you have done this many times in your life. For example, you have consistently plotted the graph of a function $f(x)$ by plotting $(x,f(x))$ in the plane!
+\textbf{(12 pts.)} Given a scalar field of two variables $f(x,y)$, we can create an object called the \emph{graph} of $f(x,y)$ by plotting the set of points $(x,y,f(x,y))$. In fact, you have done this many times in your life. For example, you have consistently plotted the graph of a function $f(x)$ by plotting $(x,f(x))$ in the plane!
 
-Using GeoGebra, plot the graph of the following functions. Print these off and include them.  Also, describe the what the graph of the function does as we move along the $x$-direction, the $y$-direction, and along the direction where $y=x$. For each, use the range $-3\leq x \leq 3$ and $-3\leq y \leq 3$. Explicitly write down the function along these slices, that is, along the $x$-direction, the $y$-direction, and $y=x$ direction!
+Using GeoGebra, plot the graph of the following functions and include them with your submission.  Also, describe the what the graph of the function does as we move along the $x$-direction, the $y$-direction, and along the direction where $y=x$. For each, use the range $-3\leq x \leq 3$ and $-3\leq y \leq 3$. Explicitly write down the function along these slices, that is, along the $x$-direction, the $y$-direction, and $y=x$ direction!
 \begin{enumerate}[(a)]
-	\item $f(x,y) = \frac{4xy}{1+x^2+y^2}$.
-	\item $g(x,y) = \sin(xy)$.
-	\item $h(x,y) = \frac{-x^2-y^2}{5}$.
+	\item \textbf{(4 pts.)} $f(x,y) = \frac{4xy}{1+x^2+y^2}$.
+	\item \textbf{(4 pts.)} $g(x,y) = \sin(xy)$.
+	\item \textbf{(4 pts.)} $h(x,y) = \frac{-x^2-y^2}{5}$.
 \end{enumerate}
 \end{problem}
 \begin{solution}~
@@ -190,15 +257,23 @@ Using GeoGebra, plot the graph of the following functions. Print these off and i
     \end{figure}
 \end{enumerate}
 \end{solution}
+\textcolor{red}{
+\noindent \textbf{Rubric:}
+\begin{enumerate}[(a)]
+    \item \textbf{(1 pt.)} Correct looking surface. \textbf{(1 pt.)} Correct bounds. \textbf{(1 pt.)} Correct functions for slices $f(x,0)$, $f(0,y)$, and $f(x,x)$. \textbf{(1 pt.)} Plotted the slices as curves and not as surfaces.
+    \item \textbf{(1 pt.)} Correct looking surface. \textbf{(1 pt.)} Correct bounds. \textbf{(1 pt.)} Correct functions for slices $g(x,0)$, $g(0,y)$, and $g(x,x)$. \textbf{(1 pt.)} Plotted the slices as curves and not as surfaces.
+    \item \textbf{(1 pt.)} Correct looking surface. \textbf{(1 pt.)} Correct bounds. \textbf{(1 pt.)} Correct functions for slices $h(x,0)$, $h(0,y)$, and $h(x,x)$. \textbf{(1 pt.)} Plotted the slices as curves and not as surfaces.
+\end{enumerate}
+}
 
 \newpage
 \begin{problem}
-Let us visualize vector fields using GeoGebra (specifically \url{https://www.geogebra.org/m/u3xregNW}). Plot the following vector fields and print them out.
+\textbf{(8 pts.)} Let us visualize vector fields using GeoGebra (specifically \url{https://www.geogebra.org/m/u3xregNW}). Plot the following vector fields and print them out.
 \begin{enumerate}[(a)]
-    \item (Constant wind from the northwest) $\vecfieldV(x,y)=\begin{pmatrix} 1 \\ -1 \\ 0\end{pmatrix}$.
-    \item (Two wind fronts meeting) $\vecfieldU(x,y,z)=\begin{pmatrix} y \\ x \\ 0 \end{pmatrix}$.
-    \item (Source) $\vecfieldE(x,y,z) = \begin{pmatrix} \frac{x}{(x^2+y^2+z^2)^{3/2}} \\ \frac{y}{(x^2+y^2+z^2)^{3/2}} \\ \frac{z}{(x^2+y^2+z^2)^{3/2}} \end{pmatrix}$.
-    \item (Vortex) $\boldsymbol{\vec{S}}(x,y,z)=\begin{pmatrix} \frac{-y}{x^2+y^2+z^2} \\ \frac{x}{x^2+y^2+z^2} \\ 0\end{pmatrix}.$
+    \item \textbf{(2 pts.)} (Constant wind from the northwest) $\vecfieldV(x,y)=\begin{pmatrix} 1 \\ -1 \\ 0\end{pmatrix}$.
+    \item \textbf{(2 pts.)} (Two wind fronts meeting) $\vecfieldU(x,y,z)=\begin{pmatrix} y \\ x \\ 0 \end{pmatrix}$.
+    \item \textbf{(2 pts.)} (Source) $\vecfieldE(x,y,z) = \begin{pmatrix} \frac{x}{(x^2+y^2+z^2)^{3/2}} \\ \frac{y}{(x^2+y^2+z^2)^{3/2}} \\ \frac{z}{(x^2+y^2+z^2)^{3/2}} \end{pmatrix}$.
+    \item \textbf{(2 pts.)} (Vortex) $\boldsymbol{\vec{S}}(x,y,z)=\begin{pmatrix} \frac{-y}{x^2+y^2+z^2} \\ \frac{x}{x^2+y^2+z^2} \\ 0\end{pmatrix}.$
 \end{enumerate}
 \end{problem}
 
@@ -231,63 +306,112 @@ Let us visualize vector fields using GeoGebra (specifically \url{https://www.geo
     \end{figure}
 \end{enumerate}
 \end{solution}
+\textcolor{red}{
+\noindent \textbf{Rubric:}
+\begin{enumerate}[(a)]
+    \item \textbf{(1 pt.)} Correct looking vector field. \textbf{(1 pt.)} Plotted with software and not by hand.
+    \item \textbf{(1 pt.)} Correct looking vector field. \textbf{(1 pt.)} Plotted with software and not by hand.
+    \item \textbf{(1 pt.)} Correct looking vector field. \textbf{(1 pt.)} Plotted with software and not by hand.
+    \item \textbf{(1 pt.)} Correct looking vector field. \textbf{(1 pt.)} Plotted with software and not by hand.
+\end{enumerate}
+}
 
 
+
+%\newpage
+%\begin{problem}
+%Compute the divergence and curl of the Source and Vortex fields from Problem 4 (c) and (d).  What can we say about the divergence and curl of these fields at the origin?
+%\end{problem}
+%\begin{solution}
+%    First, let us take the curl of $\vecfieldE$.  We have
+%    \begin{align*}
+%        \grad \times \vecfieldE &= \begin{pmatrix} \frac{\partial E_3}{\partial y} - \frac{\partial E_2}{\partial z} \\ \frac{\partial E_1}{\partial z} -\frac{\partial E_3}{\partial 1} \\ \frac{\partial E_2}{\partial x} - \frac{\partial E_1}{\partial y} \end{pmatrix}\\
+%        &= \begin{pmatrix} \frac{-3yz}{(x^2+y^2+z^2)^{5/2}} - \frac{-3yz}{(x^2+y^2+z^2)^{5/2}} \\ \frac{-3xz}{(x^2+y^2+z^2)^{5/2}} - \frac{-3xz}{(x^2+y^2+z^2)^{5/2}} \\
+%        \frac{-3xy}{(x^2+y^2+z^2)^{5/2}} -\frac{-3xy}{(x^2+y^2+z^2)^{5/2}} \end{pmatrix}\\
+%        &= \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}.
+%    \end{align*}
+%    At the origin, this curl is also identically zero.  The curl of $\vecfieldE$ is simply zero everywhere.
+%
+%    Next, the curl of $\boldsymbol{\vec{S}}$,
+%        \begin{align*}
+%            \grad \times \boldsymbol{\vec{S}} &= \begin{pmatrix} 0 - \frac{-2xz}{(x^2+y^2+z^2)^2} \\ \frac{2yz}{(x^2+y^2+z^2)^2} - 0 \\
+%            \frac{-x^2+y^2+z^2}{(x^2+y^2+z^2)^2}- \frac{x^2-y^2+z^2}{(x^2+y^2+z^2)^2}\end{pmatrix}\\
+%            &= \begin{pmatrix}  \frac{2xz}{(x^2+y^2+z^2)^2} \\ \frac{2yz}{(x^2+y^2+z^2)^2} \\ \frac{z^2}{(x^2+y^2+z^2)^2}. \end{pmatrix}.
+%        \end{align*}
+%    Note that at the origin, we have a discontinuity.  Specifically, the curl at the origin will go to infinity (in each direction) at the origin since the numerator of each component of the curl is of lesser degree (2) than the denominator (4).
+%
+%    The divergence of $\vecfieldE$ is
+%    \begin{align*}
+%        \grad \cdot \vecfieldE &= \frac{\partial E_1}{\partial x} + \frac{\partial E_2}{\partial y} + \frac{\partial E_3}{\partial z}\\
+%        &= \frac{-2x^2+y^2+z^2}{(x^2+y^2+z^2)^{5/2}} + \frac{x^2-2y^2+z^2}{(x^2+y^2+z^2)^{5/2}} + \frac{x^2+y^2-2z^2}{(x^2+y^2+z^2)^{5/2}}\\
+%        &= 0.
+%    \end{align*}
+%    It appears that the divergence of this field $\vecfieldE$ is zero, however this is not actually true at the origin. We will revisit this later, but for now it should be fairly clear that the denominator goes to zero more quickly than the numerator. Indeed, we actually have
+%    \[
+%        \grad \cdot \vecfieldE = \delta(\vecx),
+%    \]
+%    where $\delta(\vecx)$ is the Dirac delta.
+%
+%    Similarly, the divergence of $\boldsymbol{\vec{S}}$
+%    \begin{align*}
+%        \grad \cdot \boldsymbol{\vec{S}} &= \frac{2xy}{(x^2+y^2+z^2)^2} + \frac{-2xy}{(x^2+y^2+z^2)^2}\\
+%        &=0.
+%    \end{align*}
+%    Once again, this appears to be zero everywhere (including the origin). But one should be weary of whether or not this is totally true!
+%\end{solution}
 
 \newpage
 \begin{problem}
-Compute the divergence and curl of the Source and Vortex fields from Problem 4 (c) and (d).  What can we say about the divergence and curl of these fields at the origin?
-\end{problem}
-\begin{solution}
-    First, let us take the curl of $\vecfieldE$.  We have
-    \begin{align*}
-        \grad \times \vecfieldE &= \begin{pmatrix} \frac{\partial E_3}{\partial y} - \frac{\partial E_2}{\partial z} \\ \frac{\partial E_1}{\partial z} -\frac{\partial E_3}{\partial 1} \\ \frac{\partial E_2}{\partial x} - \frac{\partial E_1}{\partial y} \end{pmatrix}\\
-        &= \begin{pmatrix} \frac{-3yz}{(x^2+y^2+z^2)^{5/2}} - \frac{-3yz}{(x^2+y^2+z^2)^{5/2}} \\ \frac{-3xz}{(x^2+y^2+z^2)^{5/2}} - \frac{-3xz}{(x^2+y^2+z^2)^{5/2}} \\
-        \frac{-3xy}{(x^2+y^2+z^2)^{5/2}} -\frac{-3xy}{(x^2+y^2+z^2)^{5/2}} \end{pmatrix}\\
-        &= \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}.
-    \end{align*}
-    At the origin, this curl is also identically zero.  The curl of $\vecfieldE$ is simply zero everywhere.
-
-    Next, the curl of $\boldsymbol{\vec{S}}$,
-        \begin{align*}
-            \grad \times \boldsymbol{\vec{S}} &= \begin{pmatrix} 0 - \frac{-2xz}{(x^2+y^2+z^2)^2} \\ \frac{2yz}{(x^2+y^2+z^2)^2} - 0 \\
-            \frac{-x^2+y^2+z^2}{(x^2+y^2+z^2)^2}- \frac{x^2-y^2+z^2}{(x^2+y^2+z^2)^2}\end{pmatrix}\\
-            &= \begin{pmatrix}  \frac{2xz}{(x^2+y^2+z^2)^2} \\ \frac{2yz}{(x^2+y^2+z^2)^2} \\ \frac{z^2}{(x^2+y^2+z^2)^2}. \end{pmatrix}.
-        \end{align*}
-    Note that at the origin, we have a discontinuity.  Specifically, the curl at the origin will go to infinity (in each direction) at the origin since the numerator of each component of the curl is of lesser degree (2) than the denominator (4).
-
-    The divergence of $\vecfieldE$ is
-    \begin{align*}
-        \grad \cdot \vecfieldE &= \frac{\partial E_1}{\partial x} + \frac{\partial E_2}{\partial y} + \frac{\partial E_3}{\partial z}\\
-        &= \frac{-2x^2+y^2+z^2}{(x^2+y^2+z^2)^{5/2}} + \frac{x^2-2y^2+z^2}{(x^2+y^2+z^2)^{5/2}} + \frac{x^2+y^2-2z^2}{(x^2+y^2+z^2)^{5/2}}\\
-        &= 0.
-    \end{align*}
-    It appears that the divergence of this field $\vecfieldE$ is zero, however this is not actually true at the origin. We will revisit this later, but for now it should be fairly clear that the denominator goes to zero more quickly than the numerator. Indeed, we actually have
+\textbf{(4 pts.)} Consider the vector field $\vecfieldV$ defined by
     \[
-        \grad \cdot \vecfieldE = \delta(\vecx),
+        \vecfieldV(x,y) = \begin{pmatrix} x^2 \\ xy \end{pmatrix}.
     \]
-    where $\delta(\vecx)$ is the Dirac delta.
+    Plot and label the vector field at the following points.
+\begin{enumerate}[(a)]
+    \item $\vecx_1 = (1,2)$;
+    \item $\vecx_2 = (0,-3)$;
+    \item $\vecx_3 = (-1,-1)$.
+\end{enumerate}
+\end{problem}
+\begin{solution}~
+First, let's just compute:
+\begin{align*}
+    \vecfieldV(\vecx_1) = \begin{pmatrix} 1 \\ 2 \end{pmatrix} \\
+    \vecfieldV(\vecx_2) = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \\
+    \vecfieldV(\vecx_3) = \begin{pmatrix} 1 \\ 1 \end{pmatrix} \\
+\end{align*}
+Then plot.
+    \begin{center}
+        \begin{tikzpicture}
+        \draw[thin,gray!20] (-3,-3) grid (5,5);
+        \draw[<->] (-3,0)--(5,0) node[right]{$x_1$};
+        \draw[<->] (0,-3)--(0,5) node[above]{$x_2$};
 
-    Similarly, the divergence of $\boldsymbol{\vec{S}}$
-    \begin{align*}
-        \grad \cdot \boldsymbol{\vec{S}} &= \frac{2xy}{(x^2+y^2+z^2)^2} + \frac{-2xy}{(x^2+y^2+z^2)^2}\\
-        &=0.
-    \end{align*}
-    Once again, this appears to be zero everywhere (including the origin). But one should be weary of whether or not this is totally true!
+        \draw[line width=2pt,blue,-stealth](1,2)--(2,4) node[anchor=west] at (1.5,3){$\vecfieldV(\vecx_1)$};
+        \filldraw[red] (0,-3) circle (2pt) node[anchor=west] at (0,-3){$\vecfieldV(\vecx_2)$};
+        \draw[line width=2pt, green, -stealth](-1,-1)--(0,0) node[anchor=east] at (-0.5,-0.5){$\vecfieldV(\vecx_3)$};
+
+        \end{tikzpicture}
+        \end{center}
 \end{solution}
+\textcolor{red}{
+\noindent \textbf{Rubric:}}
+\textcolor{red}{
+\textbf{(1 pt.)} Arrows are all on same graph and based at correct point.
+\begin{itemize}
+\item \textbf{(1 pt. each)} Computed and plotted correct vector for each (a), (b), and (c).
+\end{itemize}
+}
 
-
+\newpage
 \begin{problem}
-Consider the following scalar field and vector field
+\textbf{(2 pts.)} Consider the following scalar field and vector field
 \[
-f(x,y,z) = x^2+y^2-z^2 \qquad \textrm{and} \qquad \vecfieldV(x,y,z) = \begin{pmatrix} -y \\ x \\ z \end{pmatrix}.
+f(x,y,z) = x^2+y^2-z^2.
 \]
 \begin{enumerate}[(a)]
     \item Compute all first order partial derivatives of $f$.
-    \item Show that $\frac{d^2 f}{d x d y} = \frac{d^2 f}{d y d x}$.
-    \item Explain why $\vecfieldV$ has nonzero curl when $x$ and $y$ are nonzero using a physical argument. (\emph{Hint: What plane would a rod start rotating in?})
-    \item Explain why $\vecfieldV$ has nonzero divergence when $z\neq 0$ using a physical argument. (\emph{Hint: In what direction would a particle start accelerating towards infinity?})
-    \item Compute the directional derivative of $f$ at $\vecx_0 = (1,2,-3)$ in the direction of $\vecfieldV(\vecx_0)$.
+    \item Show that $\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}$.
 \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -308,51 +432,60 @@ f(x,y,z) = x^2+y^2-z^2 \qquad \textrm{and} \qquad \vecfieldV(x,y,z) = \begin{pma
     \]
     and so $\frac{d^2 f}{d x d y} = \frac{d^2 f}{d y d x}$.
 
-    \item First, here is a generic view of the vector field $\vecfieldV$.
-        \begin{figure}[H]
-        \centering
-        \includegraphics[width=.65\textwidth]{figures/6c_field}
-    \end{figure}
-        Let's examine the vector field $\vecfieldV$ by looking down at the $xy$-plane. When we do this, we see the following.
-        \begin{figure}[H]
-        \centering
-        \includegraphics[width=.65\textwidth]{figures/6c}
-        \caption{Plot looking down at the $xy$-plane shows circular motion.}
-    \end{figure}
-    Since we see vectors that would torque a rod parallel with the $xy$-plane we that for any value of $z$ there is curl. However a particle at $x=0$ and $y=0$ will not move at all.
-
-    \item Next, take a look at $\vecfieldV$ while aligning the $z$-axis vertically to see the following picture.
-        \begin{figure}[H]
-        \centering
-        \includegraphics[width=.65\textwidth]{figures/6d}
-        \caption{Plot looking down at the $xy$-plane shows circular motion.}
-    \end{figure}
-    If we place any particle with $z\neq 0$ then the particle will accelerate away from the $xy$-plane.
+%    \item First, here is a generic view of the vector field $\vecfieldV$.
+%        \begin{figure}[H]
+%        \centering
+%        \includegraphics[width=.65\textwidth]{figures/6c_field}
+%    \end{figure}
+%        Let's examine the vector field $\vecfieldV$ by looking down at the $xy$-plane. When we do this, we see the following.
+%        \begin{figure}[H]
+%        \centering
+%        \includegraphics[width=.65\textwidth]{figures/6c}
+%        \caption{Plot looking down at the $xy$-plane shows circular motion.}
+%    \end{figure}
+%    Since we see vectors that would torque a rod parallel with the $xy$-plane we that for any value of $z$ there is curl. However a particle at $x=0$ and $y=0$ will not move at all.
+%
+%    \item Next, take a look at $\vecfieldV$ while aligning the $z$-axis vertically to see the following picture.
+%        \begin{figure}[H]
+%        \centering
+%        \includegraphics[width=.65\textwidth]{figures/6d}
+%        \caption{Plot looking down at the $xy$-plane shows circular motion.}
+%    \end{figure}
+%    If we place any particle with $z\neq 0$ then the particle will accelerate away from the $xy$-plane.
+%
+%    \item To compute this directional derivative, we need to compute a few items. First, we have the gradient
+%    \[
+%        \grad f = \begin{pmatrix} 2x \\ 2y \\ -2z \end{pmatrix}.
+%    \]
+%    Next, we evaluate both $\grad f$ and $\vecfieldV$ at $\vecx_0$
+%    \[
+%    \grad f(\vecx_0) = \begin{pmatrix} 2 \\ 4 \\ 6 \end{pmatrix} \qquad \textrm{and} \qquad \vecfieldV(\vecx_0) = \begin{pmatrix} -2 \\ 1 \\ -3 \end{pmatrix}.
+%    \]
+%    Now, we need a unit vector pointing in the same direction as $\vecfieldV(\vecx_0)$ so we have
+%    \[
+%    \unitvec = \frac{1}{|\vecfieldV(\vecx_0)|} \vecfieldV(\vecx_0) = \frac{1}{\sqrt{14}} \begin{pmatrix} -2 \\ 1 \\ -3 \end{pmatrix}.
+%    \]
+%    Then, the intended directional derivative is
+%    \[
+%    \boxed{\unitvec\cdot \grad f(\vecx_0) = \frac{1}{\sqrt{14}} \begin{pmatrix} -2 \\ 1 \\ -3 \end{pmatrix} \cdot \begin{pmatrix} 2 \\ 4 \\ 6 \end{pmatrix} = \frac{-18}{\sqrt{14}}.}
+%    \]
 \end{enumerate}
-
-    \item To compute this directional derivative, we need to compute a few items. First, we have the gradient
-    \[
-        \grad f = \begin{pmatrix} 2x \\ 2y \\ -2z \end{pmatrix}.
-    \]
-    Next, we evaluate both $\grad f$ and $\vecfieldV$ at $\vecx_0$
-    \[
-    \grad f(\vecx_0) = \begin{pmatrix} 2 \\ 4 \\ 6 \end{pmatrix} \qquad \textrm{and} \qquad \vecfieldV(\vecx_0) = \begin{pmatrix} -2 \\ 1 \\ -3 \end{pmatrix}.
-    \]
-    Now, we need a unit vector pointing in the same direction as $\vecfieldV(\vecx_0)$ so we have
-    \[
-    \unitvec = \frac{1}{|\vecfieldV(\vecx_0)|} \vecfieldV(\vecx_0) = \frac{1}{\sqrt{14}} \begin{pmatrix} -2 \\ 1 \\ -3 \end{pmatrix}.
-    \]
-    Then, the intended directional derivative is
-    \[
-    \boxed{\unitvec\cdot \grad f(\vecx_0) = \frac{1}{\sqrt{14}} \begin{pmatrix} -2 \\ 1 \\ -3 \end{pmatrix} \cdot \begin{pmatrix} 2 \\ 4 \\ 6 \end{pmatrix} = \frac{-18}{\sqrt{14}}.}
-    \]
 \end{solution}
+\textcolor{red}{
+\noindent \textbf{Rubric:}}
+\textcolor{red}{
+\begin{enumerate}[(a)]
+\item \textbf{(1 pt.)} All partials are correct.
+\item \textbf{(1 pt.)} Correct work/argument showing that the derivatives commute.
+\end{enumerate}
+}
+
 
 \newpage
 \begin{problem}
-For this problem, let us consider a family of scalar fields of varying dimensionality. In the previous problem, we plotted the graph of a scalar field with two inputs, but when there are more than two inputs we must resort to other methods of visualization.
+\textbf{(12 pts.)} For this problem, let us consider a family of scalar fields of varying dimensionality. In the previous problem, we plotted the graph of a scalar field with two inputs, but when there are more than two inputs we must resort to other methods of visualization.
 
-In particular, we will seek out an understanding of the \emph{level sets} and how to relate these to the gradient of a scalar field. For each part, compute the set of points such that $f(\vecx)=\frac{1}{2}$, $f(\vecx)=1$, $f(\vecx)=2$, and $f(\vecx)=3$ and plot these sets (including all the different level sets in one plot per function).
+In particular, we will seek out an understanding of the \emph{level sets} and how to relate these to the gradient of a scalar field. For each part, compute the set of points such that $f(\vecx)=1$, $f(\vecx)=2$, and $f(\vecx)=3$ and plot these sets (including all the different level sets in one plot per function).
 
 Then for each field, compute the gradient (row) vector
 \[
@@ -360,17 +493,17 @@ Then for each field, compute the gradient (row) vector
 \]
 Finally, draw an approximation of the the gradient vector field on your plots at a three different points for each part. (\emph{Hint: think of how the gradient relates to level sets of functions!})
 \begin{enumerate}[(a)]
-	\item Consider the 1-dimensional scalar field
+	\item \textbf{(3 pts.)} Consider the 1-dimensional scalar field
 	\[
 	f(x) = |x| = \sqrt{x^2}.
 	\]
 	Here each level set will be made up of distinct points.
-	\item Consider the 2-dimensional scalar field
+	\item \textbf{(3 pts.)} Consider the 2-dimensional scalar field
 	\[
 	f(x,y) = |\vecx| = \sqrt{x^2+y^2}.
 	\]
 	Here each level set will be a curve.
-	\item Consider the 3-dimensional scalar field
+	\item \textbf{(3 pts.)} Consider the 3-dimensional scalar field
 		\[
 		f(x,y,z) = |\vecx| = \sqrt{x^2+y^2+z^2}.
 		\]
@@ -479,18 +612,28 @@ Finally, draw an approximation of the the gradient vector field on your plots at
 \end{enumerate}
 One can think of these level sets as the sets of constant energy. For example, if this function $f(x,y,z)$ describes the potential energy (which this function does for the gravitational and electrostatic force), then the level sets correspond to the circular orbits of particles in this potential field.
 \end{solution}
+\textcolor{red}{
+\noindent \textbf{Rubric:}}
+\textcolor{red}{
+\begin{enumerate}[(a)]
+\item \textbf{(1 pt.)} Correct gradient (derivative) and plot. \textbf{(1 pt.)} Correct level sets. \textbf{(1 pt.)} Correct graph of level points (they should be on the $x$-axis).
+\item \textbf{(1 pt.)} Correct gradient and plot. \textbf{(1 pt.)} Correct level curves. \textbf{(1 pt.)} Correct graph of level curves (they should be concentric circles in the plane).
+\item \textbf{(1 pt.)} Correct gradient and plot. \textbf{(1 pt.)} Correct level surfaces. \textbf{(1 pt.)} Correct graphs of level surface (they should be concentric spheres in the plane). Should be separate graphs or colored in such a way that you can tell what they are.
+\end{enumerate}
+}
+\newpage
 
 \begin{problem}
-A rough model of a molecular crystal can be described in the following way. Take the scalar function
+\textbf{(9 pts.)} A rough model of a molecular crystal can be described in the following way. Take the scalar function
 \[
 u(x,y)=\cos^2(x)+\cos^2(y).
 \]
 This function $u(x,y)$ describes the \emph{potential energy} for electrons in the crystal. Electrons are attracted to the areas with the smallest potential energy and move away from areas of high potential energy.
 \begin{enumerate}[(a)]
-    \item Plot this function and include a printout.  Notice what this looks like.  You can imagine that each of the low points (well) is where a nucleus is located in the crystal.
-    \item Plot the level curves where $u(x,y)=0$, $u(x,y)=\frac{1}{4}$, $u(x,y)=\frac{1}{2}$, and $u(x,y)=1$ for the range of values $-\frac{3\pi}{2}\leq x \leq \frac{3\pi}{2}$ and $-\frac{3\pi}{2}\leq y \leq \frac{3\pi}{2}$. Picking the constant for the level curve tells you the \emph{kinetic energy} of the electron you are looking at.  It turns out that electrons (roughly) will orbit along these level curves.  Notice, some level curves bleed into the different troughs of neighboring molecules which means that electrons of sufficient energy happily flow through the crystal. For what energy values do the electrons move throughout the whole crystal?
-    \item Find the gradient of this function $\grad u(x,y)$.
-    \item At what point(s) is the gradient zero? \emph{Hint: Use your graph of the level curves to help.}
+    \item \textbf{(1 pts.)} Plot this function and include a printout.  Notice what this looks like.  You can imagine that each of the low points (well) is where a nucleus is located in the crystal.
+    \item \textbf{(3 pts.)} Plot the level curves where $u(x,y)=0$, $u(x,y)=\frac{1}{4}$, $u(x,y)=\frac{1}{2}$, and $u(x,y)=1$ for the range of values $-\frac{3\pi}{2}\leq x \leq \frac{3\pi}{2}$ and $-\frac{3\pi}{2}\leq y \leq \frac{3\pi}{2}$. Picking the constant for the level curve tells you the \emph{kinetic energy} of the electron you are looking at.  It turns out that electrons (roughly) will orbit along these level curves.  Notice, some level curves bleed into the different troughs of neighboring molecules which means that electrons of sufficient energy happily flow through the crystal. For what energy values do the electrons move throughout the whole crystal?
+    \item \textbf{(2 pts.)} Find the gradient of this function $\grad u(x,y)$.
+    \item \textbf{(3 pts.)} At what point(s) is the gradient zero? \emph{Hint: Use your graph of the level curves to help.}
     \end{enumerate}
 \end{problem}
 
@@ -499,16 +642,15 @@ This function $u(x,y)$ describes the \emph{potential energy} for electrons in th
     \item Here is the plot
     \begin{figure}[H]
         \centering
-	\def\svgwidth{0.75\columnwidth}
-	\input{Figures/crystal.pdf_tex}
+	\includegraphics[width=.75\textwidth]{figures/crystal_surface}
     \end{figure}
     \item Here is the plot of the level curves.
     \begin{figure}[H]
         \centering
-	\def\svgwidth{0.75\columnwidth}
-	\input{Figures/level_curves.pdf_tex}
+	   \includegraphics[width=.75\columnwidth]{figures/crystal_level_curves}
         \caption{Contour plot labeled with relevant values. Colors match the colors in the previous figure.}
     \end{figure}
+    The level set $u(x,y)=1$ gives us the straight lines that we see in the contour plot. Electrons with this energy level, or higher, could travel along this line and move freely through the valleys of the potential energy in the crystal. Like a ball rolling over bumps of the same height, if it has enough energy to clear a bump, it can continue to roll over all of them. As the ball reaches the top, it will travel its slowest speed and when it reaches the bottom of the dip, it will be moving the fastest. In this case, for any $u(x,y)<1$, the electron will stay trapped in a dip and will not be able to move freely in the crystal.
 
     \item The gradient is
     \[
@@ -530,7 +672,16 @@ This function $u(x,y)$ describes the \emph{potential energy} for electrons in th
     However, not all of these solutions are solutions where the electrons will want to stay put.  We will have to work harder to find out which ones are minimizers of the energy!
 \end{enumerate}
 \end{solution}
-
+\textcolor{red}{
+\noindent \textbf{Rubric:}}
+\textcolor{red}{
+\begin{enumerate}[(a)]
+\item \textbf{(1 pt.)} Correct plot.
+\item \textbf{(1 pt.)} Correct set of level curves. \textbf{(1 pt.)} Plotted for correct bounds. \textbf{(1 pt.)} Good attempt at explaining which energy values correspond to the ``freely moving" electrons that move along straight lines.
+\item \textbf{(2 pt.)} Correct gradient.
+\item \textbf{(1 pt.)} Set up for when gradient is zero. \textbf{(2 pt.)} Correct set of solutions to when gradient is zero.
+\end{enumerate}
+}
 %\newpage
 %\begin{problem}
 %Consider the two dimensional scalar field $T(x,y)=x+y$ that describes the temperature on the square plate $\Omega$ given by the set $0\leq x,y \leq 1$.  Compare the two answers you get!

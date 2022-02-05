@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.23)  18 JAN 2022 12:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.23)  27 JAN 2022 18:48
 entering extended mode
 **./homework_1_solutions.tex
 (homework_1_solutions.tex
@@ -1160,24 +1160,24 @@ LaTeX Info: Redefining \nameref on input line 8.
 LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
 (Font)              using `OT1/cmr/m/it' instead on input line 11.
 
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 18
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 26
 .
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
 
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
 
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 18
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 26
 .
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\uwasy.fd
@@ -1185,12 +1185,15 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 18.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 26.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 18.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 26.
 
+[1
+
+{C:/Users/colin/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
 Package epstopdf Info: Source file: <figures/helix.eps>
 (epstopdf)                    date: 2021-09-21 21:40:26
 (epstopdf)                    size: 340215 bytes
@@ -1199,17 +1202,17 @@ Package epstopdf Info: Source file: <figures/helix.eps>
 (epstopdf)                    size: 129950 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/helix-eps-co
 nverted-to.pdf figures/helix.eps>
-(epstopdf)             \includegraphics on input line 33.
+(epstopdf)             \includegraphics on input line 60.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/helix-eps-converted-to.pdf): PDF i
 nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/helix-eps-converted-to.pdf, id=31, 421.575pt x 316.18124pt>
+<figures/helix-eps-converted-to.pdf, id=56, 421.575pt x 316.18124pt>
 File: figures/helix-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/helix-eps-converted-to.pdf>
 Package pdftex.def Info: figures/helix-eps-converted-to.pdf  used on input line
- 33.
+ 60.
 (pdftex.def)             Requested size: 305.33789pt x 229.00601pt.
 Package epstopdf Info: Source file: <figures/falling_ball.eps>
 (epstopdf)                    date: 2021-09-21 21:40:26
@@ -1220,26 +1223,23 @@ Package epstopdf Info: Source file: <figures/falling_ball.eps>
 (epstopdf)                    size: 113526 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/falling_ball
 -eps-converted-to.pdf figures/falling_ball.eps>
-(epstopdf)             \includegraphics on input line 39.
+(epstopdf)             \includegraphics on input line 66.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/falling_ball-eps-converted-to.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/falling_ball-eps-converted-to.pdf, id=32, 421.575pt x 316.18124pt>
+<figures/falling_ball-eps-converted-to.pdf, id=57, 421.575pt x 316.18124pt>
 File: figures/falling_ball-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/falling_ball-eps-converted-to.pdf>
 Package pdftex.def Info: figures/falling_ball-eps-converted-to.pdf  used on inp
-ut line 39.
+ut line 66.
 (pdftex.def)             Requested size: 305.33789pt x 229.00601pt.
-[1
-
-{C:/Users/colin/AppData/Local/MiKTeX/pdftex/config/pdftex.map}pdfTeX warning (e
-xt4): destination with the same identifier (name{figure.1}) has been already us
-ed, duplicate ignored
+[2pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
+has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.42     \item H
+l.69     \item H
                 ere is the plot. <./figures/helix-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/trefoil_knot.eps>
 (epstopdf)                    date: 2021-09-21 21:40:26
@@ -1250,30 +1250,18 @@ Package epstopdf Info: Source file: <figures/trefoil_knot.eps>
 (epstopdf)                    size: 327193 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/trefoil_knot
 -eps-converted-to.pdf figures/trefoil_knot.eps>
-(epstopdf)             \includegraphics on input line 45.
+(epstopdf)             \includegraphics on input line 72.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/trefoil_knot-eps-converted-to.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/trefoil_knot-eps-converted-to.pdf, id=80, 421.575pt x 316.18124pt>
+<figures/trefoil_knot-eps-converted-to.pdf, id=98, 421.575pt x 316.18124pt>
 File: figures/trefoil_knot-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/trefoil_knot-eps-converted-to.pdf>
 Package pdftex.def Info: figures/trefoil_knot-eps-converted-to.pdf  used on inp
-ut line 45.
+ut line 72.
 (pdftex.def)             Requested size: 305.33789pt x 229.00601pt.
-[2pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
-has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.52 \]
-       pdfTeX warning (ext4): destination with the same identifier (name{figure
-.3}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.52 \]
-        <./figures/falling_ball-eps-converted-to.pdf> <./figures/trefoil_knot-e
-ps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/torus_knot.eps>
 (epstopdf)                    date: 2021-09-21 21:40:26
 (epstopdf)                    size: 1394686 bytes
@@ -1282,24 +1270,35 @@ Package epstopdf Info: Source file: <figures/torus_knot.eps>
 (epstopdf)                    size: 665170 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/torus_knot-e
 ps-converted-to.pdf figures/torus_knot.eps>
-(epstopdf)             \includegraphics on input line 55.
+(epstopdf)             \includegraphics on input line 82.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/torus_knot-eps-converted-to.pdf): 
 PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/torus_knot-eps-converted-to.pdf, id=135, 421.575pt x 316.18124pt>
+<figures/torus_knot-eps-converted-to.pdf, id=99, 421.575pt x 316.18124pt>
 File: figures/torus_knot-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/torus_knot-eps-converted-to.pdf>
 Package pdftex.def Info: figures/torus_knot-eps-converted-to.pdf  used on input
- line 55.
+ line 82.
 (pdftex.def)             Requested size: 375.80544pt x 281.85875pt.
-[3pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) 
+[3pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.61 \newpage
-              <./figures/torus_knot-eps-converted-to.pdf>] [4]
+l.85 \end{solution}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{figure.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.85 \end{solution}
+                    <./figures/falling_ball-eps-converted-to.pdf> <./figures/tr
+efoil_knot-eps-converted-to.pdf>] [4pdfTeX warning (ext4): destination with the
+ same identifier (name{figure.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.95 \newpage
+              <./figures/torus_knot-eps-converted-to.pdf>] [5] [6]
 Package epstopdf Info: Source file: <figures/3a.eps>
 (epstopdf)                    date: 2021-09-21 21:40:25
 (epstopdf)                    size: 1212320 bytes
@@ -1308,17 +1307,17 @@ Package epstopdf Info: Source file: <figures/3a.eps>
 (epstopdf)                    size: 734360 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/3a-eps-conve
 rted-to.pdf figures/3a.eps>
-(epstopdf)             \includegraphics on input line 116.
+(epstopdf)             \includegraphics on input line 183.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/3a-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/3a-eps-converted-to.pdf, id=192, 421.575pt x 316.18124pt>
+<figures/3a-eps-converted-to.pdf, id=220, 421.575pt x 316.18124pt>
 File: figures/3a-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/3a-eps-converted-to.pdf>
-Package pdftex.def Info: figures/3a-eps-converted-to.pdf  used on input line 11
-6.
+Package pdftex.def Info: figures/3a-eps-converted-to.pdf  used on input line 18
+3.
 (pdftex.def)             Requested size: 305.33789pt x 229.00601pt.
 Package epstopdf Info: Source file: <figures/3a_x=y.eps>
 (epstopdf)                    date: 2021-09-21 21:40:25
@@ -1328,25 +1327,24 @@ Package epstopdf Info: Source file: <figures/3a_x=y.eps>
 (epstopdf)                    size: 122435 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/3a_x=y-eps-c
 onverted-to.pdf figures/3a_x=y.eps>
-(epstopdf)             \includegraphics on input line 130.
+(epstopdf)             \includegraphics on input line 197.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/3a_x=y-eps-converted-to.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/3a_x=y-eps-converted-to.pdf, id=193, 421.575pt x 316.18124pt>
+<figures/3a_x=y-eps-converted-to.pdf, id=221, 421.575pt x 316.18124pt>
 File: figures/3a_x=y-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/3a_x=y-eps-converted-to.pdf>
 Package pdftex.def Info: figures/3a_x=y-eps-converted-to.pdf  used on input lin
-e 130.
+e 197.
 (pdftex.def)             Requested size: 281.85587pt x 211.39647pt.
-[5pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) 
+[7pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.133     \item B
-                 elow is the graph of the function $g(x,y)$. <./figures/3a-eps-
-converted-to.pdf>]
+l.199     \end{figure}
+                       <./figures/3a-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/3b.eps>
 (epstopdf)                    date: 2021-09-21 21:40:25
 (epstopdf)                    size: 2586481 bytes
@@ -1355,28 +1353,28 @@ Package epstopdf Info: Source file: <figures/3b.eps>
 (epstopdf)                    size: 1664290 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/3b-eps-conve
 rted-to.pdf figures/3b.eps>
-(epstopdf)             \includegraphics on input line 136.
+(epstopdf)             \includegraphics on input line 203.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/3b-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/3b-eps-converted-to.pdf, id=237, 421.575pt x 316.18124pt>
+<figures/3b-eps-converted-to.pdf, id=266, 421.575pt x 316.18124pt>
 File: figures/3b-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/3b-eps-converted-to.pdf>
-Package pdftex.def Info: figures/3b-eps-converted-to.pdf  used on input line 13
-6.
+Package pdftex.def Info: figures/3b-eps-converted-to.pdf  used on input line 20
+3.
 (pdftex.def)             Requested size: 305.33789pt x 229.00601pt.
-[6pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) 
+[8pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.146     \]
+l.213     \]
             pdfTeX warning (ext4): destination with the same identifier (name{f
 igure.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.146     \]
+l.213     \]
              <./figures/3a_x=y-eps-converted-to.pdf> <./figures/3b-eps-converte
 d-to.pdf>]
 Package epstopdf Info: Source file: <figures/3b_x=y.eps>
@@ -1387,17 +1385,17 @@ Package epstopdf Info: Source file: <figures/3b_x=y.eps>
 (epstopdf)                    size: 250071 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/3b_x=y-eps-c
 onverted-to.pdf figures/3b_x=y.eps>
-(epstopdf)             \includegraphics on input line 154.
+(epstopdf)             \includegraphics on input line 221.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/3b_x=y-eps-converted-to.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/3b_x=y-eps-converted-to.pdf, id=299, 421.575pt x 316.18124pt>
+<figures/3b_x=y-eps-converted-to.pdf, id=328, 421.575pt x 316.18124pt>
 File: figures/3b_x=y-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/3b_x=y-eps-converted-to.pdf>
 Package pdftex.def Info: figures/3b_x=y-eps-converted-to.pdf  used on input lin
-e 154.
+e 221.
 (pdftex.def)             Requested size: 375.80544pt x 281.85875pt.
 Package epstopdf Info: Source file: <figures/3c.eps>
 (epstopdf)                    date: 2021-09-21 21:40:25
@@ -1407,23 +1405,23 @@ Package epstopdf Info: Source file: <figures/3c.eps>
 (epstopdf)                    size: 745278 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/3c-eps-conve
 rted-to.pdf figures/3c.eps>
-(epstopdf)             \includegraphics on input line 160.
+(epstopdf)             \includegraphics on input line 227.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/3c-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/3c-eps-converted-to.pdf, id=300, 421.575pt x 316.18124pt>
+<figures/3c-eps-converted-to.pdf, id=329, 421.575pt x 316.18124pt>
 File: figures/3c-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/3c-eps-converted-to.pdf>
-Package pdftex.def Info: figures/3c-eps-converted-to.pdf  used on input line 16
-0.
+Package pdftex.def Info: figures/3c-eps-converted-to.pdf  used on input line 22
+7.
 (pdftex.def)             Requested size: 375.80544pt x 281.85875pt.
-[7pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) 
+[9pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.163     H
+l.230     H
            ere if we consider the function along the $x$-axis, we have <./figur
 es/3b_x=y-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/3c_x=0.eps>
@@ -1434,17 +1432,17 @@ Package epstopdf Info: Source file: <figures/3c_x=0.eps>
 (epstopdf)                    size: 119457 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/3c_x=0-eps-c
 onverted-to.pdf figures/3c_x=0.eps>
-(epstopdf)             \includegraphics on input line 178.
+(epstopdf)             \includegraphics on input line 245.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/3c_x=0-eps-converted-to.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/3c_x=0-eps-converted-to.pdf, id=326, 421.575pt x 316.18124pt>
+<figures/3c_x=0-eps-converted-to.pdf, id=354, 421.575pt x 316.18124pt>
 File: figures/3c_x=0-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/3c_x=0-eps-converted-to.pdf>
 Package pdftex.def Info: figures/3c_x=0-eps-converted-to.pdf  used on input lin
-e 178.
+e 245.
 (pdftex.def)             Requested size: 375.80544pt x 281.85875pt.
 Package epstopdf Info: Source file: <figures/3c_y=0.eps>
 (epstopdf)                    date: 2021-09-21 21:40:25
@@ -1454,23 +1452,23 @@ Package epstopdf Info: Source file: <figures/3c_y=0.eps>
 (epstopdf)                    size: 197957 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/3c_y=0-eps-c
 onverted-to.pdf figures/3c_y=0.eps>
-(epstopdf)             \includegraphics on input line 183.
+(epstopdf)             \includegraphics on input line 250.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/3c_y=0-eps-converted-to.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/3c_y=0-eps-converted-to.pdf, id=327, 421.575pt x 316.18124pt>
+<figures/3c_y=0-eps-converted-to.pdf, id=355, 421.575pt x 316.18124pt>
 File: figures/3c_y=0-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/3c_y=0-eps-converted-to.pdf>
 Package pdftex.def Info: figures/3c_y=0-eps-converted-to.pdf  used on input lin
-e 183.
+e 250.
 (pdftex.def)             Requested size: 375.80544pt x 281.85875pt.
-[8pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) 
-has been already used, duplicate ignored
+[10pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
+ has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.185     \end{figure}
+l.252     \end{figure}
                        <./figures/3c-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/3c_x=y.eps>
 (epstopdf)                    date: 2021-09-21 21:40:25
@@ -1480,41 +1478,35 @@ Package epstopdf Info: Source file: <figures/3c_x=y.eps>
 (epstopdf)                    size: 152277 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/3c_x=y-eps-c
 onverted-to.pdf figures/3c_x=y.eps>
-(epstopdf)             \includegraphics on input line 188.
+(epstopdf)             \includegraphics on input line 255.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/3c_x=y-eps-converted-to.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/3c_x=y-eps-converted-to.pdf, id=364, 421.575pt x 316.18124pt>
+<figures/3c_x=y-eps-converted-to.pdf, id=392, 421.575pt x 316.18124pt>
 File: figures/3c_x=y-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/3c_x=y-eps-converted-to.pdf>
 Package pdftex.def Info: figures/3c_x=y-eps-converted-to.pdf  used on input lin
-e 188.
+e 255.
 (pdftex.def)             Requested size: 375.80544pt x 281.85875pt.
-[9pdfTeX warning (ext4): destination with the same identifier (name{figure.10})
- has been already used, duplicate ignored
+[11pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
+) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.191 \end{enumerate}
+l.258 \end{enumerate}
                      pdfTeX warning (ext4): destination with the same identifie
 r (name{figure.11}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.191 \end{enumerate}
+l.258 \end{enumerate}
                       <./figures/3c_x=0-eps-converted-to.pdf> <./figures/3c_y=0
--eps-converted-to.pdf>] [10pdfTeX warning (ext4): destination with the same ide
+-eps-converted-to.pdf>] [12pdfTeX warning (ext4): destination with the same ide
 ntifier (name{figure.12}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.194 \newpage
+l.269 \newpage
                <./figures/3c_x=y-eps-converted-to.pdf>]
-Overfull \hbox (16.41292pt too wide) in paragraph at lines 196--197
-[][]\OT1/cmr/bx/n/12 Problem 4. []\OT1/cmr/m/n/12 Let us vi-su-al-ize vec-tor f
-ields us-ing Ge-oGe-bra (specif-i-cally []$\OT1/cmtt/m/n/12 https : / / www . g
-eogebra .
- []
-
 Package epstopdf Info: Source file: <figures/4a.eps>
 (epstopdf)                    date: 2021-09-21 21:40:25
 (epstopdf)                    size: 102451 bytes
@@ -1523,23 +1515,23 @@ Package epstopdf Info: Source file: <figures/4a.eps>
 (epstopdf)                    size: 30935 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/4a-eps-conve
 rted-to.pdf figures/4a.eps>
-(epstopdf)             \includegraphics on input line 210.
+(epstopdf)             \includegraphics on input line 285.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/4a-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/4a-eps-converted-to.pdf, id=430, 421.575pt x 316.18124pt>
+<figures/4a-eps-converted-to.pdf, id=461, 421.575pt x 316.18124pt>
 File: figures/4a-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/4a-eps-converted-to.pdf>
-Package pdftex.def Info: figures/4a-eps-converted-to.pdf  used on input line 21
-0.
+Package pdftex.def Info: figures/4a-eps-converted-to.pdf  used on input line 28
+5.
 (pdftex.def)             Requested size: 352.31625pt x 264.23956pt.
-[11pdfTeX warning (ext4): destination with the same identifier (name{figure.13}
+[13pdfTeX warning (ext4): destination with the same identifier (name{figure.13}
 ) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.213     \newpage
+l.288     \newpage
                    <./figures/4a-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/4b.eps>
 (epstopdf)                    date: 2021-09-21 21:40:25
@@ -1549,17 +1541,17 @@ Package epstopdf Info: Source file: <figures/4b.eps>
 (epstopdf)                    size: 27569 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/4b-eps-conve
 rted-to.pdf figures/4b.eps>
-(epstopdf)             \includegraphics on input line 217.
+(epstopdf)             \includegraphics on input line 292.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/4b-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/4b-eps-converted-to.pdf, id=447, 421.575pt x 316.18124pt>
+<figures/4b-eps-converted-to.pdf, id=479, 421.575pt x 316.18124pt>
 File: figures/4b-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/4b-eps-converted-to.pdf>
-Package pdftex.def Info: figures/4b-eps-converted-to.pdf  used on input line 21
-7.
+Package pdftex.def Info: figures/4b-eps-converted-to.pdf  used on input line 29
+2.
 (pdftex.def)             Requested size: 352.31625pt x 264.23956pt.
 Package epstopdf Info: Source file: <figures/4c.eps>
 (epstopdf)                    date: 2021-09-21 21:40:25
@@ -1569,23 +1561,23 @@ Package epstopdf Info: Source file: <figures/4c.eps>
 (epstopdf)                    size: 58256 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/4c-eps-conve
 rted-to.pdf figures/4c.eps>
-(epstopdf)             \includegraphics on input line 223.
+(epstopdf)             \includegraphics on input line 298.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/4c-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/4c-eps-converted-to.pdf, id=448, 421.575pt x 316.18124pt>
+<figures/4c-eps-converted-to.pdf, id=480, 421.575pt x 316.18124pt>
 File: figures/4c-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/4c-eps-converted-to.pdf>
-Package pdftex.def Info: figures/4c-eps-converted-to.pdf  used on input line 22
-3.
+Package pdftex.def Info: figures/4c-eps-converted-to.pdf  used on input line 29
+8.
 (pdftex.def)             Requested size: 352.31625pt x 264.23956pt.
-[12pdfTeX warning (ext4): destination with the same identifier (name{figure.14}
+[14pdfTeX warning (ext4): destination with the same identifier (name{figure.14}
 ) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.226     \item H
+l.301     \item H
                  ere is a plot for $\boldsymbol{\vec{S}}$. <./figures/4b-eps-co
 nverted-to.pdf>]
 Package epstopdf Info: Source file: <figures/4d.eps>
@@ -1596,125 +1588,51 @@ Package epstopdf Info: Source file: <figures/4d.eps>
 (epstopdf)                    size: 59889 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/4d-eps-conve
 rted-to.pdf figures/4d.eps>
-(epstopdf)             \includegraphics on input line 229.
+(epstopdf)             \includegraphics on input line 304.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/4d-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/4d-eps-converted-to.pdf, id=458, 421.575pt x 316.18124pt>
+<figures/4d-eps-converted-to.pdf, id=490, 421.575pt x 316.18124pt>
 File: figures/4d-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/4d-eps-converted-to.pdf>
-Package pdftex.def Info: figures/4d-eps-converted-to.pdf  used on input line 22
-9.
+Package pdftex.def Info: figures/4d-eps-converted-to.pdf  used on input line 30
+4.
 (pdftex.def)             Requested size: 305.33789pt x 229.00601pt.
-[13pdfTeX warning (ext4): destination with the same identifier (name{figure.15}
+[15pdfTeX warning (ext4): destination with the same identifier (name{figure.15}
 ) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.237 \newpage
-              pdfTeX warning (ext4): destination with the same identifier (name
-{figure.16}) has been already used, duplicate ignored
+l.317 }
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.16}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.237 \newpage
-               <./figures/4c-eps-converted-to.pdf> <./figures/4d-eps-converted-
-to.pdf>] [14]
-Package epstopdf Info: Source file: <figures/6c_field.eps>
-(epstopdf)                    date: 2021-09-21 21:40:25
-(epstopdf)                    size: 199351 bytes
-(epstopdf)             Output file: <figures/6c_field-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-09-21 21:40:25
-(epstopdf)                    size: 37162 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=figures/6c_field-eps
--converted-to.pdf figures/6c_field.eps>
-(epstopdf)             \includegraphics on input line 314.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex.exe (file ./figures/6c_field-eps-converted-to.pdf): PD
-F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/6c_field-eps-converted-to.pdf, id=478, 421.575pt x 316.18124pt>
-File: figures/6c_field-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/6c_field-eps-converted-to.pdf>
-Package pdftex.def Info: figures/6c_field-eps-converted-to.pdf  used on input l
-ine 314.
-(pdftex.def)             Requested size: 305.33789pt x 229.00601pt.
-[15]
-Package epstopdf Info: Source file: <figures/6c.eps>
-(epstopdf)                    date: 2021-09-21 21:40:25
-(epstopdf)                    size: 644518 bytes
-(epstopdf)             Output file: <figures/6c-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-09-21 21:40:25
-(epstopdf)                    size: 50821 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=figures/6c-eps-conve
-rted-to.pdf figures/6c.eps>
-(epstopdf)             \includegraphics on input line 319.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex.exe (file ./figures/6c-eps-converted-to.pdf): PDF incl
-usion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/6c-eps-converted-to.pdf, id=491, 421.575pt x 316.18124pt>
-File: figures/6c-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/6c-eps-converted-to.pdf>
-Package pdftex.def Info: figures/6c-eps-converted-to.pdf  used on input line 31
-9.
-(pdftex.def)             Requested size: 305.33789pt x 229.00601pt.
-Package epstopdf Info: Source file: <figures/6d.eps>
-(epstopdf)                    date: 2021-09-21 21:40:25
-(epstopdf)                    size: 334037 bytes
-(epstopdf)             Output file: <figures/6d-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-09-21 21:40:25
-(epstopdf)                    size: 42439 bytes
-(epstopdf)             Command: <miktex-epstopdf --outfile=figures/6d-eps-conve
-rted-to.pdf figures/6d.eps>
-(epstopdf)             \includegraphics on input line 327.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex.exe (file ./figures/6d-eps-converted-to.pdf): PDF incl
-usion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/6d-eps-converted-to.pdf, id=492, 421.575pt x 316.18124pt>
-File: figures/6d-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/6d-eps-converted-to.pdf>
-Package pdftex.def Info: figures/6d-eps-converted-to.pdf  used on input line 32
-7.
-(pdftex.def)             Requested size: 305.33789pt x 229.00601pt.
-[16pdfTeX warning (ext4): destination with the same identifier (name{figure.17}
-) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.330     I
-           f we place any particle with $z\neq 0$ then the particle will acc...
- <./figures/6c_field-eps-converted-to.pdf> <./figures/6c-eps-converted-to.pdf>]
-[17pdfTeX warning (ext4): destination with the same identifier (name{figure.18}
-) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.351 \newpage
-               <./figures/6d-eps-converted-to.pdf>]
+l.317 }
+        <./figures/4c-eps-converted-to.pdf> <./figures/4d-eps-converted-to.pdf>
+] [16] [17] [18]
 Package epstopdf Info: Source file: <figures/7a.eps>
-(epstopdf)                    date: 2021-09-21 21:40:25
-(epstopdf)                    size: 514282 bytes
+(epstopdf)                    date: 2022-01-27 15:38:57
+(epstopdf)                    size: 566936 bytes
 (epstopdf)             Output file: <figures/7a-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-09-21 21:40:25
-(epstopdf)                    size: 90898 bytes
+(epstopdf)                    date: 2022-01-27 15:39:04
+(epstopdf)                    size: 102024 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/7a-eps-conve
 rted-to.pdf figures/7a.eps>
-(epstopdf)             \includegraphics on input line 399.
+(epstopdf)             \includegraphics on input line 532.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/7a-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/7a-eps-converted-to.pdf, id=511, 421.575pt x 316.18124pt>
+<figures/7a-eps-converted-to.pdf, id=530, 559.08875pt x 414.54875pt>
 File: figures/7a-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/7a-eps-converted-to.pdf>
-Package pdftex.def Info: figures/7a-eps-converted-to.pdf  used on input line 39
-9.
-(pdftex.def)             Requested size: 281.85587pt x 211.39647pt.
-[18]
+Package pdftex.def Info: figures/7a-eps-converted-to.pdf  used on input line 53
+2.
+(pdftex.def)             Requested size: 281.85587pt x 208.99438pt.
+[19]
 Package epstopdf Info: Source file: <figures/7b_surface.eps>
 (epstopdf)                    date: 2021-09-21 21:40:25
 (epstopdf)                    size: 760055 bytes
@@ -1723,17 +1641,17 @@ Package epstopdf Info: Source file: <figures/7b_surface.eps>
 (epstopdf)                    size: 460467 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/7b_surface-e
 ps-converted-to.pdf figures/7b_surface.eps>
-(epstopdf)             \includegraphics on input line 424.
+(epstopdf)             \includegraphics on input line 557.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/7b_surface-eps-converted-to.pdf): 
 PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/7b_surface-eps-converted-to.pdf, id=522, 421.575pt x 316.18124pt>
+<figures/7b_surface-eps-converted-to.pdf, id=543, 421.575pt x 316.18124pt>
 File: figures/7b_surface-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/7b_surface-eps-converted-to.pdf>
 Package pdftex.def Info: figures/7b_surface-eps-converted-to.pdf  used on input
- line 424.
+ line 557.
 (pdftex.def)             Requested size: 305.33789pt x 229.00601pt.
 Package epstopdf Info: Source file: <figures/7b_contour.eps>
 (epstopdf)                    date: 2021-09-21 21:40:25
@@ -1743,34 +1661,34 @@ Package epstopdf Info: Source file: <figures/7b_contour.eps>
 (epstopdf)                    size: 31809 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/7b_contour-e
 ps-converted-to.pdf figures/7b_contour.eps>
-(epstopdf)             \includegraphics on input line 429.
+(epstopdf)             \includegraphics on input line 562.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/7b_contour-eps-converted-to.pdf): 
 PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/7b_contour-eps-converted-to.pdf, id=523, 421.575pt x 316.18124pt>
+<figures/7b_contour-eps-converted-to.pdf, id=544, 421.575pt x 316.18124pt>
 File: figures/7b_contour-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/7b_contour-eps-converted-to.pdf>
 Package pdftex.def Info: figures/7b_contour-eps-converted-to.pdf  used on input
- line 429.
+ line 562.
 (pdftex.def)             Requested size: 305.33789pt x 229.00601pt.
-[19pdfTeX warning (ext4): destination with the same identifier (name{figure.19}
+[20pdfTeX warning (ext4): destination with the same identifier (name{figure.17}
 ) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.431     \end{figure}
-                       <./figures/7a-eps-converted-to.pdf>] [20pdfTeX warning (
-ext4): destination with the same identifier (name{figure.20}) has been already 
+l.564     \end{figure}
+                       <./figures/7a-eps-converted-to.pdf>] [21pdfTeX warning (
+ext4): destination with the same identifier (name{figure.18}) has been already 
 used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.444     \end{align*}
+l.577     \end{align*}
                       pdfTeX warning (ext4): destination with the same identifi
-er (name{figure.21}) has been already used, duplicate ignored
+er (name{figure.19}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.444     \end{align*}
+l.577     \end{align*}
                        <./figures/7b_surface-eps-converted-to.pdf> <./figures/7
 b_contour-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/7c_1.eps>
@@ -1781,17 +1699,17 @@ Package epstopdf Info: Source file: <figures/7c_1.eps>
 (epstopdf)                    size: 137885 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/7c_1-eps-con
 verted-to.pdf figures/7c_1.eps>
-(epstopdf)             \includegraphics on input line 454.
+(epstopdf)             \includegraphics on input line 587.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/7c_1-eps-converted-to.pdf): PDF in
 clusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/7c_1-eps-converted-to.pdf, id=697, 421.575pt x 316.18124pt>
+<figures/7c_1-eps-converted-to.pdf, id=717, 421.575pt x 316.18124pt>
 File: figures/7c_1-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/7c_1-eps-converted-to.pdf>
 Package pdftex.def Info: figures/7c_1-eps-converted-to.pdf  used on input line 
-454.
+587.
 (pdftex.def)             Requested size: 305.33789pt x 229.00601pt.
 Package epstopdf Info: Source file: <figures/7c_2.eps>
 (epstopdf)                    date: 2021-09-21 21:40:26
@@ -1801,17 +1719,17 @@ Package epstopdf Info: Source file: <figures/7c_2.eps>
 (epstopdf)                    size: 484067 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/7c_2-eps-con
 verted-to.pdf figures/7c_2.eps>
-(epstopdf)             \includegraphics on input line 459.
+(epstopdf)             \includegraphics on input line 592.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/7c_2-eps-converted-to.pdf): PDF in
 clusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/7c_2-eps-converted-to.pdf, id=698, 421.575pt x 316.18124pt>
+<figures/7c_2-eps-converted-to.pdf, id=718, 421.575pt x 316.18124pt>
 File: figures/7c_2-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/7c_2-eps-converted-to.pdf>
 Package pdftex.def Info: figures/7c_2-eps-converted-to.pdf  used on input line 
-459.
+592.
 (pdftex.def)             Requested size: 305.33789pt x 229.00601pt.
 Package epstopdf Info: Source file: <figures/7c_3.eps>
 (epstopdf)                    date: 2021-09-21 21:40:26
@@ -1821,23 +1739,23 @@ Package epstopdf Info: Source file: <figures/7c_3.eps>
 (epstopdf)                    size: 1003913 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/7c_3-eps-con
 verted-to.pdf figures/7c_3.eps>
-(epstopdf)             \includegraphics on input line 464.
+(epstopdf)             \includegraphics on input line 597.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/7c_3-eps-converted-to.pdf): PDF in
 clusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/7c_3-eps-converted-to.pdf, id=699, 421.575pt x 316.18124pt>
+<figures/7c_3-eps-converted-to.pdf, id=719, 421.575pt x 316.18124pt>
 File: figures/7c_3-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/7c_3-eps-converted-to.pdf>
 Package pdftex.def Info: figures/7c_3-eps-converted-to.pdf  used on input line 
-464.
+597.
 (pdftex.def)             Requested size: 305.33789pt x 229.00601pt.
-[21pdfTeX warning (ext4): destination with the same identifier (name{figure.22}
+[22pdfTeX warning (ext4): destination with the same identifier (name{figure.20}
 ) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.466     \end{figure}
+l.599     \end{figure}
                        <./figures/7c_1-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/7c_gradient.eps>
 (epstopdf)                    date: 2021-09-21 21:40:26
@@ -1847,142 +1765,126 @@ Package epstopdf Info: Source file: <figures/7c_gradient.eps>
 (epstopdf)                    size: 33510 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=figures/7c_gradient-
 eps-converted-to.pdf figures/7c_gradient.eps>
-(epstopdf)             \includegraphics on input line 476.
+(epstopdf)             \includegraphics on input line 609.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex.exe (file ./figures/7c_gradient-eps-converted-to.pdf):
  PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/7c_gradient-eps-converted-to.pdf, id=725, 421.575pt x 316.18124pt>
+<figures/7c_gradient-eps-converted-to.pdf, id=745, 421.575pt x 316.18124pt>
 File: figures/7c_gradient-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/7c_gradient-eps-converted-to.pdf>
 Package pdftex.def Info: figures/7c_gradient-eps-converted-to.pdf  used on inpu
-t line 476.
+t line 609.
 (pdftex.def)             Requested size: 305.33789pt x 229.00601pt.
-[22pdfTeX warning (ext4): destination with the same identifier (name{figure.23}
+[23pdfTeX warning (ext4): destination with the same identifier (name{figure.21}
 ) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.479 \end{enumerate}
+l.612 \end{enumerate}
                      pdfTeX warning (ext4): destination with the same identifie
-r (name{figure.24}) has been already used, duplicate ignored
+r (name{figure.22}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.479 \end{enumerate}
+l.612 \end{enumerate}
                       <./figures/7c_2-eps-converted-to.pdf> <./figures/7c_3-eps
--converted-to.pdf>] [23pdfTeX warning (ext4): destination with the same identif
-ier (name{figure.25}) has been already used, duplicate ignored
+-converted-to.pdf>] [24pdfTeX warning (ext4): destination with the same identif
+ier (name{figure.23}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.499     \item H
-                 ere is the plot <./figures/7c_gradient-eps-converted-to.pdf>]
-(Figures/crystal.pdf_tex
-<figures/crystal.pdf, id=820, page=1, 421.575pt x 316.18124pt>
-File: figures/crystal.pdf Graphic file (type pdf)
-<use figures/crystal.pdf, page 1>
-Package pdftex.def Info: figures/crystal.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 352.31625pt x 264.23956pt.
-<figures/crystal.pdf, id=821, page=2, 421.575pt x 316.18124pt>
-File: figures/crystal.pdf Graphic file (type pdf)
-<use figures/crystal.pdf, page 2>
-Package pdftex.def Info: figures/crystal.pdf , page2 used on input line 60.
-(pdftex.def)             Requested size: 352.31625pt x 264.23956pt.
-<figures/crystal.pdf, id=822, page=3, 421.575pt x 316.18124pt>
-File: figures/crystal.pdf Graphic file (type pdf)
-<use figures/crystal.pdf, page 3>
-Package pdftex.def Info: figures/crystal.pdf , page3 used on input line 64.
-(pdftex.def)             Requested size: 352.31625pt x 264.23956pt.
-<figures/crystal.pdf, id=823, page=4, 421.575pt x 316.18124pt>
-File: figures/crystal.pdf Graphic file (type pdf)
-<use figures/crystal.pdf, page 4>
-Package pdftex.def Info: figures/crystal.pdf , page4 used on input line 68.
-(pdftex.def)             Requested size: 352.31625pt x 264.23956pt.
-) (Figures/level_curves.pdf_tex
-<figures/level_curves.pdf, id=824, page=1, 421.575pt x 316.18124pt>
-File: figures/level_curves.pdf Graphic file (type pdf)
-<use figures/level_curves.pdf, page 1>
-Package pdftex.def Info: figures/level_curves.pdf , page1 used on input line 56
-.
-(pdftex.def)             Requested size: 352.31625pt x 264.23956pt.
-<figures/level_curves.pdf, id=825, page=2, 421.575pt x 316.18124pt>
-File: figures/level_curves.pdf Graphic file (type pdf)
-<use figures/level_curves.pdf, page 2>
-Package pdftex.def Info: figures/level_curves.pdf , page2 used on input line 59
-.
-(pdftex.def)             Requested size: 352.31625pt x 264.23956pt.
-<figures/level_curves.pdf, id=826, page=3, 421.575pt x 316.18124pt>
-File: figures/level_curves.pdf Graphic file (type pdf)
-<use figures/level_curves.pdf, page 3>
-Package pdftex.def Info: figures/level_curves.pdf , page3 used on input line 69
-.
-(pdftex.def)             Requested size: 352.31625pt x 264.23956pt.
-<figures/level_curves.pdf, id=827, page=4, 421.575pt x 316.18124pt>
-File: figures/level_curves.pdf Graphic file (type pdf)
-<use figures/level_curves.pdf, page 4>
-Package pdftex.def Info: figures/level_curves.pdf , page4 used on input line 79
-.
-(pdftex.def)             Requested size: 352.31625pt x 264.23956pt.
-) [24 <./figures/crystal.pdf> <./figures/crystal.pdf
+l.624 \newpage
+               <./figures/7c_gradient-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figures/crystal_surface.eps>
+(epstopdf)                    date: 2022-01-27 18:47:35
+(epstopdf)                    size: 436348 bytes
+(epstopdf)             Output file: <figures/crystal_surface-eps-converted-to.p
+df>
+(epstopdf)             Command: <miktex-epstopdf --outfile=figures/crystal_surf
+ace-eps-converted-to.pdf figures/crystal_surface.eps>
+(epstopdf)             \includegraphics on input line 645.
+runsystem(miktex-epstopdf --outfile=figures/crystal_surface-eps-converted-to.pd
+f figures/crystal_surface.eps)...executed (allowed).
 
-pdfTeX warning: pdflatex.exe (file ./figures/crystal.pdf): PDF inclusion: multi
-ple pdfs with page group included in a single page
-> <./figures/crystal.pdf
+Package epstopdf Info: Result file: <figures/crystal_surface-eps-converted-to.p
+df>
+(epstopdf)                    date: 2022-01-27 18:48:11
+(epstopdf)                    size: 109513 bytes.
 
-pdfTeX warning: pdflatex.exe (file ./figures/crystal.pdf): PDF inclusion: multi
-ple pdfs with page group included in a single page
-> <./figures/crystal.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/crystal.pdf): PDF inclusion: multi
-ple pdfs with page group included in a single page
->] [25pdfTeX warning (ext4): destination with the same identifier (name{figure.
-26}) has been already used, duplicate ignored
+pdfTeX warning: pdflatex.exe (file ./figures/crystal_surface-eps-converted-to.p
+df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<figures/crystal_surface-eps-converted-to.pdf, id=839, 421.575pt x 316.18124pt>
+
+File: figures/crystal_surface-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/crystal_surface-eps-converted-to.pdf>
+Package pdftex.def Info: figures/crystal_surface-eps-converted-to.pdf  used on 
+input line 645.
+(pdftex.def)             Requested size: 352.31625pt x 264.23956pt.
+Package epstopdf Info: Source file: <figures/crystal_level_curves.eps>
+(epstopdf)                    date: 2022-01-27 18:37:08
+(epstopdf)                    size: 69703 bytes
+(epstopdf)             Output file: <figures/crystal_level_curves-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2022-01-27 18:37:20
+(epstopdf)                    size: 214360 bytes
+(epstopdf)             Command: <miktex-epstopdf --outfile=figures/crystal_leve
+l_curves-eps-converted-to.pdf figures/crystal_level_curves.eps>
+(epstopdf)             \includegraphics on input line 650.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figures/crystal_level_curves-eps-converted
+-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> all
+owed
+<figures/crystal_level_curves-eps-converted-to.pdf, id=840, 421.575pt x 316.181
+24pt>
+File: figures/crystal_level_curves-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/crystal_level_curves-eps-converted-to.pdf>
+Package pdftex.def Info: figures/crystal_level_curves-eps-converted-to.pdf  use
+d on input line 650.
+(pdftex.def)             Requested size: 352.31625pt x 264.23956pt.
+[25 <./figures/crystal_surface-eps-converted-to.pdf>] [26pdfTeX warning (ext4):
+ destination with the same identifier (name{figure.24}) has been already used, 
+duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.609 \end{document}
-                     <./figures/level_curves.pdf> <./figures/level_curves.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/level_curves.pdf): PDF inclusion: 
-multiple pdfs with page group included in a single page
-> <./figures/level_curves.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/level_curves.pdf): PDF inclusion: 
-multiple pdfs with page group included in a single page
-> <./figures/level_curves.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/level_curves.pdf): PDF inclusion: 
-multiple pdfs with page group included in a single page
->] (homework_1_solutions.aux)
+l.671 
+       <./figures/crystal_level_curves-eps-converted-to.pdf>] [27]
+(homework_1_solutions.aux)
 Package rerunfilecheck Info: File `homework_1_solutions.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 36387 strings out of 478927
- 864826 string characters out of 2852535
- 1247013 words of memory out of 3000000
- 53442 multiletter control sequences out of 15000+600000
- 415021 words of font info for 72 fonts, out of 8000000 for 9000
+ 36414 strings out of 478927
+ 865413 string characters out of 2852535
+ 1240032 words of memory out of 3000000
+ 53447 multiletter control sequences out of 15000+600000
+ 415358 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,16n,136p,744b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-<C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmbsy10.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmbx12.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmcsc10.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/colin/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/colin/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/colin/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/coli
-n/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/
-Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.
-pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmr6.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmr8.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/colin/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/colin/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on homework_1_solutions.pdf (25 pages, 8404610 bytes).
+ 131i,16n,136p,744b,783s stack positions out of 5000i,500n,10000p,200000b,80000s
+ <C:\Users\colin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
+1200.pk><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmbsy10.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmbx12.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/colin/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/colin/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/colin/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/colin/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/User
+s/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pf
+b><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmr12.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmr6.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmr8.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/colin/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/colin/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/colin/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on homework_1_solutions.pdf (27 pages, 8178218 bytes).
 PDF statistics:
- 940 PDF objects out of 1000 (max. 8388607)
- 113 named destinations out of 1000 (max. 500000)
- 279 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 981 PDF objects out of 1000 (max. 8388607)
+ 144 named destinations out of 1000 (max. 500000)
+ 234 words of extra memory for PDF output out of 10000 (max. 10000000)
 

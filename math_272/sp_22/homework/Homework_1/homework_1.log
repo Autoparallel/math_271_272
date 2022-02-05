@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.23)  25 JAN 2022 05:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.23)  27 JAN 2022 15:52
 entering extended mode
 **./homework_1.tex
 (homework_1.tex
@@ -1195,10 +1195,10 @@ Package rerunfilecheck Info: File `homework_1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 35332 strings out of 478927
- 838994 string characters out of 2852535
- 1241960 words of memory out of 3000000
- 52511 multiletter control sequences out of 15000+600000
+ 35333 strings out of 478927
+ 839005 string characters out of 2852535
+ 1241973 words of memory out of 3000000
+ 52512 multiletter control sequences out of 15000+600000
  414248 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  131i,10n,136p,734b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1219,7 +1219,7 @@ lic/amsfonts/cm/cmsy10.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/
 type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/colin/AppData/Local/Programs/MiKTe
 X/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/colin/AppData/Local/Progr
 ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on homework_1.pdf (4 pages, 192414 bytes).
+Output written on homework_1.pdf (4 pages, 192418 bytes).
 PDF statistics:
  174 PDF objects out of 1000 (max. 8388607)
  41 named destinations out of 1000 (max. 500000)

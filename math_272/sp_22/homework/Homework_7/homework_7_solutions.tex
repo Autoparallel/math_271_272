@@ -28,295 +28,165 @@
 
 \begin{center}
    \textsc{\large MATH 272, Homework 7, \emph{Solutions}}\\
-   \textsc{Due March 31$^\textrm{st}$}
 \end{center}
 \vspace{.5cm}
 
 \begin{problem}
-Previously we studied the time-independent Schr\"odinger equation. Now, we can take a look at the time-dependent version given by
-\[
-H \Psi(x,t) = i\hbar \frac{\partial}{\partial t} \Psi(x,t),
-\]
-where $H$ is the Hamiltonian operator.  Consider the situation for the free particle in the 1-dimensional box of length $L$ so that $V(x)=0$ and $\Psi(0,t)=0=\Psi(L,t)$.  
+\textbf{(BONUS 17 pts.)} Let us use the Fourier transform to deduce the diffraction pattern of a single slit. In this case, we shine a plane wave of light from a monochromatic source towards a very thin slit. The light passes through this slit and forms a diffraction pattern on the image plane which is located a distance away from the slit such that this distance is much larger than the slit itself. One receives a pattern like this:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\textwidth]{single_slit.jpg}
+\end{figure}
+From this exercise, you will be able to realize that a diffraction pattern is created in essence by taking the Fourier transform of the apperture the light passes through. I've taken some liberty here in dropping some details, but the key fact remains.
 \begin{enumerate}[(a)]
-    \item Take a separation of variables ansatz and find a set of solutions (one for every positive integer $n$) to the time-dependent equation.
-    \item Show that a super position of solutions is also a solution.
-    \item For a single state $\psi_n(x,t)$, show that 
+    \item \textbf{(1 pts.)} Let us define the aperture function
     \[
-    \int_0^L \left|\psi_n(x,t)\right|^2 dx,
+    A(x) = \begin{cases} 1, & -1 \leq x \leq 1\\
+    0, &\textrm{otherwise}.
+    \end{cases}
     \]
-    is independent of $t$. This shows that the states $\psi_n$ are \emph{stationary} since their total probability does not depend on time.
+    Plot this function $A(x)$ and note that this defines a slit of width 1 centered at the origin which we call the aperture. For all other $x$ values outside the range of $-1 \leq x \leq 1$, we can imagine there is a barrier that does not allow light to pass through.
+    \item \textbf{(2 pts.)} Using WolframAlpha, compute the Fourier transform of $A(x)$ and call it $\hat{A}(k)$. Note that I mean
+	\[
+	\hat{A}(k) = \int_{-\infty}^\infty A(x) e^{ikx}dx.
+	\]
+    \item \textbf{(2 pts.)} The brightness of light (or, really, the electric field strength) on the image plane is given by the function $\hat{A}^2(k)$. Plot this function. %If noPlot $\hat{A}^2(k)$ and compare this with the given image.
+    \item \textbf{(5 pts.)} Repeat the above with a double slit aperture that was made inside the single slit, e.g.,
+    \[
+    B(x) = \begin{cases} 1, & x\in \left[-1,-\frac{1}{2}\right] \cup \left[\frac{1}{2},1\right] \\
+    0, &\textrm{otherwise}.
+    \end{cases}
+    \]
+	\item \textbf{(2 pts.)} Show that the double slit pattern $\hat{B}^2(k)$ rests underneath the pattern (envelope) of the combination of the two slits by choosing the aperture
+	\[
+	C(x) = \begin{cases} 2, & -\frac{1}{4} \leq x \leq \frac{1}{4}\\
+    0, &\textrm{otherwise}.
+    \end{cases}
+	\]
+	That is, let the envelope be $\hat{B}^2(k)$.
+	\item \textbf{(5 pts.)} Repeat the process from before but with the aperture that is inverted from $A(x)$. That is, instead of a slit, you can picture a thin object with air around it.
 \end{enumerate}
 \end{problem}
 \begin{solution}~
 \begin{enumerate}[(a)]
-    \item Here, we take
-    \[
-    \Psi(x,t) = X(x)T(t),
-    \]
-    where we allow for both $X(x)$ and $T(t)$ to take on complex values since $\Psi(x,t)$ itself is complex.  Recall as well that
-    \[
-    H= \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V(x).
-    \]
-    Note that $V(x)=0$ for a free particle, and thus our PDE takes the form
-    \[
-    \left(-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} - i\hbar \frac{\partial}{\partial t} \right) \Psi(x,t)=0.
-    \]
-    One may call the operator to the left of $\Psi$ the time-dependent Schr\"odinger operator with zero potential. Notice the similarities of this equation and the heat equation. The order of the derivatives matches, but there now appears a complex constant in the mix.  The complex constant $i\hbar$ will in fact make this equation act more like the wave equation in it's solution. Both interpretations have physical meaning however. 
-    
-    Plugging in our ansatz, we arrive at
-    \[
-    -\frac{\hbar^2}{2m} X''T - i\hbar XT' = 0.
-    \]
-    We can then separate the variables to arrive at the two ODEs
-    \[
-    -\frac{\hbar^2}{2m} \frac{X''}{X} = E \qquad \textrm{and} \qquad i\hbar \frac{T'}{T} = E.
-    \]
-    
-    Taking the $T$ equation first, we find
-    \[
-    T'=\frac{-iE}{\hbar} T,
-    \]
-    which has the general solution
-    \[
-    T(t) = Ae^{-\frac{iE}{\hbar}t}.
-    \]
-    Next, with the $X$ equation, we have
-    \[
-    X''+\frac{2m}{\hbar^2}E X = 0,
-    \]
-    which has a general solution
-    \[
-    X(x) = Be^{\sqrt{-\frac{2mE}{\hbar^2}}x} + C e^{-\sqrt{-\frac{2mE}{\hbar^2}}x}
-    \]
-    
-    Note that $T(t)$ cannot be zero unless the constant $A=0$, which gives us only trivial solutions.  Hence, to satisfy our boundary conditions, we must have that $X(0)=0$ and $X(L)=0$.  Thus, it must be that $E>0$ and we end up with
-    \[
-    X(x) = B \sin\left(\sqrt{\frac{2mE}{\hbar^2}}x\right) + C\cos\left(\sqrt{\frac{2mE}{\hbar^2}}x\right)
-    \]
-    Applying our boundary conditions yields that $C=0$ and $\sqrt{\frac{2mE}{\hbar^2}}=\frac{n\pi}{L}$ for all positive integers $n$. Thus,
-    \[
-    X_n(x)=B_n \sin\left(\frac{n\pi x}{L}\right) \qquad \textrm{and} \qquad E_n = \frac{n^2\hbar^2 \pi^2}{2mL^2}.
-    \]
-    Note that $E_n$ now corresponds to the energy eigenvalues we found for the time-independent equation! Our separation of variables technique gave us back the same spatial solution as the time-independent case which is to be expected.  This is why I used this notation for the separation constant.
-    
-    Plugging in $E_n$ for the $T$ solutions gives us
-    \[
-    T_n(t) = A_ne^{-i\frac{E_n}{\hbar}t}=A_n e^{-i\frac{n^2\hbar \pi^2}{2mL^2}t}
-    \]
-    Our general solution for the time-dependent equation is then
-    \[
-    \boxed{\psi_n(x,t) = C_n e^{-i\frac{n^2\hbar \pi^2}{2mL^2}t} \sin\left(\frac{n\pi x}{L}\right).}
-    \]
-    We refer to these solutions as the time-dependent states for the free particle in the 1-dimensional box.
-    
-    \item Consider the superposition of all possible states
-    \[
-    \Psi(x,t) = \sum_{n=1}^\infty C_n \psi_n(x,t).
-    \]
-    We wish to show that this is also a solution to the equation.  Plugging this in, we have
-    \begin{align*}
-        \left(-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} - i\hbar \frac{\partial}{\partial t} \right) \Psi(x,t) &= \left(-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} - i\hbar \frac{\partial}{\partial t} \right) \sum_{n=1}^\infty C_n \psi_n(x,t)\\
-        &= \sum_{n=1}^\infty C_n \left(-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} - i\hbar \frac{\partial}{\partial t} \right) \psi_n(x,t)\\
-        &= 0.
-    \end{align*}
-    
-    Note as well that each $\psi_n(x,t)$ satisfies the boundary conditions $\psi_n(0,t)=0=\psi_n(L,t)$. Hence, it follows that $\Psi(0,t)=0=\Psi(L,t)$.
-    \item Note that
-    \begin{align*}
-    \left| \psi_n(x,t)\right| &= \left| e^{-i\frac{n^2\hbar \pi^2}{2mL^2}t} \sin\left(\frac{n\pi x}{L}\right) \right|\\
-    &= \left| e^{-i\frac{n^2\hbar \pi^2}{2mL^2}t} \right| \left| \sin\left(\frac{n\pi x}{L}\right) \right|\\
-    &= \left|\sin\left(\frac{n\pi x}{L}\right)\right|.
-    \end{align*}
-    Thus, it follows that the integral must also not depend on time since the magnitude of the function we are integrating does not.
+\item Here is a plot of the aperture function:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{aperture.png}
+\end{figure}
+
+\item Using WolframAlpha I get
+	\[
+	\hat{A}(k) = \int_{-\infty}^\infty A(x) e^{ikx}dx = \int_{-1}^1 e^{ikx}dx = \frac{2 \sin(k)}{k}.
+	\]
+
+\item Here is a plot of $\hat{A}^2(k) = 4 \frac{\sin^2(k)}{k^2}$:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{a_hat.png}
+\end{figure}
+
+\item Here is a plot of the double slit aperture:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{double_slit_aperture.png}
+\end{figure}
+
+Once again, using WolframAlpha to compute the Fourier transform I get
+	\[
+	\hat{B}(k) = \int_{-\infty}^\infty B(x) e^{ikx}dx = \int_{-1}^{1/2} e^{ikx}dx + \int_{-1/2}^{1} e^{ikx}dx = \frac{2\left(\sin(k)-\sin \left(\frac{k}{2}\right)\right)}{k}.
+	\]
+Then we can plot $\hat{B}^2$ as well:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{double_slit_pattern.png}
+\end{figure}
+
+\item Using Wolfram
+	\[
+	\hat{C}(k) = \int_{-\infty}^\infty C(x) e^{ikx}dx = 2\int_{-1/4}^{1/4} e^{ikx}dx = \frac{4 \sin\left(\frac{k}{4}\right)}{k}.
+	\]
+Then if we plot both intensities $\hat{B}^2$ and $\hat{C}^2$ together we get
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{envelope.png}
+	\caption{Green is the double slit pattern and the purple is the combination single slit pattern that is the envelope of the double slit.}
+\end{figure}
+
+\item We let $D(x)$ be inverted from $A(x)$ (meaning $D$ is 0 when $A$ is 1 and vice-versa) so that we get the graph for the aperture:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{hair_aperture.png}
+\end{figure}
+Then using Wolfram:
+	\[
+	\hat{D}(k) = \int_{-\infty}^\infty D(x) e^{ikx}dx = \int_{-\infty}^{-1} e^{ikx}dx + \int_{1}^{\infty} e^{ikx}dx= -\frac{2 \sin(k)}{k}.
+	\]
+So, this solution is the same up to a minus sign which means that $\hat{C}^2=\hat{D}^2$ and all of the graphs from before will be the same. In fact, if you do the experiment, this is what you will find out!
+
 \end{enumerate}
-\end{solution}
+\end{solution} 
 
 \newpage
 \begin{problem}
-Maxwell's equations are given as
-\begin{align*}
-\grad \cdot \vecfieldB &= 0  & \grad \cdot \vecfieldE &= \frac{\rho}{\epsilon_0}\\
-\grad \times \vecfieldB -\mu_0 \epsilon_0\frac{\partial \vecfieldE}{\partial t}&=\mu_0 \vecfieldJ & \grad \times \vecfieldE + \frac{\partial \vecfieldB}{\partial t} &= \zerovec
-\end{align*}
+\textbf{(BONUS 22 pts.)} If we consider the wave equation on $\R$ given by
+\[
+\left( c^2\frac{\partial^2}{\partial x^2} -\frac{\partial^2}{\partial t^2}\right) u(x,t) = 0.
+\]
+Let $\square = c^2\frac{\partial^2}{\partial x^2} -\frac{\partial^2}{\partial t^2}$ be the \emph{wave operator} (or sometimes called the \emph{d'Alembertian}) then we can factor this into two expressions:
+\[
+\left( c\frac{\partial}{\partial x} + \frac{\partial}{\partial t} \right) u_R(x,t) =0 \qquad \textrm{and} \qquad \left( c\frac{\partial}{\partial x} - \frac{\partial}{\partial t} \right) u_L(x,t) =0
+\]
+where $u_R$ and $u_L$ are left and right moving wave solutions. This was how we found the d'Alembert solution to the wave equation! Let's see how I just hid the Fourier transform from you all along.
+
+Sometimes these solutions are called \emph{plane waves} or even \emph{solitons}. Formally, you the left and right moving wave operators (that are first order) are almost Dirac operators that are used in quantum mechanics. By appealing to quaternions, you can factor the wave operator $\square$ into two equal operators (we won't do this).
 \begin{enumerate}[(a)]
-    \item Look up each of the terms in the equations above and describe them.
-    \item Describe what each equation is saying and why these are PDEs.
-    \item In the absence of all charges we will have $\vecfieldJ=\zerovec$ and $\rho=0$.  Using that and the following two facts
-    \[
-    \veclaplace \vecfieldV = \grad (\grad \cdot \vecfieldV) - \grad \times (\grad \times \vecfieldV) \qquad \textrm{and} \qquad \grad \times \frac{\partial \vecfieldV}{\partial t} = \frac{\partial}{\partial t} (\grad \times \vecfieldV),
-    \]
-    derive the vector wave equations for light
-    \[
-    \left( - \veclaplace + \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}\right) \vecfieldE = \zerovec
-    \]
-    and
-    \[
-    \left( - \veclaplace + \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}\right) \vecfieldB = \zerovec
-    \]
-    \item From the equations you derived, determine the wave speed of light in the vacuum, $c_0$.
+\item \textbf{(3 pts.)} Let us write the Fourier transform for a function of space $f(x)$ by
+\[
+\hat{f}(k) = \int_{-\infty}^\infty f(t) e^{i k x} dx
+\]
+Show that by applying this Fourier transform to the wave equation we get
+\[
+\frac{\partial^2}{\partial t^2}\hat{u}(k,t) = -c^2 k^2 \hat{u}(k,t).
+\]
+\item \textbf{(4 pts.)} Show that for any fixed value of $k$, the solution to the ODE above is
+\[
+\hat{u}(k,t) = \hat{F}(k)e^{-ickt} + \hat{G}(k)e^{ickt}.
+\]
+\item \textbf{(4 pts.)} Recall that the inverse Fourier transform is given by
+\[
+u(x,t) = \frac{1}{2\pi} \int_{-\infty}^\infty \hat{u}(k,t) e^{ikx} dk.
+\]
+Apply the inverse Fourier transform to $\hat{u}$ from before and show that
+\[
+u(x,t) = F(x-ct) + G(x+ct)
+\]
+using the fact that
+\[
+\delta_{x_0}(x) = \delta(x-x_0) = \int_{-\infty}^\infty  e^{ik(x-x_0)} dk.
+\]
+
+\item \textbf{(4 pts.)} Suppose that the initial conditions are $u(x,0) = h(x)$ and $\frac{\partial}{\partial t} u(x,0) = 0$. Given your solution from before $u(x,t)=F(x-ct)+G(x+ct)$, show that $F(x)=G(x)=\frac{1}{2}h(x)$ is a solution.
+
+\item \textbf{(2 pts.)} Go back to the d'Alembert solution and explain how we stumbled upon this using the Fourier transform.
+
+\item \textbf{(3 pts.)} Explain a bit about plane waves in higher dimensions and their Fourier transforms (namely that they are higher dimensional Dirac deltas just like ours here).
+
+\item \textbf{(2 pts.)} Let us define a space-time Fourier transform by taking some function of space and time $f(x,t)$ and computing its Fourier transform $\hat{f}$ by 
+\[
+\mathcal{F}(f)(k,\omega) = \hat{f}(k,\omega) = \frac{1}{2\pi} \int_{-\infty}^\infty \int_{\infty}^\infty f(x,t) e^{i(kx-\omega t)} dxdt. 
+\]
+Let's use this with the wave equation and its factored version. Show that the space-time Fourier transform of the wave operator $\square$ is given by
+\[
+\mathcal{F}(\square) = c^2k^2 - \omega^2.
+\]
 \end{enumerate}
 \end{problem}
 \begin{solution}~
 \begin{enumerate}[(a)]
-    \item From top left to bottom right, we have names for the equations.  They are:
-    \begin{itemize}
-        \item Gauss's law for magnetism: $\grad \cdot \vecfieldB = 0$.
-        \item Gauss's law: $\grad \cdot \vecfieldE = \frac{\rho}{\epsilon_0}$.
-        \item Amp\`ere's circuital law: $\grad \times \vecfieldB -\mu_0 \epsilon_0\frac{\partial \vecfieldE}{\partial t}=\mu_0 \vecfieldJ$.
-        \item Faraday's law of induction: $\grad \times \vecfieldE + \frac{\partial \vecfieldB}{\partial t} = \zerovec$.
-    \end{itemize}
-    
-    In the above equations we have a few terms that we should define and describe.  First, there are the fields, $\vecfieldE$ and $\vecfieldB$ which are the electric and magnetic fields respectively.  Both are functions of space and time, so we could put $\vecfieldE(x,y,z,t)$ and $\vecfieldB(x,y,z,t)$ if we wanted to be a bit more transparent.  Both of these fields cause forces on charged particles and arise from the single electromagnetic field that permeates all of space.  Indeed, the fields themselves can also arise from charged particles as well.  They can also take on different values depending on how the charges are placed or whether or not they are moving.
-    
-    We refer to the static distribution of charge with the variable $\rho$ which physically represents the charge density.  In principle, this charge density (per unit volume) can depend on both space and time and we could put $\rho(x,y,z,t)$ to again be fully transparent.  There may also be a current density (per unit area) present in space, which we represent by $\vecfieldJ$. Again, this is a function that can change over space and time and we could put $\vecfieldJ(x,y,z,t)$.  The electric and magnetic fields become unified into the single electromagnetic field when we start to think of $\rho$ and $\vecfieldJ$ as describing an analogous quantity. One can realize this by noting that moving charges are what generate a current.  If two observers are to view the same configuration of charges and currents from different perspectives (different reference frames) they may disagree on the values for $\vecfieldE$ and $\vecfieldB$.  However, if you properly transform space and time between their perspectives, you will see that this difference just has to do with their differences in relative motion.  This sparked the idea of Einstein and other physicists and mathematicians (like Lorentz) to develop \emph{special relativity}.  Under special relativity, we see that these two fields $\vecfieldE$ and $\vecfieldB$ are just portions of the electromagnetic field that depend on your relative motion.
-    
-    Finally, we can take a look at the constants $\epsilon_0$ and $\mu_0$ which appear.  In general, $\epsilon$ describes the permittivity of a substance.  That is, how freely the electric field $\vecfieldE$ can pass through a given substance.  The subscript $0$ pertaining to $\epsilon_0$ states that this is the permittivity of free space (i.e., the permittivity of the vacuum).  In this sense, even the vacuum has some notion of resisting how the electric field can pass through it. On the flip side, $\mu$ describes the permeability of a substance.  It is the magnetic analog to $\epsilon$. So, in this case, $\mu_0$ represents the permeability of the vacuum.  Roughly speaking, $\mu$ is describing how easily a substance allows the magnetic field to pass through it. One should be a bit careful here.  We are actually finding that we may need to think about these quantities in different ways as we learn more.  So, this point of view may be a bit defunct in some ways.
-    
-    \item The above equations are indeed PDEs.  For each, we are intending to find vector fields that satisfy conditions.  In fact, each equation is coupled to one another.  Specifically, what this means is that we require the vector field $\vecfieldE$ and $\vecfieldB$ to simultaneously solve all of the above equations. We take $\rho$ and $\vecfieldJ$ to be external to these equations in that these are values we supply in order to determine the induced fields $\vecfieldE$ and $\vecfieldB$.  
-    
-    In this sense, these are PDEs of vector fields while all the previous examples we had considered were PDEs of scalar fields.  One may then refer to these equations as vector PDEs and the others as scalar PDEs.  
-    
-    Lastly, it may be illuminating to see that if we supply no charge density $\rho$ and no current density $\vecfieldJ$, that the equations above still provide \underline{nontrivial} solutions! That is, the vector fields aren't just constants.  We will see this in the next part.
-    
-    If we remove all current density by taking $\vecfieldJ$ to be zero and we let $\rho(x,y,z)$ not depend on time, then we arrive at the vacuum electrostatic equations
-    \begin{align*}
-        \grad \times \vecfieldE = \zerovec \qquad \textrm{and} \qquad \grad \cdot \vecfieldE = \frac{\rho}{\epsilon_0}.
-    \end{align*}
-    Here, we can see that $\vecfieldE$ is conservative since its curl is zero.  Indeed, that means there exists a potential function $\phi(x,y,z)$ such that $\grad \phi = \vecfieldE$.  This potential is called the \emph{electrostatic potential} or the \emph{voltage}.  Thus, the equations simply reduce to finding a scalar field $\phi$ such that
-    \[
-    \Delta \phi = \frac{\rho}{\epsilon_0},
-    \]
-    which is the Poisson equation.  Once again, we arrive back at an equation we have seen in other contexts. Note that this means we actually only define $\phi$ up to a constant! Typically, we choose to let this constant be zero.  One may call this \emph{gauge fixing}.
-    
-    Analogously, we can force $\rho$ to be zero and let $\vecfieldJ(x,y,z)$ not depend on time and we arrive at the realm of the vacuum magnetostatic equations given by
-    \[
-        \grad \cdot \vecfieldB = 0 \qquad \textrm{and} \qquad \grad \times \vecfieldB = \mu_0 \vecfieldJ.
-    \]
-    Note that when we are working in $\R^3$, if we have $\grad \cdot \vecfieldB=0$, it means that $\vecfieldB = \grad \times \vecfieldA$ where we refer to the vector field $\vecfieldA$ as the \emph{vector potential} for the vector field $\vecfieldB$.  This is analogous to having a scalar potential when a vector field is curl free. By the Helmholtz decomposition of vector fields, we know that $\vecfieldA$ can be written as a part that is curl free plus a part that is divergence free. Thus, if we choose to let $\grad \cdot \vecfieldA=0$, we can still satisfy $\grad \times \vecfieldA = \vecfieldB$ and by doing this we have
-    \[
-    \grad \left(\grad \cdot \vecfieldA\right) - \grad \times \left(\grad \times \vecfieldA\right)= \veclaplace \vecfieldA = \vecfieldJ.
-    \]
-    However, the divergence of $\vecfieldA$ being zero implies that we must have
-    \[
-    \veclaplace \vecfieldA = \vecfieldJ,
-    \]
-    which is the vector form of the Laplace equation.  The choice of forcing the extra condition
-    \[
-    \grad \cdot \vecfieldA=0,
-    \]
-    fixes what we refer to as the \emph{Coulomb gauge}.  One may also notice that the idenity
-    \[
-    \grad \cdot \left( \grad \times \vecfieldV \right) = 0,
-    \]
-    means that we must have $\grad \cdot \vecfieldJ=0$.  So, we can only find magnetostatic vector fields when we have a source/sink free current.
-    
-    \item Now, let us fix $\rho=0$ and $\vecfieldJ=\zerovec$.  Then, we can take the curl of Faraday's law yields
-        \begin{align*}
-            \grad \times \left(\grad \times \vecfieldE +  \frac{\partial \vecfieldB}{\partial t} \right) &=\zerovec\\
-            \implies ~ \grad \times \left(\grad \times \vecfieldE\right) + \grad \times \left(\frac{\partial \vecfieldB}{\partial t} \right)&=\zerovec \\
-            \implies ~ \grad \left( \grad \cdot \vecfieldE\right)-\veclaplace \vecfieldE + \frac{\partial}{\partial t} \left( \grad \times \vecfieldB\right)&=\zerovec\\
-            \implies ~ -\veclaplace \vecfieldE +  \frac{\partial}{\partial t} \left(\mu_0 \epsilon_0 \frac{\partial \vecfieldE}{\partial t}\right) &= \zerovec\\
-            \implies ~ \left( - \veclaplace + \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}\right) \vecfieldE &= \zerovec,
-        \end{align*}
-        which is our intended equation.  Likewise, we can take the curl of Amp\`ere's law to get
-    \begin{align*}
-        \grad \times \left(\grad \times \vecfieldB - \mu_0 \epsilon_0 \frac{\partial \vecfieldE}{\partial t} \right) &=\zerovec\\
-        \implies ~ \grad \times \left(\grad \times \vecfieldB\right) - \grad \times \left(\mu_0 \epsilon_0\frac{\partial \vecfieldE}{\partial t} \right)&=\zerovec \\
-        \implies ~ \grad \left( \grad \cdot \vecfieldB\right)-\veclaplace \vecfieldB - \mu_0\epsilon_0\frac{\partial}{\partial t} \left( \grad \times \vecfieldE\right)&=\zerovec\\
-        \implies ~ -\veclaplace \vecfieldB - \mu_0 \epsilon_0 \frac{\partial}{\partial t} \left(-\frac{\partial \vecfieldB}{\partial t}\right) &= \zerovec\\
-        \implies ~ \left( - \veclaplace + \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}\right) \vecfieldB &= \zerovec,
-    \end{align*}
-    which is the other intended equation. These are both the vector wave equations for the electromagnetic field. Otherwise known as light.
-    
-    \item The wavespeed in the wave equation is typically written as $c$ and appears as
-    \[
-    \left( - \veclaplace + \frac{1}{c^2} \frac{\partial^2 }{\partial t^2}\right).
-    \]
-    Hence, the wave speed here is
-    \[
-    c_0 = \frac{1}{\sqrt{\mu_0\epsilon_0}} = 2.998 \cdot 10^8 m/s,
-    \]
-    which is the speed of light in the vacuum.
+\item 
 \end{enumerate}
 \end{solution}
-
-\newpage
-\begin{problem}
-In 3-dimensional space, we can write down the Hamiltonian operator for an electron orbiting a proton. Specifically, this is
-\[
-H = -\frac{\hbar^2}{2\mu} \Delta + V(x,y,z).
-\]
-where $\mu$ is the reduced mass and with the Coulomb potential
-    \[
-    V(x,y,z) = \frac{1}{4\pi \epsilon_0} \frac{e^2}{\sqrt{x^2+y^2+z^2}},
-    \]
-which is the electrostatic potential created by a single proton pulling on a single electron. 
-\begin{enumerate}[(a)]
-    \item Write down the time independent Schr\"odinger equation in spherical coordinates. \emph{That means you must also convert the laplacian as well.}
-    \item Take the separation of variables ansatz $\Psi(r,\theta,\phi) = R(r)Y(\theta,\phi)$ and show that the time independent equation is separable into radial and angular components.
-\end{enumerate}
-\end{problem}
-\begin{solution}~
-\begin{enumerate}[(a)]
-    \item First, we note that in spherical coordinates the potential is given by
-    \[
-    V(r,\theta,\phi) = \frac{1}{4\pi \epsilon_0} \frac{e^2}{r},
-    \]
-    where $e$ is the charge of a proton. One can note that this potential is spherically symmetric since there is no dependence on $\theta$ or $\phi$. Indeed, this means the potential is also conservative.
-
-    The laplacian in spherical coordinates is given by
-    \[
-        \Delta f(r,\theta,\phi) = \frac{1}{r^2} \frac{\partial}{\partial r} \left(r^2 \frac{\partial f}{\partial r}\right)+\frac{1}{r^2 \sin^2 \phi} \frac{\partial^2 f}{\partial \theta^2} + \frac{1}{r^2 \sin\phi}\frac{\partial}{\partial \phi} \left(\sin \phi \frac{\partial f}{\partial \phi}\right)
-    \]
-and hence our Hamiltonian is 
-\[
-H = -\frac{\hbar^2}{2\mu} \left[\frac{1}{r^2} \frac{\partial}{\partial r} \left(r^2 \frac{\partial }{\partial r}\right)+\frac{1}{r^2 \sin^2 \phi} \frac{\partial^2 }{\partial \theta^2} + \frac{1}{r^2 \sin\phi}\frac{\partial}{\partial \phi} \left(\sin \phi \frac{\partial }{\partial \phi}\right) + \frac{e^2}{4\pi \epsilon_0 r}\right]
-\]
-and the time independent Schr\"odinger equation is
-\[
-H \Psi(r,\theta,\phi) = E \Psi(r,\theta,\phi).
-\]
-\item Taking the ansatz $\Psi(r,\theta,\phi) = R(r)Y(\theta,\phi)$, we have the time independent Sch\"odinger equation yields
-\begin{align*}
--\frac{\hbar^2}{2m} \left[\frac{1}{r^2} \frac{\partial}{\partial r} \left(r^2 \frac{\partial }{\partial r}\right)+\frac{1}{r^2 \sin^2 \phi} \frac{\partial^2 }{\partial \theta^2} + \frac{1}{r^2 \sin\phi}\frac{\partial}{\partial \phi} \left(\sin \phi \frac{\partial }{\partial \phi}\right) + \frac{1}{4\pi \epsilon_0 r}\right] RY = E RY.
-\end{align*}
-Then, we have
-\[
--\frac{\hbar^2}{2\mu} \left[  \frac{Y}{r^2} \frac{d}{dr} \left(r^2 \frac{d R}{dr}\right) +\frac{R}{r^2 \sin^2\phi} \frac{\partial^2 Y}{\partial\theta^2} + \frac{R}{r^2 \sin\phi} \frac{\partial}{\partial \phi}\left(\sin \phi \frac{\partial Y}{d\phi}\right)\right] + \frac{RY e^2}{4\pi \epsilon_0 r} = ERY.
-\]
-We can then multiply by $r^2$ and divide by $RY$ to yield
-\[
--\frac{\hbar^2}{2\mu} \left[  \frac{1}{R} \frac{d}{dr} \left(r^2 \frac{d R}{dr}\right) +\frac{1}{Y \sin^2\phi} \frac{\partial^2 Y}{\partial \theta^2} + \frac{1}{Y \sin\phi} \frac{\partial}{\partial\phi}\left(\sin \phi \frac{\partial Y}{\partial \phi}\right)\right] + \frac{e^2}{4\pi \epsilon_0 r}.
-\]
-We can note that we have
-\[
-\frac{1}{R} \frac{d}{dr} \left(r^2 \frac{d R}{dr}\right) + \frac{2 \mu}{\hbar^2} \left(E + \frac{e^2}{4\pi \epsilon_0 r}\right) = -\frac{1}{Y \sin^2\phi} \frac{\partial^2 Y}{\partial \theta^2} + \frac{1}{Y \sin\phi} \frac{\partial}{\partial\phi}\left(\sin \phi \frac{\partial Y}{\partial \phi}\right)
-\]
-The left side depends solely on $r$ and the right side depends solely on $\theta$ and $\phi$, therefore this is separable.
-\end{enumerate}
-\end{solution}
-
-\begin{problem}[BONUS]
-The differential equation for the static magnetic field $\vecfieldB$ is given by Ampere's law
-\[
-\grad \times \vecfieldB = \mu_0 \vecfieldJ.
-\]
-This equation is solvable by the Biot-Savart law. Let us consider a loop of wire with a constant current so that
-\[
-\curvegamma(t) = \begin{pmatrix} \cos(t) \\ \sin(t) \\ 0 \end{pmatrix} \qquad t\in [0,2\pi],
-\]
-and $\vecfieldJ= J \tangentgamma(t)$ along $\curvegamma$ and is zero elsewhere. Let $\vecx = \begin{pmatrix} x \\ y \\ z \end{pmatrix}$ denote the position in space we wish to measure the magnetic field.
-\begin{enumerate}[(a)]
-    \item The Biot-Savart law says
-    \[
-    \vecfieldB(\vecx) = \frac{\mu_0}{4\pi} \int_{\curvegamma} \frac{(J d\curvegamma) \times (\vecx - \curvegamma)}{|\vecx-\curvegamma|}.
-    \]
-    Find $\vecfieldB$ using this law. \emph{Note that the magnetic field is ill defined along the current loop itself.} See \url{https://pages.uncc.edu/phys2102/online-lectures/chapter-7-magnetism/7-2-magnetic-field-biot-savart-law/example-magnetic-field-of-a-current-loop/} for help.
-    \item Draw a picture displaying what the above integral is computing.
-    \item Compute $\grad \times \vecfieldB$. Is your answer a solution to Ampere's law?
-\end{enumerate}
-\end{problem}
 
 
 \end{document}

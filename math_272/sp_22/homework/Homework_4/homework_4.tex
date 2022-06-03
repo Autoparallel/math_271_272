@@ -11,6 +11,7 @@
 \newcommand{\thetahat}{\boldsymbol{\hat{\theta}}}
 \newcommand{\phihat}{\boldsymbol{\hat{\phi}}}
 \newcommand{\rhohat}{\boldsymbol{\hat{\rho}}}
+\newcommand{\vecfieldV}{\boldsymbol{\vec{V}}}
 
 \begin{document}
 
@@ -21,108 +22,208 @@
 \vspace{.5cm}
 
 \begin{problem}
-    Plot each of the following vector fields. Describe what each field represents in the relevant coordinate system. Do we see any points in space where there are issues with these vector fields?
-    \begin{enumerate}[(a)]
-        \item $\rhohat = \frac{x}{\sqrt{x^2+y^2}}\xhat + \frac{y}{\sqrt{x^2+y^2}}\yhat$.
-        \item $\thetahat = \frac{-y}{\sqrt{x^2+y^2}}\xhat + \frac{x}{\sqrt{x^2+y^2}}\yhat$.
-        \item $\phihat = \frac{xz}{\sqrt{x^2+y^2}\sqrt{x^2+y^2+z^2}}\xhat + \frac{yz}{\sqrt{x^2+y^2}\sqrt{x^2+y^2+z^2}}\yhat-\frac{\sqrt{x^2+y^2}}{\sqrt{x^2+y^2+z^2}}\zhat$.
-        \item $\rhat = \frac{x}{\sqrt{x^2+y^2+z^2}}\xhat + \frac{y}{\sqrt{x^2+y^2+z^2}}\yhat+\frac{z}{\sqrt{x^2+y^2+z^2}}\zhat$.
-    \end{enumerate}
-\end{problem}
-
-\vspace*{.5cm}
-
-\begin{problem}
-\textcolor{red}{The time derivatives of the coordinates are not so trivial. See: \url{https://mathworld.wolfram.com/CylindricalCoordinates.html} for example}
-Let us see some of the usefulness of cylindrical coordinates.
+\textbf{(7 pts.)} Let $\vecfieldV$ be a vector field in the plane $\R^2$ defined by
+\[
+\vecfieldV(x,y) = \begin{pmatrix} \frac{1}{2}x-y \\ x + \frac{1}{2}y \end{pmatrix},
+\]
+and let $\vecx(t) = \begin{pmatrix}  e^{\frac{1}{2}t} (-c_1 \sin(t) + c_2 \cos(t) ) \\ e^{\frac{1}{2}t} (c_1 \cos(t) + c_2 \sin(t)) \end{pmatrix}$ for $t\in [0,\pi]$ where $c_1$ and $c_2$ are yet undetermined constants.
 \begin{enumerate}[(a)]
-    \item Using the fact that $\thetahat = \frac{-y}{\sqrt{x^2+y^2}}\xhat + \frac{x}{\sqrt{x^2+y^2}}\yhat$, convert the magnetic field 
-    \[
-    \vecfieldB = -\frac{y}{2}\xhat + \frac{x}{2}\yhat,
-    \]
-    into cylindrical coordinates (i.e., only a function of $\rho$, $\theta$, $z$, and $\rhohat$, $\thetahat$, and $\zhat$).  
-        \item Parameterize a curve $\curvegamma(t)$ that traces out the unit circle in the $xy$-plane in cylindrical coordinates.
-        \item Compute the tangent vector $\tangentgamma(t)$ in cylindrical coordinates?
-        \item Compute the following integral using cylindrical coordinates
-        \[
-        \int_{\curvegamma} \vecfieldB \cdot d\curvegamma.
-        \]
-%        \item Using cylindrical coordinates, compare your result with
-%        \[
-%        \iint_\Sigma \left(\grad \times \vecfieldB\right) \cdot \unitvec d\Sigma,
-%        \]
-%        where $\Sigma$ is the unit disk.
+    \item \textbf{(2 pts.)} Show that a flow of $\vecfieldV$ yields a linear system of equations.
+    \item \textbf{(2 pts.)} Show that $\vecx(t)$ is a flow of the vector field $\vecfieldV$.
+    \item \textbf{(1 pts.)} Let $\vecx(0)=\begin{pmatrix} 1 \\ 0 \end{pmatrix}$. Determine the particular solution to the initial value problem.
+    \item \textbf{(2 pts.)} Plot the $\vecfieldV$ and your particular solution $\vecx$ simultaneously. Choose good bounds for your plot so that the whole curve is visible.
 \end{enumerate}
 \end{problem}
 
-\vspace*{.5cm}
+\begin{problem}
+\textbf{(7 pts.)} Consider our model for a molecular crystal potential for which we took the scalar field
+\[
+u(x,y)=\cos^2(x)+\cos^2(y).
+\]
+\begin{enumerate}[(a)]
+\item \textbf{(1 pts.)} Plot the graph of of $u(x,y)$ and the level curves. Feel free to use your old work.
+\item \textbf{(1 pts.)} Write down the differential equation for a curve given by gradient descent of the system. That is, the negative of the gradient flow. 
+\item \textbf{(2 pts.)} Without solving the problem, where would particles end up if they follow gradient descent? What if particles start on a peak?
+\item \textbf{(3 pts.)} Recall the matrix $[J]$ given by
+\[
+[J] = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}.
+\]
+The \emph{Hamiltonian flow} is given by
+\[
+\boldsymbol{\dot{\vec{x}}}(t) = [J] \grad u(\vecx(t)).
+\]
+The \emph{Hamiltonian vector field} is the right hand side,
+\[
+[J] \grad u(x,y).
+\]
+Plot the Hamiltonian vector field and explain why the level curves to $u(x,y)$ correspond to the Hamiltonian flows.
+\end{enumerate}
+\end{problem}
 
 \begin{problem}
-    Convert the following integrals to integrals in cylindrical coordinates. Also, describe the region in which you are integrating over. Do not evaluate the integrals.
+\textbf{(10 pts.)} Let us consider the discrete heat equation for $n$ equally spaced particles on a line segment for which we have the following picture
+\begin{figure}[H]
+	\centering
+	\resizebox{.9\columnwidth}{!}{\input{figures/equally_spaced_line_points.pdf_tex}}
+\end{figure}
+Let $u_j(t) \coloneqq u(x_j,t)$ denote the temperature of particle $j$ at time $t$, let $k_j$ be the thermal transport coefficient between particles $j$ and $j+1$, and let $f_j(t)=f(x_j,t)$ be the thermal energy source on particle $j$.
+\begin{enumerate}[(a)]
+    \item \textbf{(2 pts.)} For the boundary particles $x_1$ and $x_n$, we have
+    \[
+    \dot{u}_1 = -k_1 u_1 + k_1 u_{2} + f_1 \qquad \textrm{and} \qquad \dot{u}_n = -k_n u_{n} + k_{n-1} u_{n-1} +f_n,
+    \]
+    which correspond to \emph{Neumann type boundary conditions}. Explain each term in the above equations.
+    \item \textbf{(2 pts.)} If we attached $x_1$ to $x_n$ with a material with a thermal transport coefficent of $k_0$ the above equations would need modification. Write these new equations. These are the \emph{periodic boundary conditions}. 
+    \item \textbf{(1 pts.)} Explain why periodic boundary conditions are the same as working with a circular domain.
+    \item \textbf{(1 pts.)} If we force $u_1$ and $u_n$ to be constant, what will the equations for the boundary particles be? These would be the \emph{Dirichlet type boundary conditions}.
+    \item \textbf{(2 pts.)} For the interior particles, we have the relationship
+    \[
+    \dot{u}_j = -k_{j-1}u_j - k_{j} u_j + k_{j-1}u_{j-1} + k_{j} u_{j+1} +f_j \qquad \textrm{for $j=2,\dots,n-1$}.
+    \]
+    Explain what each term describes in the above equation.
+    \item \textbf{(2 pts.)} In the limit as $n\to \infty$, we then have that $k$ is described as a function of position, $x$. The source free heat equation then reads
+    \[
+    \frac{\partial}{\partial t}u(x,t) = \frac{\partial}{\partial x} \left( k(x)\frac{\partial}{\partial x} u(x,t) \right) + f(x,t).
+    \]
+    Explain how this equation differs from the equation
+    \[
+    \frac{\partial}{\partial t}u(x,t) = k(x) \frac{\partial^2}{\partial x^2} u(x,t)+f(x,t).
+    \]
+\end{enumerate}
+\end{problem}
+
+
+
+\begin{problem}
+    \textbf{(8 pts.)} Consider the 1-dimensional homogeneous Laplace equation given by 
+    \[
+    \frac{\partial^2}{\partial x^2} u_E(x) = 0,
+    \]
+    with the domain $\Omega$ as the unit interval on the $x$-axis.  Take the Dirichlet boundary conditions $u_E(0)=T_0$ and $u_E(L)=T_L$.  Think of these values as the ambient temperature at the endpoints of the rod.  These temperatures are constant since the ambient environment is so large.
     \begin{enumerate}[(a)]
-        \item $\displaystyle{\int_{-1}^{1} \int_{-1}^{1} \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}} xyz dxdydz}$.
-        \item $\displaystyle{\int_0^1 \int_{-z}^z \int_{-\sqrt{z^2-y^2}}^{\sqrt{z^2-y^2}} x^2+y^2+z^2 dxdydz}$.
+        \item \textbf{(2 pts.)} Find the particular solution to this Laplace equation.
+        \item \textbf{(2 pts.)} Suppose that $v(x,t)$ is a solution to the 1-dimensional source free isotropic heat equation with zero Dirichlet boundary values. Show that 
+        \[
+        u(x,t)=v(x,t)+u_E(x),
+        \]  
+        is a solution to the 1-dimensional source free isotropic heat equation with Dirichlet boundary values $u(0,t)=T_0$ and $u(L,t)=T_L$.
+        \item \textbf{(2 pts.)} From Problem 1, we know that $\lim_{t\to \infty} v(x,t) = 0$.  Hence, show that the long time limit of a solution to the source free heat equation yields a solution to the Laplace equation.
+        \item \textbf{(2 pts.)} Argue why the equilibrium temperature profile of a rod can be found without solving the heat equation.
     \end{enumerate}
 \end{problem}
 
-\vspace*{.5cm}
-
-\textcolor{red}{Add in a problem relating the $f$ in the laplacian problems?}
 \begin{problem}
-    Note that the Laplacian $\Delta$ in cylindrical coordinates is given by
+    \textbf{(3 pts.)} Using intuition from the previous problem, explain how one could solve the heat equation with a nonzero source term that only depends on $x$. In other words, how could one try to solve
     \[
-        \Delta f(\rho,\theta,z) = \frac{1}{\rho} \frac{\partial}{\partial \rho} \left(\rho \frac{\partial f}{\partial \rho}\right)+\frac{1}{\rho^2}\frac{\partial^2 f}{\partial \theta^2} + \frac{\partial^2 f}{\partial z^2}.
-    \]
-    Compute the Laplacian of
-    \[
-        f(\rho,\theta,z) = \sqrt{\rho^2+z^2} z \cos(\theta).
+    \left( -k \frac{\partial^2}{\partial x^2} + \frac{\partial}{\partial t} \right) u(x,t) = f(x),
     \]
 \end{problem}
 
 \begin{problem}
-	In spherical coordinates (either implicitly or explicitly), parameterize the following objects.
-	\begin{enumerate}[(a)]
-		\item A solid sphere with radius 3.
-		\item The surface of an infinite cone with a vertex angle of $\pi/4$.
-		\item A latitudinal curve on the unit sphere at the latitude of 30$^\circ$ above the equator.
-		\item A solid unit sphere with a cylinder of radius 1/2 removed from the core.
-	\end{enumerate}
-\end{problem}
-
-\vspace*{.5cm}
-
-\begin{problem}
-    Let us see some of the benefit of using spherical coordinates. 
+    \textbf{(13 pts.)} Consider the 2-dimensional source free isotropic heat equation given by
+    \[
+    \left( -k \Delta + \frac{\partial}{\partial t} \right) u(x,y,t) = 0,
+    \]
+    with the domain $\Omega$ as the unit square in the $xy$-plane. Take as well the Dirichlet boundary conditions $u(x,y,t)=0$ for $x$ and $y$ on the boundary of $\Omega$.
     \begin{enumerate}[(a)]
-        \item Using the fact that 
-        \[
-        \rhat = \frac{x}{\sqrt{x^2+y^2+z^2}}\xhat + \frac{y}{\sqrt{x^2+y^2+z^2}}\yhat + \frac{z}{\sqrt{x^2+y^2+z^2}}\zhat,
-        \]
-        convert the vector field 
-        \[
-        \vecfieldE(x,y,z) = \begin{pmatrix} \frac{x}{(x^2+y^2+z^2)^{3/2}} \\ \frac{y}{(x^2+y^2+z^2)^{3/2}} \\ \frac{z}{(x^2+y^2+z^2)^{3/2}} \end{pmatrix},
-        \] into spherical coordinates (i.e., only a function of $r$, $\theta$, $\phi$, and $\rhat$, $\thetahat$, and $\phihat$).
-        \item Parameterize the surface of a sphere of radius $R$ (which we'll call $\Sigma$) as well as the outward normal vector $\unitvec$ and  in spherical coordinates.
-        \item Compute the following integral using spherical coordinates that we have found:
-        \[
-        \iint_\Sigma \vecfieldE \cdot \unitvec d\Sigma,
-        \]
-        where $d\Sigma$ will be the area form in spherical coordinates.
+        \item \textbf{(2 pts.)} Show that $u_{mn}(x,y,t)=\sin(m\pi x)\sin(n\pi y)e^{-k(n^2+m^2)\pi^2 t}$ is a solution to the PDE and Dirichlet boundary conditions for any non-negative integers $m$ and $n$.
+        \item \textbf{(2 pts.)} Show that a linear combination of solutions $u_{mn}$ and $u_{pq}$ is also a solution.
+        \item \textbf{(3 pts.)} For $m=n=1$ and $k=1$, plot the solution for the values $t=0$, $t=0.01$, $t=0.1$ and $t=1$.  Explain what is physically happening as time moves forward.
+        \item \textbf{(2 pts.)} Explain what varying the value for the conductivity $k$ does to the solution.  Feel free to use plots to support your hypothesis.
+        \item \textbf{(2 pts.)} Explain the mathematical reason why increasing $m$ and $n$ causes the solution to converge to zero more quickly.
+        \item \textbf{(2 pts.)} Explain the physical reason why increasing $m$ and $n$ causes the solution to converge to zero more quickly. Plots may help support your reasoning.
+    \end{enumerate}
+\end{problem}
+\begin{problem}
+\textbf{(11 pts.)} Consider the 1-dimensional wave equation given by
+\[
+\left(-\frac{\partial^2}{\partial x^2} +\frac{1}{c^2} \frac{\partial^2}{\partial  t^2} \right) u(x,t) = 0.
+\]
+We'll consider two distinct scenarios. First, we'll take an infinitely long elastic rod and second we'll take a rod of finite length with Dirichlet boundary conditions.
+\begin{enumerate}[(a)]
+    \item \textbf{(2 pts.)} For a rod of infinite length, consider the initial conditions
+    \[
+    u(x,0) = \begin{cases} x+1 & -1\leq x \leq 0 \\ 1-x & 0\leq x \leq 1 \\ 0 & \textrm{otherwise} \end{cases} \qquad \textrm{and} \qquad \frac{\partial}{\partial t} u(x,0) = 0.
+    \]
+    Find and plot the portion of the wave that moves to the right with $c=1$.
+    \item \textbf{(2 pts.)} Let $u_R(x,t)$ be your solution from (a), show that this satisfies the right-moving wave equation
+    \[
+    \left(\frac{\partial}{\partial x} + \frac{1}{c} \frac{\partial}{\partial t} \right)u_R(x,t) = 0.
+    \]
+    \item \textbf{(1 pts.)} Why is it that we can ignore the points where your function $u_R(x,t)$ is not differentiable even though we are considering this as a solution to a PDE?
+    \item \textbf{(2 pts.)} For an elastic rod $\Omega$ of finite length, $\Omega = [0,1]$, assume that we take the Dirichlet conditions $u(0,t)=0=u(1,t)$.  With the initial conditions
+    \[
+    u(x,0) = \sin(\pi x) \qquad \textrm{and} \qquad \frac{\partial}{\partial t} u(x,0)=0,
+    \]
+    find the solution using d'Alembert's formula.
+    \item \textbf{(2 pts.)} Let $w(x,t)$ be your solution for (d), show that it is indeed equal to
+    \[
+    w(x,t) = \sin(\pi x)\cos(\pi c t).
+    \]
+    \item \textbf{(2 pts.)} With your result from (e), explain how we can decompose a standing wave into a linear combination of two waves; one moving towards the left and one moving towards the right and both reflecting off the boundary.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+    \textbf{(8 pts.)} Consider the wave problem on the region $\Omega=[0,1]$ given by
+    \[
+    \begin{cases}
+    \left( - \frac{\partial^2}{\partial x^2} +\frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right) u(x,t) =0, & \textrm{in $(0,1)$},\\
+    u(0,t)=0 \textrm{~and~} u(1,t)=0, &\textrm{as boundary conditions},\\
+    u(x,0)=\sin(\pi x), &\textrm{as the initial condition}.
+    \end{cases}
+    \]
+    This problem corresponds to taking a plucked elastic string fixed at the endpoints.
+    \begin{enumerate}[(a)]
+        \item \textbf{(1 pts.)} Use the separation of variables ansatz $u(x,t)=X(x)T(t)$ to get a new separation constant. This will give two ODEs: one will be in terms of $X(x)$ and the other will be in terms of $T(t)$.
+        \item \textbf{(2 pts.)} Use the boundary conditions and solve the ODE that is in terms of $X(x)$ which will simultaneously find the allowed values for the separation constant.
+        \item \textbf{(2 pts.)} Using these allowed values for the separation constant, find the solution for $T(t)$.
+        \item \textbf{(1 pts.)} Find the particular solution for $u(x,t)$ by matching the initial condition.
+        \item \textbf{(2 pts.)} Plot your solution for $x\in [0,1]$ and $t\in [0,\infty)$ (i.e., just plot up to a large value of $t$). In this case, compare your plots for $c=1/2$ and $c=1$.
     \end{enumerate}
 \end{problem}
 
-\vspace*{.5cm}
-
 \begin{problem}
-    Note that the Laplacian $\Delta$ in spherical coordinates is given by
+\textbf{(9 pts.)} Consider the heat flow problem on the region $\Omega=[0,1]$ given by
+\[
+\begin{cases}
+\frac{\partial}{\partial t} u(x,t) = \frac{\partial^2}{\partial x^2} u(x,t) - 1, & \textrm{in $(0,1)$},\\
+u(0,t)=0 \textrm{~and~} u(1,t)=1, & \text{as boundary conditions},\\
+u(x,0) = \sin\left(\pi x\right) + \frac{1}{2}(x^2+x), & \textrm{as the initial condition}.
+\end{cases}
+\]
+This corresponds to a rod kept at fixed temperatures at the endpoints that starts with a warm center initially.
+\begin{enumerate}[(a)]
+    \item \textbf{(3 pts.)} As with the previous problem, take an ansatz
     \[
-        \Delta f(r,\theta,\phi) = \frac{1}{r^2} \frac{\partial}{\partial r} \left(r^2 \frac{\partial f}{\partial r}\right)+\frac{1}{r^2 \sin^2 \phi} \frac{\partial^2 f}{\partial \theta^2} + \frac{1}{r^2 \sin\phi}\frac{\partial}{\partial \phi} \left(\sin \phi \frac{\partial f}{\partial \phi}\right).
+    u(x,t) = v(x,t) + u_E(x)
     \]
-    Compute the Laplacian of
+    where $v(x,t)$ solves the following problem
     \[
-       f(r,\theta,\phi) = r^2 \cos(\theta)\cos(\phi).
+\begin{cases}
+\frac{\partial}{\partial t} v(x,t) = \frac{\partial^2}{\partial x^2} v(x,t), & \textrm{in $(0,1)$},\\
+v(0,t)=0 \textrm{~and~} v(1,t)=0, & \text{as boundary conditions}.
+\end{cases}
     \]
+    Find the general solution $v(x,t)$ using separation of variables. \emph{Hint: feel free to use the work in the notes (Example ``Solving the Heat Equation" and Example ``Particular Solution to the 1D Heat Equation").}
+
+    \item \textbf{(2 pts.)} Show that for $u(x,t)$ to be a solution that
+    \[
+    \frac{\partial^2}{\partial x^2} u_E(x) = 1.
+    \]
+
+    \item \textbf{(2 pts.)} Find the solution $u_E(x)$ to the following problem
+    \[
+    \begin{cases}
+    \frac{\partial^2}{\partial x^2} u_E(x) = 1, & \textrm{in $(0,1)$},\\
+    u_E(0)=0 \textrm{~and~} u_E(1)=1, & \text{as boundary conditions}.
+    \end{cases}
+    \]
+    
+    \item \textbf{(2 pts.)} All is left in determining the function $u(x,t)$ is to determine the particular solution that satisfies the initial condition. Using our ansatz $u(x,t)=v(x,t)+u_E(x)$, determine the particular solution.
+\end{enumerate}
 \end{problem}
+
 
 
 \end{document}

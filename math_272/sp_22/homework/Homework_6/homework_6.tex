@@ -4,134 +4,216 @@
 \documentclass[12pt]{article} %report allows for chapters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{preamble}
-
+\newcommand{\innprod}[2]{\left\langle #1, #2\right\rangle}
 \begin{document}
 
 \begin{center}
    \textsc{\large MATH 272, Homework 6}\\
-   \textsc{Due March 22$^\textrm{nd}$}
+   \textsc{Due April 29$^\textrm{th}$}
 \end{center}
 \vspace{.5cm}
 
-\begin{problem}
-Consider the 1-dimensional wave equation given by
+
+
+\begin{problem} \textbf{(11 pts)} Are you sure you understand what constitutes a vector space? What about an inner product? Let's see a few examples. Please work through each part of the question.
+
+Given an a vector space $V$ with an inner product $\innprod{-}{-}$, we can always define a \emph{norm} (or \emph{energy}) by taking $v\in V$ and putting
 \[
-\left(-\frac{\partial^2}{\partial x^2} +\frac{1}{c^2} \frac{\partial^2}{\partial  t^2} \right) u(x,t) = 0.
+\|v\|^2 = \innprod{v}{v}.
 \]
-We'll consider two distinct scenarios. First, we'll take an infinitely long elastic rod and second we'll take a rod of finite length with Dirichlet boundary conditions.
+\emph{P.S. both l's seen here are short for Henri Lebesgue.}
 \begin{enumerate}[(a)]
-    \item For a rod of infinite length, consider the initial conditions
-    \[
-    u(x,0) = \begin{cases} x+1 & -1\leq x \leq 0 \\ 1-x & 0\leq x \leq 1 \\ 0 & \textrm{otherwise} \end{cases} \qquad \textrm{and} \qquad \frac{\partial}{\partial t} u(x,0) = 0.
-    \]
-    Find and plot the portion of the wave that moves to the right with $c=1$.
-    \item Let $u_R(x,t)$ be your solution from (a), show that this satisfies the right-moving wave equation
-    \[
-    \left(\frac{\partial}{\partial x} + \frac{1}{c} \frac{\partial}{\partial t} \right)u_R(x,t) = 0.
-    \]
-    \item Why is it that we can ignore the points where your function $u_R(x,t)$ is not differentiable even though we are considering this as a solution to a PDE?
-    \item For an elastic rod $\Omega$ of finite length, $\Omega = [0,1]$, assume that we take the Dirichlet conditions $u(0,t)=0=u(1,t)$.  With the initial conditions
-    \[
-    u(x,0) = \sin(\pi x) \qquad \textrm{and} \qquad \frac{\partial}{\partial t} u(x,0)=0,
-    \]
-    find the solution using d'Alembert's formula.
-    \item Let $w(x,t)$ be your solution for (d), show that it is indeed equal to
-    \[
-    w(x,t) = \sin(\pi x)\cos(\pi c t).
-    \]
-    \item With your result from (e), explain how we can decompose a standing wave into a linear combination of two waves; one moving towards the left and one moving towards the right and both reflecting off the boundary.
+\item \textbf{(3 pts)} (Finite dimensional inner product space) Consider the vector space $\C^3$ with the Hermitian inner product $\innprod{-}{-}$.
+\begin{itemize}
+\item Compute the norm of 	
+\[
+		\vecu = \begin{pmatrix} i \\ 1 \\ 0 \end{pmatrix}.
+	\]
+\item Compute the norm of
+\[
+\vecv = \begin{pmatrix} 1 \\ -i \\ 0 \end{pmatrix}.
+\]
+\item Compute the inner product $\innprod{\vecu}{\vecv}$.
+\item Provide an example of a basis for $\C^3$. 
+\end{itemize}
+
+\item \textbf{(4 pts)} (Countably infinite dimensional inner product space) Consider the space of \emph{square summable} (\emph{finite energy}) sequences $\ell^2(\C)$. That is, an element of the $\ell^2(\C)$ is a sequence of complex numbers $\{a_n\}_{n=0}^\infty$ with an inner product defined by
+\[
+\innprod{\{a_n\}}{\{b_n\}} = \sum_{n=0}^\infty a_n^* b_n.
+\]
+and we require the vectors to have finite energy which gives us the definition:
+\[
+\ell^2(\C) \coloneqq \{ \{a_n\} ~|~ a_n \in \C ~\textrm{such that $\|\{a_n\}\|<\infty$}\}.
+\]
+\begin{itemize}
+\item Show that the sequence $a_n = \frac{1}{n+1}$ is in $\ell^2(\C)$. What is its norm? \emph{Please use WolframAlpha!}
+\item Show that the sequence $b_n = \frac{1}{2^n}$ is in $\ell^2(\C)$. What is its norm? 
+\item Compute the inner product $\innprod{\{a_n\}}{\{b_n\}}$. \emph{Please use WolframAlpha!}
+\item Provide an example of a basis for $\ell^2(\C)$.
+\end{itemize}
+
+\item \textbf{(4 pts)} (Functional inner product space) Consider the space of \emph{square integrable} (\emph{finite energy}) functions $L^2(\Omega)$ on the region $\Omega=[0,1]$. That is, an element of the $L^2(\Omega)$ is a complex-valued function $f \colon [0,1] \to \C$ of complex numbers with an inner product defined by
+\[
+\innprod{f}{g} = \int_\Omega f^*g d\Omega = \int_0^1 f^*(x) g(x)dx.
+\]
+and we require the vectors to have finite energy which gives us the definition:
+\[
+L^2(\Omega) \coloneqq \{ f\colon \Omega \to \C ~|~ \textrm{such that $\|f\|<\infty$}\}.
+\]
+\begin{itemize}
+\item Show that the function $f(x)= e^{i2\pi x}$ is in $L^2(\Omega)$. What is its norm? 
+\item Show that the sequence $g(x) = \sin(2\pi x)$ is in $L^2(\Omega)$. What is its norm?
+\item Compute the inner product $\innprod{\{a_n\}}{\{b_n\}}$. \emph{Please use WolframAlpha!}
+\end{itemize}
 \end{enumerate}
 \end{problem}
 
-\begin{problem}
-    Consider the wave problem on the region $\Omega=[0,1]$ given by
-    \[
-    \begin{cases}
-    \left( - \frac{\partial^2}{\partial x^2} +\frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right) u(x,t) =0, & \textrm{in $(0,1)$},\\
-    u(0,t)=0 \textrm{~and~} u(1,t)=0, &\textrm{as boundary conditions},\\
-    u(x,0)=\sin(\pi x), &\textrm{as the initial condition}.
-    \end{cases}
-    \]
-    This problem corresponds to taking a plucked elastic string fixed at the endpoints.
-    \begin{enumerate}[(a)]
-        \item Use the separation of variables ansatz $u(x,t)=X(x)T(t)$ to get a new separation constant. This will give two ODEs: one will be in terms of $X(x)$ and the other will be in terms of $T(t)$.
-        \item Use the boundary conditions and solve the ODE that is in terms of $X(x)$ which will simultaneously find the allowed values for the separation constant.
-        \item Using these allowed values for the separation constant, find the solution for $T(t)$.
-        \item Find the particular solution for $u(x,t)$ by matching the initial condition.
-        \item Plot your solution for $x\in [0,1]$ and $t\in [0,\infty)$ (i.e., just plot up to a large value of $t$). In this case, compare your plots for $c=1/2$ and $c=1$.
-    \end{enumerate}
+\vspace*{1cm}
+\begin{problem} \textbf{(4 pts)} Consider the real function $f(x)=1 \in L^2(\Omega)$ on the domain $\Omega = [0,L]$.
+	\begin{enumerate}[(a)]
+		\item \textbf{(1 pts)} What is the norm of $f$, $\|f\|$?
+		\item \textbf{(1 pts)} Normalize $f(x)$.
+		\item \textbf{(2 pts)} Find a nonzero normalized polynomial of degree $\leq 1$ that is orthogonal to $f(x)$.
+	\end{enumerate}
 \end{problem}
 
+\vspace*{1cm}
 \begin{problem}
-Consider the heat flow problem on the region $\Omega=[0,1]$ given by
+\textbf{(6 pts)} A wavefunction $\Psi$ for a particle in the 1-dimensional box $\Omega=[0,1]$ is a member of the space of finite energy functions $L^2(\Omega)$. Recall that $\Psi$ could be written as a superposition of normalized states
+	\[
+	\psi_n(x) = \sqrt{2} \sin\left(n\pi x\right).
+	\]
+	That is,
+	\[
+	\Psi(x) = \sum_{n=1}^\infty a_n \psi_n(x),
+	\]
+	for some choice of the coefficients $a_n$.
+	\begin{enumerate}[(a)]
+		\item \textbf{(3 pts)} Let $a_n = \frac{\sqrt{6}}{n\pi}$. Show that $\Psi(x)$ is normalized. \emph{Hint: first, use orthogonality of the states $\psi_n(x)$ to your advantage. Then you will need to know what an infinite series evaluates to. Use a tool like WolframAlpha to evaluate this series.}
+		\item \textbf{(2 pts)} Note that we can approximate $\Psi(x)$ by taking a finite sum approximation up to some chosen $N$ by
+		\[
+			\Psi(x) \approx \sum_{n=1}^N a_n \psi_n(x).
+		\]
+		Plot the approximation of $\Psi(x)$ for $N=1,5,25,50,100$.  
+\item \textbf{(1 pts)} Describe the wave function $\Psi$.
+		\end{enumerate}
+\end{problem}
+
+\vspace*{1cm}
+\begin{problem}
+\textbf{(9 pts)}  When making a measurement of the position of the particle, we will use the \emph{position operator} $x$.  This is the same as the variable $x$ in the original problem statement, but it is also an operator! Similarly, we could measure the momentum of a particle using the \emph{momentum operator $p$}. The potential $V(x)$ is a function of the position operator and it, itself, is an operator. Lastly, I should mention the \emph{Hamiltonian operator} $H=\frac{p^2}{2M} + V$. 
+
+What I mean here by operator is that the operators defined above are linear transformations $\mathcal{L} \colon L^2(\Omega) \to L^2(\Omega)$. \emph{Actually, I am lying to you. It is true that $x\colon L^2(\Omega) \to L^2(\Omega)$ but you have to be careful which spaces you are talking about when it comes to the momentum operator $p$. Do not worry, this understanding that the underlying space is $L^2(\Omega)$ is good enough!}
+   \begin{enumerate}[(a)]
+		\item \textbf{(1 pts)} True or false. A self-adjoint operator has a real-valued spectrum.
+   		\item \textbf{(1 pts)} Show that the position operator $x$ is self-adjoint.
+   		\item \textbf{(2 pts)} We can compute the expected position of a particle with wavefunction $\Psi(x)$ by computing
+   		\[
+   		\mathbb{E}[x]=\innprod{\Psi}{x\Psi}.
+   		\]
+   		Let $\Psi(x) = \psi_1(x)$, compute $\mathbb{E}[x]$. This value $\mathbb{E}[x]$ tells you where we expect to find the particle on average. 
+        \item \textbf{(1 pts)} In fact, any real valued function $V(x)$ of the position operator $x$ is also self-adjoint. Make a quick argument on why this must be true.
+		\item \textbf{(2 pts)} We define the \emph{momentum operator} $p = -i\hbar \frac{d}{dx}$. Using integration by parts, show that this operator is self-adjoint.
+		\item \textbf{(2 pts)} Argue that the Hamiltonian operator is self-adjoint. \emph{Hint: look at how $H$ is defined. Don't show more work than you need to. This part should be short and sweet.}
+   	\end{enumerate}
+\end{problem}
+\begin{remark}
+The fact that all measurements in quantum mechanics are self-adjoint operators motivates the Dirac bra-ket notation which looks like this:
 \[
-\begin{cases}
-\frac{\partial}{\partial t} u(x,t) = \frac{\partial^2}{\partial x^2} u(x,t) - 1, & \textrm{in $(0,1)$},\\
-u(0,t)=0 \textrm{~and~} u(1,t)=1, & \text{as boundary conditions},\\
-u(x,0) = \sin\left(\pi x\right) + \frac{1}{2}(x^2+x), & \textrm{as the initial condition}.
-\end{cases}
+\mathbb{E}[x] = \langle \Psi \vert ~x~ \vert \Psi \rangle.
 \]
-This corresponds to a rod kept at fixed temperatures at the endpoints that starts with a warm center initially.
+This is because $x$ can act on either side!
+\end{remark}
+
+\vspace*{1cm}
+\begin{problem}
+\textbf{(6 pts)} Let's explore two subspaces of $L^2(\Omega)$ for $\Omega = [0,1]$. One built by exponentials and one built by sines and cosines.
+	\begin{enumerate}[(a)]
+		\item \textbf{(3 pts)} Show that the set of functions $\{1,\sqrt{2}\cos(2n \pi x), \sqrt{2}\sin(2n \pi x)\}$ for integers $n\geq 1$ are orthonormal in $L^2(\Omega)$ with $\Omega = [0,1]$.
+		\item \textbf{(3 pts)} Recall Euler's formula: $e^{ix} = \cos(x)+i\sin(x)$.  Argue that 
+\[
+\operatorname{Span}\{e^{i2n\pi x} ~|~ n \in \Z\} \qquad \textrm{and} \qquad \operatorname{Span}\{1,\sqrt{2}\cos(2n \pi x), \sqrt{2}\sin(2n \pi x) ~|~ m,n \in \Z, ~ n\geq 1\}
+\]
+are the same subspace. \emph{Hint: can you just show that a given $e^{i2n\pi x}$ corresponds to a pair $\cos(2n \pi x)$ and $\sin(2n \pi x)$ using Euler's formula? Also, you should use the fact that sine is an odd function and cosine is an even function.}
+	\end{enumerate}
+\end{problem}
+\vspace*{1cm}
+
+\begin{problem}
+\textbf{(10 pts)} It turns out that the set of complex exponentials $\{e^{i2n\pi x} ~|~ n\in \Z\}$ is an orthonormal basis for $L^2(\Omega)$ for $\Omega = [0,1]$ (and thus by the previous problem, so are the sines and cosines). This is the foundational insight of the Fourier transform/series. Let us denote by $\phi_n(x) = e^{i2n\pi x}$.
+
+Let $f \in L^2(\Omega)$, then the \emph{Fourier transform} of $f$ is the function $\hat{f} \colon \Z \to \C$ defined by
+\[
+\hat{f}(n) = \innprod{f}{\phi_n}.
+\]
+Then the \emph{Fourier series of $f$} is the series
+\[
+f(x) = \sum_{n=-\infty}^\infty \hat{f}(n) \phi_n(x)
+\]
 \begin{enumerate}[(a)]
-    \item As with the previous homework, take an ansatz
-    \[
-    u(x,t) = v(x,t) + u_E(x)
-    \]
-    where $v(x,t)$ solves the following problem
-    \[
-\begin{cases}
-\frac{\partial}{\partial t} v(x,t) = \frac{\partial^2}{\partial x^2} v(x,t), & \textrm{in $(0,1)$},\\
-v(0,t)=0 \textrm{~and~} v(1,t)=0, & \text{as boundary conditions}.
-\end{cases}
-    \]
-    Find the general solution $v(x,t)$ using separation of variables. \emph{Hint: feel free to use the work in the notes (Example ``Solving the Heat Equation" and Example ``Particular Solution to the 1D Heat Equation").}
-
-    \item Show that for $u(x,t)$ to be a solution that
-    \[
-    \frac{\partial^2}{\partial x^2} u_E(x) = 1.
-    \]
-
-    \item Find the solution $u_E(x)$ to the following problem
-    \[
-    \begin{cases}
-    \frac{\partial^2}{\partial x^2} u_E(x) = 1, & \textrm{in $(0,1)$},\\
-    u_E(0)=0 \textrm{~and~} u_E(1)=1, & \text{as boundary conditions}.
-    \end{cases}
-    \]
-    
-    \item All is left in determining the function $u(x,t)$ is to determine the particular solution that satisfies the initial condition. Using our ansatz $u(x,t)=v(x,t)+u_E(x)$, determine the particular solution.
+\item \textbf{(2 pts)} Let $V$ be an $n$-dimensional vector space. Recall that you can write a vector $v \in V$ in terms of an orthonormal basis $v_1,\dots,v_n$ for $V$ by
+\[
+v = \sum_{j=1}^n \langle v,v_j\rangle v_j.
+\]
+Explain why the Fourier series is the same concept just for an infinite dimensional vector space.
+\item \textbf{(2 pts)} Compute the Fourier transform of the function 
+\[
+f(x) = \begin{cases} 0, & 0\leq x \leq \frac{1}{4} \\
+	1, &  \frac{1}{4} \leq x \leq \frac{3}{4} \\
+ 0, & \frac{3}{4}\leq x \leq 1 \end{cases}
+\]
+\emph{Please note that you will want to consider the term $\hat{f}(0)$ separately from the others.}
+\item \textbf{(1 pts)} Write out the Fourier series of $f$. 
+\item \textbf{(2 pts)} Convert the Fourier series of $f$ into a series of sine and cosine functions using Euler's formula. \emph{Hint: you can also just use this from the beginning and put}
+\[
+\hat{f}(n) = \langle f,\phi_n\rangle = \int_0^1 f(x)\cos(2n\pi x) dx + i \int_0^1 f(x)\sin(2n\pi x)dx.
+\]
+\item \textbf{(2 pts)} Plot an approximation of the Fourier series of sine and cosine functions up to $N=1,3,5,10,50,100$ only on the domain $\Omega$. Please graph your approximations to the original $f$. Describe what is happening with your approximations.
+\item \textbf{(1 pts)} What happens if you plot your Fourier series over all of $\R$?
 \end{enumerate}
 \end{problem}
 
-\begin{problem}[Bonus]
-Take the set up from the previous problem, but let us modify the initial conditions and boundary conditions slightly. Instead, we have
+\vspace*{1cm}
+\begin{problem}
+\textbf{(10 pts)} One advantage of the Fourier transform is that we can use it to solve differential equations in a new way that also allows us to consider far more general forcing terms. The basic idea is that the Fourier transform converts a differential equation into an algebraic equation. Let us see how this works.
+
+First, let me say that we will be working over $L^2(\Omega)$ with $\Omega = [0,1]$. Recall the Dirac delta $\delta(x)$ which satisfies the properties
+\[
+\int_0^1 \delta(x-x_0) dx = 1 \qquad \textrm{and} \qquad \int_0^1 \delta(x-x_0) f(x) dx = f(x_0)
+\]
+whenever $x_0 \in \Omega$. You can imagine the Dirac delta $\delta(x- x_0)$ as a probability distribution where all the mass is located at a single point $x_0$.
+\begin{enumerate}[(a)]
+\item \textbf{(2 pts)} Show that for any $f$ satisfying the Dirichlet boundary conditions $f(0)=0$ and $f(1)=0$ that for $n\neq 0$
+\[
+\left\langle \frac{d}{dx} f , \phi_n \right\rangle = i2 \pi n \hat{f}(n).
+\]
+\emph{Hint: use integration by parts.}
+\item \textbf{(2 pts)} Consider the Poisson (elastic deformation) problem
 \[
 \begin{cases}
-\frac{\partial}{\partial t} u(x,t) = \frac{\partial^2}{\partial x^2} u(x,t) - 1, & \textrm{in $(0,1)$},\\
-u(0,t)=0 \textrm{~and~} u(1,t)=0, & \text{as boundary conditions},\\
-u(x,0) = -(2x-1)^2+1, & \textrm{as the initial condition}.
+\frac{d^2}{dx^2} f(x) = \delta(x-x_0) \\
+f(0)=0=f(1) & \textrm{as boundary conditions.}
 \end{cases}
 \]
-We want to discover how we can possibly solve problems with more general initial conditions. If you pay attention to the work in 3, you will find the initial conditions were chosen in a very contrived manner. This is not ideal if we want to solve a problem in general!
-
-Taking a look at Example ``Particular Solution to the 1D Heat Equation" in the notes. Notice that it is of the form
+Apply the Fourier transform to both sides to show that we have for $n\neq 0$
 \[
-u_n(x,t) = A_ne^{-n^2\pi^2 t} \sin(n \pi x),
+\hat{f}(n) =  -\frac{e^{i2n\pi x_0}}{4\pi^2 n^2}.
 \]
-is a general solution for all integers $n$. 
-\begin{enumerate}[(a)]
-    \item Can you recreate the initial condition $u(x,0)$ with a single $u_n(x,0)$?
-    \item Can you recreate the initial condition with a finite sum of $u_n(x,0)$?
-    \item Suppose that we can take an infinite sum
-    \[
-    \sum_{n=1}^\infty A_n e^{-n^2\pi^2} \sin(n \pi x).
-    \]
-    Show that
-    \[
-    \sum_{n=1}^\infty -\frac{8\left(2\left(-1\right)^{n}-2\right)}{\pi^{3}n^{3}}\sin\left(n\pi x\right) = u(x,0)
-    \]
-    by plotting both $u(x,0)$ and the sum (up to a large $N$) simultaneously. It is worthwhile to steadily increase the upper bound of the sum to see this convergence!
-    \item Comment on this. Do you think this is something we can do in general for any initial condition?
+\item \textbf{(2 pts)} Hence, the solution to the problem is just the Fourier series
+\[
+f(x)=c_0 + c_1 x + \sum_{n=-\infty}^{-1} -\frac{e^{in \pi x_0}}{4\pi^2 n^2} \phi_n + \sum_{n=1}^\infty -\frac{e^{in \pi x_0}}{4\pi^2 n^2} \phi_n.
+\]
+Let $x_0=1/2$ and convert this Fourier series to a real valued Fourier series in terms of sines and cosines. 
+\item \textbf{(1 pts)} Determine the constants $c_0$ and $c_1$ using the boundary conditions on $f$.
+\item \textbf{(2 pts)} Plot your approximation to the Fourier series for $N=1,3,5,10,50,100$. 
+\item \textbf{(1 pts)} Explain your result given the following interpretation: You can imagine that $\delta(x-1/2)$ is a point mass of mass 1 placed exactly at $x=1/2$ on your elastic rod $\Omega$. \emph{Hint: does this look what what you'd imagine the deformation to look like?}
 \end{enumerate}
 \end{problem}
+
+
+\begin{problem}
+\textbf{(Bonus 10 pts.)} Show that the Fourier transform is an isomorphism between $\ell^2(\C)$ and $L^2(\Omega)$ where $\Omega=[0,1]$. For an extra 5 points, argue that this is true if $\Omega$ is any closed interval.
+\end{problem}
+
+
 \end{document}

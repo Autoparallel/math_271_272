@@ -5,6 +5,7 @@
 %\newcommand{\vecv}{\boldsymbol{\vec{v}}}
 %\newcommand{\vecw}{\boldsymbol{\vec{w}}}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\innprod}[2]{\langle #1, #2\rangle}
 
 
 \begin{document}
@@ -27,77 +28,143 @@
 \hrule
 
 \vspace*{1cm}
-\noindent\emph{Note, there are three total problems.}
+\noindent\emph{Note, there are three total problems and a bonus.}
+
+%\newpage
+%\begin{problem}
+%Consider the function $f(x)=x-\frac{1}{2}$ the region $[0,1]$ which makes a sawtooth wave pattern if we repeat this function for every integer $[k,k+1]$.
+%\begin{enumerate}[(a)]
+%    \item Determine the coefficients of the Fourier series for the function $f(x)=x-\frac{1}{2}$. This is the Fourier transform of $f$ on the domain $[0,1]$.
+%    \item Now, to simplify our analysis, we can solely use the orthonormal basis functions $\sqrt{2}\sin(2\pi n x)$ so we can write
+%    \[
+%        f(x) = \sum_{n=1}^\infty b_n \sqrt{2}\sin(2\pi n x).
+%    \]
+%    Find the coefficients $b_n$ by computing $\langle f, \sqrt{2}\sin(2\pi n x)\rangle$.
+%    \item Plot an approximation by summing up the first $N=1,5,10,25,50$ terms of the sine version of series. 
+%    \item What is the value of the series at $x=0$? What about $x=1$? Does this disagree with $f(x)$?
+%    \item Explain why your approximation is periodic but the given function $f(x)$ is not. \emph{Hint: think about what we are using as the orthonormal basis functions!}
+%\end{enumerate}
+%\end{problem}
+
+
+
+
+
+%\begin{problem}
+%	Let $\Psi(x)$ be a complex function with domain $[0,L]$.  Show that multiplication by a global phase $e^{i\theta}$ does not affect the norm of $\Psi(x)$ under the Hermitian (integral) inner product. In more generality, this shows that you cannot fully determine a quantum state -- there will always be an undetermined phase. \emph{For simplicity, use the inner product for the particle in the box.}
+%\end{problem}
+
+%\begin{problem}
+%  When making a measurement of the position of the particle, we will use the \emph{position operator} $x$.  This is the same as the variable $x$ in the original problem statement, but it is also an operator! 
+%   \begin{enumerate}[(a)]
+%   		\item Show that the position operator $x$ is Hermitian.
+%   		\item We can compute the expected position of a particle with wavefunction $\Psi(x)$ by computing
+%   		\[
+%   		\mathbb{E}[x]=\innprod{\Psi}{x\Psi}.
+%   		\]
+%   		Let $\Psi(x) = \frac{1}{\sqrt{2}} \psi_1(x) + \frac{1}{\sqrt{2}} \psi_2(x)$, compute $\mathbb{E}[x]$. This value $\mathbb{E}[x]$ tells you where we expect to find the particle on average.
+%        \item In fact, any real valued function $V(x)$ of the position operator $x$ is also Hermitian. Make a quick argument on why this must be true.
+%		\item Another related operator is the \emph{momentum operator} $p = -i\hbar \frac{d}{dx}$. Using integration by parts, show that this operator is Hermitian.
+%   	\end{enumerate}
+%\end{problem}
 
 \newpage
 \begin{problem}
-Consider the function $f(x)=x-\frac{1}{2}$ the region $[0,1]$ which makes a sawtooth wave pattern if we repeat this function for every integer $[k,k+1]$.
+Given a self-adjoint operator (or \emph{observable}) $\mathcal{L}$, we can consider the \emph{expected value of the observable $\mathcal{L}$} for a given wavefunction $\Psi$ by computing
+   		\[
+   		\mathbb{E}[\mathcal{L}]=\innprod{\Psi}{\mathcal{L}\Psi}.
+   		\]
+For this problem, let $\Omega = [0,1]$ and recall the orthonormal stationary states are
+\[
+\psi_n(x) = \sqrt{2} \sin(n\pi x)
+\]
+and the orthonormal time-dependent states are
+\[
+\psi_n(x,t) = \sqrt{2} e^{-i\frac{E_n}{\hbar}t} \sin(n \pi x)
+\]
+where the energies are
+\[
+E_n = \hbar \omega_n = \frac{n^2 \pi^2 \hbar^2}{2m}.
+\]
 \begin{enumerate}[(a)]
-    \item Determine the coefficients of the Fourier series for the function $f(x)=x-\frac{1}{2}$. This is the Fourier transform of $f$ on the domain $[0,1]$.
-    \item Now, to simplify our analysis, we can solely use the orthonormal basis functions $\sqrt{2}\sin(2\pi n x)$ so we can write
-    \[
-        f(x) = \sum_{n=1}^\infty b_n \sqrt{2}\sin(2\pi n x).
-    \]
-    Find the coefficients $b_n$ by computing $\langle f, \sqrt{2}\sin(2\pi n x)\rangle$.
-    \item Plot an approximation by summing up the first $N=1,5,10,25,50$ terms of the sine version of series. 
-    \item What is the value of the series at $x=0$? What about $x=1$? Does this disagree with $f(x)$?
-    \item Explain why your approximation is periodic but the given function $f(x)$ is not. \emph{Hint: think about what we are using as the orthonormal basis functions!}
+\item Consider first a stationary superposition wavefunction $\Psi(x) = \frac{1}{\sqrt{2}} \psi_1(x) + \frac{1}{\sqrt{2}} \psi_2(x)$. Now, compute the expected value of position by computing
+   		\[
+   		\mathbb{E}[x]=\innprod{\Psi}{x\Psi}.
+   		\]
+   		This value $\mathbb{E}[x]$ tells you where we expect to find the particle on average.
+\item Consider the time-dependent superposition wavefunction $\Psi(x,t) = \frac{1}{\sqrt{2}} \psi_1(x,t) + \frac{1}{\sqrt{2}} \psi_2(x,t)$. Compute $\mathbb{E}[x]$ again and note that $\mathbb{E}[x]$ tells you where we expect to find the particle on average, but it will now depend on time. Can you corroborate this with a graph? \emph{Hint: perhaps a graph you have already made before?}
+\item Define the energy operator $T = \frac{-\hbar^2}{2m}\frac{d^2}{dx^2}$. Show that this operator is self-adjoint.
+\item Again, letting $\Psi(x,t)=\frac{1}{\sqrt{2}}\psi_1(x,t)+\frac{1}{\sqrt{2}}\psi_2(x,t)$, compute $\mathbb{E}[T]$. The expected value $\mathbb{E}[T]$ tells us what the observed energy will be on average as a function of time.
 \end{enumerate}
 \end{problem}
 
 \newpage
 \begin{problem}
-One application of the Fourier series is to solve differential equations with discontinuous terms. Take for example, the 1-dimensional elastic deformation problem
+Consider the source-free heat equation
 \[
-\begin{cases}
-    \frac{d^2}{dx^2}u(x) = \delta\left(x-\frac{1}{2}\right), & \textrm{in $(0,1)$}\\
-    u(0)=u(1)=0, &\textrm{as boundary conditions}
+\left(\frac{\partial^2}{\partial x^2}-\frac{\partial}{\partial t}\right) u(x,t) = 0
+\] 
+on the unit interval $\Omega=[0,1]$.
+\begin{enumerate}[(a)]
+\item Using separation of variables, show that you get 
+\[
+u(x,t) = e^{-\lambda t} (a e^{i\sqrt{\lambda}x}+b e^{-i\sqrt{\lambda}x})
+\]
+is a solution for any $\lambda$ and where $a$ and $b$ are just some constants.
+\item Show that if you take periodic boundary conditions $u(0,t)=u(1,t)$ then you get $\sqrt{\lambda}=2n\pi$ for any integer $n$. (Note that this set of boundary conditions is equivalent to just looking at heat flow on a circle.)
+\item  Hence, a general solution to the source heat equation on the circle is given by a Fourier series
+\[
+u(x,t) = \sum_{n=-\infty}^\infty c_n e^{-4n^2 \pi^2 t}e^{i2n\pi x}.
+\] 
+Suppose that you choose initial conditions whereby you attach one hot half-circle to another cooler half-circle, i.e.,
+\[
+u(x,0) = \begin{cases} 1, & x \in \left[0,\frac{1}{2}\right]\\
+						  0, & x \in \left(\frac{1}{2},1\right].
 \end{cases}
 \]
-where $u(x)$ models the displacement of the elastic and $\delta$ is the Dirac delta. To picture this physically, imagine an elastic string attached at two endpoints 0 and 1. Then, the Dirac delta corresponds to an external force that acts akin to pressing a very tiny needle down along the halfway point of this elastic. The solution $u$ that we find is called a \emph{fundamental solution}. Though we did not reach this point in class, if we are able to solve this equation, we then have a clear method for which to solve this equation with any given right hand side. 
-\begin{enumerate}[(a)]
-    \item Note that we can put
-    \[
-    \delta\left( x - \frac{1}{2} \right) = \sum_{n=1}^\infty (-1)^n 2 \cos(2\pi n x).
-    \]
-    Plot an approximate of this function by summing up to $N=1,5,10,25,50$. 
-    \item Now, let us assume that we can write $u(x)$ as a Fourier series in the following way
-    \[
-    u(x) = c_0 + \sum_{n=1}^\infty a_n \sqrt{2}\cos(2\pi n x) + \sum_{n=1}^\infty b_n \sqrt{2}\sin(2\pi n x).
-    \]
-    Write the Fourier series for $\frac{d^2}{dx^2}u(x)$.
-    \item Given (b), we now just have to match coefficients of the unknown Fourier series with the known Fourier series for $\delta\left( x - \frac{1}{2}\right)$. Determine the coefficients $a_n$ and $b_n$.
-    \item Finally, determine $c_0$ using our boundary conditions.
-    \item Stringing this all together, \underline{show your work} to determine the Fourier series for $u(x)$. You can compare this to the answer I have, which is
-    \[
-    u(x) = \frac{1}{24} + \sum_{n=1}^\infty \frac{(-1)^n}{2n^2\pi^2} \cos(2\pi n x).
-    \]
-    Your result should match this. At any rate, plot $u(x)$ by summing up to $N=1,5,10,25,50$.
+Determine the $c_n$ for this initial condition. \emph{Hint: this really is just the Fourier transform $\hat{u}(n,0)=c_n$.}
+\item Approximate your solution by summing up to $N=100$. Plot your solution as an animation over time $t$ using Desmos. Attach solutions for various values of $t$ that show the time evolution of your $u(x,t)$ or just be ready to share your screen with the animation when we meet.
 \end{enumerate}
-\emph{Note that there are examples of this type of solution method in the notes. See Example 10.6.1 and 10.6.2. We did not go over this method in class, so please feel free to ask questions. It is also very similar to the power series solutions for ODEs that we did cover in Math 271 -- so you compare with that as well.}
 \end{problem}
-
 
 \newpage
 \begin{problem}
-Let us use the Fourier transform to deduce the diffraction pattern of a single slit. In this case, we shine a plane wave of light from a monochromatic source towards a very thin slit. The light passes through this slit and forms a diffraction pattern on the image plane which is located a distance away from the slit such that this distance is much larger than the slit itself. One receives a pattern like this:
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=.6\textwidth]{single_slit.jpg}
-\end{figure}
-From this exercise, you will be able to realize that a diffraction pattern is created in essence by taking the Fourier transform of the apperture the light passes through. I've taken some liberty here in dropping some details, but the key fact remains.
+Suppose that we have a time-dependent particle in a box $\Omega = [0,1]$ with initial condition
+\[
+\Psi(x,0) = \begin{cases} 0, & x \in \left[0,\frac{1}{4}\right) \cup \left(\frac{3}{4},1\right]\\
+						  1, & x \in \left[\frac{1}{4},\frac{3}{4}\right].
+\end{cases}
+\]
+Recall that this must solve the time-dependent Schr\"odinger equation
+\[
+\left(-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} -i\hbar \frac{\partial}{\partial t} \right) \Psi(x,t) = 0.
+\]
 \begin{enumerate}[(a)]
-    \item Let us define the aperture function
-    \[
-    A(x) = \begin{cases} 1, & -\frac{1}{2} \leq x \leq \frac{1}{2}\\
-    0, &\textrm{otherwise}.
-    \end{cases}
-    \]
-    Plot this function $A(x)$ and note that this defines a slit of width 1 centered at the origin which we call the aperture. For all other $x$ values outside the range of $-\frac{1}{2} \leq x \leq \frac{1}{2}$, we can imagine there is a barrier that does not allow light to pass through.
-    \item Using WolframAlpha, compute the Fourier transform of $A(x)$ and call it $\hat{A}(k)$.
-    \item The brightness of light (or, really, the electric field strength) on the image plane is given by the function $\hat{A}^2(k)$. Plot this function. %If noPlot $\hat{A}^2(k)$ and compare this with the given image.
-    \item \textbf{BONUS:} If you are interested, attempt to repeat this for a double slit experiment.
+	\item Is $\Psi(x,0)$ normalized? If not, then normalize it.
+	\item Using the fact that the $\psi_n(x)$ are an orthonormal basis for the solution space to this problem, write your normalized $\Psi(x,0)$ as a series
+	\[
+	\Psi(x,0) = \sum_{n=1}^\infty a_n \psi_n(x).
+	\]
+	\item To get the time-dependent solution to the Schr\"odinger equation, we can just take your coefficents $a_n$ you found from before and put
+\[
+\Psi(x,t) = \sum_{n=1}^\infty a_n \psi_n(x,t).
+\]
+Plot an approximation (say $N=100$) of the real and imaginary parts simultaneously of your time-dependent wavefunction as an animation. Attach solutions for various values of $t$ or just be ready to share your screen with the animation when we meet.
+	\item Show that your time-dependent series solution is normalized for all values of $t$.
+	\item (BONUS) We can Fourier transform with the $t$ variable by
+	\[
+	\hat{\Psi}(x,\omega) = \int_{\infty}^\infty \Psi(x,t) e^{i2 \pi \omega t} dt.
+	\]
+	Show that by applying the Fourier transform to the time-dependent Schr\"odinger equation you get the time-independent equation
+	\[
+	-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} \Psi(x,\omega) = E \Psi(x,\omega)
+	\]
+	for a fixed value of $\omega$ (you can assume that $\Psi(x,t)$ vanishes when $t=-\infty$ and $t=+\infty$). Also, what is $E$ in terms of $\omega$ and $\hbar$?
 \end{enumerate}
 \end{problem}
 
+\newpage
+\begin{problem}
+(BONUS) You and a friend wish to determine who has thicker or thinner hair than the other. Devise an experiment that involves the Fourier transform that would allow you to find out who has the thicker strand of hair.
+\end{problem}
 \end{document}  

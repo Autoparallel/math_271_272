@@ -1,22 +1,24 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.23)  27 JAN 2022 13:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.2.7)  10 FEB 2022 13:34
 entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
 **./homework_3.tex
 (homework_3.tex
-LaTeX2e <2021-06-01> patch level 1
-L3 programming layer <2021-08-27>
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2021/02/12 v1.4n Standard LaTeX document class
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
-File: size12.clo 2021/02/12 v1.4n Standard LaTeX file (size option)
+File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count182
-\c@section=\count183
-\c@subsection=\count184
-\c@subsubsection=\count185
-\c@paragraph=\count186
-\c@subparagraph=\count187
-\c@figure=\count188
-\c@table=\count189
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
@@ -25,7 +27,7 @@ File: size12.clo 2021/02/12 v1.4n Standard LaTeX file (size option)
 Package: preamble 
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
-Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
+Package: color 2021/12/07 v1.3c Standard LaTeX Color (DPC)
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
@@ -47,22 +49,22 @@ Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@ulht=\dimen141
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
-Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: pdftex.def on input line 225.
-LaTeX Info: Redefining \color on input line 709.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
-Package xcolor Info: Model `RGB' extended on input line 1364.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+LaTeX Info: Redefining \color on input line 711.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
 ) (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/tikz-cd\tikz-cd.sty
 Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
 
@@ -93,7 +95,7 @@ Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.
 sty
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
-Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
@@ -103,7 +105,7 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
 fg
@@ -141,14 +143,14 @@ filtered.code.tex
 \pgf@yd=\dimen155
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count190
-\c@pgf@countb=\count191
-\c@pgf@countc=\count192
-\c@pgf@countd=\count193
+\c@pgf@counta=\count193
+\c@pgf@countb=\count194
+\c@pgf@countc=\count195
+\c@pgf@countd=\count196
 \t@pgf@toka=\toks26
 \t@pgf@tokb=\toks27
 \t@pgf@tokc=\toks28
-\pgf@sys@id@count=\count194
+\pgf@sys@id@count=\count197
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.c
 fg
@@ -167,8 +169,8 @@ File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
 ssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count195
-\pgfsyssoftpath@bigbuffer@items=\count196
+\pgfsyssoftpath@smallbuffer@items=\count198
+\pgfsyssoftpath@bigbuffer@items=\count199
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
 sprotocol.code.tex
@@ -187,7 +189,7 @@ code.tex)
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparse
 r.code.tex
 \pgfmath@dimen=\dimen156
-\pgfmath@count=\count197
+\pgfmath@count=\count266
 \pgfmath@box=\box51
 \pgfmath@toks=\toks29
 \pgfmath@stack@operand=\toks30
@@ -213,7 +215,7 @@ ions.misc.code.tex)
 ions.integerarithmetics.code.tex)))
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat
 .code.tex
-\c@pgfmathroundto@lastzeros=\count198
+\c@pgfmathroundto@lastzeros=\count267
 ))
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
 tex)
@@ -253,7 +255,7 @@ File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfpic=\box52
 \pgf@hbox=\box53
 \pgf@layerbox@main=\box54
-\pgf@picture@serial@count=\count199
+\pgf@picture@serial@count=\count268
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 egraphicstate.code.tex
@@ -288,8 +290,8 @@ File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 eshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@max=\dimen180
-\pgf@sys@shading@range@num=\count266
-\pgf@shadingcount=\count267
+\pgf@sys@shading@range@num=\count269
+\pgf@shadingcount=\count270
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 eimage.code.tex
@@ -362,7 +364,7 @@ Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
 aryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@plot@mark@count=\count268
+\pgf@plot@mark@count=\count271
 \pgfplotmarksize=\dimen185
 )
 \tikz@lastx=\dimen186
@@ -377,19 +379,19 @@ File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \tikz@figbox@bg=\box58
 \tikz@tempbox=\box59
 \tikz@tempbox@bg=\box60
-\tikztreelevel=\count269
-\tikznumberofchildren=\count270
-\tikznumberofcurrentchild=\count271
-\tikz@fig@count=\count272
+\tikztreelevel=\count272
+\tikznumberofchildren=\count273
+\tikznumberofcurrentchild=\count274
+\tikz@fig@count=\count275
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
 matrix.code.tex
 File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfmatrixcurrentrow=\count273
-\pgfmatrixcurrentcolumn=\count274
-\pgf@matrix@numberofcolumns=\count275
+\pgfmatrixcurrentrow=\count276
+\pgfmatrixcurrentcolumn=\count277
+\pgf@matrix@numberofcolumns=\count278
 )
-\tikz@expandcount=\count276
+\tikz@expandcount=\count279
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibrarytopaths.code.tex
@@ -447,8 +449,8 @@ e.tex
 \t@pgfplots@tokb=\toks35
 \t@pgfplots@tokc=\toks36
 \pgfplots@tmpa=\dimen199
-\c@pgfplots@coordindex=\count277
-\c@pgfplots@scanlineindex=\count278
+\c@pgfplots@coordindex=\count280
+\c@pgfplots@scanlineindex=\count281
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgfplots
 sysgeneric.code.tex))
@@ -466,13 +468,13 @@ e\pgfplotsliststructure.code.tex)
 e\pgfplotsliststructureext.code.tex)
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
 e\pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count279
+\c@pgfplotsarray@tmp=\count282
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
 e\pgfplotsmatrix.code.tex)
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/numtable\pgf
 plotstableshared.code.tex
-\c@pgfplotstable@counta=\count280
+\c@pgfplotstable@counta=\count283
 \t@pgfplotstable@a=\toks37
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructur
@@ -485,7 +487,7 @@ sbinary.data.code.tex))
 sutil.verb.code.tex)
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgflibr
 arypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count281
+\c@pgfplotslibrarysurf@no=\count284
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgflibra
 rypgfplots.surfshading.pgfsys-pdftex.def)))
@@ -522,7 +524,7 @@ decorations.code.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen258
 \pgfdecoratedinputsegmentremainingdistance=\dimen259
 \pgf@decorate@distancetomove=\dimen260
-\pgf@decorate@repeatstate=\count282
+\pgf@decorate@repeatstate=\count285
 \pgfdecorationsegmentamplitude=\dimen261
 \pgfdecorationsegmentlength=\dimen262
 )
@@ -538,7 +540,7 @@ z/libraries\tikzlibrarydecorations.pathreplacing.code.tex
 ions\pgflibrarydecorations.pathreplacing.code.tex))
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlib
 rarypgfplots.contourlua.code.tex)
-\pgfplots@numplots=\count283
+\pgfplots@numplots=\count286
 \pgfplots@xmin@reg=\dimen263
 \pgfplots@xmax@reg=\dimen264
 \pgfplots@ymin@reg=\dimen265
@@ -689,8 +691,8 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen269
-\Hy@linkcounter=\count284
-\Hy@pagecounter=\count285
+\Hy@linkcounter=\count287
+\Hy@pagecounter=\count288
  (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -707,7 +709,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count286
+\Hy@SavedSpaceFactor=\count289
  (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -720,7 +722,7 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count287
+\c@Hy@tempcnt=\count290
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip16
@@ -737,7 +739,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count288
+\Fld@menulength=\count291
 \Field@Width=\dimen271
 \Fld@charsize=\dimen272
 Package hyperref Info: Hyper figures OFF on input line 6076.
@@ -754,21 +756,21 @@ LaTeX Info: Redefining \pageref on input line 6150.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count289
-\c@Item=\count290
-\c@Hfootnote=\count291
+\Hy@abspage=\count292
+\c@Item=\count293
+\c@Hfootnote=\count294
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
 File: hpdftex.def 2021-06-07 v7.00m Hyperref driver for pdfTeX
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
-e
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
 with kernel methods
 )
-\Fld@listcount=\count292
-\c@bookmark@seq@number=\count293
+\Fld@listcount=\count295
+\c@bookmark@seq@number=\count296
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
 echeck.sty
@@ -787,27 +789,27 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 Package: mathtools 2021/04/12 v1.27 mathematical typesetting tools
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count294
-\calc@Bcount=\count295
+\calc@Acount=\count297
+\calc@Bcount=\count298
 \calc@Adimen=\dimen273
 \calc@Bdimen=\dimen274
 \calc@Askip=\skip51
 \calc@Bskip=\skip52
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count296
+\calc@Ccount=\count299
 \calc@Cskip=\skip53
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
-Package: amsmath 2021/04/20 v2.17j AMS math features
+Package: amsmath 2021/10/15 v2.17l AMS math features
 \@mathmargin=\skip54
 
 For additional information on amsmath, use the `?' option.
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
-Package: amstext 2000/06/29 v2.01 AMS text
+Package: amstext 2021/08/26 v2.01 AMS text
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
@@ -819,15 +821,15 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen276
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
-Package: amsopn 2016/03/08 v2.02 operator names
+Package: amsopn 2021/08/26 v2.02 operator names
 )
-\inf@bad=\count297
+\inf@bad=\count300
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count298
-\leftroot@=\count299
+\uproot@=\count301
+\leftroot@=\count302
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count300
-\DOTSCASE@=\count301
+\classnum@=\count303
+\DOTSCASE@=\count304
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -836,15 +838,15 @@ LaTeX Info: Redefining \cdots on input line 620.
 \big@size=\dimen277
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count302
-\c@MaxMatrixCols=\count303
+\macc@depth=\count305
+\c@MaxMatrixCols=\count306
 \dotsspace@=\muskip17
-\c@parentequation=\count304
-\dspbrk@lvl=\count305
+\c@parentequation=\count307
+\dspbrk@lvl=\count308
 \tag@help=\toks39
-\row@=\count306
-\column@=\count307
-\maxfields@=\count308
+\row@=\count309
+\column@=\count310
+\maxfields@=\count311
 \andhelp@=\toks40
 \eqnshift@=\dimen278
 \alignsep@=\dimen279
@@ -856,14 +858,14 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \multlinegap=\skip55
 \multlinetaggap=\skip56
 \mathdisplay@stack=\toks42
-LaTeX Info: Redefining \[ on input line 2923.
-LaTeX Info: Redefining \] on input line 2924.
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
 )
 LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
-\g_MT_multlinerow_int=\count309
+\g_MT_multlinerow_int=\count312
 \l_MT_multwidth_dim=\dimen284
 \origjot=\skip57
 \l_MT_shortvdotswithinadjustabove_dim=\dimen285
@@ -892,15 +894,15 @@ Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks45
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
-Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
-\c@tracingmulticols=\count310
+Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
+\c@tracingmulticols=\count313
 \mult@box=\box85
 \multicol@leftmargin=\dimen292
-\c@unbalance=\count311
-\c@collectmore=\count312
-\doublecol@number=\count313
-\multicoltolerance=\count314
-\multicolpretolerance=\count315
+\c@unbalance=\count314
+\c@collectmore=\count315
+\doublecol@number=\count316
+\multicoltolerance=\count317
+\multicolpretolerance=\count318
 \full@width=\dimen293
 \page@free=\dimen294
 \premulticols=\dimen295
@@ -912,8 +914,8 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \maxbalancingoverflow=\dimen297
 \mult@rightbox=\box88
 \mult@grightbox=\box89
-\mult@gfirstbox=\box90
-\mult@firstbox=\box91
+\mult@firstbox=\box90
+\mult@gfirstbox=\box91
 \@tempa=\box92
 \@tempa=\box93
 \@tempa=\box94
@@ -950,16 +952,15 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \@tempa=\box125
 \@tempa=\box126
 \@tempa=\box127
-\@tempa=\box128
-\c@minrows=\count316
-\c@columnbadness=\count317
-\c@finalcolumnbadness=\count318
+\c@minrows=\count319
+\c@columnbadness=\count320
+\c@finalcolumnbadness=\count321
 \last@try=\dimen298
 \multicolovershoot=\dimen299
 \multicolundershoot=\dimen300
-\mult@nat@firstbox=\box129
-\colbreak@box=\box130
-\mc@col@check@num=\count319
+\mult@nat@firstbox=\box128
+\colbreak@box=\box129
+\mc@col@check@num=\count322
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
@@ -971,9 +972,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count320
-\Gm@cntv=\count321
-\c@Gm@tempcnt=\count322
+\Gm@cnth=\count323
+\Gm@cntv=\count324
+\c@Gm@tempcnt=\count325
 \Gm@bindingoffset=\dimen301
 \Gm@wd@mp=\dimen302
 \Gm@odd@mp=\dimen303
@@ -1018,11 +1019,11 @@ LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count323
+\c@float@type=\count326
 \float@exts=\toks53
-\float@box=\box131
+\float@box=\box130
 \@float@everytoks=\toks54
-\@floatcapt=\box132
+\@floatcapt=\box131
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/morefloats\morefloats.s
 ty
@@ -1049,30 +1050,30 @@ Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
 \caption@hangindent=\dimen315
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count324
-\c@continuedfloat=\count325
+\c@caption@flags=\count327
+\c@continuedfloat=\count328
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 )
-\c@subfigure=\count326
-\c@subtable=\count327
+\c@subfigure=\count329
+\c@subtable=\count330
 )
-\c@theorem=\count328
-\c@lemma=\count329
-\c@corollary=\count330
-\c@axiom=\count331
-\c@remark=\count332
-\c@solution=\count333
-\c@problem=\count334
-\c@question=\count335
+\c@theorem=\count331
+\c@lemma=\count332
+\c@corollary=\count333
+\c@axiom=\count334
+\c@remark=\count335
+\c@solution=\count336
+\c@problem=\count337
+\c@question=\count338
 )
-\c@answer=\count336
+\c@answer=\count339
 
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
-File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count337
-\l__pdf_internal_box=\box133
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count340
+\l__pdf_internal_box=\box132
 ) (homework_3.aux)
 \openout1 = `homework_3.aux'.
 
@@ -1098,16 +1099,16 @@ LaTeX Font Info:    ... okay on input line 23.
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count338
+\scratchcounter=\count341
 \scratchdimen=\dimen316
-\scratchbox=\box134
-\nofMPsegments=\count339
-\nofMParguments=\count340
+\scratchbox=\box133
+\nofMPsegments=\count342
+\nofMParguments=\count343
 \everyMPshowfont=\toks55
-\MPscratchCnt=\count341
+\MPscratchCnt=\count344
 \MPscratchDim=\dimen317
-\MPnumerator=\count342
-\makeMPintoPDFobject=\count343
+\MPnumerator=\count345
+\makeMPintoPDFobject=\count346
 \everyMPtoPDFconversion=\toks56
 )
 (C:\Users\colin\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
@@ -1137,7 +1138,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count344
+\c@section@level=\count347
 )
 LaTeX Info: Redefining \ref on input line 23.
 LaTeX Info: Redefining \pageref on input line 23.
@@ -1208,48 +1209,51 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 33.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 34.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 33.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 34.
 
 [1
 
-{C:/Users/colin/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2]
-(homework_3.aux)
+{C:/Users/colin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
+[3] [4] (homework_3.aux)
 Package rerunfilecheck Info: File `homework_3.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 36581 strings out of 478927
- 863509 string characters out of 2852535
- 1269531 words of memory out of 3000000
- 53766 multiletter control sequences out of 15000+600000
- 414416 words of font info for 68 fonts, out of 8000000 for 9000
+ 37348 strings out of 478593
+ 891259 string characters out of 2844605
+ 1268113 words of memory out of 3000000
+ 54825 multiletter control sequences out of 15000+600000
+ 480245 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,8n,136p,779b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
- <C:\Users\colin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
-1200.pk><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmbsy10.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmbx12.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/colin/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/colin/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/colin/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/colin/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/User
-s/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pf
-b><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cme
-xtra/cmmib8.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmr12.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmr6.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/colin/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/colin/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/colin/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on homework_3.pdf (2 pages, 173015 bytes).
+ 129i,10n,132p,778b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ <C:\Users\colin\AppData\Local\MiKTeX\fonts/pk/ljfour/public/wasy/dpi720\wasy
+10.pk> <C:\Users\colin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
+tcrm1200.pk><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmbsy10.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmbx12.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/colin/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/colin/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/colin/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/co
+lin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/
+Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib1
+0.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cmextra/cmmib8.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmr12.pfb><C:/Users/colin/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/colin/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/colin/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/colin/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/colin/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/c
+olin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.p
+fb>
+Output written on homework_3.pdf (4 pages, 200923 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 26 named destinations out of 1000 (max. 500000)
+ 195 PDF objects out of 1000 (max. 8388607)
+ 49 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

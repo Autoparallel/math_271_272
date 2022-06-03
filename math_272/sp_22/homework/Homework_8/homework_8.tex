@@ -22,58 +22,7 @@
 \end{center}
 \vspace{.5cm}
 
-\begin{problem}
-	Write down the definition for a vector space.  
-\end{problem}
 
-\begin{problem}
-	For the following vectors in $\C^3$, compute each pairwise Hermitian inner product $\innprod{\cdot}{\cdot}$.  
-	\[
-		\vecu = \begin{pmatrix} i \\ 1 \\ 0 \end{pmatrix}, \qquad \vecv = \begin{pmatrix} 1 \\ -i \\ 0 \end{pmatrix}, \qquad \vecw = \begin{pmatrix} i \\ 2i \\ 2 \end{pmatrix}.
-	\]
-\end{problem}
-
-\begin{problem}
-	Write down what it means to have an orthonormal basis for the vector space $\R^n$ and the vector space $\C^n$.
-\end{problem}
-
-\begin{problem}
-	(Pointwise) We often extend operations that we perform with numbers to functions without spending too much time on how this is done. For example, you know perfectly well what it means to evaluate
-	\[
-		5+7
-	\]
-	but what does it mean to evaluate
-	\[
-		f(x)=\cos(x)+\sin(x)?
-	\]
-	I'd argue that you know what this means as well.  In the above, we simply evaluate the added functions \emph{pointwise} by computing the value of each individual function at the point $x$ and then adding the resulting numbers afterwards. For example,
-	\[
-		f(3\pi/4)=\cos(3\pi/4) + \sin(3\pi/4)= -\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}}=0.
-	\]
-	For the following, explain how the operation is to be performed on functions for some arbitrary functions $g(x)$ and $h(x)$.
-	\begin{enumerate}[(a)]
-		\item $g^*(x)$;
-		\item $g(x)h(x)$;
-		\item $(g(x))^{-1}(h^*(x))^2$.
-	\end{enumerate}
-\end{problem}
-
-\begin{problem}
-	Consider the complex valued function $f(x) = \cos(x)+i\sin(x)$.  
-	\begin{enumerate}[(a)]
-		\item Plot this function in the complex plane for the input values $[0,2\pi]$. Clearly label the function values for $x=0,\pi/2,\pi,3\pi/2,2\pi$.
-		\item Write this function in polar form. That is, find fuctions $r(x)$ and $\theta(x)$ so that $f(x)=r(x)e^{i\theta(x)}$. \emph{Hint: There are a few ways to do this, but can you use the geometry from (a) to help you here?}
-		\item Evaluate the integral
-		\[
-			\int_0^{2\pi}f(x)dx.
-		\]
-		\item Evaluate the inner product for complex functions given by the integral
-		\[
-			\innprod{f}{f}\coloneqq \int_0^{2\pi} |f(x)|^2dx
-		\]
-		where $|\cdot|^2$ is the modulus squared of a complex number. You will need to realize what the modulus of a complex function is. \emph{Hint: think pointwise.}
-	\end{enumerate}
-\end{problem}
 
 
 \end{document}

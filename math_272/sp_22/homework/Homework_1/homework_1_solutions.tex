@@ -318,47 +318,7 @@ Using GeoGebra, plot the graph of the following functions and include them with 
 
 
 
-%\newpage
-%\begin{problem}
-%Compute the divergence and curl of the Source and Vortex fields from Problem 4 (c) and (d).  What can we say about the divergence and curl of these fields at the origin?
-%\end{problem}
-%\begin{solution}
-%    First, let us take the curl of $\vecfieldE$.  We have
-%    \begin{align*}
-%        \grad \times \vecfieldE &= \begin{pmatrix} \frac{\partial E_3}{\partial y} - \frac{\partial E_2}{\partial z} \\ \frac{\partial E_1}{\partial z} -\frac{\partial E_3}{\partial 1} \\ \frac{\partial E_2}{\partial x} - \frac{\partial E_1}{\partial y} \end{pmatrix}\\
-%        &= \begin{pmatrix} \frac{-3yz}{(x^2+y^2+z^2)^{5/2}} - \frac{-3yz}{(x^2+y^2+z^2)^{5/2}} \\ \frac{-3xz}{(x^2+y^2+z^2)^{5/2}} - \frac{-3xz}{(x^2+y^2+z^2)^{5/2}} \\
-%        \frac{-3xy}{(x^2+y^2+z^2)^{5/2}} -\frac{-3xy}{(x^2+y^2+z^2)^{5/2}} \end{pmatrix}\\
-%        &= \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}.
-%    \end{align*}
-%    At the origin, this curl is also identically zero.  The curl of $\vecfieldE$ is simply zero everywhere.
-%
-%    Next, the curl of $\boldsymbol{\vec{S}}$,
-%        \begin{align*}
-%            \grad \times \boldsymbol{\vec{S}} &= \begin{pmatrix} 0 - \frac{-2xz}{(x^2+y^2+z^2)^2} \\ \frac{2yz}{(x^2+y^2+z^2)^2} - 0 \\
-%            \frac{-x^2+y^2+z^2}{(x^2+y^2+z^2)^2}- \frac{x^2-y^2+z^2}{(x^2+y^2+z^2)^2}\end{pmatrix}\\
-%            &= \begin{pmatrix}  \frac{2xz}{(x^2+y^2+z^2)^2} \\ \frac{2yz}{(x^2+y^2+z^2)^2} \\ \frac{z^2}{(x^2+y^2+z^2)^2}. \end{pmatrix}.
-%        \end{align*}
-%    Note that at the origin, we have a discontinuity.  Specifically, the curl at the origin will go to infinity (in each direction) at the origin since the numerator of each component of the curl is of lesser degree (2) than the denominator (4).
-%
-%    The divergence of $\vecfieldE$ is
-%    \begin{align*}
-%        \grad \cdot \vecfieldE &= \frac{\partial E_1}{\partial x} + \frac{\partial E_2}{\partial y} + \frac{\partial E_3}{\partial z}\\
-%        &= \frac{-2x^2+y^2+z^2}{(x^2+y^2+z^2)^{5/2}} + \frac{x^2-2y^2+z^2}{(x^2+y^2+z^2)^{5/2}} + \frac{x^2+y^2-2z^2}{(x^2+y^2+z^2)^{5/2}}\\
-%        &= 0.
-%    \end{align*}
-%    It appears that the divergence of this field $\vecfieldE$ is zero, however this is not actually true at the origin. We will revisit this later, but for now it should be fairly clear that the denominator goes to zero more quickly than the numerator. Indeed, we actually have
-%    \[
-%        \grad \cdot \vecfieldE = \delta(\vecx),
-%    \]
-%    where $\delta(\vecx)$ is the Dirac delta.
-%
-%    Similarly, the divergence of $\boldsymbol{\vec{S}}$
-%    \begin{align*}
-%        \grad \cdot \boldsymbol{\vec{S}} &= \frac{2xy}{(x^2+y^2+z^2)^2} + \frac{-2xy}{(x^2+y^2+z^2)^2}\\
-%        &=0.
-%    \end{align*}
-%    Once again, this appears to be zero everywhere (including the origin). But one should be weary of whether or not this is totally true!
-%\end{solution}
+
 
 \newpage
 \begin{problem}
@@ -432,43 +392,7 @@ f(x,y,z) = x^2+y^2-z^2.
     \]
     and so $\frac{d^2 f}{d x d y} = \frac{d^2 f}{d y d x}$.
 
-%    \item First, here is a generic view of the vector field $\vecfieldV$.
-%        \begin{figure}[H]
-%        \centering
-%        \includegraphics[width=.65\textwidth]{figures/6c_field}
-%    \end{figure}
-%        Let's examine the vector field $\vecfieldV$ by looking down at the $xy$-plane. When we do this, we see the following.
-%        \begin{figure}[H]
-%        \centering
-%        \includegraphics[width=.65\textwidth]{figures/6c}
-%        \caption{Plot looking down at the $xy$-plane shows circular motion.}
-%    \end{figure}
-%    Since we see vectors that would torque a rod parallel with the $xy$-plane we that for any value of $z$ there is curl. However a particle at $x=0$ and $y=0$ will not move at all.
-%
-%    \item Next, take a look at $\vecfieldV$ while aligning the $z$-axis vertically to see the following picture.
-%        \begin{figure}[H]
-%        \centering
-%        \includegraphics[width=.65\textwidth]{figures/6d}
-%        \caption{Plot looking down at the $xy$-plane shows circular motion.}
-%    \end{figure}
-%    If we place any particle with $z\neq 0$ then the particle will accelerate away from the $xy$-plane.
-%
-%    \item To compute this directional derivative, we need to compute a few items. First, we have the gradient
-%    \[
-%        \grad f = \begin{pmatrix} 2x \\ 2y \\ -2z \end{pmatrix}.
-%    \]
-%    Next, we evaluate both $\grad f$ and $\vecfieldV$ at $\vecx_0$
-%    \[
-%    \grad f(\vecx_0) = \begin{pmatrix} 2 \\ 4 \\ 6 \end{pmatrix} \qquad \textrm{and} \qquad \vecfieldV(\vecx_0) = \begin{pmatrix} -2 \\ 1 \\ -3 \end{pmatrix}.
-%    \]
-%    Now, we need a unit vector pointing in the same direction as $\vecfieldV(\vecx_0)$ so we have
-%    \[
-%    \unitvec = \frac{1}{|\vecfieldV(\vecx_0)|} \vecfieldV(\vecx_0) = \frac{1}{\sqrt{14}} \begin{pmatrix} -2 \\ 1 \\ -3 \end{pmatrix}.
-%    \]
-%    Then, the intended directional derivative is
-%    \[
-%    \boxed{\unitvec\cdot \grad f(\vecx_0) = \frac{1}{\sqrt{14}} \begin{pmatrix} -2 \\ 1 \\ -3 \end{pmatrix} \cdot \begin{pmatrix} 2 \\ 4 \\ 6 \end{pmatrix} = \frac{-18}{\sqrt{14}}.}
-%    \]
+
 \end{enumerate}
 \end{solution}
 \textcolor{red}{

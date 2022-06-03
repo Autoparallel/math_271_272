@@ -48,7 +48,7 @@ Note that $k$ is a real number that we are \underline{not} fixing to be any spec
 \begin{itemize}
     \item What is $f_{mn}(x,y)$ if $m=0$? What about $n=0$? 
 \vspace*{0.25cm}
-    \item Plot your solution for $m=3$ and $n=1$ \emph{only on the unit square}.
+    \item Plot your solution for $m=3$ and $n=1$ \emph{only on the unit square} and just let $C_{mn}=1$.
 \end{itemize}
 \vspace*{0.25cm}
     \item Deduce the constant $-k^2$ in terms of $m$ and $n$. 
@@ -91,21 +91,27 @@ where we have set $c=1$ and we note that $\Delta$ is the spatial Laplacian from 
 
 \newpage
 \begin{problem}
-We studied the 1-dimensional time dependent Schr\"odinger equation to some degree. Let us do a bit more analysis. First, let us take $\hbar=m=L=1$ and note we have the energy eigenvalues
+Suppose that we are considering a 2-dimensional time dependent Schr\"odinger equation
 \[
-E_n = \frac{n^2 \pi^2}{2}
+\left(-\frac{\hbar^2}{2M} \Delta + V - i \hbar \frac{\partial}{\partial t}\right) \Psi(x,y,t)=0
+\] 
+on the unit square $\Omega = [0,1]\times [0,1]$. Suppose further that the particle we care about is not coupled to any potential (i.e., it is a free particle and hence the potential is zero). Then we have the solutions
+\[
+\psi_{mn}(x,y,t) = 2 e^{-i\frac{E_{mn}}{\hbar}t} \sin(m \pi x) \sin(n \pi y)
 \]
-which correspond to the normalized stationary states
+for integers $m,n>0$ and where the energy eigenvalues are
 \[
-\psi_n(x,t) = \sqrt{2} e^{-iE_n t} \sin(n\pi x).
+E_{mn} = \frac{(m^2+n^2) \hbar^2 \pi^2}{2M}.
 \]
 \begin{enumerate}[(a)]
 \vspace*{0.25cm}
-    \item Show the state $\psi_n(x,t)$ is normalized over the region $[0,1]$ for all times $t$. \emph{Recall that we can determine this by an integral of $\psi_n(x,t)\psi_n^*(x,t)$ over $[0,1]$.}
+    \item Imagine now that we place an infinitely tall obstacle at the point $(x,y)=\left(\frac{1}{2},\frac{1}{2} \right)$. Explain why the state $\psi_{11}$ is no longer a solution.
 \vspace*{0.25cm}
-    \item Consider the superposition state $\Psi(x,t) = \frac{1}{\sqrt{2}}\left( \psi_1(x,t) + \psi_2(x,t) \right)$. Show that this state is normalized over $[0,1]$ for all times $t$. \emph{Hint: you can use the fact that functions of just $t$ are constant in $x$ and note that $\psi_1(x,0)$ and $\psi_2(x,0)$ are orthogonal.}
+    \item To this end, what are the set of possible solutions to this problem with the included obstacle? \emph{Hint: Can you treat this as another boundary condition? This process only removes states from the problem where there was no obstacle, so which states are removed?}
 \vspace*{0.25cm}
-    \item We want to compute the following likelihoods. For this, free to use this visualization \url{https://www.desmos.com/calculator/bxgoq94uwg}. For $t=\frac{3}{\pi}$, compute the likelihood that the particle is found between $\left[0,\frac{1}{2}\right]$. What would the likelihood be for the particle to be found in $\left[\frac{1}{2}, 1\right]$. \emph{Please don't compute two integrals here! Save yourself some time by thinking about what the total probability must be.}
+    \item Plot the probability amplitude of the ground state (i.e., lowest energy) of the problem with an obstacle only on the domain $\Omega$. To do this, just choose $M=1$ and $\hbar=1$.
+\vspace*{0.25cm}
+	\item \emph{Bonus:} Prove that the real and imaginary parts of stationary states to the Schr\"odinger equation (with or without the obstacle) satisfy the usual wave equation like that in Problem 2. What is the wave speed?
 \end{enumerate}
 \end{problem}
 

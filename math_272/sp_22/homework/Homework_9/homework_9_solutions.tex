@@ -37,48 +37,7 @@
 		\item Find a nonzero normalized polynomial of degree $\leq 1$ that is orthogonal to $f(x)$.
 	\end{enumerate}
 \end{problem}
-\begin{solution}~
-	\begin{enumerate}[(a)]
-		\item We compute the norm by
-		\begin{align*}
-			\|f\| = \sqrt{\innprod{f}{f}} &=\sqrt{ \int_0^L f^2(x)dx}\\
-			&=\sqrt{ \int_0^L 1 dx}\\
-			&= \sqrt{L}.
-		\end{align*}
-		\item We can normalize $f$ by letting $c$ be some constant and forcing
-		\[
-		1=\|cf\| = c^2L.
-		\]
-		Thus $c=\frac{1}{\sqrt{L}}$.  We can write the normalized function as
-		\[
-		h(x)=\frac{1}{\sqrt{L}}. 
-		\]
-		\item Consider an arbitrary polynomial of degree $\leq 1$ by putting $g(x)=ax+b$.  Now, we want this polynomial to be orthogonal to $f(x)$ which means that we want
-		\[
-		\innprod{f}{g}=0.
-		\]
-		Let us compute the above
-		\begin{align*}
-			\innprod{f}{g} &= \int_0^L f(x)g(x)dx\\
-			&=\int_0^L ax+bdx\\
-			&= \frac{aL^2}{2}+bL\\
-			&= \frac{1}{2}L\left(aL+2b\right).
-		\end{align*}
-		Hence, we can solve for $a$ by
-		\[
-		0=aL+2b \quad \implies \quad a= -\frac{2b}{L}.
-		\]
-		Now, $g(x)=-\frac{2b}{L}x+b$.  But, we require $g(x)$ to be normalized as well hence
-		\begin{align*}
-			1=\innprod{g}{g} &= \int_0^L \left(-\frac{2b}{L}x+b\right)^2dx\\
-			&= \frac{b^2L}{3}.
-		\end{align*}
-		Solving for $b$, we find $b=\sqrt{\frac{3}{L}}$ and hence we have that
-		\[
-		g(x) = -2\sqrt{\frac{3}{L^3}}x+\sqrt{\frac{3}{L}}..
-		\]
-	\end{enumerate}
-\end{solution}
+
 
 \newpage
 \begin{problem}
@@ -100,47 +59,7 @@
 		Plot the approximation of $\Psi(x)$ for $N=1,5,50,100$.  \emph{Hint: you can modify my Desmos examples.}
 		\end{enumerate}
 \end{problem}
-\begin{solution}
-	\begin{enumerate}[(a)]
-		\item To see that $\Psi(x)$ is normalized we take
-		\begin{align*}
-			\innprod{\Psi}{\Psi} &= \innprod{\sum_{n=1}^\infty a_n \psi_n(x)}{\sum_{n=1}^\infty a_n \psi_n(x)}\\
-			&= \sum_{n=1}^\infty \|a_n\|^2 \innprod{\psi_n}{\psi_n} &\textrm{by orthogonality of the states}\\
-			&= \sum_{n=1}^\infty \frac{6}{n^2 \pi^2}\\
-			&= \frac{6}{\pi^2} \sum_{n=1}^\infty \frac{1}{n^2}\\
-			&= \frac{6}{\pi^2} \zeta(2)\\
-			&= 1.
-		\end{align*}
-		Note the sum above is the Zeta function we saw in Math 271 and $\zeta(2)$ is a well-known value (that you can find by computing the above sum in, for example, WolframAlpha.
-		\item ~
-	\begin{figure}[H]
-	\centering
-		\begin{subfigure}[h]{0.48\textwidth}
-			\centering
-			\includegraphics[width=.8\textwidth]{n=1.png}
-			\caption{The approximation to $\Psi(x)$ with $N=1$.}
-		\end{subfigure}
-		~
-		\begin{subfigure}[h]{0.48\textwidth}
-			\centering
-			\includegraphics[width=.8\textwidth]{n=5.png}
-			\caption{The approximation to $\Psi(x)$ with $N=5$.}
-		\end{subfigure}
-		\\
-		\begin{subfigure}[h]{0.48\textwidth}
-			\centering
-			\includegraphics[width=.8\textwidth]{n=50.png}
-			\caption{The approximation to $\Psi(x)$ with $N=50$.}
-		\end{subfigure}
-		~
-		\begin{subfigure}[h]{0.48\textwidth}
-			\centering
-			\includegraphics[width=.8\textwidth]{n=100.png}
-			\caption{The approximation to $\Psi(x)$ with $N=100$.}
-		\end{subfigure}
-	\end{figure}
-	\end{enumerate}
-\end{solution}
+
 
 \newpage
 \begin{problem}
@@ -198,18 +117,7 @@
 	Another related operator is the \emph{momentum operator} $p = -i\hbar \frac{d}{dx}$. Using integration by parts, show that this operator is Hermitian.
 \end{problem}
 \begin{solution}
-We have
-\begin{align*}
-	\innprod{p \Psi}{\Phi} &= \int_0^L \left(-i\hbar \frac{d \Psi}{dx}\right)\Phi^*(x)dx\\
-	&= \left.-i\hbar \Psi(x)\Phi^*(x)  \right\vert_0^L + \int_0^L i\hbar \Psi(x) \frac{d\Phi^*}{dx}dx & \textrm{by integration by parts}.
-\end{align*}
-Note now that the boundary conditions require both $\Psi(0)=\Psi(L)=0$ and $\Phi(0)=\Phi(L)=0$, since we are working over the space of solutions to the particle in the 1-dimensional box.  Hence, we have
-\begin{align*}
-	\innprod{p\Psi}{\Phi} &= \int_0^L i\hbar \Psi(x) \frac{d\Phi^*}{dx}dx\\
-	&= \int_0^L \Psi(x)\left(-i\hbar \frac{d\Phi}{dx}\right)^* dx \\
-	&= \innprod{\Psi}{p\Phi}.
-\end{align*}
-Thus, $p$ is Hermitian.
+
 \end{solution}
 
 \newpage

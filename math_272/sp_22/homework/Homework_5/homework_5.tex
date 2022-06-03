@@ -4,115 +4,138 @@
 \documentclass[12pt]{article} %report allows for chapters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{preamble}
+\newcommand{\curvegamma}{\boldsymbol{\vec{\gamma}}}
+\newcommand{\tangentgamma}{\boldsymbol{\dot{\vec{\gamma}}}}
+\newcommand{\normalgamma}{\boldsymbol{\ddot{\vec{\gamma}}}}
+\newcommand{\rhat}{\boldsymbol{\hat{r}}}
+\newcommand{\thetahat}{\boldsymbol{\hat{\theta}}}
+\newcommand{\phihat}{\boldsymbol{\hat{\phi}}}
+\newcommand{\rhohat}{\boldsymbol{\hat{\rho}}}
+\newcommand{\vecfieldB}{\boldsymbol{\vec{B}}}
+\newcommand{\vecfieldJ}{\boldsymbol{\vec{J}}}
+\newcommand{\vecfieldF}{\boldsymbol{\vec{F}}}
 \newcommand{\vecx}{\boldsymbol{\vec{x}}}
+
+\newcommand{\veclaplace}{\boldsymbol{\vec{\Delta}}}
 
 \begin{document}
 
 \begin{center}
    \textsc{\large MATH 272, Homework 5}\\
-   \textsc{Due March 15$^\textrm{th}$}
+   \textsc{Due April 6$^\textrm{th}$}
 \end{center}
 \vspace{.5cm}
 
-
 \begin{problem}
-Let $\vecfieldV$ be a vector field in the plane $\R^2$ defined by
+\textbf{(5 pt.)} Take the set up from the previous problem, but let us modify the initial conditions and boundary conditions slightly. Instead, we have
 \[
-\vecfieldV(x,y) = \begin{pmatrix} \frac{1}{2}x-y \\ x + \frac{1}{2}y \end{pmatrix},
+\begin{cases}
+\frac{\partial}{\partial t} u(x,t) = \frac{\partial^2}{\partial x^2} u(x,t) - 1, & \textrm{in $(0,1)$},\\
+u(0,t)=0 \textrm{~and~} u(1,t)=0, & \text{as boundary conditions},\\
+u(x,0) = -(2x-1)^2+1, & \textrm{as the initial condition}.
+\end{cases}
 \]
-and let $\vecx(t) = \begin{pmatrix}  e^{\frac{1}{2}t} (-c_1 \sin(t) + c_2 \cos(t) ) \\ e^{\frac{1}{2}t} (c_1 \cos(t) + c_2 \sin(t)) \end{pmatrix}$ for $t\in [0,\pi]$ where $c_1$ and $c_2$ are yet undetermined constants.
-\begin{enumerate}[(a)]
-    \item Show that a flow of $\vecfieldV$ yields a linear system of equations.
-    \item Show that $\vecx(t)$ is a flow of the vector field $\vecfieldV$.
-    \item Let $\vecx(0)=\begin{pmatrix} 1 \\ 0 \end{pmatrix}$. Determine the particular solution to the initial value problem.
-    \item \textbf{[MATLAB]} Plot the $\vecfieldV$ and your particular solution $\vecx$ simultaneously by modifying 
-\begin{verbatim} vector_field_2d.m \end{verbatim}
- and
- \begin{verbatim} curve.m \end{verbatim} 
-Then enter the following into the command window
-\begin{verbatim} vector_field_2d \end{verbatim}
- followed by 
-\begin{verbatim} curve \end{verbatim}
-and finally to get the correct view enter
-\begin{verbatim} view(0,90) \end{verbatim}
-Choose good bounds for your plot so that the whole curve is visible.
-\end{enumerate}
-\end{problem}
+We want to discover how we can possibly solve problems with more general initial conditions. If you pay attention to the work in 3, you will find the initial conditions were chosen in a very contrived manner. This is not ideal if we want to solve a problem in general!
 
-\begin{problem}
-Let us consider the discrete heat equation for $n$ equally spaced particles on a line segment for which we have the following picture
-\begin{figure}[H]
-	\centering
-	\resizebox{.9\columnwidth}{!}{\input{figures/equally_spaced_line_points.pdf_tex}}
-\end{figure}
-Let $u_j(t) \coloneqq u(x_j,t)$ denote the temperature of particle $j$ at time $t$, let $k_j$ be the thermal transport coefficient between particles $j$ and $j+1$, and let $f_j(t)=f(x_j,t)$ be the thermal energy source on particle $j$.
+Taking a look at Example ``Particular Solution to the 1D Heat Equation" in the notes. Notice that it is of the form
+\[
+u_n(x,t) = e^{-n^2\pi^2 t} \sin(n \pi x),
+\]
+is a solution for all integers $n$. In fact, given a constant $A_n$, $A_n u_n$ is a solution as well!
 \begin{enumerate}[(a)]
-    \item For the boundary particles $x_1$ and $x_n$, we have
+    \item \textbf{(1 pt.)} Can you recreate the initial condition $u(x,0)$ with a single $A_n u_n(x,0)$?
+    \item \textbf{(1 pt.)} Can you recreate the initial condition with a finite linear combination of $u_n(x,0)$?
+    \item \textbf{(2 pt.)} Suppose that we can take an infinite linear combination
     \[
-    \dot{u}_1 = -k_1 u_1 + k_1 u_{2} + f_1 \qquad \textrm{and} \qquad \dot{u}_n = -k_n u_{n} + k_{n-1} u_{n-1} +f_n,
+    \sum_{n=1}^\infty A_n u_n.
     \]
-    which correspond to \emph{Neumann type boundary conditions}. Explain each term in the above equations.
-    \item If we attached $x_1$ to $x_n$ with a material with a thermal transport coefficent of $k_0$ the above equations would need modification. Write these new equations. These are the \emph{periodic boundary conditions}. 
-    \item Explain why periodic boundary conditions are the same as working with a circular domain.
-    \item If we force $u_1$ and $u_n$ to be constant, what will the equations for the boundary particles be? These would be the \emph{Dirichlet type boundary conditions}.
-    \item For the interior particles, we have the relationship
+    Show that
     \[
-    \dot{u}_j = -k_{j-1}u_j - k_{j} u_j + k_{j-1}u_{j-1} + k_{j} u_{j+1} +f_j \qquad \textrm{for $j=2,\dots,n-1$}.
+    \sum_{n=1}^\infty -\frac{16\left(\left(-1\right)^{n}-1\right)}{\pi^{3}n^{3}}u_n(x,0) = u(x,0)
     \]
-    Explain what each term describes in the above equation.
-    \item In the limit as $n\to \infty$, we then have that $k$ is described as a function of position, $x$. The source free heat equation then reads
-    \[
-    \frac{\partial}{\partial t}u(x,t) = \frac{\partial}{\partial x} \left( k(x)\frac{\partial}{\partial x} u(x,t) \right) + f(x,t).
-    \]
-    Explain how this equation differs from the equation
-    \[
-    \frac{\partial}{\partial t}u(x,t) = k(x) \frac{\partial^2}{\partial x^2} u(x,t)+f(x,t).
-    \]
+    by plotting both $u(x,0)$ and the sum (up to a large $N$) simultaneously. It is worthwhile to steadily increase the upper bound of the sum to see this convergence! For your own sake (and for correctness of the problem), plot your functions only on the domain we care about.
+    \item \textbf{(1 pt.)} Comment on this. Do you think this is something we can do in general for any initial condition?
 \end{enumerate}
 \end{problem}
 
 
-
 \begin{problem}
-    Consider the 1-dimensional homogeneous Laplace equation given by 
+\textbf{(12 pt.)} Previously we studied the time-independent Schr\"odinger equation. Now, we can take a look at the time-dependent version given by
+\[
+\left( H - i\hbar \frac{\partial}{\partial t} \right) \Psi(x,t) = 0,
+\]
+where $H$ is the Hamiltonian operator.  
+
+Consider the situation for the free particle in the 1-dimensional box of length $1$ so that $V(x)=0$ and $\Psi(0,t)=0=\Psi(1,t)$. Hence, the problem
+\[
+\begin{cases}
+\left( -\frac{\hbar}{2m} \frac{\partial ^2}{\partial x^2} - i\hbar \frac{\partial}{\partial t} \right) \Psi(x,t) = 0 & \textrm{in the region $\Omega = [0,1]$}\\
+\Psi(0,t)=0=\Psi(1,t), & \textrm{as boundary conditions}.
+\end{cases}
+\]
+Note that for each $n$ we have a normalized state
+\[
+\psi_n(x,t) = \sqrt{2} e^{-i \frac{E_n}{\hbar} t} \sin(n \pi x)
+\]
+where 
+\[
+E_n = \frac{n^2 \pi^2 \hbar^2}{2m}
+\]
+is the energy eigenvalue.
+\begin{enumerate}[(a)]
+    \item \textbf{(1 pt.)} Argue that a linear combination (superpostion) of states is a solution by noting that the operator
+	\[
+	\mathcal{L} = -\frac{\hbar}{2m} \frac{\partial ^2}{\partial x^2} - i\hbar \frac{\partial}{\partial t}
+	\]
+	is linear. \emph{Hint: think about kernels and subspaces.}
+    \item \textbf{(2 pt.)} For a single state $\psi_n(x,t)$, show that the probability amplitude
     \[
-    \frac{\partial^2}{\partial x^2} u_E(x) = 0,
+\left|\psi_n(x,t)\right|^2
     \]
-    with the domain $\Omega$ as the unit interval on the $x$-axis.  Take the Dirichlet boundary conditions $u_E(0)=T_0$ and $u_E(L)=T_L$.  Think of these values as the ambient temperature at the endpoints of the rod.  These temperatures are constant since the ambient environment is so large.
-    \begin{enumerate}[(a)]
-        \item Find the particular solution to this Laplace equation.
-        \item Suppose that $v(x,t)$ is a solution to the 1-dimensional source free isotropic heat equation with zero Dirichlet boundary values. Show that 
-        \[
-        u(x,t)=v(x,t)+u_E(x),
-        \]  
-        is a solution to the 1-dimensional source free isotropic heat equation with Dirichlet boundary values $u(0,t)=T_0$ and $u(L,t)=T_L$.
-        \item From Problem 1, we know that $\lim_{t\to \infty} v(x,t) = 0$.  Hence, show that the long time limit of a solution to the source free heat equation yields a solution to the Laplace equation.
-        \item Argue why the equilibrium temperature profile of a rod can be found without solving the heat equation.
-    \end{enumerate}
+    is independent of $t$. This shows that the states $\psi_n$ are \emph{stationary} since their probability amplitude does not depend on time.
+	\item \textbf{(3 pt.)} When a particle is in superposition, then the probability amplitude can change over time. Consider the superposition wavefunction
+	\[
+	\Psi = \frac{1}{\sqrt{2}} \left( \psi_1 + \psi_2 \right).
+	\]
+	Show that the probability amplitude can be written as
+	\[
+	|\Psi|^2 = 2 \cos(\omega_R t)\sin(\pi x)\sin(2\pi x)+ \sin(\pi x)^2 +\sin(2\pi x)^2
+	\]
+	and determine $\omega_R$ in terms of the energy eigenvalues. Note that $\omega_R$ is called the \emph{Rabi frequency} and this occurs in two-state systems.
+	\item \textbf{(1 pt.)} Quickly verify that the total probability amplitude for the superposition wavefunction $\Psi$ is 1. \emph{Hint: please just use the fact that the states are orthonormal!}
+	\item \textbf{(2 pt.)} Make an animation of the probability amplitude on the given domain $\Omega$ on Desmos. (For credit: show your Desmos code or show a few slices of the probability amplitude over time.)
+	\item \textbf{(1 pt.)} Can you interpret your answer in part (d) as motion of the particle? Explain.
+	\item \textbf{(2 pt.)} Given an initial wave function $\Psi(x,0)$, how can you determine $\Psi(x,t)$? \emph{Hint: consider what we discuss in Problem 1. Can you take an infinite linear combination of states? If so, how do you determine the coefficients?}
+\end{enumerate}
 \end{problem}
 
-\begin{problem}
-    Using intuition from the previous problem, explain how one could solve the heat equation with a nonzero source term that only depends on $x$. In other words, how could one try to solve
-    \[
-    \left( -k \frac{\partial^2}{\partial x^2} + \frac{\partial}{\partial t} \right) u(x,t) = f(x),
-    \]
-\end{problem}
 
 \begin{problem}
-    Consider the 2-dimensional source free isotropic heat equation given by
+\textbf{(7 pt.)} Maxwell's equations are given as
+\begin{align*}
+\grad \cdot \vecfieldB &= 0  & \grad \cdot \vecfieldE &= \frac{\rho}{\epsilon_0}\\
+\grad \times \vecfieldB -\mu_0 \epsilon_0\frac{\partial \vecfieldE}{\partial t}&=\mu_0 \vecfieldJ & \grad \times \vecfieldE + \frac{\partial \vecfieldB}{\partial t} &= \zerovec
+\end{align*}
+\begin{enumerate}[(a)]
+    \item \textbf{(2 pt.)} Look up each of the terms in the equations above and describe them.
+    \item \textbf{(2 pt.)} Describe what each equation is saying and why these are PDEs.
+    \item \textbf{(2 pt.)} In the absence of all charges we will have $\vecfieldJ=\zerovec$ and $\rho=0$.  Using that and the following two facts
     \[
-    \left( -k \Delta + \frac{\partial}{\partial t} \right) u(x,y,t) = 0,
+    \veclaplace \vecfieldV = \grad (\grad \cdot \vecfieldV) - \grad \times (\grad \times \vecfieldV) \qquad \textrm{and} \qquad \grad \times \frac{\partial \vecfieldV}{\partial t} = \frac{\partial}{\partial t} (\grad \times \vecfieldV),
     \]
-    with the domain $\Omega$ as the unit square in the $xy$-plane. Take as well the Dirichlet boundary conditions $u(x,y,t)=0$ for $x$ and $y$ on the boundary of $\Omega$.
-    \begin{enumerate}[(a)]
-        \item Show that $u_{mn}(x,y,t)=\sin(m\pi x)\sin(n\pi y)e^{-k(n^2+m^2)\pi^2 t}$ is a solution to the PDE and Dirichlet boundary conditions for any non-negative integers $m$ and $n$.
-        \item Show that a linear combination of solutions $u_{mn}$ and $u_{pq}$ is also a solution.
-        \item For $m=n=1$ and $k=1$, plot the solution for the values $t=0$, $t=0.01$, $t=0.1$ and $t=1$.  Explain what is physically happening as time moves forward.
-        \item Explain what varying the value for the conductivity $k$ does to the solution.  Feel free to use plots to support your hypothesis.
-        \item Explain the mathematical reason why increasing $m$ and $n$ causes the solution to converge to zero more quickly.
-        \item Explain the physical reason why increasing $m$ and $n$ causes the solution to converge to zero more quickly. Plots may help support your reasoning.
-    \end{enumerate}
+    derive the vector wave equations for light
+    \[
+    \left( - \veclaplace + \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}\right) \vecfieldE = \zerovec
+    \]
+    and
+    \[
+    \left( - \veclaplace + \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}\right) \vecfieldB = \zerovec
+    \]
+    \item \textbf{(1 pt.)} From the equations you derived, determine the wave speed of light in the vacuum, $c_0$.
+\end{enumerate}
 \end{problem}
+
+
 
 
 \end{document}

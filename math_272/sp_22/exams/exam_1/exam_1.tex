@@ -12,6 +12,7 @@
 \newcommand{\grad}{\boldsymbol{\vec{\nabla}}}
 \newcommand{\R}{\mathbb{R}}
 
+\newcommand{\vf}[1]{\boldsymbol{\vec{#1}}}
 
 \begin{document}
 \pagenumbering{gobble}       % This kills the page numbering
@@ -24,7 +25,7 @@
 
 \vspace{1cm}
 
-\noindent\textbf{Instructions} \; You are allowed a textbook, homework, notes, worksheets, material on our Canvas page.  You can use online tools such as Desmos and Wolfram Alpha to check your work, but you will need to explain how you arrived at your answers.  You can work with other students and this is, in fact, encouraged! However, I will not be giving out direct help for these problems but can answer questions about previous problems and notes, for example. Ambiguous or illegible answers will not be counted as correct. Scan your solutions and submit them as a pdf on Canvas under Oral Exam 1.
+\noindent\textbf{Instructions} \; You are allowed a textbook, homework, notes, worksheets, material on our Canvas page.  You can use online tools such as Desmos and Wolfram Alpha to check your work, but you will need to explain how you arrived at your answers.  You can work with other students and this is, in fact, encouraged! However, I will not be giving out direct help for these problems but can answer questions about previous problems and notes, for example. Ambiguous or illegible answers will not be counted as correct. Scan your solutions and submit them as a pdf on Canvas under Oral Exam 1.  
 
 
 \vspace{1cm}
@@ -37,18 +38,51 @@
 
 \newpage
 
-\begin{problem} Fluids flow along pressure gradients by moving towards regions of lower and lower pressure until they ultimately reach the lowest pressure region available. Let us consider a pressure scalar field
+\begin{problem}
+	Let $h(x,y)$ be the height of a sheet above the $xy$-plane at the point $(x,y)$. Then, the level sets of $h$ are exactly the lines you find in a topographic map. Below is a map of White River National Forest, CO including Snowmass Peak. 
+	\begin{enumerate}[(a)]
+		\item Determine the level set (possibly multiple curves) for $h(x,y)=12,000$.
+		\item In the coordinates of this map, the town of Crystal and the famous Crystal Mill is located roughly at $x=18$, $y=25.5$. Locate this point and describe the local geometry (e.g., where the steep and shallow gradients are, which way the river should flow).
+		\item Sheep Mountain is located at roughly $x=16.5$ and $y=26$. What is the max elevation of Sheep Mountain?
+		\item You want to hike to Snowmass Peak (roughly $(21.5,32)$) because you are very brave. Assuming you are dropped off at Lead King Basin (roughly $(20,28)$). Assuming you can hike over any terrain (including water if need be), can you find a path that follows the steepest gradient from Lead King Basin to Snowmass Peak?
+		\item Locate the flattest area that you can.
+		\item Plot gradient vectors at each point on the grid.
+		\item Follow Schofield Pass starting from roughly $(22.5,19)$. How much elevation gain and loss do you experience over this curve? Can you think of how we could represent this via integration? (\emph{Hint: you may be able to use both $h$ and $\grad h$ to compute this in different ways.})
+	\end{enumerate}
+\newpage
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1.2\textwidth]{figures/snowmass_topo.jpg}
+	\end{figure}
+\end{problem}
+
+\newpage
+
+\begin{problem} A \emph{plasma} is a highly ionized gas. In fact, plasma is the most abundant form of matter in the universe. Plasmas can be treated as charged fluids whose motion is coupled to its own electromagnetic fields.
+
+Because of this, in confined plasmas (e.g., Tokamak \& Stellerator) you may see that the fluid velocity vector field $\vf{v}$ and the fluid vorticity $\vf{\omega}$ are parallel. In other words, $\vf{v}\times \vf{\omega}=0$. 
+
+As a note for plasmas, the vorticity is coupled to the magnetic field and the velocity is coupled to the electric field.
+
+\begin{enumerate}[(a)]
+\item Suppose that $\vf{v}$ is the fluid velocity. We say that $\vf{v}$ is a \emph{Beltrami field} if 
 \[
-P(x,y) = x^2+y^2
-\] 
-that describes the pressure of a fluid in a planar region and consider the curve
-\[
-\curvegamma(t) = \begin{pmatrix} 3e^{-2t} \\ 2e^{-2t} \end{pmatrix}
+\grad \times \vf{v} = \lambda \vf{v}
 \]
-for $t\in [0,\infty)$ that tracks a particle that moves in this fluid. Show that at all times $t$, the tangent vector $\tangentgamma$ is equal to the vector field given by $-\grad P$ at that point. In other words, show
+for some scalar (eigenvalue) $\lambda$. Suppose further that $\vf{v}$ is divergence free, i.e., $\grad \cdot \vf{v}=0$. Show that
 \[
-\tangentgamma(t) = -\grad P(\curvegamma(t)).
+\vf{\Delta} \vf{v} = -\lambda^2 \vf{v}
 \]
+where $\vf{\Delta}$ is the vector Laplacian.
+\item Fluid vorticity is the curl of the fluid velocity, i.e., $\vf{\omega} = \grad \times \vf{v}$. Show that if $\vf{v}$ is a Beltrami field, then the fluid vorticity and fluid velocity are parallel.
+\item For a specific example, let
+\[
+\vf{v}(x,y,z) = \begin{pmatrix} \sin(z)+\cos(y) \\ \sin(x)+\cos(z) \\ \sin(y)+\cos(x) \end{pmatrix}.
+\]
+plot this vector field over a suitable range of input values. 
+\item Show that $\vf{v}$ is a Beltrami field. What is the eigenvalue?
+\item Show that $\grad \cdot \vf{v}=0$ and find $\vf{\Delta}\vf{v}$ without computing any derivatives.
+\end{enumerate}
 \end{problem}
 
 \newpage
@@ -95,31 +129,6 @@ Imagine this curve is a wire that we dip into a soapy solution. What will the sh
     \end{enumerate}
 \end{problem}
 
-\newpage
-\begin{problem} 
-Consider the vector fields
-\[
-\vecfieldU = \begin{pmatrix} xy \\ z \\ z^2 \end{pmatrix} \qquad \textrm{and} \qquad \vecfieldV = \begin{pmatrix} -y \\ x \\ z \end{pmatrix}.
-\]
-        \vspace*{0.25cm}
-\begin{enumerate}[(a)]
-    \item Are either $\vecfieldU$ or $\vecfieldV$ conservative? 
-        \vspace*{0.25cm}
-    \item Show that
-    \[
-        \grad \cdot (\vecfieldU \times \vecfieldV) = \vecfieldV \cdot (\grad \times \vecfieldU) - \vecfieldU \cdot (\grad \times \vecfieldV),
-    \]
-    for the two given fields.
-        \vspace*{0.25cm}
-    \item Set up but do not evaluate the integral that computes
-    \[
-        \int_{\curvegamma} \vecfieldU \cdot d\curvegamma,
-    \]
-    for the curve $\curvegamma(t) = \begin{pmatrix} t \\ \cos(t) \\ \sin(t) \end{pmatrix}$ for $t\in [0,1]$.
-        \vspace*{0.25cm}
-    \item Set up an integral that computes the flux of $\vecfieldV$ through the unit square in the $xy$-plane.
-\end{enumerate}
-\end{problem}
 
 
 \end{document}  

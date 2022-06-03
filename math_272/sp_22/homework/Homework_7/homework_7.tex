@@ -27,90 +27,103 @@
 
 \begin{center}
    \textsc{\large MATH 272, Homework 7}\\
-   \textsc{Due March 31$^\textrm{st}$}
+   \textsc{Due May 4$^\textrm{rd}$}
 \end{center}
 \vspace{.5cm}
 
-\begin{problem}
-Previously we studied the time-independent Schr\"odinger equation. Now, we can take a look at the time-dependent version given by
-\[
-H \Psi(x,t) = i\hbar \frac{\partial}{\partial t} \Psi(x,t),
-\]
-where $H$ is the Hamiltonian operator.  Consider the situation for the free particle in the 1-dimensional box of length $L$ so that $V(x)=0$ and $\Psi(0,t)=0=\Psi(L,t)$.  
-\begin{enumerate}[(a)]
-    \item Take a separation of variables ansatz and find a set of solutions (one for every positive integer $n$) to the time-dependent equation.
-    \item Show that a super position of solutions is also a solution.
-    \item For a single state $\psi_n(x,t)$, show that 
-    \[
-    \int_0^L \left|\psi_n(x,t)\right|^2 dx,
-    \]
-    is independent of $t$. This shows that the states $\psi_n$ are \emph{stationary} since their total probability does not depend on time.
-\end{enumerate}
-\end{problem}
-
 
 \begin{problem}
-Maxwell's equations are given as
-\begin{align*}
-\grad \cdot \vecfieldB &= 0  & \grad \cdot \vecfieldE &= \frac{\rho}{\epsilon_0}\\
-\grad \times \vecfieldB -\mu_0 \epsilon_0\frac{\partial \vecfieldE}{\partial t}&=\mu_0 \vecfieldJ & \grad \times \vecfieldE + \frac{\partial \vecfieldB}{\partial t} &= \zerovec
-\end{align*}
+\textbf{(BONUS 17 pts.)} Let us use the Fourier transform to deduce the diffraction pattern of a single slit. In this case, we shine a plane wave of light from a monochromatic source towards a very thin slit. The light passes through this slit and forms a diffraction pattern on the image plane which is located a distance away from the slit such that this distance is much larger than the slit itself. One receives a pattern like this:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.6\textwidth]{single_slit.jpg}
+\end{figure}
+From this exercise, you will be able to realize that a diffraction pattern is created in essence by taking the Fourier transform of the apperture the light passes through. I've taken some liberty here in dropping some details, but the key fact remains.
 \begin{enumerate}[(a)]
-    \item Look up each of the terms in the equations above and describe them.
-    \item Describe what each equation is saying and why these are PDEs.
-    \item In the absence of all charges we will have $\vecfieldJ=\zerovec$ and $\rho=0$.  Using that and the following two facts
+    \item \textbf{(1 pts.)} Let us define the aperture function
     \[
-    \veclaplace \vecfieldV = \grad (\grad \cdot \vecfieldV) - \grad \times (\grad \times \vecfieldV) \qquad \textrm{and} \qquad \grad \times \frac{\partial \vecfieldV}{\partial t} = \frac{\partial}{\partial t} (\grad \times \vecfieldV),
+    A(x) = \begin{cases} 1, & -1 \leq x \leq 1\\
+    0, &\textrm{otherwise}.
+    \end{cases}
     \]
-    derive the vector wave equations for light
+    Plot this function $A(x)$ and note that this defines a slit of width 1 centered at the origin which we call the aperture. For all other $x$ values outside the range of $-1 \leq x \leq 1$, we can imagine there is a barrier that does not allow light to pass through.
+    \item \textbf{(2 pts.)} Using WolframAlpha, compute the Fourier transform of $A(x)$ and call it $\hat{A}(k)$. Note that I mean
+	\[
+	\hat{A}(k) = \int_{-\infty}^\infty A(x) e^{ikx}dx.
+	\]
+    \item \textbf{(2 pts.)} The brightness of light (or, really, the electric field strength) on the image plane is given by the function $\hat{A}^2(k)$. Plot this function. %If noPlot $\hat{A}^2(k)$ and compare this with the given image.
+    \item \textbf{(5 pts.)} Repeat the above with a double slit aperture that was made inside the single slit, e.g.,
     \[
-    \left( - \veclaplace + \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}\right) \vecfieldE = \zerovec
+    B(x) = \begin{cases} 1, & x\in \left[-1,-\frac{1}{2}\right] \cup \left[\frac{1}{2},1\right] \\
+    0, &\textrm{otherwise}.
+    \end{cases}
     \]
-    and
-    \[
-    \left( - \veclaplace + \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}\right) \vecfieldB = \zerovec
-    \]
-    \item From the equations you derived, determine the wave speed of light in the vacuum, $c_0$.
-\end{enumerate}
-\end{problem}
-
-\begin{problem}
-In 3-dimensional space, we can write down the Hamiltonian operator for an electron orbiting a proton. Specifically, this is
-\[
-H = -\frac{\hbar^2}{2\mu} \Delta + V(x,y,z).
-\]
-where $\mu$ is the reduced mass and with the Coulomb potential
-    \[
-    V(x,y,z) = \frac{1}{4\pi \epsilon_0} \frac{e^2}{\sqrt{x^2+y^2+z^2}},
-    \]
-which is the electrostatic potential created by a single proton pulling on a single electron. 
-\begin{enumerate}[(a)]
-    \item Write down the time independent Schr\"odinger equation in spherical coordinates. \emph{That means you must also convert the laplacian as well.}
-    \item Take the separation of variables ansatz $\Psi(r,\theta,\phi) = R(r)Y(\theta,\phi)$ and show that the time independent equation is separable into radial and angular components.
-\end{enumerate}
-\end{problem}
-
-
-\begin{problem}[BONUS]
-The differential equation for the static magnetic field $\vecfieldB$ is given by Ampere's law
-\[
-\grad \times \vecfieldB = \mu_0 \vecfieldJ.
-\]
-This equation is solvable by the Biot-Savart law. Let us consider a loop of wire with a constant current so that
-\[
-\curvegamma(t) = \begin{pmatrix} \cos(t) \\ \sin(t) \\ 0 \end{pmatrix} \qquad t\in [0,2\pi],
-\]
-and $\vecfieldJ= J \tangentgamma(t)$ along $\curvegamma$ and is zero elsewhere. Let $\vecx = \begin{pmatrix} x \\ y \\ z \end{pmatrix}$ denote the position in space we wish to measure the magnetic field.
-\begin{enumerate}[(a)]
-    \item The Biot-Savart law says
-    \[
-    \vecfieldB(\vecx) = \frac{\mu_0}{4\pi} \int_{\curvegamma} \frac{(J d\curvegamma) \times (\vecx - \curvegamma)}{|\vecx-\curvegamma|}.
-    \]
-    Find $\vecfieldB$ using this law. \emph{Note that the magnetic field is ill defined along the current loop itself.} See \url{https://pages.uncc.edu/phys2102/online-lectures/chapter-7-magnetism/7-2-magnetic-field-biot-savart-law/example-magnetic-field-of-a-current-loop/} for help.
-    \item Draw a picture displaying what the above integral is computing.
-    \item Compute $\grad \times \vecfieldB$. Is your answer a solution to Ampere's law?
+	\item \textbf{(2 pts.)} Show that the double slit pattern $\hat{B}^2(k)$ rests underneath the pattern (envelope) of the combination of the two slits by choosing the aperture
+	\[
+	C(x) = \begin{cases} 2, & -\frac{1}{4} \leq x \leq \frac{1}{4}\\
+    0, &\textrm{otherwise}.
+    \end{cases}
+	\]
+	That is, let the envelope be $\hat{B}^2(k)$.
+	\item \textbf{(5 pts.)} Repeat the process from before but with the aperture that is inverted from $A(x)$. That is, instead of a slit, you can picture a thin object with air around it.
 \end{enumerate}
 \end{problem}
  
+\begin{problem}
+\textbf{(BONUS 22 pts.)} If we consider the wave equation on $\R$ given by
+\[
+\left( c^2\frac{\partial^2}{\partial x^2} -\frac{\partial^2}{\partial t^2}\right) u(x,t) = 0.
+\]
+Let $\square = c^2\frac{\partial^2}{\partial x^2} -\frac{\partial^2}{\partial t^2}$ be the \emph{wave operator} (or sometimes called the \emph{d'Alembertian}) then we can factor this into two expressions:
+\[
+\left( c\frac{\partial}{\partial x} + \frac{\partial}{\partial t} \right) u_R(x,t) =0 \qquad \textrm{and} \qquad \left( c\frac{\partial}{\partial x} - \frac{\partial}{\partial t} \right) u_L(x,t) =0
+\]
+where $u_R$ and $u_L$ are left and right moving wave solutions. This was how we found the d'Alembert solution to the wave equation! Let's see how I just hid the Fourier transform from you all along.
+
+Sometimes these solutions are called \emph{plane waves} or even \emph{solitons}. Formally, you the left and right moving wave operators (that are first order) are almost Dirac operators that are used in quantum mechanics. By appealing to quaternions, you can factor the wave operator $\square$ into two equal operators (we won't do this).
+\begin{enumerate}[(a)]
+\item \textbf{(3 pts.)} Let us write the Fourier transform for a function of space $f(x)$ by
+\[
+\hat{f}(k) = \int_{-\infty}^\infty f(t) e^{i k x} dx
+\]
+Show that by applying this Fourier transform to the wave equation we get
+\[
+\frac{\partial^2}{\partial t^2}\hat{u}(k,t) = -c^2 k^2 \hat{u}(k,t).
+\]
+\item \textbf{(4 pts.)} Show that for any fixed value of $k$, the solution to the ODE above is
+\[
+\hat{u}(k,t) = \hat{F}(k)e^{-ickt} + \hat{G}(k)e^{ickt}.
+\]
+\item \textbf{(4 pts.)} Recall that the inverse Fourier transform is given by
+\[
+u(x,t) = \frac{1}{2\pi} \int_{-\infty}^\infty \hat{u}(k,t) e^{ikx} dk.
+\]
+Apply the inverse Fourier transform to $\hat{u}$ from before and show that
+\[
+u(x,t) = F(x-ct) + G(x+ct)
+\]
+using the fact that
+\[
+\delta_{x_0}(x) = \delta(x-x_0) = \int_{-\infty}^\infty  e^{ik(x-x_0)} dk.
+\]
+
+\item \textbf{(4 pts.)} Suppose that the initial conditions are $u(x,0) = h(x)$ and $\frac{\partial}{\partial t} u(x,0) = 0$. Given your solution from before $u(x,t)=F(x-ct)+G(x+ct)$, show that $F(x)=G(x)=\frac{1}{2}h(x)$ is a solution.
+
+\item \textbf{(2 pts.)} Go back to the d'Alembert solution and explain how we stumbled upon this using the Fourier transform.
+
+\item \textbf{(3 pts.)} Explain a bit about plane waves in higher dimensions and their Fourier transforms (namely that they are higher dimensional Dirac deltas just like ours here).
+
+\item \textbf{(2 pts.)} Let us define a space-time Fourier transform by taking some function of space and time $f(x,t)$ and computing its Fourier transform $\hat{f}$ by 
+\[
+\mathcal{F}(f)(k,\omega) = \hat{f}(k,\omega) = \frac{1}{2\pi} \int_{-\infty}^\infty \int_{\infty}^\infty f(x,t) e^{i(kx-\omega t)} dxdt. 
+\]
+Let's use this with the wave equation and its factored version. Show that the space-time Fourier transform of the wave operator $\square$ is given by
+\[
+\mathcal{F}(\square) = -c^2k^2 + \omega^2.
+\]
+\end{enumerate}
+\end{problem}
+
+
 
 \end{document}

@@ -24,55 +24,177 @@
 
 \begin{center}
    \textsc{\large MATH 272, Homework 3}\\
-   \textsc{Due February 17$^\textrm{th}$}
+   \textsc{Due February 25$^\textrm{th}$}
 \end{center}
 \vspace{.5cm}
 
-\textcolor{red}{Do a lot more with parameterization, surface, and normals and stuff!}
+\begin{problem}
+	\textbf{(6 pts.)} Parameterize the following either implicitly or explicitly. In Cartesian coordinates, find the parameterization of the normal vector as well.
+	\begin{enumerate}[(a)]
+		\item \textbf{(2 pts.)} The plane perpendicular to the vector $\vecv = \xhat + \yhat + \zhat$ passing through the point $(1,1,1)$.
+		\item \textbf{(2 pts.)} The upper half of the unit disk in the $xy$-plane.
+		\item \textbf{(2 pts.)} The surface of the unit sphere in $\R^3$.
+	\end{enumerate}
+\end{problem}
+
+\vspace*{0.5cm}
 
 \begin{problem}
-Consider $f(x,y)= 3x^4+x^3-18x^2y^2-3xy^2+3y^4$.
+\textbf{(5 pts.)} Consider $f(x,y)= 3x^4+x^3-18x^2y^2-3xy^2+3y^4$.
 \begin{enumerate}[(a)]
-    \item Show $\Delta f = 0$.
-    \item Find the surface normal to the graph of $f$.
+    \item \textbf{(2 pts.)} Show $\Delta f = 0$.
+    \item \textbf{(3 pts.)} Find the surface normal to the graph of $f$.
 \end{enumerate}
 \end{problem}
 
-\begin{problem}
-Parameterize the following either implicitly or explicitly. In Cartesian coordinates, find the parameterization of the normal vector as well.
-\begin{enumerate}[(a)]
-	\item The plane perpendicular to the vector $\vecv = \xhat + \yhat + \zhat$ passing through the point $(1,1,1)$.
-	\item The upper half of the unit disk in the $xy$-plane.
-	\item The surface of the unit sphere in $\R^3$.
-\end{enumerate}
-\end{problem}
-
+\vspace*{0.5cm}
 
 \begin{problem}
-Consider the following vector field
+\textbf{(7 pts.)} Consider the following vector field
 \[
 \vecfieldE(x,y,z) = \begin{pmatrix} \frac{x}{(x^2+y^2+z^2)^{3/2}} \\ \frac{y}{(x^2+y^2+z^2)^{3/2}} \\ \frac{z}{(x^2+y^2+z^2)^{3/2}} \end{pmatrix},
 \]
-which models the electric field of a proton (in units of of charge $q=1$) placed at the origin.
+which models the electric field of a proton (in units of of charge $q=1$) placed at the origin. \emph{We have seen this before and will see it again later.}
 \begin{enumerate}[(a)]
-	\item Show that $\vecfieldE(x,y,z) = - \grad \phi(x,y,z)$ where $\phi(x,y,z) = \frac{1}{\sqrt{x^2+y^2+z^2}}$.  We refer to $\phi(x,y,z)$ as the electrostatic potential (or voltage).
-	\item Let $\Omega$ be a box with side lengths two centered at the origin.  Compute the total flux of $\vecfieldE$ through the surface of the box $\Sigma$. That is,
+	\item \textbf{(1 pts.)} Show that $\vecfieldE(x,y,z) = - \grad \phi(x,y,z)$ where $\phi(x,y,z) = \frac{1}{\sqrt{x^2+y^2+z^2}}$.  We refer to $\phi(x,y,z)$ as the electrostatic potential (or voltage).
+	\item \textbf{(4 pts.)} Let $\Omega$ be a box with side lengths two centered at the origin.  Compute the total flux of $\vecfieldE$ through the surface of the box $\Sigma$. That is,
 	\[
 	\int_\Sigma \vecfieldE \cdot \unitvec d\Sigma.
 	\]
-	\item Using the provided argument, one can compute
+	\item \textbf{(2 pts.)} Using the provided argument, one can compute
 	\[
 	\int_\Omega \grad \cdot \vecfieldE d\Omega.
 	\]
 	\begin{itemize}
-		\item Compute $\grad \cdot \vecfieldE$ and note that this is zero everywhere except at $(x,y,z)=(0,0,0)$.
+		\item Compute $\grad \cdot \vecfieldE$ and note that this is zero everywhere except at $(x,y,z)=(0,0,0)$. \emph{Hint: have you already done this?}
 		\item Note that the two integrals in this problem are equal. This is known as the \emph{divergence theorem} and it is a special case of a more general theorem called \emph{Stokes' theorem} which generalizes the fundamental theorem of calculus. Is it true that $\grad \cdot \vecfieldE = 0$ everywhere?
 	\end{itemize}
-	\item Does the total flux depend on the size or shape of the box?
 \end{enumerate}
 \end{problem}
 
+\vspace*{0.5cm}
 
+\begin{problem}
+	\textbf{(6 pts.)} Provide a parameterization of the following regions in any choice of coordinate system.
+	\begin{enumerate}[(a)]
+		\item \textbf{(2 pts.)} A straight curve beginning at $x_0=1$, $y_0=-1$, and $z_0=3$ and ending at $x_1 = 0$, $y_1=2$, and $z_1=3$.
+		\item \textbf{(2 pts.)} A solid cone with a vertex at the origin with a height of 1 above the $xy$-plane and a maximum radius of 1.
+		\item \textbf{(2 pts.)} A thick spherical shell with an inner radius of 1 and an outer radius of 2.
+	\end{enumerate}
+\end{problem}
 
+\vspace*{0.5cm}
+
+\begin{problem}
+	\textbf{(8 pts.)} Plot each of the following vector fields. Describe what each field represents in the relevant coordinate system. Do we see any points in space where there are issues with these vector fields?
+	\begin{enumerate}[(a)]
+		\item \textbf{(2 pts.)} $\rhohat = \frac{x}{\sqrt{x^2+y^2}}\xhat + \frac{y}{\sqrt{x^2+y^2}}\yhat$.
+		\item \textbf{(2 pts.)} $\thetahat = \frac{-y}{\sqrt{x^2+y^2}}\xhat + \frac{x}{\sqrt{x^2+y^2}}\yhat$.
+		\item \textbf{(2 pts.)} $\phihat = \frac{xz}{\sqrt{x^2+y^2}\sqrt{x^2+y^2+z^2}}\xhat + \frac{yz}{\sqrt{x^2+y^2}\sqrt{x^2+y^2+z^2}}\yhat-\frac{\sqrt{x^2+y^2}}{\sqrt{x^2+y^2+z^2}}\zhat$.
+		\item \textbf{(2 pts.)} $\rhat = \frac{x}{\sqrt{x^2+y^2+z^2}}\xhat + \frac{y}{\sqrt{x^2+y^2+z^2}}\yhat+\frac{z}{\sqrt{x^2+y^2+z^2}}\zhat$.
+	\end{enumerate}
+\end{problem}
+
+\vspace*{.5cm}
+
+\begin{problem}
+	\textbf{(14 pts.)} Let us see some of the usefulness of cylindrical coordinates.
+	\begin{enumerate}[(a)]
+		\item \textbf{(1 pts.)} Using the fact that $\thetahat = \frac{-y}{\sqrt{x^2+y^2}}\xhat + \frac{x}{\sqrt{x^2+y^2}}\yhat$, convert the magnetic field 
+		\[
+		\vecfieldB = -\frac{y}{2}\xhat + \frac{x}{2}\yhat,
+		\]
+		into cylindrical coordinates (i.e., only a function of $\rho$, $\theta$, $z$, and $\rhohat$, $\thetahat$, and $\zhat$).  
+		\item \textbf{(2 pts.)} Parameterize a curve $\curvegamma(t)$ that traces out a circle of radius $R$ in the $xy$-plane in cylindrical coordinates.
+		\item \textbf{(2 pts.)} Compute the velocity vector $\tangentgamma(t)$ in cylindrical coordinates.
+		\item \textbf{(2 pts.)} Compute the acceleration vector $\normalgamma(t)$ in cylindrical coordinates.
+		\item \textbf{(3 pts.)} Compute the following integral using cylindrical coordinates
+		\[
+		\int_{\curvegamma} \vecfieldB \cdot d\curvegamma.
+		\]
+		        \item \textbf{(4 pts.)} Using cylindrical coordinates, compare your result with
+		        \[
+		        \iint_\Sigma \left(\grad \times \vecfieldB\right) \cdot \unitvec d\Sigma,
+		        \]
+		        where $\Sigma$ is the disk of radius $R$. In other words, the surface that fills in the curve from before.
+	\end{enumerate}
+\begin{remark}
+	Taking the limit as the radius of the circle $R$ goes to zero, $R \to 0$, in the integral in (e) is in fact how you could define the $z$-component of the curl of the vector field $\vecfieldB$ at the origin. The relationship comes through what you find in (f). That is, Stokes' theorem.
+	\end{remark}
+\end{problem}
+
+\vspace*{.5cm}
+
+\begin{problem}
+	\textbf{(4 pts.)} Convert the following integrals to integrals in cylindrical coordinates. Also, describe the region in which you are integrating over. Do not evaluate the integrals.
+	\begin{enumerate}[(a)]
+		\item \textbf{(2 pts.)} $\displaystyle{\int_{-1}^{1} \int_{-1}^{1} \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}} xyz dxdydz}$.
+		\item \textbf{(2 pts.)} $\displaystyle{\int_0^1 \int_{-z}^z \int_{-\sqrt{z^2-y^2}}^{\sqrt{z^2-y^2}} x^2+y^2+z^2 dxdydz}$.
+	\end{enumerate}
+\end{problem}
+
+\vspace*{.5cm}
+
+\begin{problem}
+	\textbf{(2 pts.)} Note that the Laplacian $\Delta$ in cylindrical coordinates is given by
+	\[
+	\Delta f(\rho,\theta,z) = \frac{1}{\rho} \frac{\partial}{\partial \rho} \left(\rho \frac{\partial f}{\partial \rho}\right)+\frac{1}{\rho^2}\frac{\partial^2 f}{\partial \theta^2} + \frac{\partial^2 f}{\partial z^2}.
+	\]
+	Compute the Laplacian of
+	\[
+	f(\rho,\theta,z) = \sqrt{\rho^2+z^2} z \cos(\theta).
+	\]
+\end{problem}
+
+\vspace*{0.5cm}
+
+\begin{problem}
+	\textbf{(8 pts.)} In spherical coordinates (either implicitly or explicitly), parameterize the following objects.
+	\begin{enumerate}[(a)]
+		\item \textbf{(2 pts.)} A solid sphere with radius 3.
+		\item \textbf{(2 pts.)} The surface of an infinite cone with a vertex angle of $\pi/4$.
+		\item \textbf{(2 pts.)} A latitudinal curve on the unit sphere at the latitude of 30$^\circ$ above the equator.
+		\item \textbf{(2 pts.)} A solid unit sphere with a cylinder of radius 1/2 removed from the core.
+	\end{enumerate}
+\end{problem}
+
+\vspace*{.5cm}
+
+\begin{problem}
+	\textbf{(8 pts.)} Let us see some of the benefit of using spherical coordinates. 
+	\begin{enumerate}[(a)]
+		\item \textbf{(1 pts.)} Using the fact that 
+		\[
+		\rhat = \frac{x}{\sqrt{x^2+y^2+z^2}}\xhat + \frac{y}{\sqrt{x^2+y^2+z^2}}\yhat + \frac{z}{\sqrt{x^2+y^2+z^2}}\zhat,
+		\]
+		convert the vector field 
+		\[
+		\vecfieldE(x,y,z) = \begin{pmatrix} \frac{x}{(x^2+y^2+z^2)^{3/2}} \\ \frac{y}{(x^2+y^2+z^2)^{3/2}} \\ \frac{z}{(x^2+y^2+z^2)^{3/2}} \end{pmatrix},
+		\] into spherical coordinates (i.e., only a function of $r$, $\theta$, $\phi$, and $\rhat$, $\thetahat$, and $\phihat$).
+		\item \textbf{(2 pts.)} Parameterize the surface of a sphere of radius $R$ (which we'll call $\Sigma$) as well as the outward normal vector $\unitvec$ and  in spherical coordinates.
+		\item \textbf{(3 pts.)} Compute the following integral using spherical coordinates that we have found:
+		\[
+		\iint_\Sigma \vecfieldE \cdot \unitvec d\Sigma,
+		\]
+		where $d\Sigma$ will be the area form in spherical coordinates.
+		\item \textbf{(2 pts.)} You computed a similar integral in an earlier problem on this homework. Does the total flux depend on the size or shape of the surface enclosing the origin? Explain.
+	\end{enumerate}
+\begin{remark}
+	Actually, if you take the above flux integral and take the limit as the radius of the sphere goes to zero, $R\to 0$, then this limit would give you $\grad \cdot \vecfieldE(0)$. The relationship comes through what you find in 3 (e). That is, the divergence theorem. (More generally just called Stokes' theorem.) This should feel really close to what we found with magnetic field $\vecfieldB$ in the earlier problem. The only difference is a limit of circles versus a limit of spheres.
+	\end{remark}
+\end{problem}
+
+\vspace*{.5cm}
+
+\begin{problem}
+	\textbf{(2 pts.)} Note that the Laplacian $\Delta$ in spherical coordinates is given by
+	\[
+	\Delta f(r,\theta,\phi) = \frac{1}{r^2} \frac{\partial}{\partial r} \left(r^2 \frac{\partial f}{\partial r}\right)+\frac{1}{r^2 \sin^2 \phi} \frac{\partial^2 f}{\partial \theta^2} + \frac{1}{r^2 \sin\phi}\frac{\partial}{\partial \phi} \left(\sin \phi \frac{\partial f}{\partial \phi}\right).
+	\]
+	Compute the Laplacian of
+	\[
+	f(r,\theta,\phi) = r^2 \cos(\theta)\cos(\phi).
+	\]
+\end{problem}
 
 \end{document}
